@@ -13,7 +13,7 @@
     "number_format_locale": null
   },
   "baseline": {
-    "common_spec_version": "0.2",
+    "common_spec_version": "0.3",
     "reference_repository": "https://github.com/mnakagaw/DDPT-TOP",
     "reference_commit": "6d2aee5f767515c5b20118ed642f832f21a15151",
     "reference_public_urls": [],
@@ -36,7 +36,29 @@
     "planning_periods": [],
     "document_templates": [],
     "evidence_statuses": [],
-    "official_decision_statuses": []
+    "official_decision_statuses": [],
+    "research_lenses": ["plan", "budget", "implementation", "evaluation", "reference"],
+    "research_lenses_note": "Investigation prompts, not mandatory cards, pages, chapters, cycles or scoring systems.",
+    "source_assessments": [],
+    "territory_identity_evidence_ref": null,
+    "document_period_policy_ref": null,
+    "content_and_findings_evidence_ref": null,
+    "section_adoption_decisions": [],
+    "map_meaning_decision": null,
+    "output_adoption_decisions": [],
+    "related_module_decisions": [],
+    "gap_alternatives": [],
+    "source_update_contracts": [],
+    "last_good_and_retry_procedure_ref": null,
+    "runtime_mapping": {
+      "dataset_file": "data/dashboard.json",
+      "dataset_schema_version": "0.2",
+      "optional_settings_field": "planning",
+      "documents_field": "documents",
+      "contract_ref": "docs/PLANNING_DATA_CONTRACT.md",
+      "decision_record_ref": null,
+      "note": "Map adopted decisions to the runtime contract explicitly. This design section is not dataset.planning and is not loaded automatically. Missing runtime outputs preserve defaults; an empty runtime outputs array disables exports and needs a documented alternative."
+    }
   },
   "data": {
     "source_registry_ref": null,
@@ -74,5 +96,5 @@
     "validation_record_ref": null,
     "release_record_ref": null
   },
-  "completion_notes": "Null means undecided, not false or disabled. This JSON is a field inventory; no runtime loader or schema validator is implemented. Do not place credentials or personal data here."
+  "completion_notes": "Null and empty decision lists in this design inventory mean undecided, not false, absent in the country or disabled. No runtime loader or schema validator for this design profile is implemented. Runtime dataset validation is separate. Common UX 0.3 is a candidate, not accepted v1.0. Do not place credentials or personal data here."
 }

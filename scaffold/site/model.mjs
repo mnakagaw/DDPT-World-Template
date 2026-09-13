@@ -1,4 +1,5 @@
 // Shared, dependency-free data and export semantics. Safe to import in Node tests.
+import {planningSettings, planningDocuments, documentPeriod, periodText, categoryFor, categoryLabels, findingLabels, officialStatus, documentEvidence, findingValue, selectedGaps, acquisitionLabel} from './planning.mjs';
 export const finite = value => typeof value === 'number' && Number.isFinite(value);
 export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 export function safeUrl(value) {
@@ -11,7 +12,7 @@ export function displayValue(value, locale = 'en') {
   catch { return new Intl.NumberFormat('en', {maximumFractionDigits: 2}).format(value); }
 }
 export function statusLabel(status) {
-  return ({observed:'Observed', missing:'No data', not_collected:'Not collected', not_available:'Not available', not_applicable:'Not applicable', incomparable:'Comparison not established', unverified:'Unverified', failed:'Acquisition failed', error:'Acquisition failed', ready:'Acquired', link_verified:'Link verified', downloaded:'Body acquired', extracted:'Extracted', pending:'Pending'})[status] || String(status || 'Not collected').replaceAll('_', ' ');
+  return ({observed:'Observed', missing:'No data', not_collected:'Not collected', not_available:'Not available', unavailable:'Unavailable', not_applicable:'Not applicable', incomparable:'Comparison not established', unverified:'Unverified', failed:'Acquisition failed', error:'Acquisition failed', ready:'Acquired', link_verified:'Link verified', downloaded:'Body acquired', body_acquired:'Body acquired', content_extracted:'Content extracted; not cross-checked', content_verified:'Content cross-checked', extracted:'Extracted', pending:'Pending'})[status] || String(status || 'Not collected').replaceAll('_', ' ');
 }
 export function sourceFor(dataset, indicator, observation) {
   return dataset.sources.find(source => source.id === (observation?.source_id || indicator?.source_id));
@@ -81,6 +82,9 @@ export function territoryLineage(dataset, selectedId) {
 }
 // An ancestor shown as context is NOT the active geographic choice. Its selectable
 // "Whole …" option has a different value, so selecting the SAME ancestor fires change.
+export function territoryOptionLabel(dataset,area) {
+  return dataset.territories.filter(row=>row.name===area.name).length>1?`${area.name} · ${area.type} · ${area.official_code || area.id}${area.boundary_version?` · ${area.boundary_version}`:''}`:area.name;
+}
 export function hierarchyControls(dataset, selectedId) {
   const byId=new Map(dataset.territories.map(area=>[area.id,area]));
   const hasMultipleTiers=dataset.territories.some(area=>area.parent_id && area.parent_id!==dataset.country.national_territory_id && byId.has(area.parent_id));
@@ -94,7 +98,7 @@ export function hierarchyControls(dataset, selectedId) {
     const context=descendantSelected?{value:'context',label:`Belongs to ${child.name} · a lower area is selected`}:null;
     return [{parent,levels:[...new Set(children.map(area=>area.level))],context,
       value:context?'context':child?`area:${child.id}`:'',
-      options:[{value:'',targetId:parent.id,label:`Whole ${parent.name} · no lower area selected`},...children.map(area=>({value:`area:${area.id}`,targetId:area.id,label:`Whole ${area.name}`}))]}];
+      options:[{value:'',targetId:parent.id,label:`Whole ${territoryOptionLabel(dataset,parent)} · no lower area selected`},...children.map(area=>({value:`area:${area.id}`,targetId:area.id,label:`Whole ${territoryOptionLabel(dataset,area)}`}))]}];
   });
 }
 export function selectHierarchyOption(dataset,state,parentId,value) {
@@ -180,10 +184,38 @@ export function evidenceCsv(dataset, territoryId, period, indicatorIds) {
 }
 export function safeFilename(value) { return String(value).replace(/[^\p{L}\p{N}._-]/gu,'-').replace(/-+/g,'-').slice(0,100) || 'dashboard'; }
 const markdownText = value => String(value ?? '').replaceAll('\\','\\\\').replace(/[\[\]<>]/g, character => `\\${character}`).replaceAll('|','\\|').replace(/[\r\n]+/g,' ');
+export function documentMarkdown(dataset,doc) {
+  const official=officialStatus(dataset,doc),lines=[
+    `### ${markdownText(doc.title)}`,'',
+    `${markdownText(categoryLabels[categoryFor(doc)])} · ${markdownText(doc.target_period?periodText(doc.target_period):documentPeriod(doc))}`,'',
+    safeUrl(doc.url)?`Original material / official reference: <${safeUrl(doc.url)}>`:'No verified link.',
+    `Institutional state: ${markdownText(official.label)} (${official.verified?'documented evidence':'unverified; no approval inferred'}).`,
+    ...(official.verified?[`State evidence: ${markdownText(documentEvidence(dataset,official.evidence))}`]:[]),''
+  ];
+  if(doc.content)lines.push(markdownText(doc.content.summary),...doc.content.priorities?.map(value=>`- Reported priority: ${markdownText(value)}`)||[],...doc.content.objectives?.map(value=>`- Reported objective: ${markdownText(value)}`)||[],`Content evidence: ${markdownText(documentEvidence(dataset,doc.content.evidence))}`,'');
+  for(const finding of doc.findings || [])lines.push(`- ${markdownText(findingLabels[finding.kind])} — ${markdownText(finding.label)}: ${markdownText(findingValue(finding))}${finding.statement&&Object.hasOwn(finding,'value')?`. ${markdownText(finding.statement)}`:''}.`,
+    `  Period: ${markdownText(periodText(finding.period))}. Definition: ${markdownText(finding.definition)}. Scope: ${markdownText(finding.scope)}.`,
+    ...(finding.scale?[`  Scale: ${markdownText(finding.scale.label)} (${finding.scale.min}–${finding.scale.max}).`]:[]),
+    `  Evidence: ${markdownText(documentEvidence(dataset,finding.evidence))}`);
+  const source=dataset.sources.find(row=>row.id===doc.source_id),match=doc.territory_match;
+  lines.push('',`Acquisition: ${markdownText(acquisitionLabel(doc))}. Source: ${markdownText(source?.name)}; retrieved ${markdownText(source?.retrieved_at)}.`,
+    ...(match?[`Territory match: ${markdownText(match.country_id)} / ${markdownText(match.type)} / ${markdownText(match.code_system)} / ${markdownText(match.official_code??'official code not verified')} / ${markdownText(match.boundary_version??'boundary edition not verified')}; validity ${markdownText(match.valid_from||'not recorded')} to ${markdownText(match.valid_to||'not recorded')}; ${markdownText(match.method)}. ${markdownText(documentEvidence(dataset,match))}`]:['Legacy record: identity matching evidence has not been recorded in the extended contract.']), '');
+  return lines.join('\n');
+}
+export function documentsCsv(dataset,territoryId) {
+  const area=dataset.territories.find(row=>row.id===territoryId);
+  const columns=['Country','Territory ID','Territory','Type','Code system','Official code','Boundary edition','Document ID','Document','Category','Document period','Period kind','Period start','Period end','Acquisition','Institutional state','State evidence verified','Document URL','Source','Source URL','State evidence','Content summary','Reported priorities','Reported objectives','Content evidence','Finding kind','Finding','Value','Value status','Unit','Finding statement','Finding period','Finding period kind','Finding start','Finding end','Definition','Scope','Scale','Finding evidence','Identity evidence','Data edition'];
+  const rows=planningDocuments(dataset,territoryId).flatMap(doc=>{
+    const source=dataset.sources.find(row=>row.id===doc.source_id),official=officialStatus(dataset,doc);
+    return (doc.findings?.length?doc.findings:[null]).map(finding=>[
+      dataset.country.id,area?.id,area?.name,area?.type,area?.code_system,area?.official_code,area?.boundary_version,doc.id,doc.title,categoryFor(doc),documentPeriod(doc),doc.target_period?.kind,doc.target_period?.start,doc.target_period?.end,doc.availability,official.label,official.verified,doc.url,source?.name,source?.url,official.verified?documentEvidence(dataset,official.evidence):'Unverified',doc.content?.summary,doc.content?.priorities?.join('; '),doc.content?.objectives?.join('; '),doc.content?documentEvidence(dataset,doc.content.evidence):'',finding?.kind,finding?.label,finding?.value_status==='observed'?finding.value:null,finding?.value_status,finding?.unit,finding?.statement,finding?.period?.label,finding?.period?.kind,finding?.period?.start,finding?.period?.end,finding?.definition,finding?.scope,finding?.scale?`${finding.scale.label} (${finding.scale.min}–${finding.scale.max})`:'',finding?documentEvidence(dataset,finding.evidence):'',doc.territory_match?documentEvidence(dataset,doc.territory_match):'Not recorded',dataset.generated_at]);
+  });
+  return makeCsv([columns,...rows]);
+}
 export function planningMarkdown(dataset, territoryId, period) {
   const area = dataset.territories.find(row => row.id === territoryId);
   if (!area) throw new Error('Unknown planning territory');
-  const documents = dataset.documents.filter(row => row.territory_id === territoryId);
+  const documents = planningDocuments(dataset,territoryId), settings=planningSettings(dataset);
   const evidence = evidenceRows(dataset, territoryId, period);
   const lines = [
     `# Planning base — ${markdownText(area.name)}`, '',
@@ -195,11 +227,16 @@ export function planningMarkdown(dataset, territoryId, period) {
     `- Boundary edition: ${markdownText(area.boundary_version || 'Not verified')}`,
     `- Requested evidence period: ${markdownText(period || 'No source period available')}`,
     `- Data edition: ${markdownText(dataset.generated_at)}`, '',
+    ...(settings.system?[`- Planning framework: ${markdownText(settings.system.label)}; scope: ${markdownText(settings.system.scope)}; cycle: ${markdownText(settings.system.cycle)}.`,...settings.system.source_ids.map(id=>{const source=dataset.sources.find(row=>row.id===id);return `- Framework source: ${markdownText(source?.name)} <${safeUrl(source?.url)}>`;}),'']:[]),
+    ...(settings.update?.status==='stopped'?[`- SOURCE UPDATE STOPPED: ${markdownText(settings.update.message)}. Last success: ${markdownText(settings.update.last_success_at||'Not recorded')}; checked ${markdownText(settings.update.checked_at)}.`,'']:[]),
     '## 2. Acquired statistical evidence', '',
     'Only observations for this area and period appear below. National observations are not substituted for local gaps. Different indicators can have different definitions and coverage.', '',
     '| Indicator | Value | Unit | Status | Source |', '|---|---:|---|---|---|',
     ...evidence.map(({indicator, value, status, source}) => `| ${markdownText(indicator.name)} | ${value === null ? '—' : String(value)} | ${markdownText(indicator.unit)} | ${markdownText(statusLabel(status))} | ${markdownText(source?.name || 'No source acquired')} |`), '',
     ...evidence.map(({indicator, source}) => `- ${markdownText(indicator.name)}: ${markdownText(indicator.definition || 'Definition not acquired')}. ${safeUrl(source?.url) ? `Source: <${safeUrl(source.url)}>.` : 'No verified source link.'} Retrieved: ${markdownText(source?.retrieved_at || 'Not recorded')}.`), '',
+    '## Official materials and verified findings', '',
+    'Document plan periods, fiscal years and quarters below are their own source periods. They are not filtered or relabelled as the statistical evidence period. Published materials remain distinct from this generated working outline.', '',
+    ...(documents.length?documents.map(doc=>documentMarkdown(dataset,doc)):['No local documents have been collected for this area. This does not establish whether a plan exists.']), '',
     '## 3. Working issues to investigate', '',
     '| Proposed issue | Evidence and gaps | Who proposed it | Verification needed |', '|---|---|---|---|', '| [Complete locally] | [Cite source and period] | [Record actual proposer] | [Complete locally] |', '',
     '## 4. Proposed objectives and indicators', '',
@@ -213,9 +250,8 @@ export function planningMarkdown(dataset, territoryId, period) {
     '- Confirm the legally required planning structure, competent authority and review process.',
     '- Assign responsibilities only after confirming mandates and participation.',
     '- Record indicator definitions, update frequency, data owner and review dates.', '',
-    '## 8. Acquired documents and remaining gaps', '',
-    ...(documents.length ? documents.map(doc => `- ${markdownText(doc.title)} (${markdownText(doc.period || 'Period not recorded')}); acquisition: ${markdownText(statusLabel(doc.availability))}; official status: ${markdownText(statusLabel(doc.official_status || 'unverified'))}. ${safeUrl(doc.url) ? `<${safeUrl(doc.url)}>` : 'No verified link.'}`) : ['No local documents have been collected for this area. This does not establish whether a plan exists.']), '',
-    ...dataset.gaps.map(gap => `- ${markdownText(gap.category)} — ${markdownText(statusLabel(gap.status))}: ${markdownText(gap.detail)} Next: ${markdownText(gap.next_action)}`), '',
+    '## 8. Remaining evidence gaps', '',
+    ...selectedGaps(dataset,territoryId).map(gap => `- ${markdownText(gap.category)} — ${markdownText(statusLabel(gap.status))}: ${markdownText(gap.detail)} Next: ${markdownText(gap.next_action)}`), '',
     'Prepared from the same dataset and selected area/period used by the dashboard. This editable Markdown is a generic planning aid, not a DOCX file or an official country form.', ''
   ];
   return lines.join('\n');

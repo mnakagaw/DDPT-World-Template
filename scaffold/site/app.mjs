@@ -1,16 +1,18 @@
 import {
   finite, escapeHtml as e, safeUrl, displayValue, statusLabel, sourceFor,
   periodsFor, observationState, localLevels, levelLabel, nationalOnly, initialState,
-  selectTerritory, hierarchyControls, selectHierarchyOption, routeQuery, comparisonRows, comparisonCompatibility, rankedRows, searchRows, rankingReveal, rankingScrollTop, distribution,
+  selectTerritory, territoryOptionLabel, hierarchyControls, selectHierarchyOption, routeQuery, comparisonRows, comparisonCompatibility, rankedRows, searchRows, rankingReveal, rankingScrollTop, distribution,
   seriesFor, observedValue, makeCsv, evidenceCsv, safeFilename, planningMarkdown,
-  planningHtml, mapGeometry, seriesGeometry
+  planningHtml, documentsCsv, mapGeometry, seriesGeometry
 } from './model.mjs';
+import {planningSettings,planningDocuments,documentGroups,documentPeriod,officialMapState,hasDocumentReference,selectedGaps,relatedResourceUrl,categoryLabels} from './planning.mjs';
+import {renderDocumentGroups,renderDocument} from './planning-view.mjs';
 
 const base = new URL('../', import.meta.url);
 const app = document.getElementById('app');
 const page = document.body.dataset.page || 'home';
 const pageNames = {home:'Explore',territorial:'Territorial diagnostic',thematic:'Thematic diagnostic',planning:'Planning and resources'};
-let dataset, state;
+let dataset, state, updateStatus;
 let areaSearch='', rankSearch='', rankOrder='desc', wholeMap=false, allAreaOpen=false;
 const fmt = value => displayValue(value, dataset?.country.locale || 'en');
 const areaFor = id => dataset.territories.find(area => area.id === id);
@@ -37,8 +39,8 @@ function indicatorControl() {
 function areaControls() {
   const groups=[...new Set(dataset.territories.map(area=>area.level))];
   const hits=areaSearch ? dataset.territories.filter(area=>[area.name,area.id,area.official_code].some(value=>String(value||'').toLocaleLowerCase().includes(areaSearch.toLocaleLowerCase()))) : [];
-  const hierarchy=page==='territorial'?hierarchyControls(dataset,state.selected):[];
-  const flatSelector=`<label class="field" for="area-select"><span>Selected area${hierarchy.length?' · all records':''}</span><select id="area-select" data-control="area">${groups.map(level=>`<optgroup label="${e(levelLabel(level))}">${dataset.territories.filter(area=>area.level===level).map(area=>`<option value="${e(area.id)}" ${area.id===state.selected?'selected':''}>${e(area.name)}${area.level==='national'?' · national':''}</option>`).join('')}</optgroup>`).join('')}</select></label>`;
+  const hierarchy=['territorial','planning'].includes(page)?hierarchyControls(dataset,state.selected):[];
+  const flatSelector=`<label class="field" for="area-select"><span>Selected area${hierarchy.length?' · all records':''}</span><select id="area-select" data-control="area">${groups.map(level=>`<optgroup label="${e(levelLabel(level))}">${dataset.territories.filter(area=>area.level===level).map(area=>`<option value="${e(area.id)}" ${area.id===state.selected?'selected':''}>${e(territoryOptionLabel(dataset,area))}${area.level==='national'?' · national':''}</option>`).join('')}</optgroup>`).join('')}</select></label>`;
   return `<div class="area-controls">${hierarchy.length?`<div class="hierarchy-controls"><p class="small-note">Showing <strong>${e(currentArea().name)}</strong>. Choose “Whole …” to make that parent the selected area and clear its lower-area selection.</p>${hierarchy.map((control,index)=>`<label class="field" for="hierarchy-${index}"><span>${e(control.levels.map(levelLabel).join(' / '))} · within ${e(control.parent.name)}</span><select id="hierarchy-${index}" data-control="hierarchy" data-parent="${e(control.parent.id)}">${control.context?`<option value="context" selected disabled>${e(control.context.label)}</option>`:''}${control.options.map(option=>`<option value="${e(option.value)}" ${option.value===control.value?'selected':''}>${e(option.label)}</option>`).join('')}</select></label>`).join('')}</div><details class="micro-details" data-all-area-selector ${allAreaOpen?'open':''}><summary>All-area selector</summary>${flatSelector}</details>`:flatSelector}
   <label class="field" for="area-search"><span>Find an area by name or code</span><input id="area-search" type="search" data-control="area-search" value="${e(areaSearch)}" autocomplete="off" placeholder="Name or code"></label>
   ${areaSearch?`<div class="search-results" aria-label="Area search results">${hits.length?hits.slice(0,50).map(area=>button('select',`${e(area.name)}<small>${e(levelLabel(area.level))} · ${e(area.official_code || area.id)}</small>`,`data-id="${e(area.id)}"`,'result-button')).join(''):'<p>No matching areas.</p>'}${hits.length>50?`<p>${hits.length} matches; narrow your search to see more.</p>`:''}</div>`:''}
@@ -60,6 +62,11 @@ function scopeBanner() {
   const coverage=countCoverage();
   return nationalOnly(dataset) ? `<div class="scope-banner"><strong>National statistics; local statistics not yet collected.</strong> ${coverage.local ? `${coverage.local} reference areas are selectable.` : 'No local area registry has been collected.'} Local selections show their own gaps and available documents; national figures are not local estimates.</div>` : `<div class="scope-banner"><strong>Acquired evidence, with explicit gaps.</strong> ${coverage.observed} of ${coverage.local} local areas have at least one observation. Coverage varies by indicator and period.</div>`;
 }
+function updateBanner() {
+  const sourceUpdate=planningSettings(dataset).update;
+  const stopped=updateStatus?.status==='stopped'?updateStatus:sourceUpdate?.status==='stopped'?sourceUpdate:null;
+  return stopped?`<p class="notice update-stopped" role="status"><strong>Update stopped — showing the last verified data.</strong> ${e(stopped.message)} Last successful update: ${e(stopped.last_success_at || 'Not recorded')}. Data edition: ${e(dataset.generated_at)}. Checked ${e(stopped.checked_at)}.</p>`:'';
+}
 function mapPanel({thematic=false,planning=false}={}) {
   const allFeatures=dataset.boundaries?.features || [];
   const selected=currentArea();
@@ -70,9 +77,9 @@ function mapPanel({thematic=false,planning=false}={}) {
   const rows=thematic?comparisonRows(dataset,state):[];
   const stats=distribution(rows);
   const values=new Map(rows.map(row=>[row.area.id,row.value]));
-  const docAreas = new Set(dataset.documents.map(doc=>doc.territory_id));
+  const mapSettings=planningSettings(dataset).map;
   const colour = id => {
-    if(planning)return docAreas.has(id)?'#2e806d':'#e3e7e8';
+    if(planning)return officialMapState(dataset,id).color;
     if(!thematic)return '#c1d9d1';
     const value=values.get(id);
     if(!finite(value))return '#dedfdf';
@@ -80,14 +87,14 @@ function mapPanel({thematic=false,planning=false}={}) {
     const colours=['#dcece5','#bad8ca','#85bba5','#4a977c','#226c57'];
     return colours[Math.min(4,Math.floor(5*(value-stats.min)/(stats.max-stats.min)))];
   };
-  const title=planning?'Acquired documents by area':thematic?`${currentMetric()?.name || 'Indicator'} · ${state.period || 'No period'}`:'Location';
+  const title=planning?(mapSettings.mode==='official_status'?`Documented institutional states · ${categoryLabels[mapSettings.category]} · ${mapSettings.period}`:'Material references by area'+(mapSettings.category?' · '+categoryLabels[mapSettings.category]:'')+(mapSettings.period?' · '+mapSettings.period:'')):thematic?`${currentMetric()?.name || 'Indicator'} · ${state.period || 'No period'}`:'Location';
   const sourceIds=[...new Set(features.map(feature=>feature.properties?.source_id).filter(Boolean))];
   const boundarySources=dataset.sources.filter(source=>sourceIds.includes(source.id) || /boundary|boundaries/i.test(source.id+' '+source.name));
   const chosenTab=geometry.paths.find(path=>path.id===state.selected)?.id || geometry.paths[0]?.id;
   return `<section class="panel map-panel" aria-labelledby="map-title"><div class="panel-heading"><div><p class="eyebrow">${e(levelLabel(targetLevel))} reference boundaries</p><h2 id="map-title">${e(title)}</h2></div>${selected.level!=='national'&&geometry.paths.length?button('map-extent',wholeMap?'Fit selected area':'Show whole country','','text-button'):''}</div>
   ${geometry.paths.length ? `<svg class="geographic-map" viewBox="0 0 760 400" role="group" aria-label="${e(title)}. Select an area with Enter. Arrow keys move between boundaries."><title>${e(title)} — ${e(dataset.country.name)}; ${fitId&&geometry.selectedHasGeometry?`view fitted to ${e(selected.name)}`:'whole available boundary layer'}</title><rect width="760" height="400" fill="#f4f8f7"/>${geometry.paths.map(path=>{const area=areaFor(path.id),value=values.get(path.id);const label=`${area?.name || path.id}${thematic?`: ${finite(value)?fmt(value)+' '+currentMetric().unit:'No data'} for ${state.period}`:''}`;return `<path d="${path.d}" fill="${colour(path.id)}" fill-rule="evenodd" class="map-area ${path.id===state.selected?'selected':''}" role="button" aria-label="${e(label)}" aria-pressed="${path.id===state.selected}" tabindex="${path.id===chosenTab?'0':'-1'}" data-action="select" data-id="${e(path.id)}" data-map-id="${e(path.id)}"><title>${e(label)}</title></path>`;}).join('')}</svg>` : '<div class="map-unavailable"><strong>No verified boundaries available for this level.</strong><p>Use the area selector and search. Acquired statistics and documents remain accessible.</p></div>'}
   ${selected.level!=='national'&&!features.some(feature=>feature.properties?.territory_id===selected.id)?`<p class="missing-note">No boundary is joined to ${e(selected.name)} at this map level. No nearby polygon is substituted.</p>`:''}
-  <p class="map-legend">${planning?'Green = a document record has been collected; gray = no document collected. These are acquisition states, not plan approval states.':thematic?`Colors use five equal value intervals across all ${e(levelLabel(state.level).toLowerCase())} areas for this indicator and period; search does not change the scale. Gray = No data. High values are not automatically better.`:'A location map. Fill colors do not represent population or service levels.'} <span class="legend-selected">Gold outline</span> = selected area.</p>
+  <p class="map-legend">${planning?(mapSettings.mode==='official_status'?`${mapSettings.statuses.map(status=>`<span class="legend-item"><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" fill="${e(status.color)}"/></svg> ${e(status.label)}</span>`).join(' · ')}. Gray = no matched evidence; amber = conflicting evidence. States apply only to ${e(mapSettings.period)} and this document category. Select an area to inspect the cited evidence.`:`Green = a verified material reference is available; gray = no verified reference collected. ${mapSettings.period?'Applies only to '+e(mapSettings.period)+'.':'Includes different document periods.'}${mapSettings.category?' Category: '+e(categoryLabels[mapSettings.category])+'.':''} These are collection states, not counts of approved plans.`):thematic?`Colors use five equal value intervals across all ${e(levelLabel(state.level).toLowerCase())} areas for this indicator and period; search does not change the scale. Gray = No data. High values are not automatically better.`:'A location map. Fill colors do not represent population or service levels.'} <span class="legend-selected">Gold outline</span> = selected area.</p>
   <p class="source-note">Boundary source: ${boundarySources.length?boundarySources.map(source=>link(source.url,source.name)).join(' · '):'See the source register; boundary authority and edition must be verified.'} Reference boundaries are not a legal boundary certification. Keyboard: arrows / Home / End, then Enter or Space.</p>${dataset.country.geography_note?`<p class="source-note"><strong>Geographic scope:</strong> ${e(dataset.country.geography_note)}</p>`:''}</section>`;
 }
 function facts() {
@@ -151,18 +158,29 @@ function thematic() {
   <section class="panel selection-detail"><div><h2>${e(currentArea().name)} — selected area</h2>${identity()}${areaControls()}</div><div><p class="eyebrow">${e(indicator.name)} · ${e(state.period)} · ${e(indicator.unit)}</p><p class="selected-value">${fmt(selected.value)}</p><p>${e(statusLabel(selected.status))}. ${currentArea().level==='national'?'National observations are not part of the local ranking.':rank?`Rank ${rank} of ${stats.count} observed areas (${rankOrder==='desc'?'highest':'lowest'} first).`:currentArea().level!==state.level?'Selected area is outside the comparable geographic level.':'No local rank.'}</p>${stateMessage(selected)}${sourceNote(indicator,selected.row)}<div class="actions">${pageLink('territorial','Open territorial diagnostic')}${pageLink('planning','Open planning resources')}${button('comparison-csv','Comparison CSV')}</div></div></section>
   <section class="panel"><h2>Selected-area history</h2>${seriesFigure(indicator)}</section>`;
 }
-function documentList(documents) {
-  return documents.length ? `<ul class="document-list">${documents.map(doc=>`<li><h3>${link(doc.url,doc.title)}</h3><p>${e(doc.kind)} · ${e(doc.period || 'Period not recorded')}</p><p><span class="status-badge">Acquisition: ${e(statusLabel(doc.availability))}</span> <span class="status-badge neutral">Official status: ${e(statusLabel(doc.official_status || 'unverified'))}</span></p>${doc.source_id?sourceNote(null,{source_id:doc.source_id}):''}</li>`).join('')}</ul>` : '<p class="missing-note">No documents have been collected for this area. This does not establish whether a plan exists or whether it is approved.</p>';
-}
 function planning() {
+  const settings=planningSettings(dataset),documents=planningDocuments(dataset,state.selected);
+  const nationalDocuments=state.selected===dataset.country.national_territory_id?[]:planningDocuments(dataset,dataset.country.national_territory_id);
+  const refs=new Set(dataset.documents.filter(hasDocumentReference).map(doc=>doc.territory_id));
+  const groups=documentGroups(dataset,state.selected);
   const local=dataset.territories.filter(area=>area.level!=='national');
-  const documentIds=new Set(dataset.documents.map(doc=>doc.territory_id));
-  const documents=dataset.documents.filter(doc=>doc.territory_id===state.selected);
-  const nationalDocuments=state.selected===dataset.country.national_territory_id?[]:dataset.documents.filter(doc=>doc.territory_id===dataset.country.national_territory_id);
   const observed=dataset.indicators.filter(indicator=>observationState(dataset,state.selected,indicator.id,state.period).value!==null).length;
-  return `<div class="summary-grid three"><article class="summary"><span>Reference local areas</span><strong>${local.length}</strong><small>Provider registry; identity and edition remain visible</small></article><article class="summary"><span>Local areas with document records</span><strong>${local.filter(area=>documentIds.has(area.id)).length} / ${local.length}</strong><small>Acquisition coverage; not plan approval counts</small></article><article class="summary"><span>Acquired document records</span><strong>${dataset.documents.length}</strong><small>Includes separately identified national documents</small></article></div>
-  <section class="panel planning-controls">${areaControls()}${periodControl('planning-period')}</section><div class="planning-grid">${mapPanel({planning:true})}<section class="panel planning-resources"><h2>${e(currentArea().name)}</h2>${identity()}<h3>Planning base document</h3><p class="notice compact"><strong>Generic, unapproved outline.</strong> The country’s official form has not yet been verified. Use this editable evidence aid to begin local review; it does not record official approval or resident agreement.</p><p>${observed} of ${dataset.indicators.length} indicators have an observed value for this area in ${e(state.period || 'the selected period')}. Missing evidence is identified inside each download.</p><div class="download-actions">${button('planning-markdown','Download editable Markdown','','button')}${button('planning-csv','Evidence CSV')}${button('planning-html','Print-ready HTML')}</div><p class="small-note">Ready to download from the current area and period. Markdown and HTML share the same text and evidence. HTML can be printed using your browser. These are generic aids, not official country forms.</p><details><summary>Preview planning base</summary><pre class="planning-preview">${e(planningMarkdown(dataset,state.selected,state.period))}</pre></details><h3>Acquired local documents</h3>${documentList(documents)}</section></div>
-  ${nationalDocuments.length?`<section class="panel"><h2>National reference documents — ${e(dataset.country.name)}</h2><p>National references remain separate from the selected area’s documents.</p>${documentList(nationalDocuments)}</section>`:''}<div class="end-actions">${pageLink('territorial','Review territorial evidence')}${pageLink('thematic','Compare across areas')}</div>`;
+  const outputs={markdown:button('planning-markdown','Download editable Markdown','','button'),html:button('planning-html','Print-ready HTML'),evidence_csv:button('planning-csv','Evidence CSV'),documents_csv:button('documents-csv','Materials and findings CSV')};
+  const links=settings.related_links.filter(item=>!item.territory_id||item.territory_id===state.selected).map(item=>({label:item.label,url:relatedResourceUrl(item.url,base,routeQuery(dataset,state))})).filter(item=>item.url);
+  const gaps=selectedGaps(dataset,state.selected);
+  return '<section class="panel planning-overview"><h2>'+e(settings.title)+'</h2><p>'+e(settings.purpose)+'</p><p class="small-note">Verified material references for '+local.filter(area=>refs.has(area.id)).length+' of '+local.length+' local records'+(refs.has(dataset.country.national_territory_id)?'; national reference materials also available':'')+'. Coverage varies by category and period; this is not a count of completed or approved plans.</p></section>'+
+  '<section class="panel planning-controls"><h2>Choose an area</h2>'+areaControls()+identity()+'</section>'+
+  '<div class="planning-grid">'+mapPanel({planning:true})+'<section class="panel planning-resources"><h2>'+e(currentArea().name)+' — available materials</h2><p>Materials keep their own plan period, fiscal year or quarter. The statistical year below does not filter or relabel them.</p>'+
+  (groups.some(group=>group.documents.length)?'<nav class="document-contents" aria-label="Available material categories">'+groups.filter(group=>group.documents.length).map(group=>'<a href="#documents-'+e(group.id)+'">'+e(group.label)+'</a>').join('')+'</nav>':'')+
+  renderDocumentGroups(dataset,state.selected)+'</section></div>'+
+  '<section class="panel planning-output"><h2>Prepare a working evidence base</h2><p class="notice compact"><strong>Generated working material — unapproved.</strong> These outputs bring together selected-area statistics and collected references. They do not replace the published originals or establish official approval, targets or resident agreement.</p><div class="control-row">'+periodControl('planning-period')+'</div><p>'+observed+' of '+dataset.indicators.length+' statistical indicators have an observed value for '+e(currentArea().name)+' in '+e(state.period || 'the selected period')+'. '+documents.length+' selected-area material records retain their own periods.</p><div class="download-actions">'+settings.outputs.map(format=>outputs[format] || '').join('')+'</div>'+
+  (settings.outputs.length?'<p class="small-note">Evidence CSV contains the selected statistical year. Materials CSV, when adopted, contains the original document periods and findings. Markdown and HTML include both with source definitions and explicit gaps.</p>':'<p class="missing-note">No generated download format is adopted for this project. Use the original references and territorial evidence; record the country-specific output workflow in the handoff.</p>')+
+  (settings.outputs.includes('markdown')||settings.outputs.includes('html')?'<details><summary>Preview planning base</summary><pre class="planning-preview">'+e(planningMarkdown(dataset,state.selected,state.period))+'</pre></details>':'')+
+  (gaps.length?'<details><summary>Outstanding evidence and next actions</summary><ul>'+gaps.map(gap=>'<li><strong>'+e(statusLabel(gap.status))+'</strong> — '+e(gap.detail)+'<p class="small-note">Next: '+e(gap.next_action || 'Verify the responsible source.')+'</p></li>').join('')+'</ul></details>':'')+'</section>'+
+  (links.length?'<section class="panel"><h2>Related investment, finance and official services</h2><ul>'+links.map(item=>'<li><a href="'+e(item.url)+'">'+e(item.label)+'</a></li>').join('')+'</ul></section>':'')+
+  (nationalDocuments.length?'<section class="panel"><h2>National reference materials — '+e(dataset.country.name)+'</h2><p>National materials are shown separately and are not attributed to '+e(currentArea().name)+'.</p>'+nationalDocuments.map(doc=>renderDocument(dataset,doc)).join('')+'</section>':'')+
+  (settings.system?'<section class="panel"><h2>Country planning framework</h2><p>'+e(settings.system.label)+' · '+e(settings.system.scope)+'</p><p>'+e(settings.system.cycle)+'</p>'+settings.system.source_ids.map(id=>sourceNote(null,{source_id:id})).join('')+'</section>':'')+
+  '<div class="end-actions">'+pageLink('territorial','Review territorial evidence')+pageLink('thematic','Compare across areas')+'</div>';
 }
 function home() {
   const coverage=countCoverage();
@@ -189,7 +207,7 @@ function render() {
   if(previousDisclosure)allAreaOpen=previousDisclosure.open;
   const selection=active instanceof HTMLInputElement ? [active.selectionStart,active.selectionEnd] : null;
   updateHeader();
-  app.innerHTML=`<div class="page-heading"><div><p class="eyebrow">${e(dataset.country.name)} · ${e(pageNames[page])}</p><h1>${page==='home'?e(dataset.country.name):e(currentArea().name)}</h1></div><div class="actions">${button('share','Share selection')}${button('print','Print page')}</div></div><p id="selection-status" class="sr-only" aria-live="polite">Selected ${e(currentArea().name)}, ${e(currentMetric()?.name || 'no indicator')}, ${e(state.period)}.</p><p id="action-status" class="action-status" role="status"></p>${state.notices.map(notice=>`<p class="notice">${e(notice)}</p>`).join('')}${scopeBanner()}${({home,territorial,thematic,planning}[page] || home)()}${register()}`;
+  app.innerHTML=`<div class="page-heading"><div><p class="eyebrow">${e(dataset.country.name)} · ${e(pageNames[page])}</p><h1>${page==='home'?e(dataset.country.name):e(currentArea().name)}</h1></div><div class="actions">${button('share','Share selection')}${button('print','Print page')}</div></div><p id="selection-status" class="sr-only" aria-live="polite">Selected ${e(currentArea().name)}, ${e(currentMetric()?.name || 'no indicator')}, ${e(state.period)}.</p><p id="action-status" class="action-status" role="status"></p>${state.notices.map(notice=>`<p class="notice">${e(notice)}</p>`).join('')}${updateBanner()}${page==='planning'?'':scopeBanner()}${({home,territorial,thematic,planning}[page] || home)()}${register()}`;
   if(focusId) {const next=document.getElementById(focusId);const disclosure=next?.closest('details');if(disclosure)disclosure.open=true;next?.focus({preventScroll:true});if(selection&&next instanceof HTMLInputElement)try{next.setSelectionRange(...selection);}catch{}}
   if(mapId) [...document.querySelectorAll('[data-map-id]')].find(node=>node.dataset.mapId===state.selected)?.focus({preventScroll:true});
   if(rankId) {
@@ -279,6 +297,7 @@ app.addEventListener('click',async event=>{
     else if(action==='print')window.print();
     else if(action==='planning-markdown')download(planningMarkdown(dataset,state.selected,state.period),`${stem}-planning-base.md`,'text/markdown;charset=utf-8');
     else if(action==='planning-html')download(planningHtml(dataset,state.selected,state.period),`${stem}-planning-base.html`,'text/html;charset=utf-8');
+    else if(action==='documents-csv')download(documentsCsv(dataset,state.selected),`${safeFilename(dataset.country.id+'-'+state.selected)}-materials.csv`,'text/csv;charset=utf-8');
     else if(action==='planning-csv')download(evidenceCsv(dataset,state.selected,state.period),`${stem}-evidence.csv`,'text/csv;charset=utf-8');
     else if(action==='indicator-csv')download(evidenceCsv(dataset,state.selected,state.period,[target.dataset.id]),`${stem}-${safeFilename(target.dataset.id)}.csv`,'text/csv;charset=utf-8');
     else if(action==='series-csv')download(seriesCsv(target.dataset.id,target.dataset.territory),`${safeFilename(target.dataset.territory)}-${safeFilename(target.dataset.id)}-history.csv`,'text/csv;charset=utf-8');
@@ -296,6 +315,10 @@ try {
   if(!response.ok)throw new Error(`Data request returned HTTP ${response.status}`);
   dataset=await response.json();
   if(dataset.schema_version!=='0.2'||!dataset.country||!Array.isArray(dataset.territories)||!Array.isArray(dataset.indicators)||!Array.isArray(dataset.observations))throw new Error('Unsupported or incomplete dataset');
+  const statusResponse=await fetch(new URL('data/update-status.json',base),{cache:'no-store'}).catch(()=>null);
+  if(statusResponse?.ok)updateStatus=await statusResponse.json().catch(()=>null);
+  pageNames.planning=planningSettings(dataset).title;
+  document.querySelectorAll('[data-page-link="planning"]').forEach(anchor=>anchor.textContent=pageNames.planning);
   state=initialState(dataset,location.search);
   render();
 } catch(error) {

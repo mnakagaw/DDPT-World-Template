@@ -2,7 +2,7 @@
 
 目的は、初期収集に現地の地方統計・地域対応・計画資料を追加し、次の更新でも再現できるようにすること。World Bank全国値とgeoBoundaries参照境界は出発点であり、地方資料の調査を代替しない。
 
-ランタイム契約は[IMPLEMENTATION_CONTRACT.md](IMPLEMENTATION_CONTRACT.md)を正とし、変更前に`lib/collect.mjs`、`lib/validate.mjs`、`lib/generate.mjs`と対象テストを読む。以下の補助台帳やアダプター配置は案件側の作業規約で、既に実装された自動plugin読込を意味しない。
+ランタイム契約は[IMPLEMENTATION_CONTRACT.md](IMPLEMENTATION_CONTRACT.md)、計画資料の任意拡張は[PLANNING_DATA_CONTRACT.md](PLANNING_DATA_CONTRACT.md)を正とし、変更前に`lib/collect.mjs`、`lib/validate.mjs`、`lib/generate.mjs`と対象テストを読む。以下の補助台帳やアダプター配置は案件側の作業規約で、既に実装された自動plugin読込を意味しない。
 
 ## 1. 取得前に資料を特定する
 
@@ -44,15 +44,16 @@ data/dashboard.json          検証して表示するdataset
 | `observations` | 各行に`territory_id`, `indicator_id`, `period`, `value`, `status`, `source_id` |
 | `sources` | 各行に`id`, `name`, `url`, `publisher`, `retrieved_at`, `reference_period`, `status`, `sha256`, `raw_path`, `license`, `note` |
 | `boundaries` | GeoJSON `FeatureCollection`。各Featureの`properties.territory_id`は`territories[].id`を参照 |
-| `documents` | 各行に`id`, `territory_id`, `title`, `url`, `period`, `kind`, `availability`, `official_status`, `source_id` |
-| `gaps` | 各行に`category`, `status`, `detail`, `next_action` |
+| `documents` | 従来の主要項目は`id`, `territory_id`, `title`, `url`, `period`, `kind`, `availability`, `official_status`, `source_id`。`category`・`target_period`等の任意拡張と項目間の条件は計画資料データ契約を参照 |
+| `planning` | 任意。国別の制度説明・資料区分・出力・地図・関連リンク・更新状態。正確な属性と既定動作は計画資料データ契約を参照 |
+| `gaps` | 各行に`category`, `status`, `detail`, `next_action`。地域・資料に固有なら任意の`territory_id`・`source_id`で範囲を明示 |
 | `collection` | `status`, `adapters`, `notes`。利用したアダプターと収集範囲を説明 |
 
 IDは資料・指標・地域を区別できる安定した文字列を使う。新しい公式指標を既存WDI IDへ割り当てる場合は、定義と表示上の出典参照が一致するかコードで確認する。確認できなければ別ID・別系列を作る。
 
-`value`は検証した数値または`null`とし、欠測を0へ変えない。数値状態の意味は[国別データ規則](03_COUNTRY_AND_DATA.md)を参照する。0.2のvalidatorで使う値は次のとおり。実装更新時はvalidatorとrendererも確認する。
+`value`は検証した数値または`null`とし、欠測を0へ変えない。数値状態の意味は[国別データ規則](03_COUNTRY_AND_DATA.md)を参照する。現実装のschema 0.2で使う値は次のとおり。実装更新時はvalidatorとrendererも確認する。
 
-| 項目 | 0.2の許容値 |
+| 項目 | schema 0.2の許容値 |
 |---|---|
 | `observations[].status` | `observed / missing / not_applicable / suppressed`。`observed`は有限数値、その他は`value: null` |
 | `sources[].status` | `ready / partial / failed / unavailable / not_collected` |
@@ -65,7 +66,19 @@ IDは資料・指標・地域を区別できる安定した文字列を使う。
 
 原本が保存済みなら`raw_path`は案件ルート基準の相対パス、`sha256`はそのファイルのhashとする。存在しない原本や未取得資料へ架空のhashを付けない。既存collectorのページ別`raw_files`と取得receiptも保持し、代表ファイル1件のhashで全ページ取得を証明したことにしない。抽出したPDFページ、Excelシート・範囲、APIクエリ、コード対応根拠、観測単位の細分類・追加の版情報は`evidence/SOURCES.md`等で追跡する。追加属性が必要なら、0.2で自動表示・保存されると想定せず契約を拡張して検証する。
 
-文書の`availability: "link_verified"`はリンクを確認した状態で、本文取得・全文抽出・公式承認とは別である。`official_status`は公式の根拠を確認するまで`"unverified"`とする。実際の公開・承認状態を採用する場合は根拠を保存し、対応する表示を確認する。
+文書の`availability: "link_verified"`はリンクを確認した状態で、本文取得・全文抽出・公式承認とは別である。`official_status`は公式の根拠を確認するまで`"unverified"`とする。旧形式の状態文字列が残る場合も、確認済みに格上げしない。
+
+### 計画・予算・実施・評価資料の追加
+
+1. ４区分は資料探索の観点として調べる。対象階層、発行・承認主体、正式な資料名、計画周期、会計年度、更新頻度、公開・認証・利用条件をsourceごとに記録する。国際的に同じ章立て・周期・評価尺度があると仮定しない。
+2. 優先する公開資料の本文を実際に取得する。APIはクエリとページ分割、Excelはシート・セル範囲、PDFは頁・表・注記、HTMLは見出し・表を記録し、保存原本から再抽出できるアダプターを作る。OCRや手採録は原図と照合するまで内容確認済みにしない。
+3. 以下の地域結合手順に加え、`documents[].territory_match`へ照合した内部`territory_id`、国・地域型・コード体系・公式コード・境界版・照合方法・資料箇所・確認日を保存する。照合した内部IDは文書の`territory_id`と完全一致させ、公式コードが双方nullでも別地域への割当を許さない。この内部IDは公式コードの代用ではない。公式コードが未確認なら新しいコードを作らない。旧計画は適合する当時の地域台帳と期間を使い、同名の現地域へ強制結合しない。
+4. `target_period`に原資料のラベルと種類を保存する。会計年度、四半期、複数年計画、基準日時点を統計の単年へ変換しない。旧`period`を併記する場合は同じラベルにする。範囲日付を持つ場合は順序と地域の有効期間を検証する。
+5. 取得進捗は`availability`の１軸で記録する。`body_acquired / content_extracted / content_verified`には参照する`sources`の実原本`raw_path`と`sha256`が必要。本文を確認してから、出典箇所付き`content`や`findings`を作る。公式状態を採用する根拠は別の`official_evidence`へ置く。本文・所見・公式根拠を追加する文書は地域同定根拠も必須になる。
+6. `findings`の予算・歳入・歳出・実施結果・公式評価・予算執行・計画達成を混同しない。定義・対象・資料期間・根拠箇所を付け、数値なら単位と状態も必要とする。得点は尺度を確認し、欠測はnull、実測ゼロは0を保つ。文書をまたぐ合計や比率を自動で作らない。
+7. 調査した制度と採用判断を設計profileへ記録し、実際に提供する設定だけ`dataset.planning`へ変換する。`sections`の外の資料も到達可能にし、４区分を必須ページ化しない。地図を公式状態表示にする場合は資料区分・正確な資料期間・状態定義を設定し、欠落・矛盾のある証拠を未確認とする。既存の投資・財政から同じ資料IDを参照できる経路と必要な出力だけを採用する。
+
+フィールドの条件・許容値は[計画資料データ契約](PLANNING_DATA_CONTRACT.md)で確認する。検証器が通っただけでは、原本の内容・公式性・地域同定が正しいことの証明にはならない。取得不能時は`gaps`に地域・source・試行結果・次の操作を残し、取得済みの原資料や根拠付き整理欄を使える代替を仕上げる。
 
 ## 4. 地域結合の前にコードと出典を検証する
 
@@ -96,6 +109,8 @@ node <template>/scripts/serve.mjs --dir <country-project>/site --port 4173
 ```
 
 `<template>`と`<country-project>`は実際のパスへ置き換える。`generateSite({dataset, outDir})`を直接使う場合も、先に同じデータ検証を行う。生成器へファイルを置くだけで読まれる自動アダプター機構があるとは想定しない。
+
+資料更新では、前版との文書ID・地域対応・期間・件数・代表的な本文／数値・公式根拠の差も照合する。取得不能・抽出失敗・検証不合格の候補は正常版へ昇格しない。最後の正常データを保持し、元資料更新の停止は`planning.update`の`status: "stopped"`、確認日時、最終成功日時、理由で説明する。失敗した候補の証拠と再試行コマンドを`HANDOFF.md`へ残す。サイト生成・配備の失敗は別の記録で扱い、データ収集が成功したと偽らない。
 
 ## 6. 収集を止める前の確認
 

@@ -1,0 +1,592 @@
+{
+  "input_version": "1",
+  "audit_checked_at": "2026-09-13T07:07:49.442Z",
+  "original_audit_sha256": "d3f85ce27eebe9134b9c57df4bae20fb5dd0c0f67bc39881405e4bd37f6b1d5b",
+  "description": "Small reviewed excerpts and exact values only. Original PDF/HTML files stay outside Git; no personal-mail URL is included.",
+  "sources": [
+    {
+      "id": "a-moca-pmd-2024-2028",
+      "name": "Plan Municipal de Desarrollo 2024-2028 - Moca",
+      "url": "https://www.sismap.gob.do/Municipal/uploads/evidencias/638693345716560798-2.02_07-12_-Plan_Municipal_de_Desarrollo_2024_2028_Moca.pdf",
+      "publisher": "Ayuntamiento de Moca; hosted by SISMAP Municipal",
+      "retrieved_at": "2026-09-13T06:59:19.437Z",
+      "reference_period": "2024-2028",
+      "status": "ready",
+      "raw_path": "raw/A-moca-pmd-2024-2028.pdf",
+      "sha256": "bcb164b3b48755c28bc634a2a7551d7c742950648856d0ed42207384be10589e",
+      "license": "Re-use licence not verified; official source retained for this local evidence audit.",
+      "note": "SISMAPに承認決議の別リンクがあるが、この収集では決議本文を未取得。計画PDFの存在や評価100%だけで法的承認を認定しない。 全文・全事業の検証はしていない。"
+    },
+    {
+      "id": "a-moca-sismap-2-02",
+      "name": "Ayuntamiento de Moca — 2.02 Plan de Desarrollo Municipal",
+      "url": "https://www.sismap.gob.do/municipal/organismoevidenciasmunicipales/id/20913",
+      "publisher": "Ministerio de Administración Pública / SISMAP Municipal",
+      "retrieved_at": "2026-09-13T06:59:19.156Z",
+      "reference_period": "Source listing checked 2026-09-13",
+      "status": "ready",
+      "raw_path": "raw/A-moca-sismap.html",
+      "sha256": "f597ef8cb069858caef793854a7c691f9d7b32a043c4632c25ab94518faf69cb",
+      "license": "Re-use licence not verified; official source retained for this local evidence audit.",
+      "note": "取得日時は実際の制度評価日ではない。期限文字列を観測年にしない。 他の期限切れ指標や総合点を計画2.02の値へ混ぜない。"
+    },
+    {
+      "id": "b-yumbe-ddp-2020-2025",
+      "name": "Third District Development Plan 2020/2021-2024/2025",
+      "url": "https://yumbe.go.ug/sites/default/files/publications/YUMBE%20DDPIII%20221111_edited%20ddp_yumbe%20dlg%201.pdf",
+      "publisher": "Yumbe District Local Government",
+      "retrieved_at": "2026-09-13T06:59:19.440Z",
+      "reference_period": "2020/2021-2024/2025",
+      "status": "ready",
+      "raw_path": "raw/B-yumbe-ddp-2020-2025.pdf",
+      "sha256": "d152148ebf5ea6eb19142e26e56d8a95a260cb4a964ad2c99f479e958f96a827",
+      "license": "Re-use licence not verified; official source retained for this local evidence audit.",
+      "note": "この期間の計画を検証用に選んだ。現在の最新版や現行の法的承認は確認していない。 2018評価と同じ計画期間の評価ではない。"
+    },
+    {
+      "id": "b-yumbe-plan-register",
+      "name": "YUMBE DLG INFORMATION RESOURCE DOCUMENTS",
+      "url": "https://yumbe.go.ug/yumbe-dlg-information-resource-documents",
+      "publisher": "Yumbe District Local Government",
+      "retrieved_at": "2026-09-13T07:03:52.355Z",
+      "reference_period": "Source listing checked 2026-09-13",
+      "status": "ready",
+      "raw_path": "raw/B-yumbe-plan-page.html",
+      "sha256": "2a2e77fdb01d38ee03182b4f559a8cde5b4cc06ded14f3e412c054699eec810f",
+      "license": "Re-use licence not verified; official source retained for this local evidence audit.",
+      "note": "2022年評価資料の本文は本収集では読んでいない。2018年を最新評価とはしない。"
+    },
+    {
+      "id": "b-yumbe-q3-2024-25",
+      "name": "Local Government Quarterly Performance Report FY 2024/25 — Yumbe District — Quarter 3",
+      "url": "https://budget.finance.go.ug/sites/default/files/Indivisual%20LG%20Budgets/934%20Yumbe%20District%20Quarter%203.pdf",
+      "publisher": "Uganda Ministry of Finance, Planning and Economic Development; report submitted by Yumbe District",
+      "retrieved_at": "2026-09-13T07:03:52.237Z",
+      "reference_period": "FY 2024/25",
+      "status": "ready",
+      "raw_path": "raw/B-yumbe-q3-2024-25.pdf",
+      "sha256": "e55d5b4c60993fcb8e5c68d14eaaa0d3458ac84d8003dc919163cc01174585ed",
+      "license": "Re-use licence not verified; official source retained for this local evidence audit.",
+      "note": "p.3の説明文は表と異なりBillionと表記する。正規化値の単位は視認したp.2 A1のUshs 000sに限定。 p.2 A2の支出総計40,309,900とp.3説明の40,319,238が不一致。支出値は今回の確定値に採用しない。 Approved/Revisedの制度状態は当該表の列名としてのみ保持する。別の承認行為や監査意見を推定しない。"
+    },
+    {
+      "id": "b-yumbe-lgpa-2018",
+      "name": "Local Government Performance Assessment — Yumbe District — 2018",
+      "url": "https://budget.finance.go.ug/sites/default/files/yumbe_district_assessment_lgpa_full_report-compressed.pdf",
+      "publisher": "Uganda Ministry of Finance, Planning and Economic Development (hosting); Local Government Performance Assessment",
+      "retrieved_at": "2026-09-13T06:59:19.445Z",
+      "reference_period": "2018 assessment; inspected evidence includes FY 2017/18 reporting and FY 2018/19 submissions",
+      "status": "ready",
+      "raw_path": "raw/B-yumbe-lgpa.pdf",
+      "sha256": "7af834a51665b3e2fe45395888748b9b86657b8e5fe39d6d68c05db6251cd9aa",
+      "license": "Re-use licence not verified; official source retained for this local evidence audit.",
+      "note": "原本にはVote Code556、2024/25財政資料には934がある。コード体系・時点を保ち、数字で統計IDと結合しない。 2022年評価へのリンクも地区サイトにあるが未収集。2018年を最新値として提示しない。"
+    },
+    {
+      "id": "b-yumbe-ubos-id-2024",
+      "name": "District catalogue for subregion 34",
+      "url": "https://statistics.ubos.org/nphc/api/get_districts.php?subregion_code=34",
+      "publisher": "Uganda Bureau of Statistics — NPHC 2024 portal",
+      "retrieved_at": "2026-09-13T07:03:52.357Z",
+      "reference_period": "NPHC 2024 portal catalogue",
+      "status": "ready",
+      "raw_path": "raw/B-yumbe-ubos-catalog.json",
+      "sha256": "5488a4e9b35496889df644544e0f82bcbfbe3b993a17af47adbc96d330c82512",
+      "license": "Re-use licence not verified; official source retained for this local evidence audit.",
+      "note": "これだけでは過去の計画・評価と2024国勢調査の境界が完全一致することを証明しない。"
+    },
+    {
+      "id": "c-adjumani-plan-link-only",
+      "name": "Publications — District Development Plan III listing",
+      "url": "https://adjumani.go.ug/publications",
+      "publisher": "Adjumani District Local Government",
+      "retrieved_at": "2026-09-13T06:59:19.449Z",
+      "reference_period": "2020/2021-2024/2025 (listing only)",
+      "status": "ready",
+      "raw_path": "raw/C-adjumani-publications.html",
+      "sha256": "1fef283d62a1d1ecbdc9310199166f5c3c9accd8cbbcf67595f76a5f46d1e068",
+      "license": "Re-use licence not verified; official source retained for this local evidence audit.",
+      "note": "個人メールURLへアクセスしていない。具体的なメールURLはこの機械可読成果・公開画面に含めない。 ページには人口数もあるが観測年・対象定義未確認のため数値に採用しない。 未取得は計画不存在・未承認を意味しない。"
+    }
+  ],
+  "countries": [
+    {
+      "id": "DOM",
+      "iso2": "DO",
+      "name": "Dominican Republic",
+      "out_name": "dom",
+      "territories": [
+        {
+          "id": "moca",
+          "name": "Moca",
+          "level": "municipality",
+          "type": "municipality",
+          "parent_id": "DOM",
+          "official_code": null,
+          "code_system": "Source-identified municipality; official crosswalk pending",
+          "boundary_version": null
+        }
+      ],
+      "documents": [
+        {
+          "id": "moca-pmd",
+          "territory_id": "moca",
+          "category": "plan",
+          "title": "Moca Municipal Development Plan 2024-2028",
+          "kind": "plan",
+          "url": "https://www.sismap.gob.do/Municipal/uploads/evidencias/638693345716560798-2.02_07-12_-Plan_Municipal_de_Desarrollo_2024_2028_Moca.pdf",
+          "period": "2024-2028",
+          "target_period": {
+            "label": "2024-2028",
+            "kind": "multi_year"
+          },
+          "availability": "content_verified",
+          "official_status": "unverified",
+          "source_id": "a-moca-pmd-2024-2028",
+          "territory_match": {
+            "territory_id": "moca",
+            "country_id": "DOM",
+            "type": "municipality",
+            "code_system": "Source-identified municipality; official crosswalk pending",
+            "official_code": null,
+            "boundary_version": null,
+            "method": "The SISMAP organism 20913 page names Ayuntamiento de Moca and links the exact PMD; PDF page 8 names the municipality. SISMAP organism ID is not an official geographic code. The geographic crosswalk and historical boundary are not verified.",
+            "source_id": "a-moca-pmd-2024-2028",
+            "locator": "PDF page 8, printed page 7; matched attachment in SISMAP organism 20913",
+            "checked_at": "2026-09-13T07:00:00.783Z"
+          },
+          "content": {
+            "summary": "The plan covers municipal diagnosis, institutional, social, economic and environmental issues, a future vision and projects.",
+            "priorities": [
+              "Improve food security through appropriate agricultural land use; recover public spaces."
+            ],
+            "evidence": {
+              "source_id": "a-moca-pmd-2024-2028",
+              "locator": "PDF page 8, printed page 7, presentation; PDF pages 4-6, contents",
+              "checked_at": "2026-09-13T07:00:00.783Z"
+            }
+          }
+        },
+        {
+          "id": "moca-sismap-snapshot",
+          "territory_id": "moca",
+          "category": "evaluation",
+          "title": "SISMAP Municipal - planning indicator snapshot",
+          "kind": "evaluation",
+          "url": "https://www.sismap.gob.do/municipal/organismoevidenciasmunicipales/id/20913",
+          "period": "Snapshot retrieved 2026-09-13",
+          "target_period": {
+            "label": "Snapshot retrieved 2026-09-13",
+            "kind": "as_of",
+            "start": "2026-09-13",
+            "end": "2026-09-13"
+          },
+          "availability": "content_verified",
+          "official_status": "unverified",
+          "source_id": "a-moca-sismap-2-02",
+          "territory_match": {
+            "territory_id": "moca",
+            "country_id": "DOM",
+            "type": "municipality",
+            "code_system": "Source-identified municipality; official crosswalk pending",
+            "official_code": null,
+            "boundary_version": null,
+            "method": "The SISMAP organism 20913 page names Ayuntamiento de Moca and links the exact PMD; PDF page 8 names the municipality. SISMAP organism ID is not an official geographic code. The geographic crosswalk and historical boundary are not verified.",
+            "source_id": "a-moca-sismap-2-02",
+            "locator": "Ayuntamiento de Moca heading; 2.02 Plan de Desarrollo Municipal row",
+            "checked_at": "2026-09-13T06:59:22.286Z"
+          },
+          "findings": [
+            {
+              "kind": "official_evaluation",
+              "label": "2.02 Plan de Desarrollo Municipal",
+              "value": 100,
+              "value_status": "observed",
+              "unit": "%",
+              "definition": "VALOR shown for SISMAP indicator 2.02 at retrieval. Not plan completion, project achievement, or proof of legal adoption. Displayed expiry: 05/10/2026; evaluation date was not supplied in the inspected row.",
+              "scope": "Ayuntamiento de Moca; SISMAP organism 20913 only. Geographic code crosswalk and historical boundary unverified.",
+              "period": {
+                "label": "Snapshot retrieved 2026-09-13",
+                "kind": "as_of",
+                "start": "2026-09-13",
+                "end": "2026-09-13"
+              },
+              "evidence": {
+                "source_id": "a-moca-sismap-2-02",
+                "locator": "2.02 Plan de Desarrollo Municipal row: VALOR 100.00%, FECHA VENCIMIENTO 05/10/2026",
+                "checked_at": "2026-09-13T06:59:22.286Z"
+              }
+            }
+          ]
+        }
+      ],
+      "planning": {
+        "title": "Moca planning evidence - SISMAP reference",
+        "purpose": "Read the acquired planning evidence for the selected local authority. Source dates and periods remain separate; unverified legal status stays unknown.",
+        "sections": [
+          {
+            "id": "plan",
+            "label": "Development plans"
+          },
+          {
+            "id": "budget",
+            "label": "Budget and revenue records"
+          },
+          {
+            "id": "evaluation",
+            "label": "Published evaluations"
+          }
+        ],
+        "outputs": [
+          "markdown",
+          "html",
+          "evidence_csv",
+          "documents_csv"
+        ],
+        "map": {
+          "mode": "coverage"
+        },
+        "update": {
+          "status": "stopped",
+          "checked_at": "2026-09-13T07:07:49.442Z",
+          "last_success_at": "2026-09-13T07:07:49.442Z",
+          "message": "Fixed evidence audit, 13 September 2026. This example has no continuing source monitor; historical documents are not labelled current."
+        }
+      },
+      "source_ids": [
+        "a-moca-pmd-2024-2028",
+        "a-moca-sismap-2-02"
+      ],
+      "gaps": [
+        {
+          "category": "territory_identity",
+          "status": "unverified",
+          "detail": "Moca is identified by the source page and PDF. SISMAP organism20913 is not a geographic code; official code crosswalk and historical boundary remain unverified.",
+          "next_action": "Acquire the official municipality register and boundary edition.",
+          "territory_id": "moca"
+        },
+        {
+          "category": "plan_approval",
+          "status": "unverified",
+          "detail": "SISMAP links an approval resolution, but its body was not inspected. PMD presence or indicator100% does not prove legal adoption.",
+          "next_action": "Read the exact approval instrument before asserting institutional status.",
+          "territory_id": "moca",
+          "source_id": "a-moca-pmd-2024-2028"
+        }
+      ]
+    },
+    {
+      "id": "UGA",
+      "iso2": "UG",
+      "name": "Uganda",
+      "out_name": "uga",
+      "territories": [
+        {
+          "id": "yumbe",
+          "name": "Yumbe",
+          "level": "district",
+          "type": "district",
+          "parent_id": "UGA",
+          "official_code": null,
+          "code_system": "Source-identified district; official crosswalk pending",
+          "boundary_version": null
+        },
+        {
+          "id": "adjumani",
+          "name": "Adjumani",
+          "level": "district",
+          "type": "district",
+          "parent_id": "UGA",
+          "official_code": null,
+          "code_system": "Source-identified district; official crosswalk pending",
+          "boundary_version": null
+        }
+      ],
+      "documents": [
+        {
+          "id": "yumbe-ddp",
+          "territory_id": "yumbe",
+          "category": "plan",
+          "title": "Yumbe Third District Development Plan 2020/2021-2024/2025",
+          "kind": "plan",
+          "url": "https://yumbe.go.ug/sites/default/files/publications/YUMBE%20DDPIII%20221111_edited%20ddp_yumbe%20dlg%201.pdf",
+          "period": "2020/2021-2024/2025",
+          "target_period": {
+            "label": "2020/2021-2024/2025",
+            "kind": "multi_year"
+          },
+          "availability": "content_verified",
+          "official_status": "unverified",
+          "source_id": "b-yumbe-ddp-2020-2025",
+          "territory_match": {
+            "territory_id": "yumbe",
+            "country_id": "UGA",
+            "type": "district",
+            "code_system": "Source-identified district; official crosswalk pending",
+            "official_code": null,
+            "boundary_version": null,
+            "method": "The official district publisher and PDF titles identify Yumbe District. Source IDs are separate: 2018 LGPA Vote 556; FY2024/25 MoFPED Vote 934; UBOS NPHC2024 district code 313. No numeric-code join, legal vote-code conversion, historical-boundary match, or current-boundary aggregation is asserted.",
+            "source_id": "b-yumbe-ddp-2020-2025",
+            "locator": "PDF page 1, district title and period; exact PDF linked by the official Yumbe resource register",
+            "checked_at": "2026-09-13T06:59:25.934Z"
+          },
+          "content": {
+            "summary": "The district plan sets local service and economic-development priorities and programme funding for its stated plan period.",
+            "priorities": [
+              "Promote agro-industrialization and value addition to improve employment and household incomes."
+            ],
+            "evidence": {
+              "source_id": "b-yumbe-ddp-2020-2025",
+              "locator": "PDF page 4, printed iii, foreword; PDF page 189, printed 169, Table 5.6 Programme 1",
+              "checked_at": "2026-09-13T06:59:25.934Z"
+            }
+          }
+        },
+        {
+          "id": "yumbe-q3-fiscal",
+          "territory_id": "yumbe",
+          "category": "budget",
+          "title": "Yumbe quarterly budget performance - FY 2024/25, Quarter 3",
+          "kind": "budget",
+          "url": "https://budget.finance.go.ug/sites/default/files/Indivisual%20LG%20Budgets/934%20Yumbe%20District%20Quarter%203.pdf",
+          "period": "FY 2024/25 - Quarter 3",
+          "target_period": {
+            "label": "FY 2024/25 - Quarter 3",
+            "kind": "quarter"
+          },
+          "availability": "content_verified",
+          "official_status": "unverified",
+          "source_id": "b-yumbe-q3-2024-25",
+          "territory_match": {
+            "territory_id": "yumbe",
+            "country_id": "UGA",
+            "type": "district",
+            "code_system": "Source-identified district; official crosswalk pending",
+            "official_code": null,
+            "boundary_version": null,
+            "method": "The official district publisher and PDF titles identify Yumbe District. Source IDs are separate: 2018 LGPA Vote 556; FY2024/25 MoFPED Vote 934; UBOS NPHC2024 district code 313. No numeric-code join, legal vote-code conversion, historical-boundary match, or current-boundary aggregation is asserted.",
+            "source_id": "b-yumbe-q3-2024-25",
+            "locator": "PDF page 1: Yumbe District, VOTE 934; Quarter 3 FY2024/25; signed 31-07-2025",
+            "checked_at": "2026-09-13T07:03:56.503Z"
+          },
+          "findings": [
+            {
+              "kind": "budget",
+              "label": "Approved Budget 2024/25 — Total Revenues shares",
+              "value": 64846977,
+              "value_status": "observed",
+              "unit": "UGX thousands",
+              "definition": "Revenue budget reported in the Approved Budget 2024/25 column; no separate approval instrument verified. PDF table units are Ushs 000s: each unit is 1,000 Uganda shillings.",
+              "scope": "Yumbe District as identified by FY2024/25 MoFPED Vote 934. Historical-boundary correspondence with 2018 Vote 556 or UBOS2024 code313 is not established.",
+              "period": {
+                "label": "FY 2024/25",
+                "kind": "fiscal_year"
+              },
+              "evidence": {
+                "source_id": "b-yumbe-q3-2024-25",
+                "locator": "PDF page 2, printed page 2, A1 Overall Revenue Performance, Total Revenues shares row, Approved Budget 2024/25 column",
+                "checked_at": "2026-09-13T07:03:56.503Z"
+              }
+            },
+            {
+              "kind": "budget",
+              "label": "Revised Budget — Total Revenues shares",
+              "value": 68579647,
+              "value_status": "observed",
+              "unit": "UGX thousands",
+              "definition": "Revenue budget reported in the Revised Budget column, in this Q3 report; no separate revision instrument verified. PDF table units are Ushs 000s: each unit is 1,000 Uganda shillings.",
+              "scope": "Yumbe District as identified by FY2024/25 MoFPED Vote 934. Historical-boundary correspondence with 2018 Vote 556 or UBOS2024 code313 is not established.",
+              "period": {
+                "label": "FY 2024/25",
+                "kind": "fiscal_year"
+              },
+              "evidence": {
+                "source_id": "b-yumbe-q3-2024-25",
+                "locator": "PDF page 2, printed page 2, A1 Overall Revenue Performance, Total Revenues shares row, Revised Budget column",
+                "checked_at": "2026-09-13T07:03:56.503Z"
+              }
+            },
+            {
+              "kind": "revenue",
+              "label": "Cumulative Receipts — Total Revenues shares",
+              "value": 53862674,
+              "value_status": "observed",
+              "unit": "UGX thousands",
+              "definition": "Cumulative revenue receipts through Quarter 3, not receipts during Quarter 3 alone. PDF table units are Ushs 000s: each unit is 1,000 Uganda shillings.",
+              "scope": "Yumbe District as identified by FY2024/25 MoFPED Vote 934. Historical-boundary correspondence with 2018 Vote 556 or UBOS2024 code313 is not established.",
+              "period": {
+                "label": "FY 2024/25 - Quarter 3",
+                "kind": "quarter"
+              },
+              "evidence": {
+                "source_id": "b-yumbe-q3-2024-25",
+                "locator": "PDF page 2, printed page 2, A1 Overall Revenue Performance, Total Revenues shares row, Cumulative Receipts column",
+                "checked_at": "2026-09-13T07:03:56.503Z"
+              }
+            }
+          ]
+        },
+        {
+          "id": "yumbe-lgpa-2018",
+          "territory_id": "yumbe",
+          "category": "evaluation",
+          "title": "Yumbe Local Government Performance Assessment - 2018",
+          "kind": "evaluation",
+          "url": "https://budget.finance.go.ug/sites/default/files/yumbe_district_assessment_lgpa_full_report-compressed.pdf",
+          "period": "2018",
+          "target_period": {
+            "label": "2018",
+            "kind": "calendar_year"
+          },
+          "availability": "content_verified",
+          "official_status": "unverified",
+          "source_id": "b-yumbe-lgpa-2018",
+          "territory_match": {
+            "territory_id": "yumbe",
+            "country_id": "UGA",
+            "type": "district",
+            "code_system": "Source-identified district; official crosswalk pending",
+            "official_code": null,
+            "boundary_version": null,
+            "method": "The official district publisher and PDF titles identify Yumbe District. Source IDs are separate: 2018 LGPA Vote 556; FY2024/25 MoFPED Vote 934; UBOS NPHC2024 district code 313. No numeric-code join, legal vote-code conversion, historical-boundary match, or current-boundary aggregation is asserted.",
+            "source_id": "b-yumbe-lgpa-2018",
+            "locator": "PDF page 1: Yumbe District, Vote Code556; PDF page 2: Accountability Requirements 2018",
+            "checked_at": "2026-09-13T06:59:23.970Z"
+          },
+          "findings": [
+            {
+              "kind": "official_evaluation",
+              "label": "Accountability Requirements",
+              "value": 50,
+              "value_status": "observed",
+              "unit": "%",
+              "definition": "Score in the assessment cover table for Accountability Requirements. Not a total score, budget execution rate, or plan achievement rate.",
+              "scope": "Yumbe District, 2018 LGPA Vote556; not a current assessment or a rating of the 2020/2021-2024/2025 plan. Separate later source IDs: FY2024/25 Vote934 and UBOS2024 district313.",
+              "period": {
+                "label": "2018",
+                "kind": "calendar_year"
+              },
+              "evidence": {
+                "source_id": "b-yumbe-lgpa-2018",
+                "locator": "PDF page 1: Accountability Requirements score50%; PDF page 2: assessment year2018",
+                "checked_at": "2026-09-13T06:59:23.970Z"
+              }
+            }
+          ]
+        },
+        {
+          "id": "adjumani-listed-plan",
+          "territory_id": "adjumani",
+          "category": "plan",
+          "title": "Adjumani DDP III - official listing; body not acquired",
+          "kind": "plan",
+          "url": "https://adjumani.go.ug/publications",
+          "period": "2020/2021-2024/2025",
+          "target_period": {
+            "label": "2020/2021-2024/2025",
+            "kind": "multi_year"
+          },
+          "availability": "link_verified",
+          "official_status": "unverified",
+          "source_id": "c-adjumani-plan-link-only"
+        }
+      ],
+      "planning": {
+        "title": "Local planning evidence - distributed sources",
+        "purpose": "Read the acquired planning evidence for the selected local authority. Source dates and periods remain separate; unverified legal status stays unknown.",
+        "sections": [
+          {
+            "id": "plan",
+            "label": "Development plans"
+          },
+          {
+            "id": "budget",
+            "label": "Budget and revenue records"
+          },
+          {
+            "id": "evaluation",
+            "label": "Published evaluations"
+          }
+        ],
+        "outputs": [
+          "markdown",
+          "html",
+          "evidence_csv",
+          "documents_csv"
+        ],
+        "map": {
+          "mode": "coverage"
+        },
+        "update": {
+          "status": "stopped",
+          "checked_at": "2026-09-13T07:07:49.442Z",
+          "last_success_at": "2026-09-13T07:07:49.442Z",
+          "message": "Fixed evidence audit, 13 September 2026. This example has no continuing source monitor; historical documents are not labelled current."
+        }
+      },
+      "source_ids": [
+        "b-yumbe-ddp-2020-2025",
+        "b-yumbe-plan-register",
+        "b-yumbe-q3-2024-25",
+        "b-yumbe-lgpa-2018",
+        "b-yumbe-ubos-id-2024",
+        "c-adjumani-plan-link-only"
+      ],
+      "gaps": [
+        {
+          "category": "territory_identity",
+          "status": "unverified",
+          "detail": "Yumbe source names and district type agree, but Vote556(2018), Vote934(FY2024/25), and UBOS313(NPHC2024) belong to different source namespaces. Historical boundaries and legal code conversion are not reconciled. Adjumani is identified by its district website only.",
+          "next_action": "Verify a dated official identity crosswalk before any boundary join or cross-period territorial aggregation.",
+          "territory_id": "yumbe"
+        },
+        {
+          "category": "plan_approval",
+          "status": "unverified",
+          "detail": "No separate legal adoption evidence was verified for the collected Yumbe plan.",
+          "next_action": "Inspect the official adoption instrument.",
+          "territory_id": "yumbe",
+          "source_id": "b-yumbe-ddp-2020-2025"
+        },
+        {
+          "category": "fiscal_source_inconsistency",
+          "status": "unverified",
+          "detail": "Q3 narrative PDFp3 says Billion, while p2 tableA1 specifies Ushs000s. Expenditure also differs: p2table40,309,900 vs p3narrative40,319,238. Only the three audited A1 revenue amounts are adopted; expenditure is excluded.",
+          "next_action": "Clarify with the publishing authority before using inconsistent expenditure or narrative units.",
+          "territory_id": "yumbe",
+          "source_id": "b-yumbe-q3-2024-25"
+        },
+        {
+          "category": "budget_candidate",
+          "status": "failed",
+          "detail": "Two raw downloads of the separate Yumbe District_7.pdf candidate timed out at45seconds. Web inspection labels it Draft2024/25. None of its amounts are used; the acquired Q3 original supplies the fiscal evidence.",
+          "next_action": "If needed, acquire that candidate separately and retain its draft status.",
+          "territory_id": "yumbe"
+        },
+        {
+          "category": "assessment_vintage",
+          "status": "not_collected",
+          "detail": "This is a deliberately historical2018 assessment. The district resource page also lists2022 assessments whose bodies were not read.",
+          "next_action": "Collect newer assessment evidence when a current evaluation is required.",
+          "territory_id": "yumbe",
+          "source_id": "b-yumbe-lgpa-2018"
+        },
+        {
+          "category": "planning_body",
+          "status": "not_collected",
+          "detail": "The Adjumani official page lists DDP III2020/2021-2024/2025, but its attachment target is a personal-mail viewer format and was not followed. No document-body content or legal status is known. Personal-mail URLs are omitted from this example.",
+          "next_action": "Use the official listing and request an accessible official document from the authority.",
+          "territory_id": "adjumani",
+          "source_id": "c-adjumani-plan-link-only"
+        },
+        {
+          "category": "territory_identity",
+          "status": "unverified",
+          "detail": "Adjumani is identified by the official district website. No geographic-code crosswalk or historical boundary was acquired.",
+          "next_action": "Verify the official registry before joining local statistics or boundaries.",
+          "territory_id": "adjumani"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "checked_at": "2026-09-13T07:43:16.095Z",
+  "package_version": "0.3.0",
+  "environment": {
+    "os": "Windows",
+    "node": "v24.11.1",
+    "browser": "Codex In-app Browser"
+  },
+  "code_binding": "SHA-256 of tested code files; committed alongside VALIDATION_v0.3.md",
+  "files": [
+    {
+      "path": "examples/planning-evidence/build-examples.mjs",
+      "sha256": "32446aeb91e5e0ccaa0a2d4b49f7a4ca3a0eb8ff885479bf018da930355fd57f"
+    },
+    {
+      "path": "lib/cli.mjs",
+      "sha256": "8b940099fddf708f1b9f23afb116b5dbe66aa83b0488b7ec469407ae46c09280"
+    },
+    {
+      "path": "lib/collect.mjs",
+      "sha256": "5bc1d5000b8841a44cfd22c8bb24d1a08587d48a6d2377dcbe1b2217e163d1b9"
+    },
+    {
+      "path": "lib/generate.mjs",
+      "sha256": "3bca4f78736603e8d6a16821ea573867463a78811589cc116a0e6b1184c4d07f"
+    },
+    {
+      "path": "lib/planning-validation.mjs",
+      "sha256": "97862c8ebbc4da0a54e560ec593d686e92b2dd1b05a79d8827b10b6261b4f268"
+    },
+    {
+      "path": "lib/validate.mjs",
+      "sha256": "e3f748ad9adf0108e25f242b5fdca6e9a3ae42ae52ce564815e38fbf10f59e7d"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "a7bd65aa3e9d2f1d0805efd2dc23438d907a8ebb4aad6c65369be39a80995413"
+    },
+    {
+      "path": "package.json",
+      "sha256": "9cb08be8a5e24f3fe991c3acfd15a2dc4263bdb10f3bb0cf1b76d2a30f6612a7"
+    },
+    {
+      "path": "scaffold/site/app.mjs",
+      "sha256": "78fe50acbe083cdb4ad7bd956f93f1c8c2a89eb2231bc8cd5871c126758be4e7"
+    },
+    {
+      "path": "scaffold/site/model.mjs",
+      "sha256": "b6578b07df9c010ef4ecbb374dc21b2be8628984617672691c873ab289e42c13"
+    },
+    {
+      "path": "scaffold/site/planning-view.mjs",
+      "sha256": "6a0022a5813386d76f6e4ed95b5dc4545f3a4245f4944fc463cc03f5c16adbb8"
+    },
+    {
+      "path": "scaffold/site/planning.mjs",
+      "sha256": "4d3be6761777ac04ca2953f21b6fe888f7e99103575457776a0fc8b63504c470"
+    },
+    {
+      "path": "scripts/build-country.mjs",
+      "sha256": "3fb1fa656593186ad8da754092105fb218fb2b4468d8595a9cbde155ead49851"
+    },
+    {
+      "path": "scripts/check.mjs",
+      "sha256": "53b4a35d7fb0b970b76915e06e54e41a34a58a490066f06172f4e878ceeeff0d"
+    },
+    {
+      "path": "scripts/create-country.mjs",
+      "sha256": "7f75a0904c82fee234f819c29575d2536446d8af38022574f8b2118f60d37438"
+    },
+    {
+      "path": "scripts/serve.mjs",
+      "sha256": "0a2add953d9940f824f04c9bb17e9aca3f7b3cebbecec28225efafc926310e05"
+    },
+    {
+      "path": "scripts/validate-country.mjs",
+      "sha256": "4230de2721e91b3bffeda899cc3f4ca3197958cb1cfbbc7a6bd8be968b80b740"
+    },
+    {
+      "path": "tests/cli.test.mjs",
+      "sha256": "01ad54233e5ae115eaf1c6ee4a408317a43c66e00f6992a45f45dc68aa078290"
+    },
+    {
+      "path": "tests/collect.test.mjs",
+      "sha256": "2b5fba081751da122b3877fe3bc6076431c1d610bf6a53aee8be6e955ae8db3b"
+    },
+    {
+      "path": "tests/fixture.mjs",
+      "sha256": "0bfcde3f6e5f9f12f8d14d2db3f69d88abc8fa0c4897069534243a2750925c71"
+    },
+    {
+      "path": "tests/generate.test.mjs",
+      "sha256": "9f286ece537446b010dadd9259fc9f6ebf16557b1c1ea58cab7da870d670a65c"
+    },
+    {
+      "path": "tests/hierarchy-fixture.mjs",
+      "sha256": "85466ba16538f575a3f04e91164b8e16b53dd810da7dcea28d328e60a449cf66"
+    },
+    {
+      "path": "tests/planning-fixture.mjs",
+      "sha256": "cf4d930c74089f213c1fec61044d57917ed1054ff7ece900e10973b75ba4d080"
+    },
+    {
+      "path": "tests/planning-runtime.test.mjs",
+      "sha256": "fab25ab8c0a6879d98f2ee3ad9aa2432e57b41fead4bd7816ef9a400f8f14c4b"
+    },
+    {
+      "path": "tests/planning.test.mjs",
+      "sha256": "daec6986e32253b61850b5ed566a4ef91a9adf6181d8a823f52b2d3553f707ea"
+    },
+    {
+      "path": "tests/project.test.mjs",
+      "sha256": "cd71b1450b7346d6b75f5644dd05bcea80f97cddaccc2870d5b7522ee4d04741"
+    },
+    {
+      "path": "tests/validate.test.mjs",
+      "sha256": "0c0059ef3022c26f3fef0ebfcdd44966839a9de790af67cd36e5a2b4ac5863da"
+    }
+  ],
+  "datasets": [
+    {
+      "name": "A",
+      "kind": "synthetic",
+      "generated_at": "2026-09-13T00:00:00.000Z",
+      "schema_version": "0.2",
+      "input_sha256": "83b888407ae7df7b987730058e9564224fcb805b193ff1529954cea345928bc8",
+      "site_data_sha256": "89002241f1c905e52eef5340e7adebd07cca449f835f1b23a9065d25a6b9e4d5",
+      "documents": 6,
+      "observations": 34,
+      "validation": {
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "B",
+      "kind": "synthetic",
+      "generated_at": "2026-09-13T00:00:00.000Z",
+      "schema_version": "0.2",
+      "input_sha256": "403309571f4bb31facc69e4b302d8206938f383f38aaa49f9342d4a90e5b0ea4",
+      "site_data_sha256": "94e5bda398714c63f395e772c7b52851bc6dce6858c26b6aeb4512344b68d9f9",
+      "documents": 6,
+      "observations": 34,
+      "validation": {
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "C",
+      "kind": "synthetic",
+      "generated_at": "2026-09-13T00:00:00.000Z",
+      "schema_version": "0.2",
+      "input_sha256": "b279fc62f4a631844ee9a70d13d45f5f189ec6b9c3c9b2fabf3f7a9c96fa6882",
+      "site_data_sha256": "b0154aa9a41cfcfa152c4a60d897926cea3763550b6b8ebf6995a5e803fb0e84",
+      "documents": 2,
+      "observations": 34,
+      "validation": {
+        "errors": [],
+        "warnings": [
+          "planning.outputs is empty: the page must explain the available source or local-work alternative"
+        ]
+      }
+    },
+    {
+      "name": "legacy",
+      "kind": "legacy synthetic schema 0.2 without planning extensions",
+      "generated_at": "2026-09-13T00:00:00.000Z",
+      "schema_version": "0.2",
+      "input_sha256": "f054e69c02e84c783326f50ba1a206af193e1e63c94b51e02dffde7621d3e9be",
+      "site_data_sha256": "9850006230ea598b52b19ab3d260b31f27c2529d6df70070d34f2b37266c3650",
+      "documents": 1,
+      "observations": 34,
+      "validation": {
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "name": "DOM Moca",
+      "kind": "primary-source audit",
+      "generated_at": "2026-09-13T07:12:03.779Z",
+      "schema_version": "0.2",
+      "input_sha256": "3157a714ba640d61f3afb0e6a27d589c447af86eefe79a0cc93a4de744c72f4b",
+      "site_data_sha256": "3157a714ba640d61f3afb0e6a27d589c447af86eefe79a0cc93a4de744c72f4b",
+      "documents": 2,
+      "observations": 1,
+      "validation": {
+        "errors": [],
+        "warnings": [
+          "National statistics only: subnational collection is still required for local comparison"
+        ]
+      }
+    },
+    {
+      "name": "UGA Yumbe and Adjumani",
+      "kind": "primary-source audit",
+      "generated_at": "2026-09-13T07:12:03.779Z",
+      "schema_version": "0.2",
+      "input_sha256": "eea39ef3a31e1ba0a437671c77a6cd111ae1ec318f4186bbae4a3b8ea7d500b6",
+      "site_data_sha256": "eea39ef3a31e1ba0a437671c77a6cd111ae1ec318f4186bbae4a3b8ea7d500b6",
+      "documents": 4,
+      "observations": 1,
+      "validation": {
+        "errors": [],
+        "warnings": [
+          "National statistics only: subnational collection is still required for local comparison"
+        ]
+      }
+    }
+  ]
+}

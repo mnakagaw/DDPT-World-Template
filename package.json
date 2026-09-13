@@ -1,10 +1,12 @@
 {
   "name": "ddpt-world-template",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "private": true,
   "description": "Country-driven DDPT dashboard collection and generation toolkit",
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "test": "node --test",
     "check": "node scripts/check.mjs",

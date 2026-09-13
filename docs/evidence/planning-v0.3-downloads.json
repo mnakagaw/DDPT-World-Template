@@ -1,0 +1,86 @@
+{
+  "checked_at": "2026-09-13T07:40:40.671Z",
+  "checks": [
+    {
+      "filename": "TST-city-2024-planning-base.md",
+      "sha256": "ddaf68b897ec606d08abaa25e1f429bc7c4c1bf4ed73edb5b8294b828529d0c5",
+      "result": "actual browser download exactly matches current selected-area output",
+      "territory_id": "city",
+      "statistical_period": "2024"
+    },
+    {
+      "filename": "TST-city-2024-planning-base.html",
+      "sha256": "dd36b5ab4a2eef442d90227870047ac71f704ede7188026f14c58bcb22772c7c",
+      "result": "actual browser download exactly matches current selected-area output",
+      "territory_id": "city",
+      "statistical_period": "2024"
+    },
+    {
+      "filename": "TST-city-materials.csv",
+      "sha256": "47404d8810d5cf6f65f828c8c1c5c7555ff2a9757b3e551001e501fc1e1b0f37",
+      "result": "actual browser download exactly matches current selected-area output",
+      "territory_id": "city",
+      "statistical_period": "2024"
+    },
+    {
+      "filename": "DOM-moca-2025-planning-base.md",
+      "sha256": "8da59a5e21d1c6f7bc2241d8b963b8e50ad92f5edc8e896b94ac545a4cc6c043",
+      "result": "actual browser download exactly matches current selected-area output",
+      "territory_id": "moca",
+      "statistical_period": "2025"
+    },
+    {
+      "filename": "DOM-moca-2025-planning-base.html",
+      "sha256": "cd330163ff1971953d2cf613f805dfbb82f6197f7eb95332f6cf9c990bac15b4",
+      "result": "actual browser download exactly matches current selected-area output",
+      "territory_id": "moca",
+      "statistical_period": "2025"
+    },
+    {
+      "filename": "DOM-moca-materials.csv",
+      "sha256": "685e1d9443d60c8394d12fb01a4bf050b4af6b6b657d2e3729fc49e6c9e49c96",
+      "result": "actual browser download exactly matches current selected-area output",
+      "territory_id": "moca",
+      "statistical_period": "2025"
+    },
+    {
+      "filename": "UGA-yumbe-2025-planning-base.md",
+      "sha256": "ec4a7caadf165542027b48a9d88429818405967fdb629406ab7ffcfb2a7e5bea",
+      "result": "actual browser download exactly matches current selected-area output",
+      "territory_id": "yumbe",
+      "statistical_period": "2025"
+    },
+    {
+      "filename": "UGA-yumbe-2025-planning-base.html",
+      "sha256": "6921615c9fd8ced1f0e4e1ce6f18c9cc03492d670b76740cfc961396e0881e86",
+      "result": "actual browser download exactly matches current selected-area output",
+      "territory_id": "yumbe",
+      "statistical_period": "2025"
+    },
+    {
+      "filename": "UGA-yumbe-materials.csv",
+      "sha256": "a1e2532f546d4eea660d6b843683a2b46083f4f870d69096ad165d3b7019f5a6",
+      "result": "actual browser download exactly matches current selected-area output",
+      "territory_id": "yumbe",
+      "statistical_period": "2025"
+    },
+    {
+      "filename": "UGA-adjumani-2025-planning-base.md",
+      "sha256": "8999d582fdd2d0cf80fd97f91200e72d974c05de349494fab6baf9623e81e707",
+      "result": "actual browser download exactly matches current selected-area output",
+      "territory_id": "adjumani",
+      "statistical_period": "2025"
+    },
+    {
+      "filename": "UGA-adjumani-materials.csv",
+      "sha256": "6e67b0e063f74ac305eb1fefb3cbbd7e21d307f5d1cb538c852728733cf01cff",
+      "result": "actual browser download exactly matches current selected-area output",
+      "territory_id": "adjumani",
+      "statistical_period": "2025"
+    }
+  ],
+  "last_good_failure": {
+    "result": "site dataset hash unchanged; stopped sidecar written",
+    "data_sha256": "89002241f1c905e52eef5340e7adebd07cca449f835f1b23a9065d25a6b9e4d5"
+  }
+}

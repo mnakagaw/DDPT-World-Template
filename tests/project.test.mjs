@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, writeFile, readFile, access } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, readFile, access, symlink } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { execFile } from 'node:child_process';
@@ -111,4 +111,48 @@ test('a rebuild with no numeric observations is unsuccessful', async () => {
   const d=fixture(); d.observations=[]; d.collection.status='failed';
   await writeFile(path.join(out,'data/dashboard.json'),JSON.stringify(d));
   await assert.rejects(buildCountry(out),/No usable numeric observations/);
+});
+
+test('generation failure and malformed candidate retain last-good dataset and mark the stopped update',async()=>{
+  const out=await mkdtemp(path.join(os.tmpdir(),'ddpt-lastgood-'));
+  await mkdir(path.join(out,'data'));const d=fixture();
+  await writeFile(path.join(out,'data/dashboard.json'),JSON.stringify(d));
+  await buildCountry(out);
+  const old=await readFile(path.join(out,'site/data/dashboard.json'),'utf8');
+  await writeFile(path.join(out,'site/custom.txt'),'user resource');
+  await assert.rejects(buildCountry(out,{generate:async()=>{throw new Error('injected generation failure');}}),/injected generation failure/);
+  assert.equal(await readFile(path.join(out,'site/data/dashboard.json'),'utf8'),old);
+  let status=JSON.parse(await readFile(path.join(out,'site/data/update-status.json'),'utf8'));
+  assert.equal(status.status,'stopped');assert.equal(status.data_edition,d.generated_at);assert.ok(status.last_success_at);
+  await writeFile(path.join(out,'data/dashboard.json'),'{broken');
+  await assert.rejects(buildCountry(out));
+  assert.equal(await readFile(path.join(out,'site/data/dashboard.json'),'utf8'),old);
+  await writeFile(path.join(out,'data/dashboard.json'),JSON.stringify(d));
+  await buildCountry(out);
+  status=JSON.parse(await readFile(path.join(out,'site/data/update-status.json'),'utf8'));
+  assert.equal(status.status,'current');assert.equal(await readFile(path.join(out,'site/custom.txt'),'utf8'),'user resource');
+});
+
+test('blocked metadata or receipt destinations do not replace the old site or suppress its stopped marker',async()=>{
+  for(const blocked of ['SITE_README.md','evidence/validation.json','evidence']) {
+    const out=await mkdtemp(path.join(os.tmpdir(),'ddpt-metadata-fail-'));
+    await mkdir(path.join(out,'data'));await mkdir(path.join(out,'site/data'),{recursive:true});
+    if(blocked!=='evidence')await mkdir(path.join(out,'evidence'));
+    const d=fixture();await writeFile(path.join(out,'data/dashboard.json'),JSON.stringify(d));
+    await writeFile(path.join(out,'site/data/dashboard.json'),JSON.stringify(d));await writeFile(path.join(out,'site/index.html'),'last good');
+    if(blocked==='evidence')await writeFile(path.join(out,blocked),'blocked receipt directory');
+    else await mkdir(path.join(out,blocked));
+    await assert.rejects(buildCountry(out));
+    assert.equal(await readFile(path.join(out,'site/index.html'),'utf8'),'last good');
+    assert.equal(JSON.parse(await readFile(path.join(out,'site/data/update-status.json'),'utf8')).status,'stopped');
+  }
+});
+test('nested symlinks or Windows junctions cannot redirect staged generation into another directory',async()=>{
+  const out=await mkdtemp(path.join(os.tmpdir(),'ddpt-linked-site-'));
+  await mkdir(path.join(out,'data'));await mkdir(path.join(out,'site'));await mkdir(path.join(out,'separate-assets'));
+  await writeFile(path.join(out,'data/dashboard.json'),JSON.stringify(fixture()));
+  await writeFile(path.join(out,'separate-assets/app.mjs'),'unrelated content');
+  await symlink(path.join(out,'separate-assets'),path.join(out,'site/assets'),process.platform==='win32'?'junction':'dir');
+  await assert.rejects(buildCountry(out),/symbolic link or junction/);
+  assert.equal(await readFile(path.join(out,'separate-assets/app.mjs'),'utf8'),'unrelated content');
 });

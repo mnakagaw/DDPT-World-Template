@@ -65,7 +65,7 @@ async function writeContinuationBundle(outDir) {
   const reference = await readTemplateReference();
   const destinations = new Map([['docs/COUNTRY_AGENT_WORKFLOW.md', 'COUNTRY_AGENT_WORKFLOW.md']]);
   // Bundle the operative contract, not historical review files containing another project's machine paths.
-  for (const source of ['docs/SOURCE_ADAPTER_GUIDE.md', 'docs/IMPLEMENTATION_CONTRACT.md', 'docs/02_COMMON_SPEC.md', 'docs/03_COUNTRY_AND_DATA.md', 'templates/ACCEPTANCE.md', 'templates/COUNTRY_START.md', 'templates/TASK_AND_CHANGE.md', 'templates/country-profile.json']) {
+  for (const source of ['docs/SOURCE_ADAPTER_GUIDE.md', 'docs/IMPLEMENTATION_CONTRACT.md', 'docs/PLANNING_DATA_CONTRACT.md', 'docs/02_COMMON_SPEC.md', 'docs/03_COUNTRY_AND_DATA.md', 'templates/ACCEPTANCE.md', 'templates/COUNTRY_START.md', 'templates/TASK_AND_CHANGE.md', 'templates/country-profile.json']) {
     destinations.set(source, `reference/${source}`);
   }
   reference.documentation = [];
