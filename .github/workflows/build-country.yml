@@ -1,0 +1,33 @@
+name: Build country baseline
+on:
+  workflow_dispatch:
+    inputs:
+      country:
+        description: Country name or ISO code
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+      - run: npm run check
+      - run: npm test
+      - name: Collect and build country baseline
+        env:
+          DDPT_COUNTRY_INPUT: ${{ inputs.country }}
+        run: node scripts/create-country.mjs --country "$DDPT_COUNTRY_INPUT" --out generated/country
+      - name: Upload site and collection evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: country-baseline-${{ github.run_id }}
+          path: generated/country/
+          if-no-files-found: ignore
+          retention-days: 7

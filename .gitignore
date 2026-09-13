@@ -1,0 +1,14 @@
+node_modules/
+generated/
+.work/
+.cache/
+coverage/
+*.log
+*.zip
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+Thumbs.db
+.DS_Store

@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "artifact_kind": "design_template_not_runtime_config",
+  "status": "unfilled",
+  "country": {
+    "id": null,
+    "name": null,
+    "default_locale": null,
+    "supported_locales": [],
+    "text_direction": null,
+    "timezone": null,
+    "currency": null,
+    "number_format_locale": null
+  },
+  "baseline": {
+    "common_spec_version": "0.1",
+    "reference_repository": "https://github.com/mnakagaw/DDPT-TOP",
+    "reference_commit": "6d2aee5f767515c5b20118ed642f832f21a15151",
+    "reference_public_urls": [],
+    "reference_verified_at": null,
+    "ux_baseline_status": "candidate_not_approved"
+  },
+  "geography": {
+    "territory_types": [],
+    "code_systems": [],
+    "administrative_relationships": [],
+    "statistical_classifications": [],
+    "project_focus_groups": [],
+    "boundary_versions": [],
+    "historical_crosswalks": []
+  },
+  "planning": {
+    "plan_types": [],
+    "responsible_institutions": [],
+    "legal_and_methodological_sources": [],
+    "planning_periods": [],
+    "document_templates": [],
+    "evidence_statuses": [],
+    "official_decision_statuses": []
+  },
+  "data": {
+    "source_registry_ref": null,
+    "indicator_dictionary_ref": null,
+    "territory_registry_ref": null,
+    "dataset_versions": [],
+    "update_contracts": [],
+    "join_reports": [],
+    "comparison_policies": []
+  },
+  "capabilities": {
+    "decision_unit": "indicator_x_territory_x_period_x_boundary_version",
+    "allowed_decisions": ["implement", "conditional", "alternative", "deferred"],
+    "module_decisions": [],
+    "chart_decisions": [],
+    "export_formats": [],
+    "narrative_generation": null,
+    "local_work_notes": null,
+    "backup_restore": null,
+    "decision_record_ref": null
+  },
+  "design": {
+    "shared_tokens_ref": null,
+    "country_token_overrides": {},
+    "page_correspondence_ref": null,
+    "accepted_deviations": []
+  },
+  "delivery": {
+    "mode": null,
+    "repository": null,
+    "public_base_url": null,
+    "hosting_method": null,
+    "access_policy_ref": null,
+    "responsibility_register_ref": null,
+    "validation_record_ref": null,
+    "release_record_ref": null
+  },
+  "completion_notes": "Null means undecided, not false or disabled. This JSON is a field inventory; no runtime loader or schema validator is implemented. Do not place credentials or personal data here."
+}

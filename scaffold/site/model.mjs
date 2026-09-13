@@ -1,0 +1,225 @@
+// Shared, dependency-free data and export semantics. Safe to import in Node tests.
+export const finite = value => typeof value === 'number' && Number.isFinite(value);
+export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+export function safeUrl(value) {
+  try { const url = new URL(String(value)); return ['https:', 'http:'].includes(url.protocol) && !url.username && !url.password ? url.href : ''; }
+  catch { return ''; }
+}
+export function displayValue(value, locale = 'en') {
+  if (!finite(value)) return 'No data';
+  try { return new Intl.NumberFormat(locale, {maximumFractionDigits: 2}).format(value); }
+  catch { return new Intl.NumberFormat('en', {maximumFractionDigits: 2}).format(value); }
+}
+export function statusLabel(status) {
+  return ({observed:'Observed', missing:'No data', not_collected:'Not collected', not_available:'Not available', not_applicable:'Not applicable', incomparable:'Comparison not established', unverified:'Unverified', failed:'Acquisition failed', error:'Acquisition failed', ready:'Acquired', link_verified:'Link verified', downloaded:'Body acquired', extracted:'Extracted', pending:'Pending'})[status] || String(status || 'Not collected').replaceAll('_', ' ');
+}
+export function sourceFor(dataset, indicator, observation) {
+  return dataset.sources.find(source => source.id === (observation?.source_id || indicator?.source_id));
+}
+export function periodsFor(dataset, indicatorId) {
+  return [...new Set(dataset.observations.filter(row => !indicatorId || row.indicator_id === indicatorId).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}));
+}
+export function latestObservedPeriod(dataset, indicatorId) {
+  return [...new Set(dataset.observations.filter(row => row.indicator_id === indicatorId && observedValue(row) !== null).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}))[0] || '';
+}
+export function observationFor(dataset, territoryId, indicatorId, period) {
+  return dataset.observations.find(row => row.territory_id === territoryId && row.indicator_id === indicatorId && String(row.period) === String(period));
+}
+export function observedValue(observation) { return observation?.status === 'observed' && finite(observation.value) ? observation.value : null; }
+export function observationState(dataset, territoryId, indicatorId, period) {
+  const row = observationFor(dataset, territoryId, indicatorId, period);
+  if (row) return {row, value:observedValue(row), status:row.status || 'unverified'};
+  const hasSeries = dataset.observations.some(item => item.territory_id === territoryId && item.indicator_id === indicatorId);
+  return {row:null, value:null, status:hasSeries ? 'missing' : 'not_collected'};
+}
+export function localLevels(dataset) { return [...new Set(dataset.territories.filter(row => row.level !== 'national').map(row => row.level))]; }
+export function levelLabel(level) { return level === 'national' ? 'National' : /^adm\d$/i.test(level) ? `Administrative level ${level.slice(3)}` : String(level || 'Local areas').replaceAll('_',' '); }
+export function nationalOnly(dataset) { return !dataset.observations.some(row => row.territory_id !== dataset.country.national_territory_id && observedValue(row) !== null); }
+export function initialState(dataset, search = '') {
+  const query = new URLSearchParams(search), notices = [];
+  const suppliedTerritory = query.get('territory');
+  const wrongCountry = query.has('country') && query.get('country') !== dataset.country.id;
+  const territory = wrongCountry ? null : dataset.territories.find(row => row.id === suppliedTerritory);
+  if (wrongCountry) notices.push(`This link refers to country “${query.get('country')}”, but this dataset is “${dataset.country.id}”. Its area cannot be restored here. This country’s national view is shown.`);
+  if (suppliedTerritory && !territory) notices.push(`The linked area “${suppliedTerritory}” is not in this data edition. The national view is shown; select an available area.`);
+  if (territory) for (const [parameter,field,label] of [['type','type','area type'],['code','official_code','official code'],['boundary','boundary_version','boundary edition']]) {
+    if (query.has(parameter) && query.get(parameter) !== String(territory[field] || '')) notices.push(`The linked ${label} “${query.get(parameter)}” differs from this record’s ${label} “${territory[field] || 'not verified'}”. The current record is shown; verify its identity before using the evidence.`);
+  }
+  const suppliedMetric = query.get('metric');
+  const indicator = dataset.indicators.find(row => row.id === suppliedMetric);
+  if (suppliedMetric && !indicator) notices.push(`The linked indicator “${suppliedMetric}” is unavailable in this edition. The first available indicator is shown.`);
+  const firstObservedIndicator = dataset.indicators.find(item => dataset.observations.some(row => row.indicator_id === item.id && observedValue(row) !== null));
+  const metric = indicator?.id || firstObservedIndicator?.id || dataset.indicators[0]?.id || '';
+  const requestedPeriod = query.get('period');
+  // A syntactically valid requested period remains selected even when its value is missing.
+  const validPeriod = requestedPeriod && /^[\p{L}\p{N} ._/:–-]{1,40}$/u.test(requestedPeriod);
+  if (requestedPeriod && !validPeriod) notices.push('The linked period is invalid. The most recent available source period is shown.');
+  const period = validPeriod ? requestedPeriod : latestObservedPeriod(dataset, metric) || periodsFor(dataset, metric)[0] || '';
+  const levels = localLevels(dataset);
+  const selected = territory?.id || dataset.country.national_territory_id;
+  const selectedLevel = territory?.level;
+  const level = levels.includes(query.get('level')) ? query.get('level') : selectedLevel && selectedLevel !== 'national' ? selectedLevel : levels[0] || '';
+  return {selected, metric, period, level, notices};
+}
+export function selectTerritory(dataset, state, id) {
+  const territory = dataset.territories.find(row => row.id === id);
+  if (!territory) return {...state, notices:[`Area “${id}” is unavailable. The current selection was retained.`]};
+  return {...state, selected:id, level:territory.level === 'national' ? state.level : territory.level, notices:[]};
+}
+export function routeQuery(dataset, state) {
+  const territory = dataset.territories.find(row => row.id === state.selected);
+  const query = new URLSearchParams({country:dataset.country.id, territory:state.selected, metric:state.metric, period:state.period, level:state.level || ''});
+  if (territory) {
+    query.set('type', territory.type || territory.level);
+    if (territory.official_code) query.set('code', territory.official_code);
+    if (territory.boundary_version) query.set('boundary', territory.boundary_version);
+  }
+  return query.toString();
+}
+export function comparisonCompatibility(dataset, state) {
+  const areas = dataset.territories.filter(area => area.level !== 'national' && area.level === state.level);
+  const types = [...new Set(areas.map(area => area.type || 'unspecified'))];
+  const editions = [...new Set(areas.map(area => area.boundary_version || 'unverified'))];
+  const reasons=[];
+  if(types.length>1)reasons.push(`different administrative types (${types.join(', ')})`);
+  if(editions.length>1)reasons.push(`different boundary editions (${editions.join(', ')})`);
+  return {comparable:!reasons.length, reason:reasons.length?`Local comparison is not established: this geographic level contains ${reasons.join(' and ')}. Verify a compatible geographic cohort before enabling ranks, median or map value classes. Selected-area observations remain available.`:''};
+}
+export function comparisonRows(dataset, state) {
+  const compatibility=comparisonCompatibility(dataset,state);
+  return dataset.territories.filter(area => area.level !== 'national' && area.level === state.level).map(area => {
+    const result=observationState(dataset,area.id,state.metric,state.period);
+    return {area,...result,...(!compatibility.comparable?{value:null,status:'incomparable',reason:compatibility.reason}:{})};
+  });
+}
+export function rankedRows(rows, order = 'desc') {
+  return rows.filter(row => finite(row.value)).sort((a,b) => (order === 'asc' ? a.value - b.value : b.value - a.value) || a.area.name.localeCompare(b.area.name)).map((row, index, sorted) => ({...row, rank:sorted.findIndex(other => other.value === row.value) + 1, position:index + 1}));
+}
+export function searchRows(rows, query) {
+  const text = query.trim().toLocaleLowerCase();
+  return rows.filter(row => !text || [row.area.name, row.area.id, row.area.official_code].some(value => String(value || '').toLocaleLowerCase().includes(text)));
+}
+export function distribution(rows) {
+  const values = rows.map(row => row.value).filter(finite).sort((a,b) => a-b);
+  if (!values.length) return {count:0, min:null, max:null, median:null};
+  const middle = Math.floor(values.length / 2);
+  return {count:values.length, min:values[0], max:values.at(-1), median:values.length % 2 ? values[middle] : (values[middle - 1] + values[middle]) / 2};
+}
+export function seriesFor(dataset, territoryId, indicatorId) {
+  return dataset.observations.filter(row => row.territory_id === territoryId && row.indicator_id === indicatorId).sort((a,b) => String(a.period).localeCompare(String(b.period), 'en', {numeric:true}));
+}
+
+// Treat downloaded strings as spreadsheet text, including formulas hidden behind whitespace.
+export function csvCell(value) {
+  let text = value == null ? '' : String(value);
+  if (typeof value !== 'number' && (/^[\s\uFEFF]*[=+\-@]/u.test(text) || /^[\t\r\n]/u.test(text))) text = `'${text}`;
+  return `"${text.replaceAll('"', '""')}"`;
+}
+export function makeCsv(rows) { return '\uFEFF' + rows.map(row => row.map(csvCell).join(',')).join('\r\n') + '\r\n'; }
+export function evidenceRows(dataset, territoryId, period, indicatorIds = dataset.indicators.map(row => row.id)) {
+  const area = dataset.territories.find(row => row.id === territoryId);
+  return dataset.indicators.filter(indicator => indicatorIds.includes(indicator.id)).map(indicator => {
+    const current = observationState(dataset, territoryId, indicator.id, period), source = sourceFor(dataset, indicator, current.row);
+    return {area, indicator, ...current, source, period};
+  });
+}
+export function evidenceCsv(dataset, territoryId, period, indicatorIds) {
+  return makeCsv([
+    ['Country','Territory ID','Territory','Level','Code','Code system','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status','Definition','Source','Source URL','Retrieved at','Data edition'],
+    ...evidenceRows(dataset, territoryId, period, indicatorIds).map(({area, indicator, row, value, status, source}) => [dataset.country.name, area?.id, area?.name, area?.level, area?.official_code, area?.code_system, area?.boundary_version, indicator.id, indicator.name, period, value, indicator.unit, status, indicator.definition, source?.name, safeUrl(source?.url), source?.retrieved_at, dataset.generated_at])
+  ]);
+}
+export function safeFilename(value) { return String(value).replace(/[^\p{L}\p{N}._-]/gu,'-').replace(/-+/g,'-').slice(0,100) || 'dashboard'; }
+const markdownText = value => String(value ?? '').replaceAll('\\','\\\\').replace(/[\[\]<>]/g, character => `\\${character}`).replaceAll('|','\\|').replace(/[\r\n]+/g,' ');
+export function planningMarkdown(dataset, territoryId, period) {
+  const area = dataset.territories.find(row => row.id === territoryId);
+  if (!area) throw new Error('Unknown planning territory');
+  const documents = dataset.documents.filter(row => row.territory_id === territoryId);
+  const evidence = evidenceRows(dataset, territoryId, period);
+  const lines = [
+    `# Planning base — ${markdownText(area.name)}`, '',
+    '**Generic, unapproved working outline.** The country’s official planning form and required procedure have not been verified by this template. Complete this outline against official guidance before formal use. It does not record approval or community agreement.', '',
+    '## 1. Area and evidence scope', '',
+    `- Country: ${markdownText(dataset.country.name)} (${markdownText(dataset.country.id)})`,
+    `- Area: ${markdownText(area.name)}; ID: ${markdownText(area.id)}; level: ${markdownText(area.level)}; type: ${markdownText(area.type)}`,
+    `- Code: ${markdownText(area.official_code || 'Not verified')}; code system: ${markdownText(area.code_system || 'Not specified')}`,
+    `- Boundary edition: ${markdownText(area.boundary_version || 'Not verified')}`,
+    `- Requested evidence period: ${markdownText(period || 'No source period available')}`,
+    `- Data edition: ${markdownText(dataset.generated_at)}`, '',
+    '## 2. Acquired statistical evidence', '',
+    'Only observations for this area and period appear below. National observations are not substituted for local gaps. Different indicators can have different definitions and coverage.', '',
+    '| Indicator | Value | Unit | Status | Source |', '|---|---:|---|---|---|',
+    ...evidence.map(({indicator, value, status, source}) => `| ${markdownText(indicator.name)} | ${value === null ? '—' : String(value)} | ${markdownText(indicator.unit)} | ${markdownText(statusLabel(status))} | ${markdownText(source?.name || 'No source acquired')} |`), '',
+    ...evidence.map(({indicator, source}) => `- ${markdownText(indicator.name)}: ${markdownText(indicator.definition || 'Definition not acquired')}. ${safeUrl(source?.url) ? `Source: <${safeUrl(source.url)}>.` : 'No verified source link.'} Retrieved: ${markdownText(source?.retrieved_at || 'Not recorded')}.`), '',
+    '## 3. Working issues to investigate', '',
+    '| Proposed issue | Evidence and gaps | Who proposed it | Verification needed |', '|---|---|---|---|', '| [Complete locally] | [Cite source and period] | [Record actual proposer] | [Complete locally] |', '',
+    '## 4. Proposed objectives and indicators', '',
+    '| Proposed objective | Indicator and definition | Verified baseline | Proposed target and period |', '|---|---|---|---|', '| [Complete locally] | [Complete locally] | [Do not assume missing = zero] | [Proposal, not an approved commitment] |', '',
+    '## 5. Proposed actions and resources', '',
+    '| Proposed action | Area and intended beneficiaries | Responsible body to confirm | Timing | Cost and funding evidence |', '|---|---|---|---|---|', '| [Complete locally] | [Complete locally] | [Confirm mandate] | [Proposal] | [Keep estimates, budgets and expenditure separate] |', '',
+    '## 6. Participation and decisions', '',
+    'Record statistical facts, staff proposals, resident proposals, consultations and formal decisions separately. No agreement or approval is inferred from this document.', '',
+    '| Record type | Date | Participants or responsible body | What was actually recorded | Evidence |', '|---|---|---|---|---|', '| [Proposal / consultation / decision] | [Complete] | [Complete] | [Complete] | [Source] |', '',
+    '## 7. Implementation and monitoring to confirm', '',
+    '- Confirm the legally required planning structure, competent authority and review process.',
+    '- Assign responsibilities only after confirming mandates and participation.',
+    '- Record indicator definitions, update frequency, data owner and review dates.', '',
+    '## 8. Acquired documents and remaining gaps', '',
+    ...(documents.length ? documents.map(doc => `- ${markdownText(doc.title)} (${markdownText(doc.period || 'Period not recorded')}); acquisition: ${markdownText(statusLabel(doc.availability))}; official status: ${markdownText(statusLabel(doc.official_status || 'unverified'))}. ${safeUrl(doc.url) ? `<${safeUrl(doc.url)}>` : 'No verified link.'}`) : ['No local documents have been collected for this area. This does not establish whether a plan exists.']), '',
+    ...dataset.gaps.map(gap => `- ${markdownText(gap.category)} — ${markdownText(statusLabel(gap.status))}: ${markdownText(gap.detail)} Next: ${markdownText(gap.next_action)}`), '',
+    'Prepared from the same dataset and selected area/period used by the dashboard. This editable Markdown is a generic planning aid, not a DOCX file or an official country form.', ''
+  ];
+  return lines.join('\n');
+}
+export function planningHtml(dataset, territoryId, period) {
+  const area = dataset.territories.find(row => row.id === territoryId);
+  const markdown = planningMarkdown(dataset, territoryId, period);
+  // Render the exact downloadable Markdown as readable pre-wrapped text; no unsafe Markdown HTML execution.
+  return `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Planning base — ${escapeHtml(area.name)}</title><style>body{font:15px/1.6 system-ui,sans-serif;color:#172d3e;max-width:1000px;margin:28px auto;padding:0 20px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}h1{font-size:24px}.note{border-left:4px solid #267868;padding:10px 16px;background:#eff6f3}@media print{body{margin:0;max-width:none;font-size:11pt}pre{white-space:pre-wrap}@page{margin:18mm}}</style><body><h1>Planning base — ${escapeHtml(area.name)}</h1><p class="note">Generic, unapproved working outline. Use your browser’s Print command to print or save as PDF. Its evidence and content match the editable Markdown download.</p><pre>${escapeHtml(markdown)}</pre></body></html>`;
+}
+
+// Polygon/MultiPolygon only. Numeric paths cannot execute source content. Dateline
+// longitudes are unwrapped using the largest circular gap instead of a 358° extent.
+function ringsOf(geometry) {
+  if (geometry?.type === 'Polygon') return Array.isArray(geometry.coordinates) ? geometry.coordinates : [];
+  if (geometry?.type === 'MultiPolygon') return Array.isArray(geometry.coordinates) ? geometry.coordinates.flatMap(polygon => Array.isArray(polygon) ? polygon : []) : [];
+  return [];
+}
+function validRing(ring) {
+  if (!Array.isArray(ring) || ring.length < 3) return null;
+  if (!ring.every(point => Array.isArray(point) && finite(point[0]) && finite(point[1]) && Math.abs(point[0]) <= 180 && Math.abs(point[1]) <= 90)) return null;
+  return ring;
+}
+export function mapGeometry(features, selectedId = '', width = 760, height = 400) {
+  const shapes = features.map(feature => ({id:String(feature.properties?.territory_id || ''), rings:ringsOf(feature.geometry).map(validRing).filter(Boolean)})).filter(shape => shape.id && shape.rings.length);
+  const points = shapes.flatMap(shape => shape.rings.flat());
+  if (!points.length) return {paths:[], selectedHasGeometry:false, bounds:null};
+  const longitudes = [...new Set(points.map(point => (point[0] + 360) % 360))].sort((a,b) => a-b);
+  let cut = longitudes[0], largestGap = -1;
+  for (let i=0;i<longitudes.length;i++) {
+    const next = i === longitudes.length-1 ? longitudes[0] + 360 : longitudes[i+1], gap = next - longitudes[i];
+    if (gap > largestGap) { largestGap = gap; cut = next % 360; }
+  }
+  const project = point => { const longitude = (point[0] + 360) % 360; return [longitude < cut ? longitude + 360 : longitude, -point[1]]; };
+  const projected = shapes.map(shape => ({...shape, rings:shape.rings.map(ring => ring.map(project))}));
+  const selected = projected.filter(shape => shape.id === selectedId);
+  const boundPoints = (selected.length ? selected : projected).flatMap(shape => shape.rings.flat());
+  let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
+  for (const [x,y] of boundPoints) {minX=Math.min(minX,x);minY=Math.min(minY,y);maxX=Math.max(maxX,x);maxY=Math.max(maxY,y);}
+  const midLatitude = -(minY+maxY)/2, latitudeScale = Math.max(0.15, Math.cos(midLatitude * Math.PI/180));
+  const dx = Math.max(0.00001,(maxX-minX)*latitudeScale), dy = Math.max(0.00001,maxY-minY);
+  const padding = 24, scale = Math.min((width-padding*2)/dx, (height-padding*2)/dy);
+  const ox = (width-dx*scale)/2, oy=(height-dy*scale)/2;
+  const pathPoint = point => `${((point[0]-minX)*latitudeScale*scale+ox).toFixed(2)},${((point[1]-minY)*scale+oy).toFixed(2)}`;
+  return {paths:projected.map(shape => ({id:shape.id,d:shape.rings.map(ring => 'M'+ring.map(pathPoint).join('L')+'Z').join('')})), selectedHasGeometry:selected.length>0, bounds:{minX,minY,maxX,maxY,width,height}};
+}
+export function seriesGeometry(series, width=600, height=170) {
+  const values = series.map(row => observedValue(row)).filter(finite);
+  if (!values.length) return null;
+  const min=Math.min(...values),max=Math.max(...values),span=max-min || Math.max(Math.abs(max)*0.05,1);
+  const points = series.map((row,index) => {const value=observedValue(row);return value === null ? null : {x:40+(width-60)*(series.length===1?0.5:index/(series.length-1)),y:16+(height-46)*(max-value)/span,row};});
+  const segments=[]; let segment=[];
+  for (const point of points) {if(point){segment.push(point);}else if(segment.length){segments.push(segment);segment=[];}}
+  if(segment.length)segments.push(segment);
+  return {min,max,points:points.filter(Boolean),segments:segments.map(line => line.map(point=>`${point.x.toFixed(2)},${point.y.toFixed(2)}`).join(' ')),width,height};
+}
