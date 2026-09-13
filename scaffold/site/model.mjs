@@ -66,6 +66,45 @@ export function selectTerritory(dataset, state, id) {
   if (!territory) return {...state, notices:[`Area “${id}” is unavailable. The current selection was retained.`]};
   return {...state, selected:id, level:territory.level === 'national' ? state.level : territory.level, notices:[]};
 }
+export function territoryLineage(dataset, selectedId) {
+  const byId=new Map(dataset.territories.map(area=>[area.id,area]));
+  const lineage=[],visited=new Set();
+  let area=byId.get(selectedId);
+  while(area) {
+    if(visited.has(area.id))return [];
+    visited.add(area.id);lineage.unshift(area);
+    if(area.id===dataset.country.national_territory_id)return lineage;
+    if(!area.parent_id)return [];
+    area=byId.get(area.parent_id);
+  }
+  return [];
+}
+// An ancestor shown as context is NOT the active geographic choice. Its selectable
+// "Whole …" option has a different value, so selecting the SAME ancestor fires change.
+export function hierarchyControls(dataset, selectedId) {
+  const byId=new Map(dataset.territories.map(area=>[area.id,area]));
+  const hasMultipleTiers=dataset.territories.some(area=>area.parent_id && area.parent_id!==dataset.country.national_territory_id && byId.has(area.parent_id));
+  const lineage=territoryLineage(dataset,selectedId);
+  if(!hasMultipleTiers || !lineage.length)return [];
+  return lineage.flatMap((parent,index)=>{
+    const children=dataset.territories.filter(area=>area.parent_id===parent.id);
+    if(!children.length)return [];
+    const child=lineage[index+1];
+    const descendantSelected=child && child.id!==selectedId;
+    const context=descendantSelected?{value:'context',label:`Belongs to ${child.name} · a lower area is selected`}:null;
+    return [{parent,levels:[...new Set(children.map(area=>area.level))],context,
+      value:context?'context':child?`area:${child.id}`:'',
+      options:[{value:'',targetId:parent.id,label:`Whole ${parent.name} · no lower area selected`},...children.map(area=>({value:`area:${area.id}`,targetId:area.id,label:`Whole ${area.name}`}))]}];
+  });
+}
+export function selectHierarchyOption(dataset,state,parentId,value) {
+  const control=hierarchyControls(dataset,state.selected).find(item=>item.parent.id===parentId);
+  const option=control?.options.find(item=>item.value===value);
+  if(!option)return {...state,notices:['This hierarchy choice is no longer available. The current area was retained.']};
+  // There is one selected ID. Choosing a parent replaces it; no descendant state
+  // survives, and missing parent observations remain missing rather than being summed.
+  return selectTerritory(dataset,state,option.targetId);
+}
 export function routeQuery(dataset, state) {
   const territory = dataset.territories.find(row => row.id === state.selected);
   const query = new URLSearchParams({country:dataset.country.id, territory:state.selected, metric:state.metric, period:state.period, level:state.level || ''});
@@ -98,6 +137,16 @@ export function rankedRows(rows, order = 'desc') {
 export function searchRows(rows, query) {
   const text = query.trim().toLocaleLowerCase();
   return rows.filter(row => !text || [row.area.name, row.area.id, row.area.official_code].some(value => String(value || '').toLocaleLowerCase().includes(text)));
+}
+export function rankingReveal(rows,selectedId,query) {
+  const selected=rows.find(row=>row.area.id===selectedId);
+  const masked=!!selected && searchRows([selected],query).length===0;
+  return {query:masked?'':query,clearSearch:masked,inCohort:!!selected,ranked:!!selected && finite(selected.value)};
+}
+export function rankingScrollTop({scrollTop,clientHeight,scrollHeight,rowTop,rowHeight}) {
+  const padding=8,max=Math.max(0,scrollHeight-clientHeight);
+  if(rowTop>=scrollTop+padding && rowTop+rowHeight<=scrollTop+clientHeight-padding)return Math.min(max,Math.max(0,scrollTop));
+  return Math.min(max,Math.max(0,rowTop-(clientHeight-rowHeight)/2));
 }
 export function distribution(rows) {
   const values = rows.map(row => row.value).filter(finite).sort((a,b) => a-b);

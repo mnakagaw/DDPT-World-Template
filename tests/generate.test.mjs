@@ -4,7 +4,8 @@ import {mkdtemp,readFile,writeFile,mkdir,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {generateSite,pageShell} from '../lib/generate.mjs';
-import {initialState,selectTerritory,routeQuery,observationState,latestObservedPeriod,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,distribution,mapGeometry,seriesGeometry,safeUrl,csvCell,makeCsv,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
+import {initialState,selectTerritory,territoryLineage,hierarchyControls,selectHierarchyOption,routeQuery,observationState,latestObservedPeriod,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
+import {hierarchyFixture} from './hierarchy-fixture.mjs';
 
 function fixture() {
   return {
@@ -55,6 +56,77 @@ test('area changes, national return and query round trips preserve selected anal
     assert.equal(restored.selected,id);assert.equal(restored.metric,'water');assert.equal(restored.period,'2024');assert.equal(restored.notices.length,0);
   }
   assert.equal(selectTerritory(data,start,'unknown').selected,'a');
+});
+
+test('last explicit parent choice wins even when city belongs to the SAME subregion or region',()=>{
+  const data=hierarchyFixture();
+  const city=initialState(data,'?territory=city&metric=water&period=2024');
+  assert.deepEqual(territoryLineage(data,city.selected).map(area=>area.id),['TST','north','nile','city']);
+  const cityControls=hierarchyControls(data,city.selected);
+  for(const [parentId,targetId] of [['north','nile'],['TST','north']]) {
+    const control=cityControls.find(item=>item.parent.id===parentId);
+    const wholeParent=control.options.find(option=>option.targetId===targetId);
+    assert.equal(control.value,'context','Displayed ancestry is context, not the selected parent value');
+    assert.notEqual(wholeParent.value,control.value,'Choosing the current ancestor must be a real select-value change');
+    const parent=selectHierarchyOption(data,city,parentId,wholeParent.value);
+    assert.equal(parent.selected,targetId);assert.equal(parent.metric,'water');assert.equal(parent.period,'2024');
+    assert.equal(parent.level,data.territories.find(area=>area.id===targetId).level);
+    assert.ok(!territoryLineage(data,parent.selected).some(area=>area.id==='city'));
+    assert.ok(hierarchyControls(data,parent.selected).every(item=>item.value!=='area:city'),'No city remains selected after parent reset');
+    const lowerControl=hierarchyControls(data,parent.selected).find(item=>item.parent.id===targetId);
+    assert.equal(lowerControl?.value,'','The parent’s child selector returns to its empty whole-parent option');
+    const restored=initialState(data,routeQuery(data,parent));
+    assert.equal(restored.selected,targetId);assert.equal(restored.metric,'water');assert.equal(restored.period,'2024');
+  }
+});
+
+test('empty child selection selects its parent; all evidence and outputs use parent source or parent missing',()=>{
+  const data=hierarchyFixture();
+  const city=initialState(data,'?territory=city&metric=population&period=2024');
+  const subregion=selectHierarchyOption(data,city,'nile','');
+  assert.equal(subregion.selected,'nile');assert.equal(observationState(data,subregion.selected,subregion.metric,subregion.period).value,400);
+  assert.ok(evidenceRows(data,subregion.selected,'2024').every(row=>row.area.id==='nile'));
+  assert.match(planningMarkdown(data,subregion.selected,'2024'),/Planning base — River Test Subregion/);
+  assert.doesNotMatch(planningMarkdown(data,subregion.selected,'2024'),/city-only-plan/);
+  const region=selectHierarchyOption(data,city,'TST','area:north');
+  assert.equal(region.selected,'north');
+  assert.deepEqual(observationState(data,region.selected,'population','2024'),{row:null,value:null,status:'not_collected'});
+  assert.equal(seriesFor(data,region.selected,'population').length,0);
+  assert.ok(evidenceRows(data,region.selected,'2024').every(row=>row.area.id==='north'&&row.value===null));
+  assert.match(evidenceCsv(data,region.selected,'2024'),/Northern Test Region/);
+  assert.doesNotMatch(evidenceCsv(data,region.selected,'2024'),/River Test City|"100"|"400"/);
+  assert.match(planningHtml(data,region.selected,'2024'),/Planning base — Northern Test Region/);
+  assert.doesNotMatch(planningHtml(data,region.selected,'2024'),/city-only-plan|\| 100 \||\| 400 \|/);
+  assert.equal(mapGeometry(data.boundaries.features,region.selected).selectedHasGeometry,true);
+  assert.equal(mapGeometry(data.boundaries.features,region.selected).bounds.maxX,8);
+  assert.equal(initialState(data,routeQuery(data,city)).selected,'city','A browser-back route restores the city only when its own URL is revisited');
+});
+
+test('district to same parent and incomplete hierarchies retain generic, non-country-specific behavior',()=>{
+  const data=hierarchyFixture(),district=initialState(data,'?territory=district&metric=water&period=2024');
+  const region=selectHierarchyOption(data,district,'TST','area:north');assert.equal(region.selected,'north');
+  assert.equal(selectHierarchyOption(data,district,'north','area:nile').selected,'nile');
+  assert.deepEqual(hierarchyControls(fixture(),'a'),[],'One-level registry keeps the simple selector');
+  data.territories.find(area=>area.id==='city').parent_id='missing';
+  assert.deepEqual(hierarchyControls(data,'city'),[],'Unresolved ancestry is not fabricated');
+  data.territories.find(area=>area.id==='city').parent_id='city';assert.deepEqual(territoryLineage(data,'city'),[]);
+});
+
+test('map-selected ranking row is revealed by clearing only a masking search; missing remains unranked',()=>{
+  const data=localValues(fixture()),state=initialState(data,'?metric=water&period=2024'),rows=comparisonRows(data,state);
+  const baseline=JSON.stringify(rows);
+  assert.deepEqual(rankingReveal(rows,'a','Mukono'),{query:'',clearSearch:true,inCohort:true,ranked:true});
+  assert.deepEqual(rankingReveal(rows,'a','301'),{query:'301',clearSearch:false,inCohort:true,ranked:true});
+  assert.deepEqual(rankingReveal(rows,'c','Arua'),{query:'',clearSearch:true,inCohort:true,ranked:false});
+  assert.deepEqual(rankingReveal(rows,'TST','Mukono'),{query:'Mukono',clearSearch:false,inCohort:false,ranked:false});
+  assert.equal(JSON.stringify(rows),baseline);assert.equal(rankedRows(rows).length,2);assert.equal(distribution(rows).median,10);
+});
+
+test('rank reveal computes bounded scroll within the ranking viewport only',()=>{
+  assert.equal(rankingScrollTop({scrollTop:0,clientHeight:300,scrollHeight:1200,rowTop:900,rowHeight:40}),770);
+  assert.equal(rankingScrollTop({scrollTop:500,clientHeight:300,scrollHeight:1200,rowTop:560,rowHeight:40}),500);
+  assert.equal(rankingScrollTop({scrollTop:500,clientHeight:300,scrollHeight:1200,rowTop:5,rowHeight:40}),0);
+  assert.equal(rankingScrollTop({scrollTop:0,clientHeight:300,scrollHeight:1200,rowTop:1190,rowHeight:40}),900);
 });
 
 test('stale identity and wrong-country links receive explicit recovery notices',()=>{
@@ -175,4 +247,9 @@ test('static shell escapes external country names and never loads third-party sc
   const html=pageShell({country:{name:'</title><script>alert(1)</script>',locale:'en" onclick="x'},page:'territorial'});
   assert.doesNotMatch(html,/<script>alert/);assert.match(html,/&lt;script&gt;/);assert.match(html,/<html lang="en">/);
   assert.throws(()=>pageShell({country:{name:'x'},page:'unknown'}),/Unknown generated page/);
+  const brand=html.match(/<a class="brand"[^>]*>/)[0];
+  assert.match(brand,/data-brand-link/);assert.doesNotMatch(brand,/data-page-link/);assert.match(brand,/href="\.\.\/"/);
+  assert.match(html,/<a href="\.\.\/" data-page-link="home">/,'Ordinary home navigation remains separate from the brand reset');
+  const data=hierarchyFixture(),fresh=initialState(data);
+  assert.equal(fresh.selected,'TST');assert.equal(fresh.metric,'population');assert.equal(fresh.period,'2024');
 });

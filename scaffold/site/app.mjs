@@ -1,7 +1,7 @@
 import {
   finite, escapeHtml as e, safeUrl, displayValue, statusLabel, sourceFor,
   periodsFor, observationState, localLevels, levelLabel, nationalOnly, initialState,
-  selectTerritory, routeQuery, comparisonRows, comparisonCompatibility, rankedRows, searchRows, distribution,
+  selectTerritory, hierarchyControls, selectHierarchyOption, routeQuery, comparisonRows, comparisonCompatibility, rankedRows, searchRows, rankingReveal, rankingScrollTop, distribution,
   seriesFor, observedValue, makeCsv, evidenceCsv, safeFilename, planningMarkdown,
   planningHtml, mapGeometry, seriesGeometry
 } from './model.mjs';
@@ -11,7 +11,7 @@ const app = document.getElementById('app');
 const page = document.body.dataset.page || 'home';
 const pageNames = {home:'Explore',territorial:'Territorial diagnostic',thematic:'Thematic diagnostic',planning:'Planning and resources'};
 let dataset, state;
-let areaSearch='', rankSearch='', rankOrder='desc', wholeMap=false;
+let areaSearch='', rankSearch='', rankOrder='desc', wholeMap=false, allAreaOpen=false;
 const fmt = value => displayValue(value, dataset?.country.locale || 'en');
 const areaFor = id => dataset.territories.find(area => area.id === id);
 const metricFor = id => dataset.indicators.find(indicator => indicator.id === id);
@@ -37,7 +37,9 @@ function indicatorControl() {
 function areaControls() {
   const groups=[...new Set(dataset.territories.map(area=>area.level))];
   const hits=areaSearch ? dataset.territories.filter(area=>[area.name,area.id,area.official_code].some(value=>String(value||'').toLocaleLowerCase().includes(areaSearch.toLocaleLowerCase()))) : [];
-  return `<div class="area-controls"><label class="field" for="area-select"><span>Selected area</span><select id="area-select" data-control="area">${groups.map(level=>`<optgroup label="${e(levelLabel(level))}">${dataset.territories.filter(area=>area.level===level).map(area=>`<option value="${e(area.id)}" ${area.id===state.selected?'selected':''}>${e(area.name)}${area.level==='national'?' · national':''}</option>`).join('')}</optgroup>`).join('')}</select></label>
+  const hierarchy=page==='territorial'?hierarchyControls(dataset,state.selected):[];
+  const flatSelector=`<label class="field" for="area-select"><span>Selected area${hierarchy.length?' · all records':''}</span><select id="area-select" data-control="area">${groups.map(level=>`<optgroup label="${e(levelLabel(level))}">${dataset.territories.filter(area=>area.level===level).map(area=>`<option value="${e(area.id)}" ${area.id===state.selected?'selected':''}>${e(area.name)}${area.level==='national'?' · national':''}</option>`).join('')}</optgroup>`).join('')}</select></label>`;
+  return `<div class="area-controls">${hierarchy.length?`<div class="hierarchy-controls"><p class="small-note">Showing <strong>${e(currentArea().name)}</strong>. Choose “Whole …” to make that parent the selected area and clear its lower-area selection.</p>${hierarchy.map((control,index)=>`<label class="field" for="hierarchy-${index}"><span>${e(control.levels.map(levelLabel).join(' / '))} · within ${e(control.parent.name)}</span><select id="hierarchy-${index}" data-control="hierarchy" data-parent="${e(control.parent.id)}">${control.context?`<option value="context" selected disabled>${e(control.context.label)}</option>`:''}${control.options.map(option=>`<option value="${e(option.value)}" ${option.value===control.value?'selected':''}>${e(option.label)}</option>`).join('')}</select></label>`).join('')}</div><details class="micro-details" data-all-area-selector ${allAreaOpen?'open':''}><summary>All-area selector</summary>${flatSelector}</details>`:flatSelector}
   <label class="field" for="area-search"><span>Find an area by name or code</span><input id="area-search" type="search" data-control="area-search" value="${e(areaSearch)}" autocomplete="off" placeholder="Name or code"></label>
   ${areaSearch?`<div class="search-results" aria-label="Area search results">${hits.length?hits.slice(0,50).map(area=>button('select',`${e(area.name)}<small>${e(levelLabel(area.level))} · ${e(area.official_code || area.id)}</small>`,`data-id="${e(area.id)}"`,'result-button')).join(''):'<p>No matching areas.</p>'}${hits.length>50?`<p>${hits.length} matches; narrow your search to see more.</p>`:''}</div>`:''}
   ${state.selected!==dataset.country.national_territory_id?button('national','Return to national view','','text-button'):''}</div>`;
@@ -128,9 +130,9 @@ function rankingContent(rows) {
   const ranked=rankedRows(rows,rankOrder), visible=searchRows(ranked,rankSearch);
   const missing=searchRows(rows.filter(row=>!finite(row.value)),rankSearch);
   return `<p class="small-note">${ranked.length} observed / ${rows.length} comparable areas. Search narrows displayed rows only. Ties share a rank.</p>
-  <ol class="ranking-list">${visible.map(row=>`<li class="${row.area.id===state.selected?'selected':''}" data-ranking-id="${e(row.area.id)}"><span class="rank-number">${row.rank}</span>${button('select',e(row.area.name),`data-id="${e(row.area.id)}"`,'rank-area')}<strong>${fmt(row.value)}</strong></li>`).join('')}</ol>
+  <div class="ranking-scroll" role="region" aria-label="Full ranking and unranked areas" tabindex="0"><ol class="ranking-list">${visible.map(row=>`<li class="${row.area.id===state.selected?'selected':''}" data-ranking-id="${e(row.area.id)}"><span class="rank-number">${row.rank}</span>${button('select',e(row.area.name),`data-id="${e(row.area.id)}" data-rank-id="${e(row.area.id)}"`,'rank-area')}<strong>${fmt(row.value)}</strong></li>`).join('')}</ol>
   ${!visible.length?'<p class="missing-note">No observed values match this search. No rank is assigned to missing data.</p>':''}
-  ${missing.length?`<details><summary>Areas with no observed value (${missing.length})</summary><ul class="missing-list">${missing.map(row=>`<li>${button('select',e(row.area.name),`data-id="${e(row.area.id)}"`,'text-button')}<span>${e(statusLabel(row.status))}</span></li>`).join('')}</ul></details>`:''}`;
+  ${missing.length?`<details><summary>Areas with no observed value (${missing.length})</summary><ul class="missing-list">${missing.map(row=>`<li class="${row.area.id===state.selected?'selected':''}" data-ranking-id="${e(row.area.id)}" data-unranked="true">${button('select',e(row.area.name),`data-id="${e(row.area.id)}" data-rank-id="${e(row.area.id)}"`,'text-button')}<span>${e(statusLabel(row.status))} · unranked</span></li>`).join('')}</ul></details>`:''}</div>`;
 }
 function thematic() {
   const indicator=currentMetric();
@@ -178,15 +180,23 @@ function updateHeader() {
   document.getElementById('country-name').textContent=dataset.country.name;
   document.title=`${pageNames[page]} — ${currentArea().name} | ${dataset.country.name}`;
   document.querySelectorAll('[data-page-link]').forEach(anchor=>{const target=anchor.dataset.pageLink;anchor.href=pageUrl(target);if(target===page)anchor.setAttribute('aria-current','page');else anchor.removeAttribute('aria-current');});
+  document.querySelectorAll('[data-brand-link]').forEach(anchor=>{anchor.href=new URL('./',base).href;anchor.setAttribute('aria-label',`${dataset.country.name} · return to national start with default conditions`);});
 }
 function render() {
   const active=document.activeElement;
-  const focusId=active?.id, mapId=active?.dataset.mapId;
+  const focusId=active?.id, mapId=active?.dataset.mapId, rankId=active?.dataset.rankId;
+  const previousDisclosure=document.querySelector('[data-all-area-selector]');
+  if(previousDisclosure)allAreaOpen=previousDisclosure.open;
   const selection=active instanceof HTMLInputElement ? [active.selectionStart,active.selectionEnd] : null;
   updateHeader();
   app.innerHTML=`<div class="page-heading"><div><p class="eyebrow">${e(dataset.country.name)} · ${e(pageNames[page])}</p><h1>${page==='home'?e(dataset.country.name):e(currentArea().name)}</h1></div><div class="actions">${button('share','Share selection')}${button('print','Print page')}</div></div><p id="selection-status" class="sr-only" aria-live="polite">Selected ${e(currentArea().name)}, ${e(currentMetric()?.name || 'no indicator')}, ${e(state.period)}.</p><p id="action-status" class="action-status" role="status"></p>${state.notices.map(notice=>`<p class="notice">${e(notice)}</p>`).join('')}${scopeBanner()}${({home,territorial,thematic,planning}[page] || home)()}${register()}`;
-  if(focusId) {const next=document.getElementById(focusId);next?.focus({preventScroll:true});if(selection&&next instanceof HTMLInputElement)try{next.setSelectionRange(...selection);}catch{}}
+  if(focusId) {const next=document.getElementById(focusId);const disclosure=next?.closest('details');if(disclosure)disclosure.open=true;next?.focus({preventScroll:true});if(selection&&next instanceof HTMLInputElement)try{next.setSelectionRange(...selection);}catch{}}
   if(mapId) [...document.querySelectorAll('[data-map-id]')].find(node=>node.dataset.mapId===state.selected)?.focus({preventScroll:true});
+  if(rankId) {
+    const next=[...document.querySelectorAll('[data-rank-id]')].find(node=>node.dataset.rankId===rankId);
+    const disclosure=next?.closest('details');if(disclosure)disclosure.open=true;
+    next?.focus({preventScroll:true});revealRankingSelection();
+  }
 }
 function commit(next, {replace=false}={}) {
   state=next;
@@ -194,7 +204,27 @@ function commit(next, {replace=false}={}) {
   history[replace?'replaceState':'pushState']({},'',url);
   render();
 }
-function choose(id) {wholeMap=false;areaSearch='';commit(selectTerritory(dataset,state,id));}
+function revealRankingSelection({focus=false}={}) {
+  const row=[...document.querySelectorAll('#ranking-content [data-ranking-id]')].find(node=>node.dataset.rankingId===state.selected);
+  const container=row?.closest('.ranking-scroll');
+  if(!row || !container)return false;
+  const details=row.closest('details');if(details)details.open=true;
+  const containerRect=container.getBoundingClientRect(),rowRect=row.getBoundingClientRect();
+  container.scrollTop=rankingScrollTop({scrollTop:container.scrollTop,clientHeight:container.clientHeight,scrollHeight:container.scrollHeight,rowTop:rowRect.top-containerRect.top+container.scrollTop,rowHeight:rowRect.height});
+  if(focus)row.querySelector('button')?.focus({preventScroll:true});
+  return true;
+}
+function choose(id,{fromMap=false}={}) {
+  wholeMap=false;areaSearch='';
+  const next=selectTerritory(dataset,state,id);
+  if(fromMap && page==='thematic') {
+    // Map highlighting does not redefine the comparison cohort.
+    next.level=state.level;
+    rankSearch=rankingReveal(comparisonRows(dataset,next),id,rankSearch).query;
+  }
+  commit(next);
+  if(fromMap && page==='thematic')revealRankingSelection();
+}
 function actionStatus(text) {const target=document.getElementById('action-status');target.textContent=text;}
 function download(text, filename, type) {
   const object=URL.createObjectURL(new Blob([text],{type}));
@@ -207,6 +237,7 @@ function seriesCsv(indicatorId, territoryId) {
 app.addEventListener('change',event=>{
   const control=event.target.dataset.control;
   if(control==='area')choose(event.target.value);
+  if(control==='hierarchy') {wholeMap=false;areaSearch='';commit(selectHierarchyOption(dataset,state,event.target.dataset.parent,event.target.value));}
   if(control==='metric') {const metric=event.target.value;commit({...state,metric,notices:[]});}
   if(control==='period')commit({...state,period:event.target.value,notices:[]});
   if(control==='level'){wholeMap=true;commit({...state,level:event.target.value,notices:[]});}
@@ -219,7 +250,7 @@ app.addEventListener('input',event=>{
 app.addEventListener('keydown',event=>{
   const target=event.target.closest('[data-map-id]');
   if(!target)return;
-  if(['Enter',' '].includes(event.key)){event.preventDefault();choose(target.dataset.id);return;}
+  if(['Enter',' '].includes(event.key)){event.preventDefault();choose(target.dataset.id,{fromMap:true});return;}
   const keys=['ArrowDown','ArrowRight','ArrowUp','ArrowLeft','Home','End'];
   if(!keys.includes(event.key))return;
   event.preventDefault();const paths=[...target.ownerSVGElement.querySelectorAll('[data-map-id]')],index=paths.indexOf(target);
@@ -231,13 +262,13 @@ app.addEventListener('click',async event=>{
   const action=target.dataset.action;
   const stem=safeFilename(`${dataset.country.id}-${state.selected}-${state.period || 'no-period'}`);
   try {
-    if(action==='select')choose(target.dataset.id);
+    if(action==='select')choose(target.dataset.id,{fromMap:!!target.dataset.mapId});
     else if(action==='national')choose(dataset.country.national_territory_id);
     else if(action==='map-extent'){wholeMap=!wholeMap;render();}
     else if(action==='compare'){state={...state,metric:target.dataset.id};location.href=pageUrl('thematic');}
     else if(action==='show-selected'){
-      rankSearch='';render();const selected=[...document.querySelectorAll('[data-ranking-id]')].find(row=>row.dataset.rankingId===state.selected);
-      if(selected){selected.scrollIntoView({block:'center',behavior:'smooth'});selected.querySelector('button')?.focus({preventScroll:true});}
+      rankSearch=rankingReveal(comparisonRows(dataset,state),state.selected,rankSearch).query;render();
+      if(revealRankingSelection({focus:true}))actionStatus('The selected area is visible in the ranking panel. Missing observations remain unranked.');
       else actionStatus('The selected area has no rank in this comparison set. Its details remain below the map.');
     }
     else if(action==='share'){

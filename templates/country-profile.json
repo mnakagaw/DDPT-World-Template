@@ -13,7 +13,7 @@
     "number_format_locale": null
   },
   "baseline": {
-    "common_spec_version": "0.1",
+    "common_spec_version": "0.2",
     "reference_repository": "https://github.com/mnakagaw/DDPT-TOP",
     "reference_commit": "6d2aee5f767515c5b20118ed642f832f21a15151",
     "reference_public_urls": [],

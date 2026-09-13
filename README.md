@@ -2,7 +2,9 @@
 
 **国名を指定すると、取得可能なデータを収集してDDPT型の国別ダッシュボードを作るためのPrivateテンプレートです。**
 
-実行テンプレート：0.2.0。共通UX仕様：0.1（改善後のv1.0採用は別途検証）。
+実行テンプレート：0.2.1。共通UX仕様：0.2（改善後のv1.0採用は別途検証）。
+
+地域診断では、市・県の選択後に同じ所属先のRegion／Subregionを選び直すと、下位選択を解除して上位全体へ切り替える。指標・年を保持し、親の値が未取得なら親の欠測を示す。階層は国別の地域台帳から構成する。[操作契約](docs/02_COMMON_SPEC.md)に、所属表示と上位全体の選択を区別する規則を記載した。
 
 ## 新しいAIプロジェクトへの依頼
 
@@ -77,7 +79,7 @@ npm run check
 npm test
 ```
 
-CIはWindows/Linux、Node 22/24で検証します。ローカル・ライブ取得・GitHubの結果と制約は[検証記録](docs/VALIDATION_v0.2.md)に保存します。
+CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等の変更は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)に保存します。
 
 ## 維持するモデル
 
@@ -87,7 +89,7 @@ CIはWindows/Linux、Node 22/24で検証します。ローカル・ライブ取�
 - [国別設定とデータ条件](docs/03_COUNTRY_AND_DATA.md)
 - [公式資料のアダプター追加](docs/SOURCE_ADAPTER_GUIDE.md)
 - [DDPT参照版](docs/01_DDPT_REFERENCE.md)・[ウガンダの教訓](docs/UGANDA_LESSONS.md)
-- [添付レビュー９所見](docs/REVIEW_TRACEABILITY.md)・[20の受入シナリオ](templates/ACCEPTANCE.md)
+- [添付レビュー９所見](docs/REVIEW_TRACEABILITY.md)・[26の受入シナリオ](templates/ACCEPTANCE.md)
 
 既知のF01～F03（地域引き継ぎ、文書取得、集計定義・基準日）の解消を確認してから、改善後の共通UX v1.0を採用します。テンプレート0.2の初期生成と、その採用判断・各国の実利用者による受入は分けて扱います。
 

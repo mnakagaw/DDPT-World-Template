@@ -4,6 +4,8 @@
 
 ## 共通インターフェース（0.2実装）
 
+実行パッケージ0.2.1でもデータschemaは0.2を維持する。複数階層の所属は既存の`territories[].parent_id`から読み、国名・階層数を固定しない。地域診断の上位再選択は下位の選択を解除し、最後に明示選択した親IDを表示・URL・出力で共有する。親の値の自動集計は行わず、登録された観測または欠測を使う。
+
 - Node.js 22以降、ES modules、実行時の外部npm依存なし。
 - `scripts/create-country.mjs --country <name-or-ISO> --out <new-directory>` が国解決・収集・検証・生成を行う。出力先既存なら上書きしない。
 - `scripts/build-country.mjs --project <directory>` は `data/dashboard.json` を検証して `site/` を再生成する。
