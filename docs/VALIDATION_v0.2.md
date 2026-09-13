@@ -37,7 +37,14 @@ EdgeでローカルHTTP配信のウガンダ生成サイトを操作した。
 
 ## GitHub検証
 
-PrivateかつTemplateとしてリポジトリを作成。Windows/Linux × Node 22/24のCIと、国名1入力の手動生成Workflowを実装した。実行結果は初回push後に追記する。
+PrivateかつTemplateとしてリポジトリを作成。初回コードcommit `f5549345505947e79a5d1e2d5d3cdb767fe78e77`をpushし、次を確認した。
+
+- [Validate template：34735851780](https://github.com/mnakagaw/DDPT-World-Template/actions/runs/34735851780)はWindows/Linux × Node 22/24の4構成すべて成功。各構成で構文確認と42テストを実行。
+- [Build country baseline：34735856399](https://github.com/mnakagaw/DDPT-World-Template/actions/runs/34735856399)へ`country=Rwanda`だけを指定して成功。301数値、全国を含む6地域、4ページのサイト、原資料と検証記録を生成。
+- Artifact `country-baseline-34735856399`（296,387 bytes）を実際にダウンロード。検証エラー0、参照commitが上記コード版、source状態cleanであることを確認。
+- Artifactの14出典ファイルと同梱文書9件について、記録したSHA-256と実ファイルがすべて一致。Artifactは7日保存で、再利用時は案件へ取得・保存する。
+
+この検証記録の追記はコード変更を含まない。各国の調査・生成完了を保証する結果ではなく、上記の入力と環境で初期生成が動いた証拠である。
 
 ## 今回の範囲外
 
