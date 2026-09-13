@@ -1,0 +1,40 @@
+{
+  "conclusion": "success",
+  "headSha": "39a3c37ca000ba61b35da1992bb5f5121a984c33",
+  "jobs": [
+    {
+      "name": "test (ubuntu-latest, 24)",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-09-13T07:45:42Z",
+      "completedAt": "2026-09-13T07:45:51Z",
+      "url": "https://github.com/mnakagaw/DDPT-World-Template/actions/runs/34746022786/job/103693999921"
+    },
+    {
+      "name": "test (windows-latest, 22)",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-09-13T07:45:43Z",
+      "completedAt": "2026-09-13T07:46:43Z",
+      "url": "https://github.com/mnakagaw/DDPT-World-Template/actions/runs/34746022786/job/103693999943"
+    },
+    {
+      "name": "test (ubuntu-latest, 22)",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-09-13T07:45:41Z",
+      "completedAt": "2026-09-13T07:45:51Z",
+      "url": "https://github.com/mnakagaw/DDPT-World-Template/actions/runs/34746022786/job/103693999958"
+    },
+    {
+      "name": "test (windows-latest, 24)",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-09-13T07:45:42Z",
+      "completedAt": "2026-09-13T07:46:21Z",
+      "url": "https://github.com/mnakagaw/DDPT-World-Template/actions/runs/34746022786/job/103693999982"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/mnakagaw/DDPT-World-Template/actions/runs/34746022786"
+}

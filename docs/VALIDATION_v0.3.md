@@ -69,4 +69,7 @@ Yumbe報告の支出額は表と本文で一致せず、本文の単位表記に
 
 ## リリース記録
 
-実装をcommit・pushし、対象commitに対するWindows／Linux・Node 22／24のCI結果を追記する。
+- 実装commit：[39a3c37ca000ba61b35da1992bb5f5121a984c33](https://github.com/mnakagaw/DDPT-World-Template/commit/39a3c37ca000ba61b35da1992bb5f5121a984c33)。Privateの`main`へpush済み。
+- [Validate template実行34746022786](https://github.com/mnakagaw/DDPT-World-Template/actions/runs/34746022786)：Windows／Ubuntu、Node 22／24の4構成すべて成功。最終job完了は2026-09-13 07:46:43 UTC（16:46:43 JST）。[CI receipt](evidence/planning-v0.3-ci.json)に対象SHAとjob結果を保存した。
+- このリリース記録は実装commitの後に文書だけの追記として保存する。検証manifestの実装ハッシュを変更しない。
+- 今回のActionsはpushを受けた構文検査・テストで、国別初期収集の手動実行やWeb公開ではない。新しい公開サイトは作っていない。
