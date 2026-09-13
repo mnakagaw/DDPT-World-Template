@@ -1,0 +1,3584 @@
+{
+  "version": "research-1.0",
+  "as_of": "2026-09-13",
+  "scope": "CEPAL Latin America 20 sovereign countries; LAC33ではない",
+  "purpose": "各国の法定計画主体となる地方自治体の診断・計画作成支援",
+  "limitations": [
+    "一次資料の公表・設問・制度を調べたデスク調査。20か国の全数値取得・地理結合・現行法の網羅審査を完了したものではない。",
+    "制定年と参照改正年・統合本文年は別。州法・条例・特別自治制度は国別案件で確定する。",
+    "未確認は未収録・不存在・未公開を意味しない。公表目録確認は全表の数値照合完了ではない。",
+    "10分野×20か国の一次点検と18テーマ探索候補。未点検の分野を国勢調査にないと断定しない。"
+  ],
+  "countries": [
+    {
+      "iso": "ARG",
+      "country": "アルゼンチン",
+      "census_year": 2022,
+      "usable_year": 2022,
+      "census_status": "2022確報・REDATAM公開",
+      "planning_level": "municipio／comuna等の地方政府（州法別）",
+      "plan": "州法・地方条例に基づく地域／都市計画",
+      "published_geography": "departamento／partido／comuna（表別）",
+      "finer_geography": "fracción／radio censal。地方政府界との対応を別確認",
+      "formats": "REDATAM・PDF・表ダウンロード",
+      "caveat": "departamentoと自治体は全国で同一ではない。機微項目の粒度制限あり。",
+      "agency": "州・地方政府の計画部局。全国一律の自治体計画所管は設定しない",
+      "agency_source": "ARG_L",
+      "census_sources": [
+        "ARG_C",
+        "ARG_H",
+        "ARG_R"
+      ],
+      "laws": [
+        {
+          "name": "Constitución Nacional（art.123）",
+          "year": 1994,
+          "summary": "1994改正で自治体自治を規定。自治体計画の義務・種類は各州法・条例を追加確認する。",
+          "source": "ARG_L"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "性・年齢、人口、世帯",
+          "evidence": "公表目録確認",
+          "geography": "departamento／partido／comuna（表別）",
+          "source": "ARG_R",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "床・屋根、所有・賃貸、居住条件",
+          "evidence": "公表目録確認",
+          "geography": "departamento／partido／comuna（表別）",
+          "source": "ARG_H",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "飲用・調理用水源、屋内配管",
+          "evidence": "公表目録確認",
+          "geography": "departamento／partido／comuna（表別）",
+          "source": "ARG_H",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "水洗便所、下水道",
+          "evidence": "公表目録確認",
+          "geography": "departamento／partido／comuna（表別）",
+          "source": "ARG_H",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "調理燃料（ガス・電気等）。独立した電力普及率は未確認",
+          "evidence": "公表目録確認",
+          "geography": "departamento／partido／comuna（表別）",
+          "source": "ARG_H",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "住宅のネット、ネット対応携帯、PC・タブレット",
+          "evidence": "公表目録確認",
+          "geography": "departamento／partido／comuna（表別）",
+          "source": "ARG_H",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "就学、教育到達度",
+          "evidence": "公表目録確認",
+          "geography": "departamento／partido／comuna（表別）",
+          "source": "ARG_R",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "経済活動（詳細変数は導入資料で探索対象を確認）",
+          "evidence": "公表目録確認",
+          "geography": "departamento／partido／comuna（表別）",
+          "source": "ARG_R",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "医療保障、先住民・アフロ系、ジェンダー関連項目",
+          "evidence": "公表目録確認",
+          "geography": "departamento／partido／comuna（表別）",
+          "source": "ARG_R",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "出生地・移住",
+          "evidence": "公表目録確認",
+          "geography": "departamento／partido／comuna（表別）",
+          "source": "ARG_R",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "連邦制。国家憲法が自治体自治を保障し、具体的な自治体制度・計画権限は州憲法・州法・地方条例を通して定める。全国共通のPMD義務を、この調査から確定していない。",
+        "chain": "国家憲法（自治体自治の1994改正）→対象州の憲法・自治体／土地利用法→自治体の条例・地域計画",
+        "national_role": "国の計画・投資資料は背景と財源・広域整合の確認に使う。地方計画の具体的な所管は対象州・自治体の現行組織から確定する。",
+        "local_role": "municipio、comuna等の制度と権限は州によって異なる。統計のdepartamentoを自動的に地方自治体へ読み替えない。",
+        "approval": "作成部署・議会等の承認権限・協議手続きは州法と自治体条例を取得して確定する。中央省の承認を一律に追加しない。",
+        "period": "全国一律の周期を設定しない。対象州・自治体の採用計画と現行条例を確認する。",
+        "automation": "州を選び、その州の法体系・自治体台帳とINDECの地域コードを対応付けてから、2022住宅・人口表を地域診断へ組み込む。地方政府区域とradioの関係は別工程で検証する。",
+        "gaps": "全州の計画法・条例、地方政府界と統計界の対応、自治体計画の本文・承認資料は未取得。",
+        "relation_sources": [
+          "ARG_L"
+        ]
+      }
+    },
+    {
+      "iso": "BOL",
+      "country": "ボリビア",
+      "census_year": 2024,
+      "usable_year": 2024,
+      "census_status": "2024 municipio/TIOC別表公開",
+      "planning_level": "municipio・departamento／TIOC",
+      "plan": "PTDI／先住民自治はPGTC等",
+      "published_geography": "municipio／TIOC",
+      "finer_geography": "小地域のテーマ別数値公開は追加確認",
+      "formats": "ZIP集計表・REDATAM・地理ポータル",
+      "caveat": "TIOCと通常のmunicipioの制度・地域対応を分ける。NBIは所得貧困と別。",
+      "agency": "Ministerio de Planificación del Desarrollo y Medio Ambiente（MPDyMA）",
+      "agency_source": "BOL_A",
+      "census_sources": [
+        "BOL_C"
+      ],
+      "laws": [
+        {
+          "name": "Ley 777 del SPIE",
+          "year": 2016,
+          "summary": "統合計画体系。PTDIの地方対象とTIOCの計画類型を区別する（art.17等）。",
+          "source": "BOL_L"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "性・年齢、世帯構成、人口動態",
+          "evidence": "公表目録確認",
+          "geography": "municipio／TIOC",
+          "source": "BOL_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "材料、保有形態、室数",
+          "evidence": "公表目録確認",
+          "geography": "municipio／TIOC",
+          "source": "BOL_C",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "水源",
+          "evidence": "公表目録確認",
+          "geography": "municipio／TIOC",
+          "source": "BOL_C",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "便所、排水",
+          "evidence": "公表目録確認",
+          "geography": "municipio／TIOC",
+          "source": "BOL_C",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "電源、調理燃料",
+          "evidence": "公表目録確認",
+          "geography": "municipio／TIOC",
+          "source": "BOL_C",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "世帯ICT機器・接続関連項目（個別の接続定義要照合）",
+          "evidence": "公表目録確認",
+          "geography": "municipio／TIOC",
+          "source": "BOL_C",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "識字、就学、学歴、平均教育年数",
+          "evidence": "公表目録確認",
+          "geography": "municipio／TIOC",
+          "source": "BOL_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "活動、職業、産業、就業地への移動",
+          "evidence": "公表目録確認",
+          "geography": "municipio／TIOC",
+          "source": "BOL_C",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "機能上の困難5歳以上、医療、言語、民族、NBI",
+          "evidence": "公表目録確認",
+          "geography": "municipio／TIOC",
+          "source": "BOL_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "国内移住、国外移住",
+          "evidence": "公表目録確認",
+          "geography": "municipio／TIOC",
+          "source": "BOL_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "SPIEにより国と地方の計画を接続する。地方の自治を前提に、部門・自治体のPTDIと先住民自治の計画類型を分ける。",
+        "chain": "国家の長期・中期計画→SPIE／Ley 777→departamento・municipioのPTDI、TIOCのPGTC等→制度計画・年次実施／投資",
+        "national_role": "MPDyMAがSPIEの制度所管を担い、国家計画と地方計画の整合を扱う。省名は2025年以降の再編を反映する。",
+        "local_role": "自治地方政府が対象区域の発展と土地・生活圏を扱う。TIOCは単なる統計地区ではなく、通常のmunicipioとは異なる計画主体になり得る。",
+        "approval": "作成・法定承認・国家計画との整合確認を区別する。対象政府の現行手引きと承認行為を取得し、国のガイド掲載だけで地方計画を承認済みとしない。",
+        "period": "国家の中期計画周期と地方PTDIの対象期間を文書ごとに記録する。前期2021–2025を新規案件へ固定しない。",
+        "automation": "2024のmunicipio/TIOC別表を基礎に、PTDIの診断要求へ指標を対応付ける。NBI、基礎サービス、就業・教育を優先し、地方投資・環境・計画本文を追加収集する。",
+        "gaps": "最新期の地方手引き・承認済みPTDI、TIOCの個別適用、全対象の境界対応は国別導入時に確認。",
+        "relation_sources": [
+          "BOL_L",
+          "BOL_A"
+        ]
+      }
+    },
+    {
+      "iso": "BRA",
+      "country": "ブラジル",
+      "census_year": 2022,
+      "usable_year": 2022,
+      "census_status": "2022全数・標本結果を別公開",
+      "planning_level": "município（計画別に適用要件）",
+      "plan": "Plano Diretor／財政計画は別制度",
+      "published_geography": "município。標本と全数の公開粒度を区別",
+      "finer_geography": "全数の一部はsetor censitário・bairro等",
+      "formats": "SIDRA・CSV・XLS・地理データ",
+      "caveat": "ネットは標本項目。全数のセクター細分性をネット等の標本値に転用しない。",
+      "agency": "Ministério das Cidades（都市計画）、Ministério do Planejamento e Orçamento（国家予算計画）",
+      "agency_source": "BRA_A",
+      "census_sources": [
+        "BRA_C",
+        "BRA_H",
+        "BRA_S",
+        "BRA_E"
+      ],
+      "laws": [
+        {
+          "name": "Lei 10.257 Estatuto da Cidade",
+          "year": 2001,
+          "summary": "art.40–41。Plano Diretorは自治体域全体を対象とし、人口2万人超その他の条件に該当する都市で義務。全自治体一律ではない。",
+          "source": "BRA_L"
+        },
+        {
+          "name": "Constituição Federal（計画・都市政策）",
+          "year": 1988,
+          "summary": "国・州・自治体の関係、PPA等の財政計画、自治体の都市政策の憲法上の枠組み。",
+          "source": "BRA_L2"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "性・年齢、人種、世帯",
+          "evidence": "公表目録確認",
+          "geography": "município。標本と全数の公開粒度を区別",
+          "source": "BRA_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "所有・賃貸、室数、過密（標本を含む）",
+          "evidence": "公表目録確認",
+          "geography": "município（標本）。セクター提供は主張しない",
+          "source": "BRA_S",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "水源、配管",
+          "evidence": "公表目録確認",
+          "geography": "município。標本と全数の公開粒度を区別",
+          "source": "BRA_H",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "便所、下水・排水",
+          "evidence": "公表目録確認",
+          "geography": "município。標本と全数の公開粒度を区別",
+          "source": "BRA_H",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "未確認：2022一般住宅の独立した電力・調理燃料表",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "BRA_C",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "世帯のインターネット接続（標本）",
+          "evidence": "公表目録確認",
+          "geography": "município（標本）。セクター提供は主張しない",
+          "source": "BRA_S",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "識字（全数）。学歴等は標本別に確認",
+          "evidence": "公表目録確認",
+          "geography": "município。標本と全数の公開粒度を区別",
+          "source": "BRA_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "就業・所得（標本）",
+          "evidence": "公表目録確認",
+          "geography": "município。標本と全数の公開粒度を区別",
+          "source": "BRA_E",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "先住民・quilombola。障害関連は標本表の条件確認",
+          "evidence": "公表目録確認",
+          "geography": "município。標本と全数の公開粒度を区別",
+          "source": "BRA_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "未確認：この台帳では移住の詳細表を未点検",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "BRA_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "連邦・州・連邦区・自治体の役割を分ける。都市政策の自治体計画Plano Diretorと、PPA・予算の計画を別の制度・成果物として扱う。",
+        "chain": "連邦憲法（1988）→都市政策のEstatuto da Cidade（2001）→自治体のPlano Diretor・土地利用規則。財政側はPPA・LDO・LOAの系統",
+        "national_role": "連邦は都市政策の一般的枠組み・支援施策等を担う。都市計画はMinistério das Cidades、国家予算計画はMPOという業務の違いを保持する。",
+        "local_role": "自治体が都市政策を担い、Plano Diretorは都市中心部だけでなく自治体域全体を対象にする。人口2万人超、都市圏等の法定条件で策定義務が分岐する。",
+        "approval": "Plano Diretorは自治体の法律として承認される。住民参加や公開の要求を、単なるデータ収集の完了で代替しない。",
+        "period": "Plano Diretorの改定規則とPPA・年次予算の周期は異なる。art.40の見直し規定と現行自治体法を案件で照合する。",
+        "automation": "法定適用条件を自治体台帳へ付け、IBGEの全数・標本を分けて取り込む。水衛生等の全数指標とネット・所得等の標本指標を、認められる地域粒度で比較する。",
+        "gaps": "自治体ごとの義務該当条件・最新Plano Diretor・PPA・条例、標本指標の精度と細地域提供条件は未網羅。",
+        "relation_sources": [
+          "BRA_L",
+          "BRA_L2"
+        ]
+      }
+    },
+    {
+      "iso": "CHL",
+      "country": "チリ",
+      "census_year": 2024,
+      "usable_year": 2024,
+      "census_status": "2024結果・小地域データ公開",
+      "planning_level": "comuna（municipalidad）",
+      "plan": "PLADECO",
+      "published_geography": "comuna",
+      "finer_geography": "manzana／entidad。項目別の秘匿条件確認",
+      "formats": "結果ビューア・REDATAM・microdata・地理データ",
+      "caveat": "固定・モバイル・衛星ネットの複数回答を単純合計しない。",
+      "agency": "SUBDERE／各municipalidad（PLADECO）。都市規制は別の所管・計画",
+      "agency_source": "CHL_A",
+      "census_sources": [
+        "CHL_C",
+        "CHL_H",
+        "CHL_Q"
+      ],
+      "laws": [
+        {
+          "name": "Ley 18.695 Orgánica Constitucional de Municipalidades",
+          "year": 1988,
+          "summary": "PLADECOを自治体の基本的計画手段とする。現行参照はDFL 1（2006）統合条文art.6–7等。",
+          "source": "CHL_L"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "人口、性・年齢、世帯",
+          "evidence": "公表目録確認",
+          "geography": "comuna",
+          "source": "CHL_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "所有・賃貸、過密",
+          "evidence": "公表目録確認",
+          "geography": "comuna",
+          "source": "CHL_H",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "水源・供給",
+          "evidence": "公表目録確認",
+          "geography": "comuna",
+          "source": "CHL_H",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "下水、浄化槽等",
+          "evidence": "公表目録確認",
+          "geography": "comuna",
+          "source": "CHL_H",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "電源、調理・暖房燃料",
+          "evidence": "公表目録確認",
+          "geography": "comuna",
+          "source": "CHL_H",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "世帯ネット（固定・モバイル・衛星）",
+          "evidence": "公表目録確認",
+          "geography": "comuna",
+          "source": "CHL_H",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "教育・就学",
+          "evidence": "設問の公式説明確認",
+          "geography": "当該項目の公表粒度未点検",
+          "source": "CHL_Q",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "就業・労働参加",
+          "evidence": "設問の公式説明確認",
+          "geography": "当該項目の公表粒度未点検",
+          "source": "CHL_Q",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "日常生活の機能上の困難",
+          "evidence": "設問の公式説明確認",
+          "geography": "当該項目の公表粒度未点検",
+          "source": "CHL_Q",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "未確認：この台帳では移住の詳細表を未点検",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "CHL_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "自治体の総合的な開発計画PLADECOを軸とし、都市の用途・規制を扱うPlan Regulador Comunalや年度予算は別の計画・手続きとして接続する。",
+        "chain": "自治体基本法18.695（1988）と統合条文DFL 1（2006）→comunaのPLADECO→個別事業・年度予算。都市規制計画は別系統",
+        "national_role": "SUBDEREが自治体計画の方法面を支援する。国や地域の施策との整合と、自治体の意思決定を区別する。",
+        "local_role": "comunaを区域とするmunicipalidadが地域の総合的発展を扱う。統計上のmanzana・entidadは自治体内部の診断に利用する。",
+        "approval": "市長とconcejoの法定権限を確認してPLADECOの承認・改定資料へ結合する。本文の公開だけで議会の承認を推定しない。",
+        "period": "PLADECOの最低期間・見直しと自治体の実際の採用年を現行条文・計画本文で確定する。単一の世界共通周期は設定しない。",
+        "automation": "2024のcomuna人口・住居・サービス表で診断基礎を作り、現行PLADECOと予算、都市規制資料の対象・期間を区別して取り込む。ネットの複数回答を重複集計しない。",
+        "gaps": "全comunaのPLADECO本文・最新承認日、教育・就業等の細目別公開粒度、現行条文の全改正確認は残件。",
+        "relation_sources": [
+          "CHL_L",
+          "CHL_A"
+        ]
+      }
+    },
+    {
+      "iso": "COL",
+      "country": "コロンビア",
+      "census_year": 2018,
+      "usable_year": 2018,
+      "census_status": "CNPV2018・地域集計と変数辞書公開",
+      "planning_level": "municipio／distrito・departamento",
+      "plan": "Plan de Desarrollo Territorial（PDT）／POTは別",
+      "published_geography": "municipio",
+      "finer_geography": "manzana・農村sección等は選定変数",
+      "formats": "DANE地域ビューア・地理サービス・ANDA・REDATAM",
+      "caveat": "ネットは住宅の固定／モバイル接続。就業状態から産業別生産を推測しない。",
+      "agency": "Departamento Nacional de Planeación（DNP）／地方計画部局",
+      "agency_source": "COL_A",
+      "census_sources": [
+        "COL_C",
+        "COL_H",
+        "COL_P"
+      ],
+      "laws": [
+        {
+          "name": "Ley 152 Orgánica del Plan de Desarrollo",
+          "year": 1994,
+          "summary": "art.32–40等が地方計画の策定・承認・評価を規定。開発計画と土地利用計画を別管理。",
+          "source": "COL_L"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "性、5歳階級、世帯内続柄",
+          "evidence": "変数辞書確認",
+          "geography": "municipio（個別変数の公開・秘匿条件は抽出時に確認）",
+          "source": "COL_P",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "種類・壁・床、居住状態",
+          "evidence": "変数辞書確認",
+          "geography": "municipio（個別変数の公開・秘匿条件は抽出時に確認）",
+          "source": "COL_H",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "acueductoサービス",
+          "evidence": "変数辞書確認",
+          "geography": "municipio（個別変数の公開・秘匿条件は抽出時に確認）",
+          "source": "COL_H",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "下水道、便所",
+          "evidence": "変数辞書確認",
+          "geography": "municipio（個別変数の公開・秘匿条件は抽出時に確認）",
+          "source": "COL_H",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "電気、都市ガス",
+          "evidence": "変数辞書確認",
+          "geography": "municipio（個別変数の公開・秘匿条件は抽出時に確認）",
+          "source": "COL_H",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "住宅の固定／モバイルネット",
+          "evidence": "変数辞書確認",
+          "geography": "municipio（個別変数の公開・秘匿条件は抽出時に確認）",
+          "source": "COL_H",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "識字、就学、学歴",
+          "evidence": "変数辞書確認",
+          "geography": "municipio（個別変数の公開・秘匿条件は抽出時に確認）",
+          "source": "COL_P",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "前週の活動状態。産業・職業詳細の収録は未確認",
+          "evidence": "変数辞書確認",
+          "geography": "municipio（個別変数の公開・秘匿条件は抽出時に確認）",
+          "source": "COL_P",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "機能上の困難、民族・言語、最近の健康問題・受診",
+          "evidence": "変数辞書確認",
+          "geography": "municipio（個別変数の公開・秘匿条件は抽出時に確認）",
+          "source": "COL_P",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "出生地、1年前・5年前の居住地",
+          "evidence": "変数辞書確認",
+          "geography": "municipio（個別変数の公開・秘匿条件は抽出時に確認）",
+          "source": "COL_P",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "国家と地方の開発計画をLey 152で接続する。地方は権限・資源・責任の範囲で計画上の自治を持ち、国家計画の政策・戦略との整合も求められる。",
+        "chain": "Ley 152（1994）→国家PND／地方PDT→複数年投資・実施・評価。POT等の土地利用計画は別の法令系統",
+        "national_role": "DNPが国家計画と地方への技術支援・共通ツールを提供する。SisPT等の公開ツールは利用条件・内容を確認して資料探索に使う。",
+        "local_role": "municipio・distrito・departamentoは異なる地方計画主体。人口センサスの細区分を計画主体として追加しない。",
+        "approval": "地方の執行機関が策定し、議会等の法定手続きと地方計画評議会の参加を伴う。作成案、協議意見、採択行為を別資料として管理する。",
+        "period": "地方の任期に対応したPDT期間と国家PND期間、投資・予算年度を分ける。期の違う計画を同じ統計年で隠さない。",
+        "automation": "DANE2018のmunicipio指標をPDT診断の基礎にし、DNPの地方ツールと各自治体のPDT・予算・投資を接続する。住宅ネットと個人の利用を同一指標にしない。",
+        "gaps": "各地方の最新PDTと承認行為、POTの適用種別・版、国勢調査以外の最新分野統計の全件取得は残件。",
+        "relation_sources": [
+          "COL_L",
+          "COL_A"
+        ]
+      }
+    },
+    {
+      "iso": "CRI",
+      "country": "コスタリカ",
+      "census_year": 2022,
+      "usable_year": 2022,
+      "census_status": "不完全収集を補正した2022公式推計",
+      "planning_level": "cantón（municipalidad）",
+      "plan": "Plan de Desarrollo Municipal／PAO等",
+      "published_geography": "provincia／cantón／distritoの推計指標",
+      "finer_geography": "distrito。ただし指標別の品質注記を確認",
+      "formats": "推計報告PDF・指標ビューア・地理ビューア",
+      "caveat": "44社会住宅指標は補正推計。実査の全数値として扱わず、地区別の品質を確認。",
+      "agency": "MIDEPLAN（国家計画）／自治体。地方支援機関・都市規制は業務別",
+      "agency_source": "CRI_A",
+      "census_sources": [
+        "CRI_C"
+      ],
+      "laws": [
+        {
+          "name": "Ley 7794 Código Municipal",
+          "year": 1998,
+          "summary": "自治体議会の開発計画承認等。art.13の現行号記は改正で変わるため統合条文で確認。",
+          "source": "CRI_L"
+        },
+        {
+          "name": "Ley 5525 de Planificación Nacional",
+          "year": 1974,
+          "summary": "国家計画体系とMIDEPLAN。自治体の計画権限・都市規制とは区別する。",
+          "source": "CRI_L2"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "人口性比・年齢依存、世帯類型",
+          "evidence": "方法・項目一覧確認",
+          "geography": "provincia／cantón／distritoの推計指標",
+          "source": "CRI_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "住宅状態、所有・賃貸、居住者数",
+          "evidence": "方法・項目一覧確認",
+          "geography": "provincia／cantón／distritoの推計指標",
+          "source": "CRI_C",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "屋内配管＋水道由来",
+          "evidence": "方法・項目一覧確認",
+          "geography": "provincia／cantón／distritoの推計指標",
+          "source": "CRI_C",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "下水道または浄化槽",
+          "evidence": "方法・項目一覧確認",
+          "geography": "provincia／cantón／distritoの推計指標",
+          "source": "CRI_C",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "電気",
+          "evidence": "方法・項目一覧確認",
+          "geography": "provincia／cantón／distritoの推計指標",
+          "source": "CRI_C",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "住宅ネット、PC、携帯",
+          "evidence": "方法・項目一覧確認",
+          "geography": "provincia／cantón／distritoの推計指標",
+          "source": "CRI_C",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "識字、教育年数、就学、学歴、学年遅滞",
+          "evidence": "方法・項目一覧確認",
+          "geography": "provincia／cantón／distritoの推計指標",
+          "source": "CRI_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "就業・失業・非労働力、3産業部門",
+          "evidence": "方法・項目一覧確認",
+          "geography": "provincia／cantón／distritoの推計指標",
+          "source": "CRI_C",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "医療保険加入。障害指標は44指標内で未確認",
+          "evidence": "方法・項目一覧確認",
+          "geography": "provincia／cantón／distritoの推計指標",
+          "source": "CRI_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "外国人比率",
+          "evidence": "方法・項目一覧確認",
+          "geography": "provincia／cantón／distritoの推計指標",
+          "source": "CRI_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "国家計画法5525と自治体法7794の役割を分ける。MIDEPLANの国家・地域計画と、cantónの自治体開発計画・年次計画を接続する。",
+        "chain": "Ley 5525（1974）の国家計画体系＋Código Municipal 7794（1998）→cantónの開発計画／PAO→予算。都市規制は別計画",
+        "national_role": "MIDEPLANは国家計画・公共投資等の制度所管。自治体への支援や都市規制に関わる別機関は、対象業務に応じて追加確認する。",
+        "local_role": "基本の自治体域はcantón。distritoの統計があっても、すべての地区を独立した同権限の自治体とは扱わない。",
+        "approval": "自治体議会の計画承認権限と自治体執行側の作成・提出を分ける。MIDEPLANの資料掲載を自治体計画の承認と読み替えない。",
+        "period": "自治体の開発計画・年次実施計画・規制計画の実際の期間を別々に取得する。",
+        "automation": "2022の44社会住宅推計をcantón単位で整理し、distrito別の品質注記を残す。法定計画に必要な水道・医療・教育の供給面を各機関の資料で補う。",
+        "gaps": "各推計の地区品質、自治体計画の最新様式・期間、独立した地区制度の例外は個別確認。",
+        "relation_sources": [
+          "CRI_L",
+          "CRI_L2"
+        ]
+      }
+    },
+    {
+      "iso": "CUB",
+      "country": "キューバ",
+      "census_year": 2012,
+      "usable_year": 2012,
+      "census_status": "確認できた詳細調査は2012。UNSDは2026を予定表記",
+      "planning_level": "municipio（provinciaとの接続）",
+      "plan": "Estrategia de Desarrollo Municipal",
+      "published_geography": "municipioの公表データ取得は未確認",
+      "finer_geography": "調査票の地域識別≠公開データの最小粒度",
+      "formats": "調査票PDF（CEPAL保管）・追加資料探索",
+      "caveat": "2012調査票の設問を確認。現行ONEIの地方別データ取得・2026結果は未確認。",
+      "agency": "Ministerio de Economía y Planificación（制度上の関係機関）／地方政府。現行組織図の追認は残件",
+      "agency_source": "CUB_L",
+      "census_sources": [
+        "CUB_C"
+      ],
+      "laws": [
+        {
+          "name": "Decreto 33 Para la Gestión Estratégica del Desarrollo Territorial",
+          "year": 2021,
+          "summary": "art.6–8。自治体行政評議会が戦略を作成・実施・評価・更新し、自治体人民権力議会へ承認のため提出。省の計画とも接続。",
+          "source": "CUB_L_TEXT"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "性・年齢、続柄",
+          "evidence": "調査票確認",
+          "geography": "公表粒度未確認（票ではmunicipioを識別）",
+          "source": "CUB_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "種類・材料・状態・室数・保有形態",
+          "evidence": "調査票確認",
+          "geography": "公表粒度未確認（票ではmunicipioを識別）",
+          "source": "CUB_C",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "水源、供給頻度、貯水",
+          "evidence": "調査票確認",
+          "geography": "公表粒度未確認（票ではmunicipioを識別）",
+          "source": "CUB_C",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "便所、排水、共同利用",
+          "evidence": "調査票確認",
+          "geography": "公表粒度未確認（票ではmunicipioを識別）",
+          "source": "CUB_C",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "照明電源、調理燃料",
+          "evidence": "調査票確認",
+          "geography": "公表粒度未確認（票ではmunicipioを識別）",
+          "source": "CUB_C",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "PC・電話保有。確認した住宅設備票にネット接続設問なし",
+          "evidence": "調査票確認",
+          "geography": "公表粒度未確認（票ではmunicipioを識別）",
+          "source": "CUB_C",
+          "note": "電話やPC保有をインターネット普及率へ置換しない"
+        },
+        {
+          "theme": "教育",
+          "items": "識字・就学・学歴・資格",
+          "evidence": "調査票確認",
+          "geography": "公表粒度未確認（票ではmunicipioを識別）",
+          "source": "CUB_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "前週活動、職業・産業、就業地",
+          "evidence": "調査票確認",
+          "geography": "公表粒度未確認（票ではmunicipioを識別）",
+          "source": "CUB_C",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "障害・疾患型の設問、肌の色。機能困難型との比較注意",
+          "evidence": "調査票確認",
+          "geography": "公表粒度未確認（票ではmunicipioを識別）",
+          "source": "CUB_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "出生地、従前居住地・居住期間",
+          "evidence": "調査票確認",
+          "geography": "公表粒度未確認（票ではmunicipioを識別）",
+          "source": "CUB_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "Decreto 33/2021は自治体と省の開発戦略を区別し、国家の政策・投資、土地利用、経済計画、予算との整合を求める。",
+        "chain": "Decreto 33（2021）→自治体・省の開発戦略→地方開発事業。土地・都市計画、経済計画、予算を併読",
+        "national_role": "制度上MEP等が関係し、国の政策・投資と地方の利益を調整する。現在の個別提出部署・機関再編の追認は残件。",
+        "local_role": "自治体行政評議会が自治体戦略を作成・実施・評価・更新する。省の戦略は知事が担当し、自治体の戦略と調整する。",
+        "approval": "自治体戦略は自治体人民権力議会へ承認のため提出。省戦略は省評議会へ提出する（art.7）。",
+        "period": "戦略の実際の期間と更新条件、経済計画・予算の期間を本文から取得する。法令発出年2021を計画対象年としない。",
+        "automation": "まず2012の調査票と実際に提供される自治体表を対応付け、取得できた表だけで診断を作る。地方戦略・予算・事業資料を分散収集し、2026調査の結果段階を別監視する設計にする。",
+        "gaps": "ONEIの自治体別詳細データ取得、2026の結果段階、現行手引きと地方戦略本文・承認資料は未確認。",
+        "relation_sources": [
+          "CUB_L_TEXT"
+        ]
+      }
+    },
+    {
+      "iso": "ECU",
+      "country": "エクアドル",
+      "census_year": 2022,
+      "usable_year": 2022,
+      "census_status": "2022結果表・テーマ別データ公開",
+      "planning_level": "provincia・cantón・parroquia ruralのGAD",
+      "plan": "PDOT",
+      "published_geography": "cantón／parroquia（項目別）",
+      "finer_geography": "セクター等の数値公表は追加確認",
+      "formats": "XLS・CSV・地域診断ページ",
+      "caveat": "農村parroquiaは自治政府。都市parroquiaを同じ法定計画主体と扱わない。",
+      "agency": "Presidencia・Secretaría General de la Administración Pública y Gabinete（旧SNPを2025吸収。2026資料確認）",
+      "agency_source": "ECU_L4",
+      "census_sources": [
+        "ECU_C",
+        "ECU_P"
+      ],
+      "laws": [
+        {
+          "name": "Código Orgánico de Planificación y Finanzas Públicas（COPFP）",
+          "year": 2010,
+          "summary": "art.41以下のPDOT。GADの開発・土地利用計画と財政・国家計画の関係を規定。",
+          "source": "ECU_L"
+        },
+        {
+          "name": "PDOT作成・更新ガイド（Acuerdo SNP-SNP-2023-0049-A）",
+          "year": 2023,
+          "summary": "法令ではなく運用手引き。州・郡・農村教区等の対象を確認。案件時に後続版を確認する。",
+          "source": "ECU_L2"
+        },
+        {
+          "name": "COOTAD",
+          "year": 2010,
+          "summary": "地方政府の種類・権限とPDOTを規定。参照PDFは2018改正収録版のため後続改正確認が必要。",
+          "source": "ECU_L3"
+        },
+        {
+          "name": "Decreto Ejecutivo 95（機関統合）",
+          "year": 2025,
+          "summary": "旧SNPを大統領府へ吸収。2026年3月の政府文書で承継を確認。",
+          "source": "ECU_L4"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "人口構造、世帯構成",
+          "evidence": "公表目録確認",
+          "geography": "テーマ別カタログ確認。水・衛生・電気はparroquia公表例あり",
+          "source": "ECU_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "住宅一般、保有・居住条件",
+          "evidence": "公表目録確認",
+          "geography": "テーマ別カタログ確認。水・衛生・電気はparroquia公表例あり",
+          "source": "ECU_C",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "水源・供給主体",
+          "evidence": "公表目録確認",
+          "geography": "テーマ別カタログ確認。水・衛生・電気はparroquia公表例あり",
+          "source": "ECU_C",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "下水・衛生設備",
+          "evidence": "公表目録確認",
+          "geography": "テーマ別カタログ確認。水・衛生・電気はparroquia公表例あり",
+          "source": "ECU_C",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "電気、調理用エネルギー",
+          "evidence": "公表目録確認",
+          "geography": "テーマ別カタログ確認。水・衛生・電気はparroquia公表例あり",
+          "source": "ECU_C",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "世帯ICT",
+          "evidence": "公表目録確認",
+          "geography": "テーマ別カタログ確認。水・衛生・電気はparroquia公表例あり",
+          "source": "ECU_C",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "識字、就学、学歴",
+          "evidence": "公表目録確認",
+          "geography": "テーマ別カタログ確認。水・衛生・電気はparroquia公表例あり",
+          "source": "ECU_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "経済活動",
+          "evidence": "公表目録確認",
+          "geography": "テーマ別カタログ確認。水・衛生・電気はparroquia公表例あり",
+          "source": "ECU_C",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "機能上の困難、民族、ジェンダー、NBI",
+          "evidence": "公表目録確認",
+          "geography": "テーマ別カタログ確認。水・衛生・電気はparroquia公表例あり",
+          "source": "ECU_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "国内外移住",
+          "evidence": "公表目録確認",
+          "geography": "テーマ別カタログ確認。水・衛生・電気はparroquia公表例あり",
+          "source": "ECU_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "COOTADとCOPFPが自治分権と計画・財政を接続する。州・郡・農村教区のGADは、それぞれ権限を持つ地方計画主体として扱う。",
+        "chain": "COOTAD（2010）＋COPFP（2010）→国家計画・領土戦略と各GADのPDOT→年度計画・予算・投資",
+        "national_role": "国家計画の制度・手引きと地方PDOTの整合を扱う。旧SNPは2025年に大統領府へ吸収され、2026の政府文書で承継を確認した。",
+        "local_role": "provincia、cantón、parroquia ruralの各GADを区別する。都市parroquiaという地理名称だけで同種の自治政府を作らない。",
+        "approval": "各GADの執行側・立法側・参加機構の手続きに沿って策定・承認を区別する。上位計画との整合と、中央が地方計画を代行することは別。",
+        "period": "PDOTの採用期間と現行更新ガイドを案件時に確認する。2023ガイドを現行最新版と無条件に扱わない。",
+        "automation": "GAD類型と国勢調査コードを対応付け、水・衛生・電気等のparroquia表を採用する。PDOTの法定章に指標を対応させ、土地利用・環境・財政・事業資料を補う。",
+        "gaps": "2025再編後の提出部署・新ガイド、各GADの現行PDOT・承認行為、テーマ別のparroquia提供条件は追加確認。",
+        "relation_sources": [
+          "ECU_L",
+          "ECU_L3",
+          "ECU_L4"
+        ]
+      }
+    },
+    {
+      "iso": "SLV",
+      "country": "エルサルバドル",
+      "census_year": 2024,
+      "usable_year": 2024,
+      "census_status": "2024結果報告・地理ポータル公開",
+      "planning_level": "44 municipios（262 distritosは下位区分）",
+      "plan": "自治体開発計画／土地利用計画を類型別確認",
+      "published_geography": "municipio・distrito（項目別）。住宅表はdepartamento例",
+      "finer_geography": "distritoを自治体内部診断に利用",
+      "formats": "報告PDF・地理ポータル・表",
+      "caveat": "2023再編法による2024からの44自治体と旧262自治体を混同しない。",
+      "agency": "Ministerio de Desarrollo Local（MINDEL）／自治体。国土計画・予算は別所管",
+      "agency_source": "SLV_A",
+      "census_sources": [
+        "SLV_C"
+      ],
+      "laws": [
+        {
+          "name": "Código Municipal（Decreto 274）",
+          "year": 1986,
+          "summary": "自治体の開発計画等の権限を規定。新44自治体の対象区域・適用計画は改編法と併読。",
+          "source": "SLV_L"
+        },
+        {
+          "name": "Ley Especial para la Reestructuración Municipal",
+          "year": 2023,
+          "summary": "44自治体・262地区への再編。統計の地区と計画責任を負う自治体の対応表が必要。",
+          "source": "SLV_L2"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "人口、性・年齢、出生・死亡",
+          "evidence": "報告の章・表目録確認",
+          "geography": "項目別。人口・教育・活動・ICTはdistrito章あり。全項目の地区表は未点検",
+          "source": "SLV_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "住宅種類・材料・居住状態",
+          "evidence": "報告の章・表目録確認",
+          "geography": "項目別。人口・教育・活動・ICTはdistrito章あり。全項目の地区表は未点検",
+          "source": "SLV_C",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "給水",
+          "evidence": "報告の章・表目録確認",
+          "geography": "項目別。人口・教育・活動・ICTはdistrito章あり。全項目の地区表は未点検",
+          "source": "SLV_C",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "衛生設備",
+          "evidence": "報告の章・表目録確認",
+          "geography": "項目別。人口・教育・活動・ICTはdistrito章あり。全項目の地区表は未点検",
+          "source": "SLV_C",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "電気",
+          "evidence": "報告の章・表目録確認",
+          "geography": "項目別。人口・教育・活動・ICTはdistrito章あり。全項目の地区表は未点検",
+          "source": "SLV_C",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "個人のネット・ICT利用",
+          "evidence": "報告の章・表目録確認",
+          "geography": "項目別。人口・教育・活動・ICTはdistrito章あり。全項目の地区表は未点検",
+          "source": "SLV_C",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "識字・学歴",
+          "evidence": "報告の章・表目録確認",
+          "geography": "項目別。人口・教育・活動・ICTはdistrito章あり。全項目の地区表は未点検",
+          "source": "SLV_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "経済活動、就業状態・時間・部門",
+          "evidence": "報告の章・表目録確認",
+          "geography": "項目別。人口・教育・活動・ICTはdistrito章あり。全項目の地区表は未点検",
+          "source": "SLV_C",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "機能上の困難、先住民・アフロ系",
+          "evidence": "報告の章・表目録確認",
+          "geography": "項目別。人口・教育・活動・ICTはdistrito章あり。全項目の地区表は未点検",
+          "source": "SLV_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "国内移住、国外移住",
+          "evidence": "報告の章・表目録確認",
+          "geography": "項目別。人口・教育・活動・ICTはdistrito章あり。全項目の地区表は未点検",
+          "source": "SLV_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "自治体法の計画権限と、2023再編法に基づく2024以降の44自治体を組み合わせる。旧自治体に対応する262地区は現在の同等の計画責任主体ではない。",
+        "chain": "Código Municipal（1986）＋自治体再編法（2023）→44自治体の計画・予算。土地利用等の個別法・条例は追加照合",
+        "national_role": "MINDELが地方開発の関係機関。国土・都市・予算に関わる他機関と自治体の責任分担は計画種類別に整理する。",
+        "local_role": "新municipioを基本の計画単位にする。262 distritoは住民サービス・自治体内部診断の単位として保持する。",
+        "approval": "現行自治体法と新自治体の条例・議会資料から作成・協議・承認を確認する。旧地区ごとの計画を新自治体の現行計画とみなさない。",
+        "period": "再編前後の計画対象域・期間と継承関係を優先して確認する。全44自治体の現行周期は今回未確定。",
+        "automation": "2024の地区別統計を新自治体コードと対応付け、必要なら検証済みの分子分母で集計する。地区のネット利用・教育・人口を自治体内部診断に使い、旧計画の区域と継承を明示する。",
+        "gaps": "全44自治体の最新計画、旧新コード・境界の公式対応、住宅サービスの全地区表、個別土地利用法の現行適用は残件。",
+        "relation_sources": [
+          "SLV_L",
+          "SLV_L2",
+          "SLV_A"
+        ]
+      }
+    },
+    {
+      "iso": "GTM",
+      "country": "グアテマラ",
+      "census_year": 2018,
+      "usable_year": 2018,
+      "census_status": "2018地域集計・地域内小地区資料公開",
+      "planning_level": "municipio",
+      "plan": "PDM-OT",
+      "published_geography": "municipio",
+      "finer_geography": "lugar pobladoの選定指標",
+      "formats": "Excel・CSV・結果エクスプローラ",
+      "caveat": "個人ネット利用7歳以上と世帯のネット設備を分ける。",
+      "agency": "SEGEPLAN／地方政府の計画部局",
+      "agency_source": "GTM_A",
+      "census_sources": [
+        "GTM_C",
+        "GTM_G"
+      ],
+      "laws": [
+        {
+          "name": "Código Municipal（Decreto 12-2002）",
+          "year": 2002,
+          "summary": "art.142（2010改正）は自治体の土地利用・総合開発計画の策定・実施を規定。PDM-OT手引きへ接続。",
+          "source": "GTM_L"
+        },
+        {
+          "name": "Ley de los Consejos de Desarrollo Urbano y Rural（11-2002）",
+          "year": 2002,
+          "summary": "国・地方・共同体をつなぐ参加型開発計画の評議会制度。2026改正の現行適用は追加照合。",
+          "source": "GTM_L2"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "性・5歳階級、続柄、都市農村",
+          "evidence": "公表目録確認",
+          "geography": "municipio",
+          "source": "GTM_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "居住条件、世帯設備",
+          "evidence": "公表目録確認",
+          "geography": "municipio",
+          "source": "GTM_C",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "水源・給水",
+          "evidence": "公表目録確認",
+          "geography": "municipio",
+          "source": "GTM_C",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "便所・排水",
+          "evidence": "公表目録確認",
+          "geography": "municipio",
+          "source": "GTM_C",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "照明、調理燃料",
+          "evidence": "公表目録確認",
+          "geography": "municipio",
+          "source": "GTM_C",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "個人の携帯・PC・ネット7歳以上／世帯ネット",
+          "evidence": "公表目録確認",
+          "geography": "municipio",
+          "source": "GTM_C",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "識字・就学・学歴、不就学理由",
+          "evidence": "公表目録確認",
+          "geography": "municipio",
+          "source": "GTM_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "未確認：この台帳では就業詳細表を未点検",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "GTM_C",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "機能上の困難4歳以上、pueblos等",
+          "evidence": "公表目録確認",
+          "geography": "municipio",
+          "source": "GTM_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "出生地、2013年の居住地",
+          "evidence": "公表目録確認",
+          "geography": "municipio",
+          "source": "GTM_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "自治体法による土地利用・総合開発計画と、開発評議会制度による参加型計画を接続する。SEGEPLANのPDM-OT手引きはその実務上の入口になる。",
+        "chain": "Código Municipal 12-2002（art.142、2010改正）＋Consejos de Desarrollo法11-2002→PDM-OT→複数年・年次実施計画／事業",
+        "national_role": "SEGEPLANが技術的な計画・プログラミングを支援し、国・地方の計画をつなぐ資料・手引きを提供する。",
+        "local_role": "自治体が自らの区域の計画を策定・実施する。COMUDE・COCODE等の参加と自治体政府の決定は異なる役割として記録する。",
+        "approval": "自治体の採択文書と参加機構の記録を別に収集する。SEGEPLANサイトでのPDM-OT掲載と自治体の正式採択の根拠を区別する。",
+        "period": "PDM-OTの長期対象期間、複数年計画、年次POAを別管理。公開された各計画の期間を採用し、周期を一律に固定しない。",
+        "automation": "2018municipio表、lugar poblado選定表、SEGEPLANのPDM-OT資料集を取得経路の核とする。法定診断の不足を教育・保健・投資資料から補い、参加記録と事業案を接続する。",
+        "gaps": "2026改正を含む評議会法の現行条文、各自治体の最新計画・実施計画、就業等の詳細表は追加確認。",
+        "relation_sources": [
+          "GTM_L",
+          "GTM_L2",
+          "GTM_A"
+        ]
+      }
+    },
+    {
+      "iso": "HTI",
+      "country": "ハイチ",
+      "census_year": 2003,
+      "usable_year": 2003,
+      "census_status": "RGPH2003が公式サイトで確認できる詳細結果",
+      "planning_level": "commune",
+      "plan": "Plan de Développement Communal（PDC）",
+      "published_geography": "communeは人口・就業の一部。住宅設備は全国表を確認",
+      "finer_geography": "section communale／SDEとの対応・公開範囲は未確認",
+      "formats": "IHSI HTML表目録・PDF",
+      "caveat": "古い基準年。近年の人口推計・人道データを2003調査値へ混ぜない。",
+      "agency": "Ministère de la Planification et de la Coopération Externe（MPCE）／MICT・自治体",
+      "agency_source": "HTI_A",
+      "census_sources": [
+        "HTI_C"
+      ],
+      "laws": [
+        {
+          "name": "Décret du 1er février 2006 sur la collectivité municipale",
+          "year": 2006,
+          "summary": "communeの組織・権限と地域開発の枠組み。現行施行状況・個別計画手続きを案件別に確認。",
+          "source": "HTI_L"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "性・年齢別人口",
+          "evidence": "公表目録確認",
+          "geography": "主に全国表目録。人口・就業のcommune表は個別確認",
+          "source": "HTI_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "建物材料、室数、保有形態",
+          "evidence": "公表目録確認",
+          "geography": "主に全国表目録。人口・就業のcommune表は個別確認",
+          "source": "HTI_C",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "配水接続、水源・利用",
+          "evidence": "公表目録確認",
+          "geography": "主に全国表目録。人口・就業のcommune表は個別確認",
+          "source": "HTI_C",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "便所種類",
+          "evidence": "公表目録確認",
+          "geography": "主に全国表目録。人口・就業のcommune表は個別確認",
+          "source": "HTI_C",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "照明、調理燃料",
+          "evidence": "公表目録確認",
+          "geography": "主に全国表目録。人口・就業のcommune表は個別確認",
+          "source": "HTI_C",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "電話・PC等。ネット接続は今回の表目録で未確認",
+          "evidence": "公表目録確認",
+          "geography": "主に全国表目録。人口・就業のcommune表は個別確認",
+          "source": "HTI_C",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "就学・学歴・識字",
+          "evidence": "公表目録確認",
+          "geography": "主に全国表目録。人口・就業のcommune表は個別確認",
+          "source": "HTI_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "就業、産業・職業・地位",
+          "evidence": "公表目録確認",
+          "geography": "主に全国表目録。人口・就業のcommune表は個別確認",
+          "source": "HTI_C",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "未確認：この台帳では障害・医療保障表を未点検",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "HTI_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "未確認：この台帳では移住の詳細表を未点検",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "HTI_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "2006年の地方分権・自治体関係政令を制度の起点とする。法令上の地方計画制度と、現時点で実際に機能している行政・協議・承認の体制を分けて調べる。",
+        "chain": "地方分権の枠組み政令／自治体政令（2006）→communeの開発計画PDC→投資・予算。国家側の計画・公共投資資料と接続",
+        "national_role": "MPCEが国家の計画・公共投資・対外協力、MICTが地方制度に関係する。省庁資料で示された制度上の役割と現地運用を照合する。",
+        "local_role": "基本対象はcommune。section communale等の下位区分・共同体の関係を確認する。細地域を同じ権限の独立自治体へ置き換えない。",
+        "approval": "法令に規定された機関と現在の実際の権限主体を個別確認する。計画の存在、現在の有効性、承認状態を公開情報の不足から推定しない。",
+        "period": "PDCと公共投資の実際の期間を原資料から取得する。全国共通の現行周期は今回未確定。",
+        "automation": "2003のcommune人口・就業等を歴史的基礎として明示し、近年推計・行政・人道資料を出典別の別系列で追加する。まず自治体単位で利用可能な基礎資料と不足一覧を完成させる。",
+        "gaps": "現在の地方統治・承認実務、commune別住宅サービスの入手、新しい人口資料との整合、各PDC本文は未網羅。",
+        "relation_sources": [
+          "HTI_L",
+          "HTI_A"
+        ]
+      }
+    },
+    {
+      "iso": "HND",
+      "country": "ホンジュラス",
+      "census_year": 2013,
+      "usable_year": 2013,
+      "census_status": "2013詳細結果。2026は準備・実施関連情報で結果未確認",
+      "planning_level": "municipio",
+      "plan": "PDM-OT",
+      "published_geography": "municipio（298自治体別報告の目録）",
+      "finer_geography": "aldea／caseríoは票で識別。公開数値の粒度は別確認",
+      "formats": "自治体別PDF・調査票PDF",
+      "caveat": "2026という事業名や準備記事を公表済み国勢調査結果と扱わない。",
+      "agency": "SGJD（自治体開発支援）／SEFIN-DGP（2026暫定計画調整）。旧SPEは廃止",
+      "agency_source": "HND_A",
+      "census_sources": [
+        "HND_C",
+        "HND_Q",
+        "HND_NEXT"
+      ],
+      "laws": [
+        {
+          "name": "Normativa para la Formulación de PDM con enfoque de OT（Acuerdo 00132）",
+          "year": 2013,
+          "summary": "自治体開発計画の作成方法を定める規範。Ley de Municipalidades等の現行統合条文は案件時に併読。",
+          "source": "HND_L"
+        },
+        {
+          "name": "PCM-004-2026（機関再編）",
+          "year": 2026,
+          "summary": "SPE廃止を政府透明性ポータルが明記。計画・予算接続はSEFIN-DGPの暫定権限を確認。",
+          "source": "HND_L2"
+        },
+        {
+          "name": "Ley de Municipalidades（Decreto 134-90）",
+          "year": 1990,
+          "summary": "自治体の自治・権限・地方開発の基本法。PDM-OT規範と併読。",
+          "source": "HND_L3"
+        },
+        {
+          "name": "Ley de Visión de País y Plan de Nación（286-2009）",
+          "year": 2009,
+          "summary": "国家の長期・中期計画の枠組み。2010公布、182-2010等の改正があり、現行運用は再確認。",
+          "source": "HND_L4"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "性・年齢、続柄",
+          "evidence": "調査票確認",
+          "geography": "municipioの報告目録は確認。項目別表・下位粒度は追加確認",
+          "source": "HND_Q",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "種類・材料、室数、保有形態",
+          "evidence": "調査票確認",
+          "geography": "municipioの報告目録は確認。項目別表・下位粒度は追加確認",
+          "source": "HND_Q",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "水源、配管位置",
+          "evidence": "調査票確認",
+          "geography": "municipioの報告目録は確認。項目別表・下位粒度は追加確認",
+          "source": "HND_Q",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "便所・排水、共同利用",
+          "evidence": "調査票確認",
+          "geography": "municipioの報告目録は確認。項目別表・下位粒度は追加確認",
+          "source": "HND_Q",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "電源、調理燃料",
+          "evidence": "調査票確認",
+          "geography": "municipioの報告目録は確認。項目別表・下位粒度は追加確認",
+          "source": "HND_Q",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "世帯のInternetサービス、PC・電話",
+          "evidence": "調査票確認",
+          "geography": "municipioの報告目録は確認。項目別表・下位粒度は追加確認",
+          "source": "HND_Q",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "識字、就学、学歴3歳以上",
+          "evidence": "調査票確認",
+          "geography": "municipioの報告目録は確認。項目別表・下位粒度は追加確認",
+          "source": "HND_Q",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "未確認：この台帳では就業の設問・表を未点検",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "HND_Q",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "恒常的な障害、民族、出生登録",
+          "evidence": "調査票確認",
+          "geography": "municipioの報告目録は確認。項目別表・下位粒度は追加確認",
+          "source": "HND_Q",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "出生地、入国年、世帯員の国外移住",
+          "evidence": "調査票確認",
+          "geography": "municipioの報告目録は確認。項目別表・下位粒度は追加確認",
+          "source": "HND_Q",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "自治体法、国家のVisión de País／Plan de Nación、PDM-OT作成規範を区別して接続する。2026年の中央機関再編を必ず反映する。",
+        "chain": "Ley de Municipalidades 134-90（1990）＋国家計画のDecreto 286-2009（2010公布）→2013 PDM-OT作成規範→自治体計画・年次予算",
+        "national_role": "自治体支援側のSGJDと、2026に暫定計画調整を担うSEFIN-DGPを区別する。旧SPEを現行所管として自動登録しない。",
+        "local_role": "自治体法に基づくmunicipioの自治と地方開発計画を対象とする。298自治体の統計・計画本文・参加・投資の各台帳を地域コードで接続する。",
+        "approval": "自治体の法定承認と国の方法面の支援、予算との整合確認を別に扱う。自治体の決議・採択根拠は各原本から取得する。",
+        "period": "旧国家計画の対象期間、現政府の計画、各PDM-OTの期間を別に保持する。旧長期計画の名称だけで現行運用を確定しない。",
+        "automation": "2013自治体別報告から採用値を取り込み、2026調査は結果公表が確認できた項目から更新する。SGJD等の規範・自治体計画・予算を別取得処理で接続する。",
+        "gaps": "2026再編後の地方計画支援の細分掌、国家計画法の後続改正、各PDM-OTの現行版・298自治体の全数値抽出は残件。",
+        "relation_sources": [
+          "HND_L",
+          "HND_L2",
+          "HND_L3",
+          "HND_L4",
+          "HND_A"
+        ]
+      }
+    },
+    {
+      "iso": "MEX",
+      "country": "メキシコ",
+      "census_year": 2020,
+      "usable_year": 2020,
+      "census_status": "2020全数基本票・標本拡大票。2025中間調査は別",
+      "planning_level": "municipio／CDMX alcaldía（州・特別制度別）",
+      "plan": "州法に基づくPDM／都市開発計画等",
+      "published_geography": "基本票・標本ともmunicipio、ただし提供項目差",
+      "finer_geography": "基本票の選定指標はlocalidad／AGEB／manzana",
+      "formats": "INEGI CSV・DBF・Excel・microdata・地理データ",
+      "caveat": "基本38問と拡大103問を区別。拡大票は小街区までの推計を保証しない。",
+      "agency": "SHCP（国家計画）／SEDATU（土地・都市）／州の計画機関・自治体",
+      "agency_source": "MEX_A",
+      "census_sources": [
+        "MEX_C",
+        "MEX_G"
+      ],
+      "laws": [
+        {
+          "name": "Ley de Planeación",
+          "year": 1983,
+          "summary": "連邦の計画制度。自治体PDMの義務・期限は州計画法・自治体法を追加照合する。",
+          "source": "MEX_L"
+        },
+        {
+          "name": "Ley de Planeación del Estado de México y Municipios（州の例）",
+          "year": 2001,
+          "summary": "一州の地方計画制度。全国の自治体へ一律転用しない。対象州の法令へ差し替える。",
+          "source": "MEX_L2"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "性・年齢、世帯、出生・死亡",
+          "evidence": "公表目録確認",
+          "geography": "municipio。AGEB／manzanaは選定指標のみ",
+          "source": "MEX_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "材料、室数、設備、保有",
+          "evidence": "公表目録確認",
+          "geography": "municipio。AGEB／manzanaは選定指標のみ",
+          "source": "MEX_C",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "水道・給水",
+          "evidence": "公表目録確認",
+          "geography": "municipio。AGEB／manzanaは選定指標のみ",
+          "source": "MEX_C",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "便所・排水",
+          "evidence": "公表目録確認",
+          "geography": "municipio。AGEB／manzanaは選定指標のみ",
+          "source": "MEX_C",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "電気",
+          "evidence": "公表目録確認",
+          "geography": "municipio。AGEB／manzanaは選定指標のみ",
+          "source": "MEX_C",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "住宅ネット・ICT設備",
+          "evidence": "公表目録確認",
+          "geography": "municipio。AGEB／manzanaは選定指標のみ",
+          "source": "MEX_C",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "識字、就学、学歴",
+          "evidence": "公表目録確認",
+          "geography": "municipio。AGEB／manzanaは選定指標のみ",
+          "source": "MEX_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "経済活動（基本／標本の細目を確認）",
+          "evidence": "公表目録確認",
+          "geography": "municipio。AGEB／manzanaは選定指標のみ",
+          "source": "MEX_C",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "障害、民族、医療サービス加入",
+          "evidence": "公表目録確認",
+          "geography": "municipio。AGEB／manzanaは選定指標のみ",
+          "source": "MEX_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "出生地、従前居住地",
+          "evidence": "公表目録確認",
+          "geography": "municipio。AGEB／manzanaは選定指標のみ",
+          "source": "MEX_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "連邦の計画法と州・自治体の計画法を分ける。国のLey de Planeaciónだけから全国一律の自治体PDMの義務・期限・様式を決めない。",
+        "chain": "連邦憲法・Ley de Planeación（1983）→対象州の計画法・自治体法→自治体PDM。都市・土地利用計画は別の連邦／州制度も確認",
+        "national_role": "SHCPは国家計画、SEDATUは土地・都市関連の業務を担う。州の計画機関との分担がある。国家の指標や補助制度は地方の計画・財源の文脈として接続する。",
+        "local_role": "municipioを基礎にし、CDMXのalcaldíaを特別制度として区別する。州ごとに権限・手続き・行政区分を確定する。",
+        "approval": "対象州の法令に基づく地方の作成・協議・議会等の承認を確認する。Estado de Méxicoの法を他州へコピーしない。",
+        "period": "州法と地方任期・計画種類によって確認する。国家PNDの周期を自治体へそのまま適用しない。",
+        "automation": "一州の法体系と自治体を先に選び、INEGI2020の基本／拡大票と公式コードを結合する。AGEB・manzanaの選定指標は自治体内部診断へ使い、PDM・都市計画・投資の資料へ接続する。",
+        "gaps": "全州法の網羅確認、CDMXの詳細制度、自治体ごとの現行PDM・都市計画、標本小地域の精度は別調査。",
+        "relation_sources": [
+          "MEX_L",
+          "MEX_L2",
+          "MEX_A"
+        ]
+      }
+    },
+    {
+      "iso": "NIC",
+      "country": "ニカラグア",
+      "census_year": 2024,
+      "usable_year": 2005,
+      "census_status": "2024実施情報あり。詳細結果は未確認、2005公開表を採用候補",
+      "planning_level": "municipio",
+      "plan": "Plan de Desarrollo Municipal",
+      "published_geography": "2005 municipio別巻",
+      "finer_geography": "barrios／comarcasの選定NBI等。混合出典に注意",
+      "formats": "2005 PDF・圧縮ファイル。2024取得経路は未確認",
+      "caveat": "調査年2024と実際に使える詳細2005を分ける。古い値を最新と表示しない。",
+      "agency": "大統領府・MHCP（計画予算投資）／自治体。地方支援の現行分掌は追加確認",
+      "agency_source": "NIC_A",
+      "census_sources": [
+        "NIC_C",
+        "NIC_Q",
+        "NIC_NEXT"
+      ],
+      "laws": [
+        {
+          "name": "Ley 40 de Municipios",
+          "year": 1988,
+          "summary": "自治体の開発計画等。1997・2012等の改正を併読。掲載リンクはLey 792による改正。",
+          "source": "NIC_L"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "人口一般・世帯",
+          "evidence": "公表目録確認",
+          "geography": "2005 municipio別巻の目録確認。項目別の表を追加取得",
+          "source": "NIC_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "住宅特性",
+          "evidence": "公表目録確認",
+          "geography": "2005 municipio別巻の目録確認。項目別の表を追加取得",
+          "source": "NIC_C",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "水源・配管",
+          "evidence": "調査票確認",
+          "geography": "2005 municipio別巻の目録確認。項目別の表を追加取得",
+          "source": "NIC_Q",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "衛生設備",
+          "evidence": "調査票確認",
+          "geography": "2005 municipio別巻の目録確認。項目別の表を追加取得",
+          "source": "NIC_Q",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "照明電源・調理燃料",
+          "evidence": "調査票確認",
+          "geography": "2005 municipio別巻の目録確認。項目別の表を追加取得",
+          "source": "NIC_Q",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "未確認：2005のネット項目をこの台帳では確認できていない",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "NIC_C",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "教育",
+          "evidence": "公表目録確認",
+          "geography": "2005 municipio別巻の目録確認。項目別の表を追加取得",
+          "source": "NIC_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "経済活動",
+          "evidence": "公表目録確認",
+          "geography": "2005 municipio別巻の目録確認。項目別の表を追加取得",
+          "source": "NIC_C",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "NBI等は別公表資料・算定年を確認",
+          "evidence": "公表目録確認",
+          "geography": "2005 municipio別巻の目録確認。項目別の表を追加取得",
+          "source": "NIC_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "未確認：この台帳では移住詳細を未点検",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "NIC_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "自治体法40と改正法に基づく地方開発計画を基本とし、国家の開発・貧困削減計画、計画予算投資の運用へ接続する。",
+        "chain": "Ley 40（1988、1997・2012等の改正）→municipioの開発計画・投資／予算→国家計画と財政運用の整合",
+        "national_role": "大統領府・MHCPの国家計画、財政・投資の資料を利用する。地方計画支援の現在の分掌を旧組織名から推定しない。",
+        "local_role": "municipioの地方開発と自治体議会の計画権限を扱う。自治区等の特別制度は通常自治体と別に適用を確認する。",
+        "approval": "地方開発計画の自治体議会での承認等を、現行法・自治体の採択資料で確認する。古い計画の掲載だけで有効性を推定しない。",
+        "period": "各PDMと国家計画・予算の対象年を原資料から取得する。2005の統計年と現行計画期間を分ける。",
+        "automation": "詳細公開を確認できる2005municipio表を古い基準年として取り込み、2024の新しい詳細結果の取得経路を別タスクとして解決する。近年の行政統計・投資で法定診断の不足を補う。",
+        "gaps": "2024詳細結果、自治体・特別自治の最新改正、現在の地方計画支援部署、各PDMの現行本文は未網羅。",
+        "relation_sources": [
+          "NIC_L",
+          "NIC_A"
+        ]
+      }
+    },
+    {
+      "iso": "PAN",
+      "country": "パナマ",
+      "census_year": 2023,
+      "usable_year": 2023,
+      "census_status": "2023 Vol.V lugares poblados等公開",
+      "planning_level": "distrito（municipio）。comarca等の特別制度は別確認",
+      "plan": "Plan Estratégico Distrital（PED）",
+      "published_geography": "distrito／corregimiento／lugar pobladoの選定指標",
+      "finer_geography": "lugar poblado",
+      "formats": "Excel・PDF・統計局集計表",
+      "caveat": "小地域表は選定項目。comarca・corregimientoを一律に自治体へ置換しない。",
+      "agency": "MEF（地域計画）／Autoridad Nacional de Descentralización（AND）／自治体",
+      "agency_source": "PAN_A",
+      "census_sources": [
+        "PAN_C",
+        "PAN_T"
+      ],
+      "laws": [
+        {
+          "name": "Ley 37 de Descentralización",
+          "year": 2009,
+          "summary": "地方分権と地区計画。Ley 66（2015）等の改正を含めてPED・参加・予算へ接続。",
+          "source": "PAN_L"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "人口、性・年齢",
+          "evidence": "公開表確認",
+          "geography": "distrito／corregimiento／lugar pobladoの選定指標",
+          "source": "PAN_T",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "住宅、土間床等",
+          "evidence": "公開表確認",
+          "geography": "distrito／corregimiento／lugar pobladoの選定指標",
+          "source": "PAN_T",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "飲用水の有無",
+          "evidence": "公開表確認",
+          "geography": "distrito／corregimiento／lugar pobladoの選定指標",
+          "source": "PAN_T",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "便所の有無",
+          "evidence": "公開表確認",
+          "geography": "distrito／corregimiento／lugar pobladoの選定指標",
+          "source": "PAN_T",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "電気、薪・炭調理",
+          "evidence": "公開表確認",
+          "geography": "distrito／corregimiento／lugar pobladoの選定指標",
+          "source": "PAN_T",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "住宅の固定／モバイルネット欠如",
+          "evidence": "公開表確認",
+          "geography": "distrito／corregimiento／lugar pobladoの選定指標",
+          "source": "PAN_T",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "識字・学歴等の選定項目",
+          "evidence": "公開表確認",
+          "geography": "distrito／corregimiento／lugar pobladoの選定指標",
+          "source": "PAN_T",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "経済活動の選定項目",
+          "evidence": "公開表確認",
+          "geography": "distrito／corregimiento／lugar pobladoの選定指標",
+          "source": "PAN_T",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "未確認：この台帳では障害・医療保障表を未点検",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "PAN_T",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "未確認：この台帳では移住詳細を未点検",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "PAN_T",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "地方分権法37と2015改正を基に、distrito単位の自治体計画PED、参加、投資・予算を接続する。",
+        "chain": "Ley 37（2009）・Ley 66改正（2015）→PED→参加・事業・予算。comarca等の特別制度は別確認",
+        "national_role": "MEFの地域計画機能とANDの地方分権関連機能を区別する。国からの支援・資金と自治体の計画責任を同一視しない。",
+        "local_role": "distritoを区域とするmunicipioが主要対象。corregimientoとlugar pobladoは自治体内の区分として保持し、別制度の計画・事業があれば別類型で管理する。",
+        "approval": "PEDの正式採択、参加記録、予算・事業の決定を各公式文書から確認する。計画が存在することと実施資金が確定していることを分ける。",
+        "period": "PEDの公表期間と現行改正・手引き、年次事業予算を個別に確認する。",
+        "automation": "2023のlugares poblados選定表をdistrito・corregimientoへ対応付け、住宅サービスの欠如を診断する。PED・地方投資・予算をMEF、AND、自治体、公報から収集する。",
+        "gaps": "全地区PEDの最新版・承認資料、comarcaの適用法、全テーマの小地域表、予算の地域帰属は残件。",
+        "relation_sources": [
+          "PAN_L",
+          "PAN_A"
+        ]
+      }
+    },
+    {
+      "iso": "PRY",
+      "country": "パラグアイ",
+      "census_year": 2022,
+      "usable_year": 2022,
+      "census_status": "2022確報・住宅巻・地区地理指標公開",
+      "planning_level": "municipio／distrito",
+      "plan": "PDS／POUT",
+      "published_geography": "distrito",
+      "finer_geography": "細区分の公開テーマは追加確認",
+      "formats": "PDF・Excel・地理カタログ",
+      "caveat": "住宅設備表と個人票・NBI・先住民調査を別に照合する。",
+      "agency": "Ministerio de Economía y Finanzas（MEF）・Viceministerio de Economía y Planificación",
+      "agency_source": "PRY_A",
+      "census_sources": [
+        "PRY_C",
+        "PRY_H",
+        "PRY_G"
+      ],
+      "laws": [
+        {
+          "name": "Ley 3966 Orgánica Municipal",
+          "year": 2010,
+          "summary": "art.224–226。持続可能な開発計画PDSと都市・土地利用計画POUTを区別して策定。",
+          "source": "PRY_L"
+        },
+        {
+          "name": "Ley 7158（MEF設置）",
+          "year": 2023,
+          "summary": "財務省・公務機関・旧STPをMEFへ統合。古いSTP宛の規定と現在の所管を区別する。",
+          "source": "PRY_L2"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "人口、性・年齢",
+          "evidence": "公表目録確認",
+          "geography": "distrito",
+          "source": "PRY_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "材料、所有・賃貸、室数",
+          "evidence": "公表目録確認",
+          "geography": "distrito",
+          "source": "PRY_H",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "水源・給水",
+          "evidence": "公表目録確認",
+          "geography": "distrito",
+          "source": "PRY_H",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "便所・排水",
+          "evidence": "公表目録確認",
+          "geography": "distrito",
+          "source": "PRY_H",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "電気",
+          "evidence": "公表目録確認",
+          "geography": "distrito",
+          "source": "PRY_H",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "住宅ネット・電話・PC",
+          "evidence": "公表目録確認",
+          "geography": "distrito",
+          "source": "PRY_H",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "教育の公表巻あり。個別指標・粒度を追加確認",
+          "evidence": "公表目録確認",
+          "geography": "distrito",
+          "source": "PRY_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "前週活動・職業等",
+          "evidence": "調査票確認",
+          "geography": "当該項目の公表粒度未点検",
+          "source": "PRY_H",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "NBI・先住民関連の公表。障害等は追加確認",
+          "evidence": "公表目録確認",
+          "geography": "distrito",
+          "source": "PRY_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "未確認：この台帳では移住詳細を未点検",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "PRY_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "自治体基本法3966が持続可能な開発計画PDSと都市・土地利用計画POUTを区別して規定する。旧STPの国家計画業務は2023年設置のMEFに接続する。",
+        "chain": "Ley 3966（2010）→PDS＋POUT→自治体投資・予算。国家計画機関はLey 7158（2023）によるMEF体制",
+        "national_role": "MEFの経済・計画担当が国家計画の関係機関。旧STP名のガイド・法令と現在の担当部署の対応を記録する。",
+        "local_role": "municipioの持続可能な開発と都市・土地利用の二つを扱う。distritoの統計コードと自治体区域の一致は実データで確認する。",
+        "approval": "自治体の執行側・議会側の権限と参加手続きを確認し、PDSとPOUTの採択資料を別々に管理する。",
+        "period": "PDSとPOUT、年度予算の対象期間・見直し条件をそれぞれの文書から取得する。",
+        "automation": "2022distrito住宅・人口指標をPDSの基礎にし、土地利用・環境・インフラ等をPOUTのために補完する。先住民調査・NBIは母集団と計算方法を別に確認する。",
+        "gaps": "全自治体のPDS・POUTの採択状況、現行ガイド、就業等の個人票項目の地域別公表、公式区域の全照合は残件。",
+        "relation_sources": [
+          "PRY_L",
+          "PRY_L2",
+          "PRY_A"
+        ]
+      }
+    },
+    {
+      "iso": "PER",
+      "country": "ペルー",
+      "census_year": 2025,
+      "usable_year": 2025,
+      "census_status": "2025結果公表開始・地区人口確認。2017詳細システムも利用可能",
+      "planning_level": "municipalidad provincial／distrital（地域政府はPDRC）",
+      "plan": "PDLC",
+      "published_geography": "2025 distrito人口。テーマ結果はdepartamentoの公表例確認",
+      "finer_geography": "2017 REDATAMはdistrict／manzana等。2025同粒度は未確認",
+      "formats": "2025結果資料・2017 REDATAM・地区情報システム",
+      "caveat": "2025の人口地区表を、全テーマ地区公開済みという意味にしない。必要時は2017を別系列で採用。",
+      "agency": "CEPLAN（PCMに属する国家計画機関）／地方政府",
+      "agency_source": "PER_A",
+      "census_sources": [
+        "PER_C",
+        "PER_T",
+        "PER_D"
+      ],
+      "laws": [
+        {
+          "name": "Ley 27972 Orgánica de Municipalidades",
+          "year": 2003,
+          "summary": "art.97等。地区・県自治体の協議型開発計画を接続。地域政府のPDRCは別の計画主体。",
+          "source": "PER_L"
+        },
+        {
+          "name": "Decreto Legislativo 1088（SINAPLAN・CEPLAN）",
+          "year": 2008,
+          "summary": "国家戦略計画体系とCEPLANを規定。自治体のPDLCは自治体法・最新手引きと併読。",
+          "source": "PER_L2"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "人口、性・年齢",
+          "evidence": "公式結果記事確認",
+          "geography": "2025 departamento公表例。人口のみprovincia／distritoも確認",
+          "source": "PER_T",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "種類、居住、壁・屋根",
+          "evidence": "公式結果記事確認",
+          "geography": "2025 departamento公表例。人口のみprovincia／distritoも確認",
+          "source": "PER_T",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "屋内公共給水",
+          "evidence": "公式結果記事確認",
+          "geography": "2025 departamento公表例。人口のみprovincia／distritoも確認",
+          "source": "PER_T",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "下水",
+          "evidence": "公式結果記事確認",
+          "geography": "2025 departamento公表例。人口のみprovincia／distritoも確認",
+          "source": "PER_T",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "電気、調理燃料",
+          "evidence": "公式結果記事確認",
+          "geography": "2025 departamento公表例。人口のみprovincia／distritoも確認",
+          "source": "PER_T",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "世帯ネット・携帯・PC",
+          "evidence": "公式結果記事確認",
+          "geography": "2025 departamento公表例。人口のみprovincia／distritoも確認",
+          "source": "PER_T",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "学歴",
+          "evidence": "公式結果記事確認",
+          "geography": "2025 departamento公表例。人口のみprovincia／distritoも確認",
+          "source": "PER_T",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "未確認：2025就業表の対象粒度",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "PER_T",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "未確認：2025障害・医療保障表の対象粒度",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "PER_T",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "2020–2025移住",
+          "evidence": "公式結果記事確認",
+          "geography": "2025 departamento公表例。人口のみprovincia／distritoも確認",
+          "source": "PER_T",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "SINAPLANとCEPLANの国家計画体系に、地域政府のPDRCと県・地区自治体の協議型PDLCを接続する。",
+        "chain": "Ley 27972（2003）＋Decreto Legislativo 1088（2008）→地域PDRC／provincia・distritoのPDLC→機関計画・実施計画・予算",
+        "national_role": "CEPLANが国家戦略計画体系の技術的な基準・手引きを提供する。財務・投資制度とは役割を分けて接続する。",
+        "local_role": "municipalidad provincialとmunicipalidad distritalの両方が対象になり、地区の計画を県・地域と調整する。regionとprovinciaを同じ型にしない。",
+        "approval": "自治体の協議型計画と議会の承認等を区別して原資料を収集する。CEPLANの方法への対応だけで地方の合意・承認が完成したとはしない。",
+        "period": "PDLCの対象期間と最新CEPLANガイド、PEI・POI、予算年度を分ける。任期の長さだけから計画期間を自動算出しない。",
+        "automation": "2025地区人口と確認済みテーマ結果を採用し、2025の詳細粒度が不足する指標は2017系列を明示して接続する。UBIGEO等の公式コードを介してPDLC・公共投資・施設統計を補完する。",
+        "gaps": "2025全テーマの地区表・一括データ、全PDLCの最新承認、現行ガイドの期間条件、地理改編への対応は追加確認。",
+        "relation_sources": [
+          "PER_L",
+          "PER_L2",
+          "PER_A"
+        ]
+      }
+    },
+    {
+      "iso": "DOM",
+      "country": "ドミニカ共和国",
+      "census_year": 2022,
+      "usable_year": 2022,
+      "census_status": "2022結果表・2026刊行の水衛生特集等",
+      "planning_level": "municipio（distrito municipalは権限・適用を別確認）",
+      "plan": "PMD／上位の地域・県計画を区別",
+      "published_geography": "municipio／distrito municipal（項目別）",
+      "finer_geography": "sección／barrio等の当該テーマ公開範囲は追加確認",
+      "formats": "ONE Excel・PDF・統計表",
+      "caveat": "個人ネット5歳以上・過去3か月と世帯の接続を混同しない。2026刊行でも統計年は2022。",
+      "agency": "Ministerio de Hacienda y Economía（MHE、2025統合）／地方政府",
+      "agency_source": "DOM_A",
+      "census_sources": [
+        "DOM_C",
+        "DOM_W",
+        "DOM_Q"
+      ],
+      "laws": [
+        {
+          "name": "Ley 176-07 del Distrito Nacional y los Municipios",
+          "year": 2007,
+          "summary": "art.122等の自治体開発計画・参加。PMDと県・地域の基礎資料を別の制度・主体として扱う。",
+          "source": "DOM_L"
+        },
+        {
+          "name": "Ley 498-06 de Planificación e Inversión Pública",
+          "year": 2006,
+          "summary": "国家計画・公共投資体系。地方計画と上位計画・事業投資の整合確認に使う。",
+          "source": "DOM_L2"
+        },
+        {
+          "name": "Ley 1-12 Estrategia Nacional de Desarrollo 2030",
+          "year": 2012,
+          "summary": "長期国家開発戦略。地方の課題・目標・事業との対応根拠に使う。",
+          "source": "DOM_L3"
+        },
+        {
+          "name": "Ley 45-25（省庁統合）",
+          "year": 2025,
+          "summary": "HaciendaとMEPyDを統合しMHEを設置。旧組織名と現在の提出・技術支援先を区別する。",
+          "source": "DOM_L4"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "性・年齢、世帯",
+          "evidence": "公表目録確認",
+          "geography": "municipio／distrito municipal（項目別）",
+          "source": "DOM_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "材料、室数、居住条件",
+          "evidence": "公表目録確認",
+          "geography": "municipio／distrito municipal（項目別）",
+          "source": "DOM_C",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "家庭用・飲用の水源",
+          "evidence": "公表目録確認",
+          "geography": "municipio／distrito municipal（項目別）",
+          "source": "DOM_W",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "便所・共同利用",
+          "evidence": "公表目録確認",
+          "geography": "municipio／distrito municipal（項目別）",
+          "source": "DOM_W",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "照明・調理燃料",
+          "evidence": "公表目録確認",
+          "geography": "municipio／distrito municipal（項目別）",
+          "source": "DOM_C",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "個人ネット利用5歳以上・過去3か月",
+          "evidence": "公表目録確認",
+          "geography": "municipioの表を確認。DMの同表は未確認",
+          "source": "DOM_C",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "就学・学歴（学歴3歳以上等）",
+          "evidence": "公表目録確認",
+          "geography": "municipio／distrito municipal（項目別）",
+          "source": "DOM_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "職業・経済活動設問",
+          "evidence": "設問の公式説明確認",
+          "geography": "2022自治体別就業表は未確認",
+          "source": "DOM_Q",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "機能上の困難5歳以上",
+          "evidence": "公表目録確認",
+          "geography": "provinciaの表を確認。municipioの同表は未確認",
+          "source": "DOM_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "未確認：この台帳では移住詳細を未点検",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "DOM_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "SNPIP、END、自治体法に基づくPMDを接続する。県・広域の計画・協議と自治体政府の計画権限を区別する。",
+        "chain": "Ley 498-06（2006）→END Ley 1-12（2012）・国家複数年計画→Ley 176-07（2007）の自治体PMD→行動計画・公共投資・予算",
+        "national_role": "2025年のLey 45-25でMHEに統合。中央の計画・技術支援機能と地方政府の作成・決定を分ける。DDPT等の現在の部署名・分掌は案件時の公式組織で照合する。",
+        "local_role": "municipioのPMDを基本にし、distrito municipalの権限・適用は別確認する。provinciaを市町村と同型の自治体政府として扱わない。",
+        "approval": "自治体の計画作成、CDM等による参加・協議、議会等の正式な採択を区別する。SISMAPの評価・証拠は資料源として使い、取得進捗と混ぜない。",
+        "period": "PMDの実際の対象期間、国家計画・投資・予算年度を原本に従って別管理する。県の基礎資料の作成段階を自治体PMDの公式状態へ転用しない。",
+        "automation": "ONE2022を共通基礎とし、Temáticoの省庁資料をsource単位に再取得可能にする。診断文、参加・要求票、RUDCT相当の事業整理、PMD章別草案を根拠IDで接続し、地域の判断に応じて再生成する。",
+        "gaps": "MHEの現行内部権限の細部、全自治体の承認根拠、DMの対象条件、各分野の最新地域統計・再配布条件の全確認は今回の調査範囲外。",
+        "relation_sources": [
+          "DOM_L",
+          "DOM_L2",
+          "DOM_L3",
+          "DOM_L4"
+        ]
+      }
+    },
+    {
+      "iso": "URY",
+      "country": "ウルグアイ",
+      "census_year": 2023,
+      "usable_year": 2023,
+      "census_status": "2023加重版（2026年5月更新）。旧2024版は置換済み",
+      "planning_level": "municipio（管理・開発）＋departamento（土地利用）",
+      "plan": "PQM／POA、部門政府の土地利用計画",
+      "published_geography": "2026版でmunicipio／localidad等を拡張",
+      "finer_geography": "segmento等。秘匿・変数提供条件を確認",
+      "formats": "加重microdata・表・Shapefile／GeoPackage",
+      "caveat": "旧版との混在不可。個票行数を人口総数にせず、公式ウェイトと母集団に従う。",
+      "agency": "Oficina de Planeamiento y Presupuesto（OPP）／土地利用は部門政府・MVOT",
+      "agency_source": "URY_A",
+      "census_sources": [
+        "URY_C",
+        "URY_Q",
+        "URY_D"
+      ],
+      "laws": [
+        {
+          "name": "Ley 19.272 Descentralización y Participación Ciudadana",
+          "year": 2014,
+          "summary": "自治体の機能と計画・参加の枠組み。2026のOPP実務でPQM・POA・管理合意を確認。",
+          "source": "URY_L"
+        },
+        {
+          "name": "Ley 18.308 Ordenamiento Territorial y Desarrollo Sostenible",
+          "year": 2008,
+          "summary": "土地利用計画の重要な権限はdepartamento側。Plan Localという名称だけでmunicipio所管と決めない。",
+          "source": "URY_L2"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "人口・世帯・住宅の加重データ",
+          "evidence": "公開データ案内確認",
+          "geography": "2026版でmunicipio／localidad等を拡張",
+          "source": "URY_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "壁・屋根・床、住宅種類・居住状態",
+          "evidence": "変数辞書確認",
+          "geography": "2026年7月版辞書にmunicipio／segmento等あり。変数別の利用範囲を追加照合",
+          "source": "URY_D",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "水源、住宅への水の到達方法",
+          "evidence": "変数辞書確認",
+          "geography": "2026年7月版辞書にmunicipio／segmento等あり。変数別の利用範囲を追加照合",
+          "source": "URY_D",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "便所・水洗、排水方法",
+          "evidence": "調査票確認",
+          "geography": "2023調査票で確認。2026加重版の同変数・municipio集計条件は追加照合",
+          "source": "URY_Q",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "主な電気照明の方法",
+          "evidence": "変数辞書確認",
+          "geography": "2026年7月版辞書にmunicipio／segmento等あり。変数別の利用範囲を追加照合",
+          "source": "URY_D",
+          "note": "2023調査票には調理・暖房燃料もある。2026版の同変数提供条件を確認する。"
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "世帯のインターネットアクセス、PC等の設備",
+          "evidence": "調査票確認",
+          "geography": "2023調査票で確認。2026加重版の同変数・municipio集計条件は追加照合",
+          "source": "URY_Q",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "就学・教育段階・教育歴",
+          "evidence": "調査票確認",
+          "geography": "2023調査票で確認。2026加重版の同変数・municipio集計条件は追加照合",
+          "source": "URY_Q",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "前週活動、求職、職業・産業・従業上の地位、就業場所",
+          "evidence": "調査票確認",
+          "geography": "2023調査票で確認。2026加重版の同変数・municipio集計条件は追加照合",
+          "source": "URY_Q",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "日常生活上の困難、ケア関連設問",
+          "evidence": "調査票確認",
+          "geography": "2023調査票で確認。2026加重版の同変数・municipio集計条件は追加照合",
+          "source": "URY_Q",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "出生地・従前居住地・入国年",
+          "evidence": "調査票確認",
+          "geography": "2023調査票で確認。2026加重版の同変数・municipio集計条件は追加照合",
+          "source": "URY_Q",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "自治体の地域開発・管理計画と、departamentoが担う土地利用・予算の重要な権限を分ける。自治体財源は部門政府の配分と国家FIGM等に接続する。",
+        "chain": "Ley 18.308（2008）の土地利用制度＋Ley 19.272（2014）の自治体制度→departamentoの土地利用／予算とmunicipioのPQM・POA",
+        "national_role": "OPPがFIGM等を通じた自治体計画・管理を支援し、2026にPQM・POA・管理合意の運用を確認。土地利用は部門政府・MVOTの関係を別に扱う。",
+        "local_role": "municipioは地域開発プログラム等を作り、公聴の対象とする。departamentoのIntendencia・Juntaと権限・財源の関係がある。",
+        "approval": "自治体プログラムの住民への提示、部門政府の予算、FIGMの条件を区別する。Plan Localという名称だけで自治体単独の承認権限と判断しない。",
+        "period": "2026運用で5年のPQMと年次POAがあることを確認。実際の対象期間、部門予算、個別土地利用計画の改定時期を分ける。",
+        "automation": "2026加重版のmunicipio_136等のコードと人口・住宅変数を照合して診断を作る。自治体PQM・POAと部門政府の土地利用・財政を別資料として同じ地域から参照させる。",
+        "gaps": "加重版の項目別母集団・秘匿、各自治体のPQM・POAと部門計画、未自治体化地域の扱い・全域対応は追加確認。",
+        "relation_sources": [
+          "URY_L",
+          "URY_L2",
+          "URY_A",
+          "URY_REL"
+        ]
+      }
+    },
+    {
+      "iso": "VEN",
+      "country": "ベネズエラ",
+      "census_year": 2011,
+      "usable_year": 2011,
+      "census_status": "詳細票2011確認。UNSDの2021実施日記録は結果と未照合",
+      "planning_level": "municipio（州・コミューン計画と区別）",
+      "plan": "Plan Municipal de Desarrollo",
+      "published_geography": "municipio／parroquiaは票で識別。公開表未取得",
+      "finer_geography": "公開数値の最小粒度未確認",
+      "formats": "2011調査票PDF・公式公開経路の再探索",
+      "caveat": "2021記録の意味・結果公表を確定できていない。2011を現在人口・設備率として扱わない。",
+      "agency": "Ministerio del Poder Popular de Planificación（MPPP）／地方政府",
+      "agency_source": "VEN_A",
+      "census_sources": [
+        "VEN_C"
+      ],
+      "laws": [
+        {
+          "name": "Ley Orgánica de Planificación Pública y Popular",
+          "year": 2010,
+          "summary": "国・地方・コミュニティの計画体系。所管省は2014改正法を掲載しており、2010本文のみで実装しない。",
+          "source": "VEN_L"
+        },
+        {
+          "name": "Ley Orgánica de Planificación Pública y Popular（改正）",
+          "year": 2014,
+          "summary": "MPPPがG.O.E.6.148（2014-11-18）を掲載。案件時に条文・追加改正を照合。",
+          "source": "VEN_L2"
+        }
+      ],
+      "themes": [
+        {
+          "theme": "人口・世帯",
+          "items": "性・年齢、続柄",
+          "evidence": "調査票確認",
+          "geography": "公開粒度未確認（票ではmunicipio／parroquiaを識別）",
+          "source": "VEN_C",
+          "note": ""
+        },
+        {
+          "theme": "住宅",
+          "items": "材料、室数、所有・賃貸",
+          "evidence": "調査票確認",
+          "geography": "公開粒度未確認（票ではmunicipio／parroquiaを識別）",
+          "source": "VEN_C",
+          "note": ""
+        },
+        {
+          "theme": "水",
+          "items": "水源・供給頻度、飲用処理",
+          "evidence": "調査票確認",
+          "geography": "公開粒度未確認（票ではmunicipio／parroquiaを識別）",
+          "source": "VEN_C",
+          "note": ""
+        },
+        {
+          "theme": "衛生",
+          "items": "便所・排水",
+          "evidence": "調査票確認",
+          "geography": "公開粒度未確認（票ではmunicipio／parroquiaを識別）",
+          "source": "VEN_C",
+          "note": ""
+        },
+        {
+          "theme": "家庭エネルギー",
+          "items": "電力網・発電機・太陽光、調理燃料",
+          "evidence": "調査票確認",
+          "geography": "公開粒度未確認（票ではmunicipio／parroquiaを識別）",
+          "source": "VEN_C",
+          "note": ""
+        },
+        {
+          "theme": "デジタル接続",
+          "items": "世帯固定／モバイルネット",
+          "evidence": "調査票確認",
+          "geography": "公開粒度未確認（票ではmunicipio／parroquiaを識別）",
+          "source": "VEN_C",
+          "note": ""
+        },
+        {
+          "theme": "教育",
+          "items": "識字、就学、学歴",
+          "evidence": "調査票確認",
+          "geography": "公開粒度未確認（票ではmunicipio／parroquiaを識別）",
+          "source": "VEN_C",
+          "note": ""
+        },
+        {
+          "theme": "就業・生計",
+          "items": "未確認：この台帳では就業設問・表を未点検",
+          "evidence": "未確認",
+          "geography": "当該項目の公表粒度未確認",
+          "source": "VEN_C",
+          "note": ""
+        },
+        {
+          "theme": "包摂・健康の一部",
+          "items": "障害・疾患、民族・言語、医療保障・受診先",
+          "evidence": "調査票確認",
+          "geography": "公開粒度未確認（票ではmunicipio／parroquiaを識別）",
+          "source": "VEN_C",
+          "note": ""
+        },
+        {
+          "theme": "移住",
+          "items": "出生地・国籍、2006年居住地",
+          "evidence": "調査票確認",
+          "geography": "公開粒度未確認（票ではmunicipio／parroquiaを識別）",
+          "source": "VEN_C",
+          "note": ""
+        }
+      ],
+      "planning_profile": {
+        "system": "国家・州・自治体の計画に加え、コミューン等の参加型計画の系統を持つ。通常の自治体計画とコミューンの計画を同じ行政粒度として統合しない。",
+        "chain": "Ley Orgánica de Planificación Pública y Popular（2010、2014改正）→国家・州・自治体・コミュニティの計画→年次実施等",
+        "national_role": "MPPPが国家の計画体系の所管。省の法令ページに2014改正法があり、2010原文だけで現行の権限を確定しない。",
+        "local_role": "municipioのPlan Municipal de Desarrolloと州・コミューンの計画を別類型として扱う。parroquiaの統計地理は自治体内部との関係を照合する。",
+        "approval": "首長・地方公共計画評議会等の役割と採択機関を現行改正法で点検する。資料取得が難しい地域について、承認や計画不存在を断定しない。",
+        "period": "国家計画・自治体計画・年次実施の対象期間をそれぞれ取得する。古い国家計画の年を現在の期間へ転記しない。",
+        "automation": "まず2011調査票と取得可能な公表表の対応を確定する。UNSD2021記録との不一致を残したまま最新年を更新せず、計画資料・公式地理情報を独立した取得経路で調べる。",
+        "gaps": "2021記録と統計結果の対応、2011自治体表の取得、現行法の後続改正、各自治体・コミューンの計画と承認資料は未確認。",
+        "relation_sources": [
+          "VEN_L",
+          "VEN_L2",
+          "VEN_A"
+        ]
+      }
+    }
+  ],
+  "theme_catalog": [
+    {
+      "id": "T01",
+      "theme": "人口・世帯",
+      "census_items": "人口、性・年齢、世帯構成",
+      "census_role": "国勢調査を優先",
+      "supplement": "統計局の人口推計・住民登録",
+      "rule": "計画の対象人口・将来需要。基準年と推計年を分ける"
+    },
+    {
+      "id": "T02",
+      "theme": "住宅・居住",
+      "census_items": "住宅材料、保有、過密、居住状態",
+      "census_role": "国勢調査を優先",
+      "supplement": "住宅省・地籍・集落台帳",
+      "rule": "住宅改善の対象。都市計画区域と行政区域を照合"
+    },
+    {
+      "id": "T03",
+      "theme": "水・衛生",
+      "census_items": "水源、配管、便所、排水",
+      "census_role": "国勢調査を優先",
+      "supplement": "水道事業者・保健省・JMP",
+      "rule": "水道接続と安全に管理された水は別。水質・時間・継続性は追加資料"
+    },
+    {
+      "id": "T04",
+      "theme": "家庭エネルギー",
+      "census_items": "電気、照明、調理燃料",
+      "census_role": "国・調査年による",
+      "supplement": "電力事業者・エネルギー省",
+      "rule": "接続と停電・料金・供給能力を分ける"
+    },
+    {
+      "id": "T05",
+      "theme": "デジタル接続",
+      "census_items": "世帯接続、個人利用、端末",
+      "census_role": "国・票種による",
+      "supplement": "通信規制機関・ITU・通信事業者",
+      "rule": "固定／モバイル、個人／世帯、年齢、利用期間をそろえる"
+    },
+    {
+      "id": "T06",
+      "theme": "教育・技能",
+      "census_items": "識字、就学、学歴",
+      "census_role": "国勢調査を優先",
+      "supplement": "教育省EMIS・学校台帳",
+      "rule": "住民の学歴と学校の供給・学力・定員を分ける"
+    },
+    {
+      "id": "T07",
+      "theme": "就業・生計",
+      "census_items": "経済活動、職業・産業、通勤",
+      "census_role": "票種・年齢・公表条件による",
+      "supplement": "労働力調査・社会保険・雇用機関",
+      "rule": "失業率・非公式雇用・所得は定義差が大きい"
+    },
+    {
+      "id": "T08",
+      "theme": "包摂・ケア・社会保障",
+      "census_items": "障害、民族、言語、保険",
+      "census_role": "国・定義による",
+      "supplement": "福祉省・社会保護台帳・時間利用調査",
+      "rule": "機能上の困難、疾患、給付受給は別系列"
+    },
+    {
+      "id": "T09",
+      "theme": "健康・医療",
+      "census_items": "医療保障・受診の一部",
+      "census_role": "補助的",
+      "supplement": "保健省・施設台帳・保健調査・WHO",
+      "rule": "疾病・病床・人員・到達時間は国勢調査だけでは不足"
+    },
+    {
+      "id": "T10",
+      "theme": "貧困・所得・格差",
+      "census_items": "NBI・住環境の欠如、一部所得",
+      "census_role": "国・方法による",
+      "supplement": "家計調査・公式貧困地図・行政台帳",
+      "rule": "NBI・多次元貧困・所得貧困を混同しない"
+    },
+    {
+      "id": "T11",
+      "theme": "食料安全保障・栄養",
+      "census_items": "人口・住宅は背景情報",
+      "census_role": "専門資料が中心",
+      "supplement": "栄養調査・DHS/MICS・FAO・保健省",
+      "rule": "栄養不良や食料不安を住宅設備から推定しない"
+    },
+    {
+      "id": "T12",
+      "theme": "農林水産業",
+      "census_items": "就業者の産業分類の一部",
+      "census_role": "専門資料が中心",
+      "supplement": "農業センサス・農林水産省",
+      "rule": "生産量・農地・灌漑・漁獲を人口センサスから作らない"
+    },
+    {
+      "id": "T13",
+      "theme": "地域経済・企業・観光",
+      "census_items": "職業・産業の一部",
+      "census_role": "専門資料が中心",
+      "supplement": "経済センサス・事業所台帳・観光省",
+      "rule": "企業数、売上、観光客と就業者数を区別"
+    },
+    {
+      "id": "T14",
+      "theme": "交通・アクセス",
+      "census_items": "通勤先・手段、一部自動車保有",
+      "census_role": "国・票種による",
+      "supplement": "道路・交通省・GTFS・施設位置",
+      "rule": "道路状態・公共交通・到達時間は別資料"
+    },
+    {
+      "id": "T15",
+      "theme": "環境・資源・廃棄物",
+      "census_items": "世帯のごみ処理方法",
+      "census_role": "一部は国勢調査",
+      "supplement": "環境省・気象機関・自治体廃棄物台帳",
+      "rule": "収集方法と処分場容量・水質・大気を分ける"
+    },
+    {
+      "id": "T16",
+      "theme": "気候・災害リスク",
+      "census_items": "人口・住宅の曝露側",
+      "census_role": "専門資料が中心",
+      "supplement": "防災機関・気象・ハザード図",
+      "rule": "危険度・脆弱性・被災記録を別々に根拠化"
+    },
+    {
+      "id": "T17",
+      "theme": "治安・暴力・紛争",
+      "census_items": "人口分母等",
+      "census_role": "専門資料が中心",
+      "supplement": "警察・司法・被害調査・紛争データ",
+      "rule": "通報件数と被害率を混同しない"
+    },
+    {
+      "id": "T18",
+      "theme": "行政・財政・参加",
+      "census_items": "人口分母等",
+      "census_role": "専門資料が中心",
+      "supplement": "計画機関・自治体・予算・監査・議会",
+      "rule": "計画の存在、承認、執行、達成、評価を別管理"
+    }
+  ],
+  "automation": [
+    {
+      "step": "01",
+      "work": "制度・対象を定める",
+      "inputs": "国名、計画法、手引き、機関組織",
+      "automatic": "法令・機関の候補収集、制定／改正／施行年抽出、計画類型と責任自治体の対応案",
+      "output": "地域制度台帳・適用法一覧・提出様式候補",
+      "local_decision": "曖昧な権限・特別自治・現行改正の判断",
+      "implementation": "方法として今回追加。法令解釈の完全自動決定は未実装"
+    },
+    {
+      "step": "02",
+      "work": "ONEに相当する基礎統計をそろえる",
+      "inputs": "国勢調査・辞書・公式地域コード・境界",
+      "automatic": "表取得、正規化、指標辞書、地域結合、欠測と定義差検査",
+      "output": "国勢調査の地域診断・出典台帳・結合例外",
+      "local_decision": "曖昧な地域対応と秘匿・推計の採用",
+      "implementation": "WDI/参照境界の初期収集は既存。20か国censusアダプターは未実装"
+    },
+    {
+      "step": "03",
+      "work": "Temáticoの不足を埋める",
+      "inputs": "法定診断項目、18テーマ候補、census収録表",
+      "automatic": "不足指標から省庁・公式データセットを探索し、source別に取得・差分更新",
+      "output": "省庁別ソース台帳、テーマ比較、データ不足一覧",
+      "local_decision": "指標採用・比較条件・優先度",
+      "implementation": "探索方法を追加。省庁別コネクターは国別に実装"
+    },
+    {
+      "step": "04",
+      "work": "地域診断と課題仮説を作る",
+      "inputs": "同年・同定義の統計、上位計画、既存計画",
+      "automatic": "人口構成、サービス不足、比較、出典付き記述案",
+      "output": "Diagnóstico territorial／章別の基礎資料",
+      "local_decision": "因果解釈、現地実態、地域が重視する課題",
+      "implementation": "共通画面・基礎出力は既存。根拠拘束型の章別生成は段階実装"
+    },
+    {
+      "step": "05",
+      "work": "住民の要求・合意を整理する",
+      "inputs": "協議記録、CDM等に相当する場、提案・要求票",
+      "automatic": "転記、分類、地域・課題との紐付け、重複候補抽出",
+      "output": "参加履歴・要求台帳・未決事項",
+      "local_decision": "発言の意味、代表性、優先順位、合意",
+      "implementation": "公開記録の整理まで。未実施の会合や合意は生成しない"
+    },
+    {
+      "step": "06",
+      "work": "事業案を整える",
+      "inputs": "要求、課題、公共投資台帳、事業様式",
+      "automatic": "課題・対象・候補事業の対応案、既存事業重複照合、RUDCT相当の様式記入補助",
+      "output": "事業候補票、根拠、対象地域、費用未確定欄",
+      "local_decision": "事業選定、技術設計、見積、資金確保、担当合意",
+      "implementation": "方法を追加。ドミ共の様式・承認経路は国別に適応"
+    },
+    {
+      "step": "07",
+      "work": "PMD相当の計画草案を組む",
+      "inputs": "現地様式、診断、合意済み課題、採択事業、目標",
+      "automatic": "章立て対応、根拠付き下書き、表・図・指標・出典の組み込み",
+      "output": "編集可能な計画草案・根拠索引・補完欄",
+      "local_decision": "目標値、責任主体、財政約束、公式承認",
+      "implementation": "既存Markdown/印刷HTMLを基礎。国別Word様式は採用後に実装・検証"
+    },
+    {
+      "step": "08",
+      "work": "実施・見直しにつなぐ",
+      "inputs": "予算・決算、事業進捗、成果指標、公式評価",
+      "automatic": "新旧差分、期間整合、更新候補、計画の見直し箇所提示",
+      "output": "予算執行／事業進捗／成果／評価の別表示",
+      "local_decision": "政策の見直し、優先順位の変更、評価の確定",
+      "implementation": "計画資料契約は既存。更新スケジュール・APIは案件別設定"
+    }
+  ],
+  "sources": [
+    {
+      "id": "SCOPE",
+      "title": "CEPAL Statistical Yearbook 2025・社会統計注記（Latin America 20か国）",
+      "url": "https://statistics.cepal.org/yearbook/2025/docs/2500481_AE2025_notas_estadisticas_sociales.pdf",
+      "kind": "国際機関",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "UN",
+      "title": "UNSD Population and Housing Census Dates",
+      "url": "https://unstats.un.org/unsd/demographic-social/census/censusdates",
+      "kind": "国際機関",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "UN_REC",
+      "title": "UN Population and Housing Censuses Recommendations Rev.4",
+      "url": "https://unstats.un.org/unsd/publication/SeriesM/Series_M67Rev4en.pdf",
+      "kind": "国際機関",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "OWID",
+      "title": "Our World in Data・テーマ探索",
+      "url": "https://ourworldindata.org/",
+      "kind": "国際比較・探索入口",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "SDG",
+      "title": "UN SDG Metadata Repository",
+      "url": "https://unstats.un.org/sdgs/metadata/",
+      "kind": "国際機関",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "JMP",
+      "title": "WHO/UNICEF JMP・飲料水サービス定義",
+      "url": "https://washdata.org/topics/drinking-water",
+      "kind": "国際機関",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ARG_C",
+      "title": "アルゼンチン 国勢調査・公表資料",
+      "url": "https://redatam.indec.gob.ar/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ARG_L",
+      "title": "アルゼンチン Constitución Nacional（art.123）",
+      "url": "https://www.argentina.gob.ar/normativa/nacional/804/texto",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ARG_H",
+      "title": "INDEC 2022 住宅条件",
+      "url": "https://www.indec.gob.ar/ftp/cuadros/poblacion/censo2022_condiciones_habitacionales.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ARG_R",
+      "title": "INDEC REDATAM導入資料",
+      "url": "https://redatam.indec.gob.ar/redarg/CENSOS/CPV2022/Docs/Redatam_introduccion.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "BOL_C",
+      "title": "ボリビア 国勢調査・公表資料",
+      "url": "https://cpv2024.ine.gob.bo/index.php/tabulados-sobre-la-tematica-pobreza/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "BOL_L",
+      "title": "ボリビア Ley 777 del SPIE",
+      "url": "https://sea.gob.bo/digesto/CompendioII/A/2_L_777.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "BOL_A",
+      "title": "ボリビア 所管機関・制度運用",
+      "url": "https://www.gob.bo/entidades/ministerio-de-planificacion-del-desarrollo-y-medio-ambiente",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "BRA_C",
+      "title": "ブラジル 国勢調査・公表資料",
+      "url": "https://www.ibge.gov.br/estatisticas/sociais/trabalho/22827-censo-demografico-2022.html?edicao=41852&t=resultados",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "BRA_L",
+      "title": "ブラジル Lei 10.257 Estatuto da Cidade",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10257.htm",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "BRA_A",
+      "title": "ブラジル 所管機関・制度運用",
+      "url": "https://www.gov.br/cidades/pt-br",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "BRA_H",
+      "title": "IBGE 全数・住宅サービス",
+      "url": "https://sidra.ibge.gov.br/pesquisa/censo-demografico/demografico-2022/universo-caracteristicas-dos-domicilios",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "BRA_S",
+      "title": "IBGE 標本・住宅条件",
+      "url": "https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html?edicao=42157&t=resultados",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "BRA_E",
+      "title": "IBGE 標本・就業所得",
+      "url": "https://www.ibge.gov.br/estatisticas/Sociais/populacao/22827-censo-demografico-2022.html?edicao=44663",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "CHL_C",
+      "title": "チリ 国勢調査・公表資料",
+      "url": "https://censo2024.ine.gob.cl/resultados/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "CHL_L",
+      "title": "チリ Ley 18.695 Orgánica Constitucional de Municipalidades",
+      "url": "https://www.bcn.cl/leychile/navegar?idNorma=251693",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "CHL_A",
+      "title": "チリ 所管機関・制度運用",
+      "url": "https://www.subdere.gob.cl/organigrama-subdere/organigrama.html",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "CHL_H",
+      "title": "INE 2024 住宅・世帯設備結果",
+      "url": "https://censo2024.ine.gob.cl/censo-2024-el-611-de-los-hogares-residen-en-una-vivienda-propia-y-el-262-en-una-vivienda-arrendada/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "CHL_Q",
+      "title": "INE 2024 障害・教育・就業設問の説明",
+      "url": "https://censo2024.ine.gob.cl/ine-habilito-punto-censo-en-el-instituto-teleton-de-santiago/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "COL_C",
+      "title": "コロンビア 国勢調査・公表資料",
+      "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/censo-nacional-de-poblacion-y-vivenda-2018/herramientas",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "COL_L",
+      "title": "コロンビア Ley 152 Orgánica del Plan de Desarrollo",
+      "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=327",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "COL_A",
+      "title": "コロンビア 所管機関・制度運用",
+      "url": "https://portalterritorial.dnp.gov.co/",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "COL_H",
+      "title": "DANE CNPV2018 住宅変数辞書",
+      "url": "https://microdatos.dane.gov.co/index.php/catalog/643/data-dictionary/F8?file_name=VIVENDAS",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "COL_P",
+      "title": "DANE CNPV2018 個人変数辞書",
+      "url": "https://microdatos.dane.gov.co/index.php/catalog/643/data-dictionary/F11?file_name=PERSONAS",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "CRI_C",
+      "title": "コスタリカ 国勢調査・公表資料",
+      "url": "https://admin.inec.cr/sites/default/files/2024-11/meSocialMetodologiaEstimacionesSocialesVivienda2022.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "CRI_L",
+      "title": "コスタリカ Ley 7794 Código Municipal",
+      "url": "https://www.pgrweb.go.cr/DOCS/NORMAS/1/VIGENTE/L/1990-1999/1995-1999/1998/9D05/17C506.HTML",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "CRI_A",
+      "title": "コスタリカ 所管機関・制度運用",
+      "url": "https://www.mideplan.go.cr/documentos_leyes?field_ano_value=&order=title&page=0&sort=asc&title=",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "CRI_L2",
+      "title": "Ley 5525 de Planificación Nacional",
+      "url": "https://www.mideplan.go.cr/index.php/marco-legal-inversion-publica",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "CUB_C",
+      "title": "キューバ 国勢調査・公表資料",
+      "url": "https://celade.cepal.org/censosinfo/Boletas/CU_BDef_2012.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "CUB_L",
+      "title": "キューバ Decreto 33 Para la Gestión Estratégica del Desarrollo Territorial",
+      "url": "https://www.gacetaoficial.gob.cu/es/gaceta-oficial-no-40-ordinaria-de-2021",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ECU_C",
+      "title": "エクアドル 国勢調査・公表資料",
+      "url": "https://www.censoecuador.gob.ec/resultados-censo/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ECU_L",
+      "title": "エクアドル Código Orgánico de Planificación y Finanzas Públicas（COPFP）",
+      "url": "https://www.planificacion.gob.ec/wp-content/uploads/2021/10/Codigo-Org%C3%A1nico-de-Planificaci%C3%B3n-y-Finanzas-P%C3%BAblicas.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ECU_A",
+      "title": "エクアドル 所管機関・制度運用",
+      "url": "https://planificacion.presidencia.gob.ec/proforma-2026/",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ECU_L2",
+      "title": "PDOT作成・更新ガイド（Acuerdo SNP-SNP-2023-0049-A）",
+      "url": "https://www.planificacion.gob.ec/wp-content/uploads/2023/06/PDOT-ACUERDO-Nro.-SNP-SNP-2023-0049-A.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ECU_P",
+      "title": "INEC parroquia別サービスの公表例（Pangua）",
+      "url": "https://www.censoecuador.gob.ec/diagnosticos/cotopaxi/pangua.html",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "SLV_C",
+      "title": "エルサルバドル 国勢調査・公表資料",
+      "url": "https://censo2024.bcr.gob.sv/wp-content/uploads/tablas-geoportal/2025/Informe%20_VII_Censo_de_Poblacion_y_VI_de_Vivienda_marzo_2025.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "SLV_L",
+      "title": "エルサルバドル Código Municipal（Decreto 274）",
+      "url": "https://www.asamblea.gob.sv/leyes-y-decretos/decretos-por-anios/1986/0",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "SLV_A",
+      "title": "エルサルバドル 所管機関・制度運用",
+      "url": "https://www.transparencia.gob.sv/perfil/371",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "SLV_L2",
+      "title": "Ley Especial para la Reestructuración Municipal",
+      "url": "https://www.asamblea.gob.sv/node/12819",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "GTM_C",
+      "title": "グアテマラ 国勢調査・公表資料",
+      "url": "https://censo2018.ine.gob.gt/explorador",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "GTM_L",
+      "title": "グアテマラ Código Municipal（Decreto 12-2002）",
+      "url": "https://portal.segeplan.gob.gt/segeplan/wp-content/uploads/2022/07/107_PDM_OT_San_Pedro_Ayampuc.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "GTM_A",
+      "title": "グアテマラ 所管機関・制度運用",
+      "url": "https://portal.segeplan.gob.gt/segeplan/?page_id=6433",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "GTM_G",
+      "title": "INE 2018 lugares pobladosデータ",
+      "url": "https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "HTI_C",
+      "title": "ハイチ 国勢調査・公表資料",
+      "url": "https://ihsi.gouv.ht/recensement/autres_resultat_rgph_2003",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "HTI_L",
+      "title": "ハイチ Décret du 1er février 2006 sur la collectivité municipale",
+      "url": "https://www.mict.gouv.ht/wp-content/uploads/2016/04/Decret-Portant-Organisation-et-Fonctionnement-de-la-Collectivite-Municipale.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "HTI_A",
+      "title": "ハイチ 所管機関・制度運用",
+      "url": "https://mpce.gouv.ht/",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "HND_C",
+      "title": "ホンジュラス 国勢調査・公表資料",
+      "url": "https://ine.gob.hn/2015/06/15/tomo-5-genero-2013/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "HND_L",
+      "title": "ホンジュラス Normativa para la Formulación de PDM con enfoque de OT（Acuerdo 00132）",
+      "url": "https://www.tsc.gob.hn/web/leyes/Normativa_formulacion_planes_desarrollo_municipal_2013.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "HND_A",
+      "title": "ホンジュラス 所管機関・制度運用",
+      "url": "https://www.sefin.gob.hn/wp-content/uploads/2026/05/Presentacion-Lineamientos-para-la-Ejecucion-y-Evaluacion-Presupuestaria_2026.pdf",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "HND_Q",
+      "title": "INE Honduras 2013調査票（CEPAL保管）",
+      "url": "https://celade.cepal.org/censosinfo/Boletas/HD_Bdef_2013.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "HND_NEXT",
+      "title": "INE Honduras 2026調査準備",
+      "url": "https://ine.gob.hn/2026/05/05/honduras-impulsa-el-censo-de-poblacion-y-vivienda-2026-como-pilar-estrategico-para-el-desarrollo-nacional/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "HND_L2",
+      "title": "PCM-004-2026（機関再編）",
+      "url": "https://portalunico.iaip.gob.hn/498/",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "MEX_C",
+      "title": "メキシコ 国勢調査・公表資料",
+      "url": "https://inegi.org.mx/rnm/index.php/catalog/632",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "MEX_L",
+      "title": "メキシコ Ley de Planeación",
+      "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf_mov/Ley_de_Planeacion.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "MEX_A",
+      "title": "メキシコ 所管機関・制度運用",
+      "url": "https://situ.sedatu.gob.mx/",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "MEX_L2",
+      "title": "Ley de Planeación del Estado de México y Municipios（州の例）",
+      "url": "https://legislacion.edomex.gob.mx/sites/legislacion.edomex.gob.mx/files/files/pdf/ley/vig/leyvig087.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "MEX_G",
+      "title": "INEGI 2020 AGEB・manzana選定指標",
+      "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/doc/fd_agebmza_urbana_cpv2020.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "NIC_C",
+      "title": "ニカラグア 国勢調査・公表資料",
+      "url": "https://www.inide.gob.ni/docu/censos2005/censo2005.htm",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "NIC_L",
+      "title": "ニカラグア Ley 40 de Municipios",
+      "url": "https://legislacion.asamblea.gob.ni/SILEG/Iniciativas.nsf/c9a0faf9d8c5e28f062572c70052cde2/7ebe8ba4e242fa7b062579eb0064e3b6/%24FILE/Ley%20No.%20792%20reforma%20Ley%20de%20municipios.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "NIC_A",
+      "title": "ニカラグア 所管機関・制度運用",
+      "url": "https://www.hacienda.gob.ni/politica-institucional/",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "NIC_Q",
+      "title": "INIDE 2005調査票（CEPAL保管）",
+      "url": "https://celade.cepal.org/censosinfo/Boletas/NI_BDef_2005.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "NIC_NEXT",
+      "title": "INIDE CEPOV入口（2024詳細公開確認は残件）",
+      "url": "https://www.inide.gob.ni/Estadisticas/censoCEPOV",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PAN_C",
+      "title": "パナマ 国勢調査・公表資料",
+      "url": "https://www.inec.gob.pa/publicaciones/Default3.aspx?ID_CATEGORIA=19&ID_PUBLICACION=1231",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PAN_L",
+      "title": "パナマ Ley 37 de Descentralización",
+      "url": "https://www.descentralizacion.gob.pa/page/ley-37-2009-descentralizacion",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PAN_A",
+      "title": "パナマ 所管機関・制度運用",
+      "url": "https://www.mef.gob.pa/2025/10/panama-presenta-el-presupuesto-mas-alto-de-su-historia-para-2026/",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PAN_T",
+      "title": "INEC 2023 lugares poblados Panamá表",
+      "url": "https://www.inec.gob.pa/archivos/P0705547520240201165824Panam%C3%A1.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PRY_C",
+      "title": "パラグアイ 国勢調査・公表資料",
+      "url": "https://censo2022.ine.gov.py/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PRY_L",
+      "title": "パラグアイ Ley 3966 Orgánica Municipal",
+      "url": "https://www.bacn.gov.py/leyes-paraguayas/969/ley-n-3966-organica-municipall",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PRY_A",
+      "title": "パラグアイ 所管機関・制度運用",
+      "url": "https://www.mef.gov.py/es/institucional/organigrama-y-funciones",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PRY_H",
+      "title": "INE 2022確報・住宅巻（調査票付）",
+      "url": "https://www.ine.gov.py/censo2022/documentos/2%20resultados%20finales%20viviendas.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PRY_G",
+      "title": "INE 地区指標・2022地理カタログ",
+      "url": "https://geonode.ine.gov.py/catalogue/csw_to_extra_format/698621b4-b019-4199-9252-e96d0a98dfc8/distritos-con-indicadores-censo-2022.html",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PER_C",
+      "title": "ペルー 国勢調査・公表資料",
+      "url": "https://www1.inei.gob.pe/estadisticas/censos/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PER_L",
+      "title": "ペルー Ley 27972 Orgánica de Municipalidades",
+      "url": "https://www.gob.pe/96430-el-plan-de-desarrollo-municipal-concertado",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PER_A",
+      "title": "ペルー 所管機関・制度運用",
+      "url": "https://www.gob.pe/ceplan",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PER_T",
+      "title": "INEI 2025 Cusco結果公表（2026-08-04）",
+      "url": "https://www.gob.pe/institucion/inei/noticias/1426058-inei-poblacion-de-cusco-registro-1-millon-379-mil-habitantes-segun-resultados-de-los-censos-nacionales-2025",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PER_D",
+      "title": "INEI 2026年7月地区結果公表の記録",
+      "url": "https://www.inei.gob.pe/prensa/inei-en-medios/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "DOM_C",
+      "title": "ドミニカ共和国 国勢調査・公表資料",
+      "url": "https://www.one.gob.do/datos-y-estadisticas/temas/censos/poblacion-y-vivienda/2022/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "DOM_L",
+      "title": "ドミニカ共和国 Ley 176-07 del Distrito Nacional y los Municipios",
+      "url": "https://ayuntamientocomendador.gob.do/transparencia/wp-content/uploads/2026/01/PDM-Comendador-2025-2029.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "DOM_A",
+      "title": "ドミニカ共和国 所管機関・制度運用",
+      "url": "https://www.presidencia.gob.do/noticias/presidente-abinader-promulga-ley-que-dispone-fusion-del-ministerio-de-hacienda-y-el",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "DOM_L2",
+      "title": "Ley 498-06 de Planificación e Inversión Pública",
+      "url": "https://www.hacienda.gob.do/wp-content/uploads/2023/12/PNPSP-Plan-Nacional-Plurianual-del-Sector-Pu%CC%81blico_compressed.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "DOM_L3",
+      "title": "Ley 1-12 Estrategia Nacional de Desarrollo 2030",
+      "url": "https://transparencia.hacienda.gob.do/wp-content/uploads/2023/04/1-Ley-No-1-12-Ley-de-la-Estrategia-Nacional-de-Desarrollo-2030_.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "DOM_L4",
+      "title": "Ley 45-25（省庁統合）",
+      "url": "https://www.presidencia.gob.do/noticias/presidente-abinader-promulga-ley-que-dispone-fusion-del-ministerio-de-hacienda-y-el",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "DOM_W",
+      "title": "ONE Censo2022 水・衛生特集（2026刊行）",
+      "url": "https://www.one.gob.do/publicaciones/2026/fasciculo-ii-agua-y-saneamiento-en-los-hogares-de-la-republica-dominicana/",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "DOM_Q",
+      "title": "ONE 2010・2022回答欠落分析（就業設問の存在）",
+      "url": "https://www.one.gob.do/media/jo4holms/cabalidad-en-las-respuestas-de-censos-2010-y-2022.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "URY_C",
+      "title": "ウルグアイ 国勢調査・公表資料",
+      "url": "https://www.gub.uy/instituto-nacional-estadistica/politicas-y-gestion/microdatos-censo-2023-ponderados",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "URY_L",
+      "title": "ウルグアイ Ley 19.272 Descentralización y Participación Ciudadana",
+      "url": "https://www.impo.com.uy/bases/leyes/19272-2014",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "URY_A",
+      "title": "ウルグアイ 所管機関・制度運用",
+      "url": "https://www.opp.gub.uy/es/noticias/ciclo-de-apoyo-la-planificacion-figm-2026",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "URY_L2",
+      "title": "Ley 18.308 Ordenamiento Territorial y Desarrollo Sostenible",
+      "url": "https://www.impo.com.uy/bases/leyes/18308-2008",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "URY_Q",
+      "title": "INE Uruguay 2023調査票",
+      "url": "https://www.gub.uy/instituto-nacional-estadistica/sites/instituto-nacional-estadistica/files/2025-02/Cuestionario_censo2023%20%281%29.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "VEN_C",
+      "title": "ベネズエラ 国勢調査・公表資料",
+      "url": "https://celade.cepal.org/censosinfo/Boletas/VE_BDef_2011.pdf",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "VEN_L",
+      "title": "ベネズエラ Ley Orgánica de Planificación Pública y Popular",
+      "url": "https://mppp.gob.ve/marco-legal/leyes-y-reglamentos/",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "VEN_A",
+      "title": "ベネズエラ 所管機関・制度運用",
+      "url": "https://mppp.gob.ve/",
+      "kind": "現行機関・政府資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "VEN_L2",
+      "title": "Ley Orgánica de Planificación Pública y Popular（改正）",
+      "url": "https://mppp.gob.ve/marco-legal/leyes-y-reglamentos/",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "BRA_L2",
+      "title": "Constituição Federal（計画・都市政策）",
+      "url": "https://www4.planalto.gov.br/legislacao/legis-federal/constituicao",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "GTM_L2",
+      "title": "Ley de los Consejos de Desarrollo Urbano y Rural（11-2002）",
+      "url": "https://www.congreso.gob.gt/detalle_pdf/decretos/231",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "HND_L3",
+      "title": "Ley de Municipalidades（Decreto 134-90）",
+      "url": "https://www.tsc.gob.hn/web/leyes/Ley_de_Municipalidades.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "HND_L4",
+      "title": "Ley de Visión de País y Plan de Nación（286-2009）",
+      "url": "https://tsc.gob.hn/biblioteca/index.php/leyes/128-ley-para-establecimiento-de-una-vision-de-pais-y-la-adpcion-de-un-plan-de-nacion-para-honduras",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "URY_REL",
+      "title": "Uruguay Ley 19.272 art.19・自治体財源",
+      "url": "https://www.impo.com.uy/bases/leyes/19272-2014/19",
+      "kind": "現行法令条文",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PER_L2",
+      "title": "Decreto Legislativo 1088（SINAPLAN・CEPLAN）",
+      "url": "https://www.gob.pe/institucion/ceplan/campa%C3%B1as/6243-conoce-las-normas-del-sinaplan",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ECU_L3",
+      "title": "COOTAD",
+      "url": "https://www.planificacion.gob.ec/wp-content/uploads/downloads/2018/09/CODIGO-ORGANICO-DE-ORGANIZACION-TERRITORIAL-COOTAD.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "ECU_L4",
+      "title": "Decreto Ejecutivo 95（機関統合）",
+      "url": "https://planificacion.presidencia.gob.ec/wp-content/uploads/2026/03/3-Acta-de-reunion-RDC-2025-SNP.pdf",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "PRY_L2",
+      "title": "Ley 7158（MEF設置）",
+      "url": "https://www.bacn.gov.py/leyes-paraguayas/11893/ley-n-7158-crea-el-ministerio-de-economia-",
+      "kind": "法令・政府の制度資料",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "CUB_L_TEXT",
+      "title": "Decreto 33/2021 原文（官報40号）",
+      "url": "https://www.gacetaoficial.gob.cu/sites/default/files/goc-2021-o40.pdf",
+      "kind": "法令原文",
+      "checked": "2026-09-13"
+    },
+    {
+      "id": "URY_D",
+      "title": "INE Uruguay 2023・2026年7月版変数辞書",
+      "url": "https://www4.ine.gub.uy/Anda5/index.php/catalog/781/data-dictionary/F1",
+      "kind": "統計局・公式資料",
+      "checked": "2026-09-13"
+    }
+  ]
+}

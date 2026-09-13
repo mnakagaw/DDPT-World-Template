@@ -12,7 +12,7 @@ START_HERE.mdから読み、公式の地方統計・行政区分・計画・予�
 ## AIが最初に行うこと
 
 1. このリポジトリを既存の認証で読み取る。既にcloneがある場合はその場所・変更・参照commitを確認し、利用者の変更を上書きしない。
-2. `AGENTS.md`、[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[実装契約](docs/IMPLEMENTATION_CONTRACT.md)、[共通仕様C01～C07](docs/02_COMMON_SPEC.md)、[データ適応規則](docs/03_COUNTRY_AND_DATA.md)、[計画資料データ契約](docs/PLANNING_DATA_CONTRACT.md)を読む。
+2. `AGENTS.md`、[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)、[計画制度・国勢調査の方法](docs/PLANNING_CENSUS_METHOD.md)、[実装契約](docs/IMPLEMENTATION_CONTRACT.md)、[共通仕様C01～C07](docs/02_COMMON_SPEC.md)、[データ適応規則](docs/03_COUNTRY_AND_DATA.md)、[計画資料データ契約](docs/PLANNING_DATA_CONTRACT.md)を読む。
 3. 利用者の既存指示・保存先・資産を確認し、分かる開始情報をAIが記録する。指定がなければ新しいローカル出力先を使い、国別サイトの公開先や別GitHubリポジトリを勝手に作らない。
 4. 次のCLIで初期データとサイトを作る。その後に公式の地方資料の調査・取得・統合を続ける。
 
