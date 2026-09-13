@@ -1,0 +1,174 @@
+[
+  {
+    "case": "city-selected",
+    "url": "http://127.0.0.1:4190/world/site/territorial/?country=WLD&territory=city&metric=people&period=2024&level=municipality&type=city&code=city&boundary=test-local-1",
+    "result": {
+      "facts": "Test Municipality 27\nAll-area selector\nFind an area by name or code\nReturn to world view\n\nmunicipality · city · Code city\n\nArea identity and boundary edition\nTest population\n0\npeople · 2024 · Observed",
+      "h1": "Same name",
+      "internalMaps": 0,
+      "wardOptions": 0
+    }
+  },
+  {
+    "case": "same-parent-reselect",
+    "url": "http://127.0.0.1:4190/world/site/territorial/?country=WLD&territory=north&metric=people&period=2024&level=region&type=region&code=north&boundary=test-local-1",
+    "result": {
+      "facts": "ole Lake Test Province\nAll-area selector\nFind an area by name or code\nReturn to world view\n\nregion · region · Code north\n\nArea identity and boundary edition\nTest population\nNo data\npeople · 2024 · Not collected",
+      "h1": "Northern Test Region",
+      "period": "2024",
+      "report": "Diagnostic report — Northern Test Region",
+      "selectedOptions": [
+        "Belongs to Synthetic Americas · a lower area is selected",
+        "Belongs to Synthetic Central America and Caribbean · a lower area is selected",
+        "Belongs to Test country · a lower area is selected",
+        "Whole Northern Test Region",
+        "Whole Northern Test Region · no lower area selected"
+      ]
+    }
+  },
+  {
+    "case": "back-city",
+    "url": "http://127.0.0.1:4190/world/site/territorial/?country=WLD&territory=city&metric=people&period=2024&level=municipality&type=city&code=city&boundary=test-local-1",
+    "h1": "Same name"
+  },
+  {
+    "case": "forward-parent",
+    "url": "http://127.0.0.1:4190/world/site/territorial/?country=WLD&territory=north&metric=people&period=2024&level=region&type=region&code=north&boundary=test-local-1",
+    "h1": "Northern Test Region"
+  },
+  {
+    "case": "internal-inspection-keeps-area",
+    "sameURL": true,
+    "result": {
+      "h1": "River Test Province",
+      "highlightRows": 1,
+      "rowCounts": [
+        30,
+        30
+      ]
+    }
+  },
+  {
+    "case": "narrow-375",
+    "result": {
+      "grids": [
+        {
+          "columns": "299.429px",
+          "display": "grid"
+        },
+        {
+          "columns": "299.429px",
+          "display": "grid"
+        }
+      ],
+      "rows": [
+        30,
+        30
+      ],
+      "scroll": 360,
+      "width": 375
+    }
+  },
+  {
+    "case": "narrow-320",
+    "result": {
+      "rowCounts": [
+        30,
+        30
+      ],
+      "scroll": 305,
+      "width": 320
+    }
+  },
+  {
+    "case": "country-handoff-mapped",
+    "url": "http://127.0.0.1:4190/world/site/countries/TST/territorial/?country=TST&territory=TST&period=2024&metric=population",
+    "result": {
+      "definitions": [
+        "Separate fictional domestic resident census"
+      ],
+      "facts": "nd an area by name or code\n\nNational · country · Provider ID TST\n\nArea identity and boundary edition\nPopulation\n100\npeople · 2024 · Observed",
+      "h1": "Test country"
+    }
+  },
+  {
+    "case": "country-back-world",
+    "url": "http://127.0.0.1:4190/world/site/territorial/?country=WLD&territory=TST&metric=people&period=2024&level=country&type=country&code=TST&boundary=test-local-1#theme-0"
+  },
+  {
+    "case": "live-world-DOM-2024",
+    "url": "http://127.0.0.1:4191/?country=WLD&territory=DOM&metric=SP.POP.TOTL&period=2024&level=country&type=country&code=214",
+    "result": {
+      "h1": "Dominican Republic",
+      "scroll": 1265,
+      "values": [
+        {
+          "name": "Population, total",
+          "value": "11,427,557\nObserved · 2024"
+        },
+        {
+          "name": "Life expectancy at birth, total (years)",
+          "value": "73.87\nObserved · 2024"
+        },
+        {
+          "name": "Access to electricity (% of population)",
+          "value": "99.5\nObserved · 2024"
+        },
+        {
+          "name": "Individuals using the Internet (% of population)",
+          "value": "91\nObserved · 2024"
+        }
+      ],
+      "width": 1280
+    }
+  },
+  {
+    "case": "same-province-water-2023",
+    "url": "http://127.0.0.1:4190/world/site/territorial/?country=WLD&territory=river&metric=water&period=2023&level=province&type=province&code=river&boundary=test-local-1",
+    "result": {
+      "h1": "River Test Province",
+      "status": "Selected River Test Province, Test water access, 2023.",
+      "values": [
+        "No data\nNo data · 2023",
+        "No data\nNot collected · 2023"
+      ]
+    }
+  },
+  {
+    "case": "same-region-water-2023",
+    "url": "http://127.0.0.1:4190/world/site/territorial/?country=WLD&territory=north&metric=water&period=2023&level=region&type=region&code=north&boundary=test-local-1",
+    "h1": "Northern Test Region"
+  },
+  {
+    "case": "unmapped-country-handoff",
+    "url": "http://127.0.0.1:4190/world/site/countries/TST/territorial/?country=TST&territory=TST&period=2023&requested_metric=water&source_dataset=WLD",
+    "notice": [
+      "No verified indicator mapping was supplied for “water” from dataset “WLD”. The displayed country indicator is a separate concept. The requested period is retained."
+    ]
+  },
+  {
+    "case": "unmapped-reload",
+    "notice": [
+      "No verified indicator mapping was supplied for “water” from dataset “WLD”. The displayed country indicator is a separate concept. The requested period is retained."
+    ]
+  },
+  {
+    "case": "browser-logs",
+    "synthetic": [],
+    "real": []
+  },
+  {
+    "case": "final-desktop",
+    "url": "http://127.0.0.1:4190/world/site/territorial/?territory=river&metric=people&period=2024",
+    "result": {
+      "h1": "River Test Province",
+      "rows": [
+        30,
+        30
+      ],
+      "scroll": 1265,
+      "status": "Same name city · city — 0 people · 2024 Observed. Diagnostic area remains River Test Province.",
+      "width": 1280
+    }
+  }
+]

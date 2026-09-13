@@ -13,7 +13,7 @@
     "number_format_locale": null
   },
   "baseline": {
-    "common_spec_version": "0.3",
+    "common_spec_version": "0.4",
     "reference_repository": "https://github.com/mnakagaw/DDPT-TOP",
     "reference_commit": "6d2aee5f767515c5b20118ed642f832f21a15151",
     "reference_public_urls": [],
@@ -27,7 +27,36 @@
     "statistical_classifications": [],
     "project_focus_groups": [],
     "boundary_versions": [],
-    "historical_crosswalks": []
+    "historical_crosswalks": [],
+    "exploration_classifications": [],
+    "planning_entities_ref": null,
+    "basic_municipality_identification_ref": null
+  },
+  "internal_comparison_design": {
+    "artifact_role": "design_decisions_not_runtime_settings",
+    "analysis_scopes": [],
+    "constituent_registry_refs": [],
+    "indicator_comparison_policies": [],
+    "basic_municipality_stop_decisions": [],
+    "parent_observation_and_aggregation_evidence_ref": null,
+    "missing_and_boundary_fallbacks": [],
+    "observation_meaning_difference_evidence_refs": [],
+    "color_scale_decisions": [],
+    "diagnostic_output_validation_ref": null,
+    "world_connection_decisions": [],
+    "preserved_top_layout_reference": null,
+    "interaction_contract": "Compare beneath each indicator; comparison focus does not change the analysis target, URL, documents or output target.",
+    "print_contract": "Print every constituent row, including missing values, regardless of viewport, search, collapse or pagination.",
+    "runtime_mapping": {
+      "dataset_file": "data/dashboard.json",
+      "dataset_schema_version": "0.2",
+      "optional_settings_field": "analysis",
+      "contract_ref": "docs/ANALYSIS_DATA_CONTRACT.md",
+      "decision_record_ref": null,
+      "note": "Translate decisions explicitly to kind, comparisons, terminal_territory_ids and optional country_sites. The design profile is not loaded automatically. The legacy fallback compares direct children and stops at built-in city/municipality types; verify the country meaning. Country sites are separate datasets and indicator transfer needs an explicit indicator_map."
+    },
+    "acceptance_record_ref": null,
+    "note": "World, continent and broad-area exploration classifications do not establish legal planning authority. Include national analysis; stop normal subdivision at the verified basic municipality. Never infer parent values by averaging child rates. Empty lists mean undecided."
   },
   "planning": {
     "plan_types": [],
@@ -96,5 +125,5 @@
     "validation_record_ref": null,
     "release_record_ref": null
   },
-  "completion_notes": "Null and empty decision lists in this design inventory mean undecided, not false, absent in the country or disabled. No runtime loader or schema validator for this design profile is implemented. Runtime dataset validation is separate. Common UX 0.3 is a candidate, not accepted v1.0. Do not place credentials or personal data here."
+  "completion_notes": "Null and empty decision lists in this design inventory mean undecided, not false, absent in the country or disabled. No runtime loader or schema validator for this design profile is implemented. Runtime dataset validation is separate. Common UX 0.4 is a candidate, not accepted v1.0. Do not place credentials or personal data here."
 }

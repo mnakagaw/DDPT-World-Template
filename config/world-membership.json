@@ -1,0 +1,33 @@
+{
+  "version": "1",
+  "registry_url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+  "registry_table_id": "downloadTableEN",
+  "continents": ["002", "019", "142", "150", "009"],
+  "custom_region": {
+    "id": "CUSTOM:CAM-CAR",
+    "name": "Central America + Caribbean",
+    "parent_m49": "019",
+    "member_intermediate_m49": ["013", "029"],
+    "note": "Template exploration grouping combining UN M49 Central America (013, including Mexico) and Caribbean (029). It is not a published UN M49, World Bank or OWID aggregate."
+  },
+  "americas_navigation": {
+    "note": "Americas is presented as Northern America, South America, and the custom Central America + Caribbean grouping. Original UN region/sub-region/intermediate memberships are retained on every country or area; the navigation tree is not the complete M49 hierarchy.",
+    "direct_member_m49": ["021", "005"]
+  },
+  "boundary": {
+    "name": "Natural Earth 1:110m Admin-0 map units",
+    "release": "v5.1.2",
+    "commit": "f1890d9f152c896d250a77557a5751a93d494776",
+    "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/f1890d9f152c896d250a77557a5751a93d494776/geojson/ne_110m_admin_0_map_units.geojson",
+    "documentation_url": "https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/",
+    "license_url": "https://www.naturalearthdata.com/about/terms-of-use/",
+    "join_fields": ["ISO_A3", "ISO_N3"],
+    "note": "Cartographic map units with de facto boundaries, not current legal/statistical boundaries. Only exact ISO-alpha3 plus M49 numeric matches are accepted; extension/fallback codes and name matches are not used. Smaller areas or units without an exact pair remain without a map."
+  },
+  "indicators": [
+    {"id": "SP.POP.TOTL", "theme": "Population", "unit": "people"},
+    {"id": "SP.DYN.LE00.IN", "theme": "Health", "unit": "years"},
+    {"id": "EG.ELC.ACCS.ZS", "theme": "Basic services", "unit": "% of population"},
+    {"id": "IT.NET.USER.ZS", "theme": "Connectivity", "unit": "% of population"}
+  ]
+}

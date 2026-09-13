@@ -1,0 +1,142 @@
+{
+  "kind": "world-adapter-live-verification",
+  "evidence_edition": "2026-09-13T10:24:18.027Z",
+  "adapter_source_reference": {
+    "base_commit": "04b4432",
+    "source_state": "dirty; world adapter and UI work in progress; this commit alone does not reproduce added files"
+  },
+  "dataset_sha256": "fa94e6b1d817eff18f0415d3865c984c7efea58bd574a04468eb8d9e0628b4b5",
+  "options": {
+    "startYear": 2021,
+    "endYear": 2026
+  },
+  "config_sha256": "131e2846534162119e27a8530ffe7641a488cfac6dd71e9bd4a62afc2a613d06",
+  "counts": {
+    "m49_countries_areas": 248,
+    "matched_wb_economies_including_world": 216,
+    "territories": 276,
+    "reported_values": 3544,
+    "reference_country_shapes": 169,
+    "display_group_shapes": 25,
+    "unmapped_country_areas": 79
+  },
+  "observed_periods": {
+    "SP.POP.TOTL": [
+      "2021",
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "SP.DYN.LE00.IN": [
+      "2021",
+      "2022",
+      "2023",
+      "2024"
+    ],
+    "EG.ELC.ACCS.ZS": [
+      "2021",
+      "2022",
+      "2023",
+      "2024"
+    ],
+    "IT.NET.USER.ZS": [
+      "2021",
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ]
+  },
+  "validation": {
+    "errors": [],
+    "warnings": [
+      "No verified country-specific planning documents collected"
+    ],
+    "offline_replay_dataset_byte_equal": true
+  },
+  "requests": [
+    {
+      "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+      "retrieved_at": "2026-09-13T10:24:12.017Z",
+      "sha256": "b9048114f6e7f2abda83bf03d4263c9d7cd1bd7230e3d0461025ee7839a7a1fb",
+      "bytes": 1721575,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country?format=json&per_page=2000&page=1",
+      "retrieved_at": "2026-09-13T10:24:12.845Z",
+      "sha256": "dd88451471bb2daa5a000c27d32d7c77860ce48b8aad0efdddf87237acf30035",
+      "bytes": 113591,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/indicator/SP.POP.TOTL?format=json&per_page=2000&source=2&page=1",
+      "retrieved_at": "2026-09-13T10:24:13.296Z",
+      "sha256": "32b59f8dc303ec26d2dfd32b6217b856d983d7b38622c5dbca6124001a11cb75",
+      "bytes": 1101,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=2000&source=2&date=2021%3A2026&footnote=y&page=1",
+      "retrieved_at": "2026-09-13T10:24:14.578Z",
+      "sha256": "404d163203299c518414cb0d4909100bd5d1cb79f0dffcf222b3336b42eb3810",
+      "bytes": 287729,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/indicator/SP.DYN.LE00.IN?format=json&per_page=2000&source=2&page=1",
+      "retrieved_at": "2026-09-13T10:24:14.893Z",
+      "sha256": "b9a5af9322e0516805161921a3b0402d975d7c22765482b88a1fe0eb0fd6e9e2",
+      "bytes": 971,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.IN?format=json&per_page=2000&source=2&date=2021%3A2026&footnote=y&page=1",
+      "retrieved_at": "2026-09-13T10:24:15.541Z",
+      "sha256": "f82022d3f6cc73a1c3939eda6aa3b2b7e044243c562959154ce4a985501a0bd7",
+      "bytes": 319409,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/indicator/EG.ELC.ACCS.ZS?format=json&per_page=2000&source=2&page=1",
+      "retrieved_at": "2026-09-13T10:24:15.931Z",
+      "sha256": "a61e84800d104a4a64cad5123479ea35beab06a59119bc656713d6cac6800f78",
+      "bytes": 814,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/all/indicator/EG.ELC.ACCS.ZS?format=json&per_page=2000&source=2&date=2021%3A2026&footnote=y&page=1",
+      "retrieved_at": "2026-09-13T10:24:16.652Z",
+      "sha256": "37297736db2d4badea98f2ca9dd634d838bb02245f688f95f159f87d0055a57e",
+      "bytes": 314824,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/indicator/IT.NET.USER.ZS?format=json&per_page=2000&source=2&page=1",
+      "retrieved_at": "2026-09-13T10:24:17.459Z",
+      "sha256": "fa4764c0f2357afb79b6e25273da809ac7b373d0b61a1fe3a53bac61a953b3ea",
+      "bytes": 631,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/all/indicator/IT.NET.USER.ZS?format=json&per_page=2000&source=2&date=2021%3A2026&footnote=y&page=1",
+      "retrieved_at": "2026-09-13T10:24:17.767Z",
+      "sha256": "de87c77a750146af2702bb1ef4b0d16bb6eba7cec4463a0e3463324a5cc2d344",
+      "bytes": 359105,
+      "status": "downloaded"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/f1890d9f152c896d250a77557a5751a93d494776/geojson/ne_110m_admin_0_map_units.geojson",
+      "retrieved_at": "2026-09-13T10:24:18.027Z",
+      "sha256": "718ac51d68ed2bf5de4f563fff2e2e045db706c1d3222805f3e317140a64213b",
+      "bytes": 861911,
+      "status": "downloaded"
+    }
+  ],
+  "notes": [
+    "Acquired source originals and generated outputs are not committed. This is a receipt, not a live data distribution or a UI acceptance record.",
+    "Boundary strict-code gaps include small islands and larger countries with Natural Earth unset/extension/different numeric codes. No inferred code repairs were applied.",
+    "World only uses the provider WLD series. Continental and custom-region values were left missing."
+  ]
+}

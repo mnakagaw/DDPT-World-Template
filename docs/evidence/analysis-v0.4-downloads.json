@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-09-13T10:48:16.782Z",
+  "data_edition": "2026-09-13T00:00:00Z",
+  "territory_id": "river",
+  "period": "2024",
+  "downloads": [
+    {
+      "file": "WLD-river-2024-diagnostic.md",
+      "bytes": 28194,
+      "sha256": "fd234390a0c4151fe770759967cc3879aa5ebf209eddb6d80535f2273754373b",
+      "equal_to_current_generator": true
+    },
+    {
+      "file": "WLD-river-2024-diagnostic.html",
+      "bytes": 68719,
+      "sha256": "df36d5c35753b9e075eabd4bb480153d294a3f28c2ad2f1343c002c5df3be581",
+      "equal_to_current_generator": true
+    },
+    {
+      "file": "WLD-river-2024-diagnostic.csv",
+      "bytes": 29950,
+      "sha256": "b7221ff2b3668a033779e27fee063814ebcb891673a8e3850a432aee2cf9a1dd",
+      "equal_to_current_generator": true
+    }
+  ]
+}

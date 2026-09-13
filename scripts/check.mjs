@@ -17,4 +17,5 @@ async function walk(dir) {
 for (const root of roots) await walk(root);
 JSON.parse(await readFile('package.json', 'utf8'));
 JSON.parse(await readFile('templates/country-profile.json', 'utf8'));
+JSON.parse(await readFile('config/world-membership.json', 'utf8'));
 console.log(`Syntax checked ${count} JavaScript modules and JSON templates.`);

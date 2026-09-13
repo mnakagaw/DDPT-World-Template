@@ -1,0 +1,387 @@
+{
+  "input": ".work/analysis-v0.4/world/site/reports/river.html",
+  "input_sha256": "df36d5c35753b9e075eabd4bb480153d294a3f28c2ad2f1343c002c5df3be581",
+  "pdf": "river-print.pdf",
+  "pdf_sha256": "2ce89dcccda0042b67da2ff42bcc16da5e7f01df9a82ca5c7261b246be403daa",
+  "generated_at": "2026-09-13T10:37:41.943Z",
+  "converter": "Chrome dedicated headless profile; existing browsers untouched",
+  "dataset": "synthetic fixture; 30 members x 2 indicators",
+  "inspection": {
+    "pages": [
+      {
+        "page": 1,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 208,
+        "outside_page": [],
+        "first_lines": [
+          "Territorial diagnostic — River Test Province",
+          "Synthetic world → Synthetic Americas → Synthetic Central America and Caribbean → Test country → Northern Test",
+          "Region → River Test Province"
+        ],
+        "last_lines": [
+          "Fictional source-backed membership declaration for synthetic regression only.",
+          "29 of 30 member areas have comparable observations. Range 0–100 people. This range describes recorded",
+          "differences; it does not establish causes or agreed priorities."
+        ]
+      },
+      {
+        "page": 2,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 252,
+        "outside_page": [],
+        "first_lines": [
+          "Intervals calculated within the selected area. Equal intervals within this selection ≤ 20 · > 20 to ≤ 40 · > 40 to ≤ 60 · >",
+          "60 to ≤ 80 · > 80 Gray = missing or not comparable. High values are not automatically better.",
+          "Boundary sources: Fictional geometry. Boundary editions and codes are listed for every member."
+        ],
+        "last_lines": [
+          "Observation boundary edition: not recorded.",
+          "Retrieved 2026-09-13T00:00:00Z. No observations collected for this indicator and area.",
+          "No boundary collected for this area."
+        ]
+      },
+      {
+        "page": 3,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 283,
+        "outside_page": [],
+        "first_lines": [
+          "Area Value Source",
+          "Extra Test 1 Fictional local",
+          "Municipality 1 people · 2024 Identity and evidence"
+        ],
+        "last_lines": [
+          "residents. Method: source_reported.",
+          "Observation boundary edition: not recorded.",
+          "Retrieved 2026-09-13T00:00:00Z."
+        ]
+      },
+      {
+        "page": 4,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 283,
+        "outside_page": [],
+        "first_lines": [
+          "Area Value Source",
+          "Extra Test 6 Fictional local",
+          "Municipality 6 people · 2024 Identity and evidence"
+        ],
+        "last_lines": [
+          "residents. Method: source_reported.",
+          "Observation boundary edition: not recorded.",
+          "Retrieved 2026-09-13T00:00:00Z."
+        ]
+      },
+      {
+        "page": 5,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 283,
+        "outside_page": [],
+        "first_lines": [
+          "Area Value Source",
+          "Extra Test 11 Fictional local",
+          "Municipality 11 people · 2024 Identity and evidence"
+        ],
+        "last_lines": [
+          "residents. Method: source_reported.",
+          "Observation boundary edition: not recorded.",
+          "Retrieved 2026-09-13T00:00:00Z."
+        ]
+      },
+      {
+        "page": 6,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 283,
+        "outside_page": [],
+        "first_lines": [
+          "Area Value Source",
+          "Extra Test 16 Fictional local",
+          "Municipality 16 people · 2024 Identity and evidence"
+        ],
+        "last_lines": [
+          "residents. Method: source_reported.",
+          "Observation boundary edition: not recorded.",
+          "Retrieved 2026-09-13T00:00:00Z."
+        ]
+      },
+      {
+        "page": 7,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 283,
+        "outside_page": [],
+        "first_lines": [
+          "Area Value Source",
+          "Extra Test 21 Fictional local",
+          "Municipality 21 people · 2024 Identity and evidence"
+        ],
+        "last_lines": [
+          "residents. Method: source_reported.",
+          "Observation boundary edition: not recorded.",
+          "Retrieved 2026-09-13T00:00:00Z."
+        ]
+      },
+      {
+        "page": 8,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 202,
+        "outside_page": [],
+        "first_lines": [
+          "Area Value Source",
+          "Extra Test 26 Fictional local",
+          "Municipality 26 people · 2024 Identity and evidence"
+        ],
+        "last_lines": [
+          "Fictional source-backed membership declaration for synthetic regression only.",
+          "2 of 30 member areas have comparable observations. Range 0–90 %. This range describes recorded differences; it",
+          "does not establish causes or agreed priorities."
+        ]
+      },
+      {
+        "page": 9,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 252,
+        "outside_page": [],
+        "first_lines": [
+          "Intervals calculated within the selected area. Equal intervals within this selection ≤ 18 · > 18 to ≤ 36 · > 36 to ≤ 54 · >",
+          "54 to ≤ 72 · > 72 Gray = missing or not comparable. High values are not automatically better.",
+          "Boundary sources: Fictional geometry. Boundary editions and codes are listed for every member."
+        ],
+        "last_lines": [
+          "Observation boundary edition: not recorded.",
+          "Retrieved 2026-09-13T00:00:00Z. No observations collected for this indicator and area.",
+          "No boundary collected for this area."
+        ]
+      },
+      {
+        "page": 10,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 348,
+        "outside_page": [],
+        "first_lines": [
+          "Area Value Source",
+          "Extra Test No data Fictional local",
+          "Municipality 1 % · 2024 Identity and evidence"
+        ],
+        "last_lines": [
+          "Method: source_reported.",
+          "Observation boundary edition: not recorded.",
+          "Retrieved 2026-09-13T00:00:00Z. No observations collected for this indicator and area."
+        ]
+      },
+      {
+        "page": 11,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 348,
+        "outside_page": [],
+        "first_lines": [
+          "Area Value Source",
+          "Extra Test No data Fictional local",
+          "Municipality 6 % · 2024 Identity and evidence"
+        ],
+        "last_lines": [
+          "Method: source_reported.",
+          "Observation boundary edition: not recorded.",
+          "Retrieved 2026-09-13T00:00:00Z. No observations collected for this indicator and area."
+        ]
+      },
+      {
+        "page": 12,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 348,
+        "outside_page": [],
+        "first_lines": [
+          "Area Value Source",
+          "Extra Test No data Fictional local",
+          "Municipality 11 % · 2024 Identity and evidence"
+        ],
+        "last_lines": [
+          "Method: source_reported.",
+          "Observation boundary edition: not recorded.",
+          "Retrieved 2026-09-13T00:00:00Z. No observations collected for this indicator and area."
+        ]
+      },
+      {
+        "page": 13,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 348,
+        "outside_page": [],
+        "first_lines": [
+          "Area Value Source",
+          "Extra Test No data Fictional local",
+          "Municipality 16 % · 2024 Identity and evidence"
+        ],
+        "last_lines": [
+          "Method: source_reported.",
+          "Observation boundary edition: not recorded.",
+          "Retrieved 2026-09-13T00:00:00Z. No observations collected for this indicator and area."
+        ]
+      },
+      {
+        "page": 14,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 348,
+        "outside_page": [],
+        "first_lines": [
+          "Area Value Source",
+          "Extra Test No data Fictional local",
+          "Municipality 21 % · 2024 Identity and evidence"
+        ],
+        "last_lines": [
+          "Method: source_reported.",
+          "Observation boundary edition: not recorded.",
+          "Retrieved 2026-09-13T00:00:00Z. No observations collected for this indicator and area."
+        ]
+      },
+      {
+        "page": 15,
+        "width": 594.95996,
+        "height": 841.91998,
+        "word_count": 216,
+        "outside_page": [],
+        "first_lines": [
+          "Area Value Source",
+          "Extra Test No data Fictional local",
+          "Municipality 26 % · 2024 Identity and evidence"
+        ],
+        "last_lines": [
+          "Priority hypotheses and agreements",
+          "Use these source-grounded differences to prepare questions for local review. Proposed causes, priorities, meeting",
+          "evidence and approvals must be recorded separately. No such agreement is generated from a colour or rank."
+        ]
+      }
+    ],
+    "expected_tables": 2,
+    "expected_rows_each": [
+      30,
+      30
+    ],
+    "member_occurrences": {
+      "Same name": 8,
+      "Missing Test City": 5,
+      "Extra Test Municipality 1": 2,
+      "Extra Test Municipality 2": 2,
+      "Extra Test Municipality 3": 2,
+      "Extra Test Municipality 4": 2,
+      "Extra Test Municipality 5": 2,
+      "Extra Test Municipality 6": 2,
+      "Extra Test Municipality 7": 2,
+      "Extra Test Municipality 8": 2,
+      "Extra Test Municipality 9": 2,
+      "Extra Test Municipality 10": 2,
+      "Extra Test Municipality 11": 2,
+      "Extra Test Municipality 12": 2,
+      "Extra Test Municipality 13": 2,
+      "Extra Test Municipality 14": 2,
+      "Extra Test Municipality 15": 2,
+      "Extra Test Municipality 16": 2,
+      "Extra Test Municipality 17": 2,
+      "Extra Test Municipality 18": 2,
+      "Extra Test Municipality 19": 2,
+      "Extra Test Municipality 20": 2,
+      "Extra Test Municipality 21": 2,
+      "Extra Test Municipality 22": 2,
+      "Extra Test Municipality 23": 2,
+      "Extra Test Municipality 24": 2,
+      "Extra Test Municipality 25": 2,
+      "Extra Test Municipality 26": 2,
+      "Extra Test Municipality 27": 2
+    },
+    "missing_twice": [],
+    "legend": {
+      "within_selection": 2,
+      "gray": 2
+    },
+    "internal_table_headers": 14,
+    "source_identity": 60,
+    "text_lines": 610,
+    "expected_unique_member_ids": 30,
+    "expected_id_rows_each": [
+      30,
+      30
+    ],
+    "member_id_occurrences": {
+      "city": 2,
+      "extra-1": 2,
+      "extra-10": 2,
+      "extra-11": 2,
+      "extra-12": 2,
+      "extra-13": 2,
+      "extra-14": 2,
+      "extra-15": 2,
+      "extra-16": 2,
+      "extra-17": 2,
+      "extra-18": 2,
+      "extra-19": 2,
+      "extra-2": 2,
+      "extra-20": 2,
+      "extra-21": 2,
+      "extra-22": 2,
+      "extra-23": 2,
+      "extra-24": 2,
+      "extra-25": 2,
+      "extra-26": 2,
+      "extra-27": 2,
+      "extra-3": 2,
+      "extra-4": 2,
+      "extra-5": 2,
+      "extra-6": 2,
+      "extra-7": 2,
+      "extra-8": 2,
+      "extra-9": 2,
+      "missing-city": 2,
+      "municipality": 2
+    },
+    "all_member_ids_exactly_twice": true,
+    "pdf_link_annotations": 67,
+    "unique_pdf_links": [
+      "https://example.org/geometry",
+      "https://example.org/local",
+      "https://example.org/membership"
+    ],
+    "visual_review": {
+      "all_pages_inspected": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "render_dpi": 110,
+      "missing_rows": false,
+      "clipped_or_overlapping_text": false,
+      "table_headers_repeat": true,
+      "rows_split_across_pages": false,
+      "maps_and_coloured_legends_retained": true,
+      "closed_source_details_printed": true,
+      "notes": "Fictional regression dataset only. 15-page A4 standalone diagnostic HTML export. Browser UI printing and other browser engines were not tested by this run."
+    }
+  },
+  "inspection_sha256": "7367528e4ff40071ccb4ac9928665277d71961e48512e3601a74aa92d49538cb",
+  "png_pages": 15,
+  "input_unchanged_after_review": true,
+  "scope": "Standalone generated synthetic diagnostic HTML printed with isolated Chrome. Live dashboard print and other engines not tested."
+}

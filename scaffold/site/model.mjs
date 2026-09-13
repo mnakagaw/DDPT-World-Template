@@ -1,5 +1,6 @@
 // Shared, dependency-free data and export semantics. Safe to import in Node tests.
 import {planningSettings, planningDocuments, documentPeriod, periodText, categoryFor, categoryLabels, findingLabels, officialStatus, documentEvidence, findingValue, selectedGaps, acquisitionLabel} from './planning.mjs';
+import {observationMeaning,observationContext,isTerminalTerritory} from './analysis.mjs';
 export const finite = value => typeof value === 'number' && Number.isFinite(value);
 export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 export function safeUrl(value) {
@@ -36,6 +37,17 @@ export function observationState(dataset, territoryId, indicatorId, period) {
 export function localLevels(dataset) { return [...new Set(dataset.territories.filter(row => row.level !== 'national').map(row => row.level))]; }
 export function levelLabel(level) { return level === 'national' ? 'National' : /^adm\d$/i.test(level) ? `Administrative level ${level.slice(3)}` : String(level || 'Local areas').replaceAll('_',' '); }
 export function nationalOnly(dataset) { return !dataset.observations.some(row => row.territory_id !== dataset.country.national_territory_id && observedValue(row) !== null); }
+export function countryDiagnosticUrl(dataset, state, base) {
+  const site=dataset.analysis?.country_sites?.find(item=>item.territory_id===state.selected);
+  if(!site)return '';
+  const target=new URL(site.url,base);
+  const query=new URLSearchParams({country:site.country_id,territory:site.target_territory_id || site.country_id,period:state.period});
+  const mapped=site.indicator_map?.[state.metric];
+  if(mapped)query.set('metric',mapped);
+  else {query.set('requested_metric',state.metric);query.set('source_dataset',dataset.country.id);}
+  target.search=query.toString();
+  return target.href;
+}
 export function initialState(dataset, search = '') {
   const query = new URLSearchParams(search), notices = [];
   const suppliedTerritory = query.get('territory');
@@ -47,6 +59,8 @@ export function initialState(dataset, search = '') {
     if (query.has(parameter) && query.get(parameter) !== String(territory[field] || '')) notices.push(`The linked ${label} “${query.get(parameter)}” differs from this record’s ${label} “${territory[field] || 'not verified'}”. The current record is shown; verify its identity before using the evidence.`);
   }
   const suppliedMetric = query.get('metric');
+  const requestedMetric=query.get('requested_metric');
+  if(requestedMetric)notices.push(`No verified indicator mapping was supplied for “${requestedMetric}” from dataset “${query.get('source_dataset') || 'not specified'}”. The displayed country indicator is a separate concept. The requested period is retained.`);
   const indicator = dataset.indicators.find(row => row.id === suppliedMetric);
   if (suppliedMetric && !indicator) notices.push(`The linked indicator “${suppliedMetric}” is unavailable in this edition. The first available indicator is shown.`);
   const firstObservedIndicator = dataset.indicators.find(item => dataset.observations.some(row => row.indicator_id === item.id && observedValue(row) !== null));
@@ -60,7 +74,7 @@ export function initialState(dataset, search = '') {
   const selected = territory?.id || dataset.country.national_territory_id;
   const selectedLevel = territory?.level;
   const level = levels.includes(query.get('level')) ? query.get('level') : selectedLevel && selectedLevel !== 'national' ? selectedLevel : levels[0] || '';
-  return {selected, metric, period, level, notices};
+  return {selected, metric, period, level, notices,...(requestedMetric?{requestedMetric,sourceDataset:query.get('source_dataset') || ''}:{})};
 }
 export function selectTerritory(dataset, state, id) {
   const territory = dataset.territories.find(row => row.id === id);
@@ -91,6 +105,7 @@ export function hierarchyControls(dataset, selectedId) {
   const lineage=territoryLineage(dataset,selectedId);
   if(!hasMultipleTiers || !lineage.length)return [];
   return lineage.flatMap((parent,index)=>{
+    if(isTerminalTerritory(dataset,parent))return [];
     const children=dataset.territories.filter(area=>area.parent_id===parent.id);
     if(!children.length)return [];
     const child=lineage[index+1];
@@ -112,6 +127,7 @@ export function selectHierarchyOption(dataset,state,parentId,value) {
 export function routeQuery(dataset, state) {
   const territory = dataset.territories.find(row => row.id === state.selected);
   const query = new URLSearchParams({country:dataset.country.id, territory:state.selected, metric:state.metric, period:state.period, level:state.level || ''});
+  if(state.requestedMetric){query.set('requested_metric',state.requestedMetric);query.set('source_dataset',state.sourceDataset || '');}
   if (territory) {
     query.set('type', territory.type || territory.level);
     if (territory.official_code) query.set('code', territory.official_code);
@@ -130,9 +146,11 @@ export function comparisonCompatibility(dataset, state) {
 }
 export function comparisonRows(dataset, state) {
   const compatibility=comparisonCompatibility(dataset,state);
+  const indicator=dataset.indicators.find(item=>item.id===state.metric);
   return dataset.territories.filter(area => area.level !== 'national' && area.level === state.level).map(area => {
     const result=observationState(dataset,area.id,state.metric,state.period);
-    return {area,...result,...(!compatibility.comparable?{value:null,status:'incomparable',reason:compatibility.reason}:{})};
+    const meaning=observationContext(dataset,area,indicator,result.row);
+    return {area,...result,...(!compatibility.comparable || !meaning.comparable?{value:null,status:'incomparable',reason:[compatibility.reason,meaning.reason].filter(Boolean).join(' ')}:{})};
   });
 }
 export function rankedRows(rows, order = 'desc') {
@@ -177,9 +195,14 @@ export function evidenceRows(dataset, territoryId, period, indicatorIds = datase
   });
 }
 export function evidenceCsv(dataset, territoryId, period, indicatorIds) {
+  const rows=evidenceRows(dataset, territoryId, period, indicatorIds);
+  const extended=!!dataset.analysis || rows.some(({indicator,row})=>indicator.definition_id || indicator.population || ['definition_id','definition','unit','population','method','measurement_method'].some(key=>row?.[key]!==undefined));
   return makeCsv([
-    ['Country','Territory ID','Territory','Level','Code','Code system','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status','Definition','Source','Source URL','Retrieved at','Data edition'],
-    ...evidenceRows(dataset, territoryId, period, indicatorIds).map(({area, indicator, row, value, status, source}) => [dataset.country.name, area?.id, area?.name, area?.level, area?.official_code, area?.code_system, area?.boundary_version, indicator.id, indicator.name, period, value, indicator.unit, status, indicator.definition, source?.name, safeUrl(source?.url), source?.retrieved_at, dataset.generated_at])
+    ['Country','Territory ID','Territory','Level','Code','Code system','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status','Definition','Source','Source URL','Retrieved at','Data edition',...(extended?['Definition ID','Population','Measurement method','Comparable concept','Comparison note']:[])],
+    ...rows.map(({area, indicator, row, value, status, source}) => {
+      const meaning=observationContext(dataset,area,indicator,row);
+      return [dataset.country.name, area?.id, area?.name, area?.level, area?.official_code, area?.code_system, area?.boundary_version, indicator.id, indicator.name, period, value, meaning.unit, status, meaning.definition, source?.name, safeUrl(source?.url), source?.retrieved_at, dataset.generated_at,...(extended?[meaning.definition_id,meaning.population,meaning.method,meaning.comparable,meaning.reason]:[])];
+    })
   ]);
 }
 export function safeFilename(value) { return String(value).replace(/[^\p{L}\p{N}._-]/gu,'-').replace(/-+/g,'-').slice(0,100) || 'dashboard'; }
@@ -232,8 +255,12 @@ export function planningMarkdown(dataset, territoryId, period) {
     '## 2. Acquired statistical evidence', '',
     'Only observations for this area and period appear below. National observations are not substituted for local gaps. Different indicators can have different definitions and coverage.', '',
     '| Indicator | Value | Unit | Status | Source |', '|---|---:|---|---|---|',
-    ...evidence.map(({indicator, value, status, source}) => `| ${markdownText(indicator.name)} | ${value === null ? '—' : String(value)} | ${markdownText(indicator.unit)} | ${markdownText(statusLabel(status))} | ${markdownText(source?.name || 'No source acquired')} |`), '',
-    ...evidence.map(({indicator, source}) => `- ${markdownText(indicator.name)}: ${markdownText(indicator.definition || 'Definition not acquired')}. ${safeUrl(source?.url) ? `Source: <${safeUrl(source.url)}>.` : 'No verified source link.'} Retrieved: ${markdownText(source?.retrieved_at || 'Not recorded')}.`), '',
+    ...evidence.map(({indicator, row, value, status, source}) => `| ${markdownText(indicator.name)} | ${value === null ? '—' : String(value)} | ${markdownText(row?.unit || indicator.unit)} | ${markdownText(statusLabel(status))} | ${markdownText(source?.name || 'No source acquired')} |`), '',
+    ...evidence.map(({indicator, row, source}) => `- ${markdownText(indicator.name)}: ${markdownText(row?.definition || indicator.definition || 'Definition not acquired')}. ${safeUrl(source?.url) ? `Source: <${safeUrl(source.url)}>.` : 'No verified source link.'} Retrieved: ${markdownText(source?.retrieved_at || 'Not recorded')}.`), '',
+    ...evidence.flatMap(({indicator,row})=>{
+      const meaning=observationContext(dataset,area,indicator,row);
+      return dataset.analysis || !meaning.comparable || indicator.definition_id || indicator.population ? [`- Meaning of ${markdownText(indicator.name)}: definition ID ${markdownText(meaning.definition_id || 'Not recorded')}; population ${markdownText(meaning.population || 'Not recorded')}; method ${markdownText(meaning.method || 'Not recorded')}. ${markdownText(meaning.reason || 'No explicit concept difference recorded; verify source compatibility.')}`]:[];
+    }),
     '## Official materials and verified findings', '',
     'Document plan periods, fiscal years and quarters below are their own source periods. They are not filtered or relabelled as the statistical evidence period. Published materials remain distinct from this generated working outline.', '',
     ...(documents.length?documents.map(doc=>documentMarkdown(dataset,doc)):['No local documents have been collected for this area. This does not establish whether a plan exists.']), '',
