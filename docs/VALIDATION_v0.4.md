@@ -53,4 +53,7 @@
 
 ## リリース記録
 
-コードとこの検証記録を同じ版としてcommitした後、Private GitHubのCI結果を記録する。
+- 実装・仕様・検証：[`360bf3dc4bf321940bdcf6a1674f6b2d046ac734`](https://github.com/mnakagaw/DDPT-World-Template/commit/360bf3dc4bf321940bdcf6a1674f6b2d046ac734)。
+- [Validate template / 34752900708](https://github.com/mnakagaw/DDPT-World-Template/actions/runs/34752900708)：成功。Windows／Ubuntu × Node 22／24の4ジョブで構文検証と114テストが成功した。
+- GitHub APIでPrivateを確認し、`main`へpushした。本CIの権限は`contents: read`で、サイト公開・外部データ更新の処理は含まない。
+- この末尾とcommit-bound manifestの追記はリリース記録の保存であり、上記で検証した実装コードを変更しない。
