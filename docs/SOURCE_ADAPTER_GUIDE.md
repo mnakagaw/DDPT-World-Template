@@ -2,6 +2,8 @@
 
 目的は、初期収集に現地の地方統計・地域対応・計画資料を追加し、次の更新でも再現できるようにすること。World Bank全国値とgeoBoundaries参照境界は出発点であり、地方資料の調査を代替しない。
 
+最初に国別出力の`evidence/SOURCE_PREFLIGHT`と[共通データ・国別情報源台帳](COMMON_DATA_AND_SOURCE_REGISTRY.md)を確認する。事前登録された所在は探索の開始点で、対象国での取得成功や採用を意味しない。国際共通sourceを使う場合も、国・テーマ・年・粒度のavailability、測定方法、原provider、再配布条件をsourceごとに確定する。
+
 ランタイム契約は[IMPLEMENTATION_CONTRACT.md](IMPLEMENTATION_CONTRACT.md)、計画資料の任意拡張は[PLANNING_DATA_CONTRACT.md](PLANNING_DATA_CONTRACT.md)を正とし、変更前に`lib/collect.mjs`、`lib/validate.mjs`、`lib/generate.mjs`と対象テストを読む。以下の補助台帳やアダプター配置は案件側の作業規約で、既に実装された自動plugin読込を意味しない。
 
 ## 1. 取得前に資料を特定する

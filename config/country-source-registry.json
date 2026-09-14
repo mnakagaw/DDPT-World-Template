@@ -1,0 +1,100 @@
+{
+  "version": "1.0",
+  "as_of": "2026-09-14",
+  "purpose": "Pre-researched locations for census, planning law, planning guidance, planning documents and geography. Every link must be refreshed for the actual country project.",
+  "imports": [
+    {
+      "id": "latin-america-20-2026",
+      "path": "docs/research/latin-america-2026/research.json",
+      "country_count": 20,
+      "research_status": "desk_research",
+      "note": "Census and planning source locations for the defined CEPAL Latin America 20-country scope. This is not a completed connector or a current-law opinion."
+    }
+  ],
+  "countries": [
+    {
+      "iso3": "UGA",
+      "names": ["Uganda", "ウガンダ"],
+      "research_status": "source_locations_verified",
+      "checked_at": "2026-09-14",
+      "census": {
+        "latest_census_year": 2024,
+        "usable_detailed_year": 2024,
+        "published_geography": "National, sub-region/city profiles, district/city and subcounty/division/town council tables depending on product.",
+        "finer_geography": "Parish/ward, village/cell and enumeration-area identifiers exist in census instruments; public data availability must be checked by product.",
+        "formats": ["interactive explorer", "XLSX", "PDF", "NADA microdata catalogue"]
+      },
+      "planning": {
+        "planning_level": "District/city and lower local governments under the Local Governments Act; plan type and authority must be distinguished from statistical sub-regions.",
+        "internal_analysis_geography": "Subcounty/division/town council, and parish action-planning material where applicable and supported by data.",
+        "process_summary": "District councils integrate plans of lower local governments under NPA guidance; planning, annual budget, implementation and official assessment remain separate evidence streams.",
+        "unresolved": "Confirm the current consolidated law citations, the exact plan type for the selected local government, current guidance and the complete official code/boundary crosswalk for the adopted data year."
+      },
+      "sources": [
+        {
+          "id": "UGA_CENSUS_2024",
+          "role": "census_catalog",
+          "title": "UBOS National Population and Housing Census 2024 portal",
+          "publisher": "Uganda Bureau of Statistics",
+          "url": "https://statistics.ubos.org/nphc/",
+          "stage": "location_and_catalog_content_verified",
+          "note": "Portal lists national and sub-regional reports, subcounty Excel tables, projections and anonymised microdata access. Inventory and download the exact products used."
+        },
+        {
+          "id": "UGA_LOCAL_GOVERNMENTS_ACT",
+          "role": "planning_law",
+          "title": "Local Governments Act, Chapter 138, version at 31 December 2023",
+          "publisher": "Uganda Legal Information Institute / Laws.Africa consolidation",
+          "url": "https://ulii.org/en/akn/ug/act/1997/5/eng%402023-12-31",
+          "stage": "content_verified",
+          "note": "Sections 37–39 cover district planning authority, integration of lower local-government plans and planning units. Reconfirm the official current consolidation for the project."
+        },
+        {
+          "id": "UGA_CONSTITUTION",
+          "role": "planning_law",
+          "title": "Constitution of the Republic of Uganda, version at 31 December 2023",
+          "publisher": "Uganda Legal Information Institute / Laws.Africa consolidation",
+          "url": "https://ulii.org/en/akn/ug/act/statute/1995/constitution/eng%402023-12-31",
+          "stage": "content_verified",
+          "note": "Article 176 describes the district-based local-government system and devolution principles; article 190 should be checked with the adopted planning guidance."
+        },
+        {
+          "id": "UGA_PHYSICAL_PLANNING_ACT",
+          "role": "planning_law",
+          "title": "Physical Planning Act, 2010, version at 31 December 2023",
+          "publisher": "Uganda Legal Information Institute / Laws.Africa consolidation",
+          "url": "https://ulii.org/en/akn/ug/act/2010/8/eng%402023-12-31",
+          "stage": "content_verified",
+          "note": "Distinguish physical development plans and their geographic levels from local-government development plans."
+        },
+        {
+          "id": "UGA_NPA_GUIDANCE",
+          "role": "planning_guidance",
+          "title": "NPA planning regulations and guidelines catalogue",
+          "publisher": "National Planning Authority",
+          "url": "https://npa.go.ug/resources/",
+          "stage": "location_and_catalog_content_verified",
+          "note": "Includes Local Government Development Planning Guidelines and current planning call material; select and archive the applicable edition."
+        },
+        {
+          "id": "UGA_LOCAL_PLANS",
+          "role": "planning_documents",
+          "title": "NPA local government development plans",
+          "publisher": "National Planning Authority",
+          "url": "https://npa.go.ug/local-government-development-plans/",
+          "stage": "location_and_catalog_content_verified",
+          "note": "Lists district, city and municipality plans and local-government codes. Coverage, duplicates, plan periods and document contents require project-time verification."
+        },
+        {
+          "id": "UGA_SALB",
+          "role": "boundary_directory",
+          "title": "UN SALB country page for Uganda",
+          "publisher": "United Nations SALB",
+          "url": "https://salb.un.org/en/data/uga",
+          "stage": "negative_availability_verified",
+          "note": "The page identifies the national mapping authority but showed no downloadable geospatial dataset on 2026-09-14. Continue with UBOS and other official boundary sources; do not treat this as evidence that no official boundary exists."
+        }
+      ]
+    }
+  ]
+}

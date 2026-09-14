@@ -1,6 +1,6 @@
 {
   "name": "ddpt-world-template",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "private": true,
   "description": "Country-driven DDPT dashboard collection and generation toolkit",
   "type": "module",
@@ -13,6 +13,7 @@
     "create:country": "node scripts/create-country.mjs",
     "build:country": "node scripts/build-country.mjs",
     "validate:country": "node scripts/validate-country.mjs",
-    "serve": "node scripts/serve.mjs"
+    "serve": "node scripts/serve.mjs",
+    "sources:plan": "node scripts/source-plan.mjs"
   }
 }

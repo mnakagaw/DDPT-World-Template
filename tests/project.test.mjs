@@ -31,6 +31,10 @@ test('bootstrap saves validated data, a working site and a continuation contract
   await access(path.join(out,'site/territorial/index.html'));
   assert.match(await readFile(path.join(out,'COUNTRY_AGENT_WORKFLOW.md'),'utf8'),/初期生成であり/);
   assert.match(await readFile(path.join(out,'AGENTS.md'),'utf8'),/not a completed/);
+  const preflight=JSON.parse(await readFile(path.join(out,'evidence/SOURCE_PREFLIGHT.json'),'utf8'));
+  assert.equal(preflight.country.iso3,result.dataset.country.id);
+  assert.equal(preflight.summary.acquired_sources,0);
+  assert.match(await readFile(path.join(out,'evidence/SOURCE_PREFLIGHT.md'),'utf8'),/discovery plan/);
   const reference=JSON.parse(await readFile(path.join(out,'TEMPLATE_REFERENCE.json'),'utf8'));
   assert.equal(reference.repository_url,'https://github.com/mnakagaw/DDPT-World-Template');
   assert.equal(reference.package_version,JSON.parse(await readFile(new URL('../package.json',import.meta.url),'utf8')).version);
@@ -39,6 +43,8 @@ test('bootstrap saves validated data, a working site and a continuation contract
   assert.doesNotMatch(JSON.stringify(reference),/"[A-Za-z]:[\\/]/);
   assert.equal(JSON.stringify(reference).includes(base),false);
   assert.ok(reference.documentation.some(doc=>doc.source_path==='docs/SOURCE_ADAPTER_GUIDE.md'));
+  assert.ok(reference.documentation.some(doc=>doc.source_path==='docs/COMMON_DATA_AND_SOURCE_REGISTRY.md'));
+  assert.ok(reference.documentation.some(doc=>doc.source_path==='docs/GOOD_GOVERNMENT_ARCHITECTURE.md'));
   assert.ok(reference.documentation.some(doc=>doc.source_path==='templates/ACCEPTANCE.md'));
   assert.ok(reference.documentation.some(doc=>doc.source_path==='templates/COUNTRY_START.md'));
   for(const doc of reference.documentation) {

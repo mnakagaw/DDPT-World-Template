@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { collectCountry } from '../lib/collect.mjs';
 import { generateSite } from '../lib/generate.mjs';
 import { validateDataset } from '../lib/validate.mjs';
+import { writeSourcePreflight } from '../lib/source-catalog.mjs';
 import { parseArgs, safeSlug, isMain, reportError } from '../lib/cli.mjs';
 
 const repositoryUrl = 'https://github.com/mnakagaw/DDPT-World-Template';
@@ -65,7 +66,7 @@ async function writeContinuationBundle(outDir) {
   const reference = await readTemplateReference();
   const destinations = new Map([['docs/COUNTRY_AGENT_WORKFLOW.md', 'COUNTRY_AGENT_WORKFLOW.md']]);
   // Bundle the operative contract, not historical review files containing another project's machine paths.
-  for (const source of ['docs/SOURCE_ADAPTER_GUIDE.md', 'docs/IMPLEMENTATION_CONTRACT.md', 'docs/PLANNING_DATA_CONTRACT.md', 'docs/ANALYSIS_DATA_CONTRACT.md', 'docs/PLANNING_CENSUS_METHOD.md', 'docs/02_COMMON_SPEC.md', 'docs/03_COUNTRY_AND_DATA.md', 'templates/ACCEPTANCE.md', 'templates/COUNTRY_START.md', 'templates/TASK_AND_CHANGE.md', 'templates/PLANNING_CENSUS_AUDIT.md', 'templates/country-profile.json']) {
+  for (const source of ['docs/SOURCE_ADAPTER_GUIDE.md', 'docs/COMMON_DATA_AND_SOURCE_REGISTRY.md', 'docs/GOOD_GOVERNMENT_ARCHITECTURE.md', 'docs/IMPLEMENTATION_CONTRACT.md', 'docs/PLANNING_DATA_CONTRACT.md', 'docs/ANALYSIS_DATA_CONTRACT.md', 'docs/PLANNING_CENSUS_METHOD.md', 'docs/02_COMMON_SPEC.md', 'docs/03_COUNTRY_AND_DATA.md', 'templates/ACCEPTANCE.md', 'templates/COUNTRY_START.md', 'templates/TASK_AND_CHANGE.md', 'templates/PLANNING_CENSUS_AUDIT.md', 'templates/country-profile.json']) {
     destinations.set(source, `reference/${source}`);
   }
   reference.documentation = [];
@@ -105,14 +106,15 @@ export async function createCountry({ country, out, collect = collectCountry, ge
     if (validation.errors.length) throw new Error(`Collected data failed validation: ${validation.errors.join('; ')}`);
     await mkdir(path.join(outDir, 'data'), { recursive: true });
     await writeFile(path.join(outDir, 'data', 'dashboard.json'), JSON.stringify(dataset, null, 2) + '\n');
+    const sourcePreflight = await writeSourcePreflight(outDir, dataset.country);
     await generate({ dataset, outDir });
     // Store the continuation contract with the generated project so it is never lost after bootstrap.
     await writeContinuationBundle(outDir);
-    await writeFile(path.join(outDir, 'AGENTS.md'), `# Country project\n\nCountry: ${dataset.country.name} (${dataset.country.id}).\n\nRead COUNTRY_AGENT_WORKFLOW.md, TEMPLATE_REFERENCE.json, the bundled reference/docs and reference/templates, and HANDOFF.md if present. The template reference records a commit when available and flags dirty or unavailable source provenance. This is an initial collection, not a completed local planning dashboard. Continue collecting official subnational statistics, verifying code/boundary correspondence and planning sources, and updating data/dashboard.json. Never distribute national values across local territories. Keep the DDPT page roles and synchronized selection. Record gaps and unperformed verification. Reference: ${repositoryUrl}\n\nDo not overwrite the source template repository. Do not use host Microsoft Word COM. Publish only within the current user's requested destination and authorization.\n`);
+    await writeFile(path.join(outDir, 'AGENTS.md'), `# Country project\n\nCountry: ${dataset.country.name} (${dataset.country.id}).\n\nRead COUNTRY_AGENT_WORKFLOW.md, evidence/SOURCE_PREFLIGHT.md, TEMPLATE_REFERENCE.json, the bundled reference/docs and reference/templates, and HANDOFF.md if present. This is an initial collection, not a completed local planning dashboard. The template reference records a commit when available and flags dirty or unavailable source provenance. SOURCE_PREFLIGHT is a discovery plan, not proof that data were acquired or suitable. Refresh its country sources, check every common candidate for this country, then continue collecting official subnational statistics, verifying code/boundary correspondence and planning sources, and updating data/dashboard.json. Never distribute national values across local territories. Keep census, sample survey, humanitarian observation and modeled grid values as different evidence types. Keep the DDPT page roles and synchronized selection. Record gaps and unperformed verification. Reference: ${repositoryUrl}\n\nDo not overwrite the source template repository. Do not use host Microsoft Word COM. Publish only within the current user's requested destination and authorization.\n`);
     console.log(`Created: ${outDir}`);
     console.log(`Collection: ${dataset.collection.status}; observations: ${dataset.observations.filter(o => o.status === 'observed').length}; territories: ${dataset.territories.length}`);
     console.log('Next: follow COUNTRY_AGENT_WORKFLOW.md to collect official local data and complete the country project.');
-    return { outDir, dataset, validation };
+    return { outDir, dataset, validation, sourcePreflight };
   } catch (error) {
     await writeFile(path.join(outDir, 'COLLECTION_FAILED.txt'), `${new Date().toISOString()}\n${error.message}\nExisting evidence has been retained. Use a new output directory for a fresh collection.\n`);
     throw error;

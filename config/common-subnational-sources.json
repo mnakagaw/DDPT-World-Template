@@ -1,0 +1,226 @@
+{
+  "version": "1.0",
+  "as_of": "2026-09-14",
+  "purpose": "Reusable discovery registry for international and cross-country sources with subnational, point or gridded data. An entry is a candidate source, not evidence that a value is available or suitable for a particular country.",
+  "status_model": [
+    "catalogued",
+    "country_availability_checked",
+    "data_acquired",
+    "geography_matched",
+    "indicator_accepted"
+  ],
+  "sources": [
+    {
+      "id": "hdx-hapi",
+      "provider": "United Nations OCHA Centre for Humanitarian Data",
+      "authority_type": "united_nations",
+      "title": "HDX Humanitarian API (HAPI)",
+      "themes": ["baseline_population", "poverty", "affected_people", "food_security", "nutrition", "facilities", "operational_presence", "conflict", "rainfall"],
+      "geography": ["country", "admin1", "admin2"],
+      "coverage": "Humanitarian Response Plan countries and other countries where source data are available; coverage varies by subcategory and administrative level.",
+      "catalog_url": "https://hdx-hapi.readthedocs.io/en/latest/",
+      "documentation_url": "https://hdx-hapi.readthedocs.io/en/latest/data_usage_guides/metadata/",
+      "availability_method": "Query the data-availability endpoint by ISO3, subcategory and administrative level before requesting observations.",
+      "access": {"mode": "public_api_with_app_identifier", "formats": ["JSON", "CSV"], "credential": "app identifier generated for the application"},
+      "cache_policy": "Store availability metadata, the exact country extract and request receipt after checking the originating dataset terms.",
+      "redistribution": "source_specific_review_required",
+      "adapter_status": "catalogued",
+      "cautions": [
+        "HAPI combines multiple originating sources; preserve original provider and transformation metadata.",
+        "Administrative level and coverage vary by country and subcategory.",
+        "HAPI administrative metadata does not include boundary geometry; obtain the corresponding boundary separately.",
+        "Do not sum overlapping humanitarian population statuses or sectors."
+      ]
+    },
+    {
+      "id": "unhcr-refugee-data-finder",
+      "provider": "United Nations High Commissioner for Refugees",
+      "authority_type": "united_nations",
+      "title": "UNHCR Refugee Data Finder API",
+      "themes": ["refugees", "asylum_seekers", "internal_displacement", "statelessness", "returns", "demographics"],
+      "geography": ["country", "reported_location"],
+      "coverage": "Global country series with subnational or location detail where reported to UNHCR; detail varies by country, year and population type.",
+      "catalog_url": "https://www.unhcr.org/refugee-statistics/",
+      "documentation_url": "https://api.unhcr.org/docs/refugee-statistics.html",
+      "availability_method": "Query countries and years, then inspect demographics/location records for the country of asylum and the required population type.",
+      "access": {"mode": "public_api", "formats": ["JSON", "CSV"], "credential": "none"},
+      "cache_policy": "Store the exact paginated response, footnotes and query parameters; retain location text before any geographic crosswalk.",
+      "redistribution": "source_terms_review_required",
+      "adapter_status": "catalogued",
+      "cautions": [
+        "A reported location is not automatically an official administrative unit.",
+        "Population stocks, flows, asylum applications and durable solutions are different measures.",
+        "Small values are rounded for confidentiality; totals are approximate.",
+        "Check whether displaced populations are already included in census or administrative totals before combining them."
+      ]
+    },
+    {
+      "id": "iom-dtm-api",
+      "provider": "International Organization for Migration",
+      "authority_type": "intergovernmental_organization",
+      "title": "Displacement Tracking Matrix API v3",
+      "themes": ["internal_displacement", "returnees", "mobility", "settlements", "multisector_needs"],
+      "geography": ["country", "admin1", "admin2"],
+      "coverage": "Countries and rounds assessed by DTM; coverage is event- and operation-dependent.",
+      "catalog_url": "https://dtm.iom.int/",
+      "documentation_url": "https://dtm.iom.int/data-and-analysis/dtm-api",
+      "availability_method": "Use the DTM coverage matrix and API metadata to confirm country, assessment type, round and administrative level.",
+      "access": {"mode": "account_and_subscription_key", "formats": ["JSON"], "credential": "DTM developer subscription key"},
+      "cache_policy": "Store non-sensitive aggregate extracts by assessment round with the API version and coverage record; never store credentials.",
+      "redistribution": "source_terms_review_required",
+      "adapter_status": "catalogued",
+      "cautions": [
+        "A DTM round is a snapshot of assessed locations, not a census of the whole resident population.",
+        "Keep IDPs, returnees and other assessed population groups separate.",
+        "Confirm whether missing areas were not assessed, had zero reported population, or were outside scope."
+      ]
+    },
+    {
+      "id": "ipc-public-api",
+      "provider": "Integrated Food Security Phase Classification Global Partnership",
+      "authority_type": "international_partnership",
+      "title": "IPC-CH Public API",
+      "themes": ["acute_food_insecurity", "chronic_food_insecurity", "malnutrition", "population_by_phase"],
+      "geography": ["country", "analysis_area", "point"],
+      "coverage": "Countries and areas with published IPC or Cadre Harmonisé analyses; periods and analyzed areas vary.",
+      "catalog_url": "https://www.ipcinfo.org/ipc-country-analysis/en/",
+      "documentation_url": "https://docs.api.ipcinfo.org/",
+      "availability_method": "List analyses for the country, select an analysis ID and period, then retrieve area records and GeoJSON.",
+      "access": {"mode": "public_api", "formats": ["JSON", "GeoJSON"], "credential": "none for public endpoints"},
+      "cache_policy": "Store the analysis metadata, validity period, area data, geometry and terms version as one versioned extract.",
+      "redistribution": "terms_at_https://www.ipcinfo.org/fileadmin/user_upload/ipcinfo/docs/documents/API-ToU-V1-March2022.pdf",
+      "adapter_status": "catalogued",
+      "cautions": [
+        "IPC analysis areas do not always correspond to administrative units.",
+        "Current and projected periods must remain separate.",
+        "Do not equate IPC phase population with an absolute-poverty measure."
+      ]
+    },
+    {
+      "id": "unicef-mics",
+      "provider": "UNICEF and participating national statistical offices",
+      "authority_type": "united_nations_national_partnership",
+      "title": "Multiple Indicator Cluster Surveys (MICS)",
+      "themes": ["children", "women", "health", "education", "wash", "nutrition", "child_protection", "household_conditions"],
+      "geography": ["country", "survey_reporting_domain", "displaced_cluster_where_released"],
+      "coverage": "Participating countries and survey rounds; reporting domains and geocoded access vary by survey.",
+      "catalog_url": "https://mics.unicef.org/surveys",
+      "documentation_url": "https://mics.unicef.org/tools",
+      "availability_method": "Select the country and round, inventory reports, tabulations, questionnaires and datasets, then confirm the survey's reporting domains and access conditions.",
+      "access": {"mode": "survey_specific_download_or_request", "formats": ["report", "tabulation", "microdata"], "credential": "may require registration or approval"},
+      "cache_policy": "Cache public reports and approved aggregate extracts; preserve survey weights and design metadata; do not mirror restricted microdata.",
+      "redistribution": "survey_specific_review_required",
+      "adapter_status": "catalogued",
+      "cautions": [
+        "MICS estimates are sample-survey estimates, not census counts.",
+        "Use weights and survey design for estimates and uncertainty.",
+        "Cluster coordinates may be displaced and must not be presented as exact household locations."
+      ]
+    },
+    {
+      "id": "dhs-program",
+      "provider": "The DHS Program and participating national institutions",
+      "authority_type": "international_program_national_partnership",
+      "title": "Demographic and Health Surveys",
+      "themes": ["fertility", "maternal_health", "child_health", "nutrition", "mortality", "malaria", "hiv", "household_conditions"],
+      "geography": ["country", "survey_region", "displaced_cluster_where_released"],
+      "coverage": "Participating countries and survey rounds; regions, modules and dataset access vary by survey.",
+      "catalog_url": "https://dhsprogram.com/data/available-datasets.cfm",
+      "documentation_url": "https://dhsprogram.com/data/Data-Tools-and-Manuals.cfm",
+      "availability_method": "Identify a country survey and recode files, confirm region variables and sample design, and separately request spatial files if needed.",
+      "access": {"mode": "public_aggregate_tools_and_registered_microdata", "formats": ["API", "report", "tabulation", "microdata", "spatial"], "credential": "registration or project approval may be required"},
+      "cache_policy": "Cache public metadata and approved aggregates; do not redistribute restricted recode or spatial files.",
+      "redistribution": "survey_specific_review_required",
+      "adapter_status": "catalogued",
+      "cautions": [
+        "DHS estimates are sample-survey estimates and require weights and design variables.",
+        "Survey regions can differ from current administrative boundaries.",
+        "Cluster coordinates are displaced and access restrictions apply."
+      ]
+    },
+    {
+      "id": "worldpop",
+      "provider": "WorldPop, University of Southampton",
+      "authority_type": "university_program",
+      "title": "WorldPop gridded population datasets",
+      "themes": ["gridded_population", "population_density", "age_sex", "births", "pregnancies"],
+      "geography": ["raster_grid", "user_supplied_polygon"],
+      "coverage": "Global or per-country gridded products depending on collection and release.",
+      "catalog_url": "https://www.worldpop.org/datacatalog/",
+      "documentation_url": "https://www.worldpop.org/sdi/introapi/",
+      "availability_method": "Query the catalogue by product alias and ISO3, select one documented release and record its method, year, resolution and constrained/unconstrained status.",
+      "access": {"mode": "public_catalog_and_api", "formats": ["GeoTIFF", "JSON metadata"], "credential": "depends on service and operation"},
+      "cache_policy": "Keep the catalogue metadata and checksums; place large rasters in versioned object storage and country aggregates in derived storage.",
+      "redistribution": "product_license_review_required",
+      "adapter_status": "catalogued",
+      "cautions": [
+        "Raster values are modeled spatial estimates and are not official small-area census counts.",
+        "Do not mix constrained and unconstrained products or different releases.",
+        "Aggregation to an administrative polygon inherits both raster and boundary uncertainty."
+      ]
+    },
+    {
+      "id": "ec-jrc-ghsl",
+      "provider": "European Commission Joint Research Centre",
+      "authority_type": "intergovernmental_research_service",
+      "title": "Global Human Settlement Layer",
+      "themes": ["gridded_population", "built_up_area", "settlement_classification", "urban_centres"],
+      "geography": ["raster_grid", "urban_centre", "user_supplied_polygon"],
+      "coverage": "Global products with release-specific epochs and resolutions.",
+      "catalog_url": "https://ghsl.jrc.ec.europa.eu/download.php",
+      "documentation_url": "https://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2023.pdf",
+      "availability_method": "Choose a release, product, epoch, resolution and coordinate reference system from the data package before extracting a country or polygon.",
+      "access": {"mode": "public_download", "formats": ["GeoTIFF", "GeoPackage", "CSV"], "credential": "none for public products"},
+      "cache_policy": "Store large global tiles outside Git with release identifiers and hashes; store only verified country-derived extracts with lineage.",
+      "redistribution": "product_license_review_required",
+      "adapter_status": "catalogued",
+      "cautions": [
+        "Population surfaces are modeled/downscaled products rather than official local counts.",
+        "Settlement classes and legal administrative status answer different questions.",
+        "Keep product release, epoch, resolution and projection with every derivative."
+      ]
+    },
+    {
+      "id": "un-salb",
+      "provider": "United Nations Geospatial Information Section and Statistics Division",
+      "authority_type": "united_nations",
+      "title": "Second Administrative Level Boundaries (SALB)",
+      "themes": ["administrative_boundaries", "administrative_history", "national_mapping_authority_directory"],
+      "geography": ["admin1", "admin2"],
+      "coverage": "Directory covers UN Member States; downloadable boundary and historical datasets are available only for some countries and periods.",
+      "catalog_url": "https://salb.un.org/en/data",
+      "documentation_url": "https://salb.un.org/sites/default/files/wysiwyg_uploads/docs_uploads/SALB_DataSpecifications.pdf",
+      "availability_method": "Open the country page, record the national mapping authority, and separately check historical tables and each downloadable dataset and validity period.",
+      "access": {"mode": "public_country_catalog", "formats": ["GeoJSON", "Shapefile", "CSV", "Excel", "REST where available"], "credential": "none for public downloads"},
+      "cache_policy": "Cache only an available country release with its temporal validity, source authority and terms; retain an explicit no-dataset result.",
+      "redistribution": "dataset_specific_review_required",
+      "adapter_status": "catalogued",
+      "cautions": [
+        "A country listing does not mean a boundary download exists.",
+        "SALB availability and temporal validity vary substantially by country.",
+        "Confirm correspondence with the census and legal planning geography."
+      ]
+    },
+    {
+      "id": "fao-wapor",
+      "provider": "Food and Agriculture Organization of the United Nations",
+      "authority_type": "united_nations",
+      "title": "WaPOR water productivity data",
+      "themes": ["agriculture", "water_productivity", "evapotranspiration", "biomass", "land_cover"],
+      "geography": ["raster_grid", "user_supplied_polygon", "river_basin", "irrigation_scheme"],
+      "coverage": "Global 300 m layers; finer 100 m coverage for Africa and the Near East; selected 20 m areas, subject to the current catalogue.",
+      "catalog_url": "https://www.fao.org/in-action/remote-sensing-for-water-productivity/wapor-data/en",
+      "documentation_url": "https://www.fao.org/in-action/remote-sensing-for-water-productivity/wapor-data-access/en",
+      "availability_method": "Query the current catalogue for the target polygon, version, layer, temporal resolution and spatial resolution.",
+      "access": {"mode": "public_api_and_download", "formats": ["raster", "API", "Google Earth Engine"], "credential": "none for WaPOR v3 API according to current documentation"},
+      "cache_policy": "Store catalogue metadata and exact derived tiles outside Git; preserve version, layer, spatial/temporal resolution and processing geometry.",
+      "redistribution": "product_terms_review_required",
+      "adapter_status": "catalogued",
+      "cautions": [
+        "Coverage and resolution differ by region and layer.",
+        "Remote-sensing measurements are not administrative statistics.",
+        "Do not interpret agricultural water productivity as household water access."
+      ]
+    }
+  ]
+}

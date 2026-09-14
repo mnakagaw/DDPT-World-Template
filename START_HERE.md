@@ -27,6 +27,8 @@ node ./DDPT-World-Template/scripts/create-country.mjs --country "ウガンダ" -
 
 CLIの最初の収集対象はWorld Bank WDIの**全国値**とgeoBoundariesの**参照境界**。これだけで各国の地方統計・計画資料を収集し終えたとは扱わない。geoBoundariesのIDは公式行政コードではなく、全国値を地方へ配分しない。
 
+生成された`evidence/SOURCE_PREFLIGHT.md`と`.json`を最初に読む。事前調査済みの国では国勢調査・計画法・手引き・計画資料・境界の所在を再確認し、未調査国ではその所在調査から始める。国際共通sourceは対象国・テーマ・年・粒度のavailabilityを確認してから取得する。所在の登録を取得済み・地理照合済み・採用済みと読み替えない。詳しくは[共通データと国別情報源の事前台帳](docs/COMMON_DATA_AND_SOURCE_REGISTRY.md)を使う。
+
 AIは現地統計局、国勢調査、公式地域コード・境界、計画機関、地方計画様式、公開予算・事業を調べる。同条件で利用できる場合は国内の公式一次資料を優先する。データがAPI、Excel、PDF等に分かれていても、[ソース別アダプター手順](docs/SOURCE_ADAPTER_GUIDE.md)で再実行できる取得・抽出・結合を追加する。
 
 [ウガンダ2案件からの教訓](docs/research/uganda-lessons-2026-09-14.md)を読み、確認した原資料の全表・数値列を棚卸しする。採用指標、分子分母、重複、未採用と理由を残し、一括Excelにない項目は全国報告書の付表・地域資料も調べる。[補助確認票](templates/COUNTRY_LESSON_AUDIT.md)をAIが記入し、資料が揃う地域・同名の別行政型・不足のある地域で一貫した操作と出力を確認してから全国へ展開する。国別計画様式は章立てだけでなく、必要な表と記入欄まで原資料と照合する。
