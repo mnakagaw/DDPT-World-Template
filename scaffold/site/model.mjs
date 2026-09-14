@@ -1,6 +1,7 @@
 // Shared, dependency-free data and export semantics. Safe to import in Node tests.
 import {planningSettings, planningDocuments, documentPeriod, periodText, categoryFor, categoryLabels, findingLabels, officialStatus, documentEvidence, findingValue, selectedGaps, acquisitionLabel} from './planning.mjs';
 import {observationMeaning,observationContext,isTerminalTerritory} from './analysis.mjs';
+import {resolvedObservation,aggregationRule,LATEST_AVAILABLE_PERIOD} from './aggregation.mjs';
 export const finite = value => typeof value === 'number' && Number.isFinite(value);
 export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 export function safeUrl(value) {
@@ -13,13 +14,15 @@ export function displayValue(value, locale = 'en') {
   catch { return new Intl.NumberFormat('en', {maximumFractionDigits: 2}).format(value); }
 }
 export function statusLabel(status) {
-  return ({observed:'Observed', missing:'No data', not_collected:'Not collected', not_available:'Not available', unavailable:'Unavailable', not_applicable:'Not applicable', incomparable:'Comparison not established', unverified:'Unverified', failed:'Acquisition failed', error:'Acquisition failed', ready:'Acquired', link_verified:'Link verified', downloaded:'Body acquired', body_acquired:'Body acquired', content_extracted:'Content extracted; not cross-checked', content_verified:'Content cross-checked', extracted:'Extracted', pending:'Pending'})[status] || String(status || 'Not collected').replaceAll('_', ' ');
+  return ({observed:'Source reported', calculated:'AreaData calculated', incomplete:'Incomplete coverage', missing:'No data', not_collected:'Not collected', not_available:'Not available', unavailable:'Unavailable', not_applicable:'Not applicable', incomparable:'Comparison not established', unverified:'Unverified', failed:'Acquisition failed', error:'Acquisition failed', ready:'Acquired', link_verified:'Link verified', downloaded:'Body acquired', body_acquired:'Body acquired', content_extracted:'Content extracted; not cross-checked', content_verified:'Content cross-checked', extracted:'Extracted', pending:'Pending'})[status] || String(status || 'Not collected').replaceAll('_', ' ');
 }
 export function sourceFor(dataset, indicator, observation) {
   return dataset.sources.find(source => source.id === (observation?.source_id || indicator?.source_id));
 }
 export function periodsFor(dataset, indicatorId) {
-  return [...new Set(dataset.observations.filter(row => !indicatorId || row.indicator_id === indicatorId).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}));
+  const periods=[...new Set(dataset.observations.filter(row => !indicatorId || row.indicator_id === indicatorId).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}));
+  if(indicatorId && aggregationRule(dataset,indicatorId)?.period_policy==='latest_available_by_component')periods.unshift(LATEST_AVAILABLE_PERIOD);
+  return periods;
 }
 export function latestObservedPeriod(dataset, indicatorId) {
   return [...new Set(dataset.observations.filter(row => row.indicator_id === indicatorId && observedValue(row) !== null).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}))[0] || '';
@@ -33,6 +36,9 @@ export function observationState(dataset, territoryId, indicatorId, period) {
   if (row) return {row, value:observedValue(row), status:row.status || 'unverified'};
   const hasSeries = dataset.observations.some(item => item.territory_id === territoryId && item.indicator_id === indicatorId);
   return {row:null, value:null, status:hasSeries ? 'missing' : 'not_collected'};
+}
+export function areaObservationState(dataset, territoryId, indicatorId, period) {
+  return resolvedObservation(dataset,territoryId,indicatorId,period);
 }
 export function localLevels(dataset) { return [...new Set(dataset.territories.filter(row => row.level !== 'national').map(row => row.level))]; }
 export function levelLabel(level) { return level === 'national' ? 'National' : /^adm\d$/i.test(level) ? `Administrative level ${level.slice(3)}` : String(level || 'Local areas').replaceAll('_',' '); }
@@ -69,7 +75,8 @@ export function initialState(dataset, search = '') {
   // A syntactically valid requested period remains selected even when its value is missing.
   const validPeriod = requestedPeriod && /^[\p{L}\p{N} ._/:–-]{1,40}$/u.test(requestedPeriod);
   if (requestedPeriod && !validPeriod) notices.push('The linked period is invalid. The most recent available source period is shown.');
-  const period = validPeriod ? requestedPeriod : latestObservedPeriod(dataset, metric) || periodsFor(dataset, metric)[0] || '';
+  const configuredPeriod=dataset.analysis?.default_period_by_indicator?.[metric];
+  const period = validPeriod ? requestedPeriod : configuredPeriod || latestObservedPeriod(dataset, metric) || periodsFor(dataset, metric)[0] || '';
   const levels = localLevels(dataset);
   const selected = territory?.id || dataset.country.national_territory_id;
   const selectedLevel = territory?.level;
@@ -190,18 +197,20 @@ export function makeCsv(rows) { return '\uFEFF' + rows.map(row => row.map(csvCel
 export function evidenceRows(dataset, territoryId, period, indicatorIds = dataset.indicators.map(row => row.id)) {
   const area = dataset.territories.find(row => row.id === territoryId);
   return dataset.indicators.filter(indicator => indicatorIds.includes(indicator.id)).map(indicator => {
-    const current = observationState(dataset, territoryId, indicator.id, period), source = sourceFor(dataset, indicator, current.row);
+    const current = areaObservationState(dataset, territoryId, indicator.id, period), source = sourceFor(dataset, indicator, current.row);
     return {area, indicator, ...current, source, period};
   });
 }
 export function evidenceCsv(dataset, territoryId, period, indicatorIds) {
   const rows=evidenceRows(dataset, territoryId, period, indicatorIds);
   const extended=!!dataset.analysis || rows.some(({indicator,row})=>indicator.definition_id || indicator.population || ['definition_id','definition','unit','population','method','measurement_method'].some(key=>row?.[key]!==undefined));
+  const aggregation=!!dataset.analysis?.aggregation;
   return makeCsv([
-    ['Country','Territory ID','Territory','Level','Code','Code system','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status','Definition','Source','Source URL','Retrieved at','Data edition',...(extended?['Definition ID','Population','Measurement method','Comparable concept','Comparison note']:[])],
+    ['Country','Territory ID','Territory','Level','Code','Code system','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status',...(aggregation?['Value provenance','Aggregation note','Component IDs','Component periods','Missing area IDs','Covered subtotal']:[]),'Definition','Source','Source URL','Retrieved at','Data edition',...(extended?['Definition ID','Population','Measurement method','Comparable concept','Comparison note']:[])],
     ...rows.map(({area, indicator, row, value, status, source}) => {
       const meaning=observationContext(dataset,area,indicator,row);
-      return [dataset.country.name, area?.id, area?.name, area?.level, area?.official_code, area?.code_system, area?.boundary_version, indicator.id, indicator.name, period, value, meaning.unit, status, meaning.definition, source?.name, safeUrl(source?.url), source?.retrieved_at, dataset.generated_at,...(extended?[meaning.definition_id,meaning.population,meaning.method,meaning.comparable,meaning.reason]:[])];
+      const aggregate=areaObservationState(dataset,area.id,indicator.id,period);
+      return [dataset.country.name, area?.id, area?.name, area?.level, area?.official_code, area?.code_system, area?.boundary_version, indicator.id, indicator.name, period, value, meaning.unit, status,...(aggregation?[aggregate.provenance, aggregate.note, aggregate.components.map(item=>item.territory_id).join('; '), aggregate.components.map(item=>`${item.territory_id}@${item.period}`).join('; '), aggregate.missing_ids.join('; '), aggregate.covered_value]:[]), meaning.definition, source?.name, safeUrl(source?.url), source?.retrieved_at, dataset.generated_at,...(extended?[meaning.definition_id,meaning.population,meaning.method,meaning.comparable,meaning.reason]:[])];
     })
   ]);
 }

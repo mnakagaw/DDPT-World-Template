@@ -215,17 +215,17 @@ test('document outputs have selected identity, missing evidence, correct sources
   assert.equal(safeUrl('javascript:alert(1)'),'');assert.equal(safeUrl('https://user:password@example.org/'),'');assert.equal(safeUrl('https://example.org/'),'https://example.org/');
 });
 
-test('generator writes four independent portable pages, same data and local-only runtime without overwriting canonical data',async()=>{
+test('generator writes five independent portable pages, same data and local-only runtime without overwriting canonical data',async()=>{
   const directory=await mkdtemp(path.join(os.tmpdir(),'ddpt-generate-'));
   try {
     await mkdir(path.join(directory,'data'));await writeFile(path.join(directory,'data','dashboard.json'),'canonical sentinel');
     await mkdir(path.join(directory,'site'));await writeFile(path.join(directory,'site','unrelated.txt'),'preserve');
     const data=fixture(),result=await generateSite({dataset:data,outDir:directory});
-    assert.equal(result.files.length,13);
+    assert.equal(result.files.length,15);
     assert.deepEqual(JSON.parse(await readFile(path.join(result.siteDir,'data','dashboard.json'),'utf8')),data);
     assert.equal(await readFile(path.join(directory,'data','dashboard.json'),'utf8'),'canonical sentinel');
     assert.equal(await readFile(path.join(result.siteDir,'unrelated.txt'),'utf8'),'preserve');
-    for(const page of ['home','territorial','thematic','planning']) {
+    for(const page of ['home','territorial','thematic','database','planning']) {
       const html=await readFile(path.join(result.siteDir,page==='home'?'':page,'index.html'),'utf8');
       assert.match(html,new RegExp(`data-page="${page}"`));assert.match(html,/Content-Security-Policy/);
       const assetPath=html.match(/src="([^\"]+app\.mjs)"/)[1];

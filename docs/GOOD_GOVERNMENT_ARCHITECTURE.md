@@ -1,4 +1,6 @@
-# Good Governmentのサービス構成とデータ共有
+# Good Governmentのサービス構成とデータ共有（旧案）
+
+現行方針は[AreaData architecture](AREADATA_ARCHITECTURE.md)である。まず三機能を`areadata.net`へ集約し、ラテンアメリカ試作を検証してからWorldCensus／AreaPlanの別ドメインを検討する。以下は以前の名称・分離案の記録であり、現在の公開構成ではない。
 
 長期構成は**一つのブランド、二つの公開アプリ、一つの計画モジュール、共通API**とする。利用者の目的が異なるAtlasとData Commonsは画面を分け、地域選択の続きで使うPlanningはAtlas内に置く。
 

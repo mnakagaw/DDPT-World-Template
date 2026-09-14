@@ -3,12 +3,12 @@
 更新対象は共通テンプレートの内部比較。`dataset.analysis` がない既存国版も有効。
 上部の位置確認・地域選択と、下部の各指標に含まれる内部比較は役割が異なる。
 内部比較の行や図形を確認しても、上部の選択地域・指標・期間を変更しない。
-親の全体値は親IDの実測行のみ。内部地域から合計・率の単純平均・代替値を生成しない。
+親の全体値は親IDの同範囲観測を最優先する。任意`analysis.aggregation`がなければ従来どおり親IDの観測だけを使う。設定がある指標に限り、根拠付き所属の完全・非重複被覆から上位値を計算できる。内部比較の表示だけを集計根拠にせず、率の単純平均・不完全な小計の全体値化・全国値の地方配分は行わない。
 
 ```json
 {
   "analysis": {
-    "kind": "world",
+    "kind": "regional",
     "terminal_territory_ids": [],
     "comparisons": [{
       "parent_id": "WLD",
@@ -24,14 +24,24 @@
       "url": "./countries/TST/",
       "target_territory_id": "TST",
       "indicator_map": {"people": "population"}
-    }]
+    }],
+    "aggregation": {
+      "policy": "exact_then_complete_cover",
+      "rules": [{
+        "indicator_id": "people",
+        "method": "sum",
+        "completeness": "full_cover",
+        "label": "AreaData calculated population",
+        "note": "Exact higher-area observations first; otherwise a complete non-overlapping cover."
+      }]
+    }
   }
 }
 ```
 
 ## 地理の範囲・所属
 
-- `kind` は `world` / `country`。`terminal_territory_ids` と `comparisons` は配列で必須。
+- `kind` は `world` / `regional` / `country`。`terminal_territory_ids` と `comparisons` は配列で必須。
 - 世界の探索rootは `country.id = country.national_territory_id = "WLD"`、地域レコードは `id:WLD, level:national, type:exploration_scope, parent_id:null`。
   これは探索範囲の識別子であり、世界を行政上の国として扱う宣言ではない。
 - 世界内の国は `type:country` と明示 `country_id`（3文字の国識別子）が必須。同じ国IDの国レコードを重複させない。
@@ -68,7 +78,7 @@
 意味の差は検証エラーにせず、行の実際のmetadata・値・除外理由を表示する。
 これにより、相違のある取得済み証拠を捨てずに色・格差計算の対象外にできる。
 
-- 地域ID＋指標ID＋**完全に同じ期間文字列**の行を読む。近い年・別期間・別地域に置き換えない。
+- 通常は地域ID＋指標ID＋**完全に同じ期間文字列**の行を読む。近い年・別期間・別地域に置き換えない。唯一の例外は、明示した国勢調査の混合基準年集計である。
 - `observed` の有限数値だけが数値。`0` は有効。`missing / suppressed / not_applicable` はnull。
 - 対象系列があるが選択期間行がない場合は `missing`、地域の系列自体がない場合は `not_collected`。
 - 取得失敗・未取得の出典を数値比較に採用しない。行の出典は観測の `source_id` を優先し、観測がない場合だけ指標の出典を参照する。
@@ -76,7 +86,19 @@
   既存単一国のrootには `source.country_id` 未記載を許容する。国の全国値を地区へ割り当てることは許さない。
 - `geographic_level:world_country_series` は公式世界系列または国別系列の出典用。
   数値の `observed` はWLD探索rootまたは `country_id` 付き国だけに許す。
-  大陸・地域等の `missing/null` 行は同範囲系列未取得の明示として保持できるが、集計値・比較値にはならない。
+  大陸・地域等の `missing/null` 行は同範囲系列未取得の明示として保持できる。これ自体は集計値にならないが、別途`analysis.aggregation`で許可した指標は国等の取得済み観測から計算できる。
+
+## 上位集計
+
+- `analysis.aggregation.policy`は`exact_then_complete_cover`。対応する`rules[]`がない指標は計算しない。
+- `method:sum`は指標側も`aggregation:sum`。人口・世帯・件数等でも、定義・期間・単位・母集団が互換の場合だけ使う。
+- 選択範囲自身の互換な観測があれば、下位地域の欠測に関係なくその観測1件を採用する。
+- 親観測がない場合のみ、取得済み所属根拠を持つ明示比較集合へ降りる。子の親観測があれば孫へ降りない。これを再帰し、全域を重複なく覆えた場合だけ合計する。
+- 一部地域だけ取得できた場合は`status:incomplete`、全体値はnull。取得済み構成地域の`covered_subtotal`、不足ID、構成IDを計算監査として表示・出力する。
+- 同時選択に祖先と子孫が含まれる場合や同じ構成観測が重複する場合は`incomparable`とし、合計しない。
+- 率は互換な分子合計÷分母合計だけを許す。平均寿命等は検証済みweightを持つ方法以外で平均しない。0は取得値、nullは欠測として別に扱う。
+
+`rules[].period_policy`は省略時または`same_period`なら選択期間の完全一致を求める。`latest_available_by_component`は、[国勢調査系列契約](CENSUS_SERIES_CONTRACT.md)に従う指標だけに明示する。この規則で`latest-available`を選んだ場合、構成地域ごとに最新の確認済み観測を採用し、実際の年を構成表・CSV・文書へ出す。これは同一年集計ではない。異なる年を隠した合計、前年値の持越し、国勢調査と国際参照系列の混合は禁止する。
 
 ## 図形の結合と色
 

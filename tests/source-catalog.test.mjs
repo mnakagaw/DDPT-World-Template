@@ -6,7 +6,7 @@ import { sourcePlan } from '../scripts/source-plan.mjs';
 test('source catalog combines reusable international candidates and pre-researched countries', async () => {
   const catalog = await loadSourceCatalog();
   assert.equal(catalog.coverage.common_sources, 10);
-  assert.equal(catalog.coverage.country_records, 21);
+  assert.equal(catalog.coverage.country_records, 22);
   assert.deepEqual(catalog.coverage.status_model, [
     'catalogued',
     'country_availability_checked',
@@ -39,6 +39,16 @@ test('Latin America desk research is reused without being promoted to acquired e
   assert.equal(dominican.census.latest_census_year, 2022);
   assert.ok(dominican.sources.length >= 4);
   assert.ok(dominican.sources.every(source => source.stage === 'desk_research_location'));
+});
+
+test('Belize has a verified 2022 census location without claiming planning research is complete', async () => {
+  const catalog = await loadSourceCatalog();
+  const belize = findCountrySourceRecord(catalog, 'ベリーズ');
+  assert.equal(belize.iso3, 'BLZ');
+  assert.equal(belize.census.usable_detailed_year, 2022);
+  assert.match(belize.census.published_geography, /city, town, village or community/i);
+  assert.match(belize.planning.planning_level, /Not yet researched/);
+  assert.ok(belize.sources.every(source => source.publisher === 'Statistical Institute of Belize'));
 });
 
 test('unresearched country still receives common candidates and an explicit research task', async () => {

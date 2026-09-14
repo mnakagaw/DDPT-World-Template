@@ -44,7 +44,7 @@ node scripts/create-world.mjs --source-dir generated/world/raw --out generated/w
 
 外部取得なしで、設定SHA・要求URL・SHA・bytes・元のUTC取得日時を照合して再生成する。年指定を省略すると元receiptの要求年を使う。原本がない・改変された場合や設定が異なる場合は停止し、ネット取得で密かに補わない。元の収集で失敗したrequestはその失敗を再現する。既存出力は変更しない。生成器の版が変わればHTML等は変わるため、正確なコード再現には`TEMPLATE_REFERENCE.json`の参照とdirty状態も確認する。
 
-国版への接続は、収集済み国版のISO3と相対URLを確認して`analysis.country_sites`へ後から設定する。国内行政階層・国勢調査・計画資料・法的承認状態の確認は各国アダプターの作業であり、世界系列から補間しない。
+国版への接続は、収集済み国版のISO3と相対URLを確認して`analysis.country_sites`へ後から設定する。国内行政階層・国勢調査・計画資料・法的承認状態の確認は各国アダプターの作業であり、世界系列から補間しない。AreaDataの派生広域試作で集計を明示的に採用する場合も、この世界収集datasetは変更せず、別datasetの`analysis.aggregation`に完全範囲・方法・期間方針を記録する。国勢調査の異なる年を使う集計は[国勢調査系列契約](CENSUS_SERIES_CONTRACT.md)に従い、同一年の国際系列とは分ける。
 
 ## 実取得の検証記録
 

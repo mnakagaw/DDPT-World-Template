@@ -1,10 +1,10 @@
-# 実行テンプレート0.4の実装契約
+# 実行テンプレート0.5の実装契約
 
 ユーザー指示に基づき、Private GitHubを参照した国名からの収集・サイト作成に加え、世界→大陸→広域→国の探索入口と、地域診断の各指標の内部比較・診断出力を実装する。上部で範囲を選ぶと直ちに全体を診断し、国から国内行政階層へは別の国別datasetを接続する。世界共通UX v1.0の採用判定とは別に扱う。
 
-## 共通インターフェース（0.4実装、データschema 0.2）
+## 共通インターフェース（0.5実装、データschema 0.2）
 
-実行パッケージ0.4.1でもデータschemaは0.2を維持する。複数階層の所属は既存の`territories[].parent_id`から読み、国名・階層数を固定しない。地域診断・計画資料の上位再選択は、同じ所属先を選び直した場合も下位の選択を解除し、最後に明示選択した親IDを表示・URL・出力で共有する。指標・年は保持し、親の値の自動集計は行わず、登録された観測または欠測を使う。同名の地域は選択肢に型・コード等を付ける。
+実行パッケージ0.5.0でもデータschemaは0.2を維持する。複数階層の所属は既存の`territories[].parent_id`から読み、国名・階層数を固定しない。地域診断・計画資料の上位再選択は、同じ所属先を選び直した場合も下位の選択を解除し、最後に明示選択した親IDを表示・URL・出力で共有する。指標・年は保持する。親自身の観測を最優先し、任意の集計契約がない指標は従来どおり観測または欠測を使う。同名の地域は選択肢に型・コード等を付ける。
 
 上部の位置図・階層選択・基本情報と、下部の各指標の内部比較地図・全件表を分離する。内部比較の地図・行への注目は同じ指標内だけで対応させ、上部の対象・見出し・他指標・資料・URL・出力先を変えない。地域を変更すると全指標の比較対象も更新する。取得済みの推移、親の公式値、子の分布は別の意味で表示する。
 
@@ -14,16 +14,17 @@
 
 | 項目 | 契約 |
 |---|---|
-| `analysis.kind` | `country`または`world`。worldは`country.id`・`national_territory_id`とも`WLD`、rootは`level:national/type:exploration_scope/parent_id:null` |
+| `analysis.kind` | `country`、`regional`または`world`。worldは`country.id`・`national_territory_id`とも`WLD`、rootは`level:national/type:exploration_scope/parent_id:null` |
 | `analysis.terminal_territory_ids` | 内部比較を細分しない地域ID。国別に確認した基礎自治体等を設定し、ADM番号や子が存在することだけで計画主体を推定しない。世界datasetは国・地域で停止する |
 | `analysis.comparisons[]` | 既知の`parent_id`、下位の重複しない`member_ids`、`label`、`membership_note`、取得済みの分類根拠`source_ids`。親子が重複する母集団は拒否。任意`color_scale`は`within_selection`または`fixed`、固定は昇順の4閾値 |
 | `territories[].country_id` | 世界内の`type:country`にはISO3を必須とする。M49の国・地域分類は主権国・法定計画主体の認定ではない |
 | `analysis.country_sites[]` | 接続元`territory_id`、接続元のISO3と一致する`country_id`、安全なHTTPSまたは`./`子パスの`url`。任意`target_territory_id`は省略時その国ID。`indicator_map`は意味を確認した指標対応だけを明示する |
 | 観測の意味 | 任意の`definition_id/definition/unit/population/method/measurement_method/boundary_version`で指標の既定と異なる意味を保持。異定義・異母集団・異単位・異方法・境界版差は元値と理由を残し、共通の比較色・数値比較から除く |
+| `analysis.aggregation` | 任意。`policy:exact_then_complete_cover`と指標別ruleを指定した場合だけ上位集計する。親自身の観測を優先し、完全・非重複・根拠付き被覆だけを計算する。不完全時は全体値nullと監査小計・不足IDを出す |
 
 国際指標と国内統計は同じ名称・IDだけで対応付けない。国版への接続は別datasetの国・対象IDと明示した指標対応を確認し、対応がなければ国版の既定指標と未対応の説明を使う。統計年を保つ場合も、その年の欠測を別年で補わない。資料独自の計画期間・会計年度を統計年に置き換えない。
 
-全国sourceは対応する国の全体値だけに使う。世界収集の`geographic_level:world_country_series`は公式WLDまたは国の公表値だけを数値として許容し、大陸・国内地域へ転用しない。地域台帳の全件を比較分母とし、欠測・0・非該当・秘匿・比較不可を分ける。親の値を子の合計や率平均で作らない。
+全国sourceは対応する国の全体値だけに使う。世界収集の`geographic_level:world_country_series`は公式WLDまたは国の公表値として保存し、大陸・国内地域の直接観測へ転用しない。地域台帳の全件を比較分母とし、欠測・0・非該当・秘匿・比較不可を分ける。計算値は別の`analysis.aggregation`規則で作り、出典公表値と区別する。率平均、不完全被覆の全体値化は行わない。
 
 境界ID・国・型・コード・境界版の明示不一致は拒否する。Natural Earthの図形固有版は`geometry_edition`とsourceに置き、未確認の統計境界版と同一化しない。上位の位置図に使うMultiPolygonは、同じsource・版の照合済み国図形を表示専用に連結し、欠ける構成国を記録する。法定境界・数値集計の根拠にはしない。
 

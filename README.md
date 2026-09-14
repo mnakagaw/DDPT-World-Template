@@ -1,8 +1,8 @@
-# DDPT World Template
+# AreaData / DDPT World Template
 
-**世界・大陸・広域から国へ探索し、国名を指定してDDPT型の国別ダッシュボードを作るためのPrivateテンプレートです。**
+**AreaDataの地域探索・データベース・計画資料と、国名を指定してDDPT型の国別ダッシュボードを作るための共通テンプレートです。**
 
-実行テンプレート：0.4.1。データschema：0.2（任意項目で後方互換を維持）。共通UX仕様：0.4 candidate（改善後のv1.0採用は別途検証）。
+実行テンプレート：0.5.0。データschema：0.2（任意項目で後方互換を維持）。共通UX仕様：0.5 candidate（改善後のv1.0採用は別途検証）。
 
 地域診断の上部には分析対象を選ぶ位置図・階層選択・基本情報を置き、下部の各指標には対象内部の比較地図・全件表を置く。上部で地域を選ぶとその全体を即時診断し、下部の図・行への注目は上部の対象・他指標・URLを変えない。市・県の後に同じ所属先のRegion／Subregionを選び直した場合も、下位を解除して上位全体へ切り替える。指標・年を保持し、親の値が未取得なら親の欠測を示す。[操作契約](docs/02_COMMON_SPEC.md)を参照。
 
@@ -35,9 +35,11 @@ START_HERE.mdから読み、取得可能な公式データの収集から、動�
 
 世界入口は2026-09-13の実取得で248の国・地域、4分野3,544公表値を保存した。世界値は公式WLD系列を使い、同一範囲の公式系列を取得していない大陸・広域は欠測を維持する。「Central America + Caribbean」はUN M49の013＋029を組み合わせた独自の探索区分で、Mexicoを含む。国際指標と国内統計の定義・単位・母集団を自動同一化しない。国版は別datasetとして接続し、国内行政階層・法定計画主体はその国の資料で確認する。参照図形に未結合・省略された79地域も台帳・表から消さない。[取得範囲と再現手順](docs/WORLD_ADAPTER.md)を参照。
 
+最初のAreaData公開試作は**中米7か国**（Belize、Guatemala、El Salvador、Honduras、Nicaragua、Costa Rica、Panama）。これはUN M49 013（Mexicoを含む）とは異なるAreaDataの明示的な試作範囲である。国別・国内地域診断は国勢調査を主系列にする。国際参照系列は7か国の同年・互換な全国観測が完全にそろう場合だけ別系列のAreaData計算値として合計する。国勢調査の調査年が違う場合は各国の年を構成表に明記し、「最新利用可能国勢調査による混合基準年」としてのみ合計できる。国の全国値があれば、その国内の自治体欠測は地域合計へ影響しない。率・平均は単純平均せず、不完全時は全体値を出さない。
+
 初期収集だけの状態は、地方統計・承認済み計画が揃った完成版ではありません。取得可能な国内資料を調べた結果と、未取得・未照合・未検証を残すことを作業手順で必須にしています。
 
-[共通データと国別情報源の事前台帳](docs/COMMON_DATA_AND_SOURCE_REGISTRY.md)には、ラテンアメリカ20か国とウガンダの国勢調査・計画制度等の所在、および地域別データを持つ10の国際・複数国sourceを登録した。国別初期生成は`evidence/SOURCE_PREFLIGHT.json`と`.md`を自動作成する。所在登録は実データ取得・地理照合・指標採用とは別で、案件時点の再確認が必要である。
+[共通データと国別情報源の事前台帳](docs/COMMON_DATA_AND_SOURCE_REGISTRY.md)には、ラテンアメリカ20か国、ウガンダ、ベリーズの国勢調査・計画制度等の所在、および地域別データを持つ10の国際・複数国sourceを登録した。国別初期生成は`evidence/SOURCE_PREFLIGHT.json`と`.md`を自動作成する。中米生成は7か国をまとめた`evidence/CENSUS_SOURCE_PREFLIGHT.json`と`.md`も作る。所在登録は実データ取得・地理照合・指標採用とは別で、案件時点の再確認が必要である。
 
 ## コマンドで初期生成
 
@@ -57,6 +59,7 @@ node ./DDPT-World-Template/scripts/serve.mjs --dir ./uganda-dashboard/site --por
 node scripts/create-world.mjs --out generated/world
 node scripts/serve.mjs --dir generated/world/site --port 4173
 node scripts/create-world.mjs --source-dir generated/world/raw --out generated/world-replay
+node scripts/create-central-america.mjs --source-dir generated/world/raw --out generated/central-america
 ```
 
 地方データと資料を`data/dashboard.json`へ統合した後は、テンプレートから次を実行します。
@@ -96,7 +99,7 @@ npm run check
 npm test
 ```
 
-CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
+CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
 
 ## 維持するモデル
 
@@ -104,7 +107,7 @@ CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2
 
 [世界国勢調査DBのOSS機能要件](docs/WORLD_CENSUS_DATABASE_SPEC.md)を採用した。既存のIPUMS等との機能重複を除外理由にせず、検索、変数辞書、表の作成、抽出カート、図表・地図、API、再現パッケージ、境界履歴、自営・共同更新など23機能を実装順付きで整理している。これは設計要件の追加であり、新DBの実装完了を意味しない。コードのOSS化予定と資料別の再配布条件を分け、現在のリポジトリはPrivateのままとする。DBの研究機能とDDPTの通常画面への採用は区別する。
 
-[Good Governmentのサービス構成](docs/GOOD_GOVERNMENT_ARCHITECTURE.md)は、一ブランドの下でAtlasとData Commonsを別アプリにし、PlanningをAtlasの地域別機能、APIを共通基盤とする。現行リポジトリは国別Atlas生成テンプレートであり、Data Portal、公開API、共通大容量保管、サブドメイン配備は未実装である。
+[AreaDataのサービス構成](docs/AREADATA_ARCHITECTURE.md)は、当面`areadata.net/`、`/database/`、`/planning/`へ三機能を集約する。国別・国内地域診断の主系列は[国勢調査系列契約](docs/CENSUS_SERIES_CONTRACT.md)に従い、同一年の国際参照系列と分ける。MariaDB基礎schemaは`database/mariadb/001_schema.sql`。WorldCensus／AreaPlanの別ドメインと公開APIは中米試作後に検討する。[旧Good Government案](docs/GOOD_GOVERNMENT_ARCHITECTURE.md)は経緯として保持する。
 
 ### 国別の計画・診断
 

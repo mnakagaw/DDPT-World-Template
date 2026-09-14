@@ -95,6 +95,45 @@
           "note": "The page identifies the national mapping authority but showed no downloadable geospatial dataset on 2026-09-14. Continue with UBOS and other official boundary sources; do not treat this as evidence that no official boundary exists."
         }
       ]
+    },
+    {
+      "iso3": "BLZ",
+      "names": ["Belize", "ベリーズ"],
+      "research_status": "census_catalog_verified_planning_not_researched",
+      "checked_at": "2026-09-15",
+      "census": {
+        "latest_census_year": 2022,
+        "usable_detailed_year": 2022,
+        "published_geography": "National and district results, with an official population table by city, town, village or community and sex.",
+        "finer_geography": "City, town, village and community are present in published tables; their exact statistical and administrative status and boundary correspondence must be checked before mapping.",
+        "formats": ["official census portal", "interactive map", "downloadable tables", "PDF reports", "questionnaires"]
+      },
+      "planning": {
+        "planning_level": "Not yet researched for the AreaData country adapter.",
+        "internal_analysis_geography": "Determine from Belize planning law and practice; do not infer it from census table labels.",
+        "process_summary": "Planning legislation, responsible institutions, plan cycle and document repositories remain to be verified.",
+        "unresolved": "Locate and verify current planning law, guidance, plan repositories, official geography codes and boundary editions before building the planning module."
+      },
+      "sources": [
+        {
+          "id": "BLZ_CENSUS_2022",
+          "role": "census_catalog",
+          "title": "2022 Population and Housing Census",
+          "publisher": "Statistical Institute of Belize",
+          "url": "https://sib.org.bz/census/2022-census/",
+          "stage": "location_and_catalog_content_verified",
+          "note": "Official portal lists census results and a population table by city, town, village or community and sex. Inventory and archive each adopted table and verify its geography codes, definition and license."
+        },
+        {
+          "id": "BLZ_CENSUS_KEY_FINDINGS_2022",
+          "role": "census_report",
+          "title": "Belize Population and Housing Census 2022: Key Findings",
+          "publisher": "Statistical Institute of Belize",
+          "url": "https://sib.org.bz/wp-content/uploads/CensusKeyFindingsReport_2022.pdf",
+          "stage": "content_verified",
+          "note": "Official report documents the 2022 census concepts and district-level appendix tables. Use the detailed tables, rather than transcribing headline summaries, when building the adapter."
+        }
+      ]
     }
   ]
 }

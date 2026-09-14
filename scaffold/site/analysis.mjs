@@ -43,7 +43,8 @@ export function nationalSourceMatches(data,source,area) {
 }
 export function worldSeriesSourceMatches(data,source,area) {
   if(source?.geographic_level!=='world_country_series')return true;
-  return data?.analysis?.kind==='world' && (!!area && area.type==='country' && /^[A-Z0-9]{3}$/.test(area.country_id || '') || area?.id==='WLD' && area.id===data?.country?.national_territory_id && area.type==='exploration_scope');
+  const kind=data?.analysis?.kind;
+  return ['world','regional'].includes(kind) && (!!area && area.type==='country' && /^[A-Z0-9]{3}$/.test(area.country_id || '') || kind==='world' && area?.id==='WLD' && area.id===data?.country?.national_territory_id && area.type==='exploration_scope');
 }
 export function boundaryIdentity(feature,area) {
   if(!area || feature?.properties?.territory_id!==area.id)return {matches:false,reason:'Boundary territory ID does not match the registered area.'};

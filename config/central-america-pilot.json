@@ -1,0 +1,33 @@
+{
+  "version": "1",
+  "id": "CUSTOM:CA7",
+  "dataset_id": "CAM",
+  "name": "Central America — 7-country pilot",
+  "locale": "en",
+  "member_ids": ["BLZ", "GTM", "SLV", "HND", "NIC", "CRI", "PAN"],
+  "scope_note": "AreaData pilot cohort of the seven sovereign states commonly described as Central America: Belize, Guatemala, El Salvador, Honduras, Nicaragua, Costa Rica and Panama. This is a project analysis scope, not the UN M49 Central America aggregate; UN M49 013 also includes Mexico.",
+  "scope_source": {
+    "id": "areadata-ca7-scope",
+    "name": "AreaData Central America seven-country pilot scope",
+    "publisher": "AreaData project",
+    "url": "https://areadata.net/",
+    "status": "ready",
+    "retrieved_at": "2026-09-15T00:00:00Z",
+    "reference_period": "Pilot scope decision 2026-09-15",
+    "license": "Project metadata; underlying country identities remain attributed to UN M49",
+    "note": "Defines only the analysis cohort. It is not an official published aggregate and does not imply that national census or municipal data have been acquired."
+  },
+  "aggregation": {
+    "policy": "exact_then_complete_cover",
+    "rules": [
+      {
+        "indicator_id": "SP.POP.TOTL",
+        "method": "sum",
+        "completeness": "full_cover",
+        "period_policy": "same_period",
+        "label": "AreaData calculated population",
+        "note": "This rule applies only to the same-period international reference series. Use each country's exact observation first. Descend to provinces or municipalities only when an official complete non-overlapping membership and compatible observations cover the entire country. Missing municipalities do not matter when the country total exists. A separate census rule may use latest_available_by_component and must expose every component year."
+      }
+    ]
+  }
+}
