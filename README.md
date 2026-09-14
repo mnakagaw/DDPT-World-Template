@@ -81,6 +81,8 @@ npm run sources:plan -- --country UGA
 
 生成器が管理する`site/`のコードを直接編集する場合、再構築で戻ることに注意してください。恒久的な国別変更は、国別アダプター・設定と、案件用に管理した生成コードへ反映します。テンプレート本体に一国のデータを混ぜません。
 
+生成サイトにはApache／LiteSpeedで`.mjs`をJavaScriptとして配信するための`.htaccess`を含める。別のWebサーバーでは、同等のMIME type設定をホスティング側へ適用する。
+
 ## GitHub Actionsでの生成
 
 `Build country baseline`を手動実行し、`country`に国名またはISOコードを入力すると、初期収集・サイト・証拠をArtifactとして保存します。自動のWeb公開や、AIによる国内資料調査までは行いません。国内公式資料の調査は、新しいAI案件が[国別作業手順](docs/COUNTRY_AGENT_WORKFLOW.md)に沿って続けます。

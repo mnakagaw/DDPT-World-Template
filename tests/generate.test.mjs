@@ -221,7 +221,8 @@ test('generator writes five independent portable pages, same data and local-only
     await mkdir(path.join(directory,'data'));await writeFile(path.join(directory,'data','dashboard.json'),'canonical sentinel');
     await mkdir(path.join(directory,'site'));await writeFile(path.join(directory,'site','unrelated.txt'),'preserve');
     const data=fixture(),result=await generateSite({dataset:data,outDir:directory});
-    assert.equal(result.files.length,15);
+    assert.equal(result.files.length,16);
+    assert.match(await readFile(path.join(result.siteDir,'.htaccess'),'utf8'),/AddType text\/javascript \.mjs/);
     assert.deepEqual(JSON.parse(await readFile(path.join(result.siteDir,'data','dashboard.json'),'utf8')),data);
     assert.equal(await readFile(path.join(directory,'data','dashboard.json'),'utf8'),'canonical sentinel');
     assert.equal(await readFile(path.join(result.siteDir,'unrelated.txt'),'utf8'),'preserve');
