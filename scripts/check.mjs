@@ -20,4 +20,5 @@ JSON.parse(await readFile('templates/country-profile.json', 'utf8'));
 JSON.parse(await readFile('config/world-membership.json', 'utf8'));
 JSON.parse(await readFile('config/common-subnational-sources.json', 'utf8'));
 JSON.parse(await readFile('config/country-source-registry.json', 'utf8'));
+JSON.parse(await readFile('config/central-america-census-sources.json', 'utf8'));
 console.log(`Syntax checked ${count} JavaScript modules and JSON templates.`);

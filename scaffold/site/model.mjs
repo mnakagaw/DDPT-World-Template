@@ -8,10 +8,11 @@ export function safeUrl(value) {
   try { const url = new URL(String(value)); return ['https:', 'http:'].includes(url.protocol) && !url.username && !url.password ? url.href : ''; }
   catch { return ''; }
 }
-export function displayValue(value, locale = 'en') {
+export function displayValue(value, locale = 'en', maximumFractionDigits = 2) {
   if (!finite(value)) return 'No data';
-  try { return new Intl.NumberFormat(locale, {maximumFractionDigits: 2}).format(value); }
-  catch { return new Intl.NumberFormat('en', {maximumFractionDigits: 2}).format(value); }
+  const digits=Number.isInteger(maximumFractionDigits)&&maximumFractionDigits>=0&&maximumFractionDigits<=10?maximumFractionDigits:2;
+  try { return new Intl.NumberFormat(locale, {maximumFractionDigits: digits}).format(value); }
+  catch { return new Intl.NumberFormat('en', {maximumFractionDigits: digits}).format(value); }
 }
 export function statusLabel(status) {
   return ({observed:'Source reported', calculated:'AreaData calculated', incomplete:'Incomplete coverage', missing:'No data', not_collected:'Not collected', not_available:'Not available', unavailable:'Unavailable', not_applicable:'Not applicable', incomparable:'Comparison not established', unverified:'Unverified', failed:'Acquisition failed', error:'Acquisition failed', ready:'Acquired', link_verified:'Link verified', downloaded:'Body acquired', body_acquired:'Body acquired', content_extracted:'Content extracted; not cross-checked', content_verified:'Content cross-checked', extracted:'Extracted', pending:'Pending'})[status] || String(status || 'Not collected').replaceAll('_', ' ');
@@ -32,9 +33,12 @@ export function observationFor(dataset, territoryId, indicatorId, period) {
 }
 export function observedValue(observation) { return observation?.status === 'observed' && finite(observation.value) ? observation.value : null; }
 export function observationState(dataset, territoryId, indicatorId, period) {
-  const row = observationFor(dataset, territoryId, indicatorId, period);
+  const indicator=dataset.indicators.find(item=>item.id===indicatorId);
+  const rows=dataset.observations.filter(item=>item.territory_id===territoryId&&item.indicator_id===indicatorId);
+  const mixed=String(period)===LATEST_AVAILABLE_PERIOD&&indicator?.period_policy==='latest_available_by_component';
+  const row = mixed?[...rows].filter(item=>observedValue(item)!==null).sort((a,b)=>String(b.period).localeCompare(String(a.period),'en',{numeric:true}))[0] || null:observationFor(dataset, territoryId, indicatorId, period);
   if (row) return {row, value:observedValue(row), status:row.status || 'unverified'};
-  const hasSeries = dataset.observations.some(item => item.territory_id === territoryId && item.indicator_id === indicatorId);
+  const hasSeries = rows.length>0;
   return {row:null, value:null, status:hasSeries ? 'missing' : 'not_collected'};
 }
 export function areaObservationState(dataset, territoryId, indicatorId, period) {
@@ -157,7 +161,7 @@ export function comparisonRows(dataset, state) {
   return dataset.territories.filter(area => area.level !== 'national' && area.level === state.level).map(area => {
     const result=observationState(dataset,area.id,state.metric,state.period);
     const meaning=observationContext(dataset,area,indicator,result.row);
-    return {area,...result,...(!compatibility.comparable || !meaning.comparable?{value:null,status:'incomparable',reason:[compatibility.reason,meaning.reason].filter(Boolean).join(' ')}:{})};
+    return {area,...result,period:result.row?.period || state.period,...(!compatibility.comparable || !meaning.comparable?{value:null,status:'incomparable',reason:[compatibility.reason,meaning.reason].filter(Boolean).join(' ')}:{})};
   });
 }
 export function rankedRows(rows, order = 'desc') {

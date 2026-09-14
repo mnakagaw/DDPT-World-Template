@@ -2,7 +2,7 @@
 
 **AreaDataの地域探索・データベース・計画資料と、国名を指定してDDPT型の国別ダッシュボードを作るための共通テンプレートです。**
 
-実行テンプレート：0.5.0。データschema：0.2（任意項目で後方互換を維持）。共通UX仕様：0.5 candidate（改善後のv1.0採用は別途検証）。
+実行テンプレート：0.6.0。データschema：0.2（任意項目で後方互換を維持）。共通UX仕様：0.5 candidate（改善後のv1.0採用は別途検証）。
 
 地域診断の上部には分析対象を選ぶ位置図・階層選択・基本情報を置き、下部の各指標には対象内部の比較地図・全件表を置く。上部で地域を選ぶとその全体を即時診断し、下部の図・行への注目は上部の対象・他指標・URLを変えない。市・県の後に同じ所属先のRegion／Subregionを選び直した場合も、下位を解除して上位全体へ切り替える。指標・年を保持し、親の値が未取得なら親の欠測を示す。[操作契約](docs/02_COMMON_SPEC.md)を参照。
 
@@ -43,7 +43,7 @@ START_HERE.mdから読み、取得可能な公式データの収集から、動�
 
 ## コマンドで初期生成
 
-Node.js 22以降。実行時の外部npm依存やAPIキーは不要です。実データの取得にはネット接続が必要です。
+Node.js 22以降。実行時の外部npm依存やAPIキーは不要です。実データの取得にはネット接続が必要です。XLSX原本の読取専用棚卸し・抽出にはPython 3と`openpyxl`が必要です。Node.jsだけでも世界・国別の初期生成と登録済み原本の収集は実行できます。
 
 ```sh
 gh repo clone mnakagaw/DDPT-World-Template ./DDPT-World-Template
@@ -60,7 +60,13 @@ node scripts/create-world.mjs --out generated/world
 node scripts/serve.mjs --dir generated/world/site --port 4173
 node scripts/create-world.mjs --source-dir generated/world/raw --out generated/world-replay
 node scripts/create-central-america.mjs --source-dir generated/world/raw --out generated/central-america
+npm run collect:census:central-america -- --out .work/central-america-census-YYYY-MM-DD
+python scripts/inspect-census-workbooks.py --root .work/central-america-census-YYYY-MM-DD
+python scripts/extract-central-america-census.py --root .work/central-america-census-YYYY-MM-DD
+node scripts/create-central-america.mjs --source-dir generated/world/raw --census-data .work/central-america-census-YYYY-MM-DD/normalized-census.json --out generated/central-america-with-census
 ```
+
+国勢調査原本の収集コマンドは、登録済みの公式HTTPS URLだけを取得し、ファイル署名・容量・リダイレクト先を検査してSHA-256付き`receipt.json`を作る。原本の再配布可否、表・変数の採用、地理コード・境界との対応は別の審査であり、取得成功だけでサイトへ値を入れない。現在の取得manifestは最初の実装対象であるBelizeとGuatemalaを収録し、残る5か国は公式ファイルを確認してから追加する。
 
 地方データと資料を`data/dashboard.json`へ統合した後は、テンプレートから次を実行します。
 
@@ -99,7 +105,7 @@ npm run check
 npm test
 ```
 
-CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
+CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)、ベリーズ・グアテマラ国勢調査の実収集と部分統合は[0.6検証記録](docs/VALIDATION_v0.6.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
 
 ## 維持するモデル
 

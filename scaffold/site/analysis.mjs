@@ -124,9 +124,11 @@ export function colorForComparison(comparison,row) {
 export function internalComparison(data,parentId,indicatorId,period) {
   const set=comparisonSet(data,parentId),indicator=list(data?.indicators).find(item=>item?.id===indicatorId)||null;
   const commonReason=cohortReason(set),sources=list(data?.sources),observations=list(data?.observations),boundaries=list(data?.boundaries?.features);
+  const mixed=String(period)==='latest-available'&&indicator?.period_policy==='latest_available_by_component';
   const membershipUnavailable=set.source_ids.some(id=>!['ready','partial'].includes(sources.find(source=>source?.id===id)?.status));
   const rows=set.members.map(area=>{
-    const observation=observations.find(row=>row?.territory_id===area.id && row.indicator_id===indicatorId && String(row.period)===String(period))||null;
+    const areaObservations=observations.filter(row=>row?.territory_id===area.id&&row.indicator_id===indicatorId);
+    const observation=mixed?[...areaObservations].filter(row=>row?.status==='observed'&&finite(row.value)).sort((a,b)=>String(b.period).localeCompare(String(a.period),'en',{numeric:true}))[0]||null:areaObservations.find(row=>String(row.period)===String(period))||null;
     const value=observation?.status==='observed' && finite(observation.value)?observation.value:null;
     const status=observation?.status || (observations.some(row=>row?.territory_id===area.id && row.indicator_id===indicatorId)?'missing':'not_collected');
     const candidates=boundaries.filter(feature=>feature?.properties?.territory_id===area.id);
@@ -136,7 +138,7 @@ export function internalComparison(data,parentId,indicatorId,period) {
     const context=observationContext(data,area,indicator,observation);
     const reasons=[!indicator?'Indicator is unavailable.':'',commonReason,membershipUnavailable?'Comparison membership source is not available.':'',context.reason];
     if(value===null)reasons.push(status==='not_collected'?'No observations collected for this indicator and area.':`No observed value in the exact requested period (${status}).`);
-    return {area,observation,value,status,...context,comparable:reasons.every(reason=>!reason),reason:reasons.filter(Boolean).join(' '),boundary,boundary_reason};
+    return {area,observation,value,status,period:observation?.period || period,...context,comparable:reasons.every(reason=>!reason),reason:reasons.filter(Boolean).join(' '),boundary,boundary_reason};
   });
   const scale=buildScale(set.color_scale,rows);
   const reason=!set.parent?'Selected area is unavailable.':set.terminal?set.note:!set.members.length?'No internal comparison areas are configured or collected.':commonReason || (!rows.some(row=>row.comparable)?'No comparable numeric values are available for this exact indicator and period.':'');
