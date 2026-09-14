@@ -18,6 +18,15 @@ function normalized(){
   const country=(country_id,period,value,source_id)=>({country_id,period,territories:[],observations:[{territory_id:country_id,indicator_id:indicator.id,period,value,status:'observed',source_id}],comparisons:[],terminal_territory_ids:[],sources:[official(source_id)],audit:{}});
   return {schema_version:'1.0',scope_id:CENTRAL_AMERICA_CONFIG.id,generated_at:'2026-09-15T00:00:00Z',status:'partial_country_coverage',indicator,series_source:{...source('census-contract'),status:'partial'},countries:[country('BLZ','2022',397483.456,'blz-source'),country('GTM','2018',14901286,'gtm-source')],summary:{pilot_country_count:7,countries_acquired:['BLZ','GTM'],countries_pending:['SLV','HND','NIC','CRI','PAN'],territories_added:0,observations_added:2,regional_total_status:'not_available_incomplete_country_coverage'}};
 }
+function completeNormalized(){
+  const data=normalized();
+  const add=(country_id,period,value,source_id)=>({country_id,period,territories:[],observations:[{territory_id:country_id,indicator_id:data.indicator.id,period,value,status:'observed',source_id}],comparisons:[],terminal_territory_ids:[],sources:[{...source(source_id),sha256:'b'.repeat(64),geographic_level:'subnational'}],audit:{national_population:value}});
+  data.countries.push(add('SLV','2024',6029976,'slv-source'),add('HND','2013',8303771,'hnd-source'),add('NIC','2005',5142098,'nic-source'),add('CRI','2022',5044197,'cri-source'),add('PAN','2023',4064780,'pan-source'));
+  data.status='available_complete_country_coverage';data.series_source.status='ready';
+  const periods=Object.fromEntries(data.countries.map(item=>[item.country_id,item.period])),values=Object.fromEntries(data.countries.map(item=>[item.country_id,item.observations[0].value]));
+  Object.assign(data.summary,{countries_acquired:data.countries.map(item=>item.country_id),countries_pending:[],observations_added:7,regional_total_status:'available_complete_country_coverage_mixed_reference_years',regional_total:Object.values(values).reduce((sum,value)=>sum+value,0),regional_total_component_periods:periods,regional_total_country_values:values});
+  return data;
+}
 
 test('partial official census layer becomes primary without claiming the regional total',()=>{
   const result=mergeCensusPilot(buildRegionalPilot(world()),normalized());
@@ -37,4 +46,14 @@ test('partial official census layer becomes primary without claiming the regiona
 test('partial normalized layer cannot claim a regional total',()=>{
   const data=normalized();data.summary.regional_total_status='available';
   assert.throws(()=>validateNormalizedCensus(data),/cannot claim a regional total/);
+});
+
+test('complete mixed-year census cover yields a regional sum from exact country observations',()=>{
+  const normalizedData=completeNormalized(),result=mergeCensusPilot(buildRegionalPilot(world()),normalizedData);
+  assert.deepEqual(validateDataset(result).errors,[]);
+  assert.equal(result.analysis.pilot.census_adapter_status,'complete');
+  const regional=resolvedObservation(result,result.country.national_territory_id,'CENSUS_POP_TOTAL','latest-available');
+  assert.equal(regional.value,43883591.456);assert.equal(regional.status,'calculated');assert.equal(regional.components.length,7);assert.equal(regional.missing_ids.length,0);
+  assert.deepEqual(regional.component_periods.sort(),['2005','2013','2018','2022','2023','2024']);
+  assert.equal(result.gaps.find(gap=>gap.category==='regional_aggregation').status,'ready');
 });

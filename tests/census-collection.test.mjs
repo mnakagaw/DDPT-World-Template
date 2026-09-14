@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,readFile,rm} from 'node:fs/promises';
+import {mkdtemp,readFile,rm,writeFile,mkdir} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {collectCensusSources,loadCensusSourceManifest,validateCensusSourceManifest,validateFileSignature} from '../lib/collect-census.mjs';
@@ -10,7 +10,18 @@ const response=(body,{status=200,headers={}}={})=>new Response(body,{status,head
 
 test('official Central America manifest is internally safe and unique',async()=>{
   const loaded=await loadCensusSourceManifest();
-  assert.equal(loaded.sources.length,5);assert.deepEqual([...new Set(loaded.sources.map(row=>row.country_id))],['BLZ','GTM']);
+  assert.equal(loaded.sources.length,12);assert.deepEqual([...new Set(loaded.sources.map(row=>row.country_id))],['BLZ','GTM','SLV','HND','NIC','CRI','PAN']);
+});
+
+test('collector can reuse matching hash-verified evidence without fetching it again',async()=>{
+  const root=await mkdtemp(path.join(os.tmpdir(),'areadata-census-')),prior=path.join(root,'prior'),out=path.join(root,'evidence');
+  try{
+    const bytes=Uint8Array.from([80,75,3,4,9,8,7]),digest='34b4ba8d513434137e09366a300fe94dc62c610206b8d95693746ba176fa6fcb';
+    await mkdir(path.join(prior,'BLZ/2022'),{recursive:true});await writeFile(path.join(prior,'BLZ/2022/file.xlsx'),bytes);
+    await writeFile(path.join(prior,'receipt.json'),JSON.stringify({retrieved_at:'2026-09-14T00:00:00Z',entries:[{source_id:'TEST_XLSX',status:'acquired',filename:'BLZ/2022/file.xlsx',requested_url:'https://example.test/file.xlsx',final_url:'https://example.test/file.xlsx',redirect_count:0,content_type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',sha256:digest}] }));
+    let fetchCalls=0;const result=await collectCensusSources({outDir:out,reuseDir:prior,manifest:manifest(),fetchImpl:async()=>{fetchCalls++;throw new Error('must not fetch');},now:()=>new Date('2026-09-15T01:02:03Z')});
+    assert.equal(fetchCalls,0);assert.equal(result.receipt.entries[0].sha256,digest);assert.equal(result.receipt.entries[0].reused_from.source_receipt_retrieved_at,'2026-09-14T00:00:00Z');
+  }finally{await rm(root,{recursive:true,force:true});}
 });
 
 test('collector writes immutable bytes and a hash receipt',async()=>{

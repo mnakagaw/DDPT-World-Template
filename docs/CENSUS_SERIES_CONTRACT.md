@@ -28,4 +28,4 @@ AreaDataの国別・国内地域診断は、各国統計機関が公表した国
 
 ## 中米7か国試作
 
-Belize、Guatemala、El Salvador、Honduras、Nicaragua、Costa Rica、Panamaを対象に、まず国別の最新利用可能な詳細国勢調査表を収集する。現在の世界アダプター由来のWDI値は`international_reference / context`として保持し、7か国すべての国勢調査値と定義を照合するまで国勢調査の地域合計を公開値にしない。部分収録中は確認済み国だけの値を「covered subtotal」と明示し、地域全体値・推計値・同一年値として扱わない。
+Belize、Guatemala、El Salvador、Honduras、Nicaragua、Costa Rica、Panamaを対象に、0.7で国別の採用可能な公式人口表を収集・正規化した。世界アダプター由来のWDI値は`international_reference / context`として分離している。国勢調査系列はBelize 2022、Guatemala 2018、El Salvador 2024、Honduras 2013、Nicaragua 2005、Costa Rica 2022、Panama 2023の正確な全国観測を構成値とし、混合基準年合計を作る。Costa Ricaは一部調査に補正を加えた公式推計として方法を保持する。Hondurasの自治体PDFにある不整合など、下位地域の欠測・保留値で全国観測を置き換えない。今後いずれかの全国観測が欠けた版では、確認済み国だけの値を「covered subtotal」と明示し、地域全体値・推計値・同一年値として扱わない。

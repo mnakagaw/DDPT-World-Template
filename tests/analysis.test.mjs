@@ -67,6 +67,15 @@ test('cities and base municipalities stop comparison even when lower wards exist
   for(const type of ['Municipio','commune','COMUNA','municipal-district'])assert.equal(isTerminalTerritory(data,{id:'sample',type,level:'custom'}),true);
   data.analysis.terminal_territory_ids.push('north');assert.equal(comparisonSet(data,'north').members.length,0);
 });
+test('an explicit country-adapter comparison can document a valid level below a municipality',()=>{
+  const data=analysisFixture();
+  data.analysis.comparisons.push({parent_id:'city',member_ids:['city-ward'],label:'Documented wards',membership_note:'Synthetic explicit lower membership.',source_ids:['membership']});
+  assert.equal(isTerminalTerritory(data,'city'),false);
+  assert.deepEqual(comparisonSet(data,'city').members.map(area=>area.id),['city-ward']);
+  data.analysis.terminal_territory_ids.push('city');
+  assert.equal(isTerminalTerritory(data,'city'),true);
+  assert.equal(comparisonSet(data,'city').members.length,0);
+});
 test('meaning metadata preserves values but excludes declared differences from comparison',()=>{
   for(const [field,value] of [['definition_id','another-concept'],['definition','Different definition'],['unit','thousands'],['population','Adults only'],['measurement_method','modeled']]) {
     const data=analysisFixture(),observation=data.observations.find(row=>row.territory_id==='municipality' && row.indicator_id==='people');

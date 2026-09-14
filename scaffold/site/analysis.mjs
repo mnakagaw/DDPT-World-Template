@@ -9,7 +9,12 @@ export const NO_COMPARISON_COLOR='#dce1e6';
 
 export function isTerminalTerritory(data,areaOrId) {
   const area=typeof areaOrId==='string'?list(data?.territories).find(item=>item?.id===areaOrId):areaOrId;
-  return !!area && (list(data?.analysis?.terminal_territory_ids).includes(area.id) || terminalTypes.has(normalized(area.type)) || terminalTypes.has(normalized(area.level)));
+  if(!area)return false;
+  if(list(data?.analysis?.terminal_territory_ids).includes(area.id))return true;
+  // Country adapters may document a valid lower comparison under a generic
+  // municipality type, such as El Salvador's post-2023 districts.
+  if(list(data?.analysis?.comparisons).some(item=>item?.parent_id===area.id&&list(item.member_ids).length))return false;
+  return terminalTypes.has(normalized(area.type)) || terminalTypes.has(normalized(area.level));
 }
 export function isDescendant(territories,childId,parentId) {
   const byId=new Map(list(territories).filter(Boolean).map(area=>[area.id,area])),seen=new Set([childId]);

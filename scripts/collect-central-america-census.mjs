@@ -1,8 +1,8 @@
 import {collectCensusSources} from '../lib/collect-census.mjs';
 import {parseArgs,isMain,reportError} from '../lib/cli.mjs';
 
-export async function collectCentralAmericaCensus({out}={}){
-  const result=await collectCensusSources({outDir:out||'.work/central-america-census'});
+export async function collectCentralAmericaCensus({out,reuse}={}){
+  const result=await collectCensusSources({outDir:out||'.work/central-america-census',reuseDir:reuse});
   const {summary}=result.receipt;
   console.log(`Census acquisition: ${summary.acquired}/${summary.requested} acquired; ${summary.required_failed} required failed.`);
   console.log(`Receipt: ${result.outDir}\\receipt.json`);
@@ -11,5 +11,5 @@ export async function collectCentralAmericaCensus({out}={}){
 }
 
 if(isMain(import.meta.url)){
-  try{const args=parseArgs(process.argv.slice(2),['out']);if(args.help)console.log('node scripts/collect-central-america-census.mjs --out .work/central-america-census-YYYY-MM-DD');else await collectCentralAmericaCensus({out:args.out});}catch(error){reportError(error);}
+  try{const args=parseArgs(process.argv.slice(2),['out','reuse']);if(args.help)console.log('node scripts/collect-central-america-census.mjs --out .work/central-america-census-YYYY-MM-DD [--reuse .work/prior-census-acquisition]');else await collectCentralAmericaCensus({out:args.out,reuse:args.reuse});}catch(error){reportError(error);}
 }

@@ -2,7 +2,7 @@
 
 **AreaDataの地域探索・データベース・計画資料と、国名を指定してDDPT型の国別ダッシュボードを作るための共通テンプレートです。**
 
-実行テンプレート：0.6.0。データschema：0.2（任意項目で後方互換を維持）。共通UX仕様：0.5 candidate（改善後のv1.0採用は別途検証）。
+実行テンプレート：0.7.0。データschema：0.2（任意項目で後方互換を維持）。共通UX仕様：0.5 candidate（改善後のv1.0採用は別途検証）。
 
 地域診断の上部には分析対象を選ぶ位置図・階層選択・基本情報を置き、下部の各指標には対象内部の比較地図・全件表を置く。上部で地域を選ぶとその全体を即時診断し、下部の図・行への注目は上部の対象・他指標・URLを変えない。市・県の後に同じ所属先のRegion／Subregionを選び直した場合も、下位を解除して上位全体へ切り替える。指標・年を保持し、親の値が未取得なら親の欠測を示す。[操作契約](docs/02_COMMON_SPEC.md)を参照。
 
@@ -35,7 +35,7 @@ START_HERE.mdから読み、取得可能な公式データの収集から、動�
 
 世界入口は2026-09-13の実取得で248の国・地域、4分野3,544公表値を保存した。世界値は公式WLD系列を使い、同一範囲の公式系列を取得していない大陸・広域は欠測を維持する。「Central America + Caribbean」はUN M49の013＋029を組み合わせた独自の探索区分で、Mexicoを含む。国際指標と国内統計の定義・単位・母集団を自動同一化しない。国版は別datasetとして接続し、国内行政階層・法定計画主体はその国の資料で確認する。参照図形に未結合・省略された79地域も台帳・表から消さない。[取得範囲と再現手順](docs/WORLD_ADAPTER.md)を参照。
 
-最初のAreaData公開試作は**中米7か国**（Belize、Guatemala、El Salvador、Honduras、Nicaragua、Costa Rica、Panama）。これはUN M49 013（Mexicoを含む）とは異なるAreaDataの明示的な試作範囲である。国別・国内地域診断は国勢調査を主系列にする。国際参照系列は7か国の同年・互換な全国観測が完全にそろう場合だけ別系列のAreaData計算値として合計する。国勢調査の調査年が違う場合は各国の年を構成表に明記し、「最新利用可能国勢調査による混合基準年」としてのみ合計できる。国の全国値があれば、その国内の自治体欠測は地域合計へ影響しない。率・平均は単純平均せず、不完全時は全体値を出さない。
+最初のAreaData公開試作は**中米7か国**（Belize、Guatemala、El Salvador、Honduras、Nicaragua、Costa Rica、Panama）。これはUN M49 013（Mexicoを含む）とは異なるAreaDataの明示的な試作範囲である。国別・国内地域診断は国勢調査を主系列にする。0.7では7か国の公式全国人口と採用可能な国内階層を取得・正規化した。国勢調査年が違うため、地域値は「最新利用可能国勢調査による混合基準年」とし、Belize 2022、Guatemala 2018、El Salvador 2024、Honduras 2013、Nicaragua 2005、Costa Rica 2022、Panama 2023を構成表に明記する。国の全国値があれば、その国内の自治体欠測は地域合計へ影響しない。率・平均は単純平均せず、不完全時は全体値を出さない。
 
 初期収集だけの状態は、地方統計・承認済み計画が揃った完成版ではありません。取得可能な国内資料を調べた結果と、未取得・未照合・未検証を残すことを作業手順で必須にしています。
 
@@ -61,12 +61,15 @@ node scripts/serve.mjs --dir generated/world/site --port 4173
 node scripts/create-world.mjs --source-dir generated/world/raw --out generated/world-replay
 node scripts/create-central-america.mjs --source-dir generated/world/raw --out generated/central-america
 npm run collect:census:central-america -- --out .work/central-america-census-YYYY-MM-DD
+npm run collect:census:honduras-municipal -- --root .work/central-america-census-YYYY-MM-DD
 python scripts/inspect-census-workbooks.py --root .work/central-america-census-YYYY-MM-DD
-python scripts/extract-central-america-census.py --root .work/central-america-census-YYYY-MM-DD
+npm run extract:census:central-america -- --root .work/central-america-census-YYYY-MM-DD
 node scripts/create-central-america.mjs --source-dir generated/world/raw --census-data .work/central-america-census-YYYY-MM-DD/normalized-census.json --out generated/central-america-with-census
+# 取得原本を使わず、保存済みの正規化版から再生成する場合
+node scripts/create-central-america.mjs --source-dir generated/world/raw --census-data data/census/central-america-population-v0.7.json --out generated/central-america-replay
 ```
 
-国勢調査原本の収集コマンドは、登録済みの公式HTTPS URLだけを取得し、ファイル署名・容量・リダイレクト先を検査してSHA-256付き`receipt.json`を作る。原本の再配布可否、表・変数の採用、地理コード・境界との対応は別の審査であり、取得成功だけでサイトへ値を入れない。現在の取得manifestは最初の実装対象であるBelizeとGuatemalaを収録し、残る5か国は公式ファイルを確認してから追加する。
+国勢調査原本の収集コマンドは、登録済みの公式HTTPS URLだけを取得し、ファイル署名・容量・リダイレクト先を検査してSHA-256付き`receipt.json`を作る。現在のmanifestは7か国12資料、別のHonduras取得器は公式WordPress台帳から298自治体PDFを発見・重複排除して保存する。`--reuse <以前の取得ディレクトリ>`でハッシュ一致原本を再利用できる。原本の再配布可否、表・変数の採用、地理コード・境界との対応は別の審査であり、取得成功だけでサイトへ値を入れない。[再利用用の正規化人口データ](data/census/README.md)は原本を含まず、出典・ハッシュ・年・方法・不整合を保持する。Public化前に`terms_review_required`の利用条件を確認する。
 
 地方データと資料を`data/dashboard.json`へ統合した後は、テンプレートから次を実行します。
 
@@ -91,6 +94,7 @@ START_HERE.md             新しいAI案件の入口
 lib/                     収集、検証、生成、CLI共通処理
 scripts/                 初期生成、再構築、検証、ローカル配信
 config/                  世界の所属・指標・参照境界設定、取得検証receipt
+data/census/              再生成用の出典付き正規化国勢調査データ
 scaffold/site/           DDPT型画面の共通実装
 prompts/                 国名だけで始める依頼文
 docs/                    共通仕様、国別適応、公式資料収集手順
@@ -105,7 +109,7 @@ npm run check
 npm test
 ```
 
-CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)、ベリーズ・グアテマラ国勢調査の実収集と部分統合は[0.6検証記録](docs/VALIDATION_v0.6.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
+CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)、ベリーズ・グアテマラ国勢調査の実収集と部分統合は[0.6検証記録](docs/VALIDATION_v0.6.md)、7か国の公式人口・国内階層・混合基準年集計は[0.7検証記録](docs/VALIDATION_v0.7.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
 
 ## 維持するモデル
 

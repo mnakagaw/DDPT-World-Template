@@ -22,7 +22,7 @@ The entry hierarchy is:
 2. the seven source-identified countries;
 3. verified country administrative hierarchies added by separate country adapters.
 
-This pilot tests common behavior before scaling to Latin America and the world. Six countries reuse the existing Latin America source-location research; Belize has a separately verified official 2022 census portal. Source locations for all seven countries are written to the generated census preflight. None is treated as acquired municipal statistics until its original tables, codes and geography have been archived and checked.
+This pilot tests common behavior before scaling to Latin America and the world. Version 0.7 acquired 12 allowlisted official products plus the 298-report Honduras municipal collection, verified hashes and normalized all seven exact national population observations. It also adopted the source-supported subnational layers: Belize districts; Guatemala, Honduras and Nicaragua municipalities; El Salvador districts under its post-2023 municipalities; Costa Rica cantons; and Panama corregimientos. These records still do not assert that compatible polygons or planning materials have been joined.
 
 Official national censuses are the primary series for country and subnational diagnosis. Same-year World Bank or other international values remain a separate reference series for cross-country context. Different census years are permitted and must be shown for every component; a mixed-year census sum is never labelled as a same-year total. See [CENSUS_SERIES_CONTRACT.md](CENSUS_SERIES_CONTRACT.md).
 
@@ -39,7 +39,7 @@ Every indicator declares whether it can be aggregated. The runtime uses this ord
 
 This means missing municipalities have no effect on a Latin America calculation when their country’s exact nationwide value is available. If a nationwide value is missing, the system may use provinces only when every province is covered. It never fills a missing country with a selection of available cities.
 
-Population is the only calculated indicator in the first pilot. The current international reference series uses a single selected year. A later census total may use the latest usable year in each country only under the explicit mixed-period rule and with every component year visible. Percentages are never averaged. A regional rate requires compatible numerator and denominator totals. Life expectancy and other non-additive measures require a separately approved weighted method and compatible weights; otherwise they remain unavailable. Source-reported and AreaData-calculated values receive different status labels in the screen and downloads.
+Population is the only calculated indicator in the first pilot. The international reference series uses a single selected year. The census layer uses the latest adopted source year in each country under the explicit mixed-period rule and displays every component year. Version 0.7 calculates the seven-country population from the seven exact national observations; it never rebuilds that total from the 2,000-plus lower-area rows. Percentages are never averaged. A regional rate requires compatible numerator and denominator totals. Life expectancy and other non-additive measures require a separately approved weighted method and compatible weights; otherwise they remain unavailable. Source-reported and AreaData-calculated values receive different status labels in the screen and downloads.
 
 ## Scale checkpoints
 
