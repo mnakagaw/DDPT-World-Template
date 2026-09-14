@@ -109,6 +109,8 @@ CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2
 
 [ウガンダ2案件の14教訓](docs/research/uganda-lessons-2026-09-14.md)を国別作業手順へ反映した。原資料の全項目棚卸し、付表・地域報告書の探索、代表地域での事前確認、同じ上位への再選択、計画様式の必要欄、実出力と性能を[12観点の補助確認票](templates/COUNTRY_LESSON_AUDIT.md)で確認する。AIが案件ごとの証拠と判定を記入する手順であり、12観点の自動検査実装や合格を意味しない。
 
+[DDPT・ウガンダ公開版の3ページ比較](docs/research/ddpt-uganda-template-comparison-2026-09-14.md)では、ユーザビリティと国別制作の容易性、共通図表、計画資料、投資情報の段階的な搭載を検討した。2026-09-14の公開画面と実装構造に基づく提案であり、共通UXの採用決定や実装変更ではない。
+
 - [共通デザイン・機能仕様C01～C07](docs/02_COMMON_SPEC.md)
 - [国別設定とデータ条件](docs/03_COUNTRY_AND_DATA.md)
 - [公式資料のアダプター追加](docs/SOURCE_ADAPTER_GUIDE.md)
