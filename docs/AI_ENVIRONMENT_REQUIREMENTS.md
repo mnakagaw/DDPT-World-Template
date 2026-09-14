@@ -4,13 +4,15 @@
 
 Public GitHubから別の利用者が制作する場合を想定した仕様案。契約購入、リポジトリのPublic化、3製品での国別制作試験は今回実施していない。ここでいう「対応候補」は公式機能と必要条件の一致であり、「動作認証済み」ではない。
 
+**訂正（2026-09-14）**：初版は残存するGemini CLIの料金資料を使い、個人ログインの移行を見落とした。Google公式は2026-06-18から個人無料・AI Pro・Ultra向けGemini CLIの提供終了とAntigravityへの移行を案内している。個人向けの表・上限・入口を以下のとおり訂正した。[Google公式移行告知](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/)。初心者は[Geminiで作る開始手順](GET_STARTED_WITH_GEMINI.md)を参照。
+
 ## 1. 適用する制作方式
 
-比較対象は **Gemini CLI、Claude Code、Codexのローカル開発環境**。リポジトリを読み、ファイルを編集し、コマンド・データ取得・検証を実行できる構成である。各社の通常Webチャットへリンクを貼ることだけを、環境要件の充足とはしない。GUIを選ぶ場合も、同じローカル作業と検証ができることを確認する。
+比較対象は **Google Antigravity（Gemini）、Claude Code、Codexのローカル開発環境**。リポジトリを読み、ファイルを編集し、コマンド・データ取得・検証を実行できる構成である。各社の通常Webチャットへリンクを貼ることだけを、環境要件の充足とはしない。Googleの初心者向け入口はAntigravity 2.0アプリとする。
 
 本人が指示して進める制作を対象とし、GitHub Actionsや外部SDKから多数の国を無人生成するサービスの契約・料金は別途確認する。
 
-各社の公式な実行入口：[Gemini CLI](https://geminicli.com/docs/get-started/installation/)、[Claude Code](https://code.claude.com/docs/en/setup)、[Codex CLI](https://learn.chatgpt.com/docs/codex/cli)。クラウド版を使う場合は、外部サイトへの通信、ファイル保存、プレビュー、必要ツール、再開時の永続化を別途確認する。
+各社の公式な実行入口：[Google Antigravity](https://antigravity.google/docs/getting-started)、[Claude Code](https://code.claude.com/docs/en/setup)、[Codex CLI](https://learn.chatgpt.com/docs/codex/cli)。クラウド版を使う場合は、外部サイトへの通信、ファイル保存、プレビュー、必要ツール、再開時の永続化を別途確認する。
 
 ## 2. 最低契約と継続作業の候補
 
@@ -18,17 +20,18 @@ Public GitHubから別の利用者が制作する場合を想定した仕様案�
 
 | 実行ツール | 月額契約で開始する最低条件 | 継続制作の候補（本プロジェクトの推奨、性能保証ではない） | 注意 |
 |---|---|---|---|
-| Gemini CLI | 対象となる個人Googleアカウントの無料枠 | 無料枠から試し、上限で中断が多ければGoogle AI Pro：日本2,900円/月、米国$19.99/月 | 個人用と組織アカウントは認証・ライセンス条件が違う |
+| Google Antigravity（Gemini） | 対象となる個人Googleアカウントの無料枠 | 無料枠から試し、継続制作にはGoogle AI Pro：日本2,900円/月、米国$19.99/月 | Pro契約と同じGoogleアカウントでアプリへログイン。個人用と組織用の条件を区別 |
 | Claude Code | Claude Pro：$20/月（月払い） | Proから開始。中断削減が必要ならMax（$100/月から）または追加従量利用 | 無料ClaudeプランにはClaude Codeを含まない |
 | Codex | ChatGPT Free：$0/月 | ChatGPT Plus：$20/月を標準試作候補。中断削減が必要ならPro（$100/月から）または追加クレジット | Freeは短い試験用候補。Go $8/月もあるが、国別制作の十分な容量とは未検証 |
 
-契約根拠：[Gemini CLIプラン](https://geminicli.com/plans/)、[Google日本料金](https://gemini.google/jp/subscriptions/?hl=ja)、[Google米国料金](https://gemini.google/subscriptions/)、[Claude料金](https://claude.com/pricing)、[Codex料金](https://learn.chatgpt.com/docs/pricing)。
+契約根拠：[Antigravityプラン](https://antigravity.google/docs/plans)、[Google日本料金](https://gemini.google/jp/subscriptions/?hl=ja)、[Google米国料金](https://gemini.google/subscriptions/)、[Claude料金](https://claude.com/pricing)、[Codex料金](https://learn.chatgpt.com/docs/pricing)。
 
 API経由の従量課金は別経路であり、月額Pro等を必須としない構成もある。各社ともAPI利用資格・課金設定・上限を別に確認する。上表は月額契約／無料ログイン経路の比較で、「最低月額＝1か国を完成させる総費用」ではない。テンプレートの初期収集・生成自体にはAI APIキーを要求しない。
 
 ### 使用量の見方
 
-- **Gemini CLI**：公式CLI資料はGoogle個人ログインで最大1,000モデル要求/日、AI Proは1,500、Ultraは2,000と記載。1回の制作依頼の中で複数のモデル要求を使う。Google AI PlusはCLIの有料上限拡張対象として記載されていない。Webアプリでの「4倍／5倍」等をCLI要求数へ換算しない。[CLI上限](https://geminicli.com/docs/resources/quota-and-pricing/)、[要求の数え方](https://docs.cloud.google.com/gemini/docs/quotas)
+- **Google Antigravity**：Proは5時間ごとの枠と週上限があり、作業量等で消費が変わる。無料枠は週単位。旧Gemini CLIの1,000／1,500要求という値を転用しない。追加クレジットの自動使用を避ける構成では`AI Credit Overages`を`Never`にする。[現行プラン・上限](https://antigravity.google/docs/plans)
+- **旧Gemini CLI**：個人無料・Pro・Ultraのログインを本仕様の開始経路にしない。企業のCode Assistライセンスと有料APIキーの経路は移行告知で別扱いになっている。[移行範囲](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/)
 - **Claude**：会話とCodeで利用枠を共有し、5時間枠と有料プランの週枠がある。資料量、モデル、会話の長さ等で消費が変わる。Proでも作業を複数回に分ける可能性がある。[利用枠の説明](https://claude.com/pricing)
 - **Codex**：モデル・推論・文脈・ツール等で消費が変わる。公式の5時間当たり件数は目安で、週制限もあり得る。Plusを無制限と扱わない。[利用枠の説明](https://learn.chatgpt.com/docs/pricing)
 
@@ -49,7 +52,7 @@ API経由の従量課金は別経路であり、月額Pro等を必須としな�
 | アカウント | 使用者本人のAIアカウントと、その利用地・年齢等の資格 | Publicリポジトリの読取だけにGitHub有料契約は要求しない。fork/pushや配備は本人の権限・アカウントを用意 |
 | 公開 | ローカル制作と分けて保存先・提供範囲を指定 | ホスティング・ドメイン・実行時AI APIの費用は上のAI月額に含めない |
 
-RAM等の数値は本案件向けの推奨でありメーカーの一律最低要件ではない。参考としてGemini CLI公式は長い作業に16GB以上、Claude Code公式は4GB以上を記載している。[Gemini環境要件](https://geminicli.com/docs/get-started/installation/)、[Claude環境要件](https://code.claude.com/docs/en/setup)
+RAM等の数値は本案件向けの推奨でありメーカーの一律最低要件ではない。AntigravityのOS条件は[ダウンロードページ](https://antigravity.google/download)、Claude Codeの条件は[セットアップ資料](https://code.claude.com/docs/en/setup)で確認する。必要ソフトはAIが既存環境を調べ、公式配布元から導入することもできる。ユーザー領域を優先し、OSや端末管理者の許可が必要な場合はその操作を利用者へ具体的に案内する。
 
 ブラウザー自動化の候補には、複数クライアントへ接続できる[Microsoft Playwright MCP](https://github.com/microsoft/playwright-mcp)がある。採用時は実際の接続、スクリーンショット閲覧、ダウンロード保存、印刷の検査まで試す。ツールが存在することだけで検証環境を合格にしない。
 
@@ -76,7 +79,7 @@ RAM等の数値は本案件向けの推奨でありメーカーの一律最低�
 
 どの製品にも、README、START_HERE、AGENTS、COUNTRY_AGENT_WORKFLOW、共通契約を明示的に読ませる。各製品が同じファイルを自動で読むと仮定しない。
 
-Claude Codeは[CLAUDE.md等の指示読込](https://code.claude.com/docs/en/memory)、Gemini CLIは[GEMINI.mdによる文脈設定](https://geminicli.com/docs/cli/gemini-md/)を備える。現行リポジトリの入口はAGENTS.md中心であるため、Public配布を整える際はCLAUDE.md・GEMINI.mdから共通文書へ案内する薄い入口を追加する案がある。仕様本文は複製せず共通文書へ集約する。本調査では入口ファイルは追加していない。
+現行リポジトリの入口はAGENTS.md中心である。製品固有のルール読込にだけ依存せず、開始プロンプトで共通文書を明示する。Public配布を整える際は各製品の現行ルール方式から共通文書へ案内する薄い入口を追加できる。仕様本文は複製せず共通文書へ集約する。本調査では入口ファイルは追加していない。
 
 ```text
 https://github.com/mnakagaw/DDPT-World-Template を使って［国名］版を作って。
@@ -99,9 +102,9 @@ README.md、START_HERE.md、AGENTS.md、docs/COUNTRY_AGENT_WORKFLOW.mdを明示�
 
 ### 現在の判定
 
-- Gemini CLI、Claude Code、Codexは必要機能を備え得る**対応候補**。
+- Google Antigravity、Claude Code、Codexは必要機能を備え得る**対応候補**。
 - 本テンプレートを3製品で同条件制作した比較試験は**未実施**。料金表の確認だけで「認証済み最低プラン」とは呼ばない。
-- 配布時の案内候補：**無料試作はGemini CLIまたはCodex Free、継続制作はClaude Pro／ChatGPT Plus／必要に応じたGoogle AI Pro**。最上位契約を一律必須にしない。
+- 配布時の案内候補：**無料試作はAntigravityまたはCodex Free、継続制作はGoogle AI Pro／Claude Pro／ChatGPT Plus**。最上位契約を一律必須にしない。
 - [DDPT・ウガンダの比較提案](research/ddpt-uganda-template-comparison-2026-09-14.md)の図表拡張は未実装。本書を追加しても、その完成やPublic化を意味しない。
 
 文書追加時の確認：2026-09-14、Windows、本書冒頭のcommit＋本書・README差分。`npm run check`で35モジュールとJSONテンプレートを確認、`npm test`で114件合格。これはテンプレートの既存検査結果であり、3社の最低プラン・制作結果を認証する試験ではない。

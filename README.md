@@ -111,7 +111,9 @@ CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2
 
 [DDPT・ウガンダ公開版の3ページ比較](docs/research/ddpt-uganda-template-comparison-2026-09-14.md)では、ユーザビリティと国別制作の容易性、共通図表、計画資料、投資情報の段階的な搭載を検討した。2026-09-14の公開画面と実装構造に基づく提案であり、共通UXの採用決定や実装変更ではない。
 
-[AI契約・実行環境・再現性の要求仕様案](docs/AI_ENVIRONMENT_REQUIREMENTS.md)は、Public配布を想定したGemini CLI／Claude Code／Codexの最低契約、推奨環境、共通の受入条件をまとめた。料金・条件は2026-09-14の公式情報。3製品での比較制作試験とリポジトリのPublic化は未実施。
+[AI契約・実行環境・再現性の要求仕様案](docs/AI_ENVIRONMENT_REQUIREMENTS.md)は、Public配布を想定したGoogle Antigravity（Gemini）／Claude Code／Codexの最低契約、推奨環境、共通の受入条件をまとめた。料金・条件は2026-09-14の公式情報。個人向けGemini CLI終了の移行告知に基づきGoogleの入口を訂正した。3製品での比較制作試験とリポジトリのPublic化は未実施。
+
+Google AI Proを使う初心者向けには、[Geminiで作る開始手順](docs/GET_STARTED_WITH_GEMINI.md)にAntigravityアプリの初回設定、必要ソフトの導入もAIへ任せる開始プロンプト、再開方法を記載した。新規PCでの一連の実機試験は未実施。
 
 - [共通デザイン・機能仕様C01～C07](docs/02_COMMON_SPEC.md)
 - [国別設定とデータ条件](docs/03_COUNTRY_AND_DATA.md)
