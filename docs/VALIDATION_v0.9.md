@@ -27,3 +27,5 @@
 - FTPS: `.work/ftp-deployment-areadata-v0.9.0-census-history-published-2026-09-15.json`。生成サイト18ファイルを`/domains/areadata.net/public_html`へ配置し、18ファイルを退避した。既存の`cgi-bin/.htaccess`は変更していない。
 - 公開HTTP: `.work/public-verification-areadata-v0.9.0-census-history-published-2026-09-15.json`。`.htaccess`を除く17ファイルを`https://areadata.net/`から取得し、17/17で公開内容と生成物のbyte一致を確認した。
 - 公開ブラウザ: `https://areadata.net/?lang=ja&release=0.9.0`で「中米7か国」のアクセント表示、世界地図と中米拡大図、鮮度色、7か国の調査履歴と公式リンクを目視確認した。
+- 入口の全体選択: commit `f82f9df`で国一覧の先頭へ「中米7か国すべて」を追加した。ベリーズを選択した状態からこの行を操作し、URL、見出し、選択地域、人口値、7か国の内部比較が`CUSTOM:CA7`へ切り替わることを公開ブラウザで確認した。
+- 追加公開: `.work/ftp-deployment-areadata-v0.9.0-all-seven-selection-2026-09-15.json`で18ファイルをFTPS配置した。`.work/public-verification-areadata-v0.9.0-all-seven-selection-2026-09-15.json`は公開17/17ファイルのbyte一致を記録した。
