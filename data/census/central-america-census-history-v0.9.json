@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "scope_id": "CUSTOM:CA7",
+  "as_of_year": 2026,
+  "checked_at": "2026-09-15",
+  "countries": [
+    {
+      "country_id": "BLZ",
+      "names": {"en": "Belize", "es": "Belice", "ja": "ベリーズ"},
+      "adopted_data_year": 2022,
+      "adopted_source_url": "https://sib.org.bz/census/2022-census/",
+      "official_census_url": "https://sib.org.bz/census/2022-census/",
+      "recent_rounds": [
+        {"year": 2022, "status": "results_adopted", "url": "https://sib.org.bz/census/2022-census/"},
+        {"year": 2010, "status": "historical_round", "url": "https://sib.org.bz/census/census-history-in-belize/"},
+        {"year": 2000, "status": "historical_round", "url": "https://sib.org.bz/census/census-history-in-belize/"}
+      ],
+      "note": {"en": "The 2022 census is the adopted AreaData source.", "es": "El censo de 2022 es la fuente adoptada por AreaData.", "ja": "AreaDataでは2022年Censusを採用しています。"}
+    },
+    {
+      "country_id": "GTM",
+      "names": {"en": "Guatemala", "es": "Guatemala", "ja": "グアテマラ"},
+      "adopted_data_year": 2018,
+      "adopted_source_url": "https://censo2018.ine.gob.gt/archivos/resultados_censo2018.pdf",
+      "official_census_url": "https://censo2018.ine.gob.gt/explorador",
+      "recent_rounds": [
+        {"year": 2018, "status": "results_adopted", "url": "https://censo2018.ine.gob.gt/explorador"},
+        {"year": 2002, "status": "historical_round", "url": "https://censo2018.ine.gob.gt/archivos/resultados_censo2018.pdf"},
+        {"year": 1994, "status": "historical_round", "url": "https://censo2018.ine.gob.gt/archivos/resultados_censo2018.pdf"}
+      ],
+      "note": {"en": "The 2018 census is the adopted AreaData source.", "es": "El censo de 2018 es la fuente adoptada por AreaData.", "ja": "AreaDataでは2018年Censusを採用しています。"}
+    },
+    {
+      "country_id": "SLV",
+      "names": {"en": "El Salvador", "es": "El Salvador", "ja": "エルサルバドル"},
+      "adopted_data_year": 2024,
+      "adopted_source_url": "https://censo2024.bcr.gob.sv/",
+      "official_census_url": "https://censo2024.bcr.gob.sv/",
+      "recent_rounds": [
+        {"year": 2024, "status": "results_adopted", "url": "https://censo2024.bcr.gob.sv/"},
+        {"year": 2007, "status": "historical_round", "url": "https://censo2024.bcr.gob.sv/quienessomos/"},
+        {"year": 1992, "status": "historical_round", "url": "https://censo2024.bcr.gob.sv/quienessomos/"}
+      ],
+      "note": {"en": "The 2024 census is the adopted AreaData source.", "es": "El censo de 2024 es la fuente adoptada por AreaData.", "ja": "AreaDataでは2024年Censusを採用しています。"}
+    },
+    {
+      "country_id": "HND",
+      "names": {"en": "Honduras", "es": "Honduras", "ja": "ホンジュラス"},
+      "adopted_data_year": 2013,
+      "adopted_source_url": "https://ine.gob.hn/censo-de-poblacion-y-vivienda-2013/",
+      "official_census_url": "https://ine.gob.hn/2026/05/05/honduras-impulsa-el-censo-de-poblacion-y-vivienda-2026-como-pilar-estrategico-para-el-desarrollo-nacional/",
+      "recent_rounds": [
+        {"year": 2013, "status": "results_adopted", "url": "https://ine.gob.hn/censo-de-poblacion-y-vivienda-2013/"},
+        {"year": 2001, "status": "historical_round", "url": "https://ine.gob.hn/censo-de-poblacion-y-vivienda-2013/"},
+        {"year": 1988, "status": "historical_round", "url": "https://ine.gob.hn/censo-de-poblacion-y-vivienda-2013/"}
+      ],
+      "upcoming": {"year": 2026, "status": "preparation", "url": "https://ine.gob.hn/2026/05/05/honduras-impulsa-el-censo-de-poblacion-y-vivienda-2026-como-pilar-estrategico-para-el-desarrollo-nacional/"},
+      "note": {"en": "AreaData uses 2013 results. An official 2026 preparation notice is registered, but no 2026 results are integrated.", "es": "AreaData usa los resultados de 2013. Se registra un aviso oficial de preparación para 2026, pero no se integran resultados de 2026.", "ja": "AreaDataは2013年結果を使用しています。2026年調査の準備情報は確認済みですが、2026年結果は未統合です。"}
+    },
+    {
+      "country_id": "NIC",
+      "names": {"en": "Nicaragua", "es": "Nicaragua", "ja": "ニカラグア"},
+      "adopted_data_year": 2005,
+      "adopted_source_url": "https://www.inide.gob.ni/docu/censos2005/censo2005.htm",
+      "official_census_url": "https://www.inide.gob.ni/Estadisticas/censoCEPOV",
+      "recent_rounds": [
+        {"year": 2024, "status": "round_reported_results_not_integrated", "url": "https://www.inide.gob.ni/Estadisticas/censoCEPOV"},
+        {"year": 2005, "status": "results_adopted", "url": "https://www.inide.gob.ni/docu/censos2005/censo2005.htm"},
+        {"year": 1995, "status": "historical_round", "url": "https://www.inide.gob.ni/docu/censo95/censo95.htm"}
+      ],
+      "note": {"en": "A 2024 census round is registered, but AreaData has not verified or integrated detailed 2024 results; the adopted detailed source remains 2005.", "es": "Se registra una ronda censal de 2024, pero AreaData no ha verificado ni integrado resultados detallados de 2024; la fuente detallada adoptada sigue siendo 2005.", "ja": "2024年のCensus実施情報はありますが、AreaDataでは詳細結果を未確認・未統合のため、2005年の詳細データを採用しています。"}
+    },
+    {
+      "country_id": "CRI",
+      "names": {"en": "Costa Rica", "es": "Costa Rica", "ja": "コスタリカ"},
+      "adopted_data_year": 2022,
+      "adopted_source_url": "https://admin.inec.cr/estimaciones-poblacion-vivienda-2022",
+      "official_census_url": "https://admin.inec.cr/estimaciones-poblacion-vivienda-2022",
+      "recent_rounds": [
+        {"year": 2022, "status": "official_corrected_estimate_adopted", "url": "https://admin.inec.cr/estimaciones-poblacion-vivienda-2022"},
+        {"year": 2011, "status": "historical_round", "url": "https://inec.cr/wwwisis/documentos/INEC/Censos/2011_Censo_Nacional_Poblacion_Vivienda/Resultados/Censo_2011_Resultados_Generales.pdf"},
+        {"year": 2000, "status": "historical_round", "url": "https://admin.inec.cr/estadisticas-fuentes/censos/censo-2000"}
+      ],
+      "note": {"en": "AreaData uses INEC's official 2022 corrected population and housing estimate; the census operation had partial coverage.", "es": "AreaData usa la estimación oficial corregida de población y vivienda 2022 del INEC; el operativo censal tuvo cobertura parcial.", "ja": "2022年調査は部分的な被覆だったため、AreaDataではINECの公式補正人口・住宅推計を採用しています。"}
+    },
+    {
+      "country_id": "PAN",
+      "names": {"en": "Panama", "es": "Panamá", "ja": "パナマ"},
+      "adopted_data_year": 2023,
+      "adopted_source_url": "https://www.inec.gob.pa/publicaciones/Default3.aspx?ID_CATEGORIA=19&ID_PUBLICACION=1231",
+      "official_census_url": "https://www.inec.gob.pa/",
+      "recent_rounds": [
+        {"year": 2023, "status": "results_adopted", "url": "https://www.inec.gob.pa/publicaciones/Default3.aspx?ID_CATEGORIA=19&ID_PUBLICACION=1231"},
+        {"year": 2010, "status": "historical_round", "url": "https://www.inec.gob.pa/"},
+        {"year": 2000, "status": "historical_round", "url": "https://www.inec.gob.pa/"}
+      ],
+      "note": {"en": "The 2023 census is the adopted AreaData source.", "es": "El censo de 2023 es la fuente adoptada por AreaData.", "ja": "AreaDataでは2023年Censusを採用しています。"}
+    }
+  ]
+}

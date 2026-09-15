@@ -1,5 +1,7 @@
 # Reusable normalized census data
 
+`central-america-census-history-v0.9.json` records the AreaData-adopted census data year, around three recent census rounds, official census links, and preparation or not-yet-integrated states for the seven pilot countries. The adopted year must match the active national population observation. Map recency colors are calculated from that adopted year; a newer announced or conducted round does not change the color until its results are verified and integrated.
+
 `central-america-population-v0.7.json` is the generated, source-linked population layer for the seven-country Central America pilot. It contains national and adopted subnational observations, geography identities, comparison memberships, source hashes, source URLs, periods, methods and reconciliation findings. It does not contain the acquired XLSX/PDF originals.
 
 The file can be passed directly to the regional generator:

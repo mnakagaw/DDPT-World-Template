@@ -221,7 +221,7 @@ test('generator writes five independent portable pages, same data and local-only
     await mkdir(path.join(directory,'data'));await writeFile(path.join(directory,'data','dashboard.json'),'canonical sentinel');
     await mkdir(path.join(directory,'site'));await writeFile(path.join(directory,'site','unrelated.txt'),'preserve');
     const data=fixture(),result=await generateSite({dataset:data,outDir:directory});
-    assert.equal(result.files.length,17);
+    assert.equal(result.files.length,18);
     assert.match(await readFile(path.join(result.siteDir,'.htaccess'),'utf8'),/AddType text\/javascript \.mjs/);
     assert.deepEqual(JSON.parse(await readFile(path.join(result.siteDir,'data','dashboard.json'),'utf8')),data);
     assert.equal(await readFile(path.join(directory,'data','dashboard.json'),'utf8'),'canonical sentinel');
@@ -239,6 +239,8 @@ test('generator writes five independent portable pages, same data and local-only
       assert.doesNotMatch(html,/<script[^>]+src="https?:/);
     }
     const app=await readFile(path.join(result.siteDir,'assets','app.mjs'),'utf8');
+    assert.match(app,/census-history\.mjs\?v=/);
+    assert.match(await readFile(path.join(result.siteDir,'assets','census-history.mjs'),'utf8'),/censusRecencyColor/);
     for(const file of result.files.filter(file=>file.endsWith('.mjs'))) {
       const source=await readFile(file,'utf8');
       for(const match of source.matchAll(/\bfrom\s*['"](\.\/[^'"]+)['"]/g)) {

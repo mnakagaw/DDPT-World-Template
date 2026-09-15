@@ -4,6 +4,7 @@ import path from 'node:path';
 import {collectWorld} from '../lib/collect-world.mjs';
 import {buildRegionalPilot,buildCensusPilotPreflight,renderCensusPilotPreflight} from '../lib/regional-pilot.mjs';
 import {loadNormalizedCensus,mergeCensusPilot,updateCensusPreflight,renderCensusAdapterAudit} from '../lib/census-pilot-adapter.mjs';
+import {loadCensusHistory,mergeCensusHistory} from '../lib/census-history-adapter.mjs';
 import {loadNormalizedUnPopulation,mergeUnPopulation} from '../lib/un-population-adapter.mjs';
 import {loadSourceCatalog} from '../lib/source-catalog.mjs';
 import {generateSite} from '../lib/generate.mjs';
@@ -11,7 +12,7 @@ import {validateDataset} from '../lib/validate.mjs';
 import {parseArgs,isMain,reportError} from '../lib/cli.mjs';
 import {readTemplateReference} from './create-country.mjs';
 
-export async function createCentralAmerica({out,sourceDir,censusData,unPopulationData}={}) {
+export async function createCentralAmerica({out,sourceDir,censusData,censusHistoryData,unPopulationData}={}) {
   if(!sourceDir)throw new Error('--source-dir must point to a verified world raw archive.');
   const outDir=path.resolve(out||'generated/central-america');
   try{await lstat(outDir);throw new Error(`Output already exists; choose a new directory: ${outDir}`);}catch(error){if(error.code!=='ENOENT')throw error;}
@@ -19,8 +20,14 @@ export async function createCentralAmerica({out,sourceDir,censusData,unPopulatio
   try{
     const world=await collectWorld({rawDir:path.join(outDir,'raw'),sourceDir:path.resolve(sourceDir),onProgress:message=>console.log(message)});
     const normalized=censusData?await loadNormalizedCensus(path.resolve(censusData)):null;
+    const censusHistory=censusHistoryData?await loadCensusHistory(path.resolve(censusHistoryData)):null;
     const normalizedUn=unPopulationData?await loadNormalizedUnPopulation(path.resolve(unPopulationData)):null;
     let dataset=normalized?mergeCensusPilot(buildRegionalPilot(world),normalized):buildRegionalPilot(world);
+    if(censusHistory){
+      const countryIds=new Set(world.territories.filter(area=>area.level==='country').map(area=>area.id));
+      const referenceBoundaries={type:'FeatureCollection',features:(world.boundaries?.features||[]).filter(feature=>countryIds.has(feature.properties?.territory_id))};
+      dataset=mergeCensusHistory(dataset,censusHistory,referenceBoundaries);
+    }
     if(normalizedUn)dataset=mergeUnPopulation(dataset,normalizedUn);
     const validation=validateDataset(dataset),content=JSON.stringify(dataset,null,2)+'\n';
     const censusPlan=normalized?updateCensusPreflight(buildCensusPilotPreflight(await loadSourceCatalog()),normalized):buildCensusPilotPreflight(await loadSourceCatalog());
@@ -30,6 +37,7 @@ export async function createCentralAmerica({out,sourceDir,censusData,unPopulatio
     await writeFile(path.join(outDir,'evidence/CENSUS_SOURCE_PREFLIGHT.json'),JSON.stringify(censusPlan,null,2)+'\n');
     await writeFile(path.join(outDir,'evidence/CENSUS_SOURCE_PREFLIGHT.md'),renderCensusPilotPreflight(censusPlan));
     if(normalized){await writeFile(path.join(outDir,'evidence/CENSUS_NORMALIZATION.json'),JSON.stringify(normalized,null,2)+'\n');await writeFile(path.join(outDir,'evidence/CENSUS_ADAPTER_AUDIT.md'),renderCensusAdapterAudit(normalized));}
+    if(censusHistory)await writeFile(path.join(outDir,'evidence/CENSUS_HISTORY.json'),JSON.stringify(censusHistory,null,2)+'\n');
     if(normalizedUn)await writeFile(path.join(outDir,'evidence/UN_WPP_POPULATION_NORMALIZATION.json'),JSON.stringify(normalizedUn,null,2)+'\n');
     if(validation.errors.length)throw new Error(`Central America pilot failed validation: ${validation.errors.join('; ')}`);
     await generateSite({dataset,outDir});
@@ -48,5 +56,5 @@ export async function createCentralAmerica({out,sourceDir,censusData,unPopulatio
 }
 
 if(isMain(import.meta.url)){
-  try{const args=parseArgs(process.argv.slice(2),['out','source-dir','census-data','un-population-data']);if(args.help)console.log('node scripts/create-central-america.mjs --source-dir previous-world/raw --census-data acquisition/normalized-census.json --un-population-data data/international/un-wpp2024-central-america-population.json --out generated/central-america');else await createCentralAmerica({out:args.out,sourceDir:args['source-dir'],censusData:args['census-data'],unPopulationData:args['un-population-data']});}catch(error){reportError(error);}
+  try{const args=parseArgs(process.argv.slice(2),['out','source-dir','census-data','census-history-data','un-population-data']);if(args.help)console.log('node scripts/create-central-america.mjs --source-dir previous-world/raw --census-data acquisition/normalized-census.json --census-history-data data/census/central-america-census-history-v0.9.json --un-population-data data/international/un-wpp2024-central-america-population.json --out generated/central-america');else await createCentralAmerica({out:args.out,sourceDir:args['source-dir'],censusData:args['census-data'],censusHistoryData:args['census-history-data'],unPopulationData:args['un-population-data']});}catch(error){reportError(error);}
 }
