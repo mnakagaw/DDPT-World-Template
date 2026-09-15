@@ -226,13 +226,16 @@ test('generator writes five independent portable pages, same data and local-only
     assert.deepEqual(JSON.parse(await readFile(path.join(result.siteDir,'data','dashboard.json'),'utf8')),data);
     assert.equal(await readFile(path.join(directory,'data','dashboard.json'),'utf8'),'canonical sentinel');
     assert.equal(await readFile(path.join(result.siteDir,'unrelated.txt'),'utf8'),'preserve');
+    const expectedVersion=JSON.parse(await readFile(new URL('../package.json',import.meta.url),'utf8')).version;
     for(const page of ['home','territorial','thematic','database','planning']) {
       const html=await readFile(path.join(result.siteDir,page==='home'?'':page,'index.html'),'utf8');
       assert.match(html,new RegExp(`data-page="${page}"`));assert.match(html,/Content-Security-Policy/);
       assert.match(html,/data-language="en"/);assert.match(html,/data-language="es"/);assert.match(html,/data-language="ja"/);
-      const assetPath=html.match(/src="([^\"]+app\.mjs)"/)[1];
+      const assetPath=html.match(/src="([^\"]+app\.mjs[^\"]*)"/)[1];
       const publicUrl=new URL(assetPath,`https://example.org/nested/country/${page==='home'?'':page+'/'}`);
       assert.equal(publicUrl.pathname,'/nested/country/assets/app.mjs');
+      assert.equal(publicUrl.searchParams.get('v'),expectedVersion);
+      assert.match(html,new RegExp(`styles\\.css\\?v=${expectedVersion.replaceAll('.','\\.')}`));
       assert.doesNotMatch(html,/<script[^>]+src="https?:/);
     }
     const app=await readFile(path.join(result.siteDir,'assets','app.mjs'),'utf8');
