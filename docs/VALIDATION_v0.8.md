@@ -54,7 +54,14 @@ warning 10件は、国勢調査9 sourceの再配布条件確認と、国別計�
 
 ## 公開
 
-GitHub、FTPS、公開URLの結果は公開作業後に、この節へ対象commit、ファイル数、hash照合結果を追記する。
+- サイト対象commit: `e4ba281ca5506ccd12acc9743eb24a262d34c3d0`
+- GitHub Actions `Validate template` run `34914198743`: Ubuntu／Windows、Node.js 22／24の4ジョブすべて成功。
+- FTPS: 最終候補17ファイルを`/domains/areadata.net/public_html`へ配置し、既存16ファイルを`.work/ftp-backups/areadata.net-before-v0.8-un-context-i18n-2026-09-15`へ退避した。`cgi-bin/.htaccess`は変更していない。
+- FTPS receipt: `.work/ftp-deployment-areadata-v0.8-un-context-i18n-2026-09-15.json`
+- HTTPS hash検証: 公開取得できる16／16ファイルがローカル最終候補とbyte単位で一致。`.htaccess`はHTTP検証対象外で、FTPS配置時にhashを照合した。
+- Public receipt: `.work/public-verification-areadata-v0.8-un-context-i18n-2026-09-15.json`
+- `assets/app.mjs`と`assets/i18n.mjs`はHTTP 200、`content-type: text/javascript`。
+- 公開実画面: `lang=ja`で日本語ナビゲーション、国勢調査7か国リンク、UN 2026比較と誤差幅ではない旨を確認。日本語からスペイン語を選ぶと`lang=es`へ遷移し、見出し、ナビゲーション、数値書式、Censoリンク、比較説明が更新された。
 
 ## 未実施・制約
 
