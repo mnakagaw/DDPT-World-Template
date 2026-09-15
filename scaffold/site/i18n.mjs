@@ -244,7 +244,11 @@ export function translateInterface(root,language){
     node.nodeValue=translateText(node.nodeValue,language);
   }
   for(const element of root.querySelectorAll?.('[aria-label],[title],[placeholder]')||[]){
-    for(const attribute of ['aria-label','title','placeholder'])if(element.hasAttribute(attribute))element.setAttribute(attribute,translateText(element.getAttribute(attribute),language));
+    for(const attribute of ['aria-label','title','placeholder'])if(element.hasAttribute(attribute)){
+      const sourceKey=`i18nSource${attribute.replace(/(^|-)([a-z])/g,(_match,_dash,letter)=>letter.toUpperCase())}`;
+      if(!element.dataset[sourceKey])element.dataset[sourceKey]=element.getAttribute(attribute);
+      element.setAttribute(attribute,translateText(element.dataset[sourceKey],language));
+    }
   }
   for(const button of documentNode.querySelectorAll('[data-language]'))button.setAttribute('aria-pressed',String(button.dataset.language===language));
 }
