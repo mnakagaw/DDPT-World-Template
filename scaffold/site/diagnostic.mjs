@@ -1,9 +1,20 @@
 import {escapeHtml as e, displayValue, finite, areaObservationState, statusLabel, territoryLineage, mapGeometry, seriesFor, seriesGeometry, observedValue, makeCsv, safeUrl, documentMarkdown} from './model.mjs';
 import {internalComparison, colorForComparison, observationContext} from './analysis.mjs';
 import {planningDocuments, selectedGaps} from './planning.mjs';
+import {sourceSeriesLabel} from './i18n.mjs';
 
 const md = value => String(value ?? '').replaceAll('\\','\\\\').replace(/[|<>\[\]]/g,c=>'\\'+c).replace(/[\r\n]+/g,' ');
-const sourceLink = source => source && safeUrl(source.url) ? `<a href="${e(safeUrl(source.url))}" target="_blank" rel="noopener noreferrer">${e(source.name)}</a>` : 'Source not recorded';
+const externalLink = (url,label,classes='') => safeUrl(url) ? `<a class="${e(classes)}" href="${e(safeUrl(url))}" target="_blank" rel="noopener noreferrer">${e(label)}<span class="sr-only"> (opens a new tab)</span></a>` : e(label);
+const sourceLink = source => source ? externalLink(source.url,source.name) : 'Source not recorded';
+const sourcePage = source => safeUrl(source?.catalog_url) || safeUrl(source?.url);
+export function seriesSourceLabel(indicator,observation,period=observation?.period,language='en'){
+  return sourceSeriesLabel(indicator,observation,period,language);
+}
+export function renderSourceAttribution(indicator,observation,source,period=observation?.period,language='en'){
+  if(!source)return '<span>Source not recorded</span>';
+  const page=sourcePage(source),series=seriesSourceLabel(indicator,observation,period,language),same=page===safeUrl(source.url);
+  return `<div class="source-attribution"><strong>${externalLink(page,series,'series-source-link')}</strong><small>${e(source.publisher || 'Publisher not recorded')}</small>${same?`<span class="source-document">${e(source.name)}</span>`:externalLink(source.url,source.name,'source-document')}</div>`;
+}
 const valueText = (data,value,indicator) => displayValue(value,data.country.locale || 'en',indicator?.display_decimals ?? 2);
 const rowUnit = (row,indicator) => row.unit || row.observation?.unit || indicator.unit;
 const rowDefinition = (row,indicator) => row.definition || row.observation?.definition || indicator.definition;
@@ -24,7 +35,7 @@ export function comparisonSummary(data,comparison) {
   return `${values.length} of ${comparison.rows.length} member areas have comparable observations. Range ${valueText(data,minimum,comparison.indicator)}–${valueText(data,maximum,comparison.indicator)} ${comparison.indicator.unit}. This range describes recorded differences; it does not establish causes or agreed priorities.`;
 }
 
-export function renderInternalComparison(data,parentId,indicatorId,period,{interactive=true}={}) {
+export function renderInternalComparison(data,parentId,indicatorId,period,{interactive=true,language='en'}={}) {
   const comparison=internalComparison(data,parentId,indicatorId,period),indicator=comparison.indicator;
   if(!indicator)return '';
   if(comparison.set.terminal)return '<p class="internal-stop small-note">Internal comparison stops at this area. Its own observations remain the diagnostic evidence.</p>';
@@ -36,7 +47,7 @@ export function renderInternalComparison(data,parentId,indicatorId,period,{inter
     return `<path d="${path.d}" fill="${e(colorForComparison(comparison,row))}" fill-rule="evenodd" class="internal-area"${interactive?` tabindex="0" role="button" data-action="inspect-internal" data-internal-id="${e(path.id)}" aria-label="${e(text)}"`:''}><title>${e(text)}</title></path>`;
   }).join('')}</svg>`:'<p class="map-unavailable">No matched lower-area boundaries are available. The full member table remains available.</p>';
   const boundarySources=[...new Set(comparison.features.map(feature=>feature.properties?.source_id).filter(Boolean))].map(id=>data.sources.find(source=>source.id===id)).filter(Boolean);
-  const rows=comparison.rows.map(row=>`<tr data-internal-row="${e(row.area.id)}"><th scope="row">${interactive?`<button type="button" class="inspect-row" data-action="inspect-internal" data-internal-id="${e(row.area.id)}">${e(row.area.name)}</button>`:e(row.area.name)}<small>${e(row.area.type)} · ${e(row.area.official_code || row.area.id)}</small></th><td><strong>${e(valueText(data,row.value,indicator))}</strong><small>${e(rowUnit(row,indicator))} · ${e(row.period || period)}<br>${e(statusLabel(row.status))}${!row.comparable?'<br>Comparison not established':''}</small></td><td>${sourceLink(row.source)}<details${interactive?'':' open'}><summary>Identity and evidence</summary><p>${e(identityText(row.area))}</p><p>${e(meaningText({...row,reason:''}))}</p><p>Observation boundary edition: ${e(observedBoundary(row.observation))}.</p><p>Retrieved ${e(row.source?.retrieved_at || 'not recorded')}. ${e(row.reason || '')}</p><p>${e(row.boundary_reason || '')}</p></details></td></tr>`).join('');
+  const rows=comparison.rows.map(row=>`<tr data-internal-row="${e(row.area.id)}"><th scope="row">${interactive?`<button type="button" class="inspect-row" data-action="inspect-internal" data-internal-id="${e(row.area.id)}">${e(row.area.name)}</button>`:e(row.area.name)}<small>${e(row.area.type)} · ${e(row.area.official_code || row.area.id)}</small></th><td><strong>${e(valueText(data,row.value,indicator))}</strong><small>${e(rowUnit(row,indicator))} · ${e(row.period || period)}<br>${e(statusLabel(row.status))}${!row.comparable?'<br>Comparison not established':''}</small></td><td>${renderSourceAttribution(indicator,row.observation,row.source,row.period || period,language)}<details${interactive?'':' open'}><summary>Identity and evidence</summary><p>${e(identityText(row.area))}</p><p>${e(meaningText({...row,reason:''}))}</p><p>Observation boundary edition: ${e(observedBoundary(row.observation))}.</p><p>Retrieved ${e(row.source?.retrieved_at || 'not recorded')}. ${e(row.reason || '')}</p><p>${e(row.boundary_reason || '')}</p></details></td></tr>`).join('');
   return `<section class="internal-comparison" data-internal-comparison="${e(indicatorId)}"><h4>Within the selected area — ${e(comparison.set.label)}</h4><p class="small-note">${e(comparison.set.note || '')}</p><p class="comparison-summary">${e(comparisonSummary(data,comparison))}</p><div class="internal-grid"><div class="internal-map-wrap">${map}<p class="internal-legend">${legendHtml(comparison.scale)} Gray = missing or not comparable. High values are not automatically better.</p><p class="source-note">Boundary sources: ${boundarySources.length?boundarySources.map(sourceLink).join(' · '):'not available'}. Boundary editions and codes are listed for every member.</p>${comparison.set.source_ids?.length?`<p class="source-note">Membership sources: ${comparison.set.source_ids.map(id=>sourceLink(data.sources.find(source=>source.id===id))).join(' · ')}</p>`:''}${interactive?'<p class="internal-inspection small-note" role="status">Inspect a map area or table row to highlight its value. The diagnostic area stays unchanged.</p>':''}</div><div class="internal-table-scroll" tabindex="0" role="region" aria-label="${e(label)} — all ${comparison.rows.length} areas"><table class="internal-table"><caption>All ${comparison.rows.length} member areas — including missing values</caption><thead><tr><th scope="col">Area</th><th scope="col">Value</th><th scope="col">Source</th></tr></thead><tbody>${rows}</tbody></table></div></div></section>`;
 }
 
@@ -46,7 +57,7 @@ function seriesReport(data,area,indicator) {
   const graph=geometry?`<svg viewBox="0 0 600 170" role="img" class="diagnostic-history" aria-label="${e(indicator.name)} history; exact periods and values follow"><title>${e(indicator.name)} — ${e(area.name)}</title>${geometry.segments.map(points=>`<polyline points="${points}" fill="none" stroke="#267966" stroke-width="2"/>`).join('')}${geometry.points.map(point=>`<circle cx="${point.x}" cy="${point.y}" r="3" fill="#267966"><title>${e(point.row.period)}: ${e(valueText(data,point.row.value,indicator))}</title></circle>`).join('')}</svg>`:'';
   return `${graph}<table class="history-table"><thead><tr><th>Period</th><th>Value / unit</th><th>Status / meaning</th><th>Source</th></tr></thead><tbody>${series.map(row=>{
     const meaning=observationContext(data,area,indicator,row),source=meaning.source;
-    return `<tr><td>${e(row.period)}</td><td>${e(valueText(data,observedValue(row),indicator))} ${e(meaning.unit)}</td><td>${e(statusLabel(row.status))}<p>${e(meaningText(meaning))}</p><p>Observation boundary edition: ${e(observedBoundary(row))}.</p></td><td>${sourceLink(source)}<p>Retrieved ${e(source?.retrieved_at || 'not recorded')}.</p></td></tr>`;
+    return `<tr><td>${e(row.period)}</td><td>${e(valueText(data,observedValue(row),indicator))} ${e(meaning.unit)}</td><td>${e(statusLabel(row.status))}<p>${e(meaningText(meaning))}</p><p>Observation boundary edition: ${e(observedBoundary(row))}.</p></td><td>${renderSourceAttribution(indicator,row,source,row.period)}<p>Retrieved ${e(source?.retrieved_at || 'not recorded')}.</p></td></tr>`;
   }).join('')}</tbody></table>`;
 }
 

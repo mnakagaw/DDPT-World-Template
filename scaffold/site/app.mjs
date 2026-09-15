@@ -8,15 +8,18 @@ import {
 import {planningSettings,planningDocuments,documentGroups,documentPeriod,officialMapState,hasDocumentReference,selectedGaps,relatedResourceUrl,categoryLabels} from './planning.mjs';
 import {renderDocumentGroups,renderDocument} from './planning-view.mjs';
 import {comparisonSet,observationMeaning,observationContext,isTerminalTerritory} from './analysis.mjs';
-import {renderInternalComparison,diagnosticMarkdown,diagnosticHtml,diagnosticCsv} from './diagnostic.mjs';
+import {renderInternalComparison,diagnosticMarkdown,diagnosticHtml,diagnosticCsv,renderSourceAttribution,seriesSourceLabel} from './diagnostic.mjs';
+import {resolveLanguage,languageLocale,translateInterface,translateText,SUPPORTED_LANGUAGES} from './i18n.mjs';
 
 const base = new URL('../', import.meta.url);
 const app = document.getElementById('app');
 const page = document.body.dataset.page || 'home';
 const pageNames = {home:'Explore',territorial:'Territorial diagnostic',thematic:'Thematic diagnostic',database:'Data database',planning:'Planning and resources'};
+const storedLanguage=()=>{try{return localStorage.getItem('areadata-language')||'';}catch{return '';}};
+let language=resolveLanguage({query:new URLSearchParams(location.search).get('lang'),stored:storedLanguage(),browserLanguages:navigator.languages||[navigator.language]});
 let dataset, state, updateStatus;
 let areaSearch='', rankSearch='', rankOrder='desc', wholeMap=false, allAreaOpen=false;
-const fmt = (value,indicator=currentMetric()) => displayValue(value, dataset?.country.locale || 'en',indicator?.display_decimals ?? 2);
+const fmt = (value,indicator=currentMetric()) => displayValue(value,languageLocale(language),indicator?.display_decimals ?? 2);
 const areaFor = id => dataset.territories.find(area => area.id === id);
 const metricFor = id => dataset.indicators.find(indicator => indicator.id === id);
 const currentArea = () => areaFor(state.selected);
@@ -24,11 +27,12 @@ const currentMetric = () => metricFor(state.metric);
 const worldMode = () => ['world','regional'].includes(dataset?.analysis?.kind);
 const link = (url, label, classes='') => safeUrl(url) ? `<a class="${e(classes)}" href="${e(safeUrl(url))}" target="_blank" rel="noopener noreferrer">${e(label)}<span class="sr-only"> (opens a new tab)</span></a>` : `<span>${e(label)} · No verified link</span>`;
 const button = (action, label, attributes='', classes='button secondary') => `<button type="button" class="${classes}" data-action="${action}" ${attributes}>${label}</button>`;
-const pageUrl = target => {const url = new URL(target==='home' ? './' : `${target}/`,base);url.search=routeQuery(dataset,state);return url.href;};
+const routeWithLanguage=(next=state)=>{const query=new URLSearchParams(routeQuery(dataset,next));query.set('lang',language);return query.toString();};
+const pageUrl = target => {const url = new URL(target==='home' ? './' : `${target}/`,base);url.search=routeWithLanguage();return url.href;};
 const pageLink = (target, label, classes='button secondary') => `<a class="${classes}" href="${e(pageUrl(target))}">${e(label)}</a>`;
 const sourceNote = (indicator, observation, prefix='Source') => {
   const source=sourceFor(dataset,indicator,observation);
-  return `<p class="source-note">${prefix}: ${source ? link(source.url,source.name) : 'No verified source collected'}. ${source?.retrieved_at ? `Retrieved ${e(source.retrieved_at.slice(0,10))}.` : ''}</p>`;
+  return `<div class="source-note source-note-block"><span>${e(prefix)}</span>${source ? renderSourceAttribution(indicator,observation,source,observation?.period || state?.period,language) : 'No verified source collected'}${source?.retrieved_at ? `<span>Retrieved ${e(source.retrieved_at.slice(0,10))}.</span>` : ''}</div>`;
 };
 function periodControl(id='period-select') {
   const options = periodsFor(dataset,state.metric);
@@ -57,7 +61,8 @@ function hierarchyNavigation() {
 function countryDetailLink() {
   const target=countryDiagnosticUrl(dataset,state,base);
   if(!target)return '';
-  return `<p class="country-detail-link"><a class="button secondary" href="${e(target)}">Open ${e(currentArea().name)} country diagnostic</a><small>The selected period is retained. An indicator is carried across only through an explicit concept mapping; otherwise the country edition explains its separate default indicator. Country data are not estimated from world values. Browser Back returns to this world selection.</small></p>`;
+  const localized=new URL(target);localized.searchParams.set('lang',language);
+  return `<p class="country-detail-link"><a class="button secondary" href="${e(localized.href)}">Open ${e(currentArea().name)} country diagnostic</a><small>The selected period is retained. An indicator is carried across only through an explicit concept mapping; otherwise the country edition explains its separate default indicator. Country data are not estimated from world values. Browser Back returns to this world selection.</small></p>`;
 }
 function identity(area=currentArea()) {
   return `<p class="identity">${e(levelLabel(area.level))} · ${e(area.type)}${area.official_code ? ` · Code ${e(area.official_code)}` : ` · Provider ID ${e(area.id)}`}</p><details class="micro-details"><summary>Area identity and boundary edition</summary><p>Code system: ${e(area.code_system || 'Not specified')}. Boundary edition: ${e(area.boundary_version || 'Not verified')}. ${e(dataset.country.geography_note || '')}</p></details>`;
@@ -121,7 +126,7 @@ function mapPanel({thematic=false,planning=false}={}) {
 function facts() {
   const priority=dataset.indicators.filter(indicator=>/population|household/i.test(indicator.name)).slice(0,3);
   const indicators=priority.length?priority:dataset.indicators.slice(0,3);
-  return `<div class="basic-facts">${indicators.map(indicator=>{const result=areaObservationState(dataset,state.selected,indicator.id,state.period);return `<div class="fact"><span>${e(indicator.name)}</span><strong>${fmt(result.value,indicator)}</strong><small>${e(result.row?.unit || indicator.unit)} · ${e(result.row?.period || state.period || 'No source period')} · ${e(statusLabel(result.status))}</small>${result.provenance==='areadata_calculated'?`<small>${e(result.note)}</small>`:''}</div>`;}).join('')}</div>`;
+  return `<div class="basic-facts">${indicators.map(indicator=>{const available=periodsFor(dataset,indicator.id),fallback=dataset.analysis?.default_period_by_indicator?.[indicator.id],period=available.includes(state.period)?state.period:fallback||state.period;const result=areaObservationState(dataset,state.selected,indicator.id,period);return `<div class="fact"><span>${e(indicator.name)}</span><strong>${fmt(result.value,indicator)}</strong><small>${e(result.row?.unit || indicator.unit)} · ${e(result.row?.period || period || 'No source period')} · ${e(statusLabel(result.status))}</small>${result.provenance==='areadata_calculated'?`<small>${e(result.note)}</small>`:''}</div>`;}).join('')}</div>`;
 }
 function seriesFigure(indicator, territoryId=state.selected) {
   const series=seriesFor(dataset,territoryId,indicator.id);
@@ -133,26 +138,41 @@ function seriesFigure(indicator, territoryId=state.selected) {
   const sources=sourceIds.map(id=>dataset.sources.find(source=>source.id===id)).filter(Boolean);
   return `<figure class="series"><figcaption>${e(area.name)} · ${e(indicator.name)} · ${e(series[0].period)}${series.length>1?`–${e(series.at(-1).period)}`:''} · ${e(indicator.unit)}</figcaption>
   ${geo&&geo.points.length>1?`<svg viewBox="0 0 600 170" role="img" aria-label="${e(indicator.name)} time series for ${e(area.name)}. Exact values and sources are in the table below."><title>${e(area.name)} · ${e(indicator.name)} · ${e(indicator.unit)}</title><line x1="40" y1="140" x2="580" y2="140" stroke="#c8d5d7"/>${geo.segments.map(points=>`<polyline points="${points}" fill="none" stroke="#267966" stroke-width="2.5"/>`).join('')}${geo.points.map(point=>`<circle cx="${point.x.toFixed(2)}" cy="${point.y.toFixed(2)}" r="3" fill="#267966"><title>${e(point.row.period)}: ${e(fmt(point.row.value,indicator))} ${e(indicator.unit)}</title></circle>`).join('')}<text x="3" y="21">${e(fmt(geo.max,indicator))}</text><text x="3" y="135">${e(fmt(geo.min,indicator))}</text><text x="40" y="161">${e(series[0].period)}</text><text x="580" y="161" text-anchor="end">${e(series.at(-1).period)}</text></svg><p class="small-note">Source periods in sequence. Missing or incompatible observations break the line; no missing values are estimated.</p>`:'<p class="small-note">Fewer than two comparable observations; no trend is inferred.</p>'}
-  <p class="source-note">Source: ${sources.map(source=>link(source.url,source.name)).join(' · ') || 'See source register'}.</p>
-  <details><summary>Time-series values and sources (${series.length})</summary><div class="table-scroll"><table><caption>${e(area.name)} · ${e(indicator.name)} · ${e(indicator.unit)}</caption><thead><tr><th scope="col">Period</th><th scope="col">Value</th><th scope="col">Status</th><th scope="col">Source</th></tr></thead><tbody>${series.map(row=>{const source=sourceFor(dataset,indicator,row);return `<tr><td>${e(row.period)}</td><td>${fmt(observedValue(row),indicator)} ${e(observationMeaning(indicator,row).unit)}</td><td>${e(statusLabel(row.status))}${observationContext(dataset,area,indicator,row).comparable?'':'<br>'+e(observationContext(dataset,area,indicator,row).reason)}</td><td>${source?link(source.url,source.name):'Not recorded'}</td></tr>`;}).join('')}</tbody></table></div></details>
+  <p class="source-note">Series: ${e([...new Set(observed.map(row=>seriesSourceLabel(indicator,row,row.period,language)))].join(', '))}. Exact sources follow.</p>
+  <details><summary>Time-series values and sources (${series.length})</summary><div class="table-scroll"><table><caption>${e(area.name)} · ${e(indicator.name)} · ${e(indicator.unit)}</caption><thead><tr><th scope="col">Period</th><th scope="col">Value</th><th scope="col">Status</th><th scope="col">Source</th></tr></thead><tbody>${series.map(row=>{const source=sourceFor(dataset,indicator,row);return `<tr><td>${e(row.period)}</td><td>${fmt(observedValue(row),indicator)} ${e(observationMeaning(indicator,row).unit)}</td><td>${e(statusLabel(row.status))}${observationContext(dataset,area,indicator,row).comparable?'':'<br>'+e(observationContext(dataset,area,indicator,row).reason)}</td><td>${renderSourceAttribution(indicator,row,source,row.period,language)}</td></tr>`;}).join('')}</tbody></table></div></details>
   ${button('series-csv','Time series CSV',`data-id="${e(indicator.id)}" data-territory="${e(territoryId)}"`,'text-button')}</figure>`;
+}
+function populationContext(indicator,result) {
+  const config=dataset.analysis?.population_context,area=currentArea();
+  if(!config||indicator.id!==config.primary_indicator_id||!['national','country'].includes(area.level))return '';
+  const reference=metricFor(config.reference_indicator_id);
+  if(!reference)return '';
+  const referenceResult=areaObservationState(dataset,area.id,reference.id,config.reference_period);
+  if(!finite(referenceResult.value))return '';
+  const source=sourceFor(dataset,reference,referenceResult.row),stage={period:config.reference_period,series_stage:'medium_projection'};
+  const difference=finite(result.value)?referenceResult.value-result.value:null;
+  const percent=finite(difference)&&result.value!==0?difference/result.value*100:null;
+  const comparisonText=language==='es'?'personas frente al total censal con años distintos. La diferencia refleja el año de referencia y el método; no es un margen de error.':language==='ja'?'人、国ごとに年が異なる国勢調査合計より多い値です。この差は基準年と算出方法の違いであり、誤差幅ではありません。':'people compared with the mixed-year census total. The difference reflects reference year and method; it is not an error margin.';
+  return `<aside class="population-context" aria-label="UN population context"><div><span>Same-year international context</span><strong>${fmt(referenceResult.value,reference)}</strong><small>people · ${e(seriesSourceLabel(reference,referenceResult.row || stage,config.reference_period,language))}</small></div><div>${renderSourceAttribution(reference,referenceResult.row || stage,source,config.reference_period,language)}</div>${finite(difference)?`<p><strong>${difference>=0?'+':''}${fmt(difference,reference)}</strong> ${finite(percent)?`(${difference>=0?'+':''}${e(percent.toLocaleString(languageLocale(language),{maximumFractionDigits:1}))}%) `:''}${comparisonText}</p>`:`<p>${e(config.note)}</p>`}</aside>`;
 }
 function metricCard(indicator) {
   const result=areaObservationState(dataset,state.selected,indicator.id,state.period);
   const national=areaObservationState(dataset,dataset.country.national_territory_id,indicator.id,state.period);
   const meaning=result.provenance==='areadata_calculated'?{...observationMeaning(indicator),comparable:true,reason:''}:observationContext(dataset,currentArea(),indicator,result.row),referenceMeaning=observationContext(dataset,areaFor(dataset.country.national_territory_id),indicator,national.row);
   const local=currentArea().level!=='national';
-  return `<article class="indicator-card"><div class="indicator-heading"><h3>${e(indicator.name)}</h3><span class="unit">${e(meaning.unit)}</span></div><div class="value-row"><strong>${fmt(result.value,indicator)}</strong><span>${e(statusLabel(result.status))} · ${e(result.row?.period || state.period || 'No source period')}</span></div>${stateMessage(result)}
+  return `<article class="indicator-card"><div class="indicator-heading"><h3>${e(indicator.name)}</h3><span class="unit">${e(meaning.unit)}</span></div><div class="value-row"><strong>${fmt(result.value,indicator)}</strong><span>${e(statusLabel(result.status))} · ${e(result.row?.period || state.period || 'No source period')}</span></div>${stateMessage(result)}${populationContext(indicator,result)}
   ${local?`<p class="national-reference">${worldMode()?'World reference':'National reference'} — ${e(dataset.country.name)}: <strong>${fmt(national.value,indicator)}</strong> ${e(referenceMeaning.unit)} · ${e(national.row?.period || state.period)}. ${e(statusLabel(national.status))}.${referenceMeaning.comparable?'':` ${e(referenceMeaning.reason)}`}</p>`:''}
   ${result.status==='calculated'?`<p class="aggregation-note"><strong>Calculated value.</strong> ${e(result.note)} ${result.components.length?`Components: ${e(result.components.map(item=>`${areaFor(item.territory_id)?.name || item.territory_id} (${item.period})`).join(', '))}.`:''}</p>`:result.status==='incomplete'?`<p class="missing-note">${e(result.note)}${finite(result.covered_value)?` Covered subtotal: ${e(fmt(result.covered_value,indicator))} ${e(indicator.unit)}.`:''}</p>`:''}<p class="definition">${e(meaning.definition || 'Definition not acquired.')}</p>${meaning.comparable?'':`<p class="missing-note">${e(meaning.reason)} Its original value remains visible; a comparable trend is not inferred.</p>`}${sourceNote(indicator,result.row,finite(result.value)&&result.row?'Selected-area source':'Indicator sources; see calculation or gap details')}
-  ${seriesFigure(indicator)}<div class="actions">${button('compare','Compare this indicator',`data-id="${e(indicator.id)}"`,'text-button')}${button('indicator-csv','Selected-period CSV',`data-id="${e(indicator.id)}"`,'text-button')}</div>${renderInternalComparison(dataset,state.selected,indicator.id,state.period)}</article>`;
+  ${seriesFigure(indicator)}<div class="actions">${button('compare','Compare this indicator',`data-id="${e(indicator.id)}"`,'text-button')}${button('indicator-csv','Selected-period CSV',`data-id="${e(indicator.id)}"`,'text-button')}</div>${renderInternalComparison(dataset,state.selected,indicator.id,state.period,{language})}</article>`;
 }
 function territorial() {
-  const themes=[...new Set(dataset.indicators.map(indicator=>indicator.theme || 'Other'))];
+  const contextualId=dataset.analysis?.population_context?.reference_indicator_id;
+  const territorialIndicators=dataset.indicators.filter(indicator=>indicator.id!==contextualId);
+  const themes=[...new Set(territorialIndicators.map(indicator=>indicator.theme || 'Other'))];
   return `<div class="page-actions">${periodControl('territorial-period')}${pageLink('thematic','Compare across areas')}${pageLink('planning','Open planning resources')}</div>
   <div class="territorial-top"><section class="panel selected-profile"><h2>${e(currentArea().name)}</h2>${hierarchyNavigation()}${areaControls()}${identity()}${facts()}</section>${mapPanel()}</div>${countryDetailLink()}
   <nav class="section-index" aria-label="Diagnostic sections">${themes.map((theme,index)=>`<a href="#theme-${index}">${e(theme)}</a>`).join('')}<a href="#source-register">Sources and gaps</a></nav>
-  ${themes.map((theme,index)=>`<section id="theme-${index}" class="theme-section"><h2 class="section-title">${e(theme)} <small>${e(currentArea().name)} · ${e(state.period || 'No period')}</small></h2><div class="indicator-grid">${dataset.indicators.filter(indicator=>(indicator.theme||'Other')===theme).map(metricCard).join('')}</div></section>`).join('')}
+  ${themes.map((theme,index)=>`<section id="theme-${index}" class="theme-section"><h2 class="section-title">${e(theme)} <small>${e(currentArea().name)} · ${e(state.period || 'No period')}</small></h2><div class="indicator-grid">${territorialIndicators.filter(indicator=>(indicator.theme||'Other')===theme).map(metricCard).join('')}</div></section>`).join('')}
   <section class="panel diagnostic-outputs"><h2>Diagnostic report — ${e(currentArea().name)}</h2><p>Whole-area evidence and internal differences use the same period, definitions, membership and sources as this screen. Every member row is included, even when the on-screen table scrolls. This is a diagnostic working report; planning authority, priority hypotheses, resident agreement and approval remain separate.</p><div class="download-actions">${button('diagnostic-markdown','Editable Diagnostic report')}${button('diagnostic-html','Diagnostic report HTML')}${button('diagnostic-csv','Full diagnostic data CSV')}</div><p class="small-note">Print the HTML report to include legends, sources and every row. No resident agreement or formal approval is inferred.</p></section><div class="end-actions">${pageLink('thematic','Compare across areas')}${pageLink('planning','Open planning resources')}<a href="#top">Back to top</a></div>`;
 }
 function rankingContent(rows) {
@@ -188,7 +208,7 @@ function planning() {
   const local=dataset.territories.filter(area=>area.level!=='national');
   const observed=dataset.indicators.filter(indicator=>areaObservationState(dataset,state.selected,indicator.id,state.period).value!==null).length;
   const outputs={markdown:button('planning-markdown','Download editable Markdown','','button'),html:button('planning-html','Print-ready HTML'),evidence_csv:button('planning-csv','Evidence CSV'),documents_csv:button('documents-csv','Materials and findings CSV')};
-  const links=settings.related_links.filter(item=>!item.territory_id||item.territory_id===state.selected).map(item=>({label:item.label,url:relatedResourceUrl(item.url,base,routeQuery(dataset,state))})).filter(item=>item.url);
+  const links=settings.related_links.filter(item=>!item.territory_id||item.territory_id===state.selected).map(item=>({label:item.label,url:relatedResourceUrl(item.url,base,routeWithLanguage())})).filter(item=>item.url);
   const gaps=selectedGaps(dataset,state.selected);
   if(worldMode()&&currentArea().type!=='country')return '<section class="panel planning-overview"><h2>'+e(settings.title)+'</h2><p>'+e(settings.purpose)+'</p></section><section class="panel planning-controls"><h2>Choose one planning territory</h2>'+areaControls()+identity()+'</section><div class="planning-grid">'+mapPanel({planning:true})+'<section class="panel planning-resources"><h2>'+e(currentArea().name)+'</h2><p class="notice"><strong>This selected area is an analysis scope, not a verified legal planning authority.</strong> No planning draft or official-material attribution is generated for it. Select one country, then use that country’s verified law, responsible body, cycle and subnational hierarchy as its adapter is completed.</p><div class="actions">'+pageLink('territorial','Review territorial evidence')+pageLink('thematic','Compare countries')+pageLink('database','Inspect source data')+'</div></section></div>';
   return '<section class="panel planning-overview"><h2>'+e(settings.title)+'</h2><p>'+e(settings.purpose)+'</p><p class="small-note">Verified material references for '+local.filter(area=>refs.has(area.id)).length+' of '+local.length+' local records'+(refs.has(dataset.country.national_territory_id)?'; national reference materials also available':'')+'. Coverage varies by category and period; this is not a count of completed or approved plans.</p></section>'+
@@ -209,7 +229,7 @@ function home() {
   if(worldMode()) {
     const children=dataset.territories.filter(area=>area.parent_id===dataset.country.national_territory_id);
     return `<section class="home-intro world-intro"><p class="eyebrow">AreaData pilot · ${e(dataset.country.name)}</p><h2>From a region to each country,<br>with every gap visible.</h2><p>Start from the map or one of the registered areas. Population totals use source-reported country totals before any lower-area evidence, so a missing municipality does not distort the regional result.</p><div class="actions">${pageLink('territorial','Explore territorial data','button')}${pageLink('thematic','Compare an indicator')}${pageLink('database','Open data database')}</div></section>
-    <div class="territorial-top">${mapPanel()}<section class="panel"><h2>Choose an entry area</h2><p class="small-note">Membership and scope are stated in the source register. Selecting one updates the map, figures, sources and downloads together.</p><div class="region-entry-grid">${children.map(area=>{const lower=dataset.territories.filter(item=>item.parent_id===area.id).length;return `<a class="region-entry" href="${e(new URL(`territorial/?${routeQuery(dataset,{...state,selected:area.id,level:area.level})}`,base).href)}"><strong>${e(area.name)}</strong><span>${lower?`${lower} lower areas`:'Open country'} →</span></a>`;}).join('')}</div></section></div>
+    <div class="territorial-top">${mapPanel()}<section class="panel"><h2>Choose an entry area</h2><p class="small-note">Membership and scope are stated in the source register. Selecting one updates the map, figures, sources and downloads together.</p><div class="region-entry-grid">${children.map(area=>{const lower=dataset.territories.filter(item=>item.parent_id===area.id).length;return `<a class="region-entry" href="${e(new URL(`territorial/?${routeWithLanguage({...state,selected:area.id,level:area.level})}`,base).href)}"><strong>${e(area.name)}</strong><span>${lower?`${lower} lower areas`:'Open country'} →</span></a>`;}).join('')}</div></section></div>
     <div class="entry-grid three"><a class="entry-card" href="${e(pageUrl('territorial'))}"><span class="entry-number">01</span><h2>Territorial diagnostic</h2><p>Read one selected region or country across every acquired theme.</p><strong>Explore a place →</strong></a><a class="entry-card" href="${e(pageUrl('thematic'))}"><span class="entry-number">02</span><h2>Thematic diagnostic</h2><p>Compare compatible countries for one indicator and period.</p><strong>Compare a theme →</strong></a><a class="entry-card" href="${e(pageUrl('planning'))}"><span class="entry-number">03</span><h2>Planning materials</h2><p>Connect selected-area evidence to laws, plans and working materials as country adapters are completed.</p><strong>Open planning →</strong></a></div>
     <section class="panel home-planning"><div><h2>AreaData data database</h2><p>Inspect indicators, definitions, periods, sources and downloadable records used by the public dashboard.</p></div>${pageLink('database','Inspect the database','button')}</section>`;
   }
@@ -238,8 +258,8 @@ function register() {
 }
 function updateHeader() {
   document.getElementById('dataset-name').textContent=`${dataset.country.name} · data, diagnosis & planning`;
-  document.title=`${pageNames[page]} — ${currentArea().name} | ${dataset.country.name}`;
-  document.querySelectorAll('[data-page-link]').forEach(anchor=>{const target=anchor.dataset.pageLink;anchor.href=pageUrl(target);if(target===page)anchor.setAttribute('aria-current','page');else anchor.removeAttribute('aria-current');});
+  document.title=`${translateText(pageNames[page],language)} — ${translateText(currentArea().name,language)} | ${translateText(dataset.country.name,language)}`;
+  document.querySelectorAll('[data-page-link]').forEach(anchor=>{const target=anchor.dataset.pageLink;anchor.href=pageUrl(target);anchor.dataset.i18n=pageNames[target];anchor.textContent=pageNames[target];if(target===page)anchor.setAttribute('aria-current','page');else anchor.removeAttribute('aria-current');});
   document.querySelectorAll('[data-brand-link]').forEach(anchor=>{anchor.href=new URL('./',base).href;anchor.setAttribute('aria-label',`${dataset.country.name} · return to ${worldMode()?'world':'national'} start with default conditions`);});
 }
 function render() {
@@ -250,6 +270,7 @@ function render() {
   const selection=active instanceof HTMLInputElement ? [active.selectionStart,active.selectionEnd] : null;
   updateHeader();
   app.innerHTML=`<div class="page-heading"><div><p class="eyebrow">${e(dataset.country.name)} · ${e(pageNames[page])}</p><h1>${page==='home'&&!worldMode()?e(dataset.country.name):e(currentArea().name)}</h1></div><div class="actions">${button('share','Share selection')}${button('print','Print page')}</div></div><p id="selection-status" class="sr-only" aria-live="polite">Selected ${e(currentArea().name)}, ${e(currentMetric()?.name || 'no indicator')}, ${e(state.period)}.</p><p id="action-status" class="action-status" role="status"></p>${state.notices.map(notice=>`<p class="notice">${e(notice)}</p>`).join('')}${updateBanner()}${page==='planning'?'':scopeBanner()}${({home,territorial,thematic,database,planning}[page] || home)()}${register()}`;
+  translateInterface(document,language);
   if(focusId) {const next=document.getElementById(focusId);const disclosure=next?.closest('details');if(disclosure)disclosure.open=true;next?.focus({preventScroll:true});if(selection&&next instanceof HTMLInputElement)try{next.setSelectionRange(...selection);}catch{}}
   if(mapId) [...document.querySelectorAll('[data-map-id]')].find(node=>node.dataset.mapId===state.selected)?.focus({preventScroll:true});
   if(rankId) {
@@ -260,7 +281,7 @@ function render() {
 }
 function commit(next, {replace=false}={}) {
   state=next;
-  const url=new URL(location.href);url.search=routeQuery(dataset,state);
+  const url=new URL(location.href);url.search=routeWithLanguage(state);
   history[replace?'replaceState':'pushState']({},'',url);
   render();
 }
@@ -381,8 +402,15 @@ app.addEventListener('click',async event=>{
     }
   } catch(error) {actionStatus(`Could not complete this action: ${error.message}. Your selection and evidence are retained.`);}
 });
-window.addEventListener('popstate',()=>{state=initialState(dataset,location.search);wholeMap=false;areaSearch='';rankSearch='';render();});
+document.querySelectorAll('[data-language]').forEach(control=>control.addEventListener('click',()=>{
+  const next=control.dataset.language;if(!SUPPORTED_LANGUAGES.includes(next)||next===language)return;
+  language=next;try{localStorage.setItem('areadata-language',language);}catch{}
+  const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState({},'',url);if(dataset&&state)render();else translateInterface(document,language);
+}));
 
+window.addEventListener('popstate',()=>{language=resolveLanguage({query:new URLSearchParams(location.search).get('lang'),stored:storedLanguage(),browserLanguages:navigator.languages||[navigator.language]});state=initialState(dataset,location.search);wholeMap=false;areaSearch='';rankSearch='';render();});
+
+translateInterface(document,language);
 try {
   const response=await fetch(new URL('data/dashboard.json',base));
   if(!response.ok)throw new Error(`Data request returned HTTP ${response.status}`);
@@ -391,10 +419,10 @@ try {
   const statusResponse=await fetch(new URL('data/update-status.json',base),{cache:'no-store'}).catch(()=>null);
   if(statusResponse?.ok)updateStatus=await statusResponse.json().catch(()=>null);
   pageNames.planning=planningSettings(dataset).title;
-  document.querySelectorAll('[data-page-link="planning"]').forEach(anchor=>anchor.textContent=pageNames.planning);
   state=initialState(dataset,location.search);
   render();
 } catch(error) {
   app.innerHTML=`<section class="panel error-panel"><h1>Dashboard data could not be loaded</h1><p>${e(error.message)}</p><p>Serve this folder over HTTP using the project’s local server, then reload. The dataset is stored at <code>data/dashboard.json</code>; no remote service is required after collection.</p><button class="button" id="reload-page">Reload</button></section>`;
+  translateInterface(document,language);
   document.getElementById('reload-page').addEventListener('click',()=>location.reload());
 }

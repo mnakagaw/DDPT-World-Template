@@ -221,7 +221,7 @@ test('generator writes five independent portable pages, same data and local-only
     await mkdir(path.join(directory,'data'));await writeFile(path.join(directory,'data','dashboard.json'),'canonical sentinel');
     await mkdir(path.join(directory,'site'));await writeFile(path.join(directory,'site','unrelated.txt'),'preserve');
     const data=fixture(),result=await generateSite({dataset:data,outDir:directory});
-    assert.equal(result.files.length,16);
+    assert.equal(result.files.length,17);
     assert.match(await readFile(path.join(result.siteDir,'.htaccess'),'utf8'),/AddType text\/javascript \.mjs/);
     assert.deepEqual(JSON.parse(await readFile(path.join(result.siteDir,'data','dashboard.json'),'utf8')),data);
     assert.equal(await readFile(path.join(directory,'data','dashboard.json'),'utf8'),'canonical sentinel');
@@ -229,6 +229,7 @@ test('generator writes five independent portable pages, same data and local-only
     for(const page of ['home','territorial','thematic','database','planning']) {
       const html=await readFile(path.join(result.siteDir,page==='home'?'':page,'index.html'),'utf8');
       assert.match(html,new RegExp(`data-page="${page}"`));assert.match(html,/Content-Security-Policy/);
+      assert.match(html,/data-language="en"/);assert.match(html,/data-language="es"/);assert.match(html,/data-language="ja"/);
       const assetPath=html.match(/src="([^\"]+app\.mjs)"/)[1];
       const publicUrl=new URL(assetPath,`https://example.org/nested/country/${page==='home'?'':page+'/'}`);
       assert.equal(publicUrl.pathname,'/nested/country/assets/app.mjs');
@@ -236,6 +237,7 @@ test('generator writes five independent portable pages, same data and local-only
     }
     const app=await readFile(path.join(result.siteDir,'assets','app.mjs'),'utf8');
     assert.match(app,/new URL\('data\/dashboard.json',base\)/);assert.match(app,/local statistics not yet collected/i);
+    assert.match(await readFile(path.join(result.siteDir,'assets','i18n.mjs'),'utf8'),/resolveLanguage/);
     assert.match(await readFile(result.handoffPath,'utf8'),/national observations only/);
   } finally {
     const resolved=path.resolve(directory),temporaryRoot=path.resolve(os.tmpdir())+path.sep;
@@ -250,7 +252,7 @@ test('static shell escapes external country names and never loads third-party sc
   assert.throws(()=>pageShell({country:{name:'x'},page:'unknown'}),/Unknown generated page/);
   const brand=html.match(/<a class="brand"[^>]*>/)[0];
   assert.match(brand,/data-brand-link/);assert.doesNotMatch(brand,/data-page-link/);assert.match(brand,/href="\.\.\/"/);
-  assert.match(html,/<a href="\.\.\/" data-page-link="home">/,'Ordinary home navigation remains separate from the brand reset');
+  assert.match(html,/<a href="\.\.\/" data-page-link="home"[^>]*>/,'Ordinary home navigation remains separate from the brand reset');
   const data=hierarchyFixture(),fresh=initialState(data);
   assert.equal(fresh.selected,'TST');assert.equal(fresh.metric,'population');assert.equal(fresh.period,'2024');
 });

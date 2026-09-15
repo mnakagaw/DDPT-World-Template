@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {diagnosticMarkdown,diagnosticHtml,diagnosticCsv,renderInternalComparison,comparisonSummary} from '../scaffold/site/diagnostic.mjs';
+import {diagnosticMarkdown,diagnosticHtml,diagnosticCsv,renderInternalComparison,comparisonSummary,seriesSourceLabel} from '../scaffold/site/diagnostic.mjs';
 import {internalComparison} from '../scaffold/site/analysis.mjs';
 import {countryDiagnosticUrl,initialState,routeQuery,selectHierarchyOption} from '../scaffold/site/model.mjs';
 import {analysisFixture} from './analysis-fixture.mjs';
@@ -130,6 +130,21 @@ test('untrusted names and definitions render as text and never executable HTML',
   const html=diagnosticHtml(data,'city','2024'),markdown=diagnosticMarkdown(data,'city','2024');
   assert.doesNotMatch(html,/<img\b|<script\b|href="javascript:/);assert.match(html,/&lt;script&gt;/);assert.match(html,/&lt;img/);
   assert.ok(markdown.includes('\\<script\\>'));assert.ok(markdown.includes('\\[bad\\]'));
+});
+test('census comparison rows link the visible Census year to the official census page',()=>{
+  const data=analysisFixture(),indicator=data.indicators.find(row=>row.id==='people'),source=data.sources.find(row=>row.id==='local');
+  indicator.series_family='census';source.name='Official census population table';source.publisher='National Statistical Office';source.catalog_url='https://example.org/census/2024';
+  const html=renderInternalComparison(data,'river','people','2024');
+  assert.match(html,/href="https:\/\/example\.org\/census\/2024"[^>]*>Census 2024/);
+  assert.match(html,/National Statistical Office/);
+  assert.match(html,/href="https:\/\/example\.org\/local"[^>]*>Official census population table/);
+});
+test('a regional latest-available census aggregate is labelled as a mixed-year series',()=>{
+  const indicator={series_family:'census'};
+  assert.equal(seriesSourceLabel(indicator,null,'latest-available'),'Mixed-year Census series');
+  assert.equal(seriesSourceLabel(indicator,{period:'2024'},'2024'),'Census 2024');
+  assert.equal(seriesSourceLabel(indicator,{period:'2024'},'2024','es'),'Censo 2024');
+  assert.equal(seriesSourceLabel(indicator,{period:'2024'},'2024','ja'),'国勢調査 2024年');
 });
 test('world to country links require explicit mapping, preserve period, and discard world identity fields',()=>{
   const world=analysisFixture(),state={selected:'TST',metric:'people',period:'2021',level:'country'};
