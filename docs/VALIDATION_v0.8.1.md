@@ -26,7 +26,16 @@
 | 日本語 → スペイン語 | URL、ナビ、ブランド説明、言語グループと3ボタンの読み上げ用ラベルがスペイン語へ更新 |
 | `npm run check` | 55 JavaScript module／JSONの構文確認に合格 |
 | `npm test` | 147／147合格 |
+| `validate-country` | error 0。利用条件確認待ちのsource 9件と国別計画資料未取得をwarningとして維持 |
 
 ## 公開
 
-GitHub、FTPS、公開URLの結果は公開後に追記する。
+- 公開URL: <https://areadata.net/?country=CAM&territory=CUSTOM%3ACA7&metric=CENSUS_POP_TOTAL&period=latest-available&lang=ja>
+- 実装commit: `ec5cee68f78fe4197f0bc21ceaced1a41cca3a52`
+- GitHub Actions: `34918410666`、`34918721469`の全jobが成功。
+- FTPS: 17ファイルを`/domains/areadata.net/public_html`へ限定して更新し、更新前の17ファイルを`.work/ftp-backups/areadata.net-before-v0.8.1-header-final-2026-09-15`へ保存した。サーバー既存の`cgi-bin/.htaccess`は変更していない。
+- 公開照合: HTTPで取得可能な16／16ファイルが生成物とbyte数・SHA-256とも一致した。`.htaccess`はHTTP照合対象外。
+- 公開実画面: デスクトップでブランド、主要5画面、言語切替が横一列に表示された。生成HTMLが`styles.css?v=0.8.1`と`app.mjs?v=0.8.1`を参照し、旧CSSの長期キャッシュを回避した。
+- 公開言語切替: 日本語からスペイン語へ切り替え、5ナビ、ブランド説明、言語グループ、3ボタンの読み上げ名とURLの`lang`が一致した。確認後は日本語表示へ戻した。
+- FTPS receipt: `.work/ftp-deployment-areadata-v0.8.1-header-final-2026-09-15.json`
+- 公開照合receipt: `.work/public-verification-areadata-v0.8.1-header-final-2026-09-15.json`
