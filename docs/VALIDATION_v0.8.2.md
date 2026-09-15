@@ -27,4 +27,11 @@
 
 ## 公開
 
-公開完了後にreceiptと照合結果を追記する。
+- 実装commit: `7e401e879a495c56f125e0a74988bd4f0eedae1e`。
+- GitHub Actions `34920292399`: success。
+- FTPS: `/domains/areadata.net/public_html`へ17ファイルを更新し、更新前17ファイルを保存。既存`cgi-bin/.htaccess`は保持。
+- 公開URL: <https://areadata.net/?lang=ja>。追加の再読込用URL引数なしで新しい日本語の主見出し・紹介文・収録範囲・ブランド説明・地図見出しを実画面確認。
+- HTTP公開照合16/16件一致（`.htaccess`はHTTP対象外、FTPS照合）。
+- 統計datasetは前公開版とSHA-256一致: `a88296765f3496104cb252d884c80752affe1e0b4ac5795ce3b8474df3fbe3da`。
+- FTPS receipt: `.work/ftp-deployment-areadata-v0.8.2-public-copy-2026-09-15.json`。
+- HTTP receipt: `.work/public-verification-areadata-v0.8.2-public-copy-2026-09-15.json`。
