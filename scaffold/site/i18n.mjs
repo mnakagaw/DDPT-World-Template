@@ -1,6 +1,25 @@
 export const SUPPORTED_LANGUAGES=['en','es','ja'];
 
 const COPY={
+  "Explore the map":["Explora el mapa","地図から探す"],
+  "AreaData · Census and regional statistics for research and planning":["AreaData · Censos y estadísticas regionales para la investigación y la planificación", "AreaData · 国勢調査と地域統計を、研究と計画に"],
+  "How regional totals are calculated":["Cómo se calculan los totales regionales", "地域の合計値の算出方法"],
+  "Sources and data coverage":["Fuentes y cobertura de los datos", "出典とデータの収録範囲"],
+  "Find and download data":["Buscar y descargar datos", "データを探す・ダウンロード"],
+  "Find indicators, check their years and definitions, and download data with sources for your own analysis.":["Busca indicadores, consulta sus años y definiciones y descarga datos con sus fuentes para tu propio análisis.", "指標の調査年・定義・出典を確認し、データをダウンロードして自分の分析に使えます。"],
+  "Data for your research":["Datos para tu investigación", "研究に使うデータを探す"],
+  "Use regional statistics to prepare planning materials. Availability of official plans and legal sources varies by country.":["Utiliza estadísticas regionales para preparar materiales de planificación. La disponibilidad de planes oficiales y fuentes legales varía según el país.", "地域の統計を、計画づくりの基礎資料に活用できます。法令・既存計画などの収録状況は国によって異なります。"],
+  "Compare places by topic to understand differences in population and living conditions.":["Compara lugares por tema para conocer las diferencias en población y condiciones de vida.", "人口や生活環境など、気になるテーマで地域の違いを比べられます。"],
+  "Explore population, health and living conditions in one place, with maps, charts and census sources.":["Conoce la población, la salud y las condiciones de vida de un lugar mediante mapas, gráficos y fuentes censales.", "人口・健康・暮らしを、地域ごとに地図とグラフで確認できます。国勢調査などの出典にもたどれます。"],
+  "Start with a place you want to know. Select a country to explore its regions and municipalities.":["Empieza por el lugar que te interesa. Elige un país para explorar sus regiones y municipios.", "気になる国から、その中の県や市町村へ。調べたい地域を選んでください。"],
+  "Choose a country or region":["Elige un país o una región", "国・地域を選ぶ"],
+  ". Available topics, years and local detail vary by country.":[". Los temas, años y niveles de detalle disponibles varían según el país.", "。利用できる項目・調査年・地域の細かさは国によって異なります。"],
+  "Central America (7 countries)":["Centroamérica (7 países)", "中米7か国"],
+  "Available coverage:":["Cobertura actual:", "現在の収録範囲："],
+  "Explore population and everyday life through census data. Follow the map from countries to local areas, compare places, and find data for research and regional planning.":["Conoce la población y las condiciones de vida a través de los censos. Recorre el mapa desde los países hasta las localidades, compara lugares y encuentra datos para la investigación y la planificación regional.", "国勢調査から、人口や暮らしを知る。地図で国から県・市町村へとたどり、地域の違いを比べ、研究や地域計画に使えるデータを見つけられます。"],
+  "From the world to your community.":["Del mundo a tu comunidad.", "世界から、あなたの地域へ。"],
+  "AreaData · Census & regional statistics":["AreaData · Censos y estadísticas regionales", "AreaData · 国勢調査と地域統計"],
+  "Explore the world through census data":["Explora el mundo a través de los censos", "国勢調査から、世界と地域を知る"],
   'Explore':['Explorar','探索'],
   'Territorial diagnostic':['Diagnóstico territorial','地域診断'],
   'Thematic diagnostic':['Diagnóstico temático','テーマ診断'],
@@ -118,7 +137,7 @@ const COPY={
   'Open territorial diagnostic':['Abrir diagnóstico territorial','地域診断を開く'],
   'Open planning resources':['Abrir recursos de planificación','計画資料を開く'],
   'Comparison CSV':['CSV de comparación','比較CSV'],
-  'Explore territorial data':['Explorar datos territoriales','地域データを探索'],
+  "Explore territorial data":["Explorar datos regionales", "地図から地域を調べる"],
   'Compare an indicator':['Comparar un indicador','指標を比較'],
   'Open data database':['Abrir la base de datos','データベースを開く'],
   'Choose an entry area':['Elegir un área de entrada','入口となる地域を選択'],
@@ -202,6 +221,7 @@ export function resolveLanguage({query='',stored='',browserLanguages=[]}={}){
 export function languageLocale(language){return language==='es'?'es':language==='ja'?'ja-JP':'en-US';}
 
 const patternTranslations=[
+  [/^(\d+) areas to explore$/,(m,l)=>l==='es'?`${m[1]} áreas para explorar`:`県・地域 ${m[1]}件`],
   [/^Census (\d{4})$/,(m,l)=>l==='es'?`Censo ${m[1]}`:`国勢調査 ${m[1]}年`],
   [/^UN estimate (\d{4})$/,(m,l)=>l==='es'?`Estimación de la ONU ${m[1]}`:`国連推計 ${m[1]}年`],
   [/^UN medium projection (\d{4})$/,(m,l)=>l==='es'?`Proyección media de la ONU ${m[1]}`:`国連中位推計 ${m[1]}年`],

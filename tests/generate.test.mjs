@@ -239,6 +239,13 @@ test('generator writes five independent portable pages, same data and local-only
       assert.doesNotMatch(html,/<script[^>]+src="https?:/);
     }
     const app=await readFile(path.join(result.siteDir,'assets','app.mjs'),'utf8');
+    for(const file of result.files.filter(file=>file.endsWith('.mjs'))) {
+      const source=await readFile(file,'utf8');
+      for(const match of source.matchAll(/\bfrom\s*['"](\.\/[^'"]+)['"]/g)) {
+        const moduleUrl=new URL(match[1],'https://example.org/nested/country/assets/app.mjs');
+        assert.equal(moduleUrl.searchParams.get('v'),expectedVersion,'Nested modules must refresh with the entry point');
+      }
+    }
     assert.match(app,/new URL\('data\/dashboard.json',base\)/);assert.match(app,/local statistics not yet collected/i);
     assert.match(await readFile(path.join(result.siteDir,'assets','i18n.mjs'),'utf8'),/resolveLanguage/);
     assert.match(await readFile(result.handoffPath,'utf8'),/national observations only/);
