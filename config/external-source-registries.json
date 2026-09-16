@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "checked_at": "2026-09-17",
+  "purpose": "Pinned discovery registries from the public Census Dashboard Kit. These are source-address preflight inputs, not evidence of acquisition, content verification, geography matching or indicator adoption.",
+  "upstream": {
+    "repository": "https://github.com/mnakagaw/Census-Dashboard-Kit",
+    "commit": "88de64677d2691fa8ec83acbf71449943ac04374"
+  },
+  "registries": [
+    {
+      "id": "jica-priority-country-registry",
+      "path": "config/jica-priority-country-registry.json",
+      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/88de64677d2691fa8ec83acbf71449943ac04374/config/jica-priority-country-registry.json",
+      "record_count": 142,
+      "sha256": "8198e57434b192a7571cf4ee0b38e52e8db78d38543673283ed93fd6215fd516",
+      "use": "Priority-country identity and JICA supervising-office context only; do not replace the UN M49 world registry."
+    },
+    {
+      "id": "jica-priority-source-preflight",
+      "path": "config/jica-priority-source-preflight.json",
+      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/88de64677d2691fa8ec83acbf71449943ac04374/config/jica-priority-source-preflight.json",
+      "record_count": 142,
+      "sha256": "0ff4f2cb5243f5712599a0477b9c20d2f8f129947cde313fd0d9d8e86aeb42a0",
+      "use": "Discovery addresses for national statistics, planning, geography and international candidates; refresh and inspect originals in every country task."
+    },
+    {
+      "id": "reference-country-source-registry",
+      "path": "config/country-source-registry.json",
+      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/88de64677d2691fa8ec83acbf71449943ac04374/config/country-source-registry.json",
+      "record_count": 4,
+      "sha256": "2be58c3e99bd5ff89a1d23ef5d3c5bb8b130674f79bb9d734236f394ad7e5577",
+      "use": "Detailed reference cases for Dominican Republic, Uganda, Laos and Bangladesh; never copy country-specific laws, hierarchy or indicators to another country."
+    }
+  ]
+}
