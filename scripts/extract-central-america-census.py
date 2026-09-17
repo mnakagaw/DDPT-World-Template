@@ -56,6 +56,8 @@ def difference(left, right):
 
 
 def source_record(entry: dict, note: str, license_value=None, license_url=None) -> dict:
+    if license_value is None:
+        license_value = "Reuse terms not stated in the source publication; raw files are excluded from public redistribution pending terms review."
     return {
         "id": entry["source_id"],
         "name": entry["title"],
@@ -69,6 +71,7 @@ def source_record(entry: dict, note: str, license_value=None, license_url=None) 
         "bytes": entry["bytes"],
         "license": license_value,
         "license_url": license_url,
+        "license_detail": "AreaData publishes source-linked factual observations and provenance only. This statement does not assert an open-data license." if license_url is None else None,
         "geographic_level": "subnational",
         "note": note,
     }
@@ -485,8 +488,9 @@ def extract_honduras(root: Path, receipt: dict):
         "reference_period": "2013",
         "sha256": sha256(municipal_receipt_path),
         "bytes": sum(item["bytes"] for item in municipal_receipt["entries"]),
-        "license": None,
+        "license": "Reuse terms not stated in the source publication; raw files are excluded from public redistribution pending terms review.",
         "license_url": None,
+        "license_detail": "AreaData publishes source-linked factual observations and provenance only. This statement does not assert an open-data license.",
         "geographic_level": "municipality",
         "note": "Collection receipt for 298 official municipal PDFs. Every observation retains its individual report URL and verified source hash.",
     }

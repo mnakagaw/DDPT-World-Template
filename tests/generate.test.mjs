@@ -83,6 +83,8 @@ test('last explicit parent choice wins even when city belongs to the SAME subreg
   const city=initialState(data,'?territory=city&metric=water&period=2024');
   assert.deepEqual(territoryLineage(data,city.selected).map(area=>area.id),['TST','north','nile','city']);
   const cityControls=hierarchyControls(data,city.selected);
+  assert.equal(cityControls.find(item=>item.parent.id==='nile').options.find(item=>item.targetId==='city').label,'River Test City','Terminal areas are named directly.');
+  assert.equal(cityControls.find(item=>item.parent.id==='north').options.find(item=>item.targetId==='nile').label,'Whole River Test Subregion','Areas with children keep the whole-area label.');
   for(const [parentId,targetId] of [['north','nile'],['TST','north']]) {
     const control=cityControls.find(item=>item.parent.id===parentId);
     const wholeParent=control.options.find(option=>option.targetId===targetId);

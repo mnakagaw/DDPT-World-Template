@@ -48,7 +48,7 @@ node scripts/create-world.mjs --source-dir generated/world/raw --out generated/w
 
 ## アメリカ大陸版
 
-世界datasetのUN M49 Americas（019）だけを切り出し、57のcountry/areaと3つの探索入口を持つ別成果物を作る。検証済みの中米7か国成果を指定すると、その7か国に限って国勢調査と国内階層を再利用する。残りの国・地域へ値をコピーせず、全大陸のCensus合計も完全被覆になるまで出さない。
+世界datasetのUN M49 Americas（019）だけを切り出し、57のcountry/areaと3つの探索入口を持つ別成果物を作る。UN WPP 2024原本からは行が確認できる55 country/areaだけを取り込み、BVTとSGSは欠測として残す。検証済みの中米7か国成果を指定すると、その7か国に限って国勢調査と国内階層を再利用する。残りの国・地域へCensus値をコピーせず、全大陸のCensus合計も完全被覆になるまで出さない。
 
 ```sh
 node scripts/create-americas.mjs \
@@ -56,6 +56,7 @@ node scripts/create-americas.mjs \
   --central-america-project generated/central-america \
   --central-america-raw acquired/central-america-census \
   --un-wpp-file acquired/WPP2024_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT.xlsx \
+  --un-population-data data/international/un-wpp2024-americas-population.json \
   --out generated/americas
 node scripts/serve.mjs --dir generated/americas/site --port 4173
 node scripts/verify-regional-delivery.mjs --project generated/americas

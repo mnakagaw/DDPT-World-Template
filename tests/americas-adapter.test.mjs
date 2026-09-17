@@ -29,6 +29,11 @@ function centralFixture(){
   return {schema_version:'0.2',generated_at:'2026-09-17T00:00:00Z',country:{id:'CAM',name:'Central America',national_territory_id:'CUSTOM:CA7'},territories:[{id:'CUSTOM:CA7',name:'Central America',level:'national',type:'exploration_scope',parent_id:null},...caIds.map(id=>({id,country_id:id,name:id,level:'country',type:'country',parent_id:'CUSTOM:CA7'})),local],analysis:{kind:'regional',terminal_territory_ids:['GTM:ADM1',...caIds.filter(id=>id!=='GTM')],comparisons:[{parent_id:'CUSTOM:CA7',member_ids:caIds,label:'Seven countries',membership_note:'Synthetic.',source_ids:['un-m49']},{parent_id:'GTM',member_ids:['GTM:ADM1'],label:'Guatemala areas',membership_note:'Synthetic.',source_ids:['un-m49']}],default_period_by_indicator:{CENSUS_POP_TOTAL:'latest-available'},aggregation:{policy:'exact_then_complete_cover',rules:[{indicator_id:'CENSUS_POP_TOTAL',method:'sum',completeness:'full_cover',period_policy:'latest_available_by_component',label:'Census sum',note:'Only a complete cover is calculated.'}]},pilot:{country_ids:caIds},census_history:{schema_version:'1.0',as_of_year:2026,checked_at:'2026-09-17',countries:caIds.map(id=>({country_id:id})),reference_boundaries:{type:'FeatureCollection',features:[]}}},indicators:[census],observations:[{territory_id:'GTM',indicator_id:'CENSUS_POP_TOTAL',period:'2018',value:10,status:'observed',source_id:'census-source'},{territory_id:'GTM:ADM1',indicator_id:'CENSUS_POP_TOTAL',period:'2018',value:10,status:'observed',source_id:'census-source'}],sources:[source('un-m49'),source('census-source')],boundaries:{type:'FeatureCollection',features:[]},documents:[],gaps:[],collection:{status:'partial',adapters:['synthetic-census'],notes:['Synthetic fixture.']}};
 }
 
+function unPopulationFixture(){
+  const found=countryIds.slice(0,-2),periods=['2023','2024','2025','2026'];
+  return {schema_version:'1.0',scope_id:'M49:019',replaces_indicator_id:'SP.POP.TOTL',indicator:{id:'UN_WPP_POP_TOTAL',name:'UN population',theme:'Population',unit:'people',definition:'Synthetic UN population.',definition_id:'un-population',population:'All',measurement_method:'estimate and projection',aggregation:'sum',series_family:'international_reference',display_role:'context',period_policy:'same_period',source_id:'un-wpp'},source:source('un-wpp'),observations:periods.flatMap((period,p)=>found.map((id,index)=>({territory_id:id,indicator_id:'UN_WPP_POP_TOTAL',period,value:1000+p+index,status:'observed',source_id:'un-wpp'}))),summary:{registry_country_ids:countryIds,country_ids:found,missing_country_ids:countryIds.slice(-2),default_display_period:'2026'}};
+}
+
 test('Americas adapter keeps all M49 countries and three navigation regions',()=>{
   const result=buildAmericas(worldFixture()),root=result.territories.find(area=>area.id==='M49:019');
   assert.equal(result.country.id,'AMR');assert.equal(root.level,'national');assert.equal(root.parent_id,null);
@@ -50,5 +55,16 @@ test('Americas overlay reuses known census evidence without extending it to othe
   assert.ok(result.analysis.terminal_territory_ids.includes('MEX'));
   assert.equal(result.analysis.terminal_territory_ids.includes('GTM'),false);
   assert.equal(result.analysis.census_history.catalog_status,'partial');
+  assert.deepEqual(validateDataset(result).errors,[]);
+});
+
+test('Americas UN overlay covers available source rows and preserves missing registry entries',()=>{
+  const unPopulation=unPopulationFixture(),result=buildAmericas(worldFixture(),{centralAmerica:centralFixture(),unPopulation});
+  assert.equal(result.analysis.coverage.un_wpp_country_area_count,55);
+  assert.deepEqual(result.analysis.coverage.un_wpp_missing_country_area_ids,countryIds.slice(-2));
+  assert.equal(result.observations.filter(row=>row.indicator_id==='UN_WPP_POP_TOTAL').length,220);
+  assert.equal(result.observations.some(row=>row.territory_id===countryIds.at(-1)&&row.indicator_id==='UN_WPP_POP_TOTAL'),false);
+  assert.match(result.gaps.find(gap=>gap.category==='un_wpp_country_area_coverage').detail,/55 of 57/);
+  assert.match(result.analysis.aggregation.rules.find(rule=>rule.indicator_id==='UN_WPP_POP_TOTAL').note,/Missing members remain missing/);
   assert.deepEqual(validateDataset(result).errors,[]);
 });

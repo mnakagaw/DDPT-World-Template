@@ -120,6 +120,7 @@ export function territoryOptionLabel(dataset,area) {
 }
 export function hierarchyControls(dataset, selectedId) {
   const byId=new Map(dataset.territories.map(area=>[area.id,area]));
+  const parents=new Set(dataset.territories.map(area=>area.parent_id).filter(Boolean));
   const hasMultipleTiers=dataset.territories.some(area=>area.parent_id && area.parent_id!==dataset.country.national_territory_id && byId.has(area.parent_id));
   const lineage=territoryLineage(dataset,selectedId);
   if(!hasMultipleTiers || !lineage.length)return [];
@@ -132,7 +133,7 @@ export function hierarchyControls(dataset, selectedId) {
     const context=descendantSelected?{value:'context',label:`Belongs to ${child.name} · a lower area is selected`}:null;
     return [{parent,levels:[...new Set(children.map(area=>area.level))],context,
       value:context?'context':child?`area:${child.id}`:'',
-      options:[{value:'',targetId:parent.id,label:`Whole ${territoryOptionLabel(dataset,parent)} · no lower area selected`},...children.map(area=>({value:`area:${area.id}`,targetId:area.id,label:`Whole ${territoryOptionLabel(dataset,area)}`}))]}];
+      options:[{value:'',targetId:parent.id,label:`Whole ${territoryOptionLabel(dataset,parent)} · no lower area selected`},...children.map(area=>({value:`area:${area.id}`,targetId:area.id,label:parents.has(area.id)?`Whole ${territoryOptionLabel(dataset,area)}`:territoryOptionLabel(dataset,area)}))]}];
   });
 }
 export function selectHierarchyOption(dataset,state,parentId,value) {
