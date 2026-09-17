@@ -77,6 +77,7 @@ const COPY={
   'Body acquired':['Contenido adquirido','本文取得済み'],
   'Extracted':['Extraído','抽出済み'],
   'Pending':['Pendiente','保留'],
+  'partial':['parcial','一部収録'],
   'Other':['Otros','その他'],
   'Population':['Población','人口'],
   'Health':['Salud','保健'],
