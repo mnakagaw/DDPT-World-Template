@@ -155,8 +155,17 @@ export function routeQuery(dataset, state) {
   }
   return query.toString();
 }
+function comparisonAreas(dataset,state){
+  const configured=dataset.analysis?.comparisons?.find(item=>item.parent_id===state.selected&&item.member_ids.some(id=>dataset.territories.find(area=>area.id===id)?.level===state.level))
+    || dataset.analysis?.comparisons?.find(item=>item.member_ids.includes(state.selected)&&item.member_ids.some(id=>dataset.territories.find(area=>area.id===id)?.level===state.level));
+  if(configured){const members=new Set(configured.member_ids);return dataset.territories.filter(area=>members.has(area.id)&&area.level===state.level);}
+  const direct=dataset.territories.filter(area=>area.parent_id===state.selected&&area.level===state.level);
+  if(direct.length)return direct;
+  const selected=dataset.territories.find(area=>area.id===state.selected),siblings=selected?.parent_id?dataset.territories.filter(area=>area.parent_id===selected.parent_id&&area.level===state.level):[];
+  return siblings.length?siblings:dataset.territories.filter(area=>area.level!=='national'&&area.level===state.level);
+}
 export function comparisonCompatibility(dataset, state) {
-  const areas = dataset.territories.filter(area => area.level !== 'national' && area.level === state.level);
+  const areas = comparisonAreas(dataset,state);
   const types = [...new Set(areas.map(area => area.type || 'unspecified'))];
   const editions = [...new Set(areas.map(area => area.boundary_version || 'unverified'))];
   const reasons=[];
@@ -168,7 +177,7 @@ export function comparisonRows(dataset, state) {
   const compatibility=comparisonCompatibility(dataset,state);
   const indicator=dataset.indicators.find(item=>item.id===state.metric);
   const effectivePeriod=effectivePeriodForIndicator(dataset,state.metric,state.period);
-  return dataset.territories.filter(area => area.level !== 'national' && area.level === state.level).map(area => {
+  return comparisonAreas(dataset,state).map(area => {
     const result=observationState(dataset,area.id,state.metric,effectivePeriod);
     const meaning=observationContext(dataset,area,indicator,result.row);
     return {area,...result,period:result.row?.period || effectivePeriod,...(!compatibility.comparable || !meaning.comparable?{value:null,status:'incomparable',reason:[compatibility.reason,meaning.reason].filter(Boolean).join(' ')}:{})};
