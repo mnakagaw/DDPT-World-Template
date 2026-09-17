@@ -19,7 +19,7 @@ const pageNames = {home:'Explore',territorial:'Territorial diagnostic',thematic:
 const storedLanguage=()=>{try{return localStorage.getItem('areadata-language')||'';}catch{return '';}};
 let language=resolveLanguage({query:new URLSearchParams(location.search).get('lang'),stored:storedLanguage(),browserLanguages:navigator.languages||[navigator.language]});
 let dataset, state, updateStatus;
-let areaSearch='', rankSearch='', rankOrder='desc', wholeMap=false, allAreaOpen=false;
+let areaSearch='', rankSearch='', rankOrder='desc', wholeMap=false, allAreaOpen=false, comparisonFocusId='';
 const fmt = (value,indicator=currentMetric()) => displayValue(value,languageLocale(language),indicator?.display_decimals ?? 2);
 const areaFor = id => dataset.territories.find(area => area.id === id);
 const metricFor = id => dataset.indicators.find(indicator => indicator.id === id);
@@ -163,11 +163,12 @@ function mapPanel({thematic=false,planning=false}={}) {
   const title=planning?(mapSettings.mode==='official_status'?`Documented institutional states · ${categoryLabels[mapSettings.category]} · ${mapSettings.period}`:'Material references by area'+(mapSettings.category?' · '+categoryLabels[mapSettings.category]:'')+(mapSettings.period?' · '+mapSettings.period:'')):thematic?`${currentMetric()?.name || 'Indicator'} · ${state.period || 'No period'}`:page==='home'?'Explore the map':'Location';
   const sourceIds=[...new Set(features.map(feature=>feature.properties?.source_id).filter(Boolean))];
   const boundarySources=dataset.sources.filter(source=>sourceIds.includes(source.id) || /boundary|boundaries/i.test(source.id+' '+source.name));
-  const chosenTab=geometry.paths.find(path=>path.id===state.selected)?.id || geometry.paths[0]?.id;
+  const highlightedId=thematic?comparisonFocusId:state.selected;
+  const chosenTab=geometry.paths.find(path=>path.id===highlightedId)?.id || geometry.paths[0]?.id;
   return `<section class="panel map-panel" aria-labelledby="map-title"><div class="panel-heading"><div><p class="eyebrow">${page==='home'?e(displayAreaName(areaFor(dataset.country.national_territory_id))):`${e(levelLabel(targetLevel))} reference boundaries`}</p><h2 id="map-title">${e(title)}</h2></div>${selected.level!=='national'&&geometry.paths.length?button('map-extent',wholeMap?'Fit selected area':'Show whole country','','text-button'):''}</div>
-  ${geometry.paths.length ? `<svg class="geographic-map" viewBox="0 0 760 400" role="group" aria-label="${e(title)}. Select an area with Enter. Arrow keys move between boundaries."><title>${e(title)} — ${e(dataset.country.name)}; ${fitId&&geometry.selectedHasGeometry?`view fitted to ${e(selected.name)}`:'whole available boundary layer'}</title><rect width="760" height="400" fill="#f4f8f7"/>${geometry.paths.map(path=>{const area=areaFor(path.id),value=values.get(path.id),comparisonRow=comparisonById.get(path.id);const label=`${area?.name || path.id}${thematic?`: ${finite(value)?fmt(value)+' '+currentMetric().unit:'No data'} for ${comparisonRow?.period || state.period}`:''}`;return `<path d="${path.d}" fill="${colour(path.id)}" fill-rule="evenodd" class="map-area ${path.id===state.selected?'selected':''}" role="button" aria-label="${e(label)}" aria-pressed="${path.id===state.selected}" tabindex="${path.id===chosenTab?'0':'-1'}" data-action="select" data-id="${e(path.id)}" data-map-id="${e(path.id)}"><title>${e(label)}</title></path>`;}).join('')}</svg>` : '<div class="map-unavailable"><strong>No verified boundaries available for this level.</strong><p>Use the area selector and search. Acquired statistics and documents remain accessible.</p></div>'}
+  ${geometry.paths.length ? `<svg class="geographic-map" viewBox="0 0 760 400" role="group" aria-label="${e(title)}. ${thematic?'Focus a comparison area':'Select an area'} with Enter. Arrow keys move between boundaries."><title>${e(title)} — ${e(dataset.country.name)}; ${fitId&&geometry.selectedHasGeometry?`view fitted to ${e(selected.name)}`:'whole available boundary layer'}</title><rect width="760" height="400" fill="#f4f8f7"/>${geometry.paths.map(path=>{const area=areaFor(path.id),value=values.get(path.id),comparisonRow=comparisonById.get(path.id);const label=`${area?.name || path.id}${thematic?`: ${finite(value)?fmt(value)+' '+currentMetric().unit:'No data'} for ${comparisonRow?.period || state.period}`:''}`;return `<path d="${path.d}" fill="${colour(path.id)}" fill-rule="evenodd" class="map-area ${path.id===highlightedId?'selected':''}" role="button" aria-label="${e(label)}" aria-pressed="${path.id===highlightedId}" tabindex="${path.id===chosenTab?'0':'-1'}" data-action="${thematic?'focus-comparison':'select'}" data-id="${e(path.id)}" data-map-id="${e(path.id)}"><title>${e(label)}</title></path>`;}).join('')}</svg>` : '<div class="map-unavailable"><strong>No verified boundaries available for this level.</strong><p>Use the area selector and search. Acquired statistics and documents remain accessible.</p></div>'}
   ${selected.level!=='national'&&!childIds.size&&!features.some(feature=>feature.properties?.territory_id===selected.id)?`<p class="missing-note">No boundary is joined to ${e(selected.name)} at this map level. No nearby polygon is substituted.</p>`:''}
-  <p class="map-legend">${planning?(mapSettings.mode==='official_status'?`${mapSettings.statuses.map(status=>`<span class="legend-item"><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" fill="${e(status.color)}"/></svg> ${e(status.label)}</span>`).join(' · ')}. Gray = no matched evidence; amber = conflicting evidence. States apply only to ${e(mapSettings.period)} and this document category. Select an area to inspect the cited evidence.`:`Green = a verified material reference is available; gray = no verified reference collected. ${mapSettings.period?'Applies only to '+e(mapSettings.period)+'.':'Includes different document periods.'}${mapSettings.category?' Category: '+e(categoryLabels[mapSettings.category])+'.':''} These are collection states, not counts of approved plans.`):thematic?`Colors use five equal value intervals across all ${e(levelLabel(state.level).toLowerCase())} areas for this indicator and period; search does not change the scale. Gray = No data. High values are not automatically better.`:'A location map. Fill colors do not represent population or service levels.'} <span class="legend-selected">Gold outline</span> = selected area.</p>
+  <p class="map-legend">${planning?(mapSettings.mode==='official_status'?`${mapSettings.statuses.map(status=>`<span class="legend-item"><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" fill="${e(status.color)}"/></svg> ${e(status.label)}</span>`).join(' · ')}. Gray = no matched evidence; amber = conflicting evidence. States apply only to ${e(mapSettings.period)} and this document category. Select an area to inspect the cited evidence.`:`Green = a verified material reference is available; gray = no verified reference collected. ${mapSettings.period?'Applies only to '+e(mapSettings.period)+'.':'Includes different document periods.'}${mapSettings.category?' Category: '+e(categoryLabels[mapSettings.category])+'.':''} These are collection states, not counts of approved plans.`):thematic?`Colors use five equal value intervals across all ${e(levelLabel(state.level).toLowerCase())} areas for this indicator and period; search does not change the scale. Gray = No data. High values are not automatically better.`:'A location map. Fill colors do not represent population or service levels.'} <span class="legend-selected">Gold outline</span> = ${thematic?'focused comparison area; the diagnostic area remains unchanged':'selected area'}.</p>
   <p class="source-note">Boundary source: ${boundarySources.length?boundarySources.map(source=>link(source.url,source.name)).join(' · '):'See the source register; boundary authority and edition must be verified.'} Reference boundaries are not a legal boundary certification. Keyboard: arrows / Home / End, then Enter or Space.</p>${dataset.country.geography_note?`<p class="source-note"><strong>Geographic scope:</strong> ${e(dataset.country.geography_note)}</p>`:''}</section>`;
 }
 function facts() {
@@ -227,9 +228,9 @@ function rankingContent(rows) {
   const ranked=rankedRows(rows,rankOrder), visible=searchRows(ranked,rankSearch);
   const missing=searchRows(rows.filter(row=>!finite(row.value)),rankSearch);
   return `<p class="small-note">${ranked.length} observed / ${rows.length} comparable areas. Search narrows displayed rows only. Ties share a rank.</p>
-  <div class="ranking-scroll" role="region" aria-label="Full ranking and unranked areas" tabindex="0"><ol class="ranking-list">${visible.map(row=>`<li class="${row.area.id===state.selected?'selected':''}" data-ranking-id="${e(row.area.id)}"><span class="rank-number">${row.rank}</span>${button('select',e(row.area.name),`data-id="${e(row.area.id)}" data-rank-id="${e(row.area.id)}"`,'rank-area')}<strong>${fmt(row.value)}</strong><small>${e(row.period || state.period)}</small></li>`).join('')}</ol>
+  <div class="ranking-scroll" role="region" aria-label="Full ranking and unranked areas" tabindex="0"><ol class="ranking-list">${visible.map(row=>`<li class="${row.area.id===comparisonFocusId?'selected':''}" data-ranking-id="${e(row.area.id)}"><span class="rank-number">${row.rank}</span>${button('focus-comparison',e(row.area.name),`data-id="${e(row.area.id)}" data-rank-id="${e(row.area.id)}"`,'rank-area')}<strong>${fmt(row.value)}</strong><small>${e(row.period || state.period)}</small></li>`).join('')}</ol>
   ${!visible.length?'<p class="missing-note">No observed values match this search. No rank is assigned to missing data.</p>':''}
-  ${missing.length?`<details><summary>Unranked areas (${missing.length})</summary><ul class="missing-list">${missing.map(row=>`<li class="${row.area.id===state.selected?'selected':''}" data-ranking-id="${e(row.area.id)}" data-unranked="true">${button('select',e(row.area.name),`data-id="${e(row.area.id)}" data-rank-id="${e(row.area.id)}"`,'text-button')}<span>${observedValue(row.row)!==null?`${fmt(observedValue(row.row))} ${e(observationMeaning(currentMetric(),row.row).unit)} · ${e(row.period || state.period)} · `:''}${e(statusLabel(row.status))} · unranked${row.reason?` · ${e(row.reason)}`:''}</span></li>`).join('')}</ul></details>`:''}</div>`;
+  ${missing.length?`<details><summary>Unranked areas (${missing.length})</summary><ul class="missing-list">${missing.map(row=>`<li class="${row.area.id===comparisonFocusId?'selected':''}" data-ranking-id="${e(row.area.id)}" data-unranked="true">${button('focus-comparison',e(row.area.name),`data-id="${e(row.area.id)}" data-rank-id="${e(row.area.id)}"`,'text-button')}<span>${observedValue(row.row)!==null?`${fmt(observedValue(row.row))} ${e(observationMeaning(currentMetric(),row.row).unit)} · ${e(row.period || state.period)} · `:''}${e(statusLabel(row.status))} · unranked${row.reason?` · ${e(row.reason)}`:''}</span></li>`).join('')}</ul></details>`:''}</div>`;
 }
 function thematic() {
   const indicator=currentMetric();
@@ -375,7 +376,7 @@ function render() {
   app.innerHTML=`<div class="page-heading ${page==='home'?'home-heading':''}"><div><p class="eyebrow">${page==='home'?'AreaData · Census & regional statistics':`${e(displayAreaName(areaFor(dataset.country.national_territory_id)))} · ${e(pageNames[page])}`}</p><h1>${page==='home'?'From the world to your community.':e(displayAreaName(currentArea()))}</h1></div><div class="actions">${button('share','Share selection')}${button('print','Print page')}</div></div><p id="selection-status" class="sr-only" aria-live="polite">${e(language==='ja'?`選択地域：${translateText(displayAreaName(currentArea()),language)}。指標：${translateText(currentMetric()?.name || 'no indicator',language)}。期間：${translateText(state.period,language)}。`:language==='es'?`Área seleccionada: ${translateText(displayAreaName(currentArea()),language)}. Indicador: ${translateText(currentMetric()?.name || 'no indicator',language)}. Período: ${translateText(state.period,language)}.`:`Selected ${displayAreaName(currentArea())}, ${currentMetric()?.name || 'no indicator'}, ${state.period}.`)}</p><p id="action-status" class="action-status" role="status"></p>${state.notices.map(notice=>`<p class="notice">${e(notice)}</p>`).join('')}${updateBanner()}${page==='planning'?'':scopeBanner()}${({home,territorial,thematic,database,planning}[page] || home)()}${register()}`;
   translateInterface(document,language);
   if(focusId) {const next=document.getElementById(focusId);const disclosure=next?.closest('details');if(disclosure)disclosure.open=true;next?.focus({preventScroll:true});if(selection&&next instanceof HTMLInputElement)try{next.setSelectionRange(...selection);}catch{}}
-  if(mapId) [...document.querySelectorAll('[data-map-id]')].find(node=>node.dataset.mapId===state.selected)?.focus({preventScroll:true});
+  if(mapId) [...document.querySelectorAll('[data-map-id]')].find(node=>node.dataset.mapId===(page==='thematic'?comparisonFocusId:state.selected))?.focus({preventScroll:true});
   if(rankId) {
     const next=[...document.querySelectorAll('[data-rank-id]')].find(node=>node.dataset.rankId===rankId);
     const disclosure=next?.closest('details');if(disclosure)disclosure.open=true;
@@ -388,8 +389,8 @@ function commit(next, {replace=false}={}) {
   history[replace?'replaceState':'pushState']({},'',url);
   render();
 }
-function revealRankingSelection({focus=false}={}) {
-  const row=[...document.querySelectorAll('#ranking-content [data-ranking-id]')].find(node=>node.dataset.rankingId===state.selected);
+function revealRankingSelection({focus=false,id=state.selected}={}) {
+  const row=[...document.querySelectorAll('#ranking-content [data-ranking-id]')].find(node=>node.dataset.rankingId===id);
   const container=row?.closest('.ranking-scroll');
   if(!row || !container)return false;
   const details=row.closest('details');if(details)details.open=true;
@@ -399,7 +400,7 @@ function revealRankingSelection({focus=false}={}) {
   return true;
 }
 function choose(id,{fromMap=false}={}) {
-  wholeMap=false;areaSearch='';
+  wholeMap=false;areaSearch='';comparisonFocusId='';
   const next=selectTerritory(dataset,state,id);
   if(page==='home')next.level=comparisonLevelForArea(dataset,id,next.level);
   if(fromMap && page==='thematic') {
@@ -409,6 +410,16 @@ function choose(id,{fromMap=false}={}) {
   }
   commit(next);
   if(fromMap && page==='thematic')revealRankingSelection();
+}
+function focusComparison(id,{fromMap=false}={}) {
+  const rows=comparisonRows(dataset,state);
+  if(!rows.some(row=>row.area.id===id))return;
+  comparisonFocusId=id;
+  rankSearch=rankingReveal(rows,id,rankSearch).query;
+  render();
+  revealRankingSelection({id,focus:!fromMap});
+  if(fromMap)[...document.querySelectorAll('[data-map-id]')].find(node=>node.dataset.mapId===id)?.focus({preventScroll:true});
+  actionStatus(`${areaFor(id)?.name || id} is highlighted for comparison. The diagnostic area remains ${currentArea().name}.`);
 }
 function inspectInternal(target) {
   const panel=target.closest('[data-internal-comparison]');
@@ -461,10 +472,10 @@ app.addEventListener('focusout',event=>{const target=event.target.closest('[data
 app.addEventListener('change',event=>{
   const control=event.target.dataset.control;
   if(control==='area')choose(event.target.value);
-  if(control==='hierarchy') {wholeMap=false;areaSearch='';commit(selectHierarchyOption(dataset,state,event.target.dataset.parent,event.target.value));}
-  if(control==='metric') {const metric=event.target.value;commit({...state,metric,requestedMetric:undefined,sourceDataset:undefined,notices:[]});}
-  if(control==='period')commit({...state,period:event.target.value,notices:[]});
-  if(control==='level'){wholeMap=true;commit({...state,level:event.target.value,notices:[]});}
+  if(control==='hierarchy') {wholeMap=false;areaSearch='';comparisonFocusId='';commit(selectHierarchyOption(dataset,state,event.target.dataset.parent,event.target.value));}
+  if(control==='metric') {comparisonFocusId='';const metric=event.target.value;commit({...state,metric,requestedMetric:undefined,sourceDataset:undefined,notices:[]});}
+  if(control==='period'){comparisonFocusId='';commit({...state,period:event.target.value,notices:[]});}
+  if(control==='level'){wholeMap=true;comparisonFocusId='';commit({...state,level:event.target.value,notices:[]});}
   if(control==='rank-order'){rankOrder=event.target.value;render();}
 });
 app.addEventListener('input',event=>{
@@ -476,7 +487,7 @@ app.addEventListener('keydown',event=>{
   if(internalTarget&&['Enter',' '].includes(event.key)){event.preventDefault();inspectInternal(internalTarget);return;}
   const target=event.target.closest('[data-map-id]');
   if(!target)return;
-  if(['Enter',' '].includes(event.key)){event.preventDefault();choose(target.dataset.id,{fromMap:true});return;}
+  if(['Enter',' '].includes(event.key)){event.preventDefault();if(page==='thematic')focusComparison(target.dataset.id,{fromMap:true});else choose(target.dataset.id,{fromMap:true});return;}
   const keys=['ArrowDown','ArrowRight','ArrowUp','ArrowLeft','Home','End'];
   if(!keys.includes(event.key))return;
   event.preventDefault();const paths=[...target.ownerSVGElement.querySelectorAll('[data-map-id]')],index=paths.indexOf(target);
@@ -489,6 +500,7 @@ app.addEventListener('click',async event=>{
   const stem=safeFilename(`${dataset.country.id}-${state.selected}-${state.period || 'no-period'}`);
   try {
     if(action==='inspect-internal')inspectInternal(target);
+    else if(action==='focus-comparison')focusComparison(target.dataset.id,{fromMap:!!target.dataset.mapId});
     else if(action==='select')choose(target.dataset.id,{fromMap:!!target.dataset.mapId});
     else if(action==='national')choose(dataset.country.national_territory_id);
     else if(action==='map-extent'){wholeMap=!wholeMap;render();}
@@ -533,7 +545,7 @@ document.querySelectorAll('[data-language]').forEach(control=>control.addEventLi
   const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState({},'',url);if(dataset&&state)render();else translateInterface(document,language);
 }));
 
-window.addEventListener('popstate',()=>{language=resolveLanguage({query:new URLSearchParams(location.search).get('lang'),stored:storedLanguage(),browserLanguages:navigator.languages||[navigator.language]});state=initialState(dataset,location.search);wholeMap=false;areaSearch='';rankSearch='';render();});
+window.addEventListener('popstate',()=>{language=resolveLanguage({query:new URLSearchParams(location.search).get('lang'),stored:storedLanguage(),browserLanguages:navigator.languages||[navigator.language]});state=initialState(dataset,location.search);wholeMap=false;areaSearch='';rankSearch='';comparisonFocusId='';render();});
 
 translateInterface(document,language);
 try {

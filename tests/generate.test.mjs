@@ -286,6 +286,9 @@ test('generator writes five independent portable pages, same data and local-only
       }
     }
     assert.match(app,/new URL\('data\/dashboard.json',base\)/);assert.match(app,/local statistics not yet collected/i);
+    assert.match(app,/button\('focus-comparison',e\(row\.area\.name\)/);
+    assert.match(app,/else if\(action==='focus-comparison'\)focusComparison/);
+    assert.doesNotMatch(app,/button\('select',e\(row\.area\.name\),`data-id=.*data-rank-id/);
     assert.match(await readFile(path.join(result.siteDir,'assets','i18n.mjs'),'utf8'),/resolveLanguage/);
     assert.match(await readFile(result.handoffPath,'utf8'),/national observations only/);
   } finally {
