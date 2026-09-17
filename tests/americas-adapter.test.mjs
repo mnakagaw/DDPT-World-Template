@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {buildAmericas} from '../lib/americas-adapter.mjs';
 import {validateDataset} from '../lib/validate.mjs';
-import {initialState,comparisonRows} from '../scaffold/site/model.mjs';
+import {initialState,comparisonLevelForArea,comparisonRows} from '../scaffold/site/model.mjs';
 
 const caIds=['BLZ','GTM','SLV','HND','NIC','CRI','PAN'];
 const otherIds=['MEX','USA','CAN',...Array.from({length:47},(_,index)=>`X${String(index).padStart(2,'0')}`)];
@@ -46,7 +46,10 @@ test('Americas adapter keeps all M49 countries and three navigation regions',()=
 
 test('regional thematic comparison stays inside the selected Americas subregion',()=>{
   const result=buildAmericas(worldFixture()),selected='M49:005';
-  const state=initialState(result,`?country=AMR&territory=${encodeURIComponent(selected)}&metric=SP.POP.TOTL&period=latest-available&level=country&type=exploration_scope&code=005`);
+  const level=comparisonLevelForArea(result,selected);
+  assert.equal(level,'country');
+  assert.equal(comparisonLevelForArea(result,'M49:019'),'country');
+  const state=initialState(result,`?country=AMR&territory=${encodeURIComponent(selected)}&metric=SP.POP.TOTL&period=latest-available&level=${level}&type=exploration_scope&code=005`);
   const expected=result.analysis.comparisons.find(item=>item.parent_id===selected).member_ids;
   assert.deepEqual(comparisonRows(result,state).map(row=>row.area.id).sort(),[...expected].sort());
   assert.ok(comparisonRows(result,state).every(row=>row.area.parent_id===selected));

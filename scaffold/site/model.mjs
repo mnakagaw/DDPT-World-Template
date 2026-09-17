@@ -52,6 +52,14 @@ export function areaObservationState(dataset, territoryId, indicatorId, period) 
   return resolvedObservation(dataset,territoryId,indicatorId,period);
 }
 export function localLevels(dataset) { return [...new Set(dataset.territories.filter(row => row.level !== 'national').map(row => row.level))]; }
+export function comparisonLevelForArea(dataset, territoryId, fallback = '') {
+  const configured=dataset.analysis?.comparisons?.find(item=>item.parent_id===territoryId);
+  const ids=new Set(configured?.member_ids || []);
+  const configuredLevels=[...new Set(dataset.territories.filter(area=>ids.has(area.id)).map(area=>area.level).filter(Boolean))];
+  if(configuredLevels.length===1)return configuredLevels[0];
+  const childLevels=[...new Set(dataset.territories.filter(area=>area.parent_id===territoryId).map(area=>area.level).filter(Boolean))];
+  return childLevels.length===1?childLevels[0]:fallback;
+}
 export function levelLabel(level) { return level === 'national' ? 'National' : /^adm\d$/i.test(level) ? `Administrative level ${level.slice(3)}` : String(level || 'Local areas').replaceAll('_',' '); }
 export function nationalOnly(dataset) { return !dataset.observations.some(row => row.territory_id !== dataset.country.national_territory_id && observedValue(row) !== null); }
 export function countryDiagnosticUrl(dataset, state, base) {
