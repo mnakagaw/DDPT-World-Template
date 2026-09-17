@@ -72,6 +72,9 @@ def source_record(entry: dict, note: str, license_value=None, license_url=None) 
         "license": license_value,
         "license_url": license_url,
         "license_detail": "AreaData publishes source-linked factual observations and provenance only. This statement does not assert an open-data license." if license_url is None else None,
+        "terms_review_status": "terms_not_stated_in_source" if license_url is None else "license_recorded",
+        "raw_redistribution_status": "withheld_pending_terms_review" if license_url is None else "follow_recorded_license",
+        "normalized_observation_publication": "source_attributed_factual_observation_only",
         "geographic_level": "subnational",
         "note": note,
     }
@@ -491,6 +494,9 @@ def extract_honduras(root: Path, receipt: dict):
         "license": "Reuse terms not stated in the source publication; raw files are excluded from public redistribution pending terms review.",
         "license_url": None,
         "license_detail": "AreaData publishes source-linked factual observations and provenance only. This statement does not assert an open-data license.",
+        "terms_review_status": "terms_not_stated_in_source",
+        "raw_redistribution_status": "withheld_pending_terms_review",
+        "normalized_observation_publication": "source_attributed_factual_observation_only",
         "geographic_level": "municipality",
         "note": "Collection receipt for 298 official municipal PDFs. Every observation retains its individual report URL and verified source hash.",
     }

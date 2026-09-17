@@ -38,6 +38,8 @@
     "bytes": 26142942,
     "license": "CC BY 3.0 IGO",
     "license_url": "https://creativecommons.org/licenses/by/3.0/igo/",
+    "raw_redistribution_status": "not_in_public_site",
+    "normalized_observation_publication": "permitted_with_attribution",
     "geographic_level": "world_country_series",
     "note": "Direct extraction from the official compact XLSX. Values are total population as of 1 July and are stored in people after converting the published thousands. Projection values are not census counts."
   },
@@ -3040,6 +3042,692 @@
     ],
     "country_period_observations": 220,
     "default_display_period": "2026",
-    "coverage_note": "Official workbook rows were found for 55 of 57 Americas country/area registry entries. Missing registry entries remain missing and are never treated as zero."
+    "coverage_note": "Official workbook rows were found for 55 of 57 Americas country/area registry entries. Missing registry entries remain missing and are never treated as zero.",
+    "country_source_audit": [
+      {
+        "country_id": "ABW",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "AIA",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "ARG",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "ATG",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "BES",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "BHS",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "BLM",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "BLZ",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "BMU",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "BOL",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "BRA",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "BRB",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "BVT",
+        "status": "not_available_in_source",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": null,
+        "reason": "No exact ISO3 source row was found in either adopted sheet; the registry entry remains missing and is not treated as zero."
+      },
+      {
+        "country_id": "CAN",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "CHL",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "COL",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "CRI",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "CUB",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "CUW",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "CYM",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "DMA",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "DOM",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "ECU",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "FLK",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "GLP",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "GRD",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "GRL",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "GTM",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "GUF",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "GUY",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "HND",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "HTI",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "JAM",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "KNA",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "LCA",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "MAF",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "MEX",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "MSR",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "MTQ",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "NIC",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "PAN",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "PER",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "PRI",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "PRY",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "SGS",
+        "status": "not_available_in_source",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": null,
+        "reason": "No exact ISO3 source row was found in either adopted sheet; the registry entry remains missing and is not treated as zero."
+      },
+      {
+        "country_id": "SLV",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "SPM",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "SUR",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "SXM",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "TCA",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "TTO",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "URY",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "USA",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "VCT",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "VEN",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "VGB",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      },
+      {
+        "country_id": "VIR",
+        "status": "adopted",
+        "sheets": [
+          "Estimates (2023)",
+          "Medium variant (2024-2026)"
+        ],
+        "join_column": "ISO3 Alpha-code",
+        "value_column": "Total Population, as of 1 July (thousands)",
+        "transform": "multiply published thousands by 1000 and store integer people",
+        "reason": "Exact ISO3 row and all four requested periods found."
+      }
+    ]
   }
 }
