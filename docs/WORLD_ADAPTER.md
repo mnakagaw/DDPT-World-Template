@@ -54,10 +54,14 @@ node scripts/create-world.mjs --source-dir generated/world/raw --out generated/w
 node scripts/create-americas.mjs \
   --source-dir generated/world/raw \
   --central-america-project generated/central-america \
+  --central-america-raw acquired/central-america-census \
+  --un-wpp-file acquired/WPP2024_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT.xlsx \
   --out generated/americas
 node scripts/serve.mjs --dir generated/americas/site --port 4173
 node scripts/verify-regional-delivery.mjs --project generated/americas
 ```
+
+`--central-america-raw`と`--un-wpp-file`は、採用した正規化値から元payloadと取得receiptまで候補内で追跡するための入力である。原本は公開サイトへ入れず、案件の`raw/`と`evidence/`へ複製し、source recordへ相対`raw_path`、SHA-256、receiptを記録する。再配布条件が未確認の原本はGitや公開ディレクトリへ置かない。
 
 生成時に地域版の受入票、納品状態、独立監査票を`evidence/`へ置く。制作担当が実画面と出力を確認して受入票を閉じた後、別タスクが修正せずに監査する。`ACCEPT`前は次の公開ゲートが失敗する。
 
