@@ -17,7 +17,8 @@ export function parseCsv(text){
     else cell+=character;
   }
   if(cell||row.length){row.push(cell.replace(/\r$/,''));rows.push(row);}
-  const [headers,...data]=rows.filter(item=>item.some(value=>value!==''));
+  const [rawHeaders,...data]=rows.filter(item=>item.some(value=>value!==''));
+  const headers=rawHeaders.map((header,index)=>index===0?header.replace(/^\uFEFF/,''):header);
   return data.map(values=>Object.fromEntries(headers.map((header,index)=>[header,values[index]??''])));
 }
 

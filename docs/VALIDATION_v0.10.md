@@ -1,73 +1,60 @@
-# AreaData Americas v0.10 制作確認
+# AreaData Americas v0.10 制作・監査記録
 
-確認日: 2026-09-17 JST
+確認日: 2026-09-18 JST
 
-## 対象
+## 公開範囲
 
-- 範囲: UN M49 Americas (019)
-- template commit: `f849460013da2263a36fbaff7d466669d78b586c`
-- 生成先: `.work/areadata-americas-v0.10.0-candidate11`
-- dataset SHA-256: `72b65552398ada1879009baeda323a23b09967a8ee4acc6a1c306c5a54f43589`
-- data edition: `2026-09-13T10:24:18.027Z`
-- 生成元: `.work/world-v0.4/new/raw`
-- 中米7か国adapter: `.work/areadata-ca-v0.9.0-all-seven-selection`
+- 範囲: UN M49 Americas (019) の探索入口
+- 国・地域台帳: 57 country/area
+- 国内Census・階層を統合した国: BLZ、GTM、SLV、HND、NIC、CRI、PAN（7/57）
+- データ版: `2026-09-13T10:24:18.027Z`
+- dataset SHA-256: `9e0d08bf13ddf4cce4af923f51bddf43443adb409a59967998cf76b0e38e5322`
+- 最終生成先: `.work/areadata-americas-v0.10.0-release-2026-09-18-final`
 
-## 実装範囲
+この版はアメリカ大陸57件を連続して探索・比較できる地域入口であり、57件すべての国別版が完成したという意味ではない。Censusと国内階層を統合済みの7か国は、国から取得済みの国内地域へ進める。残る50件は国際系列と所在調査を表示し、未取得の国内値を補完しない。
 
-- UN M49 Americasの57 country/areaを台帳に保持した。
-- 探索入口はNorthern America 5、South America 16、Central America + Caribbean 36。最後はUN M49 013と029を結合したAreaData独自の表示区分であり、UN公式の一つの地域や法定計画主体として扱わない。
-- 2,118地域、6指標、3,107観測、2,828 observed、228 comparison sets、22 sources、4 gapsを収録した。
-- Censusと国内階層はBLZ、GTM、SLV、HND、NIC、CRI、PANの7 countryだけ統合した。Census観測2,063件を他の国やAmericas全体へ流用しない。
-- 観測に使う15 source recordsはすべて候補内の原payloadへ`raw_path`とSHA-256で追跡できる。中米Census原資料315ファイル、UN WPP原本1ファイル、取得receipt、正規化監査7ファイルは公開site外に保存した。
-- 国境参照図形は32/57のexact join。未結合25件も台帳と表に残した。
-- Americas全体の同一範囲公表値がない指標は欠測。国値の不完全小計や率の単純平均を表示しない。
-- 大陸・広域のPlanningは法的権限を推定せず、国別adapterで法令・計画・予算・評価資料を確認する条件を表示した。
+## 収録内容
+
+- 2,118地域、6指標、3,299観測、3,020 observed、228 comparison sets、22 sources、5 gaps。
+- 探索区分はNorthern America 5、South America 16、Central America + Caribbean 36。後者はUN M49 013と029を結合したAreaData独自の表示区分であり、UN公式の単一区分や法定計画主体として扱わない。
+- UN WPPは55/57地域、2023–2026年の220観測。BVTとSGSは原表に行がなく欠測として保持する。
+- Census観測2,063件は統合済み7か国だけに属する。国ごとの調査年を表示し、同一年値や誤差幅として扱わない。
+- 国境参照図形は36 feature、country exact joinは32/57。未結合地域も台帳・比較表・欠測表示に残す。
+- 同一範囲の公表値がない場合、Americas全体値を直接観測として作らない。計算を許可した加算指標も完全・非重複被覆だけを集計し、率は単純平均しない。
+
+## 原資料と採否
+
+- `SOURCE_PREFLIGHT.json/.md`: 57件。所在確認、アクセス、取得、検査、地理照合、採用を分離。
+- `SOURCE_TABLE_INVENTORY.json`: 取得原本とreceiptをファイル単位でhash・bytes・構造まで棚卸し。
+- `SOURCE_DISPOSITION.csv`: 79行。WPPの57行は57地域IDと一対一で、`Total Population, as of 1 July (thousands)`、`UN_WPP_POP_TOTAL`、採用55・原表未収録2を記録。
+- `GEOGRAPHY_CROSSWALK.csv`: 57行。
+- `PLANNING_LEGAL_INVENTORY.csv`: 57行。所在調査と採用済み資料を区別。
+- 将来の2030 Censusはscheduled/identifiedとして記録し、結果を取得済み・利用可能とは表示しない。
+- 原本は成果物の`raw/`と`evidence/`に保持し、公開用`site/`には置かない。
+
+## 操作と表示
+
+- ホームから大地域、国、取得済み国内地域へ進み、地域診断・テーマ診断・Database・Planningへ同じ選択を引き継ぐ。
+- 市・県を選択後、同じ所属先の上位地域を再選択すると、下位選択を解除して上位全体へ即時に戻す。指標と期間は保持する。
+- 南米テーマ診断は比較表と同じ16地域だけを比較母集団とし、地図にはそのうち境界をexact joinできた14地域だけを表示する。北米・中米・カリブの図形を混入させない。BVTとSGSは境界未結合の欠測行として表に残る。
+- Planningの広域ページは、分析対象が確認済み法定計画主体ではないこと、57国別版完成ではないこと、国別法令・計画・予算・評価資料が未統合であることを英語・スペイン語・日本語で表示する。同じ警告をMarkdown/HTML出力にも各言語で保持する。
+- 390px幅、キーボード地図操作、戻る／進む、共有、brand reset、404、consoleを確認する。
 
 ## 自動検証
 
-- `npm run check`: 64 JavaScript modules／JSON templatesを検査、合格。
-- `npm test`: 158/158合格。
-- `node scripts/validate-country.mjs --project .work/areadata-americas-v0.10.0-candidate11`: errors 0、warnings 10。
-- `node scripts/verify-regional-delivery.mjs --project .work/areadata-americas-v0.10.0-candidate11`: `ok: true`、`publishable: false`。制作確認済みで、独立監査待ち。
-- `--require-publishable`: exit 1。`Independent audit must be ACCEPT before publication`により意図どおり公開を停止した。
+- `npm run check`: JavaScript modules／JSON templatesの構文検査。
+- `npm test`: 162/162合格。
+- `node scripts/validate-americas-evidence.mjs --project <release>`: 57 WPP行、ID一意性、採用状態、1 July列、指標ID、将来Census表現を検証。
+- `node scripts/validate-country.mjs --project <release>`: errors 0。国別planning資料未収集の警告1件は公開画面にも明示。
+- `node scripts/verify-regional-delivery.mjs --project <release>`: 制作者確認と独立監査の証拠を照合。
 
-warningsは9 source recordsの利用条件要確認と、国別planning資料未取得である。いずれも未取得を完了扱いせず、画面と受入記録へ残した。
+## 独立監査で修正した事項
 
-候補9の独立監査で、CensusとUN WPPの採用値を候補内の原payloadまで追跡できない問題が見つかった。候補10では生成器に原資料importを追加し、15/15の使用sourceについてpayload存在とSHA-256一致を再検証した。候補9は公開対象から除外した。
+初回独立監査のREJECTを受け、次の4点を修正して全項目を再監査する。
 
-候補10の独立再監査では、通常のホーム導線が広域・国ページへ`period=2025`を渡し、取得済みCensusを0 sourceの`No data`として隠す問題が見つかった。候補11では世界・大陸・広域の入口を`latest-available`にし、各指標を自身の最新実年へ解決するよう修正した。通常導線のCentral America + CaribbeanでCensus 7 sources・covered subtotal 43,883,591、GuatemalaでCensus 2018の14,901,286を実画面確認した。候補10は公開対象から除外した。
+1. WPP採否台帳の国ID欠落、1 Januaryという誤記、指標ID不一致を修正し、57件一対一検証を追加。
+2. 南米テーマ比較の地図を比較母集団で絞り、対象外の全米図形を除外。
+3. Planningの法的位置付け・完成範囲・資料未統合警告を英西日へ翻訳し、画面とMarkdown/HTMLへ適用。
+4. 将来2030年のCensusを利用可能と読める表現から、予定・結果未取得の表現へ修正。
 
-## 実画面
-
-Codex in-app Chromiumで英語・スペイン語・日本語、通常幅と390×844を確認した。
-
-- ホーム、地域診断、テーマ診断、Database、Planningの直接URLを表示した。
-- Americas→Central America + Caribbean→Guatemala→El Progresoを操作した。
-- El Progreso選択後に同じ親Guatemalaをdropdownから再選択すると、見出しとURLはGTMへ戻り、department selectorは空になった。
-- 内部比較の行へ注目しても、分析対象のGuatemalaとURLは変わらなかった。
-- Census 2018、WDI人口2025、UN WPP人口2026、その他WDI 2024の実期間を画面と出力で確認した。
-- 390px viewportではdocument/bodyともclientWidth 375、scrollWidth 375で横あふれなし。
-- 地図のキーボード選択、戻る／進む、共有、brand reset、console、404を確認。console warning/errorは0件。
-
-## 出力照合
-
-診断・計画・証拠・資料のCSV／HTML／Markdown 20ファイルを実生成した。`evidence/OUTPUT_VERIFICATION.json`で次を照合した。
-
-| 対象 | 診断CSVデータ行 | 期間の確認 |
-|---|---:|---|
-| Americas | 348 | WDI実年、Census mixed-year |
-| Central America + Caribbean | 222 | WDI実年、Census mixed-year |
-| Guatemala | 138 | Census 2018、WDI 2025、UN WPP 2026 |
-| El Progreso | 54 | Census 2018、国際系列の地方欠測 |
-
-各CSVの初行・末行、選択ID、単位、status、source URLを確認した。
-
-## 未完了と公開状態
-
-- 独立監査: PENDING
-- Hosting: 未実施
-- Public: 未公開
-- 残る50 country/areaのCensus・国内階層、未結合25 country/areaの表示図形、全57 country/areaの計画法・計画資料は国別adapterで継続する。
-- 実務利用者テストと公式機関による受入は未実施。
-
-`templates/REGIONAL_INDEPENDENT_AUDIT.md`の独立監査が実データ、原資料、画面、取得物を確認して `ACCEPT` と記録し、publication gateが通るまで公開しない。
+独立監査報告、出力照合、公開可否は最終成果物の`evidence/`に保存する。公開は独立監査が`ACCEPT`となり、publication gateが合格した版だけを対象にする。
