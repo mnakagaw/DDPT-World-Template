@@ -5,9 +5,9 @@
 ## 対象
 
 - 範囲: UN M49 Americas (019)
-- template commit: `b393d55250d3fc047c2c80336ecd8f3ccb085d77`
-- 生成先: `.work/areadata-americas-v0.10.0-candidate9`
-- dataset SHA-256: `f441853fd4da45001d6f5378e962c4ea1dc29d03f97430ecc87fd5dfbdf05f76`
+- template commit: `ffea69176250d0b3332cc94f3ffd34451d838b7b`
+- 生成先: `.work/areadata-americas-v0.10.0-candidate10`
+- dataset SHA-256: `72b65552398ada1879009baeda323a23b09967a8ee4acc6a1c306c5a54f43589`
 - data edition: `2026-09-13T10:24:18.027Z`
 - 生成元: `.work/world-v0.4/new/raw`
 - 中米7か国adapter: `.work/areadata-ca-v0.9.0-all-seven-selection`
@@ -18,19 +18,22 @@
 - 探索入口はNorthern America 5、South America 16、Central America + Caribbean 36。最後はUN M49 013と029を結合したAreaData独自の表示区分であり、UN公式の一つの地域や法定計画主体として扱わない。
 - 2,118地域、6指標、3,107観測、2,828 observed、228 comparison sets、22 sources、4 gapsを収録した。
 - Censusと国内階層はBLZ、GTM、SLV、HND、NIC、CRI、PANの7 countryだけ統合した。Census観測2,063件を他の国やAmericas全体へ流用しない。
+- 観測に使う15 source recordsはすべて候補内の原payloadへ`raw_path`とSHA-256で追跡できる。中米Census原資料315ファイル、UN WPP原本1ファイル、取得receipt、正規化監査7ファイルは公開site外に保存した。
 - 国境参照図形は32/57のexact join。未結合25件も台帳と表に残した。
 - Americas全体の同一範囲公表値がない指標は欠測。国値の不完全小計や率の単純平均を表示しない。
 - 大陸・広域のPlanningは法的権限を推定せず、国別adapterで法令・計画・予算・評価資料を確認する条件を表示した。
 
 ## 自動検証
 
-- `npm run check`: 63 JavaScript modules／JSON templatesを検査、合格。
-- `npm test`: 156/156合格。
-- `node scripts/validate-country.mjs --project .work/areadata-americas-v0.10.0-candidate9`: errors 0、warnings 10。
-- `node scripts/verify-regional-delivery.mjs --project .work/areadata-americas-v0.10.0-candidate9`: `ok: true`、`publishable: false`。制作確認済みで、独立監査待ち。
+- `npm run check`: 64 JavaScript modules／JSON templatesを検査、合格。
+- `npm test`: 157/157合格。
+- `node scripts/validate-country.mjs --project .work/areadata-americas-v0.10.0-candidate10`: errors 0、warnings 10。
+- `node scripts/verify-regional-delivery.mjs --project .work/areadata-americas-v0.10.0-candidate10`: `ok: true`、`publishable: false`。制作確認済みで、独立監査待ち。
 - `--require-publishable`: exit 1。`Independent audit must be ACCEPT before publication`により意図どおり公開を停止した。
 
 warningsは9 source recordsの利用条件要確認と、国別planning資料未取得である。いずれも未取得を完了扱いせず、画面と受入記録へ残した。
+
+候補9の独立監査で、CensusとUN WPPの採用値を候補内の原payloadまで追跡できない問題が見つかった。候補10では生成器に原資料importを追加し、15/15の使用sourceについてpayload存在とSHA-256一致を再検証した。候補9は公開対象から除外した。
 
 ## 実画面
 
