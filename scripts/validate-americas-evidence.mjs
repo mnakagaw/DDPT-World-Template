@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {readFile} from 'node:fs/promises';
+import {access,readFile} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -25,6 +25,7 @@ export function parseCsv(text){
 export async function validateAmericasEvidence(project){
   const dataset=JSON.parse(await readFile(path.join(project,'data/dashboard.json'),'utf8'));
   const preflight=JSON.parse(await readFile(path.join(project,'evidence/SOURCE_PREFLIGHT.json'),'utf8'));
+  const inventory=JSON.parse(await readFile(path.join(project,'evidence/SOURCE_TABLE_INVENTORY.json'),'utf8'));
   const disposition=parseCsv(await readFile(path.join(project,'evidence/SOURCE_DISPOSITION.csv'),'utf8'));
   const registry=dataset.territories.filter(area=>area.type==='country').map(area=>area.id).sort();
   const wpp=disposition.filter(row=>row.record_type==='wpp_country_area_adoption');
@@ -41,6 +42,21 @@ export async function validateAmericasEvidence(project){
   if(adopted.length!==55||unavailable.length!==2)errors.push(`WPP dispositions must be 55 adopted and 2 not_available_in_source; found ${adopted.length} and ${unavailable.length}.`);
   if(JSON.stringify(unavailable.map(row=>row.country_area_id).sort())!==JSON.stringify(['BVT','SGS']))errors.push('Only BVT and SGS may be unavailable in the WPP source.');
   if(preflight.countries.length!==registry.length)errors.push(`Source preflight has ${preflight.countries.length} entries; expected ${registry.length}.`);
+  const inventoryPaths=inventory.files.map(row=>String(row.path||''));
+  if(inventory.file_count!==inventoryPaths.length)errors.push(`Source inventory declares ${inventory.file_count} files but contains ${inventoryPaths.length} rows.`);
+  if(new Set(inventoryPaths).size!==inventoryPaths.length)errors.push('Source inventory contains duplicate paths.');
+  for(const relative of inventoryPaths){
+    if(!relative||path.isAbsolute(relative)||relative.includes('\\')||relative.split('/').includes('..')){
+      errors.push(`Source inventory path is not a safe project-relative POSIX path: ${relative||'(blank)'}.`);
+      continue;
+    }
+    const absolute=path.resolve(project,relative);
+    if(!absolute.startsWith(`${path.resolve(project)}${path.sep}`)){
+      errors.push(`Source inventory path escapes the project: ${relative}.`);
+      continue;
+    }
+    try{await access(absolute);}catch{errors.push(`Source inventory file does not exist inside the project: ${relative}.`);}
+  }
   const currentYear=new Date().getUTCFullYear();
   for(const country of preflight.countries){
     const note=String(country.latest_census?.note||'');
@@ -49,7 +65,7 @@ export async function validateAmericasEvidence(project){
     if(futureYears.length&&/results are not acquired or usable|resultados no|未取得/i.test(note)===false)errors.push(`${country.country_area_id}: future census result is not explicitly unavailable.`);
     if(/identified\/usable/i.test(note))errors.push(`${country.country_area_id}: census schedule is incorrectly labelled identified/usable.`);
   }
-  return {ok:errors.length===0,errors,summary:{registry:registry.length,wpp_rows:wpp.length,wpp_adopted:adopted.length,wpp_unavailable:unavailable.length,preflight:preflight.countries.length}};
+  return {ok:errors.length===0,errors,summary:{registry:registry.length,wpp_rows:wpp.length,wpp_adopted:adopted.length,wpp_unavailable:unavailable.length,preflight:preflight.countries.length,inventory_files:inventoryPaths.length}};
 }
 
 if(process.argv[1]===fileURLToPath(import.meta.url)){

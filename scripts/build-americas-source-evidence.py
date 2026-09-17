@@ -285,17 +285,32 @@ def inspect_files(project: Path, wpp_path: Path) -> list[dict]:
             base["inspection_error"] = f"{type(exc).__name__}: {exc}"
         inventory.append(base)
 
-    # The original WPP workbook is inventoried sheet by sheet, even if it is also under raw.
-    wpp_resolved = wpp_path.resolve()
-    if not any((project / item["path"]).resolve() == wpp_resolved for item in inventory if (project / item["path"]).exists()):
-        p = wpp_path
-        wb = load_workbook(p, read_only=True, data_only=True)
-        sheets = []
-        for ws in wb.worksheets:
-            header_values = [str(v)[:200] if v is not None else "" for v in next(ws.iter_rows(min_row=17, max_row=17, values_only=True))]
-            sheets.append({"name": ws.title, "rows": ws.max_row, "columns": ws.max_column, "declared_header_row": 17, "fields": header_values})
+    # Keep the evidence package self-contained. The command may receive the
+    # acquisition-cache path, while the same workbook is copied under raw/.
+    # Match by content hash, enrich that project-relative row, and never record
+    # an external working path in the deliverable inventory.
+    p = wpp_path.resolve()
+    wpp_hash = sha256(p)
+    matching = next((item for item in inventory if item["sha256"] == wpp_hash), None)
+    try:
+        wpp_relative = p.relative_to(project.resolve()).as_posix()
+    except ValueError:
+        wpp_relative = None
+    if matching is None and wpp_relative is None:
+        raise RuntimeError("The adopted WPP workbook must be copied inside the project raw directory before evidence is built")
+
+    wb = load_workbook(p, read_only=True, data_only=True)
+    sheets = []
+    for ws in wb.worksheets:
+        header_values = [str(v)[:200] if v is not None else "" for v in next(ws.iter_rows(min_row=17, max_row=17, values_only=True))]
+        sheets.append({"name": ws.title, "rows": ws.max_row, "columns": ws.max_column, "declared_header_row": 17, "fields": header_values})
+    if matching is not None:
+        matching["inspection_status"] = "inspected"
+        matching["sheets"] = sheets
+        matching["semantic_inventory_status"] = "all workbook sheets and row-17 fields inventoried; total population field adoption is in UN_WPP_AMERICAS_ADOPTION_AUDIT.json"
+    else:
         inventory.append({
-            "path": str(p), "bytes": p.stat().st_size, "sha256": sha256(p), "format": "xlsx",
+            "path": wpp_relative, "bytes": p.stat().st_size, "sha256": wpp_hash, "format": "xlsx",
             "acquisition_status": "acquired", "inspection_status": "inspected", "sheets": sheets,
             "semantic_inventory_status": "all workbook sheets and row-17 fields inventoried; total population field adoption is in UN_WPP_AMERICAS_ADOPTION_AUDIT.json",
             "publication": "evidence_only_not_in_public_site",
