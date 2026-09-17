@@ -9,7 +9,7 @@
 - 国内Census・階層を統合した国: BLZ、GTM、SLV、HND、NIC、CRI、PAN（7/57）
 - データ版: `2026-09-13T10:24:18.027Z`
 - dataset SHA-256: `9e0d08bf13ddf4cce4af923f51bddf43443adb409a59967998cf76b0e38e5322`
-- 最終生成先: `.work/areadata-americas-v0.10.0-release-2026-09-18-final`
+- 最終生成先: `.work/areadata-americas-v0.10.0-release-2026-09-18-final2`
 
 この版はアメリカ大陸57件を連続して探索・比較できる地域入口であり、57件すべての国別版が完成したという意味ではない。Censusと国内階層を統合済みの7か国は、国から取得済みの国内地域へ進める。残る50件は国際系列と所在調査を表示し、未取得の国内値を補完しない。
 
