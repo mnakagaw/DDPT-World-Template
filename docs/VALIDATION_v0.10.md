@@ -5,8 +5,8 @@
 ## 対象
 
 - 範囲: UN M49 Americas (019)
-- template commit: `ffea69176250d0b3332cc94f3ffd34451d838b7b`
-- 生成先: `.work/areadata-americas-v0.10.0-candidate10`
+- template commit: `f849460013da2263a36fbaff7d466669d78b586c`
+- 生成先: `.work/areadata-americas-v0.10.0-candidate11`
 - dataset SHA-256: `72b65552398ada1879009baeda323a23b09967a8ee4acc6a1c306c5a54f43589`
 - data edition: `2026-09-13T10:24:18.027Z`
 - 生成元: `.work/world-v0.4/new/raw`
@@ -26,14 +26,16 @@
 ## 自動検証
 
 - `npm run check`: 64 JavaScript modules／JSON templatesを検査、合格。
-- `npm test`: 157/157合格。
-- `node scripts/validate-country.mjs --project .work/areadata-americas-v0.10.0-candidate10`: errors 0、warnings 10。
-- `node scripts/verify-regional-delivery.mjs --project .work/areadata-americas-v0.10.0-candidate10`: `ok: true`、`publishable: false`。制作確認済みで、独立監査待ち。
+- `npm test`: 158/158合格。
+- `node scripts/validate-country.mjs --project .work/areadata-americas-v0.10.0-candidate11`: errors 0、warnings 10。
+- `node scripts/verify-regional-delivery.mjs --project .work/areadata-americas-v0.10.0-candidate11`: `ok: true`、`publishable: false`。制作確認済みで、独立監査待ち。
 - `--require-publishable`: exit 1。`Independent audit must be ACCEPT before publication`により意図どおり公開を停止した。
 
 warningsは9 source recordsの利用条件要確認と、国別planning資料未取得である。いずれも未取得を完了扱いせず、画面と受入記録へ残した。
 
 候補9の独立監査で、CensusとUN WPPの採用値を候補内の原payloadまで追跡できない問題が見つかった。候補10では生成器に原資料importを追加し、15/15の使用sourceについてpayload存在とSHA-256一致を再検証した。候補9は公開対象から除外した。
+
+候補10の独立再監査では、通常のホーム導線が広域・国ページへ`period=2025`を渡し、取得済みCensusを0 sourceの`No data`として隠す問題が見つかった。候補11では世界・大陸・広域の入口を`latest-available`にし、各指標を自身の最新実年へ解決するよう修正した。通常導線のCentral America + CaribbeanでCensus 7 sources・covered subtotal 43,883,591、GuatemalaでCensus 2018の14,901,286を実画面確認した。候補10は公開対象から除外した。
 
 ## 実画面
 
