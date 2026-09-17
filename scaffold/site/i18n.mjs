@@ -15,6 +15,10 @@ const COPY={
   "Choose a country or region":["Elige un país o una región", "国・地域を選ぶ"],
   ". Available topics, years and local detail vary by country.":[". Los temas, años y niveles de detalle disponibles varían según el país.", "。利用できる項目・調査年・地域の細かさは国によって異なります。"],
   "Central America (7 countries)":["Centroamérica (7 países)", "中米7か国"],
+  "Americas":["Américas", "アメリカ大陸"],
+  "Northern America":["América septentrional", "北アメリカ"],
+  "Central America + Caribbean":["Centroamérica + Caribe", "中米＋カリブ"],
+  "South America":["América del Sur", "南アメリカ"],
   "Available coverage:":["Cobertura actual:", "現在の収録範囲："],
   "Explore population and everyday life through census data. Follow the map from countries to local areas, compare places, and find data for research and regional planning.":["Conoce la población y las condiciones de vida a través de los censos. Recorre el mapa desde los países hasta las localidades, compara lugares y encuentra datos para la investigación y la planificación regional.", "国勢調査から、人口や暮らしを知る。地図で国から県・市町村へとたどり、地域の違いを比べ、研究や地域計画に使えるデータを見つけられます。"],
   "From the world to your community.":["Del mundo a tu comunidad.", "世界から、あなたの地域へ。"],
@@ -23,7 +27,7 @@ const COPY={
   'Explore':['Explorar','探索'],
   'Territorial diagnostic':['Diagnóstico territorial','地域診断'],
   'Thematic diagnostic':['Diagnóstico temático','テーマ診断'],
-  'Data database':['Base de datos','データベース'],
+  'Database':['Base de datos','データベース'],
   'Planning and resources':['Planificación y recursos','計画と資料'],
   'Planning materials':['Materiales de planificación','計画資料'],
   'Main pages':['Páginas principales','主要ページ'],
@@ -222,6 +226,8 @@ export function languageLocale(language){return language==='es'?'es':language===
 
 const patternTranslations=[
   [/^(\d+) areas to explore$/,(m,l)=>l==='es'?`${m[1]} áreas para explorar`:`県・地域 ${m[1]}件`],
+  [/^(\d+) countries and areas$/,(m,l)=>l==='es'?`${m[1]} países y áreas`:`${m[1]}の国・地域`],
+  [/^Return to (.+) view$/,(m,l)=>l==='es'?`Volver a la vista de ${translateText(m[1],l)}`:`${translateText(m[1],l)}全体へ戻る`],
   [/^Census (\d{4})$/,(m,l)=>l==='es'?`Censo ${m[1]}`:`国勢調査 ${m[1]}年`],
   [/^UN estimate (\d{4})$/,(m,l)=>l==='es'?`Estimación de la ONU ${m[1]}`:`国連推計 ${m[1]}年`],
   [/^UN medium projection (\d{4})$/,(m,l)=>l==='es'?`Proyección media de la ONU ${m[1]}`:`国連中位推計 ${m[1]}年`],

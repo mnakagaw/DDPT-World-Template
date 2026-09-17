@@ -4,7 +4,7 @@ import {mkdtemp,readFile,writeFile,mkdir,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {generateSite,pageShell} from '../lib/generate.mjs';
-import {initialState,selectTerritory,territoryLineage,hierarchyControls,selectHierarchyOption,routeQuery,observationState,latestObservedPeriod,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
+import {initialState,selectTerritory,territoryLineage,hierarchyControls,selectHierarchyOption,routeQuery,observationState,latestObservedPeriod,effectivePeriodForIndicator,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
 import {hierarchyFixture} from './hierarchy-fixture.mjs';
 
 function fixture() {
@@ -46,6 +46,16 @@ test('first view opens an observed period and skips a failed first indicator; ex
   const explicit=initialState(data,'?metric=population&period=2024');
   assert.equal(explicit.metric,'population');
   assert.equal(observationState(data,'TST',explicit.metric,explicit.period).status,'not_collected');
+});
+
+test('latest-available resolves to each indicator default while mixed-year indicators retain the sentinel',()=>{
+  const data=fixture();
+  data.analysis={default_period_by_indicator:{population:'2024',water:'2024'}};
+  data.indicators[0].period_policy='latest_available_by_component';
+  assert.equal(effectivePeriodForIndicator(data,'population','latest-available'),'latest-available');
+  assert.equal(effectivePeriodForIndicator(data,'water','latest-available'),'2024');
+  assert.equal(evidenceRows(data,'TST','latest-available').find(row=>row.indicator.id==='water').value,70);
+  assert.match(evidenceCsv(data,'TST','latest-available'),/"water","Water access","2024","70"/);
 });
 
 test('area changes, national return and query round trips preserve selected analytical question',()=>{

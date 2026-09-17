@@ -37,6 +37,8 @@ START_HERE.mdから読み、取得可能な公式データの収集から、動�
 
 世界入口は2026-09-13の実取得で248の国・地域、4分野3,544公表値を保存した。世界値は公式WLD系列を使い、同一範囲の公式系列を取得していない大陸・広域は欠測を維持する。「Central America + Caribbean」はUN M49の013＋029を組み合わせた独自の探索区分で、Mexicoを含む。国際指標と国内統計の定義・単位・母集団を自動同一化しない。国版は別datasetとして接続し、国内行政階層・法定計画主体はその国の資料で確認する。参照図形に未結合・省略された79地域も台帳・表から消さない。[取得範囲と再現手順](docs/WORLD_ADAPTER.md)を参照。
 
+0.10ではUN M49 Americas（019）の57国・地域を、Northern America、Central America + Caribbean、South Americaから探索できるアメリカ大陸adapterを追加した。中米7か国の検証済み国勢調査・国内階層だけを選択的に再利用し、残り50国・地域を国際系列と明示的な未収録状態で扱う。地域版の[受入条件](templates/REGIONAL_ACCEPTANCE.md)、[独立監査](templates/REGIONAL_INDEPENDENT_AUDIT.md)、`verify-regional-delivery.mjs`を追加し、別担当の`ACCEPT`前は公開ゲートを通さない。
+
 最初のAreaData公開試作は**中米7か国**（Belize、Guatemala、El Salvador、Honduras、Nicaragua、Costa Rica、Panama）。これはUN M49 013（Mexicoを含む）とは異なるAreaDataの明示的な試作範囲である。国別・国内地域診断は国勢調査を主系列にする。0.7では7か国の公式全国人口と採用可能な国内階層を取得・正規化した。国勢調査年が違うため、地域値は「最新利用可能国勢調査による混合基準年」とし、Belize 2022、Guatemala 2018、El Salvador 2024、Honduras 2013、Nicaragua 2005、Costa Rica 2022、Panama 2023を構成表に明記する。国の全国値があれば、その国内の自治体欠測は地域合計へ影響しない。率・平均は単純平均せず、不完全時は全体値を出さない。0.8ではUN WPP 2024 Rev.1の同一年人口推計を別系列として追加し、国勢調査との差を誤差幅と扱わない。画面は英語・スペイン語・日本語を切り替えられ、初回はブラウザ言語、明示選択後は保存した言語を使う。URLの`lang`指定を最優先し、画面内リンクにも引き継ぐ。
 
 初期収集だけの状態は、地方統計・承認済み計画が揃った完成版ではありません。取得可能な国内資料を調べた結果と、未取得・未照合・未検証を残すことを作業手順で必須にしています。
@@ -113,7 +115,7 @@ npm run check
 npm test
 ```
 
-CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)、ベリーズ・グアテマラ国勢調査の実収集と部分統合は[0.6検証記録](docs/VALIDATION_v0.6.md)、7か国の公式人口・国内階層・混合基準年集計は[0.7検証記録](docs/VALIDATION_v0.7.md)、UN人口比較・国勢調査リンク・3言語UIは[0.8検証記録](docs/VALIDATION_v0.8.md)、Census採用年地図・調査履歴は[0.9検証記録](docs/VALIDATION_v0.9.md)、国別制作の完成工程は[0.9.1検証記録](docs/VALIDATION_v0.9.1.md)、独立完成監査工程は[0.9.2検証記録](docs/VALIDATION_v0.9.2.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
+CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)、ベリーズ・グアテマラ国勢調査の実収集と部分統合は[0.6検証記録](docs/VALIDATION_v0.6.md)、7か国の公式人口・国内階層・混合基準年集計は[0.7検証記録](docs/VALIDATION_v0.7.md)、UN人口比較・国勢調査リンク・3言語UIは[0.8検証記録](docs/VALIDATION_v0.8.md)、Census採用年地図・調査履歴は[0.9検証記録](docs/VALIDATION_v0.9.md)、国別制作の完成工程は[0.9.1検証記録](docs/VALIDATION_v0.9.1.md)、独立完成監査工程は[0.9.2検証記録](docs/VALIDATION_v0.9.2.md)、アメリカ大陸版は[0.10検証記録](docs/VALIDATION_v0.10.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
 
 ## 維持するモデル
 
@@ -131,7 +133,7 @@ CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2
 
 [ウガンダ2案件の14教訓](docs/research/uganda-lessons-2026-09-14.md)を国別作業手順へ反映した。原資料の全項目棚卸し、付表・地域報告書の探索、代表地域での事前確認、同じ上位への再選択、計画様式の必要欄、実出力と性能を[12観点の補助確認票](templates/COUNTRY_LESSON_AUDIT.md)で確認する。AIが案件ごとの証拠と判定を記入する手順であり、12観点の自動検査実装や合格を意味しない。
 
-[Census Dashboard Kitから得た国別制作・独立監査工程](docs/research/census-dashboard-kit-country-lessons-2026-09-17.md)も国別作業手順へ反映した。公式資料目録の全件処置、原表の全数値列、6分野、地域コード・境界、計画制度、実出力を閉じ、別担当が[独立完成監査](templates/INDEPENDENT_AUDIT.md)で原資料・意味・最新年・比較集合・実出力を確認してから公開する。Public KitのJICA対象142か国preflightと監査手順は[commit・hash固定の外部台帳](config/external-source-registries.json)から参照する。国別通常画面の指標別最新版と、世界・広域・研究DBの期間・履歴は役割を分ける。この反映は手順と証拠契約の追加であり、Public Kitの自動delivery gateや国別Word生成を本リポジトリへ実装済みという意味ではない。
+[Census Dashboard Kitから得た国別制作・独立監査工程](docs/research/census-dashboard-kit-country-lessons-2026-09-17.md)も国別作業手順へ反映した。公式資料目録の全件処置、原表の全数値列、6分野、地域コード・境界、計画制度、実出力を閉じ、別担当が[独立完成監査](templates/INDEPENDENT_AUDIT.md)で原資料・意味・最新年・比較集合・実出力を確認してから公開する。Public KitのJICA対象142か国preflightと監査手順は[commit・hash固定の外部台帳](config/external-source-registries.json)から参照する。国別通常画面の指標別最新版と、世界・広域・研究DBの期間・履歴は役割を分ける。0.10では地域版にも専用の受入票・独立監査票・公開ゲートを実装した。国別Wordのdelivery gateは依然としてCensus Dashboard Kit側の機能である。
 
 [DDPT・ウガンダ公開版の3ページ比較](docs/research/ddpt-uganda-template-comparison-2026-09-14.md)では、ユーザビリティと国別制作の容易性、共通図表、計画資料、投資情報の段階的な搭載を検討した。2026-09-14の公開画面と実装構造に基づく提案であり、共通UXの採用決定や実装変更ではない。
 

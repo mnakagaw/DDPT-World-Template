@@ -46,6 +46,27 @@ node scripts/create-world.mjs --source-dir generated/world/raw --out generated/w
 
 国版への接続は、収集済み国版のISO3と相対URLを確認して`analysis.country_sites`へ後から設定する。国内行政階層・国勢調査・計画資料・法的承認状態の確認は各国アダプターの作業であり、世界系列から補間しない。AreaDataの派生広域試作で集計を明示的に採用する場合も、この世界収集datasetは変更せず、別datasetの`analysis.aggregation`に完全範囲・方法・期間方針を記録する。国勢調査の異なる年を使う集計は[国勢調査系列契約](CENSUS_SERIES_CONTRACT.md)に従い、同一年の国際系列とは分ける。
 
+## アメリカ大陸版
+
+世界datasetのUN M49 Americas（019）だけを切り出し、57のcountry/areaと3つの探索入口を持つ別成果物を作る。検証済みの中米7か国成果を指定すると、その7か国に限って国勢調査と国内階層を再利用する。残りの国・地域へ値をコピーせず、全大陸のCensus合計も完全被覆になるまで出さない。
+
+```sh
+node scripts/create-americas.mjs \
+  --source-dir generated/world/raw \
+  --central-america-project generated/central-america \
+  --out generated/americas
+node scripts/serve.mjs --dir generated/americas/site --port 4173
+node scripts/verify-regional-delivery.mjs --project generated/americas
+```
+
+生成時に地域版の受入票、納品状態、独立監査票を`evidence/`へ置く。制作担当が実画面と出力を確認して受入票を閉じた後、別タスクが修正せずに監査する。`ACCEPT`前は次の公開ゲートが失敗する。
+
+```sh
+node scripts/verify-regional-delivery.mjs --project generated/americas --require-publishable
+```
+
+[地域版受入条件](../templates/REGIONAL_ACCEPTANCE.md)は分類・集計・国別値の分離・階層リセット・3言語・CSVを対象にする。[地域版独立監査](../templates/REGIONAL_INDEPENDENT_AUDIT.md)はKitの制作後監査と同様に、テストや自己申告ではなく原資料・dataset・実画面・取得物を別担当が追跡する。大陸・広域は法定計画主体ではないため、国別Wordや共通計画様式を受取条件にしない。
+
 ## 実取得の検証記録
 
 2026-09-13 10:24 UTCの取得版は、UN 248 country/area、276選択地域、Worldを含む216のWB economy対応、4分野3,544公表値。原本11応答を保存し、図形は169国・25広域、79 country/areaは未結合。統計の実測年は人口・Internetが2021–2025、Health・Electricityが2021–2024。2026の値を推定補完していない。

@@ -1,6 +1,6 @@
 {
   "name": "ddpt-world-template",
-  "version": "0.9.2",
+  "version": "0.10.0",
   "private": true,
   "description": "Country-driven DDPT dashboard collection and generation toolkit",
   "type": "module",
@@ -12,6 +12,8 @@
     "check": "node scripts/check.mjs",
     "create:country": "node scripts/create-country.mjs",
     "create:central-america": "node scripts/create-central-america.mjs",
+    "create:americas": "node scripts/create-americas.mjs",
+    "verify:regional": "node scripts/verify-regional-delivery.mjs",
     "collect:census:central-america": "node scripts/collect-central-america-census.mjs",
     "collect:census:honduras-municipal": "node scripts/collect-honduras-municipal-census.mjs",
     "extract:census:central-america": "python scripts/extract-central-america-census.py",
