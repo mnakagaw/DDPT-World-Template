@@ -5,8 +5,8 @@
 ## 対象
 
 - 範囲: UN M49 Americas (019)
-- template commit: `576597fe07c200063911a8e21a840fc84c49a01a`
-- 生成先: `.work/areadata-americas-v0.10.0-candidate8`
+- template commit: `b393d55250d3fc047c2c80336ecd8f3ccb085d77`
+- 生成先: `.work/areadata-americas-v0.10.0-candidate9`
 - dataset SHA-256: `f441853fd4da45001d6f5378e962c4ea1dc29d03f97430ecc87fd5dfbdf05f76`
 - data edition: `2026-09-13T10:24:18.027Z`
 - 生成元: `.work/world-v0.4/new/raw`
@@ -26,8 +26,8 @@
 
 - `npm run check`: 63 JavaScript modules／JSON templatesを検査、合格。
 - `npm test`: 156/156合格。
-- `node scripts/validate-country.mjs --project .work/areadata-americas-v0.10.0-candidate8`: errors 0、warnings 10。
-- `node scripts/verify-regional-delivery.mjs --project .work/areadata-americas-v0.10.0-candidate8`: `ok: true`、`publishable: false`。制作確認済みで、独立監査待ち。
+- `node scripts/validate-country.mjs --project .work/areadata-americas-v0.10.0-candidate9`: errors 0、warnings 10。
+- `node scripts/verify-regional-delivery.mjs --project .work/areadata-americas-v0.10.0-candidate9`: `ok: true`、`publishable: false`。制作確認済みで、独立監査待ち。
 - `--require-publishable`: exit 1。`Independent audit must be ACCEPT before publication`により意図どおり公開を停止した。
 
 warningsは9 source recordsの利用条件要確認と、国別planning資料未取得である。いずれも未取得を完了扱いせず、画面と受入記録へ残した。
