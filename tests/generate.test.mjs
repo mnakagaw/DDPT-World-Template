@@ -124,6 +124,21 @@ test('empty child selection selects its parent; all evidence and outputs use par
   assert.equal(initialState(data,routeQuery(data,city)).selected,'city','A browser-back route restores the city only when its own URL is revisited');
 });
 
+test('regional planning safeguards are localized in Markdown and print HTML',()=>{
+  const data=fixture();
+  data.analysis={kind:'regional',coverage:{country_area_count:57,census_integrated_country_ids:['A','B','C','D','E','F','G']}};
+  data.territories[0].type='exploration_scope';
+  const es=planningMarkdown(data,'TST','2024','es'),ja=planningMarkdown(data,'TST','2024','ja');
+  assert.match(es,/no una autoridad legal de planificación verificada/);
+  assert.match(es,/no representa 57 ediciones nacionales terminadas/);
+  assert.match(es,/7 de 57 entradas/);
+  assert.match(ja,/確認済みの法定計画主体ではありません/);
+  assert.match(ja,/57の国別版が完成したことを意味しません/);
+  assert.match(ja,/57件中7件/);
+  assert.match(planningHtml(data,'TST','2024','es'),/<html lang="es"/);
+  assert.match(planningHtml(data,'TST','2024','ja'),/<html lang="ja"/);
+});
+
 test('district to same parent and incomplete hierarchies retain generic, non-country-specific behavior',()=>{
   const data=hierarchyFixture(),district=initialState(data,'?territory=district&metric=water&period=2024');
   const region=selectHierarchyOption(data,district,'TST','area:north');assert.equal(region.selected,'north');

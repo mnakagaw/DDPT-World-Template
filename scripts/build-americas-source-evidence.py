@@ -361,24 +361,36 @@ def main():
         if central:
             census_urls = [central["official_census_url"], central["adopted_source_url"]] + census_urls
         census_urls = list(dict.fromkeys(u for u in census_urls if u))
+        current_year = datetime.now(timezone.utc).year
+        future_rounds = sorted((row for row in census_entries if row.get("year", 0) > current_year), key=lambda x: x["year"], reverse=True)
+        completed_rounds = sorted((row for row in census_entries if row.get("year", 0) <= current_year), key=lambda x: x["year"], reverse=True)
         if central:
             census_status = "adopted"
             recent = central["recent_rounds"][:3]
             latest_year = central["adopted_data_year"]
+            scheduled = f" A later scheduled round ({future_rounds[0]['year']}) is identified, but its results are not acquired or usable." if future_rounds else ""
+            census_note = f"Adopted census data year: {latest_year}. The result was acquired, inspected, geographically matched and integrated.{scheduled}"
         elif latin:
             census_status = "accessed"
             recent = sorted(census_entries, key=lambda x: x["year"], reverse=True)[:3]
             if not recent and latin.get("census_year"):
                 recent = [{"year": latin["census_year"], "status": "research_catalog_round", "url": census_urls[0] if census_urls else None}]
             latest_year = latin.get("usable_year") or latin.get("census_year")
+            scheduled = f" A later scheduled round ({future_rounds[0]['year']}) is identified, but its results are not acquired or usable." if future_rounds else ""
+            census_note = f"Latest reviewed census/result year: {latest_year if latest_year else 'not yet confirmed'}. Result location accessed; data not integrated.{scheduled}"
         elif census_entries:
             census_status = "accessed"
             recent = sorted(census_entries, key=lambda x: x["year"], reverse=True)[:3]
-            latest_year = recent[0]["year"]
+            latest_year = completed_rounds[0]["year"] if completed_rounds else None
+            if future_rounds:
+                census_note = f"Latest scheduled/identified round: {future_rounds[0]['year']}. Results are not acquired or usable. Latest non-future round identified: {latest_year if latest_year else 'not yet confirmed'}."
+            else:
+                census_note = f"Latest identified non-future census year: {latest_year if latest_year else 'not yet confirmed'}. Result tables have not been acquired or inspected."
         else:
             census_status = "identified"
             recent = []
             latest_year = None
+            census_note = "No census year has yet been confirmed. Start location identified; result tables not acquired or inspected."
 
         planning_urls = []
         laws = []
@@ -406,7 +418,7 @@ def main():
             "country_area_id": iso, "m49": territory.get("official_code"), "name": name, "iso2": territory.get("iso2"),
             "scope_role": "regional_gateway_member; not a completed country edition",
             "official_statistics_office": state("accessed" if nso_record else "identified", urls=[nso_record["url"]] if nso_record else [COMMON["unsd_nso"]], note=nso_record["name"] if nso_record else "UNSD NSO directory is the discovery start; country-specific office record requires follow-up."),
-            "latest_census": state(census_status, urls=census_urls or [COMMON["unsd_census"]], note=f"Latest identified/usable year: {latest_year if latest_year else 'not yet confirmed'}. Census schedule identification is not the same as acquiring results."),
+            "latest_census": state(census_status, urls=census_urls or [COMMON["unsd_census"]], note=census_note),
             "recent_census_rounds": recent,
             "census_results": state("adopted" if central else ("accessed" if latin else "identified"), urls=census_urls or ([nso_record["url"]] if nso_record else [COMMON["unsd_census"]]), note="Integrated into the AreaData census series." if central else "Result location reviewed in prior Latin America research; data not integrated." if latin else "Start location identified; result tables not yet acquired or inspected."),
             "table_catalog": state("inspected" if central else ("accessed" if latin else "identified"), urls=census_urls or [nso_record["url"] if nso_record else COMMON["unsd_census"]], note="Acquired files are itemized in SOURCE_TABLE_INVENTORY.json." if central else "Catalog/location only; no claim of complete table inventory."),
@@ -455,7 +467,10 @@ def main():
         "| ID | Country/area | Census year | Census evidence | Local adapter | Planning evidence |", "|---|---|---:|---|---|---|",
     ]
     for x in preflight:
-        year = x["latest_census"]["note"].split(":", 1)[-1].split(".", 1)[0].strip()
+        year = next((str(row.get("year")) for row in x["recent_census_rounds"] if row.get("status") == "results_adopted"), None)
+        if not year:
+            non_future = [row.get("year") for row in x["recent_census_rounds"] if isinstance(row.get("year"), int) and row.get("year") <= datetime.now(timezone.utc).year]
+            year = str(max(non_future)) if non_future else "not yet confirmed"
         lines.append(f"| {x['country_area_id']} | {x['name']} | {year} | {x['census_results']['status']} | {x['country_adapter_status']} | {x['planning_law']['status']} |")
     lines += ["", "See SOURCE_TABLE_INVENTORY.json, SOURCE_DISPOSITION.csv, GEOGRAPHY_CROSSWALK.csv, PLANNING_LEGAL_INVENTORY.csv and raw/source-discovery/receipt.json for traceability.", ""]
     (evidence / "SOURCE_PREFLIGHT.md").write_text("\n".join(lines), encoding="utf-8")
@@ -487,12 +502,15 @@ def main():
     if wpp_audit_path.exists():
         wpp_audit = json.loads(wpp_audit_path.read_text(encoding="utf-8"))
         rows = wpp_audit.get("countries") or wpp_audit.get("country_areas") or wpp_audit.get("records") or []
+        wpp_source_id = next((source["id"] for source in dataset["sources"] if source["id"] == "un-wpp2024-demographic-indicators-rev1"), "un-wpp2024-demographic-indicators-rev1")
+        wpp_source = source_by_id.get(wpp_source_id, {})
         for item in rows:
+            country_area_id = item.get("country_id") or item.get("country_area_id") or item.get("id") or item.get("iso3")
             dispositions.append({
-                "record_type": "wpp_country_area_adoption", "country_area_id": item.get("country_area_id") or item.get("id") or item.get("iso3"),
-                "source_id": "un-wpp-2024", "source_title": "UN World Population Prospects 2024", "source_url": source_by_id.get("un-wpp-2024", {}).get("url", ""),
-                "source_table_or_field": item.get("source_column") or item.get("field") or "Total Population, as of 1 January (thousands)",
-                "indicator_id": "UN_WPP_POP_TOTL", "periods": "2023 | 2024 | 2025 | 2026", "geography": item.get("country_area_id") or item.get("id") or "",
+                "record_type": "wpp_country_area_adoption", "country_area_id": country_area_id,
+                "source_id": wpp_source_id, "source_title": wpp_source.get("name", "UN World Population Prospects 2024, demographic indicators, Rev.1"), "source_url": wpp_source.get("url", ""),
+                "source_table_or_field": item.get("value_column") or item.get("source_column") or item.get("field") or "Total Population, as of 1 July (thousands)",
+                "indicator_id": "UN_WPP_POP_TOTAL", "periods": "2023 | 2024 | 2025 | 2026", "geography": country_area_id or "",
                 "observation_count": item.get("observation_count", 4 if item.get("status") == "adopted" else 0), "disposition": item.get("status", "documented_in_wpp_audit"),
                 "reason": item.get("reason", "See UN_WPP_AMERICAS_ADOPTION_AUDIT.json"), "terms_status": "UN publication; attribution retained", "raw_redistribution": "not_in_public_site",
             })

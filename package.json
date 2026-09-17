@@ -14,6 +14,7 @@
     "create:central-america": "node scripts/create-central-america.mjs",
     "create:americas": "node scripts/create-americas.mjs",
     "verify:regional": "node scripts/verify-regional-delivery.mjs",
+    "validate:evidence:americas": "node scripts/validate-americas-evidence.mjs",
     "collect:census:central-america": "node scripts/collect-central-america-census.mjs",
     "collect:census:honduras-municipal": "node scripts/collect-honduras-municipal-census.mjs",
     "extract:census:central-america": "python scripts/extract-central-america-census.py",

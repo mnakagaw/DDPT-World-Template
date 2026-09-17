@@ -276,25 +276,57 @@ export function documentsCsv(dataset,territoryId) {
   });
   return makeCsv([columns,...rows]);
 }
-export function planningMarkdown(dataset, territoryId, period) {
+const PLANNING_EXPORT_COPY={
+  es:{
+    title:'Base de planificación',generic:'**Esquema de trabajo genérico y no aprobado.** Este modelo no ha verificado el formulario oficial de planificación del país ni el procedimiento obligatorio. Complete el esquema con la guía oficial antes de usarlo formalmente. No registra aprobación ni acuerdo comunitario.',
+    authority:'Esta área seleccionada es un ámbito de análisis, no una autoridad legal de planificación verificada.',
+    completeness:(total,integrated)=>`Este portal regional no representa ${total} ediciones nacionales terminadas. El censo oficial y la jerarquía interna están integrados para ${integrated} de ${total} entradas del registro; las leyes, planes, presupuestos y evaluaciones de planificación deben incorporarse mediante cada adaptador nacional. No se genera para este ámbito regional ningún borrador de plan ni atribución a materiales oficiales.`,
+    scope:'Área y alcance de la evidencia',country:'País',area:'Área',code:'Código',boundary:'Edición de límites',requested:'Período de evidencia solicitado',edition:'Edición de datos',evidence:'Evidencia estadística adquirida',
+    evidenceRule:'Solo aparecen observaciones de esta área y período. Los datos nacionales no sustituyen los vacíos locales. Los indicadores pueden tener definiciones y coberturas diferentes.',
+    official:'Materiales oficiales y hallazgos verificados',periodRule:'Los períodos de los planes, años fiscales y trimestres conservan su propio período de origen. No se filtran ni se renombran como el período estadístico. Los materiales publicados se mantienen separados de este esquema de trabajo generado.',
+    noDocs:'No se han recopilado documentos locales para esta área. Esto no demuestra que no exista un plan.',gaps:'Vacíos de evidencia pendientes',next:'Siguiente',
+    prepared:'Preparado con el mismo conjunto de datos, área y período seleccionados en el tablero. Este Markdown editable es una ayuda genérica para la planificación; no es un archivo DOCX ni un formulario oficial del país.',
+    htmlNote:'Esquema de trabajo genérico y no aprobado. Use la función Imprimir del navegador para imprimir o guardar como PDF. La evidencia y el contenido coinciden con la descarga Markdown editable.'
+  },
+  ja:{
+    title:'計画基礎資料',generic:'**汎用の未承認作業案です。** このテンプレートでは、当該国の公式計画様式や必要な手続を確認していません。正式利用の前に公式手引きに照らして完成させてください。承認や住民合意を記録したものではありません。',
+    authority:'選択中の地域は分析対象であり、確認済みの法定計画主体ではありません。',
+    completeness:(total,integrated)=>`この地域ポータルは${total}の国別版が完成したことを意味しません。公式国勢調査と国内階層の統合は${total}件中${integrated}件で、計画法、計画、予算、実施・評価資料は国別アダプターで追加します。この広域分析対象について、計画草案や公式資料への帰属を生成しません。`,
+    scope:'地域と根拠の範囲',country:'国',area:'地域',code:'コード',boundary:'境界版',requested:'指定した根拠年',edition:'データ版',evidence:'取得済み統計根拠',
+    evidenceRule:'この地域と年の観測値だけを掲載します。地方の欠測を全国値で補いません。指標ごとに定義と被覆範囲が異なる場合があります。',
+    official:'公式資料と確認済み所見',periodRule:'計画期間、会計年度、四半期は各資料固有の期間を保持します。統計年で絞り込んだり名称を変えたりしません。公表資料と、この生成された作業案を区別します。',
+    noDocs:'この地域の地方資料は未収集です。計画が存在しないことを意味しません。',gaps:'未取得の根拠',next:'次の対応',
+    prepared:'ダッシュボードと同じデータセット、選択地域、期間から作成しました。この編集可能なMarkdownは汎用の計画補助資料であり、DOCXや当該国の公式様式ではありません。',
+    htmlNote:'汎用の未承認作業案です。ブラウザーの印刷機能で印刷またはPDF保存できます。根拠と内容は編集用Markdownと一致します。'
+  }
+};
+function planningExportCopy(language='en'){
+  if(PLANNING_EXPORT_COPY[language])return PLANNING_EXPORT_COPY[language];
+  return {title:'Planning base',generic:'**Generic, unapproved working outline.** The country’s official planning form and required procedure have not been verified by this template. Complete this outline against official guidance before formal use. It does not record approval or community agreement.',authority:'This selected area is an analysis scope, not a verified legal planning authority.',completeness:(total,integrated)=>`This regional portal is not ${total} completed country editions. Official census and domestic hierarchy are integrated for ${integrated} of ${total} registry entries; country planning laws, plans, budgets and evaluations remain country-adapter work. No planning draft or official-material attribution is generated for this regional scope.`,scope:'Area and evidence scope',country:'Country',area:'Area',code:'Code',boundary:'Boundary edition',requested:'Requested evidence period',edition:'Data edition',evidence:'Acquired statistical evidence',evidenceRule:'Only observations for this area and period appear below. National observations are not substituted for local gaps. Different indicators can have different definitions and coverage.',official:'Official materials and verified findings',periodRule:'Document plan periods, fiscal years and quarters below are their own source periods. They are not filtered or relabelled as the statistical evidence period. Published materials remain distinct from this generated working outline.',noDocs:'No local documents have been collected for this area. This does not establish whether a plan exists.',gaps:'Remaining evidence gaps',next:'Next',prepared:'Prepared from the same dataset and selected area/period used by the dashboard. This editable Markdown is a generic planning aid, not a DOCX file or an official country form.',htmlNote:'Generic, unapproved working outline. Use your browser’s Print command to print or save as PDF. Its evidence and content match the editable Markdown download.'};
+}
+export function planningMarkdown(dataset, territoryId, period, language='en') {
   const area = dataset.territories.find(row => row.id === territoryId);
   if (!area) throw new Error('Unknown planning territory');
-  const documents = planningDocuments(dataset,territoryId), settings=planningSettings(dataset);
+  const documents = planningDocuments(dataset,territoryId), settings=planningSettings(dataset), copy=planningExportCopy(language);
   const evidence = evidenceRows(dataset, territoryId, period);
+  const regional=['world','regional'].includes(dataset.analysis?.kind)&&area.type!=='country';
+  const total=dataset.analysis?.coverage?.country_area_count||dataset.territories.filter(row=>row.type==='country').length;
+  const integrated=dataset.analysis?.coverage?.census_integrated_country_ids?.length||0;
   const lines = [
-    `# Planning base — ${markdownText(area.name)}`, '',
-    '**Generic, unapproved working outline.** The country’s official planning form and required procedure have not been verified by this template. Complete this outline against official guidance before formal use. It does not record approval or community agreement.', '',
-    '## 1. Area and evidence scope', '',
-    `- Country: ${markdownText(dataset.country.name)} (${markdownText(dataset.country.id)})`,
-    `- Area: ${markdownText(area.name)}; ID: ${markdownText(area.id)}; level: ${markdownText(area.level)}; type: ${markdownText(area.type)}`,
-    `- Code: ${markdownText(area.official_code || 'Not verified')}; code system: ${markdownText(area.code_system || 'Not specified')}`,
-    `- Boundary edition: ${markdownText(area.boundary_version || 'Not verified')}`,
-    `- Requested evidence period: ${markdownText(period || 'No source period available')}`,
-    `- Data edition: ${markdownText(dataset.generated_at)}`, '',
+    `# ${copy.title} — ${markdownText(area.name)}`, '',
+    copy.generic, '',
+    ...(regional?[`**${copy.authority}** ${copy.completeness(total,integrated)}`,'']:[]),
+    `## 1. ${copy.scope}`, '',
+    `- ${copy.country}: ${markdownText(dataset.country.name)} (${markdownText(dataset.country.id)})`,
+    `- ${copy.area}: ${markdownText(area.name)}; ID: ${markdownText(area.id)}; level: ${markdownText(area.level)}; type: ${markdownText(area.type)}`,
+    `- ${copy.code}: ${markdownText(area.official_code || 'Not verified')}; code system: ${markdownText(area.code_system || 'Not specified')}`,
+    `- ${copy.boundary}: ${markdownText(area.boundary_version || 'Not verified')}`,
+    `- ${copy.requested}: ${markdownText(period || 'No source period available')}`,
+    `- ${copy.edition}: ${markdownText(dataset.generated_at)}`, '',
     ...(settings.system?[`- Planning framework: ${markdownText(settings.system.label)}; scope: ${markdownText(settings.system.scope)}; cycle: ${markdownText(settings.system.cycle)}.`,...settings.system.source_ids.map(id=>{const source=dataset.sources.find(row=>row.id===id);return `- Framework source: ${markdownText(source?.name)} <${safeUrl(source?.url)}>`;}),'']:[]),
     ...(settings.update?.status==='stopped'?[`- SOURCE UPDATE STOPPED: ${markdownText(settings.update.message)}. Last success: ${markdownText(settings.update.last_success_at||'Not recorded')}; checked ${markdownText(settings.update.checked_at)}.`,'']:[]),
-    '## 2. Acquired statistical evidence', '',
-    'Only observations for this area and period appear below. National observations are not substituted for local gaps. Different indicators can have different definitions and coverage.', '',
+    `## 2. ${copy.evidence}`, '',
+    copy.evidenceRule, '',
     '| Indicator | Value | Unit | Status | Source |', '|---|---:|---|---|---|',
     ...evidence.map(({indicator, row, value, status, source}) => `| ${markdownText(indicator.name)} | ${value === null ? '—' : String(value)} | ${markdownText(row?.unit || indicator.unit)} | ${markdownText(statusLabel(status))} | ${markdownText(source?.name || 'No source acquired')} |`), '',
     ...evidence.map(({indicator, row, source}) => `- ${markdownText(indicator.name)}: ${markdownText(row?.definition || indicator.definition || 'Definition not acquired')}. ${safeUrl(source?.url) ? `Source: <${safeUrl(source.url)}>.` : 'No verified source link.'} Retrieved: ${markdownText(source?.retrieved_at || 'Not recorded')}.`), '',
@@ -302,9 +334,9 @@ export function planningMarkdown(dataset, territoryId, period) {
       const meaning=observationContext(dataset,area,indicator,row);
       return dataset.analysis || !meaning.comparable || indicator.definition_id || indicator.population ? [`- Meaning of ${markdownText(indicator.name)}: definition ID ${markdownText(meaning.definition_id || 'Not recorded')}; population ${markdownText(meaning.population || 'Not recorded')}; method ${markdownText(meaning.method || 'Not recorded')}. ${markdownText(meaning.reason || 'No explicit concept difference recorded; verify source compatibility.')}`]:[];
     }),
-    '## Official materials and verified findings', '',
-    'Document plan periods, fiscal years and quarters below are their own source periods. They are not filtered or relabelled as the statistical evidence period. Published materials remain distinct from this generated working outline.', '',
-    ...(documents.length?documents.map(doc=>documentMarkdown(dataset,doc)):['No local documents have been collected for this area. This does not establish whether a plan exists.']), '',
+    `## ${copy.official}`, '',
+    copy.periodRule, '',
+    ...(documents.length?documents.map(doc=>documentMarkdown(dataset,doc)):[copy.noDocs]), '',
     '## 3. Working issues to investigate', '',
     '| Proposed issue | Evidence and gaps | Who proposed it | Verification needed |', '|---|---|---|---|', '| [Complete locally] | [Cite source and period] | [Record actual proposer] | [Complete locally] |', '',
     '## 4. Proposed objectives and indicators', '',
@@ -318,17 +350,17 @@ export function planningMarkdown(dataset, territoryId, period) {
     '- Confirm the legally required planning structure, competent authority and review process.',
     '- Assign responsibilities only after confirming mandates and participation.',
     '- Record indicator definitions, update frequency, data owner and review dates.', '',
-    '## 8. Remaining evidence gaps', '',
-    ...selectedGaps(dataset,territoryId).map(gap => `- ${markdownText(gap.category)} — ${markdownText(statusLabel(gap.status))}: ${markdownText(gap.detail)} Next: ${markdownText(gap.next_action)}`), '',
-    'Prepared from the same dataset and selected area/period used by the dashboard. This editable Markdown is a generic planning aid, not a DOCX file or an official country form.', ''
+    `## 8. ${copy.gaps}`, '',
+    ...selectedGaps(dataset,territoryId).map(gap => `- ${markdownText(gap.category)} — ${markdownText(statusLabel(gap.status))}: ${markdownText(gap.detail)} ${copy.next}: ${markdownText(gap.next_action)}`), '',
+    copy.prepared, ''
   ];
   return lines.join('\n');
 }
-export function planningHtml(dataset, territoryId, period) {
+export function planningHtml(dataset, territoryId, period, language='en') {
   const area = dataset.territories.find(row => row.id === territoryId);
-  const markdown = planningMarkdown(dataset, territoryId, period);
+  const copy=planningExportCopy(language),markdown = planningMarkdown(dataset, territoryId, period, language);
   // Render the exact downloadable Markdown as readable pre-wrapped text; no unsafe Markdown HTML execution.
-  return `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Planning base — ${escapeHtml(area.name)}</title><style>body{font:15px/1.6 system-ui,sans-serif;color:#172d3e;max-width:1000px;margin:28px auto;padding:0 20px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}h1{font-size:24px}.note{border-left:4px solid #267868;padding:10px 16px;background:#eff6f3}@media print{body{margin:0;max-width:none;font-size:11pt}pre{white-space:pre-wrap}@page{margin:18mm}}</style><body><h1>Planning base — ${escapeHtml(area.name)}</h1><p class="note">Generic, unapproved working outline. Use your browser’s Print command to print or save as PDF. Its evidence and content match the editable Markdown download.</p><pre>${escapeHtml(markdown)}</pre></body></html>`;
+  return `<!doctype html><html lang="${escapeHtml(language)}"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(copy.title)} — ${escapeHtml(area.name)}</title><style>body{font:15px/1.6 system-ui,sans-serif;color:#172d3e;max-width:1000px;margin:28px auto;padding:0 20px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}h1{font-size:24px}.note{border-left:4px solid #267868;padding:10px 16px;background:#eff6f3}@media print{body{margin:0;max-width:none;font-size:11pt}pre{white-space:pre-wrap}@page{margin:18mm}}</style><body><h1>${escapeHtml(copy.title)} — ${escapeHtml(area.name)}</h1><p class="note">${escapeHtml(copy.htmlNote)}</p><pre>${escapeHtml(markdown)}</pre></body></html>`;
 }
 
 // Polygon/MultiPolygon only. Numeric paths cannot execute source content. Dateline

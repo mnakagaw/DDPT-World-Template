@@ -104,10 +104,18 @@ function mapPanel({thematic=false,planning=false}={}) {
   // Location follows the navigation hierarchy, independently of lower comparison cohorts.
   const childIds=new Set(worldLocation&&!isTerminalTerritory(dataset,selected)?dataset.territories.filter(area=>area.parent_id===selected.id).map(area=>area.id):[]);
   const targetLevel = worldLocation&&childIds.size?areaFor([...childIds][0])?.level:thematic ? state.level : selected.level==='national' ? localLevels(dataset)[0] : selected.level;
-  const features=allFeatures.filter(feature=>worldLocation&&childIds.size?childIds.has(feature.properties?.territory_id):areaFor(feature.properties?.territory_id)?.level===targetLevel);
+  const rows=thematic?comparisonRows(dataset,state):[];
+  const comparisonIds=new Set(rows.map(row=>row.area.id));
+  // A thematic map is the spatial rendering of the same comparison registry used
+  // by the table, coverage and ranking. Never expose out-of-scope shapes merely
+  // because they share the same administrative level.
+  const features=allFeatures.filter(feature=>{
+    const id=feature.properties?.territory_id;
+    if(thematic)return comparisonIds.has(id);
+    return worldLocation&&childIds.size?childIds.has(id):areaFor(id)?.level===targetLevel;
+  });
   const fitId = wholeMap || selected.level==='national' || worldLocation&&childIds.size ? '' : selected.id;
   const geometry=mapGeometry(features,fitId);
-  const rows=thematic?comparisonRows(dataset,state):[];
   const stats=distribution(rows);
   const values=new Map(rows.map(row=>[row.area.id,row.value]));
   const comparisonById=new Map(rows.map(row=>[row.area.id,row]));
@@ -220,7 +228,20 @@ function planning() {
   const outputs={markdown:button('planning-markdown','Download editable Markdown','','button'),html:button('planning-html','Print-ready HTML'),evidence_csv:button('planning-csv','Evidence CSV'),documents_csv:button('documents-csv','Materials and findings CSV')};
   const links=settings.related_links.filter(item=>!item.territory_id||item.territory_id===state.selected).map(item=>({label:item.label,url:relatedResourceUrl(item.url,base,routeWithLanguage())})).filter(item=>item.url);
   const gaps=selectedGaps(dataset,state.selected);
-  if(worldMode()&&currentArea().type!=='country'){const integrated=dataset.analysis?.coverage?.census_integrated_country_ids?.length||0,total=dataset.analysis?.coverage?.country_area_count||dataset.territories.filter(area=>area.type==='country').length;return '<section class="panel planning-overview"><h2>'+e(settings.title)+'</h2><p>'+e(settings.purpose)+'</p></section><section class="panel planning-controls"><h2>Choose one planning territory</h2>'+areaControls()+identity()+'</section><div class="planning-grid">'+mapPanel({planning:true})+'<section class="panel planning-resources"><h2>'+e(currentArea().name)+'</h2><p class="notice"><strong>This selected area is an analysis scope, not a verified legal planning authority.</strong> This regional portal is not '+total+' completed country editions. Official census and domestic hierarchy are integrated for '+integrated+' of '+total+' registry entries; country planning laws, plans, budgets and evaluations remain country-adapter work. No planning draft or official-material attribution is generated for this regional scope.</p><div class="actions">'+pageLink('territorial','Review territorial evidence')+pageLink('thematic','Compare countries')+pageLink('database','Inspect source data')+'</div></section></div>';}
+  if(worldMode()&&currentArea().type!=='country'){
+    const integrated=dataset.analysis?.coverage?.census_integrated_country_ids?.length||0,total=dataset.analysis?.coverage?.country_area_count||dataset.territories.filter(area=>area.type==='country').length;
+    const authorityWarning=localCopy(
+      'This selected area is an analysis scope, not a verified legal planning authority.',
+      'Esta área seleccionada es un ámbito de análisis, no una autoridad legal de planificación verificada.',
+      '選択中の地域は分析対象であり、確認済みの法定計画主体ではありません。'
+    );
+    const completenessWarning=localCopy(
+      `This regional portal is not ${total} completed country editions. Official census and domestic hierarchy are integrated for ${integrated} of ${total} registry entries; country planning laws, plans, budgets and evaluations remain country-adapter work. No planning draft or official-material attribution is generated for this regional scope.`,
+      `Este portal regional no representa ${total} ediciones nacionales terminadas. El censo oficial y la jerarquía interna están integrados para ${integrated} de ${total} entradas del registro; las leyes, planes, presupuestos y evaluaciones de planificación deben incorporarse mediante cada adaptador nacional. No se genera para este ámbito regional ningún borrador de plan ni atribución a materiales oficiales.`,
+      `この地域ポータルは${total}の国別版が完成したことを意味しません。公式国勢調査と国内階層の統合は${total}件中${integrated}件で、計画法、計画、予算、実施・評価資料は国別アダプターで追加します。この広域分析対象について、計画草案や公式資料への帰属を生成しません。`
+    );
+    return '<section class="panel planning-overview"><h2>'+e(settings.title)+'</h2><p>'+e(settings.purpose)+'</p></section><section class="panel planning-controls"><h2>'+e(localCopy('Choose one planning territory','Elegir un territorio de planificación','計画対象地域を1つ選択'))+'</h2>'+areaControls()+identity()+'</section><div class="planning-grid">'+mapPanel({planning:true})+'<section class="panel planning-resources"><h2>'+e(currentArea().name)+'</h2><p class="notice planning-scope-warning"><strong>'+e(authorityWarning)+'</strong> '+e(completenessWarning)+'</p><div class="actions">'+pageLink('territorial',localCopy('Review territorial evidence','Revisar evidencia territorial','地域データを確認'))+pageLink('thematic',localCopy('Compare countries','Comparar países','国を比較'))+pageLink('database',localCopy('Inspect source data','Consultar datos fuente','元データを確認'))+'</div></section></div>';
+  }
   return '<section class="panel planning-overview"><h2>'+e(settings.title)+'</h2><p>'+e(settings.purpose)+'</p><p class="small-note">Verified material references for '+local.filter(area=>refs.has(area.id)).length+' of '+local.length+' local records'+(refs.has(dataset.country.national_territory_id)?'; national reference materials also available':'')+'. Coverage varies by category and period; this is not a count of completed or approved plans.</p></section>'+
   '<section class="panel planning-controls"><h2>Choose an area</h2>'+areaControls()+identity()+'</section>'+
   '<div class="planning-grid">'+mapPanel({planning:true})+'<section class="panel planning-resources"><h2>'+e(currentArea().name)+' — available materials</h2><p>Materials keep their own plan period, fiscal year or quarter. The statistical year below does not filter or relabel them.</p>'+
@@ -228,7 +249,7 @@ function planning() {
   renderDocumentGroups(dataset,state.selected)+'</section></div>'+
   '<section class="panel planning-output"><h2>Prepare a working evidence base</h2><p class="notice compact"><strong>Generated working material — unapproved.</strong> These outputs bring together selected-area statistics and collected references. They do not replace the published originals or establish official approval, targets or resident agreement.</p><div class="control-row">'+periodControl('planning-period')+'</div><p>'+observed+' of '+dataset.indicators.length+' statistical indicators have an observed value for '+e(currentArea().name)+' in '+e(state.period || 'the selected period')+'. '+documents.length+' selected-area material records retain their own periods.</p><div class="download-actions">'+settings.outputs.map(format=>outputs[format] || '').join('')+'</div>'+
   (settings.outputs.length?'<p class="small-note">Evidence CSV contains the selected statistical year. Materials CSV, when adopted, contains the original document periods and findings. Markdown and HTML include both with source definitions and explicit gaps.</p>':'<p class="missing-note">No generated download format is adopted for this project. Use the original references and territorial evidence; record the country-specific output workflow in the handoff.</p>')+
-  (settings.outputs.includes('markdown')||settings.outputs.includes('html')?'<details><summary>Preview planning base</summary><pre class="planning-preview">'+e(planningMarkdown(dataset,state.selected,state.period))+'</pre></details>':'')+
+  (settings.outputs.includes('markdown')||settings.outputs.includes('html')?'<details><summary>Preview planning base</summary><pre class="planning-preview">'+e(planningMarkdown(dataset,state.selected,state.period,language))+'</pre></details>':'')+
   (gaps.length?'<details><summary>Outstanding evidence and next actions</summary><ul>'+gaps.map(gap=>'<li><strong>'+e(statusLabel(gap.status))+'</strong> — '+e(gap.detail)+'<p class="small-note">Next: '+e(gap.next_action || 'Verify the responsible source.')+'</p></li>').join('')+'</ul></details>':'')+'</section>'+
   (links.length?'<section class="panel"><h2>Related investment, finance and official services</h2><ul>'+links.map(item=>'<li><a href="'+e(item.url)+'">'+e(item.label)+'</a></li>').join('')+'</ul></section>':'')+
   (nationalDocuments.length?'<section class="panel"><h2>National reference materials — '+e(dataset.country.name)+'</h2><p>National materials are shown separately and are not attributed to '+e(currentArea().name)+'.</p>'+nationalDocuments.map(doc=>renderDocument(dataset,doc)).join('')+'</section>':'')+
@@ -454,8 +475,8 @@ app.addEventListener('click',async event=>{
     else if(action==='diagnostic-markdown')download(diagnosticMarkdown(dataset,state.selected,state.period),`${stem}-diagnostic.md`,'text/markdown;charset=utf-8');
     else if(action==='diagnostic-html')download(diagnosticHtml(dataset,state.selected,state.period),`${stem}-diagnostic.html`,'text/html;charset=utf-8');
     else if(action==='diagnostic-csv')download(diagnosticCsv(dataset,state.selected,state.period),`${stem}-diagnostic.csv`,'text/csv;charset=utf-8');
-    else if(action==='planning-markdown')download(planningMarkdown(dataset,state.selected,state.period),`${stem}-planning-base.md`,'text/markdown;charset=utf-8');
-    else if(action==='planning-html')download(planningHtml(dataset,state.selected,state.period),`${stem}-planning-base.html`,'text/html;charset=utf-8');
+    else if(action==='planning-markdown')download(planningMarkdown(dataset,state.selected,state.period,language),`${stem}-planning-base.md`,'text/markdown;charset=utf-8');
+    else if(action==='planning-html')download(planningHtml(dataset,state.selected,state.period,language),`${stem}-planning-base.html`,'text/html;charset=utf-8');
     else if(action==='documents-csv')download(documentsCsv(dataset,state.selected),`${safeFilename(dataset.country.id+'-'+state.selected)}-materials.csv`,'text/csv;charset=utf-8');
     else if(action==='planning-csv')download(evidenceCsv(dataset,state.selected,state.period),`${stem}-evidence.csv`,'text/csv;charset=utf-8');
     else if(action==='indicator-csv'){
