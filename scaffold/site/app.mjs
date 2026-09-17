@@ -195,10 +195,11 @@ function rankingContent(rows) {
 function thematic() {
   const indicator=currentMetric();
   if(!indicator)return '<p class="missing-note">No indicators have been collected. See the source register and acquisition gaps.</p>';
+  const effectivePeriod=effectivePeriodForIndicator(dataset,state.metric,state.period);
   const rows=comparisonRows(dataset,state), stats=distribution(rows);
   const compatibility=comparisonCompatibility(dataset,state);
-  const national=areaObservationState(dataset,dataset.country.national_territory_id,state.metric,state.period);
-  const selected=areaObservationState(dataset,state.selected,state.metric,state.period),selectedMeaning=observationContext(dataset,currentArea(),indicator,selected.row),nationalMeaning=observationContext(dataset,areaFor(dataset.country.national_territory_id),indicator,national.row);
+  const national=areaObservationState(dataset,dataset.country.national_territory_id,state.metric,effectivePeriod);
+  const selected=areaObservationState(dataset,state.selected,state.metric,effectivePeriod),selectedMeaning=observationContext(dataset,currentArea(),indicator,selected.row),nationalMeaning=observationContext(dataset,areaFor(dataset.country.national_territory_id),indicator,national.row);
   const levels=localLevels(dataset);
   const rank=rankedRows(rows,rankOrder).find(row=>row.area.id===state.selected)?.rank;
   return `<section class="panel controls-panel"><div class="control-row">${indicatorControl()}${periodControl()}<label class="field" for="comparison-level"><span>Comparable geographic level</span><select id="comparison-level" data-control="level">${levels.length?levels.map(level=>`<option value="${e(level)}" ${level===state.level?'selected':''}>${e(levelLabel(level))}</option>`).join(''):'<option value="">No local areas acquired</option>'}</select></label></div><p class="definition">${e(indicator.definition)} Unit: ${e(indicator.unit)}. All comparisons use this indicator and period policy; changing an area retains both. Mixed-period rows show each area's actual source year.</p></section>
@@ -215,7 +216,7 @@ function planning() {
   const refs=new Set(dataset.documents.filter(hasDocumentReference).map(doc=>doc.territory_id));
   const groups=documentGroups(dataset,state.selected);
   const local=dataset.territories.filter(area=>area.level!=='national');
-  const observed=dataset.indicators.filter(indicator=>areaObservationState(dataset,state.selected,indicator.id,state.period).value!==null).length;
+  const observed=dataset.indicators.filter(indicator=>areaObservationState(dataset,state.selected,indicator.id,effectivePeriodForIndicator(dataset,indicator.id,state.period)).value!==null).length;
   const outputs={markdown:button('planning-markdown','Download editable Markdown','','button'),html:button('planning-html','Print-ready HTML'),evidence_csv:button('planning-csv','Evidence CSV'),documents_csv:button('documents-csv','Materials and findings CSV')};
   const links=settings.related_links.filter(item=>!item.territory_id||item.territory_id===state.selected).map(item=>({label:item.label,url:relatedResourceUrl(item.url,base,routeWithLanguage())})).filter(item=>item.url);
   const gaps=selectedGaps(dataset,state.selected);
