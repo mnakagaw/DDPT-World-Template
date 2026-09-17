@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "checked_at": "2026-09-17",
-  "purpose": "Pinned discovery registries from the public Census Dashboard Kit. These are source-address preflight inputs, not evidence of acquisition, content verification, geography matching or indicator adoption.",
+  "purpose": "Pinned discovery registries and workflow references from the public Census Dashboard Kit. Source-address preflight inputs are not evidence of acquisition, content verification, geography matching or indicator adoption; workflow references are not evidence that an audit was performed.",
   "upstream": {
     "repository": "https://github.com/mnakagaw/Census-Dashboard-Kit",
     "commit": "88de64677d2691fa8ec83acbf71449943ac04374"
@@ -30,6 +30,16 @@
       "record_count": 4,
       "sha256": "2be58c3e99bd5ff89a1d23ef5d3c5bb8b130674f79bb9d734236f394ad7e5577",
       "use": "Detailed reference cases for Dominican Republic, Uganda, Laos and Bangladesh; never copy country-specific laws, hierarchy or indicators to another country."
+    }
+  ],
+  "workflow_sources": [
+    {
+      "id": "independent-completion-audit",
+      "path": "docs/INDEPENDENT_AUDIT.md",
+      "upstream_commit": "3f8861637d60481c09f5f2da1ca5f4c33b3082c0",
+      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/3f8861637d60481c09f5f2da1ca5f4c33b3082c0/docs/INDEPENDENT_AUDIT.md",
+      "sha256": "e60dec74752a02b09a56f570190f2c2c9fa26a59d8adba7acdcb74fdb10f5225",
+      "use": "Independent read-only completion audit after the builder closes a country candidate; do not publish before ACCEPT."
     }
   ]
 }

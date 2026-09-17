@@ -2,7 +2,7 @@
 
 **AreaDataの地域探索・データベース・計画資料と、国名を指定してDDPT型の国別ダッシュボードを作るための共通テンプレートです。**
 
-実行テンプレート：0.9.1。データschema：0.2（任意項目で後方互換を維持）。共通UX仕様：0.5 candidate（改善後のv1.0採用は別途検証）。
+実行テンプレート：0.9.2。データschema：0.2（任意項目で後方互換を維持）。共通UX仕様：0.5 candidate（改善後のv1.0採用は別途検証）。
 
 地域診断の上部には分析対象を選ぶ位置図・階層選択・基本情報を置き、下部の各指標には対象内部の比較地図・全件表を置く。上部で地域を選ぶとその全体を即時診断し、下部の図・行への注目は上部の対象・他指標・URLを変えない。市・県の後に同じ所属先のRegion／Subregionを選び直した場合も、下位を解除して上位全体へ切り替える。指標・年を保持し、親の値が未取得なら親の欠測を示す。[操作契約](docs/02_COMMON_SPEC.md)を参照。
 
@@ -113,7 +113,7 @@ npm run check
 npm test
 ```
 
-CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)、ベリーズ・グアテマラ国勢調査の実収集と部分統合は[0.6検証記録](docs/VALIDATION_v0.6.md)、7か国の公式人口・国内階層・混合基準年集計は[0.7検証記録](docs/VALIDATION_v0.7.md)、UN人口比較・国勢調査リンク・3言語UIは[0.8検証記録](docs/VALIDATION_v0.8.md)、Census採用年地図・調査履歴は[0.9検証記録](docs/VALIDATION_v0.9.md)、ラオス・バングラデシュ制作から得た完成工程は[0.9.1検証記録](docs/VALIDATION_v0.9.1.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
+CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)、ベリーズ・グアテマラ国勢調査の実収集と部分統合は[0.6検証記録](docs/VALIDATION_v0.6.md)、7か国の公式人口・国内階層・混合基準年集計は[0.7検証記録](docs/VALIDATION_v0.7.md)、UN人口比較・国勢調査リンク・3言語UIは[0.8検証記録](docs/VALIDATION_v0.8.md)、Census採用年地図・調査履歴は[0.9検証記録](docs/VALIDATION_v0.9.md)、国別制作の完成工程は[0.9.1検証記録](docs/VALIDATION_v0.9.1.md)、独立完成監査工程は[0.9.2検証記録](docs/VALIDATION_v0.9.2.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
 
 ## 維持するモデル
 
@@ -131,7 +131,7 @@ CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2
 
 [ウガンダ2案件の14教訓](docs/research/uganda-lessons-2026-09-14.md)を国別作業手順へ反映した。原資料の全項目棚卸し、付表・地域報告書の探索、代表地域での事前確認、同じ上位への再選択、計画様式の必要欄、実出力と性能を[12観点の補助確認票](templates/COUNTRY_LESSON_AUDIT.md)で確認する。AIが案件ごとの証拠と判定を記入する手順であり、12観点の自動検査実装や合格を意味しない。
 
-[Census Dashboard Kitで完成・公開したラオスとバングラデシュの制作工程](docs/research/census-dashboard-kit-country-lessons-2026-09-17.md)も国別作業手順へ反映した。公式資料目録の全件処置、原表の全数値列、6分野、地域コード・境界、計画制度、実出力を閉じてから完成判定する。Public KitのJICA対象142か国preflightは[commit・hash固定の外部台帳](config/external-source-registries.json)から探索開始点として参照するが、取得・本文確認・地理照合・採用済みとは扱わない。国別通常画面の指標別最新版と、世界・広域・研究DBの期間・履歴は役割を分ける。この反映は手順と証拠契約の追加であり、Public Kitの自動delivery gateや国別Word生成を本リポジトリへ実装済みという意味ではない。
+[Census Dashboard Kitから得た国別制作・独立監査工程](docs/research/census-dashboard-kit-country-lessons-2026-09-17.md)も国別作業手順へ反映した。公式資料目録の全件処置、原表の全数値列、6分野、地域コード・境界、計画制度、実出力を閉じ、別担当が[独立完成監査](templates/INDEPENDENT_AUDIT.md)で原資料・意味・最新年・比較集合・実出力を確認してから公開する。Public KitのJICA対象142か国preflightと監査手順は[commit・hash固定の外部台帳](config/external-source-registries.json)から参照する。国別通常画面の指標別最新版と、世界・広域・研究DBの期間・履歴は役割を分ける。この反映は手順と証拠契約の追加であり、Public Kitの自動delivery gateや国別Word生成を本リポジトリへ実装済みという意味ではない。
 
 [DDPT・ウガンダ公開版の3ページ比較](docs/research/ddpt-uganda-template-comparison-2026-09-14.md)では、ユーザビリティと国別制作の容易性、共通図表、計画資料、投資情報の段階的な搭載を検討した。2026-09-14の公開画面と実装構造に基づく提案であり、共通UXの採用決定や実装変更ではない。
 
