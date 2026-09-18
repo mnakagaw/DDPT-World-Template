@@ -2,7 +2,7 @@
 
 **AreaDataの地域探索・データベース・計画資料と、国名を指定してDDPT型の国別ダッシュボードを作るための共通テンプレートです。**
 
-実行テンプレート：0.9.2。データschema：0.2（任意項目で後方互換を維持）。共通UX仕様：0.5 candidate（改善後のv1.0採用は別途検証）。
+実行テンプレート：0.10.1。データschema：0.2（任意項目で後方互換を維持）。共通UX仕様：0.5 candidate（改善後のv1.0採用は別途検証）。
 
 地域診断の上部には分析対象を選ぶ位置図・階層選択・基本情報を置き、下部の各指標には対象内部の比較地図・全件表を置く。上部で地域を選ぶとその全体を即時診断し、下部の図・行への注目は上部の対象・他指標・URLを変えない。市・県の後に同じ所属先のRegion／Subregionを選び直した場合も、下位を解除して上位全体へ切り替える。指標・年を保持し、親の値が未取得なら親の欠測を示す。[操作契約](docs/02_COMMON_SPEC.md)を参照。
 
@@ -37,7 +37,7 @@ START_HERE.mdから読み、取得可能な公式データの収集から、動�
 
 世界入口は2026-09-13の実取得で248の国・地域、4分野3,544公表値を保存した。世界値は公式WLD系列を使い、同一範囲の公式系列を取得していない大陸・広域は欠測を維持する。「Central America + Caribbean」はUN M49の013＋029を組み合わせた独自の探索区分で、Mexicoを含む。国際指標と国内統計の定義・単位・母集団を自動同一化しない。国版は別datasetとして接続し、国内行政階層・法定計画主体はその国の資料で確認する。参照図形に未結合・省略された79地域も台帳・表から消さない。[取得範囲と再現手順](docs/WORLD_ADAPTER.md)を参照。
 
-0.10ではUN M49 Americas（019）の57国・地域を、Northern America、Central America + Caribbean、South Americaから探索できるアメリカ大陸adapterを追加した。UN WPP 2024人口は原本に行がある55国・地域へ同一年系列を統合し、BVTとSGSは欠測のまま保持する。中米7か国の検証済み国勢調査・国内階層だけを選択的に再利用し、残り50国・地域へCensus値を転用しない。地域版の[受入条件](templates/REGIONAL_ACCEPTANCE.md)、[独立監査](templates/REGIONAL_INDEPENDENT_AUDIT.md)、`verify-regional-delivery.mjs`を追加し、別担当の`ACCEPT`前は公開ゲートを通さない。
+0.10ではUN M49 Americas（019）の57国・地域を、Northern America、Central America + Caribbean、South Americaから探索できるアメリカ大陸adapterを追加した。UN WPP 2024人口は原本に行がある55国・地域へ同一年系列を統合し、BVTとSGSは欠測のまま保持する。中米7か国の国勢調査人口・国内階層だけを選択的に再利用し、残り50国・地域へCensus値を転用しない。公開後の再点検で、`latest-available`の上部表示不整合と国別収集の未完了を確認したため、当初の完成判定を撤回した。0.10.1では[57国・地域の完成契約](docs/AMERICAS_COMPLETION_CONTRACT.md)と完了マトリクスを追加し、57/57完了と新しい独立監査ACCEPTまで再公開ゲートを通さない。
 
 最初のAreaData公開試作は**中米7か国**（Belize、Guatemala、El Salvador、Honduras、Nicaragua、Costa Rica、Panama）。これはUN M49 013（Mexicoを含む）とは異なるAreaDataの明示的な試作範囲である。国別・国内地域診断は国勢調査を主系列にする。0.7では7か国の公式全国人口と採用可能な国内階層を取得・正規化した。国勢調査年が違うため、地域値は「最新利用可能国勢調査による混合基準年」とし、Belize 2022、Guatemala 2018、El Salvador 2024、Honduras 2013、Nicaragua 2005、Costa Rica 2022、Panama 2023を構成表に明記する。国の全国値があれば、その国内の自治体欠測は地域合計へ影響しない。率・平均は単純平均せず、不完全時は全体値を出さない。0.8ではUN WPP 2024 Rev.1の同一年人口推計を別系列として追加し、国勢調査との差を誤差幅と扱わない。画面は英語・スペイン語・日本語を切り替えられ、初回はブラウザ言語、明示選択後は保存した言語を使う。URLの`lang`指定を最優先し、画面内リンクにも引き継ぐ。
 
@@ -115,7 +115,7 @@ npm run check
 npm test
 ```
 
-CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)、ベリーズ・グアテマラ国勢調査の実収集と部分統合は[0.6検証記録](docs/VALIDATION_v0.6.md)、7か国の公式人口・国内階層・混合基準年集計は[0.7検証記録](docs/VALIDATION_v0.7.md)、UN人口比較・国勢調査リンク・3言語UIは[0.8検証記録](docs/VALIDATION_v0.8.md)、Census採用年地図・調査履歴は[0.9検証記録](docs/VALIDATION_v0.9.md)、国別制作の完成工程は[0.9.1検証記録](docs/VALIDATION_v0.9.1.md)、独立完成監査工程は[0.9.2検証記録](docs/VALIDATION_v0.9.2.md)、アメリカ大陸版は[0.10検証記録](docs/VALIDATION_v0.10.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
+CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)、ベリーズ・グアテマラ国勢調査の実収集と部分統合は[0.6検証記録](docs/VALIDATION_v0.6.md)、7か国の公式人口・国内階層・混合基準年集計は[0.7検証記録](docs/VALIDATION_v0.7.md)、UN人口比較・国勢調査リンク・3言語UIは[0.8検証記録](docs/VALIDATION_v0.8.md)、Census採用年地図・調査履歴は[0.9検証記録](docs/VALIDATION_v0.9.md)、国別制作の完成工程は[0.9.1検証記録](docs/VALIDATION_v0.9.1.md)、独立完成監査工程は[0.9.2検証記録](docs/VALIDATION_v0.9.2.md)、アメリカ大陸入口は[0.10検証記録](docs/VALIDATION_v0.10.md)、完成判定撤回と修正は[0.10.1検証記録](docs/VALIDATION_v0.10.1.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
 
 ## 維持するモデル
 

@@ -1,6 +1,6 @@
 import {
   finite, escapeHtml as e, safeUrl, displayValue, statusLabel, sourceFor,
-  periodsFor, observationState, areaObservationState, effectivePeriodForIndicator, localLevels, levelLabel, nationalOnly, initialState,
+  periodsFor, observationState, areaObservationState, effectivePeriodForIndicator, territorialIndicatorState, localLevels, levelLabel, nationalOnly, initialState,
   selectTerritory, territoryLineage, territoryOptionLabel, hierarchyControls, selectHierarchyOption, routeQuery, countryDiagnosticUrl, comparisonLevelForArea, comparisonRows, comparisonCompatibility, rankedRows, searchRows, rankingReveal, rankingScrollTop, distribution,
   seriesFor, observedValue, makeCsv, evidenceCsv, safeFilename, planningMarkdown,
   planningHtml, documentsCsv, mapGeometry, seriesGeometry
@@ -174,7 +174,7 @@ function mapPanel({thematic=false,planning=false}={}) {
 function facts() {
   const priority=dataset.indicators.filter(indicator=>/population|household/i.test(indicator.name)).slice(0,3);
   const indicators=priority.length?priority:dataset.indicators.slice(0,3);
-  return `<div class="basic-facts">${indicators.map(indicator=>{const available=periodsFor(dataset,indicator.id),fallback=dataset.analysis?.default_period_by_indicator?.[indicator.id],period=available.includes(state.period)?state.period:fallback||state.period;const result=areaObservationState(dataset,state.selected,indicator.id,period);return `<div class="fact"><span>${e(indicator.name)}</span><strong>${fmt(result.value,indicator)}</strong><small>${e(result.row?.unit || indicator.unit)} · ${e(result.row?.period || period || 'No source period')} · ${e(statusLabel(result.status))}</small>${result.provenance==='areadata_calculated'?`<small>${e(result.note)}</small>`:''}</div>`;}).join('')}</div>`;
+  return `<div class="basic-facts">${indicators.map(indicator=>{const current=territorialIndicatorState(dataset,state.selected,indicator.id,state.period),result=current.result;return `<div class="fact"><span>${e(indicator.name)}</span><strong>${fmt(result.value,indicator)}</strong><small>${e(result.row?.unit || indicator.unit)} · ${e(current.period || 'No source period')} · ${e(statusLabel(result.status))}</small>${result.provenance==='areadata_calculated'?`<small>${e(result.note)}</small>`:''}</div>`;}).join('')}</div>`;
 }
 function seriesFigure(indicator, territoryId=state.selected) {
   const series=seriesFor(dataset,territoryId,indicator.id);
@@ -204,8 +204,8 @@ function populationContext(indicator,result) {
   return `<aside class="population-context" aria-label="UN population context"><div><span>Same-year international context</span><strong>${fmt(referenceResult.value,reference)}</strong><small>people · ${e(seriesSourceLabel(reference,referenceResult.row || stage,config.reference_period,language))}</small></div><div>${renderSourceAttribution(reference,referenceResult.row || stage,source,config.reference_period,language)}</div>${finite(difference)?`<p><strong>${difference>=0?'+':''}${fmt(difference,reference)}</strong> ${finite(percent)?`(${difference>=0?'+':''}${e(percent.toLocaleString(languageLocale(language),{maximumFractionDigits:1}))}%) `:''}${comparisonText}</p>`:`<p>${e(config.note)}</p>`}</aside>`;
 }
 function metricCard(indicator) {
-  const effectivePeriod=effectivePeriodForIndicator(dataset,indicator.id,state.period);
-  const result=areaObservationState(dataset,state.selected,indicator.id,effectivePeriod);
+  const selectedState=territorialIndicatorState(dataset,state.selected,indicator.id,state.period),effectivePeriod=selectedState.period;
+  const result=selectedState.result;
   const national=areaObservationState(dataset,dataset.country.national_territory_id,indicator.id,effectivePeriod);
   const meaning=result.provenance==='areadata_calculated'?{...observationMeaning(indicator),comparable:true,reason:''}:observationContext(dataset,currentArea(),indicator,result.row),referenceMeaning=observationContext(dataset,areaFor(dataset.country.national_territory_id),indicator,national.row);
   const local=currentArea().level!=='national';
@@ -256,7 +256,7 @@ function planning() {
   const refs=new Set(dataset.documents.filter(hasDocumentReference).map(doc=>doc.territory_id));
   const groups=documentGroups(dataset,state.selected);
   const local=dataset.territories.filter(area=>area.level!=='national');
-  const observed=dataset.indicators.filter(indicator=>areaObservationState(dataset,state.selected,indicator.id,effectivePeriodForIndicator(dataset,indicator.id,state.period)).value!==null).length;
+  const observed=dataset.indicators.filter(indicator=>territorialIndicatorState(dataset,state.selected,indicator.id,state.period).result.value!==null).length;
   const outputs={markdown:button('planning-markdown','Download editable Markdown','','button'),html:button('planning-html','Print-ready HTML'),evidence_csv:button('planning-csv','Evidence CSV'),documents_csv:button('documents-csv','Materials and findings CSV')};
   const links=settings.related_links.filter(item=>!item.territory_id||item.territory_id===state.selected).map(item=>({label:item.label,url:relatedResourceUrl(item.url,base,routeWithLanguage())})).filter(item=>item.url);
   const gaps=selectedGaps(dataset,state.selected);

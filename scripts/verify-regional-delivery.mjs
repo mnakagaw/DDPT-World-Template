@@ -3,6 +3,7 @@ import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {validateDataset} from '../lib/validate.mjs';
+import {validateCountryCompletionMatrix} from '../lib/country-completion-matrix.mjs';
 
 const requiredChecks=['scope_registry','aggregation_semantics','country_local_separation','browser_smoke','hierarchy_reset','download_exports','language_review','reproducible_build'];
 const exists=async filename=>{try{await access(filename);return true;}catch{return false;}};
@@ -35,6 +36,14 @@ export async function verifyRegionalDelivery(project,{requirePublishable=false}=
   if(requirePublishable&&audit?.status!=='accept')errors.push('Independent audit must be ACCEPT before publication');
   if(!requirePublishable&&audit?.status!=='accept')warnings.push('Independent audit is pending or not accepted; the candidate is not publishable.');
   if(delivery?.release?.public_status==='published'&&audit?.status!=='accept')errors.push('Public status cannot be published before independent audit ACCEPT');
+  if(requirePublishable&&delivery?.scope?.id==='M49:019'){
+    const matrix=await readJson('evidence/COUNTRY_COMPLETION_MATRIX.json');
+    if(matrix&&data){
+      const expected=data.territories.filter(area=>area.type==='country').map(area=>area.id),result=validateCountryCompletionMatrix(matrix,{expectedCountryIds:expected});
+      errors.push(...result.errors.map(item=>`completion matrix: ${item}`));
+      if(result.complete_country_area_count!==expected.length)errors.push(`All ${expected.length} Americas country/area adapters must be complete before publication; matrix has ${result.complete_country_area_count}`);
+    }
+  }
   return {ok:errors.length===0,publishable:errors.length===0&&audit?.status==='accept',errors,warnings};
 }
 
@@ -43,4 +52,3 @@ if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.ur
   if(!project){console.error('Usage: node scripts/verify-regional-delivery.mjs --project <directory> [--require-publishable]');process.exit(2);}
   const result=await verifyRegionalDelivery(project,{requirePublishable});console.log(JSON.stringify(result,null,2));if(!result.ok)process.exitCode=1;
 }
-

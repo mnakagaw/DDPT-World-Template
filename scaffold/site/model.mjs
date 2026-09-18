@@ -29,11 +29,21 @@ export function periodsFor(dataset, indicatorId) {
 export function latestObservedPeriod(dataset, indicatorId) {
   return [...new Set(dataset.observations.filter(row => row.indicator_id === indicatorId && observedValue(row) !== null).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}))[0] || '';
 }
+export function latestObservedPeriodForTerritory(dataset, territoryId, indicatorId) {
+  return [...new Set(dataset.observations.filter(row => row.territory_id === territoryId && row.indicator_id === indicatorId && observedValue(row) !== null).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}))[0] || '';
+}
 export function effectivePeriodForIndicator(dataset, indicatorId, period) {
   if(String(period)!==LATEST_AVAILABLE_PERIOD)return period;
   const indicator=dataset.indicators.find(item=>item.id===indicatorId);
   if(indicator?.period_policy==='latest_available_by_component')return period;
-  return dataset.analysis?.default_period_by_indicator?.[indicatorId] || latestObservedPeriod(dataset,indicatorId) || period;
+  const configured=dataset.analysis?.default_period_by_indicator?.[indicatorId];
+  return configured && configured!==LATEST_AVAILABLE_PERIOD ? configured : latestObservedPeriod(dataset,indicatorId) || period;
+}
+export function effectivePeriodForTerritoryIndicator(dataset, territoryId, indicatorId, period) {
+  if(String(period)!==LATEST_AVAILABLE_PERIOD)return period;
+  const indicator=dataset.indicators.find(item=>item.id===indicatorId);
+  if(indicator?.period_policy==='latest_available_by_component')return period;
+  return latestObservedPeriodForTerritory(dataset,territoryId,indicatorId) || effectivePeriodForIndicator(dataset,indicatorId,period);
 }
 export function observationFor(dataset, territoryId, indicatorId, period) {
   return dataset.observations.find(row => row.territory_id === territoryId && row.indicator_id === indicatorId && String(row.period) === String(period));
@@ -50,6 +60,12 @@ export function observationState(dataset, territoryId, indicatorId, period) {
 }
 export function areaObservationState(dataset, territoryId, indicatorId, period) {
   return resolvedObservation(dataset,territoryId,indicatorId,period);
+}
+export function territorialIndicatorState(dataset, territoryId, indicatorId, requestedPeriod) {
+  const indicator=dataset.indicators.find(item=>item.id===indicatorId) || null;
+  const period=effectivePeriodForTerritoryIndicator(dataset,territoryId,indicatorId,requestedPeriod);
+  const result=areaObservationState(dataset,territoryId,indicatorId,period);
+  return {indicator,requested_period:String(requestedPeriod),period:result.row?.period || period,result,source:sourceFor(dataset,indicator,result.row)};
 }
 export function localLevels(dataset) { return [...new Set(dataset.territories.filter(row => row.level !== 'national').map(row => row.level))]; }
 export function comparisonLevelForArea(dataset, territoryId, fallback = '') {
@@ -228,9 +244,8 @@ export function makeCsv(rows) { return '\uFEFF' + rows.map(row => row.map(csvCel
 export function evidenceRows(dataset, territoryId, period, indicatorIds = dataset.indicators.map(row => row.id)) {
   const area = dataset.territories.find(row => row.id === territoryId);
   return dataset.indicators.filter(indicator => indicatorIds.includes(indicator.id)).map(indicator => {
-    const effectivePeriod=effectivePeriodForIndicator(dataset,indicator.id,period);
-    const current = areaObservationState(dataset, territoryId, indicator.id, effectivePeriod), source = sourceFor(dataset, indicator, current.row);
-    return {area, indicator, ...current, source, period:current.row?.period || effectivePeriod};
+    const current=territorialIndicatorState(dataset,territoryId,indicator.id,period);
+    return {area, indicator, ...current.result, source:current.source, period:current.period};
   });
 }
 export function evidenceCsv(dataset, territoryId, period, indicatorIds) {

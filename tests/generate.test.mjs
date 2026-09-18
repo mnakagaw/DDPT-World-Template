@@ -4,7 +4,7 @@ import {mkdtemp,readFile,writeFile,mkdir,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {generateSite,pageShell} from '../lib/generate.mjs';
-import {initialState,selectTerritory,territoryLineage,hierarchyControls,selectHierarchyOption,routeQuery,observationState,periodsFor,latestObservedPeriod,effectivePeriodForIndicator,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
+import {initialState,selectTerritory,territoryLineage,hierarchyControls,selectHierarchyOption,routeQuery,observationState,periodsFor,latestObservedPeriod,latestObservedPeriodForTerritory,effectivePeriodForIndicator,effectivePeriodForTerritoryIndicator,territorialIndicatorState,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
 import {hierarchyFixture} from './hierarchy-fixture.mjs';
 
 function fixture() {
@@ -66,6 +66,27 @@ test('regional first entry uses each indicator latest period instead of hiding c
   assert.equal(periodsFor(data,'population')[0],'latest-available');
   assert.equal(effectivePeriodForIndicator(data,'population',state.period),'2024');
   assert.equal(comparisonRows(data,{...state,metric:'water',level:'ADM1'}).filter(row=>row.value!==null).length,2);
+});
+
+test('territorial latest-available resolves per area and keeps zero as observed across summary, detail and exports',()=>{
+  const data=localValues(fixture());
+  data.analysis={kind:'regional',default_period_by_indicator:{population:'2025',water:'2024'}};
+  data.observations.push(
+    {territory_id:'a',indicator_id:'population',period:'2023',value:33,status:'observed',source_id:'s1'},
+    {territory_id:'a',indicator_id:'population',period:'2024',value:null,status:'missing',source_id:'s1'}
+  );
+  assert.equal(latestObservedPeriodForTerritory(data,'a','population'),'2023');
+  assert.equal(effectivePeriodForTerritoryIndicator(data,'a','population','latest-available'),'2023');
+  const population=territorialIndicatorState(data,'a','population','latest-available');
+  assert.equal(population.result.value,33);assert.equal(population.period,'2023');assert.equal(population.result.row.source_id,'s1');assert.equal(population.result.status,'observed');
+  const water=territorialIndicatorState(data,'a','water','latest-available');
+  assert.equal(water.result.value,0);assert.equal(water.period,'2024');assert.equal(water.result.status,'observed');
+  const exported=evidenceRows(data,'a','latest-available');
+  assert.deepEqual(exported.map(row=>[row.indicator.id,row.value,row.period,row.status]),[['population',33,'2023','observed'],['water',0,'2024','observed']]);
+  assert.match(evidenceCsv(data,'a','latest-available'),/"population","Population","2023","33"/);
+  assert.match(evidenceCsv(data,'a','latest-available'),/"water","Water access","2024","0"/);
+  const explicit=territorialIndicatorState(data,'a','population','2024');
+  assert.equal(explicit.result.value,null);assert.equal(explicit.period,'2024');assert.equal(explicit.result.status,'missing');
 });
 
 test('area changes, national return and query round trips preserve selected analytical question',()=>{
