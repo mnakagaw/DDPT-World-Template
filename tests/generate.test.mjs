@@ -4,7 +4,7 @@ import {mkdtemp,readFile,writeFile,mkdir,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {generateSite,pageShell} from '../lib/generate.mjs';
-import {initialState,selectTerritory,territoryLineage,hierarchyControls,selectHierarchyOption,routeQuery,observationState,periodsFor,latestObservedPeriod,latestObservedPeriodForTerritory,effectivePeriodForIndicator,effectivePeriodForTerritoryIndicator,territorialIndicatorState,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
+import {initialState,selectTerritory,territoryLineage,indicatorsForTerritorialScope,hierarchyControls,selectHierarchyOption,routeQuery,observationState,periodsFor,latestObservedPeriod,latestObservedPeriodForTerritory,effectivePeriodForIndicator,effectivePeriodForTerritoryIndicator,territorialIndicatorState,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
 import {hierarchyFixture} from './hierarchy-fixture.mjs';
 
 function fixture() {
@@ -66,6 +66,23 @@ test('regional first entry uses each indicator latest period instead of hiding c
   assert.equal(periodsFor(data,'population')[0],'latest-available');
   assert.equal(effectivePeriodForIndicator(data,'population',state.period),'2024');
   assert.equal(comparisonRows(data,{...state,metric:'water',level:'ADM1'}).filter(row=>row.value!==null).length,2);
+});
+
+test('regional territorial pages keep country indicators inside their own country branch',()=>{
+  const data=fixture();
+  data.analysis={kind:'regional'};
+  data.country.national_territory_id='AMR';
+  data.territories=[
+    {id:'AMR',name:'Americas',level:'national',type:'exploration_scope',parent_id:null},
+    {id:'TST',name:'Test country',level:'country',type:'country',parent_id:'AMR'},
+    {id:'OTH',name:'Other country',level:'country',type:'country',parent_id:'AMR'},
+    ...data.territories.filter(area=>area.id!=='TST').map(area=>({...area,parent_id:area.parent_id==='TST'?'TST':area.parent_id}))
+  ];
+  data.indicators.push({id:'other-only',name:'Other-country measure',theme:'Other',unit:'people',definition:'Other country only',source_id:'s1'});
+  data.observations.push({territory_id:'OTH',indicator_id:'other-only',period:'2024',value:5,status:'observed',source_id:'s1'});
+  assert.deepEqual(indicatorsForTerritorialScope(data,'a').map(row=>row.id),['population','water']);
+  assert.deepEqual(indicatorsForTerritorialScope(data,'OTH').map(row=>row.id),['other-only']);
+  assert.equal(indicatorsForTerritorialScope(data,'AMR').length,3,'Regional overview retains the complete indicator catalog.');
 });
 
 test('territorial latest-available resolves per area and keeps zero as observed across summary, detail and exports',()=>{

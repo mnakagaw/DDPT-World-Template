@@ -1,7 +1,7 @@
 import {
   finite, escapeHtml as e, safeUrl, displayValue, statusLabel, sourceFor,
   periodsFor, observationState, areaObservationState, effectivePeriodForIndicator, territorialIndicatorState, localLevels, levelLabel, nationalOnly, initialState,
-  selectTerritory, territoryLineage, territoryOptionLabel, hierarchyControls, selectHierarchyOption, routeQuery, countryDiagnosticUrl, comparisonLevelForArea, comparisonRows, comparisonCompatibility, rankedRows, searchRows, rankingReveal, rankingScrollTop, distribution,
+  selectTerritory, territoryLineage, indicatorsForTerritorialScope, territoryOptionLabel, hierarchyControls, selectHierarchyOption, routeQuery, countryDiagnosticUrl, comparisonLevelForArea, comparisonRows, comparisonCompatibility, rankedRows, searchRows, rankingReveal, rankingScrollTop, distribution,
   seriesFor, observedValue, makeCsv, evidenceCsv, safeFilename, planningMarkdown,
   planningHtml, documentsCsv, mapGeometry, seriesGeometry
 } from './model.mjs';
@@ -217,7 +217,7 @@ function metricCard(indicator) {
 }
 function territorial() {
   const contextualId=dataset.analysis?.population_context?.reference_indicator_id;
-  const territorialIndicators=dataset.indicators.filter(indicator=>indicator.id!==contextualId);
+  const territorialIndicators=(worldMode()?indicatorsForTerritorialScope(dataset,state.selected):dataset.indicators).filter(indicator=>indicator.id!==contextualId);
   const themes=[...new Set(territorialIndicators.map(indicator=>indicator.theme || 'Other'))];
   return `<div class="page-actions">${periodControl('territorial-period')}${pageLink('thematic','Compare across areas')}${pageLink('planning','Open planning resources')}</div>
   <div class="territorial-top"><section class="panel selected-profile"><h2>${e(currentArea().name)}</h2>${hierarchyNavigation()}${areaControls()}${identity()}${facts()}</section>${mapPanel()}</div>${countryDetailLink()}

@@ -137,6 +137,19 @@ export function territoryLineage(dataset, selectedId) {
   }
   return [];
 }
+export function indicatorsForTerritorialScope(dataset, selectedId) {
+  const lineage=territoryLineage(dataset,selectedId);
+  const country=lineage.find(area=>area.level==='country' || area.type==='country');
+  if(!country)return dataset.indicators;
+  const branch=new Set([country.id]);
+  let added=true;
+  while(added){
+    added=false;
+    for(const area of dataset.territories)if(area.parent_id&&branch.has(area.parent_id)&&!branch.has(area.id)){branch.add(area.id);added=true;}
+  }
+  const available=new Set(dataset.observations.filter(row=>branch.has(row.territory_id)).map(row=>row.indicator_id));
+  return dataset.indicators.filter(indicator=>available.has(indicator.id));
+}
 // An ancestor shown as context is NOT the active geographic choice. Its selectable
 // "Whole …" option has a different value, so selecting the SAME ancestor fires change.
 export function territoryOptionLabel(dataset,area) {

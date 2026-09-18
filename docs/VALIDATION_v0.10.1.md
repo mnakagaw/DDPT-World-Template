@@ -24,12 +24,12 @@ A second completion review found that the seven Census adapters currently adopt 
 ## Current checks
 
 - `npm run check`: 78 JavaScript modules and JSON templates.
-- `npm test`: 170/170 passed.
+- `npm test`: 171/171 passed.
 - Dataset summary audit: 57 territories, 265 latest indicator checks, 993 explicit observation checks, zero errors.
 - Completion matrix: 57/57 complete; 627/627 required domains and 855/855 required themes are terminal.
 - Evidence validator: registry 57; UN WPP rows 57, with 55 adopted and 2 unavailable; 797 inventory files.
 - Output verification: 34 generated files; all non-empty, all hashes unique, and representative CSV row counts and first/last rows matched their receipts.
-- Browser verification: seven smoke checks passed, including Guatemala and Belize parent reset, three languages, 320/375-pixel widths, Guatemala boundary wording and the Belize source-table locator.
+- Browser verification: eight smoke checks passed, including Guatemala and Belize parent reset, three languages, 320/375-pixel widths, Guatemala boundary wording and the Belize source-table locator.
 - Independent re-audit: **ACCEPT**, with zero blocking, major or minor findings after rechecking source files, generated data and the live local screen.
 - `verify-regional-delivery.mjs --require-publishable`: `publishable=true`.
 
