@@ -43,6 +43,11 @@ export async function verifyRegionalDelivery(project,{requirePublishable=false}=
       errors.push(...result.errors.map(item=>`completion matrix: ${item}`));
       if(result.complete_country_area_count!==expected.length)errors.push(`All ${expected.length} Americas country/area adapters must be complete before publication; matrix has ${result.complete_country_area_count}`);
     }
+    const semantic=await readJson('evidence/COUNTRY_SEMANTIC_INVENTORY.json'),terminal=new Set(['integrated','not_adopted','unavailable','restricted','failed_with_evidence']);
+    if(semantic){
+      const unresolved=(semantic.records||[]).filter(row=>Number(row.numeric_cell_count)>0&&(!terminal.has(row.disposition)||!row.reason));
+      if(unresolved.length)errors.push(`All acquired numeric fields, including shared MULTI sources, need terminal dispositions before publication; ${unresolved.length} remain unresolved`);
+    }
   }
   return {ok:errors.length===0,publishable:errors.length===0&&audit?.status==='accept',errors,warnings};
 }

@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "country_area_id": "BLZ",
+      "domain": "planning_law",
+      "id": "horizon-2030-legal-framework",
+      "url": "https://met.gov.bz/wp-content/uploads/2020/09/H2030finalversion.pdf"
+    },
+    {
+      "country_area_id": "BLZ",
+      "domain": "planning_guidance",
+      "id": "government-elibrary",
+      "url": "https://www.edc.gov.bz/elibrary/"
+    },
+    {
+      "country_area_id": "BLZ",
+      "domain": "planning_guidance",
+      "id": "national-plans-catalog",
+      "url": "https://met.gov.bz/national-plans/"
+    },
+    {
+      "country_area_id": "BLZ",
+      "domain": "plans_budgets_implementation_evaluation",
+      "id": "approved-budget-2025-2026",
+      "url": "https://mof.gov.bz/ova_doc/approved-estimates-of-revenue-and-expenditure-2025-2026/"
+    },
+    {
+      "country_area_id": "BLZ",
+      "domain": "plans_budgets_implementation_evaluation",
+      "id": "budget-catalog",
+      "url": "https://mof.gov.bz/cat_doc/legal-approved-estimates-of-revenue-and-expenditure/"
+    },
+    {
+      "country_area_id": "GTM",
+      "domain": "planning_law",
+      "id": "municipal-code-detail",
+      "url": "https://www.congreso.gob.gt/detalle_pdf/decretos/252"
+    },
+    {
+      "country_area_id": "GTM",
+      "domain": "planning_law",
+      "id": "municipal-code-pdf",
+      "url": "https://www.congreso.gob.gt/assets/uploads/info_legislativo/decretos/12-02.pdf"
+    },
+    {
+      "country_area_id": "GTM",
+      "domain": "planning_guidance",
+      "id": "pdm-ot-implementation-guide",
+      "url": "https://portal.segeplan.gob.gt/segeplan/wp-content/uploads/2023/03/3_GUIA_PARA_LA_IMPLEMENTACION_DEL_PDM-OT_EN_GUATEMALA.pdf"
+    },
+    {
+      "country_area_id": "GTM",
+      "domain": "plans_budgets_implementation_evaluation",
+      "id": "municipal-plan-catalog",
+      "url": "https://portal.segeplan.gob.gt/segeplan/?page_id=12333"
+    },
+    {
+      "country_area_id": "GTM",
+      "domain": "plans_budgets_implementation_evaluation",
+      "id": "municipal-budget-catalog",
+      "url": "https://datos.minfin.gob.gt/es/dataset/?_tags_limit=0&tags%25253Dtipo="
+    },
+    {
+      "country_area_id": "GTM",
+      "domain": "plans_budgets_implementation_evaluation",
+      "id": "municipal-ranking-package",
+      "url": "https://datos.segeplan.gob.gt/api/3/action/package_show?id=ranking-municipal-2020-2021-csv"
+    },
+    {
+      "country_area_id": "GTM",
+      "domain": "plans_budgets_implementation_evaluation",
+      "id": "municipal-ranking-csv",
+      "url": "https://datos.segeplan.gob.gt/dataset/403afa11-f754-46b1-9936-49130dd52d1a/resource/b2114dab-60df-47ae-8382-5cc67629a54f/download/ranking-2020-2021.csv"
+    }
+  ]
+}

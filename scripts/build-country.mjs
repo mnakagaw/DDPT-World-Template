@@ -23,7 +23,8 @@ export async function buildCountry(project, {generate=generateSite}={}) {
     if(info)await checkTree(site);
     previous=Boolean(info);
     await mkdir(evidence,{recursive:true});
-    dataset=JSON.parse(await readFile(path.join(outDir,'data','dashboard.json'),'utf8'));
+    const datasetContent=await readFile(path.join(outDir,'data','dashboard.json'));
+    dataset=JSON.parse(datasetContent.toString('utf8'));
     result=validateDataset(dataset);
     if(!dataset.observations?.some(o=>o?.status==='observed'&&Number.isFinite(o.value)))result.errors.push('No usable numeric observations; an empty data build is not successful');
     if(dataset.collection?.status==='failed')result.errors.push('Collection failed; retain the last verified dataset instead of replacing the site');
@@ -34,7 +35,7 @@ export async function buildCountry(project, {generate=generateSite}={}) {
     await generate({dataset,outDir:stage});
     // Finish ancillary writes before the site swap; a metadata failure cannot be reported as an old-site retention after a successful swap.
     await cp(path.join(stage,'SITE_README.md'),path.join(outDir,'SITE_README.md'));
-    await writeFile(path.join(evidence,'validation.json'),JSON.stringify({...result,checked_at:new Date().toISOString(),dataset_sha256:createHash('sha256').update(JSON.stringify(dataset)).digest('hex')},null,2)+'\n');
+    await writeFile(path.join(evidence,'validation.json'),JSON.stringify({...result,checked_at:new Date().toISOString(),dataset_sha256:createHash('sha256').update(datasetContent).digest('hex')},null,2)+'\n');
     if(previous) {
       await mkdir(within(path.join(outDir,'.build-backups')),{recursive:true});
       backup=within(path.join(outDir,'.build-backups',randomUUID()));

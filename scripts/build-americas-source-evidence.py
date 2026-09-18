@@ -49,6 +49,10 @@ ALIASES = {
 }
 
 MANUAL_NSO = {
+    "ATG": ("Antigua and Barbuda National Bureau of Statistics", "https://statistics.gov.ag/"),
+    "DMA": ("Dominica Central Statistics Office", "https://stats.gov.dm/"),
+    "LCA": ("Saint Lucia Central Statistical Office", "https://stats.gov.lc/"),
+    "USA": ("United States Census Bureau", "https://www.census.gov/"),
     "BES": ("Statistics Netherlands, Caribbean Netherlands", "https://www.cbs.nl/en-gb/our-services/caribbean-netherlands"),
     "VGB": ("Virgin Islands Central Statistics Office", "https://bvi.gov.vg/statistics"),
     "GLP": ("INSEE Antilles-Guyane", "https://www.insee.fr/en/accueil"),
@@ -68,6 +72,13 @@ MANUAL_NSO = {
     "SGS": ("Government of South Georgia and the South Sandwich Islands", "https://www.gov.gs/"),
     "FLK": ("Falkland Islands Government Statistics", "https://www.falklands.gov.fk/policy/statistics"),
     "GRL": ("Statistics Greenland", "https://stat.gl/"),
+}
+
+MANUAL_CENSUS = {
+    "ATG": ["https://statistics.gov.ag/subjects/population-and-demography/"],
+    "DMA": ["https://stats.gov.dm/census/", "https://stats.gov.dm/subjects/demographic-statistics/"],
+    "LCA": ["https://stats.gov.lc/wp-content/uploads/2024/11/St-Lucia-Census-2022.pdf"],
+    "USA": ["https://www.census.gov/programs-surveys/decennial-census/decade/2020/2020-census-results.html", "https://www.census.gov/data/developers/data-sets/decennial-census.2020.html"],
 }
 
 GOV_START = {
@@ -353,7 +364,8 @@ def main():
     receipts = []
     for src, name, url in ((args.unsd_nso_html, "unsd-nso-directory.html", COMMON["unsd_nso"]), (args.unsd_census_html, "unsd-census-dates.html", COMMON["unsd_census"])):
         dst = discovery_dir / name
-        shutil.copy2(src, dst)
+        if src.resolve() != dst.resolve():
+            shutil.copy2(src, dst)
         receipts.append({"url": url, "retrieved_at": datetime.fromtimestamp(src.stat().st_mtime, timezone.utc).isoformat(), "path": dst.relative_to(project).as_posix(), "bytes": dst.stat().st_size, "sha256": sha256(dst), "terms_note": "Official discovery-page snapshot retained as audit evidence; not included in public site."})
     (discovery_dir / "receipt.json").write_text(json.dumps({"schema_version": "0.1", "files": receipts}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -375,7 +387,7 @@ def main():
             census_urls = [smap[s]["url"] for s in latin.get("census_sources", []) if s in smap]
         if central:
             census_urls = [central["official_census_url"], central["adopted_source_url"]] + census_urls
-        census_urls = list(dict.fromkeys(u for u in census_urls if u))
+        census_urls = list(dict.fromkeys(MANUAL_CENSUS.get(iso, []) + [u for u in census_urls if u]))
         current_year = datetime.now(timezone.utc).year
         future_rounds = sorted((row for row in census_entries if row.get("year", 0) > current_year), key=lambda x: x["year"], reverse=True)
         completed_rounds = sorted((row for row in census_entries if row.get("year", 0) <= current_year), key=lambda x: x["year"], reverse=True)

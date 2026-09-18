@@ -24,5 +24,12 @@ test('regional publication gate retains the ordinary ACCEPT contract outside the
 test('regional publication gate accepts Americas only after every matrix domain and theme is complete',async()=>{
   const root=await fixture('accept'),domains=Object.fromEntries(COMPLETION_DOMAINS.map(id=>[id,{complete:true,stage:'adopted'}])),themes=Object.fromEntries(CENSUS_THEMES.map(id=>[id,{complete:true,stage:'disposed'}]));
   await writeFile(path.join(root,'evidence/COUNTRY_COMPLETION_MATRIX.json'),JSON.stringify({schema_version:'1.0',scope_id:'M49:019',country_area_count:1,complete_country_area_count:1,countries:[{country_area_id:'AAA',domains,themes,overall_status:'complete'}]}));
+  await writeFile(path.join(root,'evidence/COUNTRY_SEMANTIC_INVENTORY.json'),JSON.stringify({records:[{country_area_id:'MULTI',source_id:'shared',table_id:'table',field_id:'field',numeric_cell_count:1,disposition:'not_adopted',reason:'Explicitly excluded.'}]}));
   const result=await verifyRegionalDelivery(root,{requirePublishable:true});assert.equal(result.ok,true);assert.equal(result.publishable,true);
+});
+test('Americas publication gate rejects unresolved numeric fields in shared sources',async()=>{
+  const root=await fixture('accept'),domains=Object.fromEntries(COMPLETION_DOMAINS.map(id=>[id,{complete:true,stage:'adopted'}])),themes=Object.fromEntries(CENSUS_THEMES.map(id=>[id,{complete:true,stage:'disposed'}]));
+  await writeFile(path.join(root,'evidence/COUNTRY_COMPLETION_MATRIX.json'),JSON.stringify({schema_version:'1.0',scope_id:'M49:019',country_area_count:1,complete_country_area_count:1,countries:[{country_area_id:'AAA',domains,themes,overall_status:'complete'}]}));
+  await writeFile(path.join(root,'evidence/COUNTRY_SEMANTIC_INVENTORY.json'),JSON.stringify({records:[{country_area_id:'MULTI',source_id:'shared',table_id:'table',field_id:'field',numeric_cell_count:1,disposition:'unreviewed',reason:'Pending.'}]}));
+  const result=await verifyRegionalDelivery(root,{requirePublishable:true});assert.equal(result.ok,false);assert.match(result.errors.join(' '),/shared MULTI sources/);
 });

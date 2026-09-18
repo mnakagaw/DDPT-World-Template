@@ -59,7 +59,10 @@ export function resolvedObservation(data,territoryIds,indicatorId,period) {
   if(mixedRequested && rule?.period_policy!=='latest_available_by_component')return {value:null,status:'not_available',provenance:'none',row:null,components:[],missing_ids:selection.ids,covered_value:null,complete:false,period_policy:rule?.period_policy || 'same_period',note:'Latest-available component periods are not approved for this indicator. Select one exact source period.'};
   if(selection.ids.length===1) {
     const exact=direct(data,selection.ids[0],indicatorId,period,rule);
-    if(exact.value!==null)return {value:exact.value,status:exact.status,provenance:'source_reported',row:exact.row,components:[{territory_id:selection.ids[0],value:exact.value,period:exact.period,row:exact.row,source_id:exact.row?.source_id,scope:'exact'}],missing_ids:[],covered_value:exact.value,complete:true,period_policy:rule?.period_policy || 'same_period',component_periods:[exact.period],note:mixedRequested?`Exact source observation for the selected area from its latest available period (${exact.period}).`:'Exact observation for the selected area; lower-area gaps do not affect it.'};
+    if(exact.value!==null){
+      const provenance=exact.row?.provenance==='calculated'?'calculated':'source_reported';
+      return {value:exact.value,status:provenance==='calculated'?'calculated':exact.status,provenance,row:exact.row,components:[{territory_id:selection.ids[0],value:exact.value,period:exact.period,row:exact.row,source_id:exact.row?.source_id,scope:'exact'}],missing_ids:[],covered_value:exact.value,complete:true,period_policy:rule?.period_policy || 'same_period',component_periods:[exact.period],note:mixedRequested?`Exact observation for the selected area from its latest available period (${exact.period}).`:'Exact observation for the selected area; lower-area gaps do not affect it.'};
+    }
   }
   if(!rule || rule.method!=='sum') {
     const exact=selection.ids.length===1?direct(data,selection.ids[0],indicatorId,period,rule):null;

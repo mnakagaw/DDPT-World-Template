@@ -29,6 +29,8 @@ const COPY={
   'Thematic diagnostic':['Diagnóstico temático','テーマ診断'],
   'Database':['Base de datos','データベース'],
   'Planning and resources':['Planificación y recursos','計画と資料'],
+  'Planning laws, plans and implementation resources':['Leyes, planes y recursos de ejecución','計画法・計画・実施資料'],
+  'Review the official materials collected for the selected country or area and prepare an evidence base without treating a link, acquisition or catalogue entry as proof of approval or implementation.':['Revise los materiales oficiales recopilados para el país o área seleccionada y prepare una base de evidencia sin considerar un enlace, una descarga o un registro de catálogo como prueba de aprobación o ejecución.','選択した国・地域について収集した公式資料を確認し、リンク・取得・目録登録だけを承認や実施の証拠とはみなさず、根拠資料を整理します。'],
   'Planning materials':['Materiales de planificación','計画資料'],
   'Main pages':['Páginas principales','主要ページ'],
   'Language':['Idioma','言語'],

@@ -21,6 +21,17 @@ test('exact country or province values take priority over lower-area gaps',()=>{
   assert.ok(data.observations.some(row=>row.territory_id==='missing-city'&&row.status==='missing')===false,'Missing or uncollected municipalities need no fabricated row');
 });
 
+test('an exact value calculated from source counts retains calculated provenance',()=>{
+  const data=enabled();
+  const row=data.observations.find(item=>item.territory_id==='river'&&item.indicator_id==='people'&&item.period==='2024');
+  row.provenance='calculated';
+  row.calculation={formula:'numerator / denominator * 100',numerator:2,denominator:5};
+  const result=resolvedObservation(data,'river','people','2024');
+  assert.equal(result.value,400);
+  assert.equal(result.status,'calculated');
+  assert.equal(result.provenance,'calculated');
+});
+
 test('complete non-overlapping cover calculates a sum and exports its audit components',()=>{
   const data=enabled();
   const world=resolvedObservation(data,'WLD','people','2024');

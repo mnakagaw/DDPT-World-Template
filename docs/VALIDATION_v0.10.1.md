@@ -15,16 +15,24 @@ A second completion review found that the seven Census adapters currently adopt 
 - Explicit-year selection preserves an exact missing row instead of falling back silently.
 - Numeric zero remains observed.
 - `validate-territorial-summaries.mjs` checks the newest observed value, actual period, source ID and status plus every explicit observed period.
-- `COUNTRY_COMPLETION_MATRIX.json` has 57 records and currently reports **0 complete**.
+- `COUNTRY_COMPLETION_MATRIX.json` has 57 records and reports **57 complete** after every required source domain and theme received a terminal, evidence-backed disposition. This does not mean that every country has local Census tables; unavailable, restricted, failed-with-evidence and not-adopted material remains explicit.
 - The Americas publication gate requires 57/57 complete matrix records and a new independent ACCEPT.
+- Shared-source numeric fields, including the 120 UN WPP `MULTI` fields, now need a terminal disposition before the publication gate can pass.
+- Guatemala's 22 department and 340 municipality reference polygons are joined by exact SEGEPLAN codes, and the comparison notes describe the same joined state.
+- Belize's three derived household-service ratios retain the Appendix B table, printed page, component counts, numerator and denominator. The screen shows the exact source-table locator beside the official source.
 
 ## Current checks
 
-- `npm run check`: 72 JavaScript modules and JSON templates.
-- `npm test`: 168/168 passed.
-- Current dataset summary audit: 57 territories, 236 latest indicator checks, 964 explicit observation checks, zero errors.
-- Browser verification: USA basic facts show population 341,784,857 (2025), electricity 100 (2024) and internet 94.69 (2024), matching the detailed cards.
+- `npm run check`: 78 JavaScript modules and JSON templates.
+- `npm test`: 170/170 passed.
+- Dataset summary audit: 57 territories, 265 latest indicator checks, 993 explicit observation checks, zero errors.
+- Completion matrix: 57/57 complete; 627/627 required domains and 855/855 required themes are terminal.
+- Evidence validator: registry 57; UN WPP rows 57, with 55 adopted and 2 unavailable; 797 inventory files.
+- Output verification: 34 generated files; all non-empty, all hashes unique, and representative CSV row counts and first/last rows matched their receipts.
+- Browser verification: seven smoke checks passed, including Guatemala and Belize parent reset, three languages, 320/375-pixel widths, Guatemala boundary wording and the Belize source-table locator.
+- Independent re-audit: **ACCEPT**, with zero blocking, major or minor findings after rechecking source files, generated data and the live local screen.
+- `verify-regional-delivery.mjs --require-publishable`: `publishable=true`.
 
 ## Release status
 
-The remediation candidate is not publishable. Country completion is 0/57 and the independent audit status is `incomplete_audit`. The prior public release remains available as a disclosed exploration pilot; no claim of full Americas country completion is made.
+The v0.10.1 build passed the independent audit and publication gate on 2026-09-18. GitHub, FTP and public-URL deployment evidence are recorded separately from the independent audit so the auditor's result is not used as proof of hosting.

@@ -71,7 +71,8 @@ const scopeEntryHeading=(children,countryCount)=>dataset.analysis?.pilot?.stage=
 const sourceNote = (indicator, observation, prefix='Source') => {
   const source=sourceFor(dataset,indicator,observation);
   const sourcePeriod=observation?.period || dataset.analysis?.default_period_by_indicator?.[indicator?.id] || state?.period;
-  return `<div class="source-note source-note-block"><span>${e(prefix)}</span>${source ? renderSourceAttribution(indicator,observation,source,sourcePeriod,language) : 'No verified source collected'}${source?.retrieved_at ? `<span>Retrieved ${e(source.retrieved_at.slice(0,10))}.</span>` : ''}</div>`;
+  const locator=observation?.footnote || indicator?.source_locator;
+  return `<div class="source-note source-note-block"><span>${e(prefix)}</span>${source ? renderSourceAttribution(indicator,observation,source,sourcePeriod,language) : 'No verified source collected'}${source?.retrieved_at ? `<span>Retrieved ${e(source.retrieved_at.slice(0,10))}.</span>` : ''}${locator ? `<span>Source table: ${e(locator)}.</span>` : ''}</div>`;
 };
 function periodControl(id='period-select') {
   const options = periodsFor(dataset,state.metric);
@@ -211,7 +212,7 @@ function metricCard(indicator) {
   const local=currentArea().level!=='national';
   return `<article class="indicator-card"><div class="indicator-heading"><h3>${e(indicator.name)}</h3><span class="unit">${e(meaning.unit)}</span></div><div class="value-row"><strong>${fmt(result.value,indicator)}</strong><span>${e(statusLabel(result.status))} · ${e(result.row?.period || effectivePeriod || 'No source period')}</span></div>${stateMessage(result)}${populationContext(indicator,result)}
   ${local?`<p class="national-reference">${worldMode()?'World reference':'National reference'} — ${e(dataset.country.name)}: <strong>${fmt(national.value,indicator)}</strong> ${e(referenceMeaning.unit)} · ${e(national.row?.period || effectivePeriod)}. ${e(statusLabel(national.status))}.${referenceMeaning.comparable?'':` ${e(referenceMeaning.reason)}`}</p>`:''}
-  ${result.status==='calculated'?`<p class="aggregation-note"><strong>Calculated value.</strong> ${e(result.note)} ${result.components.length?`Components: ${e(result.components.map(item=>`${areaFor(item.territory_id)?.name || item.territory_id} (${item.period})`).join(', '))}.`:''}</p>`:result.status==='incomplete'?`<p class="missing-note">${e(result.note)}${finite(result.covered_value)?` Covered subtotal: ${e(fmt(result.covered_value,indicator))} ${e(indicator.unit)}.`:''}</p>`:''}<p class="definition">${e(meaning.definition || 'Definition not acquired.')}</p>${meaning.comparable?'':`<p class="missing-note">${e(meaning.reason)} Its original value remains visible; a comparable trend is not inferred.</p>`}${sourceNote(indicator,result.row,finite(result.value)&&result.row?'Selected-area source':'Indicator sources; see calculation or gap details')}
+  ${result.status==='calculated'?`<p class="aggregation-note"><strong>Calculated value.</strong> ${e(result.note)} ${result.provenance==='areadata_calculated'&&result.components.length?`Components: ${e(result.components.map(item=>`${areaFor(item.territory_id)?.name || item.territory_id} (${item.period})`).join(', '))}.`:''}</p>`:result.status==='incomplete'?`<p class="missing-note">${e(result.note)}${finite(result.covered_value)?` Covered subtotal: ${e(fmt(result.covered_value,indicator))} ${e(indicator.unit)}.`:''}</p>`:''}<p class="definition">${e(meaning.definition || 'Definition not acquired.')}</p>${meaning.comparable?'':`<p class="missing-note">${e(meaning.reason)} Its original value remains visible; a comparable trend is not inferred.</p>`}${sourceNote(indicator,result.row,finite(result.value)&&result.row?'Selected-area source':'Indicator sources; see calculation or gap details')}
   ${seriesFigure(indicator)}<div class="actions">${button('compare','Compare this indicator',`data-id="${e(indicator.id)}" data-period="${e(effectivePeriod)}"`,'text-button')}${button('indicator-csv','Selected-period CSV',`data-id="${e(indicator.id)}" data-period="${e(effectivePeriod)}"`,'text-button')}</div>${renderInternalComparison(dataset,state.selected,indicator.id,effectivePeriod,{language})}</article>`;
 }
 function territorial() {
@@ -389,6 +390,16 @@ function commit(next, {replace=false}={}) {
   history[replace?'replaceState':'pushState']({},'',url);
   render();
 }
+let deferredCommitSequence=0;
+function commitAfterInput(next) {
+  const sequence=++deferredCommitSequence;
+  document.documentElement.setAttribute('aria-busy','true');
+  setTimeout(()=>{
+    if(sequence!==deferredCommitSequence)return;
+    try {commit(next);}
+    finally {document.documentElement.removeAttribute('aria-busy');}
+  },0);
+}
 function revealRankingSelection({focus=false,id=state.selected}={}) {
   const row=[...document.querySelectorAll('#ranking-content [data-ranking-id]')].find(node=>node.dataset.rankingId===id);
   const container=row?.closest('.ranking-scroll');
@@ -473,7 +484,13 @@ app.addEventListener('focusout',event=>{const target=event.target.closest('[data
 app.addEventListener('change',event=>{
   const control=event.target.dataset.control;
   if(control==='area')choose(event.target.value);
-  if(control==='hierarchy') {wholeMap=false;areaSearch='';comparisonFocusId='';commit(selectHierarchyOption(dataset,state,event.target.dataset.parent,event.target.value));}
+  if(control==='hierarchy') {
+    wholeMap=false;areaSearch='';comparisonFocusId='';
+    // Large country pages can contain hundreds of map paths and indicator cards.
+    // Let the native select event finish before rebuilding the page so choosing a
+    // parent always completes instead of leaving a parent URL over child content.
+    commitAfterInput(selectHierarchyOption(dataset,state,event.target.dataset.parent,event.target.value));
+  }
   if(control==='metric') {comparisonFocusId='';const metric=event.target.value;commit({...state,metric,requestedMetric:undefined,sourceDataset:undefined,notices:[]});}
   if(control==='period'){comparisonFocusId='';commit({...state,period:event.target.value,notices:[]});}
   if(control==='level'){wholeMap=true;comparisonFocusId='';commit({...state,level:event.target.value,notices:[]});}
@@ -556,7 +573,6 @@ try {
   if(dataset.schema_version!=='0.2'||!dataset.country||!Array.isArray(dataset.territories)||!Array.isArray(dataset.indicators)||!Array.isArray(dataset.observations))throw new Error('Unsupported or incomplete dataset');
   const statusResponse=await fetch(new URL('data/update-status.json',base),{cache:'no-store'}).catch(()=>null);
   if(statusResponse?.ok)updateStatus=await statusResponse.json().catch(()=>null);
-  pageNames.planning=planningSettings(dataset).title;
   state=initialState(dataset,location.search);
   render();
 } catch(error) {
