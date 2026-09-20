@@ -3,6 +3,7 @@ generated/
 .work/
 .cache/
 coverage/
+/tmp/
 *.log
 *.zip
 .env

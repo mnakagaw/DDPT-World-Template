@@ -99,13 +99,16 @@ export function initialState(dataset, search = '') {
   if (territory) for (const [parameter,field,label] of [['type','type','area type'],['code','official_code','official code'],['boundary','boundary_version','boundary edition']]) {
     if (query.has(parameter) && query.get(parameter) !== String(territory[field] || '')) notices.push(`The linked ${label} “${query.get(parameter)}” differs from this record’s ${label} “${territory[field] || 'not verified'}”. The current record is shown; verify its identity before using the evidence.`);
   }
+  const selected = territory?.id || dataset.country.national_territory_id;
   const suppliedMetric = query.get('metric');
   const requestedMetric=query.get('requested_metric');
   if(requestedMetric)notices.push(`No verified indicator mapping was supplied for “${requestedMetric}” from dataset “${query.get('source_dataset') || 'not specified'}”. The displayed country indicator is a separate concept. The requested period is retained.`);
-  const indicator = dataset.indicators.find(row => row.id === suppliedMetric);
-  if (suppliedMetric && !indicator) notices.push(`The linked indicator “${suppliedMetric}” is unavailable in this edition. The first available indicator is shown.`);
-  const firstObservedIndicator = dataset.indicators.find(item => dataset.observations.some(row => row.indicator_id === item.id && observedValue(row) !== null));
-  const metric = indicator?.id || firstObservedIndicator?.id || dataset.indicators[0]?.id || '';
+  const scopedIndicators=indicatorsForTerritorialScope(dataset,selected);
+  const orderedIndicators=orderedTerritorialIndicators(dataset,selected);
+  const indicator = scopedIndicators.find(row => row.id === suppliedMetric);
+  if (suppliedMetric && !indicator) notices.push(`The linked indicator “${suppliedMetric}” is not available for the selected country or area. An available indicator is shown and the URL has been corrected.`);
+  const firstObservedIndicator = orderedIndicators.find(item => dataset.observations.some(row => row.indicator_id === item.id && observedValue(row) !== null));
+  const metric = indicator?.id || firstObservedIndicator?.id || orderedIndicators[0]?.id || '';
   const requestedPeriod = query.get('period');
   // A syntactically valid requested period remains selected even when its value is missing.
   const validPeriod = requestedPeriod && /^[\p{L}\p{N} ._/:–-]{1,40}$/u.test(requestedPeriod);
@@ -113,10 +116,12 @@ export function initialState(dataset, search = '') {
   const configuredPeriod=dataset.analysis?.default_period_by_indicator?.[metric];
   const portfolioLatest=['world','regional'].includes(dataset.analysis?.kind)&&configuredPeriod?LATEST_AVAILABLE_PERIOD:'';
   const period = validPeriod ? requestedPeriod : portfolioLatest || configuredPeriod || latestObservedPeriod(dataset, metric) || periodsFor(dataset, metric)[0] || '';
-  const levels = localLevels(dataset);
-  const selected = territory?.id || dataset.country.national_territory_id;
+  const levels = comparisonLevelsForTerritory(dataset,selected);
+  const suppliedLevel=query.get('level');
+  if(suppliedLevel&&!levels.includes(suppliedLevel))notices.push(`The linked comparison level “${suppliedLevel}” does not exist for the selected country or area. An available level is shown and the URL has been corrected.`);
   const selectedLevel = territory?.level;
-  const level = levels.includes(query.get('level')) ? query.get('level') : selectedLevel && selectedLevel !== 'national' ? selectedLevel : levels[0] || '';
+  const preferredLevel=comparisonLevelForArea(dataset,selected,selectedLevel&&!['national','country'].includes(selectedLevel)?selectedLevel:'');
+  const level = levels.includes(suppliedLevel) ? suppliedLevel : levels.includes(preferredLevel)?preferredLevel:levels[0] || '';
   return {selected, metric, period, level, notices,...(requestedMetric?{requestedMetric,sourceDataset:query.get('source_dataset') || ''}:{})};
 }
 export function selectTerritory(dataset, state, id) {
@@ -138,6 +143,7 @@ export function territoryLineage(dataset, selectedId) {
   return [];
 }
 export function indicatorsForTerritorialScope(dataset, selectedId) {
+  if(!['regional','world'].includes(dataset.analysis?.kind))return dataset.indicators;
   const lineage=territoryLineage(dataset,selectedId);
   const country=lineage.find(area=>area.level==='country' || area.type==='country');
   if(!country)return dataset.indicators;
@@ -149,6 +155,32 @@ export function indicatorsForTerritorialScope(dataset, selectedId) {
   }
   const available=new Set(dataset.observations.filter(row=>branch.has(row.territory_id)).map(row=>row.indicator_id));
   return dataset.indicators.filter(indicator=>available.has(indicator.id));
+}
+
+export function orderedTerritorialIndicators(dataset, selectedId, selectedMetricId='') {
+  const indicators=indicatorsForTerritorialScope(dataset,selectedId);
+  const priority=indicator=>{
+    if(indicator.id===selectedMetricId)return -100;
+    if(indicator.display_role==='primary'||indicator.series_family==='census')return 0;
+    if(indicator.display_role==='supplementary')return 10;
+    if(indicator.display_role==='context'||indicator.series_family==='international_reference')return 20;
+    return 30;
+  };
+  return indicators.map((indicator,index)=>({indicator,index,priority:priority(indicator)}))
+    .sort((a,b)=>a.priority-b.priority||a.index-b.index)
+    .map(entry=>entry.indicator);
+}
+export function comparisonLevelsForTerritory(dataset,selectedId){
+  const selected=dataset.territories.find(area=>area.id===selectedId);
+  if(!selected)return [];
+  const levels=new Set();
+  for(const comparison of dataset.analysis?.comparisons||[]){
+    if(comparison.parent_id!==selectedId&&!comparison.member_ids?.includes(selectedId))continue;
+    for(const id of comparison.member_ids||[]){const level=dataset.territories.find(area=>area.id===id)?.level;if(level)levels.add(level);}
+  }
+  for(const child of dataset.territories.filter(area=>area.parent_id===selectedId))if(child.level)levels.add(child.level);
+  if(selected.level&&!['national','country'].includes(selected.level))levels.add(selected.level);
+  return [...levels];
 }
 // An ancestor shown as context is NOT the active geographic choice. Its selectable
 // "Whole …" option has a different value, so selecting the SAME ancestor fires change.
@@ -254,9 +286,11 @@ export function csvCell(value) {
   return `"${text.replaceAll('"', '""')}"`;
 }
 export function makeCsv(rows) { return '\uFEFF' + rows.map(row => row.map(csvCell).join(',')).join('\r\n') + '\r\n'; }
-export function evidenceRows(dataset, territoryId, period, indicatorIds = dataset.indicators.map(row => row.id)) {
+export function evidenceRows(dataset, territoryId, period, indicatorIds) {
   const area = dataset.territories.find(row => row.id === territoryId);
-  return dataset.indicators.filter(indicator => indicatorIds.includes(indicator.id)).map(indicator => {
+  const allowed=indicatorsForTerritorialScope(dataset,territoryId);
+  const requested=indicatorIds?new Set(indicatorIds):null;
+  return allowed.filter(indicator => !requested||requested.has(indicator.id)).map(indicator => {
     const current=territorialIndicatorState(dataset,territoryId,indicator.id,period);
     return {area, indicator, ...current.result, source:current.source, period:current.period};
   });
@@ -308,7 +342,7 @@ const PLANNING_EXPORT_COPY={
   es:{
     title:'Base de planificación',generic:'**Esquema de trabajo genérico y no aprobado.** Este modelo no ha verificado el formulario oficial de planificación del país ni el procedimiento obligatorio. Complete el esquema con la guía oficial antes de usarlo formalmente. No registra aprobación ni acuerdo comunitario.',
     authority:'Esta área seleccionada es un ámbito de análisis, no una autoridad legal de planificación verificada.',
-    completeness:(total,integrated)=>`Este portal regional no representa ${total} ediciones nacionales terminadas. El censo oficial y la jerarquía interna están integrados para ${integrated} de ${total} entradas del registro; las leyes, planes, presupuestos y evaluaciones de planificación deben incorporarse mediante cada adaptador nacional. No se genera para este ámbito regional ningún borrador de plan ni atribución a materiales oficiales.`,
+    completeness:(total,integrated)=>`Este portal regional contiene ${total} ediciones de países o áreas. El censo oficial o la evidencia demográfica equivalente y la jerarquía interna disponible están integrados para ${integrated} de ${total} entradas; las demás conservan vacíos respaldados por evidencia. Las leyes, planes, presupuestos y evaluaciones permanecen vinculados a sus adaptadores nacionales y no se generalizan a este ámbito regional. No se genera para este ámbito regional ningún borrador de plan ni atribución a materiales oficiales.`,
     scope:'Área y alcance de la evidencia',country:'País',area:'Área',code:'Código',boundary:'Edición de límites',requested:'Período de evidencia solicitado',edition:'Edición de datos',evidence:'Evidencia estadística adquirida',
     evidenceRule:'Solo aparecen observaciones de esta área y período. Los datos nacionales no sustituyen los vacíos locales. Los indicadores pueden tener definiciones y coberturas diferentes.',
     official:'Materiales oficiales y hallazgos verificados',periodRule:'Los períodos de los planes, años fiscales y trimestres conservan su propio período de origen. No se filtran ni se renombran como el período estadístico. Los materiales publicados se mantienen separados de este esquema de trabajo generado.',
@@ -319,7 +353,7 @@ const PLANNING_EXPORT_COPY={
   ja:{
     title:'計画基礎資料',generic:'**汎用の未承認作業案です。** このテンプレートでは、当該国の公式計画様式や必要な手続を確認していません。正式利用の前に公式手引きに照らして完成させてください。承認や住民合意を記録したものではありません。',
     authority:'選択中の地域は分析対象であり、確認済みの法定計画主体ではありません。',
-    completeness:(total,integrated)=>`この地域ポータルは${total}の国別版が完成したことを意味しません。公式国勢調査と国内階層の統合は${total}件中${integrated}件で、計画法、計画、予算、実施・評価資料は国別アダプターで追加します。この広域分析対象について、計画草案や公式資料への帰属を生成しません。`,
+    completeness:(total,integrated)=>`この地域ポータルには${total}の国・地域版があります。公式Censusまたは同等の人口資料と利用可能な国内階層は${total}件中${integrated}件で統合し、残りは根拠付き欠測として保持しています。計画法、計画、予算、実施・評価資料は各国アダプターに結び付け、広域全体へ一般化しません。この広域分析対象について、計画草案や公式資料への帰属を生成しません。`,
     scope:'地域と根拠の範囲',country:'国',area:'地域',code:'コード',boundary:'境界版',requested:'指定した根拠年',edition:'データ版',evidence:'取得済み統計根拠',
     evidenceRule:'この地域と年の観測値だけを掲載します。地方の欠測を全国値で補いません。指標ごとに定義と被覆範囲が異なる場合があります。',
     official:'公式資料と確認済み所見',periodRule:'計画期間、会計年度、四半期は各資料固有の期間を保持します。統計年で絞り込んだり名称を変えたりしません。公表資料と、この生成された作業案を区別します。',
@@ -330,7 +364,7 @@ const PLANNING_EXPORT_COPY={
 };
 function planningExportCopy(language='en'){
   if(PLANNING_EXPORT_COPY[language])return PLANNING_EXPORT_COPY[language];
-  return {title:'Planning base',generic:'**Generic, unapproved working outline.** The country’s official planning form and required procedure have not been verified by this template. Complete this outline against official guidance before formal use. It does not record approval or community agreement.',authority:'This selected area is an analysis scope, not a verified legal planning authority.',completeness:(total,integrated)=>`This regional portal is not ${total} completed country editions. Official census and domestic hierarchy are integrated for ${integrated} of ${total} registry entries; country planning laws, plans, budgets and evaluations remain country-adapter work. No planning draft or official-material attribution is generated for this regional scope.`,scope:'Area and evidence scope',country:'Country',area:'Area',code:'Code',boundary:'Boundary edition',requested:'Requested evidence period',edition:'Data edition',evidence:'Acquired statistical evidence',evidenceRule:'Only observations for this area and period appear below. National observations are not substituted for local gaps. Different indicators can have different definitions and coverage.',official:'Official materials and verified findings',periodRule:'Document plan periods, fiscal years and quarters below are their own source periods. They are not filtered or relabelled as the statistical evidence period. Published materials remain distinct from this generated working outline.',noDocs:'No local documents have been collected for this area. This does not establish whether a plan exists.',gaps:'Remaining evidence gaps',next:'Next',prepared:'Prepared from the same dataset and selected area/period used by the dashboard. This editable Markdown is a generic planning aid, not a DOCX file or an official country form.',htmlNote:'Generic, unapproved working outline. Use your browser’s Print command to print or save as PDF. Its evidence and content match the editable Markdown download.'};
+  return {title:'Planning base',generic:'**Generic, unapproved working outline.** The country’s official planning form and required procedure have not been verified by this template. Complete this outline against official guidance before formal use. It does not record approval or community agreement.',authority:'This selected area is an analysis scope, not a verified legal planning authority.',completeness:(total,integrated)=>`This regional portal contains ${total} country/area editions. Official census or equivalent population evidence and available domestic hierarchy are integrated for ${integrated} of ${total} registry entries; the other entries retain evidence-backed gaps. Country planning laws, plans, budgets and evaluations remain attached to their country adapters and are not generalized to this regional scope. No planning draft or official-material attribution is generated for this regional scope.`,scope:'Area and evidence scope',country:'Country',area:'Area',code:'Code',boundary:'Boundary edition',requested:'Requested evidence period',edition:'Data edition',evidence:'Acquired statistical evidence',evidenceRule:'Only observations for this area and period appear below. National observations are not substituted for local gaps. Different indicators can have different definitions and coverage.',official:'Official materials and verified findings',periodRule:'Document plan periods, fiscal years and quarters below are their own source periods. They are not filtered or relabelled as the statistical evidence period. Published materials remain distinct from this generated working outline.',noDocs:'No local documents have been collected for this area. This does not establish whether a plan exists.',gaps:'Remaining evidence gaps',next:'Next',prepared:'Prepared from the same dataset and selected area/period used by the dashboard. This editable Markdown is a generic planning aid, not a DOCX file or an official country form.',htmlNote:'Generic, unapproved working outline. Use your browser’s Print command to print or save as PDF. Its evidence and content match the editable Markdown download.'};
 }
 export function planningMarkdown(dataset, territoryId, period, language='en') {
   const area = dataset.territories.find(row => row.id === territoryId);

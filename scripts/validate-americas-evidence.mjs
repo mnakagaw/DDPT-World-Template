@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {access,readFile} from 'node:fs/promises';
+import {access,readFile,readdir} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -22,10 +22,24 @@ export function parseCsv(text){
   return data.map(values=>Object.fromEntries(headers.map((header,index)=>[header,values[index]??''])));
 }
 
+async function listFiles(root,directory=''){
+  const absolute=path.join(root,directory);let entries;
+  try{entries=await readdir(absolute,{withFileTypes:true});}catch(error){if(error?.code==='ENOENT')return [];throw error;}
+  const rows=[];
+  for(const entry of entries){
+    const relative=path.posix.join(directory.replaceAll('\\','/'),entry.name);
+    if(entry.isDirectory())rows.push(...await listFiles(root,relative));
+    else if(entry.isFile())rows.push(relative);
+  }
+  return rows.sort();
+}
+
 export async function validateAmericasEvidence(project){
   const dataset=JSON.parse(await readFile(path.join(project,'data/dashboard.json'),'utf8'));
   const preflight=JSON.parse(await readFile(path.join(project,'evidence/SOURCE_PREFLIGHT.json'),'utf8'));
   const inventory=JSON.parse(await readFile(path.join(project,'evidence/SOURCE_TABLE_INVENTORY.json'),'utf8'));
+  let semantic=null;
+  try{semantic=JSON.parse(await readFile(path.join(project,'evidence/COUNTRY_SEMANTIC_INVENTORY.json'),'utf8'));}catch{}
   const disposition=parseCsv(await readFile(path.join(project,'evidence/SOURCE_DISPOSITION.csv'),'utf8'));
   const registry=dataset.territories.filter(area=>area.type==='country').map(area=>area.id).sort();
   const wpp=disposition.filter(row=>row.record_type==='wpp_country_area_adoption');
@@ -45,6 +59,13 @@ export async function validateAmericasEvidence(project){
   const inventoryPaths=inventory.files.map(row=>String(row.path||''));
   if(inventory.file_count!==inventoryPaths.length)errors.push(`Source inventory declares ${inventory.file_count} files but contains ${inventoryPaths.length} rows.`);
   if(new Set(inventoryPaths).size!==inventoryPaths.length)errors.push('Source inventory contains duplicate paths.');
+  const rawPaths=(await listFiles(path.join(project,'raw'))).map(relative=>`raw/${relative}`);
+  const declaredPaths=[...inventoryPaths].sort();
+  if(JSON.stringify(declaredPaths)!==JSON.stringify(rawPaths)){
+    const missing=rawPaths.filter(relative=>!declaredPaths.includes(relative));
+    const extra=declaredPaths.filter(relative=>!rawPaths.includes(relative));
+    errors.push(`Source inventory must cover project/raw exactly; raw=${rawPaths.length}, declared=${declaredPaths.length}, missing=${missing.length}, extra=${extra.length}.`);
+  }
   for(const relative of inventoryPaths){
     if(!relative||path.isAbsolute(relative)||relative.includes('\\')||relative.split('/').includes('..')){
       errors.push(`Source inventory path is not a safe project-relative POSIX path: ${relative||'(blank)'}.`);
@@ -57,6 +78,22 @@ export async function validateAmericasEvidence(project){
     }
     try{await access(absolute);}catch{errors.push(`Source inventory file does not exist inside the project: ${relative}.`);}
   }
+  const rawXlsx=rawPaths.filter(relative=>relative.toLowerCase().endsWith('.xlsx'));
+  if(!semantic)errors.push('Country semantic inventory is missing or invalid JSON.');
+  else{
+    const workbooks=Array.isArray(semantic.workbooks)?semantic.workbooks:[];
+    const duplicateFiles=Array.isArray(semantic.duplicate_files)?semantic.duplicate_files:[];
+    const semanticPaths=[...workbooks.map(row=>String(row.path||'')),...duplicateFiles.map(row=>String(row.path||''))].sort();
+    if(new Set(semanticPaths).size!==semanticPaths.length)errors.push('Country semantic inventory contains duplicate workbook paths.');
+    if(JSON.stringify(semanticPaths)!==JSON.stringify(rawXlsx)){
+      const missing=rawXlsx.filter(relative=>!semanticPaths.includes(relative));
+      const extra=semanticPaths.filter(relative=>!rawXlsx.includes(relative));
+      errors.push(`Country semantic inventory must account for every raw XLSX as a unique workbook or byte-identical duplicate; raw=${rawXlsx.length}, declared=${semanticPaths.length}, missing=${missing.length}, extra=${extra.length}.`);
+    }
+    if(Number(semantic.xlsx_file_count)!==rawXlsx.length)errors.push(`Country semantic inventory xlsx_file_count is ${semantic.xlsx_file_count}; expected ${rawXlsx.length}.`);
+    if(Number(semantic.workbook_count)!==workbooks.length)errors.push('Country semantic inventory workbook_count does not match its workbook rows.');
+    if(Number(semantic.duplicate_file_count)!==duplicateFiles.length)errors.push('Country semantic inventory duplicate_file_count does not match its duplicate rows.');
+  }
   const currentYear=new Date().getUTCFullYear();
   for(const country of preflight.countries){
     const note=String(country.latest_census?.note||'');
@@ -65,7 +102,7 @@ export async function validateAmericasEvidence(project){
     if(futureYears.length&&/results are not acquired or usable|resultados no|未取得/i.test(note)===false)errors.push(`${country.country_area_id}: future census result is not explicitly unavailable.`);
     if(/identified\/usable/i.test(note))errors.push(`${country.country_area_id}: census schedule is incorrectly labelled identified/usable.`);
   }
-  return {ok:errors.length===0,errors,summary:{registry:registry.length,wpp_rows:wpp.length,wpp_adopted:adopted.length,wpp_unavailable:unavailable.length,preflight:preflight.countries.length,inventory_files:inventoryPaths.length}};
+  return {ok:errors.length===0,errors,summary:{registry:registry.length,wpp_rows:wpp.length,wpp_adopted:adopted.length,wpp_unavailable:unavailable.length,preflight:preflight.countries.length,inventory_files:inventoryPaths.length,raw_files:rawPaths.length,raw_xlsx_files:rawXlsx.length,semantic_workbooks:semantic?.workbooks?.length??0,semantic_duplicate_workbooks:semantic?.duplicate_files?.length??0}};
 }
 
 if(process.argv[1]===fileURLToPath(import.meta.url)){

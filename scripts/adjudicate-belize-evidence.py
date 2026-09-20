@@ -75,9 +75,9 @@ def main():
         match = integrated_patterns.get((row.get("table_id"), row.get("field_id")))
         if match:
             theme, iid = match
-            row.update({"theme": theme, "disposition": "integrated", "reason": f"Reviewed source field is used by {iid}; the published observation retains its source and calculation definition.", "indicator_id": iid, "coverage_complete": False})
+            row.update({"theme": theme, "disposition": "integrated", "reason": f"Reviewed source field is used by {iid}; the published observation retains its source and calculation definition.", "indicator_id": iid, "coverage_complete": False, "country_edition_eligible": True})
         else:
-            row.update({"disposition": "not_adopted", "reason": "Numeric field is retained in the complete workbook inventory but was not adopted in the core dashboard because its category, denominator, reference population, historical period or analytical role differs from the selected indicator. It remains available for later expansion.", "coverage_complete": False})
+            row.update({"disposition": "not_adopted", "reason": "Numeric field is retained in the complete workbook inventory but was not adopted in the core dashboard because its category, denominator, reference population, historical period or analytical role differs from the selected indicator. It remains available for later expansion.", "coverage_complete": False, "country_edition_eligible": False})
         reviewed += 1
     for theme, (indicator_id, source_id, reason) in THEME_EVIDENCE.items():
         semantic["records"].append({
@@ -95,6 +95,7 @@ def main():
             "reason": reason,
             "indicator_id": indicator_id,
             "coverage_complete": True,
+            "country_edition_eligible": True,
         })
     semantic.setdefault("adjudication", {})["BLZ"] = {
         "reviewed_numeric_fields": reviewed,

@@ -1,5 +1,7 @@
 # AreaData Americas v0.10.1 remediation record
 
+> **WITHDRAWN — this record is retained only as history.** The former `57/57 complete`, independent `ACCEPT`, and `publishable=true` conclusions incorrectly treated terminal source-review dispositions such as `not_adopted`, `unavailable`, `restricted`, and `failed_with_evidence` as completed country editions. They must not be reused as release evidence. See [v0.10.2](VALIDATION_v0.10.2.md).
+
 Date: 2026-09-18.
 
 ## Why v0.10.0 ACCEPT was withdrawn

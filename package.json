@@ -1,6 +1,6 @@
 {
   "name": "ddpt-world-template",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "private": true,
   "description": "Country-driven DDPT dashboard collection and generation toolkit",
   "type": "module",
@@ -8,13 +8,14 @@
     "node": ">=22"
   },
   "scripts": {
-    "test": "node --test",
+    "test": "node --test \"tests/**/*.test.mjs\"",
     "check": "node scripts/check.mjs",
     "create:country": "node scripts/create-country.mjs",
     "create:central-america": "node scripts/create-central-america.mjs",
     "create:americas": "node scripts/create-americas.mjs",
     "verify:regional": "node scripts/verify-regional-delivery.mjs",
     "validate:evidence:americas": "node scripts/validate-americas-evidence.mjs",
+    "refresh:inventories:americas": "python scripts/refresh-americas-source-inventories.py",
     "validate:summaries": "node scripts/validate-territorial-summaries.mjs",
     "build:completion-matrix": "node scripts/build-country-completion-matrix.mjs",
     "collect:census:central-america": "node scripts/collect-central-america-census.mjs",

@@ -4,7 +4,7 @@ import {mkdtemp,readFile,writeFile,mkdir,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {generateSite,pageShell} from '../lib/generate.mjs';
-import {initialState,selectTerritory,territoryLineage,indicatorsForTerritorialScope,hierarchyControls,selectHierarchyOption,routeQuery,observationState,periodsFor,latestObservedPeriod,latestObservedPeriodForTerritory,effectivePeriodForIndicator,effectivePeriodForTerritoryIndicator,territorialIndicatorState,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
+import {initialState,selectTerritory,territoryLineage,indicatorsForTerritorialScope,orderedTerritorialIndicators,comparisonLevelsForTerritory,hierarchyControls,selectHierarchyOption,routeQuery,observationState,periodsFor,latestObservedPeriod,latestObservedPeriodForTerritory,effectivePeriodForIndicator,effectivePeriodForTerritoryIndicator,territorialIndicatorState,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
 import {hierarchyFixture} from './hierarchy-fixture.mjs';
 
 function fixture() {
@@ -68,6 +68,18 @@ test('regional first entry uses each indicator latest period instead of hiding c
   assert.equal(comparisonRows(data,{...state,metric:'water',level:'ADM1'}).filter(row=>row.value!==null).length,2);
 });
 
+test('a country entry without a requested metric opens its primary Census series before international context',()=>{
+  const data=localValues(fixture());
+  data.analysis={kind:'regional'};
+  data.indicators.find(row=>row.id==='population').series_family='census';
+  data.indicators.find(row=>row.id==='population').display_role='primary';
+  data.indicators.unshift({id:'context-population',name:'International population context',theme:'Population',unit:'people',definition:'International estimate',source_id:'s1',series_family:'international_reference',display_role:'context'});
+  data.observations.unshift({territory_id:'TST',indicator_id:'context-population',period:'2025',value:99,status:'observed',source_id:'s1'});
+  const state=initialState(data,'?territory=TST');
+  assert.equal(state.metric,'population');
+  assert.equal(state.period,'2024');
+});
+
 test('regional territorial pages keep country indicators inside their own country branch',()=>{
   const data=fixture();
   data.analysis={kind:'regional'};
@@ -83,6 +95,40 @@ test('regional territorial pages keep country indicators inside their own countr
   assert.deepEqual(indicatorsForTerritorialScope(data,'a').map(row=>row.id),['population','water']);
   assert.deepEqual(indicatorsForTerritorialScope(data,'OTH').map(row=>row.id),['other-only']);
   assert.equal(indicatorsForTerritorialScope(data,'AMR').length,3,'Regional overview retains the complete indicator catalog.');
+});
+
+test('territorial display puts the requested metric first, then country primary evidence before references',()=>{
+  const data=fixture();
+  data.analysis={kind:'regional'};data.country.national_territory_id='AMR';
+  data.territories=[{id:'AMR',name:'Americas',level:'national',type:'exploration_scope',parent_id:null},{id:'TST',name:'Test country',level:'country',type:'country',parent_id:'AMR'},...data.territories.filter(area=>area.id!=='TST').map(area=>({...area,parent_id:'TST'}))];
+  data.indicators[0]={...data.indicators[0],series_family:'international_reference',display_role:'context'};
+  data.indicators[1]={...data.indicators[1],series_family:'census',display_role:'primary'};
+  assert.deepEqual(orderedTerritorialIndicators(data,'TST','water').map(row=>row.id),['water','population']);
+  assert.deepEqual(orderedTerritorialIndicators(data,'TST').map(row=>row.id),['water','population']);
+});
+
+test('foreign country indicators and nonexistent comparison levels are normalized at route entry',()=>{
+  const data=fixture();
+  data.analysis={kind:'regional',comparisons:[{parent_id:'AMR',member_ids:['TST','OTH']},{parent_id:'TST',member_ids:['a','b','c']}]};
+  data.country.id='AMR';data.country.national_territory_id='AMR';
+  data.territories=[
+    {id:'AMR',name:'Americas',level:'national',type:'exploration_scope',parent_id:null},
+    {id:'TST',name:'Test country',level:'country',type:'country',parent_id:'AMR'},
+    {id:'OTH',name:'Other country',level:'country',type:'country',parent_id:'AMR'},
+    ...data.territories.filter(area=>area.id!=='TST').map(area=>({...area,parent_id:'TST'}))
+  ];
+  data.indicators.push({id:'other-only',name:'Other-country measure',theme:'Other',unit:'people',definition:'Other country only',source_id:'s1'});
+  data.observations.push({territory_id:'OTH',indicator_id:'other-only',period:'2024',value:5,status:'observed',source_id:'s1'});
+  const state=initialState(data,'?country=AMR&territory=TST&metric=other-only&period=2024&level=province');
+  assert.equal(state.selected,'TST');assert.equal(state.metric,'population');assert.equal(state.level,'ADM1');
+  assert.match(state.notices.join(' '),/not available for the selected country/);
+  assert.match(state.notices.join(' '),/does not exist for the selected country/);
+  const normalized=new URLSearchParams(routeQuery(data,state));
+  assert.equal(normalized.get('metric'),'population');assert.equal(normalized.get('level'),'ADM1');
+  assert.deepEqual(comparisonLevelsForTerritory(data,'TST').sort(),['ADM1','country']);
+  assert.doesNotMatch(evidenceCsv(data,'TST','2024'),/other-only|Other-country measure/);
+  assert.doesNotMatch(planningMarkdown(data,'TST','2024'),/other-only|Other-country measure/);
+  assert.doesNotMatch(planningHtml(data,'TST','2024'),/other-only|Other-country measure/);
 });
 
 test('territorial latest-available resolves per area and keeps zero as observed across summary, detail and exports',()=>{
@@ -168,10 +214,10 @@ test('regional planning safeguards are localized in Markdown and print HTML',()=
   data.territories[0].type='exploration_scope';
   const es=planningMarkdown(data,'TST','2024','es'),ja=planningMarkdown(data,'TST','2024','ja');
   assert.match(es,/no una autoridad legal de planificación verificada/);
-  assert.match(es,/no representa 57 ediciones nacionales terminadas/);
+  assert.match(es,/contiene 57 ediciones de países o áreas/);
   assert.match(es,/7 de 57 entradas/);
   assert.match(ja,/確認済みの法定計画主体ではありません/);
-  assert.match(ja,/57の国別版が完成したことを意味しません/);
+  assert.match(ja,/57の国・地域版があります/);
   assert.match(ja,/57件中7件/);
   assert.match(planningHtml(data,'TST','2024','es'),/<html lang="es"/);
   assert.match(planningHtml(data,'TST','2024','ja'),/<html lang="ja"/);
@@ -298,7 +344,9 @@ test('generator writes five independent portable pages, same data and local-only
     const data=fixture(),result=await generateSite({dataset:data,outDir:directory});
     assert.equal(result.files.length,18);
     assert.match(await readFile(path.join(result.siteDir,'.htaccess'),'utf8'),/AddType text\/javascript \.mjs/);
-    assert.deepEqual(JSON.parse(await readFile(path.join(result.siteDir,'data','dashboard.json'),'utf8')),data);
+    const publicData=await readFile(path.join(result.siteDir,'data','dashboard.json'),'utf8');
+    assert.deepEqual(JSON.parse(publicData),data);
+    assert.equal(publicData.split('\n').length,2,'Public data is compact so deep country editions do not multiply whitespace transfer size.');
     assert.equal(await readFile(path.join(directory,'data','dashboard.json'),'utf8'),'canonical sentinel');
     assert.equal(await readFile(path.join(result.siteDir,'unrelated.txt'),'utf8'),'preserve');
     const expectedVersion=JSON.parse(await readFile(new URL('../package.json',import.meta.url),'utf8')).version;
@@ -333,6 +381,44 @@ test('generator writes five independent portable pages, same data and local-only
     const resolved=path.resolve(directory),temporaryRoot=path.resolve(os.tmpdir())+path.sep;
     assert.ok(resolved.startsWith(temporaryRoot)&&path.basename(resolved).startsWith('ddpt-generate-'),'Cleanup target must remain the created test directory under the system temporary folder');
     await rm(resolved,{recursive:true,force:true});
+  }
+});
+
+test('regional generator keeps the first payload small and writes country-depth shards',async()=>{
+  const directory=await mkdtemp(path.join(os.tmpdir(),'ddpt-shards-'));
+  try{
+    const data=localValues(fixture());
+    data.country={...data.country,id:'AMR',name:'Americas',national_territory_id:'AMR'};
+    data.territories=[{id:'AMR',country_id:'AMR',name:'Americas',level:'national',type:'exploration_scope',parent_id:null},
+      {id:'TST',country_id:'TST',name:'Test country',level:'country',type:'country',parent_id:'AMR'},
+      ...data.territories.filter(area=>area.id!=='TST').map(area=>({...area,country_id:'TST',parent_id:'TST'}))];
+    data.analysis={kind:'regional',comparisons:[{parent_id:'AMR',member_ids:['TST']},{parent_id:'TST',member_ids:['a','b','c']}],terminal_territory_ids:['a','b','c']};
+    data.analysis.coverage={country_area_count:1,census_integrated_country_ids:['TST'],census_structurally_not_applicable_country_ids:[]};
+    data.gaps=[{category:'census_country_coverage',status:'partial',detail:'Stale 0 of 1 wording.',next_action:'Stale next action.'}];
+    data.documents[0].territory_id='a';
+    const result=await generateSite({dataset:data,outDir:directory});
+    const bootstrap=JSON.parse(await readFile(path.join(result.siteDir,'data','dashboard.json'),'utf8'));
+    const full=JSON.parse(await readFile(path.join(result.siteDir,'data','dashboard-full.json'),'utf8'));
+    const shard=JSON.parse(await readFile(path.join(result.siteDir,'data','countries','TST.json'),'utf8'));
+    assert.deepEqual(bootstrap.territories.map(row=>row.id),['AMR','TST']);
+    assert.ok(bootstrap.observations.every(row=>!['a','b','c'].includes(row.territory_id)));
+    assert.equal(bootstrap.data_shards.countries.TST,'countries/TST.json');
+    assert.equal(bootstrap.data_shards.schema_version,'1.1');
+    assert.equal(bootstrap.data_shards.full,'dashboard-full.json');
+    assert.match(bootstrap.data_shards.integrity.full_sha256,/^[a-f0-9]{64}$/);
+    assert.match(bootstrap.data_shards.integrity.countries.TST.sha256,/^[a-f0-9]{64}$/);
+    assert.equal(bootstrap.data_shards.integrity.countries.TST.territory_count,3);
+    assert.deepEqual(shard.territories.map(row=>row.id),['a','b','c']);
+    assert.ok(shard.observations.some(row=>row.territory_id==='a'));
+    assert.equal(shard.documents[0].territory_id,'a');
+    assert.equal(full.territories.length,data.territories.length);
+    const handoff=await readFile(result.handoffPath,'utf8');
+    assert.match(handoff,/integrated for 1 of 1 registry entries/);assert.doesNotMatch(handoff,/Stale 0 of 1 wording/);
+    const app=await readFile(path.join(result.siteDir,'assets','app.mjs'),'utf8');
+    assert.match(app,/ensureCountryDataForTerritory/);assert.match(app,/0\.2-country-shard/);
+  }finally{
+    const resolved=path.resolve(directory),temporaryRoot=path.resolve(os.tmpdir())+path.sep;
+    assert.ok(resolved.startsWith(temporaryRoot));await rm(resolved,{recursive:true,force:true});
   }
 });
 

@@ -79,6 +79,7 @@ def main() -> None:
                 "reason": f"Reviewed source component used by {indicator_id}; the dashboard observation retains formula, numerator, denominator and source workbook.",
                 "indicator_id": indicator_id,
                 "coverage_complete": completes_theme,
+                "country_edition_eligible": True,
             })
             if completes_theme:
                 covered.add(theme)
@@ -87,6 +88,7 @@ def main() -> None:
                 "disposition": "not_adopted",
                 "reason": "Numeric field was retained in the complete workbook inventory but was not adopted in the first dashboard indicator set because its category, denominator or analytical role differs from the selected core indicator. The source field remains available for later expansion.",
                 "coverage_complete": False,
+                "country_edition_eligible": False,
             })
         reviewed += 1
     catalog_url = "https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados"
@@ -105,6 +107,7 @@ def main() -> None:
             "disposition": "not_adopted",
             "reason": reason,
             "coverage_complete": True,
+            "country_edition_eligible": False,
         })
         covered.add(theme)
     semantic.update({

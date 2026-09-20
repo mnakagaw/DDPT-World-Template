@@ -32,10 +32,11 @@ export async function buildCountry(project, {generate=generateSite}={}) {
     // Generate in an owned staging directory. A write failure never leaves a mixed live site.
     const stage=within(await mkdtemp(path.join(outDir,'.build-')));
     if(previous)await cp(site,within(path.join(stage,'site')),{recursive:true,dereference:false});
-    await generate({dataset,outDir:stage});
+    const datasetSha256=createHash('sha256').update(datasetContent).digest('hex');
+    await generate({dataset,outDir:stage,canonicalSha256:datasetSha256});
     // Finish ancillary writes before the site swap; a metadata failure cannot be reported as an old-site retention after a successful swap.
     await cp(path.join(stage,'SITE_README.md'),path.join(outDir,'SITE_README.md'));
-    await writeFile(path.join(evidence,'validation.json'),JSON.stringify({...result,checked_at:new Date().toISOString(),dataset_sha256:createHash('sha256').update(datasetContent).digest('hex')},null,2)+'\n');
+    await writeFile(path.join(evidence,'validation.json'),JSON.stringify({...result,checked_at:new Date().toISOString(),dataset_sha256:datasetSha256},null,2)+'\n');
     if(previous) {
       await mkdir(within(path.join(outDir,'.build-backups')),{recursive:true});
       backup=within(path.join(outDir,'.build-backups',randomUUID()));
