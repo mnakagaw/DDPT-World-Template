@@ -48,6 +48,37 @@ test('incomplete cover never becomes a total and keeps only a labelled covered s
   assert.equal(complete.value,1000);assert.deepEqual(complete.components.map(item=>item.territory_id),['river','lake']);
 });
 
+test('complete same-year international population is independent of an incomplete census series',()=>{
+  const data=enabled();
+  data.indicators.find(item=>item.id==='people').series_family='census';
+  data.indicators.push({id:'international-people',name:'Fictional international population',theme:'Population',unit:'people',definition:'Synthetic same-year population.',definition_id:'synthetic-international-population',population:'Synthetic residents',measurement_method:'fictional international estimate',aggregation:'sum',series_family:'international_reference',source_id:'international'});
+  data.sources.push({id:'international',name:'Fictional international source',url:'https://example.org/international',publisher:'Synthetic fixture',retrieved_at:'2026-09-13T00:00:00Z',status:'ready',license:'Fictional data'});
+  data.observations=data.observations.filter(row=>!(row.territory_id==='OTH'&&row.indicator_id==='people'));
+  data.observations.push({territory_id:'TST',indicator_id:'international-people',period:'2024',value:1100,status:'observed',source_id:'international'},{territory_id:'OTH',indicator_id:'international-people',period:'2024',value:2100,status:'observed',source_id:'international'});
+  data.analysis.aggregation.rules.push({indicator_id:'international-people',method:'sum',completeness:'full_cover',period_policy:'same_period',label:'Synthetic international total',note:'Only same-year fictional country values.'});
+  const census=resolvedObservation(data,'WLD','people','2024');
+  const international=resolvedObservation(data,'WLD','international-people','2024');
+  assert.equal(census.value,null);assert.equal(census.covered_value,1000);assert.deepEqual(census.missing_ids,['OTH']);
+  assert.equal(international.value,3200);assert.equal(international.status,'calculated');
+  assert.deepEqual(international.components.map(item=>item.territory_id),['TST','OTH']);
+  assert.deepEqual(validateDataset(data).errors,[]);
+});
+
+test('a source-backed aggregation cover can use direct regions while comparison retains country rows',()=>{
+  const data=enabled();
+  data.analysis.comparisons.push({parent_id:'other-continent',member_ids:['OTH'],label:'Other fictional region',membership_note:'Source-backed synthetic membership.',source_ids:['membership']});
+  data.analysis.aggregation.coverage_sets=[{parent_id:'WLD',indicator_id:'people',member_ids:['americas','other-continent'],source_ids:['membership'],membership_note:'The two direct fictional regions exhaust the fictional world.'}];
+  const comparison=data.analysis.comparisons.find(item=>item.parent_id==='WLD');
+  assert.deepEqual(comparison.member_ids,['TST','OTH']);
+  const result=resolvedObservation(data,'WLD','people','2024');
+  assert.equal(result.value,3000);
+  assert.deepEqual(result.components.map(item=>item.territory_id),['TST','OTH']);
+  assert.deepEqual(validateDataset(data).errors,[]);
+  data.analysis.aggregation.coverage_sets[0].member_ids=['americas'];
+  assert.equal(resolvedObservation(data,'WLD','people','2024').value,null);
+  assert.match(validateDataset(data).errors.join(' '),/every direct child/);
+});
+
 test('overlapping selections and non-additive indicators are not calculated',()=>{
   const data=enabled();
   assert.equal(resolvedObservation(data,['TST','river'],'people','2024').status,'incomparable');

@@ -47,6 +47,7 @@ export function nationalSourceMatches(data,source,area) {
   return typeof source.country_id==='string' && !!source.country_id && area.country_id===source.country_id;
 }
 export function worldSeriesSourceMatches(data,source,area) {
+  if(source?.geographic_level==='world_region_series')return ['world','regional'].includes(data?.analysis?.kind) && area?.type==='exploration_scope' && source.territory_id===area.id;
   if(source?.geographic_level!=='world_country_series')return true;
   const kind=data?.analysis?.kind;
   return ['world','regional'].includes(kind) && (!!area && area.type==='country' && /^[A-Z0-9]{3}$/.test(area.country_id || '') || kind==='world' && area?.id==='WLD' && area.id===data?.country?.national_territory_id && area.type==='exploration_scope');
@@ -89,7 +90,7 @@ export function observationContext(data,area,indicator,observation) {
   if(observation && !source)reasons.push('Observation source is unavailable.');
   if(source && !['ready','partial'].includes(source.status))reasons.push('Observation source has no acquired usable data.');
   if(!nationalSourceMatches(data,source,area))reasons.push('National source country identity does not match this area.');
-  if(!worldSeriesSourceMatches(data,source,area))reasons.push('World country series does not supply regional or local observations.');
+  if(!worldSeriesSourceMatches(data,source,area))reasons.push(source?.geographic_level==='world_region_series'?'World region series does not match this regional area.':'World country series does not supply regional or local observations.');
   if(observation && own(observation,'boundary_version') && observation.boundary_version!==area?.boundary_version)reasons.push('Observation boundary edition does not match the registered area.');
   return {...meaning,source,meaning_comparable:meaning.comparable,comparable:reasons.every(reason=>!reason),reason:reasons.filter(Boolean).join(' ')};
 }

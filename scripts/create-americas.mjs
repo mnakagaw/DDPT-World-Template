@@ -51,7 +51,10 @@ export async function importAmericasEvidence({dataset,outDir,centralAmericaProje
     await mkdir(targetDir,{recursive:true});await copyFile(input,target);
     const content=await readFile(target),info=await stat(target),rawPath=`raw/un-wpp2024/${filename}`,receiptPath='raw/un-wpp2024/receipt.json',source=byId.get('un-wpp2024-demographic-indicators-rev1');
     await writeFile(path.join(outDir,receiptPath),JSON.stringify({schema_version:'1.0',source_id:source?.id||null,url:source?.url||null,raw_path:rawPath,sha256:sha256(content),bytes:info.size,status:'copied_from_verified_evidence'},null,2)+'\n');
-    await attachRaw(source,outDir,rawPath,{receiptPath});summary.wpp_raw_files=1;
+    await attachRaw(source,outDir,rawPath,{receiptPath});
+    const regionalSource=byId.get('un-wpp2024-south-america-region-rev1');
+    if(regionalSource)await attachRaw(regionalSource,outDir,rawPath,{receiptPath});
+    summary.wpp_raw_files=1;
   }
   await writeFile(path.join(outDir,'evidence','SOURCE_EVIDENCE_IMPORT.json'),JSON.stringify({...summary,created_at:new Date().toISOString()},null,2)+'\n');
   return summary;
@@ -72,7 +75,7 @@ export async function createAmericas({out,sourceDir,centralAmericaProject,centra
     await writeFile(path.join(outDir,'data/dashboard.json'),content);
     if(unPopulation){
       await writeFile(path.join(outDir,'evidence/UN_WPP_AMERICAS_NORMALIZATION.json'),JSON.stringify(unPopulation,null,2)+'\n');
-      await writeFile(path.join(outDir,'evidence/UN_WPP_AMERICAS_ADOPTION_AUDIT.json'),JSON.stringify({scope_id:unPopulation.scope_id,source_id:unPopulation.source.id,source_sha256:unPopulation.source.sha256,sheets:['Estimates','Medium variant'],join_column:'ISO3 Alpha-code',value_column:'Total Population, as of 1 July (thousands)',registry_country_area_count:unPopulation.summary.registry_country_ids.length,adopted_count:unPopulation.summary.country_ids.length,not_available_count:unPopulation.summary.missing_country_ids.length,records:unPopulation.summary.country_source_audit},null,2)+'\n');
+      await writeFile(path.join(outDir,'evidence/UN_WPP_AMERICAS_ADOPTION_AUDIT.json'),JSON.stringify({scope_id:unPopulation.scope_id,source_id:unPopulation.source.id,source_sha256:unPopulation.source.sha256,sheets:['Estimates','Medium variant'],join_column:'ISO3 Alpha-code',value_column:'Total Population, as of 1 July (thousands)',registry_country_area_count:unPopulation.summary.registry_country_ids.length,adopted_count:unPopulation.summary.country_ids.length,not_available_count:unPopulation.summary.missing_country_ids.length,records:unPopulation.summary.country_source_audit,regional_source_id:unPopulation.regional_source?.id||null,regional_source_sha256:unPopulation.regional_source?.sha256||null,regional_source_location_code:unPopulation.regional_source?.source_location_code||null,regional_source_sdmx_code:unPopulation.regional_source?.source_sdmx_code||null,regional_observations:unPopulation.regional_observations||[],regional_source_audit:unPopulation.summary.regional_source_audit||null},null,2)+'\n');
     }
     await writeFile(path.join(outDir,'evidence/validation.json'),JSON.stringify({...validation,dataset_sha256:sha256(content),checked_at:new Date().toISOString()},null,2)+'\n');
     await writeFile(path.join(outDir,'evidence/AMERICAS_SCOPE.json'),JSON.stringify({scope_id:'M49:019',country_area_count:dataset.analysis.coverage.country_area_count,un_wpp_country_area_count:dataset.analysis.coverage.un_wpp_country_area_count,un_wpp_missing_country_area_ids:dataset.analysis.coverage.un_wpp_missing_country_area_ids,census_integrated_country_ids:dataset.analysis.coverage.census_integrated_country_ids,census_integrated_territory_count:dataset.analysis.coverage.census_integrated_territory_count,generated_at:dataset.generated_at,world_source_dir:sourceDir?path.resolve(sourceDir):null,central_america_project:centralAmericaProject?path.resolve(centralAmericaProject):null,un_population_data:unPopulationData?path.resolve(unPopulationData):null},null,2)+'\n');

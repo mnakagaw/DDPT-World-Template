@@ -31,9 +31,12 @@ function completeCover(data,territoryId,indicatorId,period,rule,visiting=new Set
   if(visiting.has(territoryId))return {complete:false,components:[],missing_ids:[territoryId],reason:'Geographic hierarchy contains a cycle.'};
   const exact=direct(data,territoryId,indicatorId,period,rule);
   if(exact.value!==null && exact.context.comparable)return {complete:true,components:[{territory_id:territoryId,value:exact.value,period:exact.period,row:exact.row,source_id:exact.row?.source_id,scope:'exact'}],missing_ids:[],reason:''};
-  const set=comparisonSet(data,territoryId);
+  const cover=list(data?.analysis?.aggregation?.coverage_sets).find(item=>item.parent_id===territoryId&&item.indicator_id===indicatorId);
+  const directChildren=list(data?.territories).filter(item=>item.parent_id===territoryId);
+  const exactChildren=cover && cover.member_ids.length===directChildren.length && directChildren.every(child=>cover.member_ids.includes(child.id));
+  const set=cover?{explicit:Boolean(exactChildren),members:list(cover.member_ids).map(id=>data.territories.find(item=>item.id===id)).filter(Boolean),source_ids:list(cover.source_ids)}:comparisonSet(data,territoryId);
   const membershipReady=set.explicit && set.members.length>0 && set.source_ids.length>0 && set.source_ids.every(id=>['ready','partial'].includes(data.sources.find(source=>source.id===id)?.status));
-  if(!membershipReady)return {complete:false,components:[],missing_ids:[territoryId],reason:set.explicit?'Membership evidence is unavailable or has no members.':'No explicit source-backed complete membership is configured.'};
+  if(!membershipReady)return {complete:false,components:[],missing_ids:[territoryId],reason:cover?'Aggregation cover is not an exact, source-backed set of direct children.':set.explicit?'Membership evidence is unavailable or has no members.':'No explicit source-backed complete membership is configured.'};
   const next=new Set(visiting);next.add(territoryId);
   const parts=set.members.map(area=>completeCover(data,area.id,indicatorId,period,rule,next));
   const components=parts.flatMap(part=>part.components),missing_ids=[...new Set(parts.flatMap(part=>part.missing_ids))];

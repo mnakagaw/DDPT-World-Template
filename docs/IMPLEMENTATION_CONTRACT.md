@@ -21,6 +21,7 @@
 | `analysis.country_sites[]` | 接続元`territory_id`、接続元のISO3と一致する`country_id`、安全なHTTPSまたは`./`子パスの`url`。任意`target_territory_id`は省略時その国ID。`indicator_map`は意味を確認した指標対応だけを明示する |
 | 観測の意味 | 任意の`definition_id/definition/unit/population/method/measurement_method/boundary_version`で指標の既定と異なる意味を保持。異定義・異母集団・異単位・異方法・境界版差は元値と理由を残し、共通の比較色・数値比較から除く |
 | `analysis.aggregation` | 任意。`policy:exact_then_complete_cover`と指標別ruleを指定した場合だけ上位集計する。親自身の観測を優先し、完全・非重複・根拠付き被覆だけを計算する。不完全時は全体値nullと監査小計・不足IDを出す |
+| `analysis.aggregation.coverage_sets[]` | 任意。比較表が国単位でも、集計には直接の広域区分を使う場合、指標・親ID・**全直下地域**・所属出典を明示する。比較対象の粒度は変えない。親の公式観測を優先し、各子の公式値または完全被覆計算値で全域を埋めた場合だけ合計する |
 
 国際指標と国内統計は同じ名称・IDだけで対応付けない。国版への接続は別datasetの国・対象IDと明示した指標対応を確認し、対応がなければ国版の既定指標と未対応の説明を使う。統計年を保つ場合も、その年の欠測を別年で補わない。資料独自の計画期間・会計年度を統計年に置き換えない。
 

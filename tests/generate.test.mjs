@@ -350,6 +350,15 @@ test('dateline polygons and multipolygons do not create a nearly global false ex
   assert.equal((mapGeometry([multi]).paths[0].d.match(/M/g)||[]).length,2);
 });
 
+test('Central America and Caribbean longitudes do not wrap one western point across the map',()=>{
+  const west=polygon('west',[[-117.12776,14.5],[-116.5,14.5],[-116.5,15],[-117.12776,14.5]]);
+  const east=polygon('east',[[-61.95,10],[-60.895,10],[-60.895,10.89],[-61.95,10]]);
+  const mapped=mapGeometry([west,east]);
+  assert.ok(mapped.bounds.maxX-mapped.bounds.minX<60,'The selected region spans roughly 56°, not an entire wraparound');
+  const xs=mapped.paths.flatMap(path=>[...path.d.matchAll(/(-?\d+(?:\.\d+)?),-?\d+(?:\.\d+)?/g)].map(match=>Number(match[1])));
+  assert.ok(Math.max(...xs)-Math.min(...xs)>650,'The region should fill the available map width');
+});
+
 test('time-series gaps break the line and numeric zero remains visible',()=>{
   const series=[{period:'2020',value:0,status:'observed'},{period:'2021',value:null,status:'missing'},{period:'2022',value:10,status:'observed'}];
   const result=seriesGeometry(series);assert.equal(result.points.length,2);assert.equal(result.segments.length,2);assert.equal(result.min,0);

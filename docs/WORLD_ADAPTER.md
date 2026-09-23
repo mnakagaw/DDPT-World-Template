@@ -48,7 +48,7 @@ node scripts/create-world.mjs --source-dir generated/world/raw --out generated/w
 
 ## アメリカ大陸版
 
-世界datasetのUN M49 Americas（019）だけを切り出し、57のcountry/areaと3つの探索入口を持つ別成果物を作る。UN WPP 2024原本からは行が確認できる55 country/areaだけを取り込み、BVTとSGSは欠測として残す。検証済みの中米7か国成果を指定すると、その7か国に限って国勢調査と国内階層を再利用する。残りの国・地域へCensus値をコピーせず、全大陸のCensus合計も完全被覆になるまで出さない。
+世界datasetのUN M49 Americas（019）だけを切り出し、57のcountry/areaと3つの探索入口を持つ別成果物を作る。UN WPP 2024原本からは行が確認できる55 country/areaだけを取り込み、BVTとSGSは国別値を欠測として残す。同じ原表のSouth America（WPP location code 931、SDMX 005）公表値は南米の直接観測として別source IDで採用する。北米と独自Central America + Caribbeanは、全構成地域に同一年WPP値がある場合だけ計算する。Americas全体のWPP値はこの重複しない3地域を完全被覆で加算したAreaData計算値であり、国連がその独自3区分の合計を公表した値ではない。国別WPP欠測をゼロに置き換えず、Census値とも混ぜない。検証済みの中米7か国成果を指定すると、その7か国に限って国勢調査と国内階層を再利用する。残りの国・地域へCensus値をコピーせず、全大陸のCensus合計も完全被覆になるまで出さない。
 
 ```sh
 node scripts/create-americas.mjs \

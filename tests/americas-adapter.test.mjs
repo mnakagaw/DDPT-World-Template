@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {buildAmericas} from '../lib/americas-adapter.mjs';
 import {validateDataset} from '../lib/validate.mjs';
-import {initialState,comparisonLevelForArea,comparisonRows} from '../scaffold/site/model.mjs';
+import {initialState,comparisonLevelForArea,comparisonRows,areaObservationState} from '../scaffold/site/model.mjs';
 
 const caIds=['BLZ','GTM','SLV','HND','NIC','CRI','PAN'];
 const otherIds=['MEX','USA','CAN',...Array.from({length:47},(_,index)=>`X${String(index).padStart(2,'0')}`)];
@@ -79,4 +79,25 @@ test('Americas UN overlay covers available source rows and preserves missing reg
   assert.match(result.gaps.find(gap=>gap.category==='un_wpp_country_area_coverage').detail,/55 of 57/);
   assert.match(result.analysis.aggregation.rules.find(rule=>rule.indicator_id==='UN_WPP_POP_TOTAL').note,/Missing members remain missing/);
   assert.deepEqual(validateDataset(result).errors,[]);
+});
+
+test('published South America WPP value completes the continental cover without filling missing countries',()=>{
+  const unPopulation=unPopulationFixture();
+  const missingInCentral=countryIds.at(-1),missingInSouth=countryIds.at(-2);
+  unPopulation.source.sha256='a'.repeat(64);
+  unPopulation.observations.push(...['2023','2024','2025','2026'].map(period=>({territory_id:missingInCentral,indicator_id:'UN_WPP_POP_TOTAL',period,value:500,status:'observed',source_id:'un-wpp'})));
+  unPopulation.summary.country_ids.push(missingInCentral);
+  unPopulation.summary.missing_country_ids=[missingInSouth];
+  unPopulation.regional_source={...source('un-wpp-south',{geographic_level:'world_region_series',territory_id:'M49:005',sha256:unPopulation.source.sha256})};
+  unPopulation.regional_observations=['2023','2024','2025','2026'].map(period=>({territory_id:'M49:005',indicator_id:'UN_WPP_POP_TOTAL',period,value:100000,status:'observed',source_id:'un-wpp-south'}));
+  const result=buildAmericas(worldFixture(),{unPopulation});
+  const continent=areaObservationState(result,'M49:019','UN_WPP_POP_TOTAL','2026');
+  assert.equal(continent.status,'calculated');assert.ok(continent.value>100000);
+  assert.ok(continent.components.some(item=>item.territory_id==='M49:005'));
+  assert.equal(areaObservationState(result,missingInSouth,'UN_WPP_POP_TOTAL','2026').value,null);
+  assert.equal(result.analysis.comparisons.find(item=>item.parent_id==='M49:019').member_ids.length,57);
+  assert.deepEqual(validateDataset(result).errors,[]);
+  const wrong=structuredClone(result);
+  wrong.observations.find(row=>row.territory_id==='M49:005'&&row.indicator_id==='UN_WPP_POP_TOTAL').territory_id='M49:021';
+  assert.match(validateDataset(wrong).errors.join(' '),/World region series .*cannot supply this regional observation/);
 });

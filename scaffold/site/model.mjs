@@ -500,7 +500,9 @@ export function mapGeometry(features, selectedId = '', width = 760, height = 400
   let cut = longitudes[0], largestGap = -1;
   for (let i=0;i<longitudes.length;i++) {
     const next = i === longitudes.length-1 ? longitudes[0] + 360 : longitudes[i+1], gap = next - longitudes[i];
-    if (gap > largestGap) { largestGap = gap; cut = next % 360; }
+    // Use an existing longitude as the cut. Applying % 360 to the wrapped
+    // endpoint can round it above the first point and send that point 360° away.
+    if (gap > largestGap) { largestGap = gap; cut = longitudes[(i+1)%longitudes.length]; }
   }
   const project = point => { const longitude = (point[0] + 360) % 360; return [longitude < cut ? longitude + 360 : longitude, -point[1]]; };
   const projected = shapes.map(shape => ({...shape, rings:shape.rings.map(ring => ring.map(project))}));

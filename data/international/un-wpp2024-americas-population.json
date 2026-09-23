@@ -3728,6 +3728,102 @@
         "transform": "multiply published thousands by 1000 and store integer people",
         "reason": "Exact ISO3 row and all four requested periods found."
       }
-    ]
-  }
+    ],
+    "regional_source_audit": {
+      "territory_id": "M49:005",
+      "source_location_code": 931,
+      "source_sdmx_code": "005",
+      "row_count": 4,
+      "periods": [
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "method": "Exact source-reported regional rows, distinct from country-value calculations."
+    }
+  },
+  "regional_source": {
+    "id": "un-wpp2024-south-america-region-rev1",
+    "name": "World Population Prospects 2024, South America subregion, Rev.1",
+    "publisher": "United Nations, Department of Economic and Social Affairs, Population Division",
+    "url": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/EXCEL_FILES/1_General/WPP2024_GEN_F01_DEMOGRAPHIC_INDICATORS_COMPACT.xlsx",
+    "catalog_url": "https://population.un.org/wpp/",
+    "status": "ready",
+    "retrieved_at": "2026-09-15T00:00:00Z",
+    "reference_period": "2023 estimate; 2024-2026 medium-variant projections",
+    "sha256": "98e34d9b65b53858cd08a57a566e45050b08093ad85ba5714fe6fbd78055ae6d",
+    "bytes": 26142942,
+    "license": "CC BY 3.0 IGO",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/igo/",
+    "raw_redistribution_status": "not_in_public_site",
+    "normalized_observation_publication": "permitted_with_attribution",
+    "geographic_level": "world_region_series",
+    "note": "Direct UN WPP 2024 South America subregion observations. The WPP workbook has no country rows for BVT and SGS; this published subregion value is adopted independently of the incomplete country cover.",
+    "territory_id": "M49:005",
+    "source_location_code": 931,
+    "source_sdmx_code": "005"
+  },
+  "regional_observations": [
+    {
+      "territory_id": "M49:005",
+      "indicator_id": "UN_WPP_POP_TOTAL",
+      "period": "2023",
+      "value": 433024175,
+      "status": "observed",
+      "source_id": "un-wpp2024-south-america-region-rev1",
+      "series_stage": "estimate",
+      "variant": "Estimates",
+      "reference_time": "1 July",
+      "source_value_thousands": 433024.175,
+      "source_location_code": 931,
+      "source_sdmx_code": "005",
+      "footnote": "UN WPP 2024 Rev.1 source-reported South America subregion; not a sum of the available country rows."
+    },
+    {
+      "territory_id": "M49:005",
+      "indicator_id": "UN_WPP_POP_TOTAL",
+      "period": "2024",
+      "value": 435611302,
+      "status": "observed",
+      "source_id": "un-wpp2024-south-america-region-rev1",
+      "series_stage": "medium_projection",
+      "variant": "Medium",
+      "reference_time": "1 July",
+      "source_value_thousands": 435611.302,
+      "source_location_code": 931,
+      "source_sdmx_code": "005",
+      "footnote": "UN WPP 2024 Rev.1 source-reported South America subregion; not a sum of the available country rows."
+    },
+    {
+      "territory_id": "M49:005",
+      "indicator_id": "UN_WPP_POP_TOTAL",
+      "period": "2025",
+      "value": 438105374,
+      "status": "observed",
+      "source_id": "un-wpp2024-south-america-region-rev1",
+      "series_stage": "medium_projection",
+      "variant": "Medium",
+      "reference_time": "1 July",
+      "source_value_thousands": 438105.374,
+      "source_location_code": 931,
+      "source_sdmx_code": "005",
+      "footnote": "UN WPP 2024 Rev.1 source-reported South America subregion; not a sum of the available country rows."
+    },
+    {
+      "territory_id": "M49:005",
+      "indicator_id": "UN_WPP_POP_TOTAL",
+      "period": "2026",
+      "value": 440484432,
+      "status": "observed",
+      "source_id": "un-wpp2024-south-america-region-rev1",
+      "series_stage": "medium_projection",
+      "variant": "Medium",
+      "reference_time": "1 July",
+      "source_value_thousands": 440484.432,
+      "source_location_code": 931,
+      "source_sdmx_code": "005",
+      "footnote": "UN WPP 2024 Rev.1 source-reported South America subregion; not a sum of the available country rows."
+    }
+  ]
 }
