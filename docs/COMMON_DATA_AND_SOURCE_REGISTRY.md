@@ -67,6 +67,18 @@ Gitには台帳、アダプター、スキーマ、取得手順、小規模で�
 
 再配布できない個票・空間ファイルはGitや公開オブジェクト保管へ複製しない。許可されたメタデータ、取得手順、版、必要な申請・認証と、生成可能な派生物の条件を残す。APIキーや認証情報は台帳、ログ、成果物へ保存しない。
 
+## Census Dashboard Kitへのsource feedback
+
+国別または地域別のカバー範囲を広げ、公開公式sourceの確認結果をcommitした後、次を実行する。
+
+```sh
+npm run export:kit-source-feedback
+```
+
+`evidence/KIT_SOURCE_FEEDBACK.json`はKit v1.9.0のschema 1.0に適合し、生成時の`origin_commit`に存在する証拠pathだけを含む。同一国・role・URLは一件へまとめ、公開HTTP(S)の公式機関・国際機関source以外、未確認candidate、観測値、raw原本、資格情報、秘密query、ローカルURLを拒否する。`origin_commit`は証拠とexporterを先にcommitしたHEADとし、bundleは次のcommitで保存する。
+
+bundle commitと絶対pathをKit担当へ通知し、Kit側で同じbundleをdry-runしてからimportする。Kitで取り込んだ版は、そのKit commitを`config/external-source-registries.json`へ再固定する。AreaDataでの高い証拠段階はKit側の取得・採用状態を自動的に引き継がない。
+
 ## 国を追加する手順
 
 1. 国勢調査の公式入口、表・API・報告書、調査票・辞書、公開粒度を確認する。
@@ -75,6 +87,7 @@ Gitには台帳、アダプター、スキーマ、取得手順、小規模で�
 4. 国別sourceをregistryへ追加し、`checked_at`と証拠段階を記録する。
 5. 共通候補の対象国availabilityを照会し、採用・非採用と理由を案件側の台帳へ保存する。
 6. 実取得と変換を再実行できるアダプターにし、代表地域で画面・表・出力まで照合する。
+7. 確認した公開公式sourceとcommit済み証拠をfeedback bundleへ反映し、Kit担当へbundle commitとpathを通知する。
 
 現在の事前所在調査は22か国（ラテンアメリカ20か国、ウガンダ、ベリーズ）。ベリーズは国勢調査所在のみ確認済みで、計画制度は未調査として保持する。その他の国も共通候補は抽出できるが、国勢調査・計画制度の所在は未調査として出力される。全世界の所在調査と全sourceの収集アダプター完成は、この版の完了範囲ではない。
 

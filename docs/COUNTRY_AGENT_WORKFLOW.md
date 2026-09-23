@@ -170,3 +170,5 @@ node scripts/serve.mjs --dir ../uganda-dashboard/site --port 4173
 制作者が完成候補を閉じた後、[独立完成監査票](../templates/INDEPENDENT_AUDIT.md)を使い、別のタスク・会話・担当が修正せずに実物を監査する。監査は `DELIVERY.json`、緑のtest、制作者の説明を単独証拠にせず、原資料から代表値、意味、年、地理、比較集合、計画資料、ブラウザ操作、取得物、render済み文書を追跡する。blockingまたはmajor findingが残る `REJECT`、必要確認が終わらない `INCOMPLETE AUDIT` の間は公開しない。制作者が実データ・コード・出力を修正してremediationを残した後、別監査を再実施し、`ACCEPT` で公開可能とする。
 
 現在の依頼にGitHub作成・公開まで含まれる場合は、独立監査の `ACCEPT` 後に、その範囲の版・配備・公開後確認まで進める。国名だけで始めた案件ではローカル成果を既定とし、テンプレート本体のPrivate GitHub作成許可を別国リポジトリや公開サイトへの許可へ転用しない。単一の実行環境で別担当の監査を開始できない場合は、完成候補と監査用証拠を保存し、`INDEPENDENT AUDIT PENDING` として引き継ぐ。制作者自身の再確認を独立監査と呼ばない。
+
+国別のカバー範囲を追加・更新した完了工程では、公開公式sourceとその証拠を先にcommitし、`npm run export:kit-source-feedback`で`evidence/KIT_SOURCE_FEEDBACK.json`を更新する。bundle commit、絶対path、source件数、国数、stage別件数をKit取込担当へ通知する。未確認candidate、観測値、raw原本、資格情報はbundleへ入れない。Kit側のdry-run・importは別工程であり、AreaData側の採用状態を自動移植しない。

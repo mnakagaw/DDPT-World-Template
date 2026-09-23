@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mnakagaw/Census-Dashboard-Kit/schemas/areadata-source-feedback.schema.json",
+  "title": "AreaData source feedback bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "produced_by", "exported_at", "origin_commit", "sources"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "produced_by": { "const": "AreaData" },
+    "exported_at": { "type": "string", "format": "date-time" },
+    "origin_commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["iso3", "source_id", "role", "title", "publisher", "url", "authority_type", "evidence_stage", "checked_at", "geographic_levels", "reference_periods", "formats", "reuse_note", "origin_evidence_path"],
+        "properties": {
+          "iso3": { "type": "string", "pattern": "^[A-Z]{3}$" },
+          "source_id": { "type": "string", "pattern": "^[A-Z0-9][A-Z0-9_.-]+$" },
+          "role": { "enum": ["official_statistics_office", "census_catalog", "census_results", "table_catalog", "machine_readable_data", "administrative_codes", "boundaries", "planning_law", "planning_guidance", "plans_budgets_implementation_evaluation", "international_complement"] },
+          "title": { "type": "string", "minLength": 1 },
+          "publisher": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "pattern": "^https?://" },
+          "authority_type": { "enum": ["official_national", "official_subnational", "official_territorial", "international_organization", "administering_authority"] },
+          "evidence_stage": { "enum": ["official_location_identified", "official_location_verified", "source_acquired", "content_inspected", "geography_matched", "indicator_adopted_in_areadata"] },
+          "checked_at": { "type": "string", "format": "date" },
+          "geographic_levels": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+          "reference_periods": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+          "formats": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+          "license_or_terms": { "type": ["string", "null"] },
+          "reuse_note": { "type": "string", "minLength": 1 },
+          "origin_evidence_path": { "type": "string", "pattern": "^(?![A-Za-z]:|/|\\\\)(?!.*(?:^|[\\\\/])\\.\\.(?:[\\\\/]|$)).+" },
+          "artifact_sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    }
+  }
+}
