@@ -18,12 +18,12 @@ Evidence stages remain separate. An AreaData stage does not set the Kit acquisit
 
 ## Initial backfill
 
-The final bundle is generated only after the exporter and its evidence inputs exist in a committed revision. Bundle counts and its `origin_commit` are recorded after the two-commit generation sequence.
+The final bundle was generated only after the exporter and its evidence inputs existed in committed revision `064ca314c610a60686d43f90b9b27729ac9b4414`. It contains 106 sources for 22 countries: 101 `official_location_verified` and 5 `content_inspected`. Its SHA-256 is `91fea347b3239da8df7a0f0f79132707e056c6da2188b28214e948971cd5bc00`.
 
 ## Checks
 
 - `npm run check`: PASS, 110 JavaScript modules and JSON templates.
 - `npm test`: PASS, 195/195 tests.
-- Deterministic regeneration: pending.
+- Deterministic regeneration: PASS. Re-running with the fixed origin commit and `--check` reproduced the saved bytes.
 - GitHub push: pending.
 - FTPS: not applicable because this revision does not change generated public-site behavior or assets.
