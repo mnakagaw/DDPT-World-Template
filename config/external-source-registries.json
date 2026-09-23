@@ -1,44 +1,61 @@
 {
-  "schema_version": "0.1",
-  "checked_at": "2026-09-17",
+  "schema_version": "0.2",
+  "checked_at": "2026-09-23",
   "purpose": "Pinned discovery registries and workflow references from the public Census Dashboard Kit. Source-address preflight inputs are not evidence of acquisition, content verification, geography matching or indicator adoption; workflow references are not evidence that an audit was performed.",
   "upstream": {
     "repository": "https://github.com/mnakagaw/Census-Dashboard-Kit",
-    "commit": "88de64677d2691fa8ec83acbf71449943ac04374"
+    "version": "1.8.1",
+    "commit": "6622118aa702a6f1d8eeaa84e1c5982a0fb954b5"
   },
   "registries": [
     {
+      "id": "world-source-preflight",
+      "path": "config/world-source-preflight.json",
+      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/6622118aa702a6f1d8eeaa84e1c5982a0fb954b5/config/world-source-preflight.json",
+      "record_count": 250,
+      "sha256": "448d4b5ec264191ae45dc1fc75a19c346b4dee5d8594ca86bb4f45f664846a95",
+      "use": "UN M49 country/area identity and source discovery. latest_un_census_listing and latest_un_census_linked_listing are separate fields; neither is evidence that a source body was acquired, verified or adopted."
+    },
+    {
       "id": "jica-priority-country-registry",
       "path": "config/jica-priority-country-registry.json",
-      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/88de64677d2691fa8ec83acbf71449943ac04374/config/jica-priority-country-registry.json",
+      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/6622118aa702a6f1d8eeaa84e1c5982a0fb954b5/config/jica-priority-country-registry.json",
       "record_count": 142,
-      "sha256": "8198e57434b192a7571cf4ee0b38e52e8db78d38543673283ed93fd6215fd516",
+      "sha256": "f49856111929ed23872717c3142d43689566b3815f0fd5139b0ae833c223fa3e",
       "use": "Priority-country identity and JICA supervising-office context only; do not replace the UN M49 world registry."
     },
     {
       "id": "jica-priority-source-preflight",
       "path": "config/jica-priority-source-preflight.json",
-      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/88de64677d2691fa8ec83acbf71449943ac04374/config/jica-priority-source-preflight.json",
+      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/6622118aa702a6f1d8eeaa84e1c5982a0fb954b5/config/jica-priority-source-preflight.json",
       "record_count": 142,
-      "sha256": "0ff4f2cb5243f5712599a0477b9c20d2f8f129947cde313fd0d9d8e86aeb42a0",
+      "sha256": "3d3ffeabf6fa101705ceb6f71c949a08ca77b14341bad8bb5d088f962295b102",
       "use": "Discovery addresses for national statistics, planning, geography and international candidates; refresh and inspect originals in every country task."
     },
     {
       "id": "reference-country-source-registry",
       "path": "config/country-source-registry.json",
-      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/88de64677d2691fa8ec83acbf71449943ac04374/config/country-source-registry.json",
+      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/6622118aa702a6f1d8eeaa84e1c5982a0fb954b5/config/country-source-registry.json",
       "record_count": 4,
-      "sha256": "2be58c3e99bd5ff89a1d23ef5d3c5bb8b130674f79bb9d734236f394ad7e5577",
+      "sha256": "d0be76750cb2cfcfc62004a04543341b54a4e0a112001c220cf9102b318dfbe3",
       "use": "Detailed reference cases for Dominican Republic, Uganda, Laos and Bangladesh; never copy country-specific laws, hierarchy or indicators to another country."
     }
   ],
   "workflow_sources": [
     {
+      "id": "kit-v1.8.1-validation",
+      "path": "docs/VALIDATION_v1.8.1.md",
+      "upstream_commit": "6622118aa702a6f1d8eeaa84e1c5982a0fb954b5",
+      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/6622118aa702a6f1d8eeaa84e1c5982a0fb954b5/docs/VALIDATION_v1.8.1.md",
+      "sha256": "1c669b0897932d72115773c1fe66655cebf430763a8bae28754486e9ee10097a",
+      "use": "Validation evidence for the split between latest completed UNSD listing and latest linked completed listing, including Algeria and country-name resolution cases."
+    },
+    {
       "id": "independent-completion-audit",
       "path": "docs/INDEPENDENT_AUDIT.md",
-      "upstream_commit": "3f8861637d60481c09f5f2da1ca5f4c33b3082c0",
-      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/3f8861637d60481c09f5f2da1ca5f4c33b3082c0/docs/INDEPENDENT_AUDIT.md",
-      "sha256": "e60dec74752a02b09a56f570190f2c2c9fa26a59d8adba7acdcb74fdb10f5225",
+      "upstream_commit": "6622118aa702a6f1d8eeaa84e1c5982a0fb954b5",
+      "raw_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/6622118aa702a6f1d8eeaa84e1c5982a0fb954b5/docs/INDEPENDENT_AUDIT.md",
+      "sha256": "e247e8e24b40587276cb40da2580577052cd265159c0ca53c515292c3a642e1b",
       "use": "Independent read-only completion audit after the builder closes a country candidate; do not publish before ACCEPT."
     }
   ]

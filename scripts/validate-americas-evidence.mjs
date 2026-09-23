@@ -1,7 +1,9 @@
 #!/usr/bin/env node
-import {access,readFile,readdir} from 'node:fs/promises';
+import {access,readFile,readdir,stat} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {STATISTICAL_DOMAINS} from '../lib/country-completion-matrix.mjs';
 
 export function parseCsv(text){
   const rows=[];let row=[],cell='',quoted=false;
@@ -35,11 +37,13 @@ async function listFiles(root,directory=''){
 }
 
 export async function validateAmericasEvidence(project){
-  const dataset=JSON.parse(await readFile(path.join(project,'data/dashboard.json'),'utf8'));
+  const datasetContent=await readFile(path.join(project,'data/dashboard.json')),dataset=JSON.parse(datasetContent.toString('utf8')),datasetSha256=createHash('sha256').update(datasetContent).digest('hex');
   const preflight=JSON.parse(await readFile(path.join(project,'evidence/SOURCE_PREFLIGHT.json'),'utf8'));
   const inventory=JSON.parse(await readFile(path.join(project,'evidence/SOURCE_TABLE_INVENTORY.json'),'utf8'));
   let semantic=null;
   try{semantic=JSON.parse(await readFile(path.join(project,'evidence/COUNTRY_SEMANTIC_INVENTORY.json'),'utf8'));}catch{}
+  let matrix=null;
+  try{matrix=JSON.parse(await readFile(path.join(project,'evidence/COUNTRY_COMPLETION_MATRIX.json'),'utf8'));}catch{}
   const disposition=parseCsv(await readFile(path.join(project,'evidence/SOURCE_DISPOSITION.csv'),'utf8'));
   const registry=dataset.territories.filter(area=>area.type==='country').map(area=>area.id).sort();
   const wpp=disposition.filter(row=>row.record_type==='wpp_country_area_adoption');
@@ -56,6 +60,18 @@ export async function validateAmericasEvidence(project){
   if(adopted.length!==55||unavailable.length!==2)errors.push(`WPP dispositions must be 55 adopted and 2 not_available_in_source; found ${adopted.length} and ${unavailable.length}.`);
   if(JSON.stringify(unavailable.map(row=>row.country_area_id).sort())!==JSON.stringify(['BVT','SGS']))errors.push('Only BVT and SGS may be unavailable in the WPP source.');
   if(preflight.countries.length!==registry.length)errors.push(`Source preflight has ${preflight.countries.length} entries; expected ${registry.length}.`);
+  if(!matrix)errors.push('Country completion matrix is missing or invalid JSON.');
+  else {
+    if(preflight.summary?.integrated_country_adapters!==matrix.broad_local_edition_country_area_count)errors.push('SOURCE_PREFLIGHT integrated_country_adapters must equal the matrix broad-local edition count.');
+    if(preflight.summary?.country_edition_complete_country_areas!==matrix.country_edition_complete_country_area_count)errors.push('SOURCE_PREFLIGHT country-edition count does not match the matrix.');
+    if(dataset.analysis?.coverage?.country_edition_complete_country_area_count!==matrix.country_edition_complete_country_area_count)errors.push('Dataset coverage country-edition count does not match the matrix.');
+    if(dataset.analysis?.coverage?.source_review_complete_country_area_count!==matrix.source_review_complete_country_area_count)errors.push('Dataset coverage source-review count does not match the matrix.');
+  }
+  const auditNames=(await readdir(path.join(project,'evidence'),{withFileTypes:true})).filter(entry=>entry.isFile()&&entry.name.endsWith('_INTEGRATION_AUDIT.json')).map(entry=>entry.name);
+  for(const name of auditNames){
+    let audit;try{audit=JSON.parse(await readFile(path.join(project,'evidence',name),'utf8'));}catch(error){errors.push(`${name} is invalid JSON: ${error.message}`);continue;}
+    if(audit.final_dataset_sha256!==datasetSha256)errors.push(`${name} final_dataset_sha256 does not match data/dashboard.json.`);
+  }
   const inventoryPaths=inventory.files.map(row=>String(row.path||''));
   if(inventory.file_count!==inventoryPaths.length)errors.push(`Source inventory declares ${inventory.file_count} files but contains ${inventoryPaths.length} rows.`);
   if(new Set(inventoryPaths).size!==inventoryPaths.length)errors.push('Source inventory contains duplicate paths.');
@@ -76,7 +92,34 @@ export async function validateAmericasEvidence(project){
       errors.push(`Source inventory path escapes the project: ${relative}.`);
       continue;
     }
-    try{await access(absolute);}catch{errors.push(`Source inventory file does not exist inside the project: ${relative}.`);}
+    try{
+      await access(absolute);
+      const [body,details]=await Promise.all([readFile(absolute),stat(absolute)]);
+      const row=inventory.files.find(item=>item.path===relative),actualHash=createHash('sha256').update(body).digest('hex');
+      if(!/^[a-f0-9]{64}$/i.test(String(row?.sha256||''))||actualHash!==String(row.sha256).toLowerCase())errors.push(`Source inventory SHA-256 does not match retained bytes: ${relative}.`);
+      if(Number(row?.bytes)!==details.size)errors.push(`Source inventory byte count does not match retained bytes: ${relative}.`);
+    }catch(error){if(error?.code==='ENOENT')errors.push(`Source inventory file does not exist inside the project: ${relative}.`);else throw error;}
+  }
+  if(matrix){
+    const preflightById=new Map(preflight.countries.map(row=>[row.country_area_id,row]));
+    for(const completed of matrix.countries.filter(row=>row.source_review_complete)){
+      const country=preflightById.get(completed.country_area_id);
+      for(const domain of STATISTICAL_DOMAINS.filter(id=>id!=='semantic_table_column_inventory')){
+        if(completed.domains?.[domain]?.stage==='structurally_not_applicable')continue;
+        const evidence=(country?.[domain]?.evidence||[]).filter(row=>(row.object_path||row.path)&&/^[a-f0-9]{64}$/i.test(String(row.object_sha256||row.sha256||''))&&String(row.locator||'').trim());
+        if(!evidence.length){errors.push(`${completed.country_area_id}: completed domain ${domain} has no hashed retained object with an exact locator.`);continue;}
+        for(const row of evidence){
+          const relative=String(row.object_path||row.path);
+          if(path.isAbsolute(relative)||relative.includes('\\')||relative.split('/').includes('..')){errors.push(`${completed.country_area_id}: ${domain} evidence path is unsafe: ${relative}.`);continue;}
+          const absolute=path.resolve(project,relative);
+          if(!absolute.startsWith(`${path.resolve(project)}${path.sep}`)){errors.push(`${completed.country_area_id}: ${domain} evidence escapes the project: ${relative}.`);continue;}
+          try{
+            const actualHash=createHash('sha256').update(await readFile(absolute)).digest('hex');
+            if(actualHash!==String(row.object_sha256||row.sha256).toLowerCase())errors.push(`${completed.country_area_id}: ${domain} evidence hash mismatch: ${relative}.`);
+          }catch(error){if(error?.code==='ENOENT')errors.push(`${completed.country_area_id}: ${domain} evidence object is missing: ${relative}.`);else throw error;}
+        }
+      }
+    }
   }
   const rawXlsx=rawPaths.filter(relative=>relative.toLowerCase().endsWith('.xlsx'));
   if(!semantic)errors.push('Country semantic inventory is missing or invalid JSON.');
@@ -102,7 +145,7 @@ export async function validateAmericasEvidence(project){
     if(futureYears.length&&/results are not acquired or usable|resultados no|未取得/i.test(note)===false)errors.push(`${country.country_area_id}: future census result is not explicitly unavailable.`);
     if(/identified\/usable/i.test(note))errors.push(`${country.country_area_id}: census schedule is incorrectly labelled identified/usable.`);
   }
-  return {ok:errors.length===0,errors,summary:{registry:registry.length,wpp_rows:wpp.length,wpp_adopted:adopted.length,wpp_unavailable:unavailable.length,preflight:preflight.countries.length,inventory_files:inventoryPaths.length,raw_files:rawPaths.length,raw_xlsx_files:rawXlsx.length,semantic_workbooks:semantic?.workbooks?.length??0,semantic_duplicate_workbooks:semantic?.duplicate_files?.length??0}};
+  return {ok:errors.length===0,errors,summary:{registry:registry.length,wpp_rows:wpp.length,wpp_adopted:adopted.length,wpp_unavailable:unavailable.length,preflight:preflight.countries.length,integration_audits:auditNames.length,dataset_sha256:datasetSha256,inventory_files:inventoryPaths.length,raw_files:rawPaths.length,raw_xlsx_files:rawXlsx.length,semantic_workbooks:semantic?.workbooks?.length??0,semantic_duplicate_workbooks:semantic?.duplicate_files?.length??0}};
 }
 
 if(process.argv[1]===fileURLToPath(import.meta.url)){

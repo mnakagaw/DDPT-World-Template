@@ -482,7 +482,7 @@ def main():
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "scope_statement": "This inventory covers 57 UN M49 country/area members as research starts. It does not claim 57 completed country dashboards.",
         "state_contract": "identified, accessed, acquired, inspected, geography_matched and adopted are separate states. unavailable, restricted and failed_with_evidence require evidence. Unresearched is never described as nonexistent.",
-        "summary": {"country_area_records": len(preflight), "integrated_country_adapters": sum(x["country_adapter_status"].startswith("integrated") for x in preflight), "prior_latin_america_research_records": sum(x["country_area_id"] in lmap for x in preflight)},
+        "summary": {"country_area_records": len(preflight), "integrated_country_adapters": 0, "integration_count_source": "Recomputed by build-country-completion-matrix.mjs from integrated evidence and observed domestic depth; status-label prefixes are not counted.", "prior_latin_america_research_records": sum(x["country_area_id"] in lmap for x in preflight)},
         "common_start_sources": COMMON, "countries": preflight,
     }
     (evidence / "SOURCE_PREFLIGHT.json").write_text(json.dumps(preflight_doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

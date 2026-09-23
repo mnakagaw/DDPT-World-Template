@@ -7,6 +7,7 @@ import {generateSite} from '../lib/generate.mjs';
 import {validateDataset} from '../lib/validate.mjs';
 import {parseArgs,isMain,reportError} from '../lib/cli.mjs';
 import {readTemplateReference} from './create-country.mjs';
+import {attachWorldCensusListings,loadBundledWorldCensusListings} from '../lib/world-census-preflight.mjs';
 
 const sha256=content=>createHash('sha256').update(content).digest('hex');
 const posix=value=>value.split(path.sep).join('/');
@@ -64,7 +65,7 @@ export async function createAmericas({out,sourceDir,centralAmericaProject,centra
     const world=await collect({rawDir:path.join(outDir,'raw'),sourceDir:sourceDir?path.resolve(sourceDir):undefined,startYear,endYear,onProgress:message=>console.log(message)});
     const centralAmerica=centralAmericaProject?JSON.parse(await readFile(path.resolve(centralAmericaProject,'data/dashboard.json'),'utf8')):null;
     const unPopulation=unPopulationData?JSON.parse(await readFile(path.resolve(unPopulationData),'utf8')):null;
-    const dataset=buildAmericas(world,{centralAmerica,unPopulation});
+    const dataset=attachWorldCensusListings(buildAmericas(world,{centralAmerica,unPopulation}),await loadBundledWorldCensusListings());
     await mkdir(path.join(outDir,'data'));await mkdir(path.join(outDir,'evidence'));
     await importAmericasEvidence({dataset,outDir,centralAmericaProject:centralAmericaProject?path.resolve(centralAmericaProject):null,censusRawDir:centralAmericaRaw?path.resolve(centralAmericaRaw):null,unWppFile:unWppFile?path.resolve(unWppFile):null});
     const validation=validateDataset(dataset),content=JSON.stringify(dataset,null,2)+'\n';

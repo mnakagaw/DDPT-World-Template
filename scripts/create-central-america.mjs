@@ -11,6 +11,7 @@ import {generateSite} from '../lib/generate.mjs';
 import {validateDataset} from '../lib/validate.mjs';
 import {parseArgs,isMain,reportError} from '../lib/cli.mjs';
 import {readTemplateReference} from './create-country.mjs';
+import {attachWorldCensusListings,loadBundledWorldCensusListings} from '../lib/world-census-preflight.mjs';
 
 export async function createCentralAmerica({out,sourceDir,censusData,censusHistoryData,unPopulationData}={}) {
   if(!sourceDir)throw new Error('--source-dir must point to a verified world raw archive.');
@@ -29,6 +30,7 @@ export async function createCentralAmerica({out,sourceDir,censusData,censusHisto
       dataset=mergeCensusHistory(dataset,censusHistory,referenceBoundaries);
     }
     if(normalizedUn)dataset=mergeUnPopulation(dataset,normalizedUn);
+    dataset=attachWorldCensusListings(dataset,await loadBundledWorldCensusListings());
     const validation=validateDataset(dataset),content=JSON.stringify(dataset,null,2)+'\n';
     const censusPlan=normalized?updateCensusPreflight(buildCensusPilotPreflight(await loadSourceCatalog()),normalized):buildCensusPilotPreflight(await loadSourceCatalog());
     await mkdir(path.join(outDir,'data'));await mkdir(path.join(outDir,'evidence'));

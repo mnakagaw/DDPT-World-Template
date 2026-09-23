@@ -9,6 +9,7 @@ import { generateSite } from '../lib/generate.mjs';
 import { validateDataset } from '../lib/validate.mjs';
 import { writeSourcePreflight } from '../lib/source-catalog.mjs';
 import { parseArgs, safeSlug, isMain, reportError } from '../lib/cli.mjs';
+import {attachWorldCensusListings,loadBundledWorldCensusListings} from '../lib/world-census-preflight.mjs';
 
 const repositoryUrl = 'https://github.com/mnakagaw/DDPT-World-Template';
 const templateRoot = fileURLToPath(new URL('../', import.meta.url));
@@ -99,7 +100,7 @@ export async function createCountry({ country, out, collect = collectCountry, ge
   const rawDir = path.join(outDir, 'raw');
   await mkdir(rawDir);
   try {
-    const dataset = await collect({ country, rawDir, onProgress: message => console.log(message) });
+    const dataset = attachWorldCensusListings(await collect({ country, rawDir, onProgress: message => console.log(message) }),await loadBundledWorldCensusListings());
     const validation = validateDataset(dataset);
     await mkdir(path.join(outDir, 'evidence'), { recursive: true });
     await writeFile(path.join(outDir, 'evidence', 'validation.json'), JSON.stringify({ ...validation, checked_at: new Date().toISOString(), dataset_sha256: createHash('sha256').update(JSON.stringify(dataset)).digest('hex') }, null, 2) + '\n');

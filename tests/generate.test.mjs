@@ -4,7 +4,7 @@ import {mkdtemp,readFile,writeFile,mkdir,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {generateSite,pageShell} from '../lib/generate.mjs';
-import {initialState,selectTerritory,territoryLineage,indicatorsForTerritorialScope,orderedTerritorialIndicators,comparisonLevelsForTerritory,hierarchyControls,selectHierarchyOption,routeQuery,observationState,periodsFor,latestObservedPeriod,latestObservedPeriodForTerritory,effectivePeriodForIndicator,effectivePeriodForTerritoryIndicator,territorialIndicatorState,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
+import {initialState,selectTerritory,territoryLineage,indicatorsForTerritorialScope,orderedTerritorialIndicators,territorialSummaryIndicators,regionalCoverageSummary,comparisonLevelsForTerritory,hierarchyControls,selectHierarchyOption,routeQuery,observationState,periodsFor,latestObservedPeriod,latestObservedPeriodForTerritory,effectivePeriodForIndicator,effectivePeriodForTerritoryIndicator,territorialIndicatorState,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
 import {hierarchyFixture} from './hierarchy-fixture.mjs';
 
 function fixture() {
@@ -105,6 +105,12 @@ test('territorial display puts the requested metric first, then country primary 
   data.indicators[1]={...data.indicators[1],series_family:'census',display_role:'primary'};
   assert.deepEqual(orderedTerritorialIndicators(data,'TST','water').map(row=>row.id),['water','population']);
   assert.deepEqual(orderedTerritorialIndicators(data,'TST').map(row=>row.id),['water','population']);
+  assert.deepEqual(territorialSummaryIndicators(data,'TST').map(row=>row.id),['population']);
+  data.indicators.push({id:'population-share',name:'Population meeting another definition',theme:'Population',unit:'%',definition:'A share, not the total population',source_id:'s1'});
+  data.observations.push({territory_id:'TST',indicator_id:'population-share',period:'2024',value:40,status:'observed',source_id:'s1'});
+  data.analysis.population_context={primary_indicator_id:'water',reference_indicator_id:'population'};
+  assert.deepEqual(territorialSummaryIndicators(data,'TST').map(row=>row.id),['water','population'],'Configured census and reference totals take precedence over unrelated indicators whose labels contain population.');
+  assert.deepEqual(territorialSummaryIndicators(data,'a'),[],'Domestic areas do not repeat large country summary values above the detailed Census sections.');
 });
 
 test('foreign country indicators and nonexistent comparison levels are normalized at route entry',()=>{
@@ -129,6 +135,40 @@ test('foreign country indicators and nonexistent comparison levels are normalize
   assert.doesNotMatch(evidenceCsv(data,'TST','2024'),/other-only|Other-country measure/);
   assert.doesNotMatch(planningMarkdown(data,'TST','2024'),/other-only|Other-country measure/);
   assert.doesNotMatch(planningHtml(data,'TST','2024'),/other-only|Other-country measure/);
+});
+
+test('interactive country changes atomically replace foreign metric, level, URL and outputs',()=>{
+  const data=fixture();
+  data.country={...data.country,id:'AMR',name:'Americas',national_territory_id:'AMR'};
+  data.analysis={kind:'regional',comparisons:[{parent_id:'AMR',member_ids:['TST','OTH']},{parent_id:'TST',member_ids:['a','b','c']},{parent_id:'OTH',member_ids:['oth-1']}]};
+  data.territories=[
+    {id:'AMR',country_id:'AMR',name:'Americas',level:'national',type:'exploration_scope',parent_id:null},
+    {id:'TST',country_id:'TST',name:'Test country',level:'country',type:'country',parent_id:'AMR'},
+    {id:'OTH',country_id:'OTH',name:'Other country',level:'country',type:'country',parent_id:'AMR'},
+    {id:'oth-1',country_id:'OTH',name:'Other province',level:'province',type:'province',parent_id:'OTH'},
+    ...data.territories.filter(area=>area.id!=='TST').map(area=>({...area,country_id:'TST',parent_id:'TST'}))
+  ];
+  data.indicators.find(row=>row.id==='water').series_family='census';
+  data.indicators.push({id:'other-only',name:'Other-country measure',theme:'Other',unit:'people',definition:'Other country only',source_id:'s1',series_family:'census',display_role:'primary'});
+  data.observations.push({territory_id:'OTH',indicator_id:'other-only',period:'2022',value:5,status:'observed',source_id:'s1'},{territory_id:'oth-1',indicator_id:'other-only',period:'2022',value:3,status:'observed',source_id:'s1'});
+  const usaLike=initialState(data,'?country=AMR&territory=TST&metric=water&period=2024&level=ADM1');
+  const canadaLike=selectTerritory(data,usaLike,'OTH');
+  assert.deepEqual({selected:canadaLike.selected,metric:canadaLike.metric,period:canadaLike.period,level:canadaLike.level},{selected:'OTH',metric:'other-only',period:'2022',level:'province'});
+  assert.equal(canadaLike.requestedMetric,undefined);assert.equal(canadaLike.sourceDataset,undefined);
+  const canonical=routeQuery(data,canadaLike),reloaded=initialState(data,canonical);
+  assert.deepEqual({selected:reloaded.selected,metric:reloaded.metric,period:reloaded.period,level:reloaded.level},{selected:'OTH',metric:'other-only',period:'2022',level:'province'});
+  assert.doesNotMatch(evidenceCsv(data,reloaded.selected,reloaded.period),/water|Water access/);
+  assert.doesNotMatch(planningMarkdown(data,reloaded.selected,reloaded.period),/water|Water access/);
+  assert.doesNotMatch(planningHtml(data,reloaded.selected,reloaded.period),/water|Water access/);
+});
+
+test('regional coverage keeps Census history, domestic branches, completion and WPP distinct',()=>{
+  const data=fixture();
+  data.analysis={kind:'regional',coverage:{country_area_count:57,un_wpp_country_area_count:55},census_history:{countries:Array.from({length:43},(_,index)=>({country_id:`C${index}`}))}};
+  data.data_shards={countries:Object.fromEntries(Array.from({length:48},(_,index)=>[`S${index}`,`countries/S${index}.json`]))};
+  assert.deepEqual(regionalCoverageSummary(data),{total:57,census_history_count:43,domestic_branch_count:48,country_edition_complete_count:null,un_wpp_country_area_count:55});
+  data.analysis.coverage.country_edition_complete_country_area_count=12;
+  assert.equal(regionalCoverageSummary(data).country_edition_complete_count,12);
 });
 
 test('territorial latest-available resolves per area and keeps zero as observed across summary, detail and exports',()=>{
@@ -210,15 +250,14 @@ test('empty child selection selects its parent; all evidence and outputs use par
 
 test('regional planning safeguards are localized in Markdown and print HTML',()=>{
   const data=fixture();
-  data.analysis={kind:'regional',coverage:{country_area_count:57,census_integrated_country_ids:['A','B','C','D','E','F','G']}};
+  data.analysis={kind:'regional',coverage:{country_area_count:57,un_wpp_country_area_count:55,country_edition_complete_country_area_count:9},census_history:{countries:Array.from({length:43},(_,index)=>({country_id:`C${index}`}))}};
+  data.data_shards={countries:Object.fromEntries(Array.from({length:48},(_,index)=>[`S${index}`,`countries/S${index}.json`]))};
   data.territories[0].type='exploration_scope';
   const es=planningMarkdown(data,'TST','2024','es'),ja=planningMarkdown(data,'TST','2024','ja');
   assert.match(es,/no una autoridad legal de planificación verificada/);
-  assert.match(es,/contiene 57 ediciones de países o áreas/);
-  assert.match(es,/7 de 57 entradas/);
+  assert.match(es,/historia censal 43\/57/);assert.match(es,/registros internos 48\/57/);assert.match(es,/finalización 9\/57/);assert.match(es,/UN WPP 55\/57/);
   assert.match(ja,/確認済みの法定計画主体ではありません/);
-  assert.match(ja,/57の国・地域版があります/);
-  assert.match(ja,/57件中7件/);
+  assert.match(ja,/Census履歴 43\/57/);assert.match(ja,/国別データ枝 48\/57/);assert.match(ja,/国別版 9\/57/);assert.match(ja,/UN WPP国・地域行 55\/57/);
   assert.match(planningHtml(data,'TST','2024','es'),/<html lang="es"/);
   assert.match(planningHtml(data,'TST','2024','ja'),/<html lang="ja"/);
 });
@@ -400,6 +439,7 @@ test('regional generator keeps the first payload small and writes country-depth 
     const bootstrap=JSON.parse(await readFile(path.join(result.siteDir,'data','dashboard.json'),'utf8'));
     const full=JSON.parse(await readFile(path.join(result.siteDir,'data','dashboard-full.json'),'utf8'));
     const shard=JSON.parse(await readFile(path.join(result.siteDir,'data','countries','TST.json'),'utf8'));
+    const boundaryShard=JSON.parse(await readFile(path.join(result.siteDir,'data',shard.boundary_shards.ADM1),'utf8'));
     assert.deepEqual(bootstrap.territories.map(row=>row.id),['AMR','TST']);
     assert.ok(bootstrap.observations.every(row=>!['a','b','c'].includes(row.territory_id)));
     assert.equal(bootstrap.data_shards.countries.TST,'countries/TST.json');
@@ -408,14 +448,20 @@ test('regional generator keeps the first payload small and writes country-depth 
     assert.match(bootstrap.data_shards.integrity.full_sha256,/^[a-f0-9]{64}$/);
     assert.match(bootstrap.data_shards.integrity.countries.TST.sha256,/^[a-f0-9]{64}$/);
     assert.equal(bootstrap.data_shards.integrity.countries.TST.territory_count,3);
+    assert.equal(bootstrap.data_shards.integrity.countries.TST.boundary_count,2);
+    assert.equal(bootstrap.data_shards.integrity.countries.TST.boundary_shards.ADM1.feature_count,2);
     assert.deepEqual(shard.territories.map(row=>row.id),['a','b','c']);
+    assert.equal(shard.boundaries.features.length,0);
+    assert.equal(boundaryShard.schema_version,'0.1-boundary-shard');
+    assert.equal(boundaryShard.level,'ADM1');
+    assert.equal(boundaryShard.features.length,2);
     assert.ok(shard.observations.some(row=>row.territory_id==='a'));
     assert.equal(shard.documents[0].territory_id,'a');
     assert.equal(full.territories.length,data.territories.length);
     const handoff=await readFile(result.handoffPath,'utf8');
-    assert.match(handoff,/integrated for 1 of 1 registry entries/);assert.doesNotMatch(handoff,/Stale 0 of 1 wording/);
+    assert.match(handoff,/1 of 1 country data branches with domestic records/);assert.match(handoff,/country editions meeting the current completion gate not reported/);assert.doesNotMatch(handoff,/Stale 0 of 1 wording|Census or equivalent population evidence and available domestic hierarchy are integrated/);
     const app=await readFile(path.join(result.siteDir,'assets','app.mjs'),'utf8');
-    assert.match(app,/ensureCountryDataForTerritory/);assert.match(app,/0\.2-country-shard/);
+    assert.match(app,/ensureCountryDataForTerritory/);assert.match(app,/0\.2-country-shard/);assert.match(app,/indicatorsForTerritorialScope\(dataset,state\.selected\)/);assert.match(app,/url\.search=routeWithLanguage\(state\)/);
   }finally{
     const resolved=path.resolve(directory),temporaryRoot=path.resolve(os.tmpdir())+path.sep;
     assert.ok(resolved.startsWith(temporaryRoot));await rm(resolved,{recursive:true,force:true});

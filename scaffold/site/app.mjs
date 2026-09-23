@@ -1,9 +1,9 @@
 import {
   finite, escapeHtml as e, safeUrl, displayValue, statusLabel, sourceFor,
   periodsFor, observationState, areaObservationState, effectivePeriodForIndicator, territorialIndicatorState, localLevels, levelLabel, nationalOnly, initialState,
-  selectTerritory, territoryLineage, indicatorsForTerritorialScope, orderedTerritorialIndicators, territoryOptionLabel, hierarchyControls, selectHierarchyOption, routeQuery, countryDiagnosticUrl, comparisonLevelForArea, comparisonRows, comparisonCompatibility, rankedRows, searchRows, rankingReveal, rankingScrollTop, distribution,
+  selectTerritory, territoryLineage, countryBranchId, indicatorsForTerritorialScope, orderedTerritorialIndicators, territorialSummaryIndicators, regionalCoverageSummary, territoryOptionLabel, hierarchyControls, selectHierarchyOption, routeQuery, countryDiagnosticUrl, comparisonLevelForArea, comparisonRows, comparisonCompatibility, rankedRows, searchRows, rankingReveal, rankingScrollTop, distribution,
   seriesFor, observedValue, makeCsv, evidenceCsv, safeFilename, planningMarkdown,
-  planningHtml, documentsCsv, mapGeometry, seriesGeometry
+  planningHtml, documentsCsv, censusSourcePreflightCsv, mapGeometry, seriesGeometry
 } from './model.mjs';
 import {planningSettings,planningDocuments,documentGroups,documentPeriod,officialMapState,hasDocumentReference,selectedGaps,relatedResourceUrl,categoryLabels} from './planning.mjs';
 import {renderDocumentGroups,renderDocument} from './planning-view.mjs';
@@ -20,6 +20,7 @@ const storedLanguage=()=>{try{return localStorage.getItem('areadata-language')||
 let language=resolveLanguage({query:new URLSearchParams(location.search).get('lang'),stored:storedLanguage(),browserLanguages:navigator.languages||[navigator.language]});
 let dataset, state, updateStatus;
 const loadedCountryShards=new Set();
+const loadedBoundaryShards=new Set(),countryBoundaryShards=new Map();
 let areaSearch='', rankSearch='', rankOrder='desc', wholeMap=false, allAreaOpen=false, comparisonFocusId='';
 const fmt = (value,indicator=currentMetric()) => displayValue(value,languageLocale(language),indicator?.display_decimals ?? 2);
 const areaFor = id => dataset.territories.find(area => area.id === id);
@@ -42,7 +43,7 @@ const REGIONAL_GAP_COPY={
   },
   census_country_coverage:{
     category:['Census country coverage','Cobertura censal por país','国別Censusの収録範囲'],
-    detail:['Official Census population and domestic hierarchy are integrated for 7 of 57 UN M49 countries/areas. The United States additionally has a separate 2023 ACS state/county integration; ACS estimates are not counted as the 2020 Decennial Census. Unintegrated does not mean that a Census does not exist.','La población censal oficial y la jerarquía interna están integradas para 7 de las 57 entradas UN M49. Estados Unidos tiene además una integración separada de la ACS 2023 para estados y condados; sus estimaciones no se cuentan como el Censo Decenal de 2020. No integrado no significa que no exista un censo.','UN M49 57件中7件で公式Census人口と国内階層を統合しています。米国は別枠で2023 ACSの州・郡データも統合していますが、ACS推計値を2020年10年国勢調査として数えていません。未統合はCensusが存在しないという意味ではありません。'],
+    detail:['Census-history profiles, domestic country branches, country-edition completion and international reference-series coverage are reported as separate measures.','Los perfiles de historia censal, las ramas nacionales con datos internos, la finalización de ediciones nacionales y la cobertura de series internacionales se informan por separado.','Census履歴、国内データ枝、国別版の完成、国際参照系列の被覆は、それぞれ別の指標として表示します。'],
     next:['Use the country adapter workflow to deepen compatible official census tables, codes, boundaries and recent-round evidence without filling structural gaps with estimates.','Usar el flujo del adaptador nacional para ampliar tablas censales oficiales compatibles, códigos, límites y evidencia de rondas recientes, sin rellenar vacíos estructurales con estimaciones.','国別アダプターで、構造的な欠測を推計で埋めずに、対応可能な公式Census表、コード、境界、直近調査の証拠を追加する。']
   },
   boundary_reconciliation:{
@@ -62,15 +63,14 @@ const REGIONAL_GAP_COPY={
   }
 };
 function localizedGap(gap){
-  const total=dataset.analysis?.coverage?.country_area_count||dataset.territories.filter(area=>area.type==='country').length;
-  const integrated=dataset.analysis?.coverage?.census_integrated_country_ids?.length||0;
+  const coverage=regionalCoverageSummary(dataset),total=coverage.total;
   const boundaryCountries=new Set((dataset.boundaries?.features||[]).map(feature=>feature.properties?.territory_id).filter(id=>areaFor(id)?.type==='country')).size;
   const wpp=dataset.analysis?.coverage?.un_wpp_country_area_count;
   const missingWpp=dataset.analysis?.coverage?.un_wpp_missing_country_area_ids||[];
   const dynamic={
     census_country_coverage:{
       category:['Census country coverage','Cobertura censal por país','国別Censusの収録範囲'],
-      detail:[`Official Census data and domestic hierarchy are integrated for ${integrated} of ${total} UN M49 countries/areas. Unintegrated does not mean that a Census does not exist.`,`Los datos censales oficiales y la jerarquía interna están integrados para ${integrated} de las ${total} entradas UN M49. No integrado no significa que no exista un censo.`,`UN M49 ${total}件中${integrated}件で公式Censusデータと国内階層を統合しています。未統合はCensusが存在しないという意味ではありません。`],
+      detail:[coverageSummaryText(coverage),coverageSummaryText(coverage,'es'),coverageSummaryText(coverage,'ja')],
       next:REGIONAL_GAP_COPY.census_country_coverage.next
     },
     boundary_reconciliation:{
@@ -88,6 +88,13 @@ function localizedGap(gap){
   return copy?{category:copy.category[index],detail:copy.detail[index],next_action:copy.next[index]}:{category:gap.category.replaceAll('_',' '),detail:gap.detail,next_action:gap.next_action||localCopy('Verify with the responsible source.','Verificar con la fuente responsable.','所管する出典で確認する。')};
 }
 const localized=value=>typeof value==='object'&&value?value[language]||value.en||Object.values(value)[0]:value;
+function coverageSummaryText(summary=regionalCoverageSummary(dataset),selectedLanguage=language){
+  const completion=summary.country_edition_complete_count===null?{en:'not reported',es:'no informado',ja:'未報告'}[selectedLanguage]:`${summary.country_edition_complete_count}/${summary.total}`;
+  const wpp=summary.un_wpp_country_area_count===null?{en:'not reported',es:'no informado',ja:'未報告'}[selectedLanguage]:`${summary.un_wpp_country_area_count}/${summary.total}`;
+  if(selectedLanguage==='ja')return `被覆指標は定義別に表示します。Census履歴 ${summary.census_history_count}/${summary.total}、国内記録を持つ国別データ枝 ${summary.domestic_branch_count}/${summary.total}、現在の完成判定を満たす国別版 ${completion}、UN WPP国・地域行 ${wpp}。いずれかを他の完成数の代用にはしません。`;
+  if(selectedLanguage==='es')return `Las medidas de cobertura se muestran por definición: perfiles de historia censal ${summary.census_history_count}/${summary.total}; ramas nacionales con registros internos ${summary.domestic_branch_count}/${summary.total}; ediciones nacionales que cumplen el criterio actual de finalización ${completion}; filas de país/área de UN WPP ${wpp}. Ninguna medida sustituye a otra.`;
+  return `Coverage measures use separate definitions: Census-history profiles ${summary.census_history_count}/${summary.total}; country data branches with domestic records ${summary.domestic_branch_count}/${summary.total}; country editions meeting the current completion gate ${completion}; UN WPP country/area rows ${wpp}. None of these measures substitutes for another.`;
+}
 const scopeEntryHeading=(children,countryCount)=>dataset.analysis?.pilot?.stage==='central_america_7'
   ? language==='ja'?`<span class="pilot-scope-highlight">中米7か国</span>から選ぶ`:language==='es'?`Elige entre los <span class="pilot-scope-highlight">7 países de Centroamérica</span>`:`Choose from the <span class="pilot-scope-highlight">7 Central American countries</span>`
   : language==='ja'?`<span class="pilot-scope-highlight">アメリカ大陸</span>の${children.length}地域から選ぶ`:language==='es'?`Elige entre ${children.length} regiones de <span class="pilot-scope-highlight">América</span>`:`Choose from ${children.length} regions of the <span class="pilot-scope-highlight">Americas</span>`;
@@ -103,19 +110,24 @@ function periodControl(id='period-select') {
   return `<label class="field" for="${id}"><span>Source period</span><select id="${id}" data-control="period">${options.length?options.map(period=>`<option value="${e(period)}" ${period===state.period?'selected':''}>${e(period)}${periodsFor(dataset,state.metric).includes(period)?'':' · no observation for this indicator'}</option>`).join(''):'<option value="">No periods acquired</option>'}</select></label>`;
 }
 function indicatorControl() {
-  const themes=[...new Set(dataset.indicators.map(indicator=>indicator.theme || 'Other'))];
-  return `<label class="field grow" for="indicator-select"><span>Theme / indicator</span><select id="indicator-select" data-control="metric">${themes.map(theme=>`<optgroup label="${e(theme)}">${dataset.indicators.filter(indicator=>(indicator.theme||'Other')===theme).map(indicator=>`<option value="${e(indicator.id)}" ${indicator.id===state.metric?'selected':''}>${e(indicator.name)}</option>`).join('')}</optgroup>`).join('')}</select></label>`;
+  const indicators=indicatorsForTerritorialScope(dataset,state.selected),themes=[...new Set(indicators.map(indicator=>indicator.theme || 'Other'))];
+  return `<label class="field grow" for="indicator-select"><span>Theme / indicator</span><select id="indicator-select" data-control="metric">${themes.map(theme=>`<optgroup label="${e(theme)}">${indicators.filter(indicator=>(indicator.theme||'Other')===theme).map(indicator=>`<option value="${e(indicator.id)}" ${indicator.id===state.metric?'selected':''}>${e(indicator.name)}</option>`).join('')}</optgroup>`).join('')}</select></label>`;
 }
 function areaControls() {
   const areas=dataset.territories.filter(area=>!territoryLineage(dataset,area.id).slice(0,-1).some(parent=>isTerminalTerritory(dataset,parent)));
   const groups=[...new Set(areas.map(area=>area.level))];
-  const hits=areaSearch ? areas.filter(area=>[area.name,area.id,area.official_code].some(value=>String(value||'').toLocaleLowerCase().includes(areaSearch.toLocaleLowerCase()))) : [];
   const hierarchy=(['territorial','planning'].includes(page)||worldMode())?hierarchyControls(dataset,state.selected).filter(control=>!comparisonSet(dataset,control.parent.id).terminal):[];
   const flatSelector=`<label class="field" for="area-select"><span>Selected area${hierarchy.length?' · all records':''}</span><select id="area-select" data-control="area">${groups.map(level=>`<optgroup label="${e(levelLabel(level))}">${areas.filter(area=>area.level===level).map(area=>`<option value="${e(area.id)}" ${area.id===state.selected?'selected':''}>${e(territoryOptionLabel(dataset,area))}${area.level==='national'?(dataset.analysis?.kind==='world'?' · world':worldMode()?' · whole scope':' · national'):''}</option>`).join('')}</optgroup>`).join('')}</select></label>`;
   return `<div class="area-controls">${hierarchy.length?`<div class="hierarchy-controls"><p class="small-note">Showing <strong>${e(currentArea().name)}</strong>. Choose “Whole …” to make that parent the selected area and clear its lower-area selection.</p>${hierarchy.map((control,index)=>`<label class="field" for="hierarchy-${index}"><span>${e(control.levels.map(levelLabel).join(' / '))} · within ${e(control.parent.name)}</span><select id="hierarchy-${index}" data-control="hierarchy" data-parent="${e(control.parent.id)}">${control.context?`<option value="context" selected disabled>${e(control.context.label)}</option>`:''}${control.options.map(option=>`<option value="${e(option.value)}" ${option.value===control.value?'selected':''}>${e(option.label)}</option>`).join('')}</select></label>`).join('')}</div><details class="micro-details" data-all-area-selector ${allAreaOpen?'open':''}><summary>All-area selector</summary>${flatSelector}</details>`:flatSelector}
   <label class="field" for="area-search"><span>Find an area by name or code</span><input id="area-search" type="search" data-control="area-search" value="${e(areaSearch)}" autocomplete="off" placeholder="Name or code"></label>
-  ${areaSearch?`<div class="search-results" aria-label="Area search results">${hits.length?hits.slice(0,50).map(area=>button('select',`${e(area.name)}<small>${e(levelLabel(area.level))} · ${e(area.official_code || area.id)}</small>`,`data-id="${e(area.id)}"`,'result-button')).join(''):'<p>No matching areas.</p>'}${hits.length>50?`<p>${hits.length} matches; narrow your search to see more.</p>`:''}</div>`:''}
+  <div data-area-search-results>${areaSearchResults(areas)}</div>
   ${state.selected!==dataset.country.national_territory_id?button('national',dataset.analysis?.kind==='world'?'Return to world view':worldMode()?`Return to ${e(dataset.country.name)} view`:'Return to national view','','text-button'):''}</div>`;
+}
+function areaSearchResults(areas=dataset.territories) {
+  if(!areaSearch)return '';
+  const query=areaSearch.toLocaleLowerCase();
+  const hits=areas.filter(area=>[area.name,area.id,area.official_code].some(value=>String(value||'').toLocaleLowerCase().includes(query)));
+  return `<div class="search-results" aria-label="Area search results">${hits.length?hits.slice(0,50).map(area=>button('select',`${e(area.name)}<small>${e(levelLabel(area.level))} · ${e(area.official_code || area.id)}</small>`,`data-id="${e(area.id)}"`,'result-button')).join(''):'<p>No matching areas.</p>'}${hits.length>50?`<p>${hits.length} matches; narrow your search to see more.</p>`:''}</div>`;
 }
 function hierarchyNavigation() {
   const lineage=territoryLineage(dataset,state.selected),children=comparisonSet(dataset,state.selected).terminal?[]:dataset.territories.filter(area=>area.parent_id===state.selected);
@@ -196,10 +208,9 @@ function mapPanel({thematic=false,planning=false}={}) {
   <p class="source-note">Boundary source: ${boundarySources.length?boundarySources.map(source=>link(source.url,source.name)).join(' · '):'See the source register; boundary authority and edition must be verified.'} Reference boundaries are not a legal boundary certification. Keyboard: arrows / Home / End, then Enter or Space.</p>${dataset.country.geography_note?`<p class="source-note"><strong>Geographic scope:</strong> ${e(dataset.country.geography_note)}</p>`:''}</section>`;
 }
 function facts() {
-  const scoped=orderedTerritorialIndicators(dataset,state.selected,state.metric);
-  const priority=scoped.filter(indicator=>/population|household/i.test(indicator.name)).slice(0,3);
-  const indicators=priority.length?priority:scoped.slice(0,3);
-  return `<div class="basic-facts">${indicators.map(indicator=>{const current=territorialIndicatorState(dataset,state.selected,indicator.id,state.period),result=current.result;return `<div class="fact"><span>${e(indicator.name)}</span><strong>${fmt(result.value,indicator)}</strong><small>${e(result.row?.unit || indicator.unit)} · ${e(current.period || 'No source period')} · ${e(statusLabel(result.status))}</small>${result.provenance==='areadata_calculated'?`<small>${e(result.note)}</small>`:''}</div>`;}).join('')}</div>`;
+  const indicators=territorialSummaryIndicators(dataset,state.selected,state.metric);
+  if(!indicators.length)return '';
+  return `<div class="basic-facts country-facts">${indicators.map(indicator=>{const current=territorialIndicatorState(dataset,state.selected,indicator.id,state.period),result=current.result;return `<div class="fact"><span>${e(indicator.name)}</span><strong>${fmt(result.value,indicator)}</strong><small>${e(result.row?.unit || indicator.unit)} · ${e(current.period || 'No source period')} · ${e(statusLabel(result.status))}</small></div>`;}).join('')}</div>`;
 }
 function seriesFigure(indicator, territoryId=state.selected) {
   const series=seriesFor(dataset,territoryId,indicator.id);
@@ -286,16 +297,16 @@ function planning() {
   const links=settings.related_links.filter(item=>!item.territory_id||item.territory_id===state.selected).map(item=>({label:item.label,url:relatedResourceUrl(item.url,base,routeWithLanguage())})).filter(item=>item.url);
   const gaps=selectedGaps(dataset,state.selected);
   if(worldMode()&&currentArea().type!=='country'){
-    const integrated=dataset.analysis?.coverage?.census_integrated_country_ids?.length||0,total=dataset.analysis?.coverage?.country_area_count||dataset.territories.filter(area=>area.type==='country').length;
+    const coverage=regionalCoverageSummary(dataset);
     const authorityWarning=localCopy(
       'This selected area is an analysis scope, not a verified legal planning authority.',
       'Esta área seleccionada es un ámbito de análisis, no una autoridad legal de planificación verificada.',
       '選択中の地域は分析対象であり、確認済みの法定計画主体ではありません。'
     );
     const completenessWarning=localCopy(
-      `This regional portal contains ${total} country/area editions. Official census or equivalent population evidence and available domestic hierarchy are integrated for ${integrated} of ${total} registry entries; the other entries retain evidence-backed gaps. Country planning laws, plans, budgets and evaluations remain attached to their country adapters and are not generalized to this regional scope. No planning draft or official-material attribution is generated for this regional scope.`,
-      `Este portal regional contiene ${total} ediciones de países o áreas. El censo oficial o la evidencia demográfica equivalente y la jerarquía interna disponible están integrados para ${integrated} de ${total} entradas; las demás conservan vacíos respaldados por evidencia. Las leyes, planes, presupuestos y evaluaciones permanecen vinculados a sus adaptadores nacionales y no se generalizan a este ámbito regional. No se genera para este ámbito regional ningún borrador de plan ni atribución a materiales oficiales.`,
-      `この地域ポータルには${total}の国・地域版があります。公式Censusまたは同等の人口資料と利用可能な国内階層は${total}件中${integrated}件で統合し、残りは根拠付き欠測として保持しています。計画法、計画、予算、実施・評価資料は各国アダプターに結び付け、広域全体へ一般化しません。この広域分析対象について、計画草案や公式資料への帰属を生成しません。`
+      `${coverageSummaryText(coverage,'en')} Country planning laws, plans, budgets and evaluations remain attached to their country adapters and are not generalized to this regional scope. No planning draft or official-material attribution is generated for this regional scope.`,
+      `${coverageSummaryText(coverage,'es')} Las leyes, planes, presupuestos y evaluaciones permanecen vinculados a sus adaptadores nacionales y no se generalizan a este ámbito regional. No se genera para este ámbito regional ningún borrador de plan ni atribución a materiales oficiales.`,
+      `${coverageSummaryText(coverage,'ja')} 計画法、計画、予算、実施・評価資料は各国アダプターに結び付け、広域全体へ一般化しません。この広域分析対象について、計画草案や公式資料への帰属を生成しません。`
     );
     const regionalPurpose=localCopy('Review official materials for the selected area and prepare evidence for plan preparation or revision.','Revise los materiales oficiales del área seleccionada y prepare evidencia para elaborar o revisar el plan.','選択地域の公式資料を確認し、計画の策定・見直しに使う根拠を準備します。');
     return '<section class="panel planning-overview"><h2>'+e(settings.title)+'</h2><p>'+e(regionalPurpose)+'</p></section><section class="panel planning-controls"><h2>'+e(localCopy('Choose one planning territory','Elegir un territorio de planificación','計画対象地域を1つ選択'))+'</h2>'+areaControls()+identity()+'</section><div class="planning-grid">'+mapPanel({planning:true})+'<section class="panel planning-resources"><h2>'+e(currentArea().name)+'</h2><p class="notice planning-scope-warning"><strong>'+e(authorityWarning)+'</strong> '+e(completenessWarning)+'</p><div class="actions">'+pageLink('territorial',localCopy('Review territorial evidence','Revisar evidencia territorial','地域データを確認'))+pageLink('thematic',localCopy('Compare countries','Comparar países','国を比較'))+pageLink('database',localCopy('Inspect source data','Consultar datos fuente','元データを確認'))+'</div></section></div>';
@@ -321,8 +332,8 @@ function home() {
     const allCountriesUrl=new URL(`territorial/?${routeWithLanguage({...state,selected:root.id,level:comparisonLevelForArea(dataset,root.id,root.level)})}`,base).href;
     const wholeLabel=dataset.analysis?.pilot?.stage==='central_america_7'?localCopy('All 7 Central American countries','Los 7 países de Centroamérica','中米7か国すべて'):localCopy(`All Americas — ${countryCount} countries and areas`,`Toda América — ${countryCount} países y áreas`,`アメリカ大陸全体・${countryCount}の国・地域`);
     const allCountriesEntry=`<a class="region-entry pilot-all-entry" href="${e(allCountriesUrl)}"><strong>${e(wholeLabel)}</strong><span>${e(localCopy('View the whole region','Ver toda la región','地域全体を見る'))} →</span></a>`;
-    const integrated=dataset.analysis?.coverage?.census_integrated_country_ids?.length||0;
-    const completionNote=localCopy(`${countryCount} country/area editions are available from this regional entry. Official census or equivalent population evidence and available domestic hierarchy are integrated for ${integrated} of ${countryCount}; the other entries retain evidence-backed gaps. Planning materials vary by country or area.`,`${countryCount} ediciones de países o áreas están disponibles desde esta entrada regional. El censo oficial o la evidencia demográfica equivalente y la jerarquía interna disponible están integrados para ${integrated} de ${countryCount}; las demás conservan vacíos respaldados por evidencia. Los materiales de planificación varían según el país o área.`,`この広域入口から${countryCount}の国・地域版を利用できます。公式Censusまたは同等の人口資料と利用可能な国内階層は${integrated}/${countryCount}で統合し、残りは根拠付き欠測として保持しています。計画資料の収録範囲は国・地域によって異なります。`);
+    const coverage=regionalCoverageSummary(dataset);
+    const completionNote=localCopy(`${countryCount} countries/areas are available from this regional entry. ${coverageSummaryText(coverage,'en')} Planning materials vary by country or area.`,`${countryCount} países o áreas están disponibles desde esta entrada regional. ${coverageSummaryText(coverage,'es')} Los materiales de planificación varían según el país o área.`,`この広域入口から${countryCount}の国・地域を利用できます。${coverageSummaryText(coverage,'ja')} 計画資料の収録範囲は国・地域によって異なります。`);
     return `<section class="home-intro world-intro"><p class="home-lead">Explore population and everyday life through census data. Follow the map from countries to local areas, compare places, and find data for research and regional planning.</p><p class="small-note home-coverage"><strong>Available coverage:</strong> <span>${e(displayAreaName(areaFor(dataset.country.national_territory_id)))}</span><span>. Available topics, years and local detail vary by country.</span></p><p class="notice compact">${e(completionNote)}</p><div class="actions">${pageLink('territorial','Explore territorial data','button')}${pageLink('thematic','Compare an indicator')}${pageLink('database','Open data database')}</div></section>
     <div class="territorial-top">${mapPanel()}<section class="panel"><h2>${scopeEntryHeading(children,countryCount)}</h2><p class="small-note">${e(localCopy('Start with a region, then continue to a country and any acquired local areas.','Empiece por una región y continúe hacia un país y las áreas locales disponibles.','大地域から国へ進み、収録済みの国では県・市町村までたどれます。'))}</p><div class="region-entry-grid">${allCountriesEntry}${children.map(area=>{const lower=dataset.territories.filter(item=>item.parent_id===area.id),label=lower.length?(lower.every(item=>item.type==='country')?`${lower.length} countries and areas`:`${lower.length} areas to explore`):'Open country';return `<a class="region-entry" href="${e(new URL(`territorial/?${routeWithLanguage({...state,selected:area.id,level:comparisonLevelForArea(dataset,area.id,area.level)})}`,base).href)}"><strong>${e(area.name)}</strong><span><span>${e(label)}</span> →</span></a>`;}).join('')}</div></section></div>
     <div class="entry-grid three"><a class="entry-card" href="${e(pageUrl('territorial'))}"><span class="entry-number">01</span><h2>Territorial diagnostic</h2><p>Explore population, health and living conditions in one place, with maps, charts and census sources.</p><strong>Explore a place →</strong></a><a class="entry-card" href="${e(pageUrl('thematic'))}"><span class="entry-number">02</span><h2>Thematic diagnostic</h2><p>Compare places by topic to understand differences in population and living conditions.</p><strong>Compare a theme →</strong></a><a class="entry-card" href="${e(pageUrl('planning'))}"><span class="entry-number">03</span><h2>Planning materials</h2><p>Use regional statistics to prepare planning materials. Availability of official plans and legal sources varies by country.</p><strong>Open planning →</strong></a></div>
@@ -340,14 +351,30 @@ function database() {
   const observed=dataset.observations.filter(row=>observedValue(row)!==null).length;
   const censusPilot=dataset.analysis?.pilot,scopeCoverage=dataset.analysis?.coverage;
   const currentStage=scopeCoverage
-    ? `Current Americas scope: ${scopeCoverage.country_area_count} country/area editions are registered; international reference series cover ${scopeCoverage.international_series_country_area_count}; official census or equivalent population evidence and available domestic hierarchy are integrated for ${scopeCoverage.census_integrated_country_ids.length}. Other entries retain evidence-backed gaps rather than estimated values.`
+    ? `Current Americas scope: ${coverageSummaryText(regionalCoverageSummary(dataset),'en')}`
     : censusPilot?.census_adapter_status==='partial'
     ? `Current pilot: official census population is active for ${censusPilot.census_country_ids.join(', ')} at national and adopted lower levels; ${censusPilot.census_pending_country_ids.join(', ')} remain pending. International country indicators remain a separate context series.`
     : 'Current scaffold: international country reference series, M49 membership, reference map and transparent same-year aggregation.';
   return `<section class="home-intro"><p class="eyebrow">AreaData database</p><h2>Inspect the data behind the dashboard.</h2><p>This pilot exposes the complete static dataset, its indicator dictionary and source register. A cross-country census table builder and public API are later phases; their absence is not shown as completed functionality.</p></section>
   <div class="summary-grid three"><article class="summary"><span>Territories</span><strong>${dataset.territories.length}</strong><small>Registered identities and hierarchy</small></article><article class="summary"><span>Source-reported values</span><strong>${observed}</strong><small>Zero is counted; missing is excluded</small></article><article class="summary"><span>Periods</span><strong>${periods.length}</strong><small>${e(periods.at(-1) || '—')}–${e(periods[0] || '—')}</small></article></div>
-  <section class="panel"><div class="panel-heading"><div><p class="eyebrow">Variable dictionary</p><h2>${dataset.indicators.length} acquired indicators</h2></div><div class="actions">${button('catalog-csv','Indicator catalog CSV')}${button('observations-csv','All observations CSV')}${button('territories-csv','Territory register CSV')}</div></div><div class="internal-table-scroll" tabindex="0"><table class="internal-table"><thead><tr><th>Theme / indicator</th><th>Definition and population</th><th>Series / unit / aggregation</th><th>Source</th></tr></thead><tbody>${dataset.indicators.map(indicator=>{const source=sourceFor(dataset,indicator);return `<tr><th>${e(indicator.theme)}<small>${e(indicator.name)} · ${e(indicator.id)}</small></th><td>${e(indicator.definition || 'Not acquired')}<small>${e(indicator.population || 'Population not recorded')}</small></td><td>${e(indicator.series_family || 'Not classified')} · ${e(indicator.display_role || 'Not classified')}<small>${e(indicator.unit)} · ${e(indicator.aggregation || 'none')}${dataset.analysis?.aggregation?.rules?.some(rule=>rule.indicator_id===indicator.id)?' · calculated only with full coverage':''}</small></td><td>${source?link(source.url,source.name):'No source registered'}</td></tr>`;}).join('')}</tbody></table></div><p class="small-note">Downloads retain source IDs, value status, series family and data edition. The dashboard’s calculated values are produced at use time and include their component years and audit trail in selected-area evidence exports.</p></section>
+  <section class="panel"><div class="panel-heading"><div><p class="eyebrow">Variable dictionary</p><h2>${dataset.indicators.length} acquired indicators</h2></div><div class="actions">${button('catalog-csv','Indicator catalog CSV')}${button('observations-csv','All observations CSV')}${button('territories-csv','Territory register CSV')}${dataset.analysis?.census_source_preflight?.records?.length?button('census-preflight-csv','UNSD Census listing CSV'):''}</div></div><div class="internal-table-scroll" tabindex="0"><table class="internal-table"><thead><tr><th>Theme / indicator</th><th>Definition and population</th><th>Series / unit / aggregation</th><th>Source</th></tr></thead><tbody>${dataset.indicators.map(indicator=>{const source=sourceFor(dataset,indicator);return `<tr><th>${e(indicator.theme)}<small>${e(indicator.name)} · ${e(indicator.id)}</small></th><td>${e(indicator.definition || 'Not acquired')}<small>${e(indicator.population || 'Population not recorded')}</small></td><td>${e(indicator.series_family || 'Not classified')} · ${e(indicator.display_role || 'Not classified')}<small>${e(indicator.unit)} · ${e(indicator.aggregation || 'none')}${dataset.analysis?.aggregation?.rules?.some(rule=>rule.indicator_id===indicator.id)?' · calculated only with full coverage':''}</small></td><td>${source?link(source.url,source.name):'No source registered'}</td></tr>`;}).join('')}</tbody></table></div><p class="small-note">Downloads retain source IDs, value status, series family and data edition. The dashboard’s calculated values are produced at use time and include their component years and audit trail in selected-area evidence exports.</p></section>
   <section class="panel"><h2>Build the regional database in stages</h2><ol><li>${e(currentStage)}</li><li>Primary data: official census tables, census years, administrative codes and compatible boundaries for every country or area in the selected scope.</li><li>Country depth: municipalities and finer planning-analysis geographies, followed by variable harmonization, table builder, extracts, API, boundary history and reproducibility packages.</li></ol></section>`;
+}
+function censusSourcePreflightPanel(){
+  const registry=dataset.analysis?.census_source_preflight;if(!registry?.records?.length)return '';
+  return `<details class="census-source-preflight" data-lazy-panel="census-preflight"><summary>${e(localCopy(`UNSD Census source listings (${registry.records.length})`,`Listados de fuentes censales de UNSD (${registry.records.length})`,`UNSD Census所在情報（${registry.records.length}件）`))}</summary><div data-lazy-body></div></details>`;
+}
+function censusSourcePreflightBody(){
+  const registry=dataset.analysis?.census_source_preflight;if(!registry?.records?.length)return '';
+  const listing=(value,kind)=>{
+    if(!value)return `<span>${e(localCopy('No completed listing recorded','No se registró una entrada completada','実施済み掲載なし'))}</span>`;
+    const title=`${localCopy('Round','Ronda','ラウンド')} ${value.round} · ${value.round_period} · ${value.date_text}`;
+    const linked=value.primary_url?link(value.primary_url,title,'census-round-link'):`<strong>${e(title)}</strong><small>${e(localCopy('UNSD supplies no link for this listing.','UNSD no proporciona enlace para esta entrada.','この掲載にはUNSDリンクがありません。'))}</small>`;
+    const evidence=localCopy('Listing only; source body not acquired, content not verified, data not adopted.','Solo listado; documento no adquirido, contenido no verificado y datos no adoptados.','掲載情報のみ。資料未取得・内容未確認・データ未採用。');
+    return `${linked}<small>${e(kind)} · ${e(evidence)}</small>`;
+  };
+  const rows=registry.records.map(record=>`<tr><th>${e(record.name)}<small>${e(record.country_id)}</small></th><td>${listing(record.latest_un_census_listing,localCopy('Latest completed UNSD listing','Última entrada completada de UNSD','UNSD最新実施掲載'))}</td><td>${listing(record.latest_un_census_linked_listing,localCopy('Latest completed listing with an UNSD link','Última entrada completada con enlace de UNSD','UNSDリンク付き最新実施掲載'))}</td><td>${record.national_statistics_office?link(record.national_statistics_office.url,record.national_statistics_office.agency||localCopy('Official statistics office','Oficina estadística oficial','公式統計機関')):''}<small>${e(record.checked_at||registry.checked_at)}</small></td></tr>`).join('');
+  return `<p>${e(localCopy('The latest completed UNSD listing and the latest completed listing carrying an UNSD link are separate fields. A link does not mean that AreaData acquired, verified or adopted the material.','La entrada completada más reciente de UNSD y la entrada completada más reciente con enlace de UNSD son campos distintos. Un enlace no significa que AreaData haya adquirido, verificado o adoptado el material.','UNSDの最新実施掲載と、UNSDリンクがある最新の実施済み掲載は別項目です。リンクがあっても、AreaDataによる資料取得・内容確認・データ採用を意味しません。'))}</p><div class="census-history-table-scroll" tabindex="0"><table class="census-history-table"><thead><tr><th>${e(localCopy('Country or area','País o área','国・地域'))}</th><th>${e(localCopy('Latest UNSD listing','Última entrada UNSD','UNSD最新実施掲載'))}</th><th>${e(localCopy('Latest linked listing','Última entrada con enlace','リンク付き最新掲載'))}</th><th>${e(localCopy('Official statistics office','Oficina estadística oficial','公式統計機関'))}</th></tr></thead><tbody>${rows}</tbody></table></div><p class="small-note">${e(localCopy('Pinned source','Fuente fijada','固定参照元'))}: ${link(registry.source?.validation_url||registry.source?.raw_url,`Census Dashboard Kit ${registry.source?.commit||''}`)} · SHA-256 ${e(registry.source?.sha256||'')}</p>`;
 }
 function censusHistoryPanel(){
   const history=dataset.analysis?.census_history;
@@ -378,12 +405,22 @@ function censusHistoryPanel(){
     const upcoming=country.upcoming?`<small>${link(country.upcoming.url,`${country.upcoming.year} ${statusText(country.upcoming.status)}`)}</small>`:'';
     return `<tr><th>${e(countryName(country))}<small>${e(country.country_id)}</small></th><td><strong>${adopted}</strong><small>${e(ageText(censusAge(country.adopted_data_year,history.as_of_year)))}</small></td><td><div class="census-rounds">${rounds}</div>${upcoming}</td><td>${e(intervalText(country))}<small>${e(localized(country.note))}</small><small>${link(country.official_census_url,localCopy('Latest official Census page','Página oficial del Censo más reciente','最新の公式Censusページ'))}</small></td></tr>`;
   }).join('');
-  const catalogDescription=localCopy(`${cataloged} of ${catalogTotal} countries/areas are colored from integrated census evidence; the rest are gray and still require source cataloging. Hover or focus a colored country for its census history.`,`${cataloged} de ${catalogTotal} países/áreas están coloreados con evidencia censal integrada; el resto aparece en gris y requiere catalogación. Pase el puntero o enfoque un país para consultar su historia.`,`${catalogTotal}の国・地域のうち、Censusを統合済みの${cataloged}か国を色分けしています。灰色は未収録であり、Censusが存在しないという意味ではありません。`);
-  return `<article class="census-history-panel" aria-labelledby="census-history-title"><div class="census-history-heading"><div><p class="eyebrow">${e(localCopy('Census recency','Actualidad censal','Censusの更新状況'))}</p><h3 id="census-history-title">${e(localCopy('Census data year by country','Año de los datos censales por país','各国のCensus採用データ年'))}</h3></div><p>${e(localCopy(`As of ${history.as_of_year}`,`Al año ${history.as_of_year}`,`${history.as_of_year}年時点`))}</p></div><p>${e(localCopy('Darker green means a newer census dataset is currently used by AreaData. Pale red identifies data that are at least 10 years old. A newer announced or conducted round does not change the color until its results are verified and integrated.','El verde más oscuro indica que AreaData usa datos censales más recientes. El rojo claro identifica datos con al menos 10 años de antigüedad. Una ronda anunciada o realizada no cambia el color hasta que sus resultados se verifiquen e integren.','濃い緑ほどAreaDataで使っているCensusデータが新しく、10年以上前のデータは薄赤です。新しい調査の実施・準備情報があっても、結果を確認して統合するまでは地図の色を更新しません。'))}</p><div class="census-history-layout"><figure class="census-history-map"><div class="census-map-wrap"><svg viewBox="0 0 760 360" role="img" aria-labelledby="census-map-title census-map-desc"><title id="census-map-title">${e(localCopy('World map of adopted census data years','Mapa mundial de los años de datos censales adoptados','Census採用データ年の世界地図'))}</title><desc id="census-map-desc">${e(catalogDescription)}</desc>${paths}</svg><div class="census-map-inset"><strong>${e(localCopy(`${cataloged} countries cataloged`,`${cataloged} países catalogados`,`${cataloged}か国を収録`))}</strong><svg viewBox="0 0 280 170" aria-hidden="true">${pilotPaths}</svg></div><div class="census-map-tooltip" role="status" hidden></div></div><figcaption><span><i class="legend-current"></i>${e(localCopy('0–3 years','0–3 años','0～3年前'))}</span><span><i class="legend-recent"></i>${e(localCopy('4–6 years','4–6 años','4～6年前'))}</span><span><i class="legend-aging"></i>${e(localCopy('7–9 years','7–9 años','7～9年前'))}</span><span><i class="legend-overdue"></i>${e(localCopy('10+ years','10 años o más','10年以上前'))}</span><span><i class="legend-unknown"></i>${e(localCopy('Not yet cataloged','Aún no catalogado','未収録'))}</span></figcaption></figure><div class="census-history-table-scroll" tabindex="0"><table class="census-history-table"><caption>${e(localCopy(`Census histories cataloged: ${cataloged} of ${catalogTotal} countries/areas`,`Historias censales catalogadas: ${cataloged} de ${catalogTotal} países/áreas`,`Census履歴の収録：${catalogTotal}の国・地域のうち${cataloged}か国`))}</caption><thead><tr><th>${e(localCopy('Country','País','国'))}</th><th>${e(localCopy('Data used','Datos utilizados','採用データ'))}</th><th>${e(localCopy('Recent rounds','Rondas recientes','直近の調査'))}</th><th>${e(localCopy('Intervals and status','Intervalos y estado','実施間隔・状況'))}</th></tr></thead><tbody>${rows}</tbody></table></div></div><p class="small-note">${e(catalogDescription)} ${e(localCopy('Intervals describe the spacing between recorded rounds. They do not by themselves establish why a census was delayed or omitted; follow the official links for each country.','Los intervalos describen el tiempo entre rondas registradas. Por sí solos no determinan por qué se retrasó u omitió un censo; consulte los enlaces oficiales de cada país.','実施間隔は確認できた調査年の差を示します。遅延・未実施の理由を断定するものではないため、各国の公式リンクも確認してください。'))}</p></article>`;
+  const catalogDescription=localCopy(`${cataloged} of ${catalogTotal} countries/areas have a cataloged Census-history profile and adopted data year; the rest are gray and still require source cataloging. Hover or focus a colored country for its census history.`,`${cataloged} de ${catalogTotal} países/áreas tienen un perfil de historia censal catalogado y un año de datos adoptado; el resto aparece en gris y requiere catalogación. Pase el puntero o enfoque un país para consultar su historia.`,`${catalogTotal}の国・地域のうち${cataloged}件にCensus履歴プロファイルと採用データ年があります。灰色は未収録であり、Censusが存在しないという意味ではありません。`);
+  return `<article class="census-history-panel" aria-labelledby="census-history-title"><div class="census-history-heading"><div><p class="eyebrow">${e(localCopy('Census recency','Actualidad censal','Censusの更新状況'))}</p><h3 id="census-history-title">${e(localCopy('Census data year by country','Año de los datos censales por país','各国のCensus採用データ年'))}</h3></div><p>${e(localCopy(`As of ${history.as_of_year}`,`Al año ${history.as_of_year}`,`${history.as_of_year}年時点`))}</p></div><p>${e(localCopy('Darker green means a newer census dataset is currently used by AreaData. Pale red identifies data that are at least 10 years old. A newer announced or conducted round does not change the color until its results are verified and integrated.','El verde más oscuro indica que AreaData usa datos censales más recientes. El rojo claro identifica datos con al menos 10 años de antigüedad. Una ronda anunciada o realizada no cambia el color hasta que sus resultados se verifiquen e integren.','濃い緑ほどAreaDataで使っているCensusデータが新しく、10年以上前のデータは薄赤です。新しい調査の実施・準備情報があっても、結果を確認して統合するまでは地図の色を更新しません。'))}</p><div class="census-history-layout"><figure class="census-history-map"><div class="census-map-wrap"><svg viewBox="0 0 760 360" role="img" aria-labelledby="census-map-title census-map-desc"><title id="census-map-title">${e(localCopy('World map of adopted census data years','Mapa mundial de los años de datos censales adoptados','Census採用データ年の世界地図'))}</title><desc id="census-map-desc">${e(catalogDescription)}</desc>${paths}</svg><div class="census-map-inset"><strong>${e(localCopy(`${cataloged} Census-history profiles`,`${cataloged} perfiles de historia censal`,`${cataloged}件のCensus履歴`))}</strong><svg viewBox="0 0 280 170" aria-hidden="true">${pilotPaths}</svg></div><div class="census-map-tooltip" role="status" hidden></div></div><figcaption><span><i class="legend-current"></i>${e(localCopy('0–3 years','0–3 años','0～3年前'))}</span><span><i class="legend-recent"></i>${e(localCopy('4–6 years','4–6 años','4～6年前'))}</span><span><i class="legend-aging"></i>${e(localCopy('7–9 years','7–9 años','7～9年前'))}</span><span><i class="legend-overdue"></i>${e(localCopy('10+ years','10 años o más','10年以上前'))}</span><span><i class="legend-unknown"></i>${e(localCopy('Not yet cataloged','Aún no catalogado','未収録'))}</span></figcaption></figure><div class="census-history-table-scroll" tabindex="0"><table class="census-history-table"><caption>${e(localCopy(`Census histories cataloged: ${cataloged} of ${catalogTotal} countries/areas`,`Historias censales catalogadas: ${cataloged} de ${catalogTotal} países/áreas`,`Census履歴の収録：${catalogTotal}の国・地域のうち${cataloged}か国`))}</caption><thead><tr><th>${e(localCopy('Country','País','国'))}</th><th>${e(localCopy('Data used','Datos utilizados','採用データ'))}</th><th>${e(localCopy('Recent rounds','Rondas recientes','直近の調査'))}</th><th>${e(localCopy('Intervals and status','Intervalos y estado','実施間隔・状況'))}</th></tr></thead><tbody>${rows}</tbody></table></div></div><p class="small-note">${e(catalogDescription)} ${e(localCopy('Intervals describe the spacing between recorded rounds. They do not by themselves establish why a census was delayed or omitted; follow the official links for each country.','Los intervalos describen el tiempo entre rondas registradas. Por sí solos no determinan por qué se retrasó u omitió un censo; consulte los enlaces oficiales de cada país.','実施間隔は確認できた調査年の差を示します。遅延・未実施の理由を断定するものではないため、各国の公式リンクも確認してください。'))}</p></article>`;
 }
 function register() {
-  return `<section id="source-register" class="source-register"><h2>Sources and data coverage</h2>${censusHistoryPanel()}${worldMode()?`<details><summary>How regional totals are calculated</summary><p>An exact observation for the selected area has priority. Only indicators with an approved method may be calculated from a complete, non-overlapping membership cover. A country total makes missing municipalities beneath it irrelevant. Percentages and non-additive measures are never simply averaged.</p></details>`:''}<details><summary>Source register (${dataset.sources.length})</summary><ul class="source-list">${dataset.sources.map(source=>`<li><h3>${link(source.url,source.name)}</h3><p>${e(source.publisher)} · ${e(statusLabel(source.status))} · Retrieved ${e(source.retrieved_at || 'Not recorded')} · Reference period ${e(source.reference_period || 'Not recorded')}</p><p>${e(source.note || '')}</p>${source.boundary_source?`<p>Original boundary provider: ${e(source.boundary_source)}${safeUrl(source.source_url)?` · ${link(source.source_url,'Original source')}`:''}</p>`:''}<p>License: ${safeUrl(source.license)?link(source.license,'Source terms'):e(source.license || 'Not recorded')}${safeUrl(source.license_url)?` · ${link(source.license_url,'License source')}`:''}${source.license_detail?` · ${e(source.license_detail)}`:''}</p><small>Raw-file SHA-256: ${e(source.sha256 || 'Not available')}</small></li>`).join('')}</ul></details>
+  const censusHistory=page==='database'?censusHistoryPanel():`<p class="small-note">${pageLink('database',localCopy('Open Census histories and source database','Abrir historias censales y la base de fuentes','Census履歴と出典データベースを開く'))}</p>`;
+  return `<section id="source-register" class="source-register"><h2>Sources and data coverage</h2>${censusSourcePreflightPanel()}${censusHistory}${worldMode()?`<details><summary>How regional totals are calculated</summary><p>An exact observation for the selected area has priority. Only indicators with an approved method may be calculated from a complete, non-overlapping membership cover. A country total makes missing municipalities beneath it irrelevant. Percentages and non-additive measures are never simply averaged.</p></details>`:''}<details data-lazy-panel="source-register"><summary>Source register (${dataset.sources.length})</summary><div data-lazy-body></div></details>
   <details ${dataset.gaps.length?'open':''}><summary>Remaining acquisition gaps (${dataset.gaps.length})</summary><ul class="gap-list">${dataset.gaps.map(gap=>{const display=localizedGap(gap);return `<li><strong>${e(display.category)} — ${e(translateText(statusLabel(gap.status),language))}</strong><p>${e(display.detail)}</p><p class="small-note">${e(localCopy('Next:','Siguiente:','次の対応：'))} ${e(display.next_action)}</p></li>`;}).join('') || '<li>No acquisition gaps are listed. This is not a certification of complete national coverage.</li>'}</ul></details><p class="small-note">Data edition ${e(dataset.generated_at)} · Schema ${e(dataset.schema_version)}. Source values, proposals and formal decisions are separate records. Source geography and release dates can differ.</p></section>`;
+}
+function sourceRegisterBody(){
+  return `<ul class="source-list">${dataset.sources.map(source=>`<li><h3>${link(source.url,source.name)}</h3><p>${e(source.publisher)} · ${e(statusLabel(source.status))} · Retrieved ${e(source.retrieved_at || 'Not recorded')} · Reference period ${e(source.reference_period || 'Not recorded')}</p><p>${e(source.note || '')}</p>${source.boundary_source?`<p>Original boundary provider: ${e(source.boundary_source)}${safeUrl(source.source_url)?` · ${link(source.source_url,'Original source')}`:''}</p>`:''}<p>License: ${safeUrl(source.license)?link(source.license,'Source terms'):e(source.license || 'Not recorded')}${safeUrl(source.license_url)?` · ${link(source.license_url,'License source')}`:''}${source.license_detail?` · ${e(source.license_detail)}`:''}</p><small>Raw-file SHA-256: ${e(source.sha256 || 'Not available')}</small></li>`).join('')}</ul>`;
+}
+function populateLazyPanel(details){
+  if(!details.open||details.dataset.lazyLoaded==='true')return;
+  const body=details.querySelector('[data-lazy-body]');if(!body)return;
+  body.innerHTML=details.dataset.lazyPanel==='census-preflight'?censusSourcePreflightBody():sourceRegisterBody();
+  details.dataset.lazyLoaded='true';translateInterface(details,language);
 }
 function updateHeader() {
   document.getElementById('dataset-name').textContent='Explore the world through census data';
@@ -447,6 +484,7 @@ async function ensureCountryDataForTerritory(id){
   const relative=dataset.data_shards.countries[countryId],response=await fetch(new URL(relative,new URL('data/',base)));
   if(!response.ok)throw new Error(`Country data request for ${countryId} returned HTTP ${response.status}`);
   const shard=await response.json();if(shard.schema_version!=='0.2-country-shard'||shard.country_area_id!==countryId)throw new Error(`Country data for ${countryId} is incompatible`);
+  countryBoundaryShards.set(countryId,shard.boundary_shards||{});
   dataset.territories=mergeById(dataset.territories,shard.territories);
   dataset.observations=mergeObservations(dataset.observations,shard.observations);
   dataset.documents=mergeById(dataset.documents,shard.documents);
@@ -456,9 +494,33 @@ async function ensureCountryDataForTerritory(id){
   dataset.analysis=dataset.analysis||{};const comparisons=new Map((dataset.analysis.comparisons||[]).map(row=>[row.parent_id,row]));for(const row of shard.comparisons||[])comparisons.set(row.parent_id,row);dataset.analysis.comparisons=[...comparisons.values()];dataset.analysis.terminal_territory_ids=[...new Set([...(dataset.analysis.terminal_territory_ids||[]),...(shard.terminal_territory_ids||[])])];
   loadedCountryShards.add(countryId);
 }
+function boundaryLevelsForState(nextState){
+  const area=areaFor(nextState.selected);if(!area)return [];
+  const levels=new Set([area.level]);
+  for(const child of dataset.territories.filter(row=>row.parent_id===area.id))if(child.level)levels.add(child.level);
+  if(page==='thematic'&&nextState.level)levels.add(nextState.level);
+  return [...levels].filter(Boolean);
+}
+async function ensureBoundaryDataForState(nextState){
+  const countryId=shardCountryForTerritory(nextState.selected);if(!countryId)return;
+  const references=countryBoundaryShards.get(countryId)||{};
+  for(const level of boundaryLevelsForState(nextState)){
+    const relative=references[level],key=`${countryId}\u001f${level}`;
+    if(!relative||loadedBoundaryShards.has(key))continue;
+    const response=await fetch(new URL(relative,new URL('data/',base)));
+    if(!response.ok)throw new Error(`Boundary data request for ${countryId} / ${level} returned HTTP ${response.status}`);
+    const shard=await response.json();
+    if(shard.schema_version!=='0.1-boundary-shard'||shard.country_area_id!==countryId||shard.level!==level||!Array.isArray(shard.features))throw new Error(`Boundary data for ${countryId} / ${level} is incompatible`);
+    dataset.boundaries=dataset.boundaries||{type:'FeatureCollection',features:[]};
+    const boundaryKey=feature=>feature.properties?.territory_id||JSON.stringify(feature.geometry);
+    const boundaries=new Map((dataset.boundaries.features||[]).map(feature=>[boundaryKey(feature),feature]));
+    for(const feature of shard.features)boundaries.set(boundaryKey(feature),feature);
+    dataset.boundaries.features=[...boundaries.values()];loadedBoundaryShards.add(key);
+  }
+}
 async function choose(id,{fromMap=false}={}) {
   await ensureCountryDataForTerritory(id);
-  wholeMap=false;areaSearch='';comparisonFocusId='';
+  wholeMap=false;areaSearch='';rankSearch='';comparisonFocusId='';
   const next=selectTerritory(dataset,state,id);
   if(page==='home')next.level=comparisonLevelForArea(dataset,id,next.level);
   if(fromMap && page==='thematic') {
@@ -466,6 +528,7 @@ async function choose(id,{fromMap=false}={}) {
     next.level=state.level;
     rankSearch=rankingReveal(comparisonRows(dataset,next),id,rankSearch).query;
   }
+  await ensureBoundaryDataForState(next);
   commit(next);
   if(fromMap && page==='thematic')revealRankingSelection();
 }
@@ -502,13 +565,22 @@ function seriesCsv(indicatorId, territoryId) {
   return makeCsv([['Country','Territory','Territory ID','Level','Indicator','Indicator ID','Period','Value','Unit','Status','Source URL','Retrieved at','Data edition',...(extended?['Definition ID','Definition','Population','Method','Comparable context','Comparison reason','Observation boundary edition']:[])],...rows.map(row=>{const context=observationContext(dataset,area,indicator,row),source=context.source;return [dataset.country.name,area.name,area.id,area.level,indicator.name,indicator.id,row.period,observedValue(row),context.unit,row.status,safeUrl(source?.url),source?.retrieved_at,dataset.generated_at,...(extended?[context.definition_id,context.definition,context.population,context.method,context.comparable,context.reason,row.boundary_version]:[])];})]);
 }
 function catalogCsv() {
-  return makeCsv([['Theme','Indicator ID','Indicator','Series family','Display role','Definition','Population','Unit','Measurement method','Configured aggregation','Period policy','Source ID','Data edition'],...dataset.indicators.map(indicator=>[indicator.theme,indicator.id,indicator.name,indicator.series_family,indicator.display_role,indicator.definition,indicator.population,indicator.unit,indicator.measurement_method,indicator.aggregation,indicator.period_policy,indicator.source_id,dataset.generated_at])]);
+  const indicators=indicatorsForTerritorialScope(dataset,state.selected);
+  return makeCsv([['Theme','Indicator ID','Indicator','Series family','Display role','Definition','Population','Unit','Measurement method','Configured aggregation','Period policy','Source ID','Data edition'],...indicators.map(indicator=>[indicator.theme,indicator.id,indicator.name,indicator.series_family,indicator.display_role,indicator.definition,indicator.population,indicator.unit,indicator.measurement_method,indicator.aggregation,indicator.period_policy,indicator.source_id,dataset.generated_at])]);
 }
+function activeBranchIds(){
+  const countryId=countryBranchId(dataset,state.selected);
+  if(!countryId)return new Set(dataset.territories.map(area=>area.id));
+  return new Set(dataset.territories.filter(area=>area.id===countryId||area.country_id===countryId).map(area=>area.id));
+}
+function activeExportId(){return countryBranchId(dataset,state.selected)||dataset.country.id;}
 function observationsCsv() {
-  return makeCsv([['Territory ID','Indicator ID','Period','Value','Unit','Status','Source ID','Definition ID','Definition','Population','Measurement method','Boundary edition','Footnote','Data edition'],...dataset.observations.map(row=>{const indicator=metricFor(row.indicator_id);return [row.territory_id,row.indicator_id,row.period,observedValue(row),row.unit || indicator?.unit,row.status,row.source_id,row.definition_id || indicator?.definition_id,row.definition || indicator?.definition,row.population || indicator?.population,row.measurement_method || indicator?.measurement_method,row.boundary_version,row.footnote,dataset.generated_at];})]);
+  const ids=activeBranchIds();
+  return makeCsv([['Territory ID','Indicator ID','Period','Value','Unit','Status','Source ID','Definition ID','Definition','Population','Measurement method','Boundary edition','Footnote','Data edition'],...dataset.observations.filter(row=>ids.has(row.territory_id)).map(row=>{const indicator=metricFor(row.indicator_id);return [row.territory_id,row.indicator_id,row.period,observedValue(row),row.unit || indicator?.unit,row.status,row.source_id,row.definition_id || indicator?.definition_id,row.definition || indicator?.definition,row.population || indicator?.population,row.measurement_method || indicator?.measurement_method,row.boundary_version,row.footnote,dataset.generated_at];})]);
 }
 function territoriesCsv() {
-  return makeCsv([['Territory ID','Name','Level','Type','Parent ID','Country ID','Official code','Code system','Boundary edition','Source ID','Data edition'],...dataset.territories.map(area=>[area.id,area.name,area.level,area.type,area.parent_id,area.country_id,area.official_code,area.code_system,area.boundary_version,area.source_id,dataset.generated_at])]);
+  const ids=activeBranchIds();
+  return makeCsv([['Territory ID','Name','Level','Type','Parent ID','Country ID','Official code','Code system','Boundary edition','Source ID','Data edition'],...dataset.territories.filter(area=>ids.has(area.id)).map(area=>[area.id,area.name,area.level,area.type,area.parent_id,area.country_id,area.official_code,area.code_system,area.boundary_version,area.source_id,dataset.generated_at])]);
 }
 function showCensusTooltip(target,event){
   const wrap=target.closest('.census-map-wrap'),tip=wrap?.querySelector('.census-map-tooltip');
@@ -528,23 +600,30 @@ app.addEventListener('pointermove',event=>{const target=event.target.closest('[d
 app.addEventListener('pointerout',event=>{const target=event.target.closest('[data-census-tooltip]');if(target&&!target.contains(event.relatedTarget))hideCensusTooltip(target);});
 app.addEventListener('focusin',event=>{const target=event.target.closest('[data-census-tooltip]');if(target)showCensusTooltip(target);});
 app.addEventListener('focusout',event=>{const target=event.target.closest('[data-census-tooltip]');if(target)hideCensusTooltip(target);});
+app.addEventListener('toggle',event=>{const details=event.target.closest?.('[data-lazy-panel]');if(details)populateLazyPanel(details);},true);
 app.addEventListener('change',async event=>{
   const control=event.target.dataset.control;
   if(control==='area')await choose(event.target.value);
   if(control==='hierarchy') {
-    wholeMap=false;areaSearch='';comparisonFocusId='';
+    const next=selectHierarchyOption(dataset,state,event.target.dataset.parent,event.target.value);
+    if(next.selected!==state.selected){await choose(next.selected);return;}
+    wholeMap=false;areaSearch='';rankSearch='';comparisonFocusId='';
     // Large country pages can contain hundreds of map paths and indicator cards.
     // Let the native select event finish before rebuilding the page so choosing a
     // parent always completes instead of leaving a parent URL over child content.
-    commitAfterInput(selectHierarchyOption(dataset,state,event.target.dataset.parent,event.target.value));
+    commitAfterInput(next);
   }
   if(control==='metric') {comparisonFocusId='';const metric=event.target.value;commit({...state,metric,requestedMetric:undefined,sourceDataset:undefined,notices:[]});}
   if(control==='period'){comparisonFocusId='';commit({...state,period:event.target.value,notices:[]});}
-  if(control==='level'){wholeMap=true;comparisonFocusId='';commit({...state,level:event.target.value,notices:[]});}
+  if(control==='level'){wholeMap=true;comparisonFocusId='';const next={...state,level:event.target.value,notices:[]};await ensureBoundaryDataForState(next);commit(next);}
   if(control==='rank-order'){rankOrder=event.target.value;render();}
 });
 app.addEventListener('input',event=>{
-  if(event.target.dataset.control==='area-search'){areaSearch=event.target.value;render();}
+  if(event.target.dataset.control==='area-search'){
+    areaSearch=event.target.value;
+    const results=event.target.closest('.area-controls')?.querySelector('[data-area-search-results]');
+    if(results){results.innerHTML=areaSearchResults(dataset.territories.filter(area=>!territoryLineage(dataset,area.id).slice(0,-1).some(parent=>isTerminalTerritory(dataset,parent))));translateInterface(results,language);}
+  }
   if(event.target.dataset.control==='ranking-search'){rankSearch=event.target.value;document.getElementById('ranking-content').innerHTML=rankingContent(comparisonRows(dataset,state));}
 });
 app.addEventListener('keydown',event=>{
@@ -576,7 +655,7 @@ app.addEventListener('click',async event=>{
       else actionStatus('The selected area has no rank in this comparison set. Its details remain below the map.');
     }
     else if(action==='share'){
-      const url=new URL(location.href);url.search=routeQuery(dataset,state);
+      const url=new URL(location.href);url.search=routeWithLanguage(state);
       if(navigator.clipboard?.writeText){try{await navigator.clipboard.writeText(url.href);actionStatus('Selection link copied.');return;}catch{}}
       const input=document.createElement('input');input.value=url.href;input.readOnly=true;input.setAttribute('aria-label','Selection link to copy');const status=document.getElementById('action-status');status.textContent='Copy this selection link: ';status.append(input);input.focus();input.select();
     }
@@ -593,9 +672,10 @@ app.addEventListener('click',async event=>{
       download(evidenceCsv(dataset,state.selected,period,[target.dataset.id]),`${safeFilename(`${dataset.country.id}-${state.selected}-${period || 'no-period'}`)}-${safeFilename(target.dataset.id)}.csv`,'text/csv;charset=utf-8');
     }
     else if(action==='series-csv')download(seriesCsv(target.dataset.id,target.dataset.territory),`${safeFilename(target.dataset.territory)}-${safeFilename(target.dataset.id)}-history.csv`,'text/csv;charset=utf-8');
-    else if(action==='catalog-csv')download(catalogCsv(),`${safeFilename(dataset.country.id)}-indicator-catalog.csv`,'text/csv;charset=utf-8');
-    else if(action==='observations-csv')download(observationsCsv(),`${safeFilename(dataset.country.id)}-observations.csv`,'text/csv;charset=utf-8');
-    else if(action==='territories-csv')download(territoriesCsv(),`${safeFilename(dataset.country.id)}-territories.csv`,'text/csv;charset=utf-8');
+    else if(action==='catalog-csv')download(catalogCsv(),`${safeFilename(activeExportId())}-indicator-catalog.csv`,'text/csv;charset=utf-8');
+    else if(action==='observations-csv')download(observationsCsv(),`${safeFilename(activeExportId())}-observations.csv`,'text/csv;charset=utf-8');
+    else if(action==='territories-csv')download(territoriesCsv(),`${safeFilename(activeExportId())}-territories.csv`,'text/csv;charset=utf-8');
+    else if(action==='census-preflight-csv')download(censusSourcePreflightCsv(dataset),`${safeFilename(dataset.country.id)}-unsd-census-source-listings.csv`,'text/csv;charset=utf-8');
     else if(action==='comparison-csv'){
       const indicator=currentMetric();
       const entries=comparisonRows(dataset,state),extended=!!dataset.analysis || entries.some(row=>row.status==='incomparable');
@@ -610,7 +690,7 @@ document.querySelectorAll('[data-language]').forEach(control=>control.addEventLi
   const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState({},'',url);if(dataset&&state)render();else translateInterface(document,language);
 }));
 
-window.addEventListener('popstate',async()=>{language=resolveLanguage({query:new URLSearchParams(location.search).get('lang'),stored:storedLanguage(),browserLanguages:navigator.languages||[navigator.language]});await ensureCountryDataForTerritory(new URLSearchParams(location.search).get('territory'));state=initialState(dataset,location.search);const url=new URL(location.href);url.search=routeWithLanguage(state);history.replaceState({},'',url);wholeMap=false;areaSearch='';rankSearch='';comparisonFocusId='';render();});
+window.addEventListener('popstate',async()=>{language=resolveLanguage({query:new URLSearchParams(location.search).get('lang'),stored:storedLanguage(),browserLanguages:navigator.languages||[navigator.language]});await ensureCountryDataForTerritory(new URLSearchParams(location.search).get('territory'));state=initialState(dataset,location.search);await ensureBoundaryDataForState(state);const url=new URL(location.href);url.search=routeWithLanguage(state);history.replaceState({},'',url);wholeMap=false;areaSearch='';rankSearch='';comparisonFocusId='';render();});
 
 translateInterface(document,language);
 try {
@@ -622,6 +702,7 @@ try {
   const statusResponse=await fetch(new URL('data/update-status.json',base),{cache:'no-store'}).catch(()=>null);
   if(statusResponse?.ok)updateStatus=await statusResponse.json().catch(()=>null);
   state=initialState(dataset,location.search);
+  await ensureBoundaryDataForState(state);
   {const url=new URL(location.href);url.search=routeWithLanguage(state);history.replaceState({},'',url);}
   render();
 } catch(error) {

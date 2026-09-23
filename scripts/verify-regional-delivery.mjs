@@ -1,4 +1,4 @@
-import {readFile,access} from 'node:fs/promises';
+import {readFile,access,readdir} from 'node:fs/promises';
 import {createReadStream} from 'node:fs';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
@@ -11,8 +11,8 @@ const exists=async filename=>{try{await access(filename);return true;}catch{retu
 const inside=(root,relative)=>{if(typeof relative!=='string'||!relative)return null;const target=path.resolve(root,relative),prefix=path.resolve(root)+path.sep;return target.startsWith(prefix)?target:null;};
 const sha256File=filename=>new Promise((resolve,reject)=>{const hash=createHash('sha256'),stream=createReadStream(filename);stream.on('data',chunk=>hash.update(chunk));stream.on('error',reject);stream.on('end',()=>resolve(hash.digest('hex')));});
 
-export async function verifyRegionalDelivery(project,{requirePublishable=false}={}){
-  const root=path.resolve(project),errors=[],warnings=[];
+export async function verifyRegionalDelivery(project,{requirePublishable=false,requirePublished=false}={}){
+  const root=path.resolve(project),errors=[],warnings=[],publicationGate=requirePublishable||requirePublished;let datasetHash=null;
   const readJson=async relative=>{const filename=inside(root,relative);if(!filename||!await exists(filename)){errors.push(`Missing ${relative}`);return null;}try{return JSON.parse(await readFile(filename,'utf8'));}catch(error){errors.push(`Invalid JSON ${relative}: ${error.message}`);return null;}};
   const data=await readJson('data/dashboard.json'),validation=await readJson('evidence/validation.json'),delivery=await readJson('evidence/DELIVERY.json');
   for(const relative of ['evidence/ACCEPTANCE.md','evidence/INDEPENDENT_AUDIT.md','site/index.html','site/territorial/index.html','site/thematic/index.html','site/planning/index.html','site/database/index.html'])if(!await exists(inside(root,relative)||''))errors.push(`Missing ${relative}`);
@@ -22,7 +22,7 @@ export async function verifyRegionalDelivery(project,{requirePublishable=false}=
     const countryCount=data.territories?.filter(area=>area.type==='country').length||0;
     if(delivery?.scope?.country_area_count!==countryCount)errors.push('delivery scope count does not match the dataset');
     const content=await readFile(path.join(root,'data/dashboard.json'));
-    const hash=createHash('sha256').update(content).digest('hex');
+    const hash=createHash('sha256').update(content).digest('hex');datasetHash=hash;
     if(validation?.dataset_sha256!==hash)errors.push('validation dataset_sha256 does not match data/dashboard.json');
 
     const descendantCountries=[...new Set(data.territories.filter(area=>area.type!=='country'&&area.country_id).map(area=>area.country_id))].filter(id=>data.territories.some(area=>area.type==='country'&&area.id===id)).sort();
@@ -48,7 +48,20 @@ export async function verifyRegionalDelivery(project,{requirePublishable=false}=
         const expectedIds=new Set(data.territories.filter(area=>area.country_id===countryId&&area.id!==countryId).map(area=>area.id));
         const actualIds=new Set((shard.territories||[]).map(area=>area.id));
         if(expectedIds.size!==actualIds.size||[...expectedIds].some(id=>!actualIds.has(id)))errors.push(`${relative} territory membership does not match the canonical dataset`);
-        const counts={territory_count:shard.territories?.length||0,observation_count:shard.observations?.length||0,boundary_count:shard.boundaries?.features?.length||0,document_count:shard.documents?.length||0,comparison_count:shard.comparisons?.length||0};
+        let boundaryCount=shard.boundaries?.features?.length||0;
+        for(const [level,boundaryRelative] of Object.entries(shard.boundary_shards||{})){
+          const boundaryPath=`site/data/${boundaryRelative}`,boundaryFile=inside(root,boundaryPath),boundaryExpected=expected?.boundary_shards?.[level];
+          if(!boundaryFile||!await exists(boundaryFile)){errors.push(`Missing ${boundaryPath}`);continue;}
+          const boundaryContent=await readFile(boundaryFile),boundaryHash=createHash('sha256').update(boundaryContent).digest('hex');
+          if(boundaryHash!==boundaryExpected?.sha256)errors.push(`${boundaryPath} hash does not match the shard manifest`);
+          let boundaryShard;try{boundaryShard=JSON.parse(boundaryContent.toString('utf8'));}catch(error){errors.push(`Invalid JSON ${boundaryPath}: ${error.message}`);continue;}
+          if(boundaryShard.schema_version!=='0.1-boundary-shard'||boundaryShard.country_area_id!==countryId||boundaryShard.level!==level)errors.push(`${boundaryPath} has incompatible boundary-shard identity`);
+          const features=boundaryShard.features||[];boundaryCount+=features.length;
+          if(features.length!==boundaryExpected?.feature_count)errors.push(`${boundaryPath} feature_count does not match the shard manifest`);
+          if(features.some(feature=>!expectedIds.has(feature.properties?.territory_id)))errors.push(`${boundaryPath} contains a boundary outside its country branch`);
+          if(features.some(feature=>data.territories.find(area=>area.id===feature.properties?.territory_id)?.level!==level))errors.push(`${boundaryPath} contains a boundary outside its declared level`);
+        }
+        const counts={territory_count:shard.territories?.length||0,observation_count:shard.observations?.length||0,boundary_count:boundaryCount,document_count:shard.documents?.length||0,comparison_count:shard.comparisons?.length||0};
         for(const [key,value] of Object.entries(counts))if(expected?.[key]!==value)errors.push(`${relative} ${key} does not match the shard manifest`);
         if((shard.observations||[]).some(row=>!expectedIds.has(row.territory_id)))errors.push(`${relative} contains an observation outside its country branch`);
         if((shard.boundaries?.features||[]).some(feature=>!expectedIds.has(feature.properties?.territory_id)))errors.push(`${relative} contains a boundary outside its country branch`);
@@ -65,15 +78,34 @@ export async function verifyRegionalDelivery(project,{requirePublishable=false}=
   }
   const audit=delivery?.independent_audit;
   if(!['pending','accept','reject','incomplete_audit'].includes(audit?.status))errors.push('independent_audit.status is invalid');
-  if(requirePublishable&&audit?.status!=='accept')errors.push('Independent audit must be ACCEPT before publication');
-  if(!requirePublishable&&audit?.status!=='accept')warnings.push('Independent audit is pending or not accepted; the candidate is not publishable.');
+  if(publicationGate&&audit?.status!=='accept')errors.push('Independent audit must be ACCEPT before publication');
+  if(!publicationGate&&audit?.status!=='accept')warnings.push('Independent audit is pending or not accepted; the candidate is not publishable.');
   if(delivery?.release?.public_status==='published'&&audit?.status!=='accept')errors.push('Public status cannot be published before independent audit ACCEPT');
-  if(requirePublishable&&delivery?.scope?.id==='M49:019'){
+  if(publicationGate&&delivery?.scope?.id==='M49:019'){
+    for(const field of ['auditor','task_thread_id','audited_commit','audited_dataset_sha256'])if(typeof audit?.[field]!=='string'||!audit[field].trim())errors.push(`independent_audit.${field} is required for an Americas publication audit`);
+    if(audit?.audited_dataset_sha256!==datasetHash)errors.push('independent_audit.audited_dataset_sha256 must match data/dashboard.json');
+    if(delivery?.release?.github_commit&&audit?.audited_commit!==delivery.release.github_commit)errors.push('independent_audit.audited_commit must match release.github_commit');
+    if(requirePublished){
+      for(const [field,label] of [['ftps_receipt','deployment'],['public_verification','public verification']]){
+        const relative=delivery?.release?.[field],filename=inside(root,relative);
+        if(typeof relative!=='string'||!relative.startsWith('evidence/')||!filename||!await exists(filename))errors.push(`Final ${label} receipt must be inside the candidate evidence package`);
+      }
+      if(delivery?.release?.public_status!=='verified')errors.push('release.public_status must be verified for post-publication verification');
+    }
     const matrix=await readJson('evidence/COUNTRY_COMPLETION_MATRIX.json');
     if(matrix&&data){
       const expected=data.territories.filter(area=>area.type==='country').map(area=>area.id),result=validateCountryCompletionMatrix(matrix,{expectedCountryIds:expected});
       errors.push(...result.errors.map(item=>`completion matrix: ${item}`));
+      if(data.analysis?.coverage?.source_review_complete_country_area_count!==result.source_review_complete_country_area_count)errors.push('Dataset coverage source-review count does not match the completion matrix');
+      if(data.analysis?.coverage?.country_edition_complete_country_area_count!==result.country_edition_complete_country_area_count)errors.push('Dataset coverage country-edition count does not match the completion matrix');
       if(result.country_edition_complete_country_area_count!==expected.length)errors.push(`All ${expected.length} Americas country editions must be complete before publication; matrix has ${result.country_edition_complete_country_area_count}. Source-review completion is not country-edition completion.`);
+    }
+    const preflight=await readJson('evidence/SOURCE_PREFLIGHT.json');
+    if(matrix&&preflight?.summary?.integrated_country_adapters!==matrix.broad_local_edition_country_area_count)errors.push('SOURCE_PREFLIGHT integrated_country_adapters does not match the matrix broad-local edition count');
+    const evidenceEntries=await readdir(path.join(root,'evidence'),{withFileTypes:true});
+    for(const entry of evidenceEntries.filter(item=>item.isFile()&&item.name.endsWith('_INTEGRATION_AUDIT.json'))){
+      const integration=await readJson(`evidence/${entry.name}`);
+      if(integration?.final_dataset_sha256!==datasetHash)errors.push(`${entry.name} is not bound to the final dataset SHA-256`);
     }
     const semantic=await readJson('evidence/COUNTRY_SEMANTIC_INVENTORY.json'),terminal=new Set(['integrated','not_adopted','unavailable','restricted','failed_with_evidence']);
     if(semantic){
@@ -85,7 +117,7 @@ export async function verifyRegionalDelivery(project,{requirePublishable=false}=
 }
 
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
-  const args=process.argv.slice(2),project=args[args.indexOf('--project')+1],requirePublishable=args.includes('--require-publishable');
-  if(!project){console.error('Usage: node scripts/verify-regional-delivery.mjs --project <directory> [--require-publishable]');process.exit(2);}
-  const result=await verifyRegionalDelivery(project,{requirePublishable});console.log(JSON.stringify(result,null,2));if(!result.ok)process.exitCode=1;
+  const args=process.argv.slice(2),project=args[args.indexOf('--project')+1],requirePublishable=args.includes('--require-publishable'),requirePublished=args.includes('--require-published');
+  if(!project){console.error('Usage: node scripts/verify-regional-delivery.mjs --project <directory> [--require-publishable|--require-published]');process.exit(2);}
+  const result=await verifyRegionalDelivery(project,{requirePublishable,requirePublished});console.log(JSON.stringify(result,null,2));if(!result.ok)process.exitCode=1;
 }
