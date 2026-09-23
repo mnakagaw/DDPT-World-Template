@@ -25,5 +25,5 @@ The final bundle was generated only after the exporter and its evidence inputs e
 - `npm run check`: PASS, 110 JavaScript modules and JSON templates.
 - `npm test`: PASS, 195/195 tests.
 - Deterministic regeneration: PASS. Re-running with the fixed origin commit and `--check` reproduced the saved bytes.
-- GitHub push: pending.
+- GitHub push: PASS. Branch `feat/kit-source-feedback` contains exporter commit `064ca314c610a60686d43f90b9b27729ac9b4414` and bundle commit `30de849`.
 - FTPS: not applicable because this revision does not change generated public-site behavior or assets.
