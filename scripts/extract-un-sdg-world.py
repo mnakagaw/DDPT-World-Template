@@ -24,7 +24,12 @@ SLICES = {
     "IT_USE_ii99": ("Internet use", "Connectivity", {"Age": "NA", "Sex": "BOTHSEX", "Location": "NA", "Education level": "NA"}),
     "SE_TOT_CPLR": ("Primary education completion", "Education", {"Age": "NA", "Sex": "BOTHSEX", "Location": "ALLAREA", "Education level": "PRIMAR"}),
     "SH_STA_MORT": ("Maternal mortality ratio", "Health", {"Age": "NA", "Sex": "FEMALE", "Location": "NA", "Education level": "NA"}),
+    "SL_TLF_UEM": ("Unemployment rate, age 15+", "Employment", {"Age": "15+", "Sex": "BOTHSEX", "Location": "NA", "Education level": "NA"}),
+    "SL_TLF_NEET": ("Youth not in employment, education or training, age 15–24", "Employment", {"Age": "15-24", "Sex": "BOTHSEX", "Location": "NA", "Education level": "NA"}),
+    "VC_IHR_PSRC": ("Intentional homicide victims per 100,000 people", "Safety", {"Age": "NA", "Sex": "BOTHSEX", "Location": "NA", "Education level": "NA"}),
 }
+
+UNITS = {"SH_STA_MORT": "PER_100000_LIVE_BIRTHS", "VC_IHR_PSRC": "PER_100000_POP"}
 
 
 def sha256(path: Path) -> str:
@@ -63,7 +68,7 @@ def main():
                 expected_quantile = "_T" if code == "SE_TOT_CPLR" else "NA"
                 if any(row.get(field) != expected for field, expected in dimensions.items()) or row["Quantile"] != expected_quantile or row["Reporting Type"] != "G" or any(row.get(field) not in {"NA", ""} for field in extra_dimensions):
                     continue
-                if row["Units"] not in {"PERCENT", "PER_100000_LIVE_BIRTHS"}:
+                if row["Units"] != UNITS.get(code, "PERCENT"):
                     continue
                 try:
                     value = float(row["Value"])
@@ -88,7 +93,7 @@ def main():
         rows = [row for row in observations if row["indicator_id"] == indicator_id]
         if not rows:
             raise ValueError(f"No exact observations for {code} and declared dimensions")
-        unit = "per 100,000 live births" if code == "SH_STA_MORT" else "%"
+        unit = "per 100,000 live births" if code == "SH_STA_MORT" else "per 100,000 people" if code == "VC_IHR_PSRC" else "%"
         indicators.append({"id": indicator_id, "name": name, "theme": theme, "unit": unit, "definition": descriptions[code] + f"; SDG series {code}; selected dimensions " + ", ".join(f"{key}={value}" for key, value in dimensions.items()) + f", Quantile={'_T' if code == 'SE_TOT_CPLR' else 'NA'}. International custodian series distributed through the UN SDG Global Database; may be an estimate rather than a census count.", "definition_id": f"un-sdg-2026q2-{code.lower()}", "population": "Exact published geographic row and declared statistical dimensions", "measurement_method": "UN SDG Global Database, custodian-agency series", "aggregation": "official_only", "series_family": "international_reference", "display_role": "supplementary", "period_policy": "same_period", "display_decimals": 1, "visualization": "percent_bar" if unit == "%" else "trend", "source_id": "un-sdg-2026q2-archive"})
     source = {"id": "un-sdg-2026q2-archive", "name": "UN SDG Global Database — 2026 Q2.2 archive", "publisher": "United Nations Statistics Division; original estimates and reports from named custodian agencies", "url": "https://unstats.un.org/sdgs/indicators/database/archive/", "status": "ready", "retrieved_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"), "reference_period": "2015–2025, varying by series and geographic row", "geographic_level": "world_multi_scope_series", "license": "UN SDG database terms; original custodian sources remain attributed", "raw_redistribution_status": "not_in_public_site", "source_files": [{"url": "https://unstats.un.org/sdgs/indicators/database/archive/2026_Q2.2_AllData_After_20260824_CSV.zip", "sha256": archive_hash, "bytes": args.archive.stat().st_size}], "series_custodians": {code: sorted(source_labels[code]) for code in SLICES}, "note": "Only exact UN M49 world, region and country/area rows with the recorded slice are adopted. The custom AreaData region is missing for non-additive rates. Some country/area codes have no comparable row."}
     summary = {"observations": len(observations), "by_indicator": {code: len([row for row in observations if row["indicator_id"] == f"UN_SDG_{code}"]) for code in SLICES}, "geographic_ids": len({row["territory_id"] for row in observations}), "periods": sorted({row["period"] for row in observations})}

@@ -40,7 +40,20 @@ test('all thirty members, exact zero and missing are retained in HTML, Markdown 
   assert.equal(missing.Value,'');assert.equal(missing.Status,'not_collected');assert.equal(missing.Comparable,'false');
   assert.match(missing['Boundary join'],/No boundary/);
   assert.equal(numericRows.filter(row=>row.Territory==='Same name').length,2);
-  assert.match(comparisonSummary(data,comparison),/29 of 30.*Range 0–100 people/);
+  assert.match(comparisonSummary(data,comparison),/29 of 30.*Minimum Same name \(city\): 0 people; maximum Same name \(municipality\): 100 people\. Gap 100 people\./);
+  assert.match(comparisonSummary(data,comparison),/not necessarily the whole region/);
+});
+test('percentage gaps use percentage points and exclude missing members',()=>{
+  const data=analysisFixture(),comparison=internalComparison(data,'river','water','2024');
+  const summary=comparisonSummary(data,comparison);
+  assert.match(summary,/2 of 30 member areas/);
+  assert.match(summary,/Minimum Same name \(city\): 0 %; maximum Same name \(municipality\): 90 %\. Gap 90 percentage points\./);
+  assert.match(comparisonSummary(data,comparison,'ja'),/30地域中2地域.*差：90 ポイント/);
+  assert.match(comparisonSummary(data,comparison,'es'),/Diferencia: 90 puntos porcentuales/);
+  const mixed={...comparison,rows:comparison.rows.map((row,index)=>index===0?{...row,period:'2023'}:row)};
+  assert.match(comparisonSummary(data,mixed),/\(2023\)/);
+  const rounded={...comparison,rows:comparison.rows.map(row=>row.comparable?{...row,value:row.value===0?-0.676:219.888}:row)};
+  assert.match(comparisonSummary(data,rounded,'ja'),/差：220\.56 ポイント（丸め前の値から計算）/);
 });
 test('same-parent selection exports its own missing value and its own direct child set',()=>{
   const data=analysisFixture(),city=initialState(data,'?territory=city&metric=people&period=2024');

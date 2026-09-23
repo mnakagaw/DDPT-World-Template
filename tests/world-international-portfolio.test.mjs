@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {indicatorsForTerritorialScope,initialState,evidenceCsv,seriesGeometry} from '../scaffold/site/model.mjs';
+import {indicatorsForTerritorialScope,initialState,evidenceCsv,seriesGeometry,areaObservationState} from '../scaffold/site/model.mjs';
 import {renderWppDemographics} from '../scaffold/site/un-demographics.mjs';
 
 function sample(){
@@ -20,6 +20,16 @@ test('supra-country diagnostic and evidence exclude national Census and unavaila
   assert.equal(initialState(data,'?territory=M49:019&metric=CENSUS').metric,'UN_WPP_POP_TOTAL');
   assert.doesNotMatch(evidenceCsv(data,'M49:019','2026'),/CENSUS/);
   assert.ok(indicatorsForTerritorialScope(data,'AAA').some(row=>row.id==='CENSUS'));
+});
+
+test('country-only international inflation can be compared without inventing a regional value',()=>{
+  const data=sample();
+  data.analysis.supranational_indicator_ids.push('IMF_INFLATION');
+  data.indicators.push({id:'IMF_INFLATION',name:'Annual CPI change',theme:'Economy',unit:'%',source_id:'imf',series_family:'international_reference',period_policy:'same_period'});
+  data.observations.push({territory_id:'AAA',indicator_id:'IMF_INFLATION',period:'2024',value:4.2,status:'observed',source_id:'imf'});
+  assert.ok(indicatorsForTerritorialScope(data,'M49:019').some(row=>row.id==='IMF_INFLATION'));
+  assert.equal(initialState(data,'?territory=M49:019&metric=IMF_INFLATION&period=2024').metric,'IMF_INFLATION');
+  assert.equal(areaObservationState(data,'M49:019','IMF_INFLATION','2024').value,null);
 });
 
 test('age pyramid compares 2000 in gray with selected year and sex split as a pie',()=>{

@@ -1,6 +1,6 @@
 // Shared, dependency-free data and export semantics. Safe to import in Node tests.
 import {planningSettings, planningDocuments, documentPeriod, periodText, categoryFor, categoryLabels, findingLabels, officialStatus, documentEvidence, findingValue, selectedGaps, acquisitionLabel} from './planning.mjs';
-import {observationMeaning,observationContext,isTerminalTerritory} from './analysis.mjs';
+import {observationMeaning,observationContext,isTerminalTerritory,comparisonSet} from './analysis.mjs';
 import {resolvedObservation,aggregationRule,LATEST_AVAILABLE_PERIOD} from './aggregation.mjs';
 export const finite = value => typeof value === 'number' && Number.isFinite(value);
 export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
@@ -163,7 +163,11 @@ export function indicatorsForTerritorialScope(dataset, selectedId) {
     // portfolio. National census rows, even if present in the canonical
     // research database, are never shown as regional indicator cards.
     const portfolio=new Set(dataset.analysis?.supranational_indicator_ids||[]);
-    if(portfolio.size)return dataset.indicators.filter(indicator=>portfolio.has(indicator.id)&&dataset.observations.some(row=>row.territory_id===selectedId&&row.indicator_id===indicator.id&&row.status==='observed'));
+    if(portfolio.size){
+      const compared=new Set(comparisonSet(dataset,selectedId).members.map(area=>area.id));
+      const available=new Set(dataset.observations.filter(row=>row.status==='observed'&&(row.territory_id===selectedId||compared.has(row.territory_id))).map(row=>row.indicator_id));
+      return dataset.indicators.filter(indicator=>portfolio.has(indicator.id)&&available.has(indicator.id));
+    }
     // Older regional editions have no separate international portfolio.
     // Preserve their catalog and missing-state behavior unchanged.
     return dataset.indicators;
