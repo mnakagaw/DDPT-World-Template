@@ -4,7 +4,8 @@
 
 - `config/country-source-registry.json`：国勢調査、計画法、計画手引き、既存計画、公式地域コード・境界の所在。ラテンアメリカ20か国の既存調査を読み込み、ウガンダの確認先を追加している。
 - `config/common-subnational-sources.json`：複数国で再利用できる国際機関・国際事業の地域別、地点別、格子別データ源。
-- `config/external-source-registries.json`：Public [Census Dashboard Kit](https://github.com/mnakagaw/Census-Dashboard-Kit)のJICA対象142か国preflightと4参照国台帳を、上流commit・件数・SHA-256付きで参照する。世界全country/area台帳の代替ではない。
+- `config/external-source-registries.json`：Public [Census Dashboard Kit](https://github.com/mnakagaw/Census-Dashboard-Kit) v1.8.1の世界250国・地域source preflight、JICA対象142か国preflight、4参照国台帳を、上流commit・件数・SHA-256付きで参照する。
+- `data/census/world-census-listings-v1.8.1.json`：固定した世界preflightからISO3で正規化したUNSD Census所在台帳。国別値ではなく、調査開始時の所在情報である。
 
 台帳にURLがあることは、その国の数値を取得済み、地理を照合済み、DDPTへ採用済みという意味ではない。次の段階を順に記録する。
 
@@ -13,6 +14,10 @@
 3. `data_acquired`：許可された原本を取得し、要求・応答・取得日時・hashを保存した。
 4. `geography_matched`：統計コード、地域型、境界版、有効期間を照合した。
 5. `indicator_accepted`：定義、単位、母集団、分子分母、期間と採用理由を確定した。
+
+UNSD Census所在台帳では、`latest_un_census_listing`（UNSDが掲載する最新の実施済み調査）と`latest_un_census_linked_listing`（そのうちUNSDリンクがある最新調査）を分ける。各掲載には `link_status`、`acquisition_status`、`content_verification_status`、`adoption_status` を別々に持たせる。リンクの存在を資料取得、本文確認、数値採用へ自動昇格しない。
+
+アルジェリアでは、最新掲載は2020 round／2022年9月25日でUNSDリンクなし、リンク付き最新掲載は2010 round／2008年4月16～30日である。AreaDataの国内Census系列には確認済み2008年データだけを使い、2022年掲載を2022年データへ読み替えない。2022年等の国際推計は別系列として保持する。
 
 ## 国別作成で自動生成するもの
 
@@ -73,4 +78,4 @@ Gitには台帳、アダプター、スキーマ、取得手順、小規模で�
 
 現在の事前所在調査は22か国（ラテンアメリカ20か国、ウガンダ、ベリーズ）。ベリーズは国勢調査所在のみ確認済みで、計画制度は未調査として保持する。その他の国も共通候補は抽出できるが、国勢調査・計画制度の所在は未調査として出力される。全世界の所在調査と全sourceの収集アダプター完成は、この版の完了範囲ではない。
 
-別途、Public KitにはJICA対象142か国の発見用アドレスがある。この142件は、国別統計局入口、UNSD、FAOLEX、JICA／外務省、geoBoundaries、SALB／HDX、WDI等から探索を始めるためのpreflightである。本リポジトリの22か国の詳細な所在調査件数へ加算せず、国別案件で最新版、原本、本文、地域粒度、地理対応を再確認する。固定参照版とhashは `config/external-source-registries.json` を正とする。
+別途、Public Kitには世界250国・地域の国別統計局・UNSD Census所在台帳と、JICA対象142か国の発見用アドレスがある。JICA対象142件は、UNSD、FAOLEX、JICA／外務省、geoBoundaries、SALB／HDX、WDI等から探索を始めるためのpreflightである。本リポジトリの22か国の詳細な所在調査件数へ加算せず、国別案件で最新版、原本、本文、地域粒度、地理対応を再確認する。固定参照版とhashは `config/external-source-registries.json` を正とする。
