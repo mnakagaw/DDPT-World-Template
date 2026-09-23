@@ -2,7 +2,7 @@
 
 **AreaDataの地域探索・データベース・計画資料と、国名を指定してDDPT型の国別ダッシュボードを作るための共通テンプレートです。**
 
-実行テンプレート：0.10.2。データschema：0.2（任意項目で後方互換を維持）。共通UX仕様：0.5 candidate（改善後のv1.0採用は別途検証）。
+実行テンプレート：0.10.3。データschema：0.2（任意項目で後方互換を維持）。共通UX仕様：0.5 candidate（改善後のv1.0採用は別途検証）。
 
 地域診断の上部には分析対象を選ぶ位置図・階層選択・基本情報を置き、下部の各指標には対象内部の比較地図・全件表を置く。上部で地域を選ぶとその全体を即時診断し、下部の図・行への注目は上部の対象・他指標・URLを変えない。市・県の後に同じ所属先のRegion／Subregionを選び直した場合も、下位を解除して上位全体へ切り替える。指標・年を保持し、親の値が未取得なら親の欠測を示す。[操作契約](docs/02_COMMON_SPEC.md)を参照。
 
@@ -37,7 +37,9 @@ START_HERE.mdから読み、取得可能な公式データの収集から、動�
 
 世界入口は2026-09-13の実取得で248の国・地域、4分野3,544公表値を保存した。世界値は公式WLD系列を使い、同一範囲の公式系列を取得していない大陸・広域は欠測を維持する。「Central America + Caribbean」はUN M49の013＋029を組み合わせた独自の探索区分で、Mexicoを含む。国際指標と国内統計の定義・単位・母集団を自動同一化しない。国版は別datasetとして接続し、国内行政階層・法定計画主体はその国の資料で確認する。参照図形に未結合・省略された79地域も台帳・表から消さない。[取得範囲と再現手順](docs/WORLD_ADAPTER.md)を参照。
 
-0.10ではUN M49 Americas（019）の57国・地域を、Northern America、Central America + Caribbean、South Americaから探索できるアメリカ大陸adapterを追加した。0.10.0と0.10.1の再点検で見つかった`latest-available`表示、国を越えた指標URL、完成判定の問題を受け、0.10.2は[57国・地域の完成契約](docs/AMERICAS_COMPLETION_CONTRACT.md)を適用した。情報源の点検完了と国別版の完成を分け、公式Censusまたは同等人口、必要なsource domain、15テーマの採用値または根拠付きterminal gapを国ごとに確認する。現在の0.10.2候補は57/57の国別完成判定を満たし、国際系列、各国Census、取得できた国内階層、計画資料を一つの探索・診断・データベース・計画導線へ統合している。全1,491 rawファイルと185 XLSXも最終台帳へ照合する。値が未公表・定義不一致・取得不能のテーマは欠測のまま残り、すべての国が同じ指標数・国内粒度を持つという意味ではない。公開サイトは独立監査と公開ゲートを通した版へ切り替える。
+0.10ではUN M49 Americas（019）の57国・地域を、Northern America、Central America + Caribbean、South Americaから探索できるアメリカ大陸adapterを追加した。0.10.2の[独立再監査](docs/evidence/americas-v0.10.2-rejected/INDEPENDENT_REAUDIT_2026-09-21.md)は、情報源レビューの終端状態を57件の国別版完成として数えていたため **REJECT** とした。現行の[完成契約](docs/AMERICAS_COMPLETION_CONTRACT.md)は、`not_adopted`、`unavailable`、`restricted`、`failed_with_evidence`をsource reviewだけに算入する。統計診断版の完成には15テーマのreview、国内人口・age/sex、国内地域の実観測10指標以上、8診断群中6群以上を要求し、planning readinessは別集計にする。さらに各source domainは、保持した実ファイル、実SHA-256、表・sheet・セル・API・ページ等の具体locatorへ結び、行政コード・境界には地理対応を要求する。2026-09-21の再生成候補はsource review 28/57、country edition completion 28/57（ARG、BOL、BRA、CAN、CHL、COL、CRI、CUB、DOM、ECU、GTM、GUY、HND、HTI、JAM、MEX、NIC、PAN、PER、PRI、PRY、SGS、SLV、SUR、TTO、URY、USA、VEN）。WPP全国系列55件、Census履歴、国内branchは別の被覆指標で、国別版完成数ではない。全2,126 rawファイルと301 XLSX（210 unique＋91 byte-identical duplicates）、12,654 semantic recordsは台帳・実bytes・SHA-256へ照合済みで、未完成の国・地域は主要国を優先した後、残る島嶼国・海外領域を公式資料から順次統合する。
+
+0.10.3はPublic Census Dashboard Kit v1.8.1の世界250国・地域source preflightをcommitとSHA-256で固定して取り込む。`latest_un_census_listing`（UNSDの最新実施掲載）と`latest_un_census_linked_listing`（UNSDリンク付きの最新実施掲載）を別項目として保持し、掲載・リンク・資料取得・内容確認・データ採用を別状態で表示・CSV出力する。アルジェリアは2022年の掲載情報を2022年Censusデータとして扱わず、確認済みの2008年国内データだけを採用対象にする。国際比較系列は国内Census系列から分離する。
 
 最初のAreaData公開試作は**中米7か国**（Belize、Guatemala、El Salvador、Honduras、Nicaragua、Costa Rica、Panama）。これはUN M49 013（Mexicoを含む）とは異なるAreaDataの明示的な試作範囲である。国別・国内地域診断は国勢調査を主系列にする。0.7では7か国の公式全国人口と採用可能な国内階層を取得・正規化した。国勢調査年が違うため、地域値は「最新利用可能国勢調査による混合基準年」とし、Belize 2022、Guatemala 2018、El Salvador 2024、Honduras 2013、Nicaragua 2005、Costa Rica 2022、Panama 2023を構成表に明記する。国の全国値があれば、その国内の自治体欠測は地域合計へ影響しない。率・平均は単純平均せず、不完全時は全体値を出さない。0.8ではUN WPP 2024 Rev.1の同一年人口推計を別系列として追加し、国勢調査との差を誤差幅と扱わない。画面は英語・スペイン語・日本語を切り替えられ、初回はブラウザ言語、明示選択後は保存した言語を使う。URLの`lang`指定を最優先し、画面内リンクにも引き継ぐ。
 
@@ -115,7 +117,7 @@ npm run check
 npm test
 ```
 
-CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)、ベリーズ・グアテマラ国勢調査の実収集と部分統合は[0.6検証記録](docs/VALIDATION_v0.6.md)、7か国の公式人口・国内階層・混合基準年集計は[0.7検証記録](docs/VALIDATION_v0.7.md)、UN人口比較・国勢調査リンク・3言語UIは[0.8検証記録](docs/VALIDATION_v0.8.md)、Census採用年地図・調査履歴は[0.9検証記録](docs/VALIDATION_v0.9.md)、国別制作の完成工程は[0.9.1検証記録](docs/VALIDATION_v0.9.1.md)、独立完成監査工程は[0.9.2検証記録](docs/VALIDATION_v0.9.2.md)、アメリカ大陸入口は[0.10検証記録](docs/VALIDATION_v0.10.md)、撤回された旧判定は[0.10.1検証記録](docs/VALIDATION_v0.10.1.md)、厳格化した再構築は[0.10.2検証記録](docs/VALIDATION_v0.10.2.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
+CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2検証記録](docs/VALIDATION_v0.2.md)、上位再選択等は[0.2.1検証記録](docs/VALIDATION_v0.2.1.md)、計画・資料機能は[0.3検証記録](docs/VALIDATION_v0.3.md)、世界入口・指標別内部比較・診断出力は[0.4検証記録](docs/VALIDATION_v0.4.md)、共通sourceと国別所在台帳は[0.4.1検証記録](docs/VALIDATION_v0.4.1.md)、中米7か国・完全被覆集計・MariaDB基礎は[0.5検証記録](docs/VALIDATION_v0.5.md)、ベリーズ・グアテマラ国勢調査の実収集と部分統合は[0.6検証記録](docs/VALIDATION_v0.6.md)、7か国の公式人口・国内階層・混合基準年集計は[0.7検証記録](docs/VALIDATION_v0.7.md)、UN人口比較・国勢調査リンク・3言語UIは[0.8検証記録](docs/VALIDATION_v0.8.md)、Census採用年地図・調査履歴は[0.9検証記録](docs/VALIDATION_v0.9.md)、国別制作の完成工程は[0.9.1検証記録](docs/VALIDATION_v0.9.1.md)、独立完成監査工程は[0.9.2検証記録](docs/VALIDATION_v0.9.2.md)、アメリカ大陸入口は[0.10検証記録](docs/VALIDATION_v0.10.md)、撤回された旧判定は[0.10.1検証記録](docs/VALIDATION_v0.10.1.md)、厳格化した再構築は[0.10.2検証記録](docs/VALIDATION_v0.10.2.md)、Kit v1.8.1世界Census所在台帳の統合は[0.10.3検証記録](docs/VALIDATION_v0.10.3.md)に保存します。42の受入シナリオは案件の採用範囲に応じて検証し、シナリオの追加を合格件数と扱いません。
 
 ## 維持するモデル
 
@@ -133,7 +135,7 @@ CIはWindows/Linux、Node 22/24で検証します。初期収集の結果は[0.2
 
 [ウガンダ2案件の14教訓](docs/research/uganda-lessons-2026-09-14.md)を国別作業手順へ反映した。原資料の全項目棚卸し、付表・地域報告書の探索、代表地域での事前確認、同じ上位への再選択、計画様式の必要欄、実出力と性能を[12観点の補助確認票](templates/COUNTRY_LESSON_AUDIT.md)で確認する。AIが案件ごとの証拠と判定を記入する手順であり、12観点の自動検査実装や合格を意味しない。
 
-[Census Dashboard Kitから得た国別制作・独立監査工程](docs/research/census-dashboard-kit-country-lessons-2026-09-17.md)も国別作業手順へ反映した。公式資料目録の全件処置、原表の全数値列、6分野、地域コード・境界、計画制度、実出力を閉じ、別担当が[独立完成監査](templates/INDEPENDENT_AUDIT.md)で原資料・意味・最新年・比較集合・実出力を確認してから公開する。Public KitのJICA対象142か国preflightと監査手順は[commit・hash固定の外部台帳](config/external-source-registries.json)から参照する。国別通常画面の指標別最新版と、世界・広域・研究DBの期間・履歴は役割を分ける。0.10では地域版にも専用の受入票・独立監査票・公開ゲートを実装した。国別Wordのdelivery gateは依然としてCensus Dashboard Kit側の機能である。
+[Census Dashboard Kitから得た国別制作・独立監査工程](docs/research/census-dashboard-kit-country-lessons-2026-09-17.md)も国別作業手順へ反映した。公式資料目録の全件処置、原表の全数値列、6分野、地域コード・境界、計画制度、実出力を閉じ、別担当が[独立完成監査](templates/INDEPENDENT_AUDIT.md)で原資料・意味・最新年・比較集合・実出力を確認してから公開する。Public Kit v1.8.1の世界250国・地域source preflight、JICA対象142か国preflight、監査手順は[commit・hash固定の外部台帳](config/external-source-registries.json)から参照する。国別通常画面の指標別最新版と、世界・広域・研究DBの期間・履歴は役割を分ける。0.10では地域版にも専用の受入票・独立監査票・公開ゲートを実装した。国別Wordのdelivery gateは依然としてCensus Dashboard Kit側の機能である。
 
 [DDPT・ウガンダ公開版の3ページ比較](docs/research/ddpt-uganda-template-comparison-2026-09-14.md)では、ユーザビリティと国別制作の容易性、共通図表、計画資料、投資情報の段階的な搭載を検討した。2026-09-14の公開画面と実装構造に基づく提案であり、共通UXの採用決定や実装変更ではない。
 

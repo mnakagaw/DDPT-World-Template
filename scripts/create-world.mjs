@@ -6,6 +6,7 @@ import { generateSite } from '../lib/generate.mjs';
 import { validateDataset } from '../lib/validate.mjs';
 import { parseArgs, isMain, reportError } from '../lib/cli.mjs';
 import { readTemplateReference } from './create-country.mjs';
+import {attachWorldCensusListings,loadBundledWorldCensusListings} from '../lib/world-census-preflight.mjs';
 
 export async function createWorld({ out, sourceDir, startYear, endYear, collect = collectWorld, generate = generateSite } = {}) {
   const outDir = path.resolve(out || 'generated/world');
@@ -15,7 +16,7 @@ export async function createWorld({ out, sourceDir, startYear, endYear, collect 
   await mkdir(outDir);
   const rawDir = path.join(outDir, 'raw'); await mkdir(rawDir);
   try {
-    const dataset = await collect({ rawDir, sourceDir, startYear, endYear, onProgress: message => console.log(message) });
+    const dataset = attachWorldCensusListings(await collect({ rawDir, sourceDir, startYear, endYear, onProgress: message => console.log(message) }),await loadBundledWorldCensusListings());
     const validation = validateDataset(dataset), content = JSON.stringify(dataset, null, 2) + '\n';
     await mkdir(path.join(outDir, 'evidence'));
     await writeFile(path.join(outDir, 'evidence/validation.json'), JSON.stringify({ ...validation, dataset_sha256: createHash('sha256').update(content).digest('hex'), checked_at: new Date().toISOString() }, null, 2) + '\n');

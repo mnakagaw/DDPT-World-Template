@@ -286,6 +286,16 @@ export function csvCell(value) {
   return `"${text.replaceAll('"', '""')}"`;
 }
 export function makeCsv(rows) { return '\uFEFF' + rows.map(row => row.map(csvCell).join(',')).join('\r\n') + '\r\n'; }
+export function censusSourcePreflightCsv(dataset) {
+  const registry=dataset.analysis?.census_source_preflight,records=registry?.records||[];
+  return makeCsv([
+    ['Country ID','Country','UNSD latest completed round','UNSD latest completed round period','UNSD latest completed date','UNSD latest link status','UNSD latest primary URL','Latest UNSD-linked completed round','Latest UNSD-linked round period','Latest UNSD-linked date','Latest UNSD-linked primary URL','Listing acquisition status','Listing content verification status','Listing adoption status','National statistics office','National statistics office URL','Checked at','UNSD dates source','Kit commit','Kit source SHA-256'],
+    ...records.map(record=>{
+      const latest=record.latest_un_census_listing,linked=record.latest_un_census_linked_listing,status=latest||linked;
+      return [record.country_id,record.name,latest?.round,latest?.round_period,latest?.date_text,latest?.link_status,safeUrl(latest?.primary_url),linked?.round,linked?.round_period,linked?.date_text,safeUrl(linked?.primary_url),status?.acquisition_status,status?.content_verification_status,status?.adoption_status,record.national_statistics_office?.agency,safeUrl(record.national_statistics_office?.url),record.checked_at,safeUrl(record.unsd_census_dates_source),registry.source?.commit,registry.source?.sha256];
+    })
+  ]);
+}
 export function evidenceRows(dataset, territoryId, period, indicatorIds) {
   const area = dataset.territories.find(row => row.id === territoryId);
   const allowed=indicatorsForTerritorialScope(dataset,territoryId);
