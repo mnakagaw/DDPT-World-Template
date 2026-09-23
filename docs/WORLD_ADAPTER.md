@@ -72,6 +72,8 @@ node scripts/verify-regional-delivery.mjs --project generated/americas --require
 
 [地域版受入条件](../templates/REGIONAL_ACCEPTANCE.md)は分類・集計・国別値の分離・階層リセット・3言語・CSVを対象にする。[地域版独立監査](../templates/REGIONAL_INDEPENDENT_AUDIT.md)はKitの制作後監査と同様に、テストや自己申告ではなく原資料・dataset・実画面・取得物を別担当が追跡する。大陸・広域は法定計画主体ではないため、国別Wordや共通計画様式を受取条件にしない。
 
+世界・大陸・広域のカバー範囲を拡張し、公開公式sourceの確認結果をcommitした後は、`npm run export:kit-source-feedback`でKit向けbundleを更新する。bundleに入れるのは国別に特定できる公式・国際機関sourceの所在と再利用注意だけで、集計値、観測値、raw原本、資格情報を含めない。bundle commitとpathをKit担当へ通知し、Kit側のdry-run後に取り込む。
+
 ## 実取得の検証記録
 
 2026-09-13 10:24 UTCの取得版は、UN 248 country/area、276選択地域、Worldを含む216のWB economy対応、4分野3,544公表値。原本11応答を保存し、図形は169国・25広域、79 country/areaは未結合。統計の実測年は人口・Internetが2021–2025、Health・Electricityが2021–2024。2026の値を推定補完していない。

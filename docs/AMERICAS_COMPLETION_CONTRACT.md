@@ -33,6 +33,8 @@ The process states remain separate: `identified`, `accessed`, `acquired`, `inspe
 
 Run `python scripts/refresh-americas-source-inventories.py --project <project>` after the final country acquisition pass and before the completion matrix. It reconciles every file under `raw`, accounts for every XLSX as a unique workbook or byte-identical duplicate, preserves existing adjudications, and records every remaining numeric field as explicitly reviewed but not adopted. `validate-americas-evidence.mjs` rejects any missing or extra raw/XLSX inventory path.
 
+After a country or regional coverage increment is committed, run `npm run export:kit-source-feedback` from the template repository. Commit the resulting `evidence/KIT_SOURCE_FEEDBACK.json` separately and notify the Census Dashboard Kit maintainer with the bundle commit and absolute path. This feedback step exports only verified public official or international source metadata and reuse cautions; it never exports observations, raw source bodies, credentials or unverified candidates.
+
 For multi-country releases, use `node scripts/apply-country-edition-batch.mjs --project <project> --spec <batch.json>`. The spec is a non-empty JSON array of `{ "bundle": "relative/path.json", "manifest": "relative/path.json" }` pairs, resolved relative to the spec file. The batch rejects duplicate or mismatched country IDs, applies every country in memory, validates the combined dataset, writes the shared evidence ledgers, and generates the site once. It does not relax any country contract or publication gate.
 
 ## Post-build display rule

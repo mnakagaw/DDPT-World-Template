@@ -7,6 +7,17 @@
     "version": "1.8.1",
     "commit": "6622118aa702a6f1d8eeaa84e1c5982a0fb954b5"
   },
+  "feedback_contract": {
+    "repository": "https://github.com/mnakagaw/Census-Dashboard-Kit",
+    "version": "1.9.0",
+    "commit": "c67e2e2f2144cf59d6735ce26910933a481337ce",
+    "contract_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/c67e2e2f2144cf59d6735ce26910933a481337ce/docs/AREADATA_SOURCE_FEEDBACK.md",
+    "contract_sha256": "eb290289ef5d7b43247817c553d83e5a7cc837cf8920ec16b51a718ba09f39f8",
+    "schema_path": "schemas/areadata-source-feedback.schema.json",
+    "schema_url": "https://raw.githubusercontent.com/mnakagaw/Census-Dashboard-Kit/c67e2e2f2144cf59d6735ce26910933a481337ce/schemas/areadata-source-feedback.schema.json",
+    "schema_sha256": "3425f0355acaf9aa0a2845084f142a5c52c74b7a18b12c908412e0552af86d32",
+    "use": "Export verified public official and international source locations back to Kit without observations, raw artifacts or credentials."
+  },
   "registries": [
     {
       "id": "world-source-preflight",
