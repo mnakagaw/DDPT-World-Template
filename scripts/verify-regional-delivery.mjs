@@ -63,7 +63,9 @@ export async function verifyRegionalDelivery(project,{requirePublishable=false,r
         }
         const counts={territory_count:shard.territories?.length||0,observation_count:shard.observations?.length||0,boundary_count:boundaryCount,document_count:shard.documents?.length||0,comparison_count:shard.comparisons?.length||0};
         for(const [key,value] of Object.entries(counts))if(expected?.[key]!==value)errors.push(`${relative} ${key} does not match the shard manifest`);
-        if((shard.observations||[]).some(row=>!expectedIds.has(row.territory_id)))errors.push(`${relative} contains an observation outside its country branch`);
+        // A country's own domestic series may move into its lazy shard along
+        // with descendants; international reference rows remain in the base.
+        if((shard.observations||[]).some(row=>row.territory_id!==countryId&&!expectedIds.has(row.territory_id)))errors.push(`${relative} contains an observation outside its country branch`);
         if((shard.boundaries?.features||[]).some(feature=>!expectedIds.has(feature.properties?.territory_id)))errors.push(`${relative} contains a boundary outside its country branch`);
       }
     }

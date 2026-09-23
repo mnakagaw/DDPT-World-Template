@@ -158,7 +158,16 @@ export function indicatorsForTerritorialScope(dataset, selectedId) {
   if(!['regional','world'].includes(dataset.analysis?.kind))return dataset.indicators;
   const lineage=territoryLineage(dataset,selectedId);
   const country=lineage.find(area=>area.level==='country' || area.type==='country');
-  if(!country)return dataset.indicators;
+  if(!country){
+    // A supra-country diagnostic has its own internationally harmonized
+    // portfolio. National census rows, even if present in the canonical
+    // research database, are never shown as regional indicator cards.
+    const portfolio=new Set(dataset.analysis?.supranational_indicator_ids||[]);
+    if(portfolio.size)return dataset.indicators.filter(indicator=>portfolio.has(indicator.id)&&dataset.observations.some(row=>row.territory_id===selectedId&&row.indicator_id===indicator.id&&row.status==='observed'));
+    // Older regional editions have no separate international portfolio.
+    // Preserve their catalog and missing-state behavior unchanged.
+    return dataset.indicators;
+  }
   const branch=new Set([country.id]);
   let added=true;
   while(added){
@@ -521,9 +530,12 @@ export function seriesGeometry(series, width=600, height=170) {
   const values = series.map(row => observedValue(row)).filter(finite);
   if (!values.length) return null;
   const min=Math.min(...values),max=Math.max(...values),span=max-min || Math.max(Math.abs(max)*0.05,1);
-  const points = series.map((row,index) => {const value=observedValue(row);return value === null ? null : {x:40+(width-60)*(series.length===1?0.5:index/(series.length-1)),y:16+(height-46)*(max-value)/span,row};});
+  const annual=series.every(row=>/^\d{4}$/.test(String(row.period)));
+  const years=annual?series.map(row=>Number(row.period)):[];
+  const first=annual?Math.min(...years):0,last=annual?Math.max(...years):0;
+  const points = series.map((row,index) => {const value=observedValue(row);return value === null ? null : {x:40+(width-60)*(series.length===1?0.5:annual&&last>first?(years[index]-first)/(last-first):index/(series.length-1)),y:16+(height-46)*(max-value)/span,row};});
   const segments=[]; let segment=[];
-  for (const point of points) {if(point){segment.push(point);}else if(segment.length){segments.push(segment);segment=[];}}
+  for (const point of points) {if(point){if(annual&&segment.length&&Number(point.row.period)-Number(segment.at(-1).row.period)>1){segments.push(segment);segment=[];}segment.push(point);}else if(segment.length){segments.push(segment);segment=[];}}
   if(segment.length)segments.push(segment);
   return {min,max,points:points.filter(Boolean),segments:segments.map(line => line.map(point=>`${point.x.toFixed(2)},${point.y.toFixed(2)}`).join(' ')),width,height};
 }

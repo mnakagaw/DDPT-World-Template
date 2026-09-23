@@ -47,6 +47,7 @@ export function nationalSourceMatches(data,source,area) {
   return typeof source.country_id==='string' && !!source.country_id && area.country_id===source.country_id;
 }
 export function worldSeriesSourceMatches(data,source,area) {
+  if(source?.geographic_level==='world_multi_scope_series')return ['world','regional'].includes(data?.analysis?.kind) && !!area && (area.type==='country'||area.type==='exploration_scope');
   if(source?.geographic_level==='world_region_series')return ['world','regional'].includes(data?.analysis?.kind) && area?.type==='exploration_scope' && source.territory_id===area.id;
   if(source?.geographic_level!=='world_country_series')return true;
   const kind=data?.analysis?.kind;

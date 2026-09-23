@@ -1,6 +1,6 @@
 {
   "name": "ddpt-world-template",
-  "version": "0.10.5",
+  "version": "0.11.0",
   "private": true,
   "description": "Country-driven DDPT dashboard collection and generation toolkit",
   "type": "module",
@@ -25,6 +25,9 @@
     "extract:census:central-america": "python scripts/extract-central-america-census.py",
     "extract:un-population:central-america": "python scripts/extract-un-wpp-central-america.py",
     "extract:un-population:americas": "python scripts/extract-un-wpp-americas.py",
+    "extract:un-population:world": "python scripts/extract-un-wpp-world.py",
+    "extract:un-sdg:world": "python scripts/extract-un-sdg-world.py",
+    "build:world-portfolio": "node scripts/build-world-portfolio.mjs",
     "build:country": "node scripts/build-country.mjs",
     "validate:country": "node scripts/validate-country.mjs",
     "serve": "node scripts/serve.mjs",

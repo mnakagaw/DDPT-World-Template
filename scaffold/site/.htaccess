@@ -2,3 +2,6 @@
   AddType text/javascript .mjs
   AddType application/json .json
 </IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE application/json text/javascript application/javascript text/css text/html
+</IfModule>

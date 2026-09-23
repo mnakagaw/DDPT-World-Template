@@ -13,7 +13,7 @@ export function seriesSourceLabel(indicator,observation,period=observation?.peri
 export function renderSourceAttribution(indicator,observation,source,period=observation?.period,language='en'){
   if(!source)return '<span>Source not recorded</span>';
   const page=sourcePage(source),series=seriesSourceLabel(indicator,observation,period,language),same=page===safeUrl(source.url);
-  return `<div class="source-attribution"><strong>${externalLink(page,series,'series-source-link')}</strong><small>${e(source.publisher || 'Publisher not recorded')}</small>${same?`<span class="source-document">${e(source.name)}</span>`:externalLink(source.url,source.name,'source-document')}</div>`;
+  return `<div class="source-attribution"><strong>${externalLink(page,series,'series-source-link')}</strong><small>${e(observation?.source_publisher || source.publisher || 'Publisher not recorded')}</small>${same?`<span class="source-document">${e(source.name)}</span>`:externalLink(source.url,source.name,'source-document')}</div>`;
 }
 const valueText = (data,value,indicator) => displayValue(value,data.country.locale || 'en',indicator?.display_decimals ?? 2);
 const rowUnit = (row,indicator) => row.unit || row.observation?.unit || indicator.unit;
