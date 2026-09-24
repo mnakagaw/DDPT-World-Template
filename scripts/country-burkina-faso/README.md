@@ -33,6 +33,7 @@ node scripts/build-country.mjs --project $project
 node scripts/country-burkina-faso/check-outputs.mjs $project
 Copy-Item scripts/country-burkina-faso/screen-statistical-tables.py "$project/scripts/"
 python "$project/scripts/screen-statistical-tables.py"
+python "$project/scripts/build-census-review-queue.py"
 python "$project/scripts/verify-first-census-tables.py"
 python scripts/country-burkina-faso/build-diagnostic-word.py --project $project --territory BFA --out "$project/exports/Territorial Development Diagnostic.docx"
 # Render the DOCX with the isolated document renderer and inspect every page.

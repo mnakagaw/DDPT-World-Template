@@ -52,7 +52,7 @@ assert len(page_by_line) == len(lines)
 heading = re.compile(r"^\s*Tableau\s+([IVX]+\.\d+[A-Za-z]?)\s*:", re.I)
 numeric = re.compile(r"(?<![A-Za-z])(?:\d{1,3}(?:[ .]\d{3})*|\d+)(?:,\d+)?(?![A-Za-z])")
 anchors = [(i, match.group(1).upper()) for i, line in enumerate(lines)
-           if i > 900 and (match := heading.match(line))]
+           if page_by_line[i] >= 27 and (match := heading.match(line))]
 by_id = {}
 for index, table_id in anchors:
     by_id.setdefault(table_id, []).append(index)
