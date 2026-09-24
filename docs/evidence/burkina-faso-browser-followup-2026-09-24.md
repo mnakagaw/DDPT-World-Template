@@ -1,0 +1,11 @@
+# Burkina Faso browser follow-up — partial acceptance evidence
+
+Checked on 2026-09-24 against the local country project at `http://127.0.0.1:4181/`, dataset SHA-256 `53d17c6d10f60cdea5fcb8c317e43e37123c680a37d9af386875f9eb0715baa2`, using headless Google Chrome 154.0.8037.57. These are independent spot checks, not a complete A01–A42 acceptance run or a public-site check.
+
+The territorial, thematic and planning routes were loaded at widths 1366, 768, 375 and 320 px. All 12 route-width combinations rendered `Burkina Faso` as the first page heading and had no document-level horizontal overflow (`scrollWidth` equalled viewport width). At 320 px, the territorial header, period control and national hierarchy selector remained visible. This does not test actual 200% browser zoom, keyboard-only use, long-page printing or downloaded artifacts, so A15 remains **未実施**.
+
+With the native hierarchy selectors on the territorial page, the sequence Burkina Faso → Centre → Kadiogo → Komki-Ipala → the same Centre parent changed the heading and URL at every step. The first displayed census-population value was 20,505,155 → 3,030,384 → 3,030,384 → 22,553 → 3,030,384. Re-selecting Centre cleared the Kadiogo and commune selection while retaining the indicator and `latest-available` period. Browser Back then restored Komki-Ipala, its 22,553 value and commune URL; Forward restored Centre, its 3,030,384 value and regional URL. The 2019 Centre and Kadiogo totals happen to be equal in this source; the commune-to-parent transition demonstrates that the displayed value changed. This covers central parts of A21 and A23, but not every indicator, material, export, memo or delayed-response case; both scenarios remain **未実施**.
+
+The selected reference polygon count was one for Centre and Kadiogo. There was no selected polygon for the national view or Komki-Ipala, which is consistent with the withheld unverified commune-boundary join; this check does not certify the geography or maps for other areas.
+
+The local run logs and 320 px screenshot are in ignored `tmp/bfa-parent-full-audit.log`, `tmp/bfa-responsive-audit.log` and `tmp/bfa-territorial-320-current.png`. They are supporting work files, not committed acceptance artifacts. The findings above are the durable record.

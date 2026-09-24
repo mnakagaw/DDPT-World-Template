@@ -18,15 +18,15 @@
 | A12 | 未実施 | Saved notes/backup flow, if exposed by this build, remains to be exercised. |
 | A13 | 未実施 | Long page navigation and complete print remain. |
 | A14 | 未実施 | One national desktop screenshot inspected; matched baseline and duplicate-content review remain. |
-| A15 | 未実施 | 1366/768/375/320 widths, actual 200% zoom and keyboard-to-download remain. |
+| A15 | 未実施 | All three routes had no document-level horizontal overflow at 1366/768/375/320 px; actual 200% zoom and keyboard-to-download remain. See [browser follow-up](burkina-faso-browser-followup-2026-09-24.md). |
 | A16 | 未実施 | Full BFA localization review across pages and exports remains. |
 | A17 | 対象外 | AI narrative generation is not adopted in the BFA project; no authenticated generation flow or generated text is offered. |
 | A18 | 未実施 | Slow/offline background and source refresh failure remain. |
 | A19 | 未実施 | Direct country values are separate from local totals; source-level reconciliation and overlap cases remain. |
 | A20 | 未実施 | No Burkina Faso staff usability session has occurred. |
-| A21 | 未実施 | Current local Chrome native-select replay Burkina Faso→Centre→Kadiogo→Komki-Ipala→same Centre changed title/URL/map, cleared child selection, retained metric/period; all indicator values, materials and exports after reset remain. See `docs/evidence/burkina-faso-browser-spotcheck-2026-09-24.md`. |
+| A21 | 未実施 | Chrome native-select replay Burkina Faso→Centre→Kadiogo→Komki-Ipala→same Centre changed title/URL/map and first census-population value, cleared child selection, retained metric/period; all indicator values, materials and exports after reset remain. See [browser spot check](burkina-faso-browser-spotcheck-2026-09-24.md) and [follow-up](burkina-faso-browser-followup-2026-09-24.md). |
 | A22 | 未実施 | Same-region, another-region, parent-whole and national reset sequences remain. |
-| A23 | 未実施 | History, reload, delayed child response and memo persistence after parent reselection remain. |
+| A23 | 未実施 | Back restored Komki-Ipala and 22,553; Forward restored Centre and 3,030,384. Reload, delayed child response and memo persistence after parent reselection remain. See [browser follow-up](burkina-faso-browser-followup-2026-09-24.md). |
 | A24 | 未実施 | Map-to-hidden-row, bottom-row and missing-row focus sequence remains. |
 | A25 | 未実施 | Fourteen 2019 national/region pyramids checked numerically; the national Word pyramid was rendered. Missing-region browser switch and full source/order visual check remain. |
 | A26 | 対象外 | No optional water-background layer is adopted in this BFA build. |
