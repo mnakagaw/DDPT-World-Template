@@ -136,10 +136,23 @@ if profile:
     male, female = sum(profile["male"]), sum(profile["female"])
     assert male + female == population["value"]
     doc.add_paragraph(f"The 2019 source counts {number(male)} males and {number(female)} females. These figures sum to the selected area's reported census population. Source: INSD RGPH 2019, Table I.20.")
+else:
+    age_bands = [(label, latest(indicator_id)) for label, indicator_id in (
+        ("Age 0-4", "BFA_RGPH2019_AGE_0_4"),
+        ("Age 5-14", "BFA_RGPH2019_AGE_5_14"),
+        ("Age 15-24", "BFA_RGPH2019_AGE_15_24"),
+        ("Age 25-64", "BFA_RGPH2019_AGE_25_64"),
+        ("Age 65+", "BFA_RGPH2019_AGE_65_PLUS"),
+    )]
+    if all(row and row["period"] == "2019" for _, row in age_bands):
+        assert sum(row["value"] for _, row in age_bands) == population["value"]
+        doc.add_picture(bar_chart([(label, row["value"]) for label, row in age_bands],
+                                  "Population by broad age group, 2019", "people"), width=Inches(6.8))
+        doc.add_paragraph("The five age groups sum to the selected area's 2019 census population. These are source-reported counts, not a projection. Source: INSD RGPH 2019, communal disparities age-group table.")
 
-if area["level"] == "national":
+if area["level"] == "national" or profile:
     doc.add_page_break()
-selected = [
+national_selected = [
     "BFA_RGPH2019_SCHOOL_ATTENDING_6_16_REGIONAL",
     "BFA_RGPH2019_NET_POSTPRIMARY_ENROLMENT_REGIONAL",
     "BFA_RGPH2019_NET_SECONDARY_ENROLMENT_REGIONAL",
@@ -148,6 +161,16 @@ selected = [
     "BFA_RGPH2019_DISABILITY_PREVALENCE_5PLUS_REGIONAL",
     "BFA_INSD_POVERTY_INCIDENCE_MODEL",
 ]
+local_selected = [
+    "BFA_INSD_LITERACY_15_64",
+    "BFA_INSD_OUT_OF_SCHOOL_6_11",
+    "BFA_INSD_POST_PRIMARY_NET_ATTENDANCE",
+    "BFA_INSD_YOUTH_EMPLOYMENT_15_24",
+    "BFA_INSD_HOUSEHOLD_WATER_IMPROVED",
+    "BFA_INSD_HOUSEHOLD_ELECTRIC_LIGHT",
+    "BFA_INSD_POVERTY_INCIDENCE_MODEL",
+]
+selected = national_selected if area["level"] == "national" else local_selected
 available = [(indicators[id], latest(id)) for id in selected if id in indicators and latest(id)]
 doc.add_heading("Selected social and economic evidence", 1)
 table = doc.add_table(rows=1, cols=4)
@@ -183,7 +206,22 @@ if area["level"] == "national":
     doc.add_picture(bar_chart(values[:8], "Largest 2019 census regions by population", "people"), width=Inches(6.8))
     doc.add_paragraph("The chart shows eight of the 13 historical census regions. It is not a complete 2025 region ranking. The full 2019 regional set remains available in the AreaData dataset and CSV export.")
 else:
-    doc.add_paragraph("Area comparisons require the same indicator, year, definition, population and geographic edition. The AreaData comparison table and CSV retain all registered children, including missing values; this document does not turn partial coverage into a parent total.")
+    children = [child for child in data["territories"] if child["parent_id"] == area["id"]]
+    compare_children = len(children) >= 2
+    peers = children if compare_children else [peer for peer in data["territories"] if peer["parent_id"] == area["parent_id"]]
+    values = [(peer["name"], latest("BFA_RGPH2019_POP_TOTAL", peer["id"])["value"])
+              for peer in peers if latest("BFA_RGPH2019_POP_TOTAL", peer["id"])]
+    values.sort(key=lambda pair: pair[1], reverse=True)
+    if values:
+        shown = values[:8]
+        selected_pair = next((pair for pair in values if pair[0] == area["name"]), None)
+        if selected_pair and selected_pair not in shown:
+            shown = shown[:7] + [selected_pair]
+        doc.add_picture(bar_chart(shown, "2019 census population of comparable areas", "people"), width=Inches(6.8))
+        peer_note = " The selected area is included." if not compare_children else ""
+        doc.add_paragraph(f"The figure displays {len(shown)} of {len(values)} registered {'child' if compare_children else 'peer'} areas with a 2019 census count.{peer_note} It does not turn incomplete child coverage into a parent total; consult the full AreaData comparison CSV for every registered area and missing value.")
+    else:
+        doc.add_paragraph("No same-level 2019 census population comparison is available for this area. Missing members are not treated as zero.")
 
 if area["level"] == "national":
     doc.add_page_break()
@@ -192,9 +230,17 @@ if profile:
     young = sum(profile["male"][:3]) + sum(profile["female"][:3])
     share = young / population["value"] * 100
     doc.add_paragraph(f"Children aged 0 to 14 account for {number(young)} of {number(population['value'])} residents, or {share:.1f}% by an AreaData calculation from the 2019 age-sex table. This describes age structure in the census period; it does not by itself establish school demand, migration or a policy priority.")
+elif all(latest(indicator_id) for indicator_id in ("BFA_RGPH2019_AGE_0_4", "BFA_RGPH2019_AGE_5_14")):
+    young = latest("BFA_RGPH2019_AGE_0_4")["value"] + latest("BFA_RGPH2019_AGE_5_14")["value"]
+    share = young / population["value"] * 100
+    doc.add_paragraph(f"Residents aged 0 to 14 account for {number(young)} of {number(population['value'])} residents, or {share:.1f}% by an AreaData calculation from the two 2019 census age groups. This is a historical age composition, not a current service-demand forecast.")
 education = latest("BFA_RGPH2019_NET_POSTPRIMARY_ENROLMENT_REGIONAL")
 if education:
     doc.add_paragraph(f"The published 2019 net post-primary enrolment rate for {area['name']} is {education['value']:.1f}%. Its source population is ages 12 to 15. The rate should be reviewed beside local school records before setting a target; it is not the same measure as primary attendance or gross enrolment.")
+else:
+    education = latest("BFA_INSD_POST_PRIMARY_NET_ATTENDANCE")
+    if education:
+        doc.add_paragraph(f"The 2019 post-primary net attendance measure for {area['name']} is {education['value']:.1f}%. It comes from the communal-disparities source and is kept separate from the regional enrolment measure; this document does not equate their denominators or definitions.")
 poverty = latest("BFA_INSD_POVERTY_INCIDENCE_MODEL")
 if poverty:
     doc.add_paragraph(f"The monetary poverty figure of {poverty['value']:.1f}% refers to a 2018 small-area model that uses the 2019 census frame. It is displayed as a modelled estimate, not as a directly enumerated 2019 census count or a current poverty rate.")
@@ -216,8 +262,12 @@ doc.add_heading("Sources and reproducibility", 1)
 planning_ids = {"bfa-mef-pcd-guide-2024", "bfa-mef-prd-guide-2024", "bfa-collectivities-code-2025"}
 for source_id in sorted({row["source_id"] for _, row in available} | {population["source_id"]} | planning_ids):
     source = sources[source_id]
-    doc.add_paragraph(f"{source['name']} — {source['url']} — retrieved {source.get('retrieved_at', 'not recorded')}", style="Normal")
-doc.add_paragraph(f"AreaData dataset edition {data['generated_at']}. Dataset SHA-256 {sha256((project / 'data/dashboard.json').read_bytes()).hexdigest()}. Source PDF hashes and selected numeric-column locators are preserved in the project evidence register. Values in this document are copied from the selected area observations; derived values are labelled as AreaData calculations.")
+    paragraph = doc.add_paragraph(style="Normal")
+    paragraph.paragraph_format.space_after = Pt(3)
+    paragraph.add_run(f"{source['name']} — {source['url']} — retrieved {source.get('retrieved_at', 'not recorded')}").font.size = Pt(8.5)
+paragraph = doc.add_paragraph()
+paragraph.paragraph_format.space_after = Pt(3)
+paragraph.add_run(f"AreaData dataset edition {data['generated_at']}. Dataset SHA-256 {sha256((project / 'data/dashboard.json').read_bytes()).hexdigest()}. Source PDF hashes and selected numeric-column locators are preserved in the project evidence register. Values in this document are copied from the selected area observations; derived values are labelled as AreaData calculations.").font.size = Pt(8.5)
 
 footer = section.footer.paragraphs[0]
 footer.alignment = WD_ALIGN_PARAGRAPH.CENTER

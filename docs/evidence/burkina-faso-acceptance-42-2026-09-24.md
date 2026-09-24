@@ -13,7 +13,7 @@
 | A07 | 未実施 | Schema distinguishes missing and zero; BFA UI cases for every state remain. |
 | A08 | 未実施 | ADM3 geometry withheld; all missing-boundary/numerator cases remain. |
 | A09 | 未実施 | Public national references exist; unauthenticated retrieval affordance and reason for unavailable local documents remain. No login workflow was adopted. |
-| A10 | 未実施 | Generated Markdown/HTML/CSV content checked at four levels in `OUTPUT_QA.json`. A country-specific national Word review artifact passed dataset value/year/source checks and four-page visual render (`WORD_QA.json`); selected-area browser download, four-level Word/CSV/screen matching and actual print remain. PDF/PNG are not adopted site outputs. |
+| A10 | 未実施 | Generated Markdown/HTML/CSV content checked at four levels in `OUTPUT_QA.json`. National, Centre, Kadiogo and Komki-Ipala Word review artifacts each passed seven dataset value/year/source checks and visual page render (`WORD_QA*.json`); selected-area **browser download**, four-level Word/CSV/screen matching and actual print remain. PDF/PNG are not adopted site outputs. |
 | A11 | 未実施 | Reverse-response and failed-load simulation remains. |
 | A12 | 未実施 | Saved notes/backup flow, if exposed by this build, remains to be exercised. |
 | A13 | 未実施 | Long page navigation and complete print remain. |
@@ -44,7 +44,7 @@
 | A38 | 未実施 | 351 census communes registered; legal/current municipality identity and stopping behavior remain. |
 | A39 | 未実施 | Comparison map/table focus isolation and parent-change refresh remain. |
 | A40 | 未実施 | No parent value is inferred from incomplete children; full comparability, boundary and legend edge cases remain. |
-| A41 | 未実施 | Four-level generated output content and national four-page Word render checked; browser download, first/last/all rows across screen/CSV/Word and actual print remain. National HTML is about 9.7 MB. |
+| A41 | 未実施 | Four-level generated output content and national four-page/three lower-area three-page Word renders checked; browser download, first/last/all rows across screen/CSV/Word and actual print remain. National HTML is about 9.7 MB. |
 | A42 | 未実施 | Common tests pass; old URL/dataset, quick switch and parent reselect integration replay remain. |
 
 Count: **0 合格 / 0 不合格 / 39 未実施 / 3 対象外**. A scenario with incomplete evidence is 未実施, not 合格. Required A01–A10, A13–A16 and A21–A23 are not accepted. Overall decision: **NOT ACCEPTED**. No independent auditor has reviewed this edition.

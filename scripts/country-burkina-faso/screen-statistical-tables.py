@@ -17,6 +17,18 @@ INVENTORY = ROOT / "evidence/SOURCE_TABLE_INVENTORY.csv"
 OUT = ROOT / "evidence/TABLE_COLUMN_SCREEN.csv"
 COL_OUT = ROOT / "evidence/TABLE_NUMERIC_COLUMN_CANDIDATES.csv"
 DATA = json.loads((ROOT / "data/dashboard.json").read_text(encoding="utf-8"))
+PRINTED_PAGE_DECISIONS = {
+    "I.1": "reviewed_crosscheck_only",
+    "I.2": "reviewed_deferred_collective_household_definition",
+    "I.3": "reviewed_deferred_historical_comparability",
+    "I.4": "reviewed_crosscheck_only",
+    "I.5": "reviewed_crosscheck_only",
+    "I.6": "reviewed_candidate_not_adopted_urban_rural_definition",
+    "I.7": "reviewed_crosscheck_only",
+    "V.23": "reviewed_deferred_migration_type_definition",
+    "VI.5": "reviewed_crosscheck_only",
+    "IX.23": "reviewed_deferred_unemployed_count_not_rate",
+}
 
 
 def key(value):
@@ -29,7 +41,14 @@ assert len(regions) == 13
 with INVENTORY.open(encoding="utf-8-sig", newline="") as stream:
     inventory = list(csv.DictReader(stream))
 assert len(inventory) == 581
-lines = TEXT.read_text(encoding="utf-8").splitlines()
+raw_text = TEXT.read_text(encoding="utf-8")
+lines = raw_text.splitlines()
+page_by_line = []
+page = 1
+for line in raw_text.splitlines(keepends=True):
+    page_by_line.append(page)
+    page += line.count("\f")
+assert len(page_by_line) == len(lines)
 heading = re.compile(r"^\s*Tableau\s+([IVX]+\.\d+[A-Za-z]?)\s*:", re.I)
 numeric = re.compile(r"(?<![A-Za-z])(?:\d{1,3}(?:[ .]\d{3})*|\d+)(?:,\d+)?(?![A-Za-z])")
 anchors = [(i, match.group(1).upper()) for i, line in enumerate(lines)
@@ -39,6 +58,7 @@ for index, table_id in anchors:
     by_id.setdefault(table_id, []).append(index)
 all_ids = {row["table_id"].upper() for row in inventory}
 assert all_ids <= set(by_id), sorted(all_ids - set(by_id))[:20]
+assert set(PRINTED_PAGE_DECISIONS) <= all_ids
 
 rows = []
 column_rows = []
@@ -77,6 +97,7 @@ for item in inventory:
     for position in range(modal_count):
         column_rows.append({
             "table_id": table_id,
+            "first_pdf_page": page_by_line[starts[0]],
             "numeric_position_1_based": position + 1,
             "modal_numeric_tokens_in_line": modal_count,
             "matching_candidate_lines": len(modal_lines),
@@ -86,11 +107,13 @@ for item in inventory:
             "semantic_column_name": "unverified",
             "denominator": "unverified",
             "period_and_geography": "unverified",
-            "adoption_decision": "pending_printed_page_and_semantic_review",
+            "adoption_decision": "see_printed_page_review; no_new_indicator_adopted" if table_id in PRINTED_PAGE_DECISIONS
+                                 else "pending_printed_page_and_semantic_review",
         })
     rows.append({
         "table_id": table_id,
         "adoption_status": item["adoption_status"],
+        "first_pdf_page": page_by_line[starts[0]],
         "body_occurrences": len(starts),
         "first_text_line": starts[0] + 1,
         "numeric_candidate_lines": numeric_rows,
@@ -101,8 +124,10 @@ for item in inventory:
         "header_excerpt": " | ".join(headers[:3])[:250],
         "numeric_row_examples": " | ".join(sample)[:370],
         "review_disposition": "selected_column_adopted" if item["adoption_status"] == "adopted_selected_columns"
-                             else "pending_semantic_and_pdf_page_review",
-        "required_next_check": "Inspect printed page, full numeric column names, population/denominator, geography, period, units and source method; decide adopt, incompatible, or out of scope with reason.",
+                             else PRINTED_PAGE_DECISIONS.get(table_id, "pending_semantic_and_pdf_page_review"),
+        "required_next_check": "See Burkina Faso printed-page review evidence under docs/evidence/; no new indicator was adopted."
+                               if table_id in PRINTED_PAGE_DECISIONS else
+                               "Inspect printed page, full numeric column names, population/denominator, geography, period, units and source method; decide adopt, incompatible, or out of scope with reason.",
     })
 
 with OUT.open("w", encoding="utf-8-sig", newline="") as stream:

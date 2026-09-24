@@ -20,7 +20,7 @@ word = Path(args.docx)
 doc = Document(word)
 assert doc.paragraphs[0].text == "Territorial Development Diagnostic"
 assert area["name"] in doc.paragraphs[1].text
-assert len(doc.inline_shapes) >= 2 if area["level"] == "national" else True
+assert len(doc.inline_shapes) >= 2, (area["id"], len(doc.inline_shapes))
 table = doc.tables[0]
 assert [cell.text for cell in table.rows[0].cells] == ["Indicator", "Value", "Year", "Source table"]
 indicators = {item["id"]: item for item in dataset["indicators"]}
@@ -38,13 +38,16 @@ for row in table.rows[1:]:
                            for source in dataset["sources"] if source["id"] == observation["source_id"]))
     matched.append({"indicator_id": indicator["id"], "value": observation["value"], "year": year,
                     "source_id": observation["source_id"]})
+assert len(matched) == 7, (area["id"], len(matched))
 text = "\n".join(paragraph.text for paragraph in doc.paragraphs)
 population = observations[(area["id"], "BFA_RGPH2019_POP_TOTAL", "2019")]["value"]
 assert f"{population:,}" in text
 assert "No signed area-specific plan" in text
 assert "not an adopted local development plan" in text
 pages = sorted(Path(args.render_dir).glob("page-*.png"))
-assert len(pages) >= 3 and all(page.stat().st_size > 50_000 for page in pages)
+assert len(pages) >= 3 and all(page.stat().st_size > 50_000 and
+                               page.stat().st_mtime_ns >= word.stat().st_mtime_ns for page in pages), \
+    "Missing, empty or stale page render"
 report = {
     "area": area["name"], "territory_id": area["id"],
     "dataset_sha256": sha256(dataset_path.read_bytes()).hexdigest(),
@@ -55,6 +58,7 @@ report = {
     "page_images": [page.name for page in pages],
     "review_limit": "Automated value/year/source checks and PNG page count; human visual inspection of all rendered pages is separately recorded. No browser download, print dialogue, or independent audit is certified.",
 }
-out = project / "evidence/WORD_QA.json"
+suffix = "" if area["level"] == "national" else "-" + sha256(area["id"].encode()).hexdigest()[:10]
+out = project / f"evidence/WORD_QA{suffix}.json"
 out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(json.dumps({"matched_rows": len(matched), "pages": len(pages), "docx_sha256": report["docx_sha256"]}))
