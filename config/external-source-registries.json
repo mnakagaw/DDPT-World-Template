@@ -85,13 +85,13 @@
     {
       "country_ids": ["BFA", "BGD", "LAO", "UGA"],
       "bundle_path": "evidence/KIT_SOURCE_FEEDBACK.json",
-      "bundle_commit": "7cd02125fdec4b693a075c7ade9c0c057420a38d",
-      "bundle_sha256": "ec5e99cbdc752ecef6ecf2d0a6c1560b0c049caf4e22741614d7a969f6f01b19",
+      "bundle_commit": "355fdefad39f662b98d5d73bc466d2f2f1e5c22e",
+      "bundle_sha256": "2281ea467d24508462c3508e55a913bb22b6dc2aa683b049d7c5c53aa490ca7c",
       "kit_registry_path": "config/areadata-source-feedback.json",
-      "kit_import_commit": "fefd82e2a2ed380eb17244e4f15b67279e2ea90f",
+      "kit_import_commit": "6325bbb85347af2a12a77f9593b3e5de8560397b",
       "source_location_count": 21,
       "evidence_stage": "official_location_identified",
-      "meaning": "The 21-location bundle includes 14 BFA leads. Kit imported two newly located BFA candidates and updated 19 existing leads; no Kit country project acquired or adopted their data."
+      "meaning": "The 21-location bundle includes 14 BFA leads. Kit imported two newly located BFA candidates and updated 19 existing leads; a subsequent import flagged the conflicting 2019 fertility values in the statistical tables and final report. No Kit country project acquired or adopted their data."
     }
   ]
 }
