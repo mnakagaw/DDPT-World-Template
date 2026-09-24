@@ -1,0 +1,190 @@
+{
+  "schema_version": "1.0",
+  "produced_by": "AreaData",
+  "exported_at": "2026-09-24T03:35:17.182Z",
+  "origin_commit": "1658b44ca98dbccc3fcd9b3c82fbdca5a8852389",
+  "sources": [
+    {
+      "iso3": "BGD",
+      "source_id": "BGD_BGD_BBS_PRELIMINARY_2022",
+      "role": "census_results",
+      "title": "Population and Housing Census 2022: Preliminary Report",
+      "publisher": "Bangladesh Bureau of Statistics",
+      "url": "https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "national"
+      ],
+      "reference_periods": [
+        "2022"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Reused from the Kit Bangladesh project, not newly discovered by AreaData. Recheck the current BBS page and exact report before acquisition; AreaData independent audit and redistribution-terms review are pending.",
+      "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BGD",
+      "source_id": "BGD_BGD_BBS_COMMUNITY_SERIES_2022",
+      "role": "table_catalog",
+      "title": "Population and Housing Census 2022: District Community Series (64 workbooks)",
+      "publisher": "Bangladesh Bureau of Statistics",
+      "url": "https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "district",
+        "lower local area"
+      ],
+      "reference_periods": [
+        "2022"
+      ],
+      "formats": [
+        "XLSX",
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Reused from the Kit Bangladesh project, not newly discovered by AreaData. Verify each district workbook and local geography independently; AreaData audit and source-terms review are pending.",
+      "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LAO",
+      "source_id": "LAO_LAO_PHC_2015",
+      "role": "census_results",
+      "title": "Results of Population and Housing Census 2015",
+      "publisher": "Lao Statistics Bureau / UNFPA Lao PDR",
+      "url": "https://www.lsb.gov.la/sdg/en/17-19-2/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "national",
+        "province",
+        "district"
+      ],
+      "reference_periods": [
+        "2015"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Source-site public access terms; redistribution status reviewed per retained file",
+      "reuse_note": "Reused from the Kit Lao project, not newly discovered by AreaData. This is the detailed 2015 census, not published 2025 local census results. Recheck report and geography; AreaData independent audit is pending.",
+      "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LAO",
+      "source_id": "LAO_LAO_COD_PS",
+      "role": "machine_readable_data",
+      "title": "Lao PDR Subnational Population Statistics 2024",
+      "publisher": "UNFPA / Lao Statistics Bureau, distributed by HDX",
+      "url": "https://data.humdata.org/dataset/cod-ps-lao",
+      "authority_type": "international_organization",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "province"
+      ],
+      "reference_periods": [
+        "2024"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "https://data.humdata.org/about/license",
+      "reuse_note": "Reused from the Kit Lao project, not newly discovered by AreaData. UNFPA/LSB 2024 population statistics distributed via HDX are not 2024 census counts; recheck definitions, geography and redistribution terms.",
+      "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UGA",
+      "source_id": "UGA_UGA_LGDP_CENSUS_NORMALIZED",
+      "role": "census_catalog",
+      "title": "UBOS NPHC 2024 subcounty profiles — Uganda-LGDP normalized extraction",
+      "publisher": "Uganda Bureau of Statistics",
+      "url": "https://statistics.ubos.org/nphc/report?cat=resources",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "national",
+        "region",
+        "subregion",
+        "district",
+        "subcounty-equivalent"
+      ],
+      "reference_periods": [
+        "2024"
+      ],
+      "formats": [
+        "HTML",
+        "XLSX"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "AreaData adapted Uganda-LGDP normalized UBOS 2024 census data. The original UBOS workbook was not present in the adapter source checkout; reacquire and verify official originals and scope, including APAA, before use. Independent AreaData audit is pending.",
+      "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UGA",
+      "source_id": "UGA_UGA_PLAN_LGDP_GUIDELINES_2020",
+      "role": "planning_guidance",
+      "title": "Local Government Development Planning Guidelines, second edition",
+      "publisher": "NPA",
+      "url": "https://npa.go.ug/wp-content/uploads/2026/07/LOCAL-GOVERNMENT-DEVELOPMENT-PLANNING-GUIDELINES-2020.pdf?x56883",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "district",
+        "lower local government"
+      ],
+      "reference_periods": [
+        "2020/21–2024/25"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "AreaData inherited this NPA guidance location through Uganda-LGDP resources. Verify the exact edition, applicability and PDF before use; AreaData independent audit and redistribution-terms review are pending.",
+      "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UGA",
+      "source_id": "UGA_UGA_PLAN_NPA_PLAN_CATALOG",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "NPA local government plan catalogue",
+      "publisher": "NPA",
+      "url": "https://npa.go.ug/local-government-development-plans/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "district",
+        "city",
+        "municipality"
+      ],
+      "reference_periods": [
+        "2025/26–2029/30"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "NPA local-government plan catalogue location only. Area-specific plans, dates, duplicates and content must be checked individually; no plan is assumed current or adopted in Kit.",
+      "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    }
+  ]
+}
