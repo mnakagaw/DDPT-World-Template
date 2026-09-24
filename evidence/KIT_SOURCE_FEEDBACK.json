@@ -1,9 +1,212 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-24T04:13:47.522Z",
-  "origin_commit": "31a0986014701f23793f32e4503a1eb3a793fc17",
+  "exported_at": "2026-09-24T11:42:08.142Z",
+  "origin_commit": "5cbafb1a02c8eca7b68a53718809923f9e3ad043",
   "sources": [
+    {
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_INSD_RGPH2019_LOCALITIES",
+      "role": "census_results",
+      "title": "Fichier des localités du 5e RGPH (2019)",
+      "publisher": "Institut national de la statistique et de la démographie (INSD)",
+      "url": "https://microdata.insd.bf/index.php/catalog/69/download/270",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "national",
+        "region (2019)",
+        "province (2019)",
+        "commune (2019)"
+      ],
+      "reference_periods": [
+        "2019 census; June 2022 publication"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official 2019 locality population by sex and age, including source-noted estimates for security-affected places. Use the 2019 13-region/45-province/351-commune geography; do not relabel it as the 2025 17-region/47-province system. Recheck raw redistribution terms.",
+      "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_MEF_PCD_GUIDE_2024",
+      "role": "planning_guidance",
+      "title": "Guide méthodologique de planification locale: PCD (December 2024)",
+      "publisher": "Ministère de l’Économie et des Finances",
+      "url": "https://www.finances.gov.bf/fileadmin/user_upload/storage/fichiers/GMPL_PCD_Version_definitive_1.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "commune"
+      ],
+      "reference_periods": [
+        "2024-12"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "December 2024 communal development-plan (PCD) guide predates the 2025 territorial code and administrative reform. Check the guide's current applicability and the chosen locality's legal planning authority; no local plan is implied.",
+      "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_MEF_PRD_GUIDE_2024",
+      "role": "planning_guidance",
+      "title": "Guide méthodologique de planification locale: PRD (December 2024)",
+      "publisher": "Ministère de l’Économie et des Finances",
+      "url": "https://www.finances.gov.bf/fileadmin/user_upload/storage/fichiers/GMPL_PRD_Version_definitive_1.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "region"
+      ],
+      "reference_periods": [
+        "2024-12"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "December 2024 regional development-plan (PRD) guide predates the 2025 territorial code and administrative reform. Do not equate a 2019 statistical region with a current planning body without legal crosswalk.",
+      "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_COLLECTIVITIES_CODE_2025",
+      "role": "planning_law",
+      "title": "Loi n°024-2025/ALT portant Code général des collectivités territoriales",
+      "publisher": "Assemblée législative de transition / Académie de Police du Burkina Faso",
+      "url": "https://www.academiedepolice.bf/index.php/telechargement/category/25-deconcentration-et-decentralisation?download=226:code-general-des-colectivite",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "region",
+        "commune"
+      ],
+      "reference_periods": [
+        "2025-12-30"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Law no. 024-2025/ALT cover and parliamentary adoption were checked. The 114-page posted PDF is scanned; its article-level requirements and present applicability were not text-verified. Verify exact articles and current consolidated status before prescribing a planning index.",
+      "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_PLD_MONITORING_2024",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Rapport national 2024 sur les plans locaux de développement",
+      "publisher": "Ministère de l’Économie et des Finances, DGDT",
+      "url": "https://www.finances.gov.bf/fileadmin/user_upload/storage/fichiers/MEF_RAPPORT_NATIONAL_2024_SUIVI_PLD_FINAL.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "national",
+        "region",
+        "commune"
+      ],
+      "reference_periods": [
+        "2024 reporting; November 2025 publication"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "National 2024 monitoring report on local development plans, published in 2025. It is a planning-system reference, not evidence that any selected commune's plan or budget was obtained or approved. Check any area-specific document separately.",
+      "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_INSD_COMMUNAL_CONTRACEPTIVE_MODEL_2023",
+      "role": "table_catalog",
+      "title": "Disparités communales de la pratique contraceptive au Burkina Faso",
+      "publisher": "Institut national de la statistique et de la démographie (INSD)",
+      "url": "https://microdata.insd.bf/index.php/catalog/69/download/272",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "province (2019)",
+        "commune (2019)"
+      ],
+      "reference_periods": [
+        "2015 outcome model, 2019 census covariates; August 2023 report"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "This is a modelled 2015 outcome using 2019 census covariates, not 2019 contraceptive prevalence. Three ambiguous commune name matches were withheld; review the crosswalk and raw reuse terms.",
+      "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_INSD_POVERTY_ATLAS_2019",
+      "role": "table_catalog",
+      "title": "RGPH 2019 Volume 3: Mesure et cartographie de la pauvreté",
+      "publisher": "Institut national de la statistique et de la démographie (INSD)",
+      "url": "https://microdata.insd.bf/index.php/catalog/69/download/275",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "national",
+        "region (2019)",
+        "province (2019)",
+        "commune (2019)"
+      ],
+      "reference_periods": [
+        "2018 household survey with 2019 census frame; Annexes 5-9 use RGPH 2019"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Volume 3 Annex 4 monetary-poverty values are small-area estimates combining EHCVM 2018 with 2019 census geography, not directly enumerated census poverty. Annexes 5-9 report distinct census measures. Two whole-city commune aggregates and four incomplete rows were withheld; recheck definitions, geography, and redistribution terms.",
+      "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_INSD_RGPH2019_STATISTICAL_TABLES",
+      "role": "table_catalog",
+      "title": "Résultats du 5e RGPH: volume des tableaux statistiques",
+      "publisher": "Institut national de la statistique et de la démographie (INSD)",
+      "url": "https://web2.insd.bf/sites/default/files/2024-06/Volume%20des%20tableaux%20statistiques_%205e%20RGPH.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "national",
+        "region (2019)"
+      ],
+      "reference_periods": [
+        "2019 census; 2022 publication"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official statistical-table volume has 581 identified table headings. AreaData adopted columns from only eight tables, including age-sex Table I.20. Inspect the remaining tables and every numeric column before claiming full adoption; regional rates are not commune rates.",
+      "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "artifact_sha256": null
+    },
     {
       "iso3": "BGD",
       "source_id": "BGD_BGD_BBS_PRELIMINARY_2022",

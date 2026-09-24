@@ -39,10 +39,12 @@ test('exporter reads a selected country source without publishing local paths or
   }
 });
 
-test('committed bundle retains the first three country source-location leads', async () => {
+test('committed bundle retains four country source-location leads', async () => {
   const bundle = JSON.parse(await readFile(path.join(repository, 'evidence/KIT_SOURCE_FEEDBACK.json'), 'utf8'));
-  for (const iso3 of ['BGD', 'LAO', 'UGA']) assert.ok(bundle.sources.some(source => source.iso3 === iso3));
-  assert.ok(bundle.sources.length >= 7);
+  for (const iso3 of ['BFA', 'BGD', 'LAO', 'UGA']) assert.ok(bundle.sources.some(source => source.iso3 === iso3));
+  assert.ok(bundle.sources.length >= 15);
+  assert.equal(bundle.sources.filter(source => source.iso3 === 'BFA').length, 8);
+  assert.ok(bundle.sources.filter(source => source.iso3 === 'BFA').every(source => source.origin_evidence_path === 'docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md'));
   assert.ok(bundle.sources.every(source => source.evidence_stage === 'official_location_identified'));
   assert.ok(bundle.sources.every(source => source.artifact_sha256 === null));
   assert.ok(bundle.sources.every(source => source.origin_evidence_path.startsWith('docs/evidence/')));
