@@ -31,7 +31,7 @@ tables = {}
 for identifier, title in table_headings:
     tables.setdefault(identifier.upper(), title.strip())
 assert len(tables) == 581, len(tables)
-adopted_tables = {"I.20", "III.9", "VII.11", "VII.50", "VII.55", "VII.65", "VII.74",
+adopted_tables = {"I.20", "II.6", "III.9", "III.11", "VII.11", "VII.50", "VII.55", "VII.65", "VII.74",
                   "VIII.7", "VIII.19", "VIII.27", "VIII.43", "VIII.50", "IX.1", "IX.22", "XII.4"}
 assert adopted_tables <= tables.keys()
 with (EVIDENCE / "SOURCE_TABLE_INVENTORY.csv").open("w", encoding="utf-8-sig", newline="") as stream:
@@ -49,7 +49,7 @@ with (EVIDENCE / "SOURCE_TABLE_INVENTORY.csv").open("w", encoding="utf-8-sig", n
 selected_indicators = [item for item in DATA["indicators"]
                        if item.get("source_id") == "bfa-insd-rgph2019-statistical-tables"
                        and item.get("upstream_table")]
-assert len(selected_indicators) == 14, len(selected_indicators)
+assert len(selected_indicators) == 16, len(selected_indicators)
 with (EVIDENCE / "SELECTED_COLUMN_AUDIT.csv").open("w", encoding="utf-8-sig", newline="") as stream:
     writer = csv.writer(stream)
     writer.writerow(["indicator_id", "table", "selected_column", "period", "national_printed_value",

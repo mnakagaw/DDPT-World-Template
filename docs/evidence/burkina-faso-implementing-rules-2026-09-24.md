@@ -1,0 +1,12 @@
+# Burkina Faso territorial code: newly located implementing-rule notices
+
+Checked 2026-09-24 against official government notices. The 2025 code scan and visually checked articles are recorded in `burkina-faso-2025-code-article-review-2026-09-24.md`. These notices show later implementation activity; they do not replace signed decree texts or a current consolidated legal review.
+
+| Official notice | Confirmed content | Adoption boundary |
+| --- | --- | --- |
+| [19 February 2026 Council notice](https://gouvernement.gov.bf/conseil-des-ministres/conseil-des-ministres-du-19-fevrier-2026/) | Reports adoption of a decree on composition and installation of special local delegations, explicitly applying law 024-2025/ALT. | Decree number/full signed text, entry into force and selected authority membership remain to be checked. No 2019 statistical unit is assigned a current delegate body. |
+| [4 June 2026 Council notice](https://gouvernement.gov.bf/conseil-des-ministres/conseil-des-ministres-n19-du-04-juin-2026/) | Reports a commune-status decree applying the same law, based on approved 2023–24 accounts and population. | The decree's official commune register and code mapping are not acquired. A matching count of 351 does not prove one-to-one continuity from the 2019 census communes. |
+| [30 July 2026 Council notice](https://gouvernement.gov.bf/conseil-des-ministres/conseil-des-ministres-n25-du-30-juillet-2026/) | Reports several competence and resource-transfer decrees, including health, water, education, environment and territorial development, and a protocol model under law 024-2025/ALT. | Signed texts, dates of legal effect and each commune/region's specific competence remain unverified. This is a new official source location for the Kit feedback loop, at `official_location_identified` only. |
+| [INSD regional yearbook catalogue](https://www.insd.bf/fr/statistiques/autres-statitiques/annuaires-statistiques-regionaux?combine=&items_per_page=10&page=1) | Lists 2024 regional yearbooks published in 2026 and 2023 regional yearbooks published in 2025. | This is a new official location for potentially useful subnational statistics. Individual PDFs, tables, units, denominators, geography and terms are not acquired or adopted. |
+
+An area-specific signed PCD/PRD, adopted local budget, execution report and evaluation still have not been verified for the representative 2019 statistical areas. The source notices cannot be displayed as those documents or as approval status.

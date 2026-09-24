@@ -178,6 +178,22 @@
           "geographic_levels": ["commune"],
           "formats": ["HTML"],
           "reuse_note": "Government notice describes a 2026 commune-status decree but does not supply a verified 2019-to-current unit crosswalk. Locate the decree and official unit list before joining current authorities to census communes."
+        },
+        {
+          "id": "bfa-insd-regional-yearbook-catalogue-2026",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["region (historical)"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "New AreaData location: official INSD regional yearbook catalogue lists 2024 and 2023 editions. Individual PDFs, numeric tables, terms and 2025 geography correspondence are not audited or adopted."
+        },
+        {
+          "id": "bfa-government-transfer-decrees-notice-2026",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["region", "commune"],
+          "formats": ["HTML"],
+          "reuse_note": "New AreaData location: 30 July 2026 official council notice reports competence and resource transfer decrees under law 024-2025/ALT. Signed decree texts, numbers, commencement and selected-area application are not acquired; this is not a plan or budget."
         }
       ]
     }

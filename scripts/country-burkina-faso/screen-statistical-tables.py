@@ -25,6 +25,7 @@ PRINTED_PAGE_DECISIONS = {
     "I.5": "reviewed_crosscheck_only",
     "I.6": "reviewed_candidate_not_adopted_urban_rural_definition",
     "I.7": "reviewed_crosscheck_only",
+    "I.22": "reviewed_deferred_religion_denominator_not_total_population",
     "V.23": "reviewed_deferred_migration_type_definition",
     "VI.5": "reviewed_crosscheck_only",
     "IX.23": "reviewed_deferred_unemployed_count_not_rate",
@@ -107,7 +108,8 @@ for item in inventory:
             "semantic_column_name": "unverified",
             "denominator": "unverified",
             "period_and_geography": "unverified",
-            "adoption_decision": "see_printed_page_review; no_new_indicator_adopted" if table_id in PRINTED_PAGE_DECISIONS
+            "adoption_decision": "selected_column_adopted; review_other_columns_separately" if item["adoption_status"] == "adopted_selected_columns"
+                                 else "see_printed_page_review; no_new_indicator_adopted" if table_id in PRINTED_PAGE_DECISIONS
                                  else "pending_printed_page_and_semantic_review",
         })
     rows.append({
@@ -125,7 +127,9 @@ for item in inventory:
         "numeric_row_examples": " | ".join(sample)[:370],
         "review_disposition": "selected_column_adopted" if item["adoption_status"] == "adopted_selected_columns"
                              else PRINTED_PAGE_DECISIONS.get(table_id, "pending_semantic_and_pdf_page_review"),
-        "required_next_check": "See Burkina Faso printed-page review evidence under docs/evidence/; no new indicator was adopted."
+        "required_next_check": "Adopted selected column only; review other columns separately in the source PDF."
+                               if item["adoption_status"] == "adopted_selected_columns" else
+                               "See Burkina Faso printed-page review evidence under docs/evidence/; no new indicator was adopted."
                                if table_id in PRINTED_PAGE_DECISIONS else
                                "Inspect printed page, full numeric column names, population/denominator, geography, period, units and source method; decide adopt, incompatible, or out of scope with reason.",
     })
