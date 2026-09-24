@@ -97,6 +97,25 @@ test('regional territorial pages keep country indicators inside their own countr
   assert.equal(indicatorsForTerritorialScope(data,'AMR').length,3,'Regional overview retains the complete indicator catalog.');
 });
 
+test('calculation input stays in the dataset but does not become a diagnosis card',()=>{
+  const data=fixture();
+  data.indicators.push({id:'component',name:'Component count',theme:'Population',unit:'people',definition:'Input to a derived rate',source_id:'s1',aggregation:'none',display_role:'calculation_input'});
+  data.observations.push({territory_id:'TST',indicator_id:'component',period:'2024',value:12,status:'observed',source_id:'s1'});
+  assert.ok(data.indicators.some(row=>row.id==='component'));
+  assert.ok(data.observations.some(row=>row.indicator_id==='component'));
+  assert.ok(!indicatorsForTerritorialScope(data,'TST').some(row=>row.id==='component'));
+});
+
+test('country facts skip census totals missing in the selected year and show the observed population estimate',()=>{
+  const data=fixture();
+  data.indicators.find(row=>row.id==='population').name='Census population';
+  data.indicators.find(row=>row.id==='population').series_family='census';
+  data.observations=data.observations.filter(row=>!(row.territory_id==='TST'&&row.indicator_id==='population'&&row.period==='2024'));
+  data.indicators.push({id:'estimate',name:'Population estimate',theme:'Population',unit:'people',definition:'Resident population estimate',source_id:'s1',aggregation:'none',display_role:'primary'});
+  data.observations.push({territory_id:'TST',indicator_id:'estimate',period:'2024',value:700,status:'observed',source_id:'s1'});
+  assert.deepEqual(territorialSummaryIndicators(data,'TST','estimate','2024').map(row=>row.id),['estimate']);
+});
+
 test('territorial display puts the requested metric first, then country primary evidence before references',()=>{
   const data=fixture();
   data.analysis={kind:'regional'};data.country.national_territory_id='AMR';

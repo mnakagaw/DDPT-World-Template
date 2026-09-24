@@ -211,7 +211,7 @@ function mapPanel({thematic=false,planning=false}={}) {
   <p class="source-note">Boundary source: ${boundarySources.length?boundarySources.map(source=>link(source.url,source.name)).join(' · '):'See the source register; boundary authority and edition must be verified.'} Reference boundaries are not a legal boundary certification. Keyboard: arrows / Home / End, then Enter or Space.</p>${dataset.country.geography_note?`<p class="source-note"><strong>Geographic scope:</strong> ${e(dataset.country.geography_note)}</p>`:''}</section>`;
 }
 function facts() {
-  const indicators=territorialSummaryIndicators(dataset,state.selected,state.metric);
+  const indicators=territorialSummaryIndicators(dataset,state.selected,state.metric,state.period);
   if(!indicators.length)return '';
   return `<div class="basic-facts country-facts">${indicators.map(indicator=>{const current=territorialIndicatorState(dataset,state.selected,indicator.id,state.period),result=current.result;return `<div class="fact"><span>${e(indicator.name)}</span><strong>${fmt(result.value,indicator)}</strong><small>${e(result.row?.unit || indicator.unit)} · ${e(current.period || 'No source period')} · ${e(statusLabel(result.status))}</small></div>`;}).join('')}</div>`;
 }

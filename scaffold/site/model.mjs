@@ -155,7 +155,10 @@ export function territoryLineage(dataset, selectedId) {
   return [];
 }
 export function indicatorsForTerritorialScope(dataset, selectedId) {
-  if(!['regional','world'].includes(dataset.analysis?.kind))return dataset.indicators;
+  // Retain calculation inputs in the research database and exports, while
+  // keeping component fields out of the public diagnosis and theme selector.
+  const visible=dataset.indicators.filter(indicator=>indicator.display_role!=='calculation_input');
+  if(!['regional','world'].includes(dataset.analysis?.kind))return visible;
   const lineage=territoryLineage(dataset,selectedId);
   const country=lineage.find(area=>area.level==='country' || area.type==='country');
   if(!country){
@@ -166,11 +169,11 @@ export function indicatorsForTerritorialScope(dataset, selectedId) {
     if(portfolio.size){
       const compared=new Set(comparisonSet(dataset,selectedId).members.map(area=>area.id));
       const available=new Set(dataset.observations.filter(row=>row.status==='observed'&&(row.territory_id===selectedId||compared.has(row.territory_id))).map(row=>row.indicator_id));
-      return dataset.indicators.filter(indicator=>portfolio.has(indicator.id)&&available.has(indicator.id));
+      return visible.filter(indicator=>portfolio.has(indicator.id)&&available.has(indicator.id));
     }
     // Older regional editions have no separate international portfolio.
     // Preserve their catalog and missing-state behavior unchanged.
-    return dataset.indicators;
+    return visible;
   }
   const branch=new Set([country.id]);
   let added=true;
@@ -179,7 +182,7 @@ export function indicatorsForTerritorialScope(dataset, selectedId) {
     for(const area of dataset.territories)if(area.parent_id&&branch.has(area.parent_id)&&!branch.has(area.id)){branch.add(area.id);added=true;}
   }
   const available=new Set(dataset.observations.filter(row=>branch.has(row.territory_id)).map(row=>row.indicator_id));
-  return dataset.indicators.filter(indicator=>available.has(indicator.id));
+  return visible.filter(indicator=>available.has(indicator.id));
 }
 
 export function regionalCoverageSummary(dataset) {
@@ -211,10 +214,11 @@ export function orderedTerritorialIndicators(dataset, selectedId, selectedMetric
     .sort((a,b)=>a.priority-b.priority||a.index-b.index)
     .map(entry=>entry.indicator);
 }
-export function territorialSummaryIndicators(dataset, selectedId, selectedMetricId='') {
+export function territorialSummaryIndicators(dataset, selectedId, selectedMetricId='', selectedPeriod='') {
   const area=dataset.territories.find(row=>row.id===selectedId);
   if(area?.type!=='country')return [];
-  const ordered=orderedTerritorialIndicators(dataset,selectedId,selectedMetricId);
+  const ordered=orderedTerritorialIndicators(dataset,selectedId,selectedMetricId)
+    .filter(indicator=>!selectedPeriod||territorialIndicatorState(dataset,selectedId,indicator.id,selectedPeriod).result.value!==null);
   const context=dataset.analysis?.population_context||{};
   const configured=[context.primary_indicator_id,context.reference_indicator_id]
     .filter(Boolean)
@@ -227,7 +231,8 @@ export function territorialSummaryIndicators(dataset, selectedId, selectedMetric
     ordered.find(indicator=>indicator.series_family==='international_reference'&&totalName(indicator)),
     ordered.find(totalName)
   ].filter(Boolean).filter((indicator,index,rows)=>rows.findIndex(row=>row.id===indicator.id)===index);
-  return (preferred.length?preferred:ordered).slice(0,2);
+  const selected=ordered.find(indicator=>indicator.id===selectedMetricId&&indicator.unit==='people'&&/population|poblaci[oó]n|人口/i.test(indicator.name||''));
+  return (preferred.length?preferred:selected?[selected]:[]).slice(0,2);
 }
 export function comparisonLevelsForTerritory(dataset,selectedId){
   const selected=dataset.territories.find(area=>area.id===selectedId);
