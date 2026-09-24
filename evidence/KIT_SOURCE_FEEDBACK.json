@@ -1,9 +1,33 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-24T11:42:08.142Z",
-  "origin_commit": "5cbafb1a02c8eca7b68a53718809923f9e3ad043",
+  "exported_at": "2026-09-24T13:00:23.599Z",
+  "origin_commit": "07251fd4d5724f8593b55298b7a664d0992dcff8",
   "sources": [
+    {
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_GOVERNMENT_COMMUNE_STATUS_2026",
+      "role": "administrative_codes",
+      "title": "Government notice on commune-status decree",
+      "publisher": "Service d’information du Gouvernement du Burkina Faso",
+      "url": "https://gouvernement.gov.bf/conseil-des-ministres/conseil-des-ministres-n19-du-04-juin-2026/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "commune"
+      ],
+      "reference_periods": [
+        "2026-06-04"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Government notice describes a 2026 commune-status decree but does not supply a verified 2019-to-current unit crosswalk. Locate the decree and official unit list before joining current authorities to census communes.",
+      "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "artifact_sha256": null
+    },
     {
       "iso3": "BFA",
       "source_id": "BFA_BFA_INSD_RGPH2019_LOCALITIES",
@@ -106,6 +130,57 @@
     },
     {
       "iso3": "BFA",
+      "source_id": "BFA_BFA_CNS_LOCAL_FINANCE_CATALOGUE",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "MATM / CONAFIL local-finance publications",
+      "publisher": "Conseil national de la statistique / Ministère de l’Administration territoriale et de la Mobilité",
+      "url": "https://www.cns.bf/publications/matm/?mode=liste&par_page=12&rubrique=41&tri=recent",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "national",
+        "region",
+        "commune"
+      ],
+      "reference_periods": [
+        "2024–2026 publication listings"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official MATM/CONAFIL catalogue lists local-government budget forecasts and transferred-resource execution reports. Inspect each report body and local identifiers; a forecast is not an approved area budget or actual execution.",
+      "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_DGCMEF_KOMSILGA_PCD_PROCUREMENT",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Komsilga communal development-plan procurement notice",
+      "publisher": "Direction générale du contrôle des marchés publics et des engagements financiers",
+      "url": "https://www.dgcmef.gov.bf/sites/default/files/2025-07/Quotidien%20N%C2%B04176.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "commune"
+      ],
+      "reference_periods": [
+        "2025 procurement notice"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official 2025 procurement notice for preparing Komsilga's PCD. This is a lead to the planning process, not a completed or approved plan, local budget or implementation result. Verify current commune identity.",
+      "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BFA",
       "source_id": "BFA_BFA_PLD_MONITORING_2024",
       "role": "plans_budgets_implementation_evaluation",
       "title": "Rapport national 2024 sur les plans locaux de développement",
@@ -203,7 +278,34 @@
         "PDF"
       ],
       "license_or_terms": null,
-      "reuse_note": "Official statistical-table volume has 581 identified table headings. AreaData adopted columns from only eight tables, including age-sex Table I.20. Inspect the remaining tables and every numeric column before claiming full adoption; regional rates are not commune rates.",
+      "reuse_note": "Official statistical-table volume has 581 identified table headings. AreaData adopted selected columns from 15 tables, including age-sex Table I.20; 566 tables still need semantic review. Inspect every numeric column before claiming full adoption; regional rates are not commune rates.",
+      "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BFA",
+      "source_id": "BFA_BFA_INSD_NATIONAL_YEARBOOK_2024",
+      "role": "table_catalog",
+      "title": "Annuaire statistique national 2024",
+      "publisher": "Institut national de la statistique et de la démographie (INSD)",
+      "url": "https://www.insd.bf/sites/default/files/2026-01/Annuaire%20statistique%20national%202024%20VF26-12-2025.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-24",
+      "geographic_levels": [
+        "national",
+        "region",
+        "urban commune",
+        "rural commune"
+      ],
+      "reference_periods": [
+        "2015–2024 series; December 2025 publication"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "INSD 2024 national yearbook contains regional and commune fiscal tables and source caveats. Reacquire the full PDF, check numeric columns and null-value notes, and reconcile historical geography before adoption.",
       "origin_evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
       "artifact_sha256": null
     },
