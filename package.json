@@ -33,6 +33,9 @@
     "serve": "node scripts/serve.mjs",
     "sources:plan": "node scripts/source-plan.mjs",
     "sources:export:kit-feedback": "node scripts/export-kit-source-feedback.mjs",
-    "sources:audit:three-country-replay": "node scripts/audit-three-country-source-replay.mjs"
+    "sources:audit:three-country-replay": "node scripts/audit-three-country-source-replay.mjs",
+    "sources:audit:bangladesh-district-cells": "python scripts/audit-bangladesh-district-cells.py",
+    "sources:audit:laos-cod-ps-values": "python scripts/audit-laos-cod-ps-values.py",
+    "sources:audit:uganda-workbook-cells": "python scripts/audit-uganda-workbook-cells.py"
   }
 }
