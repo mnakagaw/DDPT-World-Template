@@ -1,6 +1,6 @@
 # Burkina Faso — 42-scenario acceptance ledger
 
-2026-09-24 local review of AreaData template 0.12.1, dataset SHA-256 `53d17c6d10f60cdea5fcb8c317e43e37123c680a37d9af386875f9eb0715baa2`. Browser target: `http://127.0.0.1:4181/` (local only). A narrow Chrome navigation and planning-link spot check was repeated on this dataset; a full browser pass has not occurred. Representative areas: Burkina Faso, historical Centre, Kadiogo, Komki-Ipala. This ledger uses the four statuses in `templates/ACCEPTANCE.md`; partial checks are recorded as evidence but do not make a scenario pass. The independent audit and public release are **not complete**.
+Updated 2026-09-25 for AreaData template 0.12.1, dataset SHA-256 `07a3f7895055ac01431a52a0740e5eeeea0e6663e6ef2765bd5bd70c96773b94`. Browser target: `http://127.0.0.1:4181/territorial/` (local only). The prior Chrome navigation and planning checks were supplemented by an in-app-browser Centre selection and Word-link check on this dataset; a full browser pass has not occurred. Representative areas: Burkina Faso, historical Centre, Kadiogo, Komki-Ipala. This ledger uses the four statuses in `templates/ACCEPTANCE.md`; partial checks are recorded as evidence but do not make a scenario pass. The independent audit and public release are **not complete**.
 
 | ID | Status | Evidence and remaining check |
 | --- | --- | --- |
@@ -13,7 +13,7 @@
 | A07 | 未実施 | Schema distinguishes missing and zero; BFA UI cases for every state remain. |
 | A08 | 未実施 | ADM3 geometry withheld; all missing-boundary/numerator cases remain. |
 | A09 | 未実施 | Public national references exist; unauthenticated retrieval affordance and reason for unavailable local documents remain. No login workflow was adopted. |
-| A10 | 未実施 | Generated Markdown/HTML/CSV content checked at four levels in `OUTPUT_QA.json`. National, Centre, Kadiogo and Komki-Ipala Word review artifacts each passed seven dataset value/year/source checks and visual page render (`WORD_QA*.json`); selected-area **browser download**, four-level Word/CSV/screen matching and actual print remain. PDF/PNG are not adopted site outputs. |
+| A10 | 未実施 | Generated Markdown/HTML/CSV content checked at four levels in `OUTPUT_QA.json`. `WORD_REPORT_MANIFEST.json` and `verify-word-manifest.py` checked all 410 Word files against the selected territory and dataset; the current Centre document rendered to three inspected pages. The real local browser showed the Centre link, and HTTP bytes for Burkina Faso, Centre, Kadiogo and Komki-Ipala matched the manifest. Four-level Word/CSV/screen consistency and actual print remain. PDF/PNG are not adopted site outputs. |
 | A11 | 未実施 | Reverse-response and failed-load simulation remains. |
 | A12 | 未実施 | Saved notes/backup flow, if exposed by this build, remains to be exercised. |
 | A13 | 未実施 | Long page navigation and complete print remain. |
@@ -39,12 +39,12 @@
 | A33 | 未実施 | No verified local plan, budget, result or evaluation body; real-content comparison cannot pass yet. |
 | A34 | 未実施 | Raw replay matched observed values and planning config; failure/rollback/last-good preservation remains. |
 | A35 | 未実施 | National screenshot shows top selector and map; reference comparison and narrow layout remain. |
-| A36 | 未実施 | Regional values for seven new indicators checked; all themes, grain and map/table membership remain. |
+| A36 | 未実施 | Source-reported regional values for two further 2019 rates (TBN and 4q1) were adopted after printed-page review, bringing the dataset to 66 indicators and 16,012 observations; all themes, grain and map/table membership remain. |
 | A37 | 対象外 | This local project provides the BFA country dataset only; world/continent group membership and cross-dataset handoff are outside this edition. |
 | A38 | 未実施 | 351 census communes registered; legal/current municipality identity and stopping behavior remain. |
 | A39 | 未実施 | Comparison map/table focus isolation and parent-change refresh remain. |
 | A40 | 未実施 | No parent value is inferred from incomplete children; full comparability, boundary and legend edge cases remain. |
-| A41 | 未実施 | Four-level generated output content and national four-page/three lower-area three-page Word renders checked; browser download, first/last/all rows across screen/CSV/Word and actual print remain. National HTML is about 9.7 MB. |
+| A41 | 未実施 | Four-level generated output content and 410 selected-area Word manifests checked. The current Centre Word rendered to three inspected pages; four representative Word HTTP responses matched manifest hashes. First/last/all rows across screen/CSV/Word and actual print remain. |
 | A42 | 未実施 | Common tests pass; old URL/dataset, quick switch and parent reselect integration replay remain. |
 
 Count: **0 合格 / 0 不合格 / 39 未実施 / 3 対象外**. A scenario with incomplete evidence is 未実施, not 合格. Required A01–A10, A13–A16 and A21–A23 are not accepted. Overall decision: **NOT ACCEPTED**. No independent auditor has reviewed this edition.
