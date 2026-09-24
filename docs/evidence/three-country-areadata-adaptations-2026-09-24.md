@@ -1,8 +1,10 @@
-# Three AreaData country adaptations — local verification, 2026-09-24
+# AreaData country adaptations — local verification, 2026-09-24
 
 ## Kit source-location feedback
 
 The seven selected URLs below are location leads, not an independent AreaData source audit. Bangladesh and Laos were copied from their Kit country projects, so their presence here is a return of reusable metadata, not a claim of new discovery. Uganda's leads came through the Uganda-LGDP adaptation. `config/kit-source-feedback-selections.json` selects these exact dataset source IDs; `evidence/KIT_SOURCE_FEEDBACK.json` is the export. All seven have the conservative stage `official_location_identified`. Source terms and current content must be rechecked before any Kit country adoption.
+
+The same selection now also includes eight **Burkina Faso** source leads found and acquired in a separate local country adaptation. Its exact source list, adopted coverage, gaps, and verification boundary are in [Burkina Faso adaptation evidence](burkina-faso-areadata-adaptation-2026-09-24.md). The conservative feedback stage also applies to all eight Burkina Faso leads; this does not upgrade the earlier three countries' audit status.
 
 | Country | Dataset source ID | Source location |
 | --- | --- | --- |

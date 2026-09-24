@@ -4,7 +4,7 @@ import {mkdtemp,readFile,writeFile,mkdir,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {generateSite,pageShell} from '../lib/generate.mjs';
-import {initialState,selectTerritory,territoryLineage,indicatorsForTerritorialScope,orderedTerritorialIndicators,territorialSummaryIndicators,regionalCoverageSummary,comparisonLevelsForTerritory,hierarchyControls,selectHierarchyOption,routeQuery,observationState,periodsFor,latestObservedPeriod,latestObservedPeriodForTerritory,effectivePeriodForIndicator,effectivePeriodForTerritoryIndicator,territorialIndicatorState,regionalMemberValueSummary,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
+import {initialState,selectTerritory,territoryLineage,indicatorsForTerritorialScope,orderedTerritorialIndicators,territorialSummaryIndicators,regionalCoverageSummary,comparisonLevelsForTerritory,hierarchyControls,selectHierarchyOption,routeQuery,observationState,periodsFor,periodForNewMetric,latestObservedPeriod,latestObservedPeriodForTerritory,effectivePeriodForIndicator,effectivePeriodForTerritoryIndicator,territorialIndicatorState,regionalMemberValueSummary,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
 import {diagnosticCsv} from '../scaffold/site/diagnostic.mjs';
 import {hierarchyFixture} from './hierarchy-fixture.mjs';
 
@@ -47,6 +47,26 @@ test('first view opens an observed period and skips a failed first indicator; ex
   const explicit=initialState(data,'?metric=population&period=2024');
   assert.equal(explicit.metric,'population');
   assert.equal(observationState(data,'TST',explicit.metric,explicit.period).status,'not_collected');
+});
+
+test('changing indicators opens the new indicators latest observed source period',()=>{
+  const data=fixture();
+  data.observations.find(row=>row.indicator_id==='water').period='2018';
+  assert.equal(periodForNewMetric(data,'water','2024'),'2018');
+  assert.equal(periodForNewMetric(data,'population','2018'),'2024');
+  data.analysis={kind:'regional',default_period_by_indicator:{population:'latest-available'}};
+  assert.equal(periodForNewMetric(data,'population','latest-available'),'latest-available');
+});
+
+test('latest-only country editions show each card at its own latest source year',()=>{
+  const data=fixture();
+  data.analysis={latest_values_only:true};
+  data.observations.find(row=>row.indicator_id==='water').period='2018';
+  const state=initialState(data);
+  assert.equal(state.period,'latest-available');
+  assert.equal(periodForNewMetric(data,'water',state.period),'latest-available');
+  assert.equal(territorialIndicatorState(data,'TST','population',state.period).period,'2024');
+  assert.equal(territorialIndicatorState(data,'TST','water',state.period).period,'2018');
 });
 
 test('latest-available resolves to each indicator default while mixed-year indicators retain the sentinel',()=>{

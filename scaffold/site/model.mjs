@@ -23,7 +23,7 @@ export function sourceFor(dataset, indicator, observation) {
 export function periodsFor(dataset, indicatorId) {
   const periods=[...new Set(dataset.observations.filter(row => !indicatorId || row.indicator_id === indicatorId).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}));
   const portfolioLatest=indicatorId&&['world','regional'].includes(dataset.analysis?.kind)&&dataset.analysis?.default_period_by_indicator?.[indicatorId];
-  if(indicatorId&&(portfolioLatest||aggregationRule(dataset,indicatorId)?.period_policy==='latest_available_by_component')&&!periods.includes(LATEST_AVAILABLE_PERIOD))periods.unshift(LATEST_AVAILABLE_PERIOD);
+  if(indicatorId&&(portfolioLatest||dataset.analysis?.latest_values_only||aggregationRule(dataset,indicatorId)?.period_policy==='latest_available_by_component')&&!periods.includes(LATEST_AVAILABLE_PERIOD))periods.unshift(LATEST_AVAILABLE_PERIOD);
   return periods;
 }
 export function latestObservedPeriod(dataset, indicatorId) {
@@ -31,6 +31,11 @@ export function latestObservedPeriod(dataset, indicatorId) {
 }
 export function latestObservedPeriodForTerritory(dataset, territoryId, indicatorId) {
   return [...new Set(dataset.observations.filter(row => row.territory_id === territoryId && row.indicator_id === indicatorId && observedValue(row) !== null).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}))[0] || '';
+}
+export function periodForNewMetric(dataset, indicatorId, currentPeriod) {
+  const available=periodsFor(dataset,indicatorId);
+  if (String(currentPeriod)===LATEST_AVAILABLE_PERIOD && available.includes(LATEST_AVAILABLE_PERIOD)) return LATEST_AVAILABLE_PERIOD;
+  return dataset.analysis?.default_period_by_indicator?.[indicatorId] || latestObservedPeriod(dataset,indicatorId) || available[0] || '';
 }
 export function regionalMemberValueSummary(dataset, territoryId, indicatorId, period) {
   const set=comparisonSet(dataset,territoryId),members=new Map(set.members.map(area=>[area.id,area]));
@@ -129,7 +134,7 @@ export function initialState(dataset, search = '') {
   const validPeriod = requestedPeriod && /^[\p{L}\p{N} ._/:–-]{1,40}$/u.test(requestedPeriod);
   if (requestedPeriod && !validPeriod) notices.push('The linked period is invalid. The most recent available source period is shown.');
   const configuredPeriod=dataset.analysis?.default_period_by_indicator?.[metric];
-  const portfolioLatest=['world','regional'].includes(dataset.analysis?.kind)&&configuredPeriod?LATEST_AVAILABLE_PERIOD:'';
+  const portfolioLatest=(dataset.analysis?.latest_values_only||(['world','regional'].includes(dataset.analysis?.kind)&&configuredPeriod))?LATEST_AVAILABLE_PERIOD:'';
   const period = validPeriod ? requestedPeriod : portfolioLatest || configuredPeriod || latestObservedPeriod(dataset, metric) || periodsFor(dataset, metric)[0] || '';
   const levels = comparisonLevelsForTerritory(dataset,selected);
   const suppliedLevel=query.get('level');

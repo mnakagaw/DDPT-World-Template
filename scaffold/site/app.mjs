@@ -1,6 +1,6 @@
 import {
   finite, escapeHtml as e, safeUrl, displayValue, statusLabel, sourceFor,
-  periodsFor, observationState, areaObservationState, effectivePeriodForTerritoryIndicator, territorialIndicatorState, regionalMemberValueSummary, localLevels, levelLabel, nationalOnly, initialState,
+  periodsFor, periodForNewMetric, observationState, areaObservationState, effectivePeriodForTerritoryIndicator, territorialIndicatorState, regionalMemberValueSummary, localLevels, levelLabel, nationalOnly, initialState,
   selectTerritory, territoryLineage, countryBranchId, indicatorsForTerritorialScope, orderedTerritorialIndicators, territorialSummaryIndicators, regionalCoverageSummary, territoryOptionLabel, hierarchyControls, selectHierarchyOption, routeQuery, countryDiagnosticUrl, comparisonLevelForArea, comparisonRows, comparisonCompatibility, rankedRows, searchRows, rankingReveal, rankingScrollTop, distribution,
   seriesFor, observedValue, makeCsv, evidenceCsv, safeFilename, planningMarkdown,
   planningHtml, documentsCsv, censusSourcePreflightCsv, mapGeometry, seriesGeometry
@@ -11,7 +11,7 @@ import {comparisonSet,observationMeaning,observationContext,isTerminalTerritory}
 import {renderInternalComparison,diagnosticMarkdown,diagnosticHtml,diagnosticCsv,renderSourceAttribution,seriesSourceLabel} from './diagnostic.mjs';
 import {resolveLanguage,languageLocale,translateInterface,translateText,SUPPORTED_LANGUAGES} from './i18n.mjs';
 import {censusAge,censusRecencyClass,censusIntervals} from './census-history.mjs';
-import {renderWppDemographics} from './un-demographics.mjs';
+import {renderWppDemographics,renderCensusPyramid} from './un-demographics.mjs';
 
 const base = new URL('../', import.meta.url);
 const app = document.getElementById('app');
@@ -290,7 +290,7 @@ function territorial() {
   const territorialIndicators=orderedTerritorialIndicators(dataset,state.selected,state.metric).filter(indicator=>indicator.id!==contextualId);
   const themes=[...new Set(territorialIndicators.map(indicator=>indicator.theme || 'Other'))];
   return `<div class="page-actions">${periodControl('territorial-period')}${pageLink('thematic','Compare across areas')}${pageLink('planning','Open planning resources')}</div>
-  <div class="territorial-top"><section class="panel selected-profile"><h2>${e(currentArea().name)}</h2>${hierarchyNavigation()}${areaControls()}${identity()}${facts()}</section>${mapPanel()}</div>${countryDetailLink()}${dataset.analysis?.supranational_indicator_ids&&currentArea().type==='exploration_scope'?'':regionalPopulationSummary()}${renderWppDemographics(dataset,state.selected,state.period,language)}
+  <div class="territorial-top"><section class="panel selected-profile"><h2>${e(currentArea().name)}</h2>${hierarchyNavigation()}${areaControls()}${identity()}${facts()}</section>${mapPanel()}</div>${countryDetailLink()}${dataset.analysis?.supranational_indicator_ids&&currentArea().type==='exploration_scope'?'':regionalPopulationSummary()}${renderCensusPyramid(dataset,state.selected,language)}${renderWppDemographics(dataset,state.selected,state.period,language)}
   <nav class="section-index" aria-label="Diagnostic sections">${themes.map((theme,index)=>`<a href="#theme-${index}">${e(theme)}</a>`).join('')}<a href="#source-register">Sources and gaps</a></nav>
   ${themes.map((theme,index)=>`<section id="theme-${index}" class="theme-section"><h2 class="section-title">${e(theme)} <strong class="section-area">${e(displayAreaName(currentArea()))}</strong></h2><div class="indicator-grid">${territorialIndicators.filter(indicator=>(indicator.theme||'Other')===theme).map(metricCard).join('')}</div></section>`).join('')}
   <section class="panel diagnostic-outputs"><h2>Diagnostic report — ${e(currentArea().name)}</h2><p>Whole-area evidence and internal differences use the same period, definitions, membership and sources as this screen. Every member row is included, even when the on-screen table scrolls. This is a diagnostic working report; planning authority, priority hypotheses, resident agreement and approval remain separate.</p><div class="download-actions">${button('diagnostic-markdown','Editable Diagnostic report')}${button('diagnostic-html','Diagnostic report HTML')}${button('diagnostic-csv','Full diagnostic data CSV')}</div><p class="small-note">Print the HTML report to include legends, sources and every row. No resident agreement or formal approval is inferred.</p></section><div class="end-actions">${pageLink('thematic','Compare across areas')}${pageLink('planning','Open planning resources')}<a href="#top">Back to top</a></div>`;
@@ -355,7 +355,7 @@ function planning() {
   (settings.outputs.length?'<p class="small-note">Evidence CSV contains the selected statistical year. Materials CSV, when adopted, contains the original document periods and findings. Markdown and HTML include both with source definitions and explicit gaps.</p>':'<p class="missing-note">No generated download format is adopted for this project. Use the original references and territorial evidence; record the country-specific output workflow in the handoff.</p>')+
   (settings.outputs.includes('markdown')||settings.outputs.includes('html')?'<details><summary>Preview planning base</summary><pre class="planning-preview">'+e(planningMarkdown(dataset,state.selected,state.period,language))+'</pre></details>':'')+
   (gaps.length?'<details><summary>Outstanding evidence and next actions</summary><ul>'+gaps.map(gap=>'<li><strong>'+e(statusLabel(gap.status))+'</strong> — '+e(gap.detail)+'<p class="small-note">Next: '+e(gap.next_action || 'Verify the responsible source.')+'</p></li>').join('')+'</ul></details>':'')+'</section>'+
-  (links.length?'<section class="panel"><h2>Related investment, finance and official services</h2><ul>'+links.map(item=>'<li><a href="'+e(item.url)+'">'+e(item.label)+'</a></li>').join('')+'</ul></section>':'')+
+  (links.length?'<section class="panel"><h2>Related sources and materials</h2><ul>'+links.map(item=>'<li><a href="'+e(item.url)+'">'+e(item.label)+'</a></li>').join('')+'</ul></section>':'')+
   (nationalDocuments.length?'<section class="panel"><h2>National reference materials — '+e(dataset.country.name)+'</h2><p>National materials are shown separately and are not attributed to '+e(currentArea().name)+'.</p>'+nationalDocuments.map(doc=>renderDocument(dataset,doc)).join('')+'</section>':'')+
   (settings.system?'<section class="panel"><h2>Country planning framework</h2><p>'+e(settings.system.label)+' · '+e(settings.system.scope)+'</p><p>'+e(settings.system.cycle)+'</p>'+settings.system.source_ids.map(id=>sourceNote(null,{source_id:id})).join('')+'</section>':'')+
   '<div class="end-actions">'+pageLink('territorial','Review territorial evidence')+pageLink('thematic','Compare across areas')+'</div>';
@@ -660,7 +660,7 @@ app.addEventListener('change',async event=>{
     // parent always completes instead of leaving a parent URL over child content.
     commitAfterInput(next);
   }
-  if(control==='metric') {comparisonFocusId='';const metric=event.target.value;commit({...state,metric,requestedMetric:undefined,sourceDataset:undefined,notices:[]});}
+  if(control==='metric') {comparisonFocusId='';const metric=event.target.value;commit({...state,metric,period:periodForNewMetric(dataset,metric,state.period),requestedMetric:undefined,sourceDataset:undefined,notices:[]});}
   if(control==='period'){comparisonFocusId='';commit({...state,period:event.target.value,notices:[]});}
   if(control==='level'){wholeMap=true;comparisonFocusId='';const next={...state,level:event.target.value,notices:[]};await ensureBoundaryDataForState(next);commit(next);}
   if(control==='rank-order'){rankOrder=event.target.value;render();}
@@ -695,7 +695,7 @@ app.addEventListener('click',async event=>{
     else if(action==='select')await choose(target.dataset.id,{fromMap:!!target.dataset.mapId});
     else if(action==='national')await choose(dataset.country.national_territory_id);
     else if(action==='map-extent'){wholeMap=!wholeMap;render();}
-    else if(action==='compare'){state={...state,metric:target.dataset.id,period:target.dataset.period || state.period};location.href=pageUrl('thematic');}
+    else if(action==='compare'){const metric=target.dataset.id;state={...state,metric,period:target.dataset.period || periodForNewMetric(dataset,metric,state.period)};location.href=pageUrl('thematic');}
     else if(action==='show-selected'){
       rankSearch=rankingReveal(comparisonRows(dataset,state),state.selected,rankSearch).query;render();
       if(revealRankingSelection({focus:true}))actionStatus('The selected area is visible in the ranking panel. Missing observations remain unranked.');

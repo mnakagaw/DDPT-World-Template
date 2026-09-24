@@ -42,6 +42,9 @@ export async function buildKitSourceFeedback({ base = root, commit, exportedAt }
     const projectPath = requireValue(project.path, 'project path').replaceAll('\\', '/');
     if (!projectPath.startsWith('generated/') || projectPath.split('/').includes('..')) throw new Error(`Unsafe project path: ${projectPath}`);
     if (!/^[A-Z]{3}$/.test(project.iso3 || '')) throw new Error('Invalid ISO3 in feedback selection');
+    const projectEvidencePath = project.evidence_path ? requireValue(project.evidence_path, 'project evidence_path').replaceAll('\\', '/') : evidencePath;
+    if (path.isAbsolute(projectEvidencePath) || projectEvidencePath.split('/').includes('..') || !projectEvidencePath.startsWith('docs/evidence/')) throw new Error('Unsafe project evidence_path');
+    await readFile(path.join(base, projectEvidencePath));
     const dataset = JSON.parse(await readFile(path.join(base, projectPath, 'data/dashboard.json'), 'utf8'));
     if (dataset.country?.id !== project.iso3 || !Array.isArray(dataset.sources)) throw new Error(`Country dataset mismatch: ${projectPath}`);
     const datasetSources = new Map(dataset.sources.map(source => [source.id, source]));
@@ -68,7 +71,7 @@ export async function buildKitSourceFeedback({ base = root, commit, exportedAt }
         formats: chosen.formats || [],
         license_or_terms: source.license || null,
         reuse_note: requireValue(chosen.reuse_note, 'reuse_note'),
-        origin_evidence_path: evidencePath,
+        origin_evidence_path: projectEvidencePath,
         artifact_sha256: null,
         ...(chosen.supersedes_url ? { supersedes_url: publicUrl(chosen.supersedes_url) } : {}),
       });

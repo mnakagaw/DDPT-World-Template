@@ -12,6 +12,19 @@ function pyramidSvg(profile,max,baseline,language){
   return `<svg viewBox="0 0 500 485" role="img" aria-label="${e(group('Population pyramid','Pirámide de población','人口ピラミッド',language))} ${e(profile.period)}"><line x1="218" x2="218" y1="23" y2="458" class="pyramid-axis"/><line x1="282" x2="282" y1="23" y2="458" class="pyramid-axis"/><text x="120" y="17" text-anchor="middle">${e(group('Male','Hombres','男性',language))}</text><text x="380" y="17" text-anchor="middle">${e(group('Female','Mujeres','女性',language))}</text>${rows}</svg>`;
 }
 
+export function renderCensusPyramid(dataset,areaId,language='en'){
+  const profiles=dataset.analysis?.census_population_pyramids;
+  const profileKey=Object.keys(profiles||{}).filter(key=>key.startsWith(`${areaId}@`)).sort((a,b)=>Number(b.split('@').at(-1))-Number(a.split('@').at(-1)))[0];
+  const profile=profiles?.[profileKey];
+  if(!profile||!Array.isArray(profile.ages)||profile.ages.length!==profile.male?.length||profile.ages.length!==profile.female?.length)return '';
+  const area=dataset.territories.find(row=>row.id===areaId);
+  const source=dataset.sources.find(row=>row.id===profile.source_id);
+  const max=Math.max(...profile.male,...profile.female);
+  const male=profile.male.reduce((sum,value)=>sum+n(value),0),female=profile.female.reduce((sum,value)=>sum+n(value),0);
+  const sourceLink=source?.url?`<a href="${e(source.url)}" target="_blank" rel="noopener noreferrer">${e(group('Source table','Tabla fuente','出典表',language))}</a>`:'';
+  return `<section class="panel un-demographics census-demographics"><div class="un-demographics-heading"><div><p class="eyebrow">${e(source?.name||'Census')} · ${e(group('AGE AND SEX STRUCTURE','ESTRUCTURA POR EDAD Y SEXO','年齢・男女別構成',language))}</p><h2>${e(group('Population pyramid','Pirámide de población','人口ピラミッド',language))} — ${e(area?.name||dataset.country.name)}</h2></div><strong>${e(profile.period)}</strong></div><div class="pyramid-grid census-pyramid-grid"><figure><figcaption>${e(group('Census resident population','Población residente censal','国勢調査の常住人口',language))}<small>${e(group('Male','Hombres','男性',language))}: ${male.toLocaleString()} · ${e(group('Female','Mujeres','女性',language))}: ${female.toLocaleString()}</small></figcaption>${pyramidSvg(profile,max,false,language)}</figure></div><p class="small-note">${e(group(`Five-year age groups use published ${profile.period} census counts for this area. No lower-area profile is inferred.`,`Los grupos quinquenales usan recuentos censales publicados para ${profile.period}; no se infiere el perfil de áreas menores.`,`${profile.period}年国勢調査の公表値を5歳階級で表示しています。下位地域の値は推定していません。`,language))} ${sourceLink}</p></section>`;
+}
+
 export function renderWppDemographics(dataset,areaId,requestedPeriod,language='en'){
   const profiles=dataset.analysis?.population_pyramids;
   if(!profiles)return '';

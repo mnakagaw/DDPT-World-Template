@@ -77,6 +77,77 @@
           "reuse_note": "NPA local-government plan catalogue location only. Area-specific plans, dates, duplicates and content must be checked individually; no plan is assumed current or adopted in Kit."
         }
       ]
+    },
+    {
+      "path": "generated/burkina-faso-20260924",
+      "iso3": "BFA",
+      "evidence_path": "docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md",
+      "sources": [
+        {
+          "id": "bfa-insd-rgph2019-localities",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "region (2019)", "province (2019)", "commune (2019)"],
+          "formats": ["PDF"],
+          "reuse_note": "Official 2019 locality population by sex and age, including source-noted estimates for security-affected places. Use the 2019 13-region/45-province/351-commune geography; do not relabel it as the 2025 17-region/47-province system. Recheck raw redistribution terms."
+        },
+        {
+          "id": "bfa-insd-rgph2019-statistical-tables",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "region (2019)"],
+          "formats": ["PDF"],
+          "reuse_note": "Official statistical-table volume has 581 identified table headings. AreaData adopted columns from only eight tables, including age-sex Table I.20. Inspect the remaining tables and every numeric column before claiming full adoption; regional rates are not commune rates."
+        },
+        {
+          "id": "bfa-insd-poverty-atlas-2019",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "region (2019)", "province (2019)", "commune (2019)"],
+          "formats": ["PDF"],
+          "reuse_note": "Volume 3 Annex 4 monetary-poverty values are small-area estimates combining EHCVM 2018 with 2019 census geography, not directly enumerated census poverty. Annexes 5-9 report distinct census measures. Two whole-city commune aggregates and four incomplete rows were withheld; recheck definitions, geography, and redistribution terms."
+        },
+        {
+          "id": "bfa-insd-communal-contraceptive-model-2023",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["province (2019)", "commune (2019)"],
+          "formats": ["PDF"],
+          "reuse_note": "This is a modelled 2015 outcome using 2019 census covariates, not 2019 contraceptive prevalence. Three ambiguous commune name matches were withheld; review the crosswalk and raw reuse terms."
+        },
+        {
+          "id": "bfa-mef-pcd-guide-2024",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["commune"],
+          "formats": ["PDF"],
+          "reuse_note": "December 2024 communal development-plan (PCD) guide predates the 2025 territorial code and administrative reform. Check the guide's current applicability and the chosen locality's legal planning authority; no local plan is implied."
+        },
+        {
+          "id": "bfa-mef-prd-guide-2024",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["region"],
+          "formats": ["PDF"],
+          "reuse_note": "December 2024 regional development-plan (PRD) guide predates the 2025 territorial code and administrative reform. Do not equate a 2019 statistical region with a current planning body without legal crosswalk."
+        },
+        {
+          "id": "bfa-collectivities-code-2025",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["region", "commune"],
+          "formats": ["PDF"],
+          "reuse_note": "Law no. 024-2025/ALT cover and parliamentary adoption were checked. The 114-page posted PDF is scanned; its article-level requirements and present applicability were not text-verified. Verify exact articles and current consolidated status before prescribing a planning index."
+        },
+        {
+          "id": "bfa-pld-monitoring-2024",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "region", "commune"],
+          "formats": ["PDF"],
+          "reuse_note": "National 2024 monitoring report on local development plans, published in 2025. It is a planning-system reference, not evidence that any selected commune's plan or budget was obtained or approved. Check any area-specific document separately."
+        }
+      ]
     }
   ]
 }
