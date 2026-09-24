@@ -45,12 +45,45 @@ for sid, name, url, publisher, file, period, category in specs:
         'note':'Country-level reference. Its presence does not establish any selected commune’s approved plan or current status.'
     })
 
+# Verified official publication locations, kept distinct from acquired bodies
+# and from area-specific adopted plans or budgets.
+lead_specs = [
+    ('bfa-cns-local-finance-catalogue', 'MATM / CONAFIL local-finance publications',
+     'https://www.cns.bf/publications/matm/?mode=liste&par_page=12&rubrique=41&tri=recent',
+     'Conseil national de la statistique / Ministère de l’Administration territoriale et de la Mobilité',
+     '2024–2026 publication listings',
+     'Budget forecasts and a transferred-resource execution report are listed; report bodies, local identifiers and approval status need review.'),
+    ('bfa-insd-national-yearbook-2024', 'Annuaire statistique national 2024',
+     'https://www.insd.bf/sites/default/files/2026-01/Annuaire%20statistique%20national%202024%20VF26-12-2025.pdf',
+     'Institut national de la statistique et de la démographie (INSD)',
+     '2015–2024 series; December 2025 publication',
+     'National yearbook lists regional and commune fiscal tables; obtain the body and inspect null-value notes, exact periods and geography before adoption.'),
+    ('bfa-dgcmef-komsilga-pcd-procurement', 'Komsilga communal development-plan procurement notice',
+     'https://www.dgcmef.gov.bf/sites/default/files/2025-07/Quotidien%20N%C2%B04176.pdf',
+     'Direction générale du contrôle des marchés publics et des engagements financiers',
+     '2025 procurement notice',
+     'Evidence of procurement for plan preparation, not a completed or approved PCD. Match the present-day commune to historical census geography before any area record.'),
+    ('bfa-government-commune-status-2026', 'Government notice on commune-status decree',
+     'https://gouvernement.gov.bf/conseil-des-ministres/conseil-des-ministres-n19-du-04-juin-2026/',
+     'Service d’information du Gouvernement du Burkina Faso',
+     '2026-06-04',
+     'Institutional location only. Obtain the decree and official unit IDs before matching any 2019 census commune to a current legal authority.'),
+]
+for sid, name, url, publisher, period, note in lead_specs:
+    if not any(source['id'] == sid for source in base['sources']):
+        base['sources'].append({
+            'id':sid, 'name':name, 'url':url, 'publisher':publisher,
+            'reference_period':period, 'status':'partial', 'retrieved_at':checked_at,
+            'note':note,
+        })
+
 other_links = [
     ('INSD RGPH 2019 source catalogue', 'https://microdata.insd.bf/index.php/catalog/69/related-materials'),
     ('INSD 2019 locality file', 'https://microdata.insd.bf/index.php/catalog/69/download/270'),
     ('INSD 2019 statistical tables', 'https://web2.insd.bf/sites/default/files/2024-06/Volume%20des%20tableaux%20statistiques_%205e%20RGPH.pdf'),
     ('2025 administrative reform notice: 17 regions / 47 provinces', 'https://www.presidencedufaso.bf/conseil-des-ministres-du-2-juillet-2025/'),
     ('ALT adoption notice for the 2025 local-government code', 'https://alt.bf/535'),
+    *[(name, url) for _, name, url, *_ in lead_specs],
 ]
 base['planning'] = {
     'title':'Planning materials and links',

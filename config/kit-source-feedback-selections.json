@@ -97,7 +97,7 @@
           "authority_type": "official_national",
           "geographic_levels": ["national", "region (2019)"],
           "formats": ["PDF"],
-          "reuse_note": "Official statistical-table volume has 581 identified table headings. AreaData adopted columns from only eight tables, including age-sex Table I.20. Inspect the remaining tables and every numeric column before claiming full adoption; regional rates are not commune rates."
+          "reuse_note": "Official statistical-table volume has 581 identified table headings. AreaData adopted selected columns from 15 tables, including age-sex Table I.20; 566 tables still need semantic review. Inspect every numeric column before claiming full adoption; regional rates are not commune rates."
         },
         {
           "id": "bfa-insd-poverty-atlas-2019",
@@ -146,6 +146,38 @@
           "geographic_levels": ["national", "region", "commune"],
           "formats": ["PDF"],
           "reuse_note": "National 2024 monitoring report on local development plans, published in 2025. It is a planning-system reference, not evidence that any selected commune's plan or budget was obtained or approved. Check any area-specific document separately."
+        },
+        {
+          "id": "bfa-cns-local-finance-catalogue",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "region", "commune"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "Official MATM/CONAFIL catalogue lists local-government budget forecasts and transferred-resource execution reports. Inspect each report body and local identifiers; a forecast is not an approved area budget or actual execution."
+        },
+        {
+          "id": "bfa-insd-national-yearbook-2024",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "region", "urban commune", "rural commune"],
+          "formats": ["PDF"],
+          "reuse_note": "INSD 2024 national yearbook contains regional and commune fiscal tables and source caveats. Reacquire the full PDF, check numeric columns and null-value notes, and reconcile historical geography before adoption."
+        },
+        {
+          "id": "bfa-dgcmef-komsilga-pcd-procurement",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["commune"],
+          "formats": ["PDF"],
+          "reuse_note": "Official 2025 procurement notice for preparing Komsilga's PCD. This is a lead to the planning process, not a completed or approved plan, local budget or implementation result. Verify current commune identity."
+        },
+        {
+          "id": "bfa-government-commune-status-2026",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["commune"],
+          "formats": ["HTML"],
+          "reuse_note": "Government notice describes a 2026 commune-status decree but does not supply a verified 2019-to-current unit crosswalk. Locate the decree and official unit list before joining current authorities to census communes."
         }
       ]
     }
