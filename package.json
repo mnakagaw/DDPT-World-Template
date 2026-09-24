@@ -1,6 +1,6 @@
 {
   "name": "ddpt-world-template",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "private": true,
   "description": "Country-driven DDPT dashboard collection and generation toolkit",
   "type": "module",

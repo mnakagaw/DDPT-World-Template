@@ -1,4 +1,4 @@
-import {escapeHtml as e, displayValue, finite, areaObservationState, statusLabel, territoryLineage, indicatorsForTerritorialScope, mapGeometry, seriesFor, seriesGeometry, observedValue, makeCsv, safeUrl, documentMarkdown, effectivePeriodForIndicator} from './model.mjs';
+import {escapeHtml as e, displayValue, finite, areaObservationState, statusLabel, territoryLineage, indicatorsForTerritorialScope, mapGeometry, seriesFor, seriesGeometry, observedValue, makeCsv, safeUrl, documentMarkdown, effectivePeriodForTerritoryIndicator} from './model.mjs';
 import {internalComparison, colorForComparison, observationContext} from './analysis.mjs';
 import {planningDocuments, selectedGaps} from './planning.mjs';
 import {sourceSeriesLabel} from './i18n.mjs';
@@ -82,7 +82,7 @@ export function diagnosticMarkdown(data,territoryId,period) {
     'This is an editable diagnostic evidence report. The analysis area does not establish a legal planning or approval authority. Observations, priority hypotheses, resident agreements and formal approvals are different records. No priorities, consent or approval are inferred.', '',
     'An exact whole-area observation has priority. A calculated value is allowed only for an approved indicator and a complete, source-backed, non-overlapping membership cover. Exact country or province totals are used before lower-area values, so missing municipalities beneath an available total do not distort a larger-area total. Percentages and non-additive measures are never simply averaged.',''];
   for(const indicator of indicatorsForTerritorialScope(data,territoryId)) {
-    const effectivePeriod=effectivePeriodForIndicator(data,indicator.id,period);
+    const effectivePeriod=effectivePeriodForTerritoryIndicator(data,territoryId,indicator.id,period);
     const result=overallEntry(data,area,indicator,effectivePeriod),source=result.source,comparison=internalComparison(data,territoryId,indicator.id,effectivePeriod);
     lines.push(`## ${md(indicator.theme)} — ${md(indicator.name)}`,'',`Overall: ${md(valueText(data,result.value,indicator))} ${md(result.unit)} · ${md(statusLabel(result.status))} · ${md(result.observation?.period || effectivePeriod)}`,result.provenance==='areadata_calculated'?`Aggregation: ${md(result.note)} Components: ${md(result.components.map(item=>`${item.territory_id}@${item.period}`).join(', '))}. Missing areas: ${md(result.missing_ids.join(', ') || 'none')}. Covered subtotal: ${md(result.covered_value)}.`:'Source-reported exact-area observation or explicit gap.',md(meaningText(result)),`Observation boundary edition: ${md(observedBoundary(result.observation))}.`,`Source: ${md(source?.name)} · ${md(source?.url)} · retrieved ${md(source?.retrieved_at)}`,'','### Acquired history','','| Period | Value | Unit | Status | Definition / population / method / comparison context | Observation boundary | Source / retrieved |','|---|---:|---|---|---|---|---|');
     for(const row of seriesFor(data,territoryId,indicator.id)) {
@@ -111,7 +111,7 @@ export function diagnosticCsv(data,territoryId,period) {
   if(!parent)throw new Error('Unknown diagnostic area');
   const rows=[['Dataset','Analysis area ID','Analysis area','Record scope','Territory ID','Territory','Type','Code system','Official code','Parent ID','Boundary edition','Indicator ID','Indicator','Period','Value','Unit','Status','Value provenance','Aggregation note','Aggregation components','Aggregation component periods','Missing area IDs','Covered subtotal','Comparable','Comparison reason','Definition ID','Definition','Population','Method','Meaning matches indicator','Observation boundary edition','Boundary join','Source ID','Source name','Source URL','Retrieved at','Data edition']];
   for(const indicator of indicatorsForTerritorialScope(data,territoryId)){
-    const effectivePeriod=effectivePeriodForIndicator(data,indicator.id,period);
+    const effectivePeriod=effectivePeriodForTerritoryIndicator(data,territoryId,indicator.id,period);
     const overall=overallEntry(data,parent,indicator,effectivePeriod);
     for(const [scope,entry] of [['overall',overall],...internalComparison(data,territoryId,indicator.id,effectivePeriod).rows.map(row=>['within_area',row])])rows.push([data.country.id,territoryId,parent.name,scope,entry.area.id,entry.area.name,entry.area.type,entry.area.code_system,entry.area.official_code,entry.area.parent_id,entry.area.boundary_version,indicator.id,indicator.name,entry.period || entry.observation?.period || effectivePeriod,entry.value,rowUnit(entry,indicator),entry.status,entry.provenance,entry.note,entry.components?.map(item=>item.territory_id).join('; '),entry.components?.map(item=>`${item.territory_id}@${item.period}`).join('; '),entry.missing_ids?.join('; '),entry.covered_value,entry.comparable,entry.reason,entry.definition_id,rowDefinition(entry,indicator),entry.population,entry.method,entry.meaning_comparable,observedBoundary(entry.observation),scope==='overall'?'Not applicable to an overall statistical record':entry.boundary_reason || 'Matched geometry',entry.source?.id,entry.source?.name,entry.source?.url,entry.source?.retrieved_at,data.generated_at]);
   }
@@ -124,7 +124,7 @@ export function diagnosticHtml(data,territoryId,period) {
   const area=data.territories.find(row=>row.id===territoryId);
   if(!area)throw new Error('Unknown diagnostic area');
   const sections=indicatorsForTerritorialScope(data,territoryId).map(indicator=>{
-    const effectivePeriod=effectivePeriodForIndicator(data,indicator.id,period);
+    const effectivePeriod=effectivePeriodForTerritoryIndicator(data,territoryId,indicator.id,period);
     const result=overallEntry(data,area,indicator,effectivePeriod);
     return `<section><h2>${e(indicator.theme)} — ${e(indicator.name)}</h2><p><strong>Overall: ${e(valueText(data,result.value,indicator))} ${e(result.unit)}</strong> · ${e(statusLabel(result.status))} · ${e(result.observation?.period || effectivePeriod)}</p><p>${e(meaningText(result))}</p><p>Observation boundary edition: ${e(observedBoundary(result.observation))}.</p><p>Source: ${sourceLink(result.source)} · Retrieved ${e(result.source?.retrieved_at || 'not recorded')}.</p><h3>Acquired history</h3>${seriesReport(data,area,indicator)}${renderInternalComparison(data,territoryId,indicator.id,effectivePeriod,{interactive:false})}</section>`;
   }).join('');

@@ -32,6 +32,17 @@ export function latestObservedPeriod(dataset, indicatorId) {
 export function latestObservedPeriodForTerritory(dataset, territoryId, indicatorId) {
   return [...new Set(dataset.observations.filter(row => row.territory_id === territoryId && row.indicator_id === indicatorId && observedValue(row) !== null).map(row => String(row.period)))].sort((a,b) => b.localeCompare(a, 'en', {numeric:true}))[0] || '';
 }
+export function regionalMemberValueSummary(dataset, territoryId, indicatorId, period) {
+  const set=comparisonSet(dataset,territoryId),members=new Map(set.members.map(area=>[area.id,area]));
+  const indicator=dataset.indicators.find(item=>item.id===indicatorId);
+  if(!indicator||!members.size)return {period:'',count:0,total:members.size,minimum:null,maximum:null};
+  const latest=String(period)===LATEST_AVAILABLE_PERIOD;
+  const rows=dataset.observations.filter(row=>row.indicator_id===indicatorId&&members.has(row.territory_id)&&observedValue(row)!==null&&observationContext(dataset,members.get(row.territory_id),indicator,row).comparable);
+  const selectedPeriod=latest?[...new Set(rows.map(row=>String(row.period)))].sort((a,b)=>b.localeCompare(a,'en',{numeric:true}))[0]||'':String(period);
+  const values=rows.filter(row=>String(row.period)===selectedPeriod).map(row=>({area:members.get(row.territory_id),value:row.value,row}));
+  const ordered=values.sort((a,b)=>a.value-b.value||a.area.name.localeCompare(b.area.name));
+  return {period:selectedPeriod,count:ordered.length,total:members.size,minimum:ordered[0]||null,maximum:ordered.at(-1)||null};
+}
 export function effectivePeriodForIndicator(dataset, indicatorId, period) {
   if(String(period)!==LATEST_AVAILABLE_PERIOD)return period;
   const indicator=dataset.indicators.find(item=>item.id===indicatorId);
@@ -43,7 +54,11 @@ export function effectivePeriodForTerritoryIndicator(dataset, territoryId, indic
   if(String(period)!==LATEST_AVAILABLE_PERIOD)return period;
   const indicator=dataset.indicators.find(item=>item.id===indicatorId);
   if(indicator?.period_policy==='latest_available_by_component')return period;
-  return latestObservedPeriodForTerritory(dataset,territoryId,indicatorId) || effectivePeriodForIndicator(dataset,indicatorId,period);
+  const own=latestObservedPeriodForTerritory(dataset,territoryId,indicatorId);
+  if(own)return own;
+  const area=dataset.territories.find(item=>item.id===territoryId);
+  const memberPeriod=['world','regional'].includes(dataset.analysis?.kind)&&area?.type==='exploration_scope'?regionalMemberValueSummary(dataset,territoryId,indicatorId,period).period:'';
+  return memberPeriod || effectivePeriodForIndicator(dataset,indicatorId,period);
 }
 export function observationFor(dataset, territoryId, indicatorId, period) {
   return dataset.observations.find(row => row.territory_id === territoryId && row.indicator_id === indicatorId && String(row.period) === String(period));
@@ -309,7 +324,7 @@ export function comparisonCompatibility(dataset, state) {
 export function comparisonRows(dataset, state) {
   const compatibility=comparisonCompatibility(dataset,state);
   const indicator=dataset.indicators.find(item=>item.id===state.metric);
-  const effectivePeriod=effectivePeriodForIndicator(dataset,state.metric,state.period);
+  const effectivePeriod=effectivePeriodForTerritoryIndicator(dataset,state.selected,state.metric,state.period);
   return comparisonAreas(dataset,state).map(area => {
     const result=observationState(dataset,area.id,state.metric,effectivePeriod);
     const meaning=observationContext(dataset,area,indicator,result.row);

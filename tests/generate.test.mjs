@@ -4,7 +4,8 @@ import {mkdtemp,readFile,writeFile,mkdir,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {generateSite,pageShell} from '../lib/generate.mjs';
-import {initialState,selectTerritory,territoryLineage,indicatorsForTerritorialScope,orderedTerritorialIndicators,territorialSummaryIndicators,regionalCoverageSummary,comparisonLevelsForTerritory,hierarchyControls,selectHierarchyOption,routeQuery,observationState,periodsFor,latestObservedPeriod,latestObservedPeriodForTerritory,effectivePeriodForIndicator,effectivePeriodForTerritoryIndicator,territorialIndicatorState,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
+import {initialState,selectTerritory,territoryLineage,indicatorsForTerritorialScope,orderedTerritorialIndicators,territorialSummaryIndicators,regionalCoverageSummary,comparisonLevelsForTerritory,hierarchyControls,selectHierarchyOption,routeQuery,observationState,periodsFor,latestObservedPeriod,latestObservedPeriodForTerritory,effectivePeriodForIndicator,effectivePeriodForTerritoryIndicator,territorialIndicatorState,regionalMemberValueSummary,nationalOnly,comparisonRows,comparisonCompatibility,rankedRows,searchRows,rankingReveal,rankingScrollTop,distribution,mapGeometry,seriesGeometry,seriesFor,safeUrl,csvCell,makeCsv,evidenceRows,evidenceCsv,planningMarkdown,planningHtml} from '../scaffold/site/model.mjs';
+import {diagnosticCsv} from '../scaffold/site/diagnostic.mjs';
 import {hierarchyFixture} from './hierarchy-fixture.mjs';
 
 function fixture() {
@@ -209,6 +210,32 @@ test('territorial latest-available resolves per area and keeps zero as observed 
   assert.match(evidenceCsv(data,'a','latest-available'),/"water","Water access","2024","0"/);
   const explicit=territorialIndicatorState(data,'a','population','2024');
   assert.equal(explicit.result.value,null);assert.equal(explicit.period,'2024');assert.equal(explicit.result.status,'missing');
+});
+
+test('an unpublished custom region shows the latest comparable member year without inventing a regional rate',()=>{
+  const data=fixture();
+  data.country={...data.country,id:'WLD',name:'World',national_territory_id:'WLD'};
+  data.territories=[
+    {id:'WLD',name:'World',type:'exploration_scope',level:'world',parent_id:null},
+    {id:'CAM',name:'Central America + Caribbean',type:'exploration_scope',level:'macroregion',parent_id:'WLD'},
+    {id:'AAA',name:'Alpha',type:'country',level:'country',parent_id:'CAM',country_id:'AAA'},
+    {id:'BBB',name:'Beta',type:'country',level:'country',parent_id:'CAM',country_id:'BBB'},
+  ];
+  data.indicators=[{id:'rate',name:'Access rate',theme:'Services',unit:'%',definition:'Compatible published rate',source_id:'s1',aggregation:'none',series_family:'international_reference'}];
+  data.sources[0].geographic_level='world_multi_scope_series';
+  data.observations=[
+    {territory_id:'AAA',indicator_id:'rate',period:'2023',value:11,status:'observed',source_id:'s1'},
+    {territory_id:'BBB',indicator_id:'rate',period:'2023',value:22,status:'observed',source_id:'s1'},
+    {territory_id:'AAA',indicator_id:'rate',period:'2024',value:33,status:'observed',source_id:'s1'},
+  ];
+  data.analysis={kind:'world',default_period_by_indicator:{rate:'2024'},comparisons:[{parent_id:'CAM',member_ids:['AAA','BBB'],source_ids:['s1'],label:'Two countries'}]};
+  const latest=regionalMemberValueSummary(data,'CAM','rate','latest-available');
+  assert.equal(latest.period,'2024');assert.equal(latest.count,1);assert.equal(latest.total,2);
+  assert.equal(latest.minimum.area.id,'AAA');assert.equal(latest.minimum.value,33);
+  assert.equal(effectivePeriodForTerritoryIndicator(data,'CAM','rate','latest-available'),'2024');
+  assert.equal(territorialIndicatorState(data,'CAM','rate','latest-available').result.value,null);
+  assert.equal(regionalMemberValueSummary(data,'CAM','rate','2023').count,2);
+  assert.match(diagnosticCsv(data,'CAM','latest-available'),/"CAM","Central America \+ Caribbean","overall"[^\r\n]*"rate","Access rate","2024"/);
 });
 
 test('area changes, national return and query round trips preserve selected analytical question',()=>{
