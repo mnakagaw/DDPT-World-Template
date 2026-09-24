@@ -1,6 +1,6 @@
 {
   "schema_version": "0.2",
-  "checked_at": "2026-09-23",
+  "checked_at": "2026-09-24",
   "purpose": "Pinned discovery registries and workflow references from the public Census Dashboard Kit. Source-address preflight inputs are not evidence of acquisition, content verification, geography matching or indicator adoption; workflow references are not evidence that an audit was performed.",
   "upstream": {
     "repository": "https://github.com/mnakagaw/Census-Dashboard-Kit",
@@ -70,6 +70,17 @@
       "source_location_count": 7,
       "evidence_stage": "official_location_identified",
       "meaning": "Seven public source-location leads were returned to Kit; no current Kit project has acquired or adopted them."
+    },
+    {
+      "country_ids": ["BGD", "LAO", "UGA"],
+      "bundle_path": "evidence/KIT_SOURCE_FEEDBACK.json",
+      "bundle_commit": "ab485fc3601d2e112e99c8c70dd4c43f2eca8a01",
+      "bundle_sha256": "480b7069f77a041de758b2b097b72befa0c15f82a61b44a69874ac19ae19df5a",
+      "kit_registry_path": "config/areadata-source-feedback.json",
+      "kit_import_commit": "e55f489d84669a09a10c9946d07f289b101a02b7",
+      "source_location_count": 7,
+      "evidence_stage": "official_location_identified",
+      "meaning": "Corrected the Lao 2015 report URL; Kit retains the prior SDG page only as superseded history. Source leads remain discovery context, not Kit acquisition or adoption."
     }
   ]
 }
