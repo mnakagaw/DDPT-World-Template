@@ -97,7 +97,7 @@
           "authority_type": "official_national",
           "geographic_levels": ["national", "region (2019)"],
           "formats": ["PDF"],
-          "reuse_note": "Official statistical-table volume has 581 identified table headings. AreaData adopted selected columns from 15 tables, including age-sex Table I.20; 566 tables still need semantic review. Inspect every numeric column before claiming full adoption; regional rates are not commune rates."
+          "reuse_note": "Official statistical-table volume has 581 identified table headings; 17 have selected adopted values, 11 have reviewed decisions without new adoption, and 553 await semantic review. Table II.10 fertility values conflict with the final report's prose and figure (AreaData evidence: burkina-faso-fertility-source-conflict-2026-09-25.md); do not adopt or reconcile them automatically. Inspect numeric columns, denominators and source versions; regional rates are not commune rates."
         },
         {
           "id": "bfa-insd-poverty-atlas-2019",
