@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-24T03:35:17.182Z",
-  "origin_commit": "1658b44ca98dbccc3fcd9b3c82fbdca5a8852389",
+  "exported_at": "2026-09-24T04:13:47.522Z",
+  "origin_commit": "31a0986014701f23793f32e4503a1eb3a793fc17",
   "sources": [
     {
       "iso3": "BGD",
@@ -61,7 +61,7 @@
       "role": "census_results",
       "title": "Results of Population and Housing Census 2015",
       "publisher": "Lao Statistics Bureau / UNFPA Lao PDR",
-      "url": "https://www.lsb.gov.la/sdg/en/17-19-2/",
+      "url": "https://lao.unfpa.org/en/publications/results-population-and-housing-census-2015-english-version",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
       "checked_at": "2026-09-24",
@@ -79,7 +79,8 @@
       "license_or_terms": "Source-site public access terms; redistribution status reviewed per retained file",
       "reuse_note": "Reused from the Kit Lao project, not newly discovered by AreaData. This is the detailed 2015 census, not published 2025 local census results. Recheck report and geography; AreaData independent audit is pending.",
       "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
-      "artifact_sha256": null
+      "artifact_sha256": null,
+      "supersedes_url": "https://www.lsb.gov.la/sdg/en/17-19-2/"
     },
     {
       "iso3": "LAO",
