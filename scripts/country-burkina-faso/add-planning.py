@@ -28,7 +28,9 @@ specs = [
 for sid, name, url, publisher, file, period, category in specs:
     path = RAW/file
     assert path.read_bytes().startswith(b'%PDF-'), path
-    assert not any(s['id']==sid for s in base['sources'])
+    if any(s['id']==sid for s in base['sources']):
+        assert any(d['id']=='doc-'+sid for d in base['documents'])
+        continue
     base['sources'].append({
         'id':sid,'name':name,'url':url,'publisher':publisher,
         'reference_period':period,'status':'ready','retrieved_at':checked_at,
@@ -62,8 +64,11 @@ base['planning'] = {
     ],
     'system':{
         'label':'Burkina Faso local development planning (PCD / PRD)',
-        'scope':'The December 2024 MEF guides address communal development plans (PCD) and regional development plans (PRD). They predate the 2025 administrative reform and the December 2025 territorial-collectivities code. The 2019 census geography here is historic and does not identify a current legal planning authority for each old region or commune.',
+        'scope':'The 2025 territorial code identifies communes and regions as territorial collectivities (Article 23). Communes initiate, prepare and implement PCDs (Article 99); regions do the same for PRDs (Article 102). Article 165 requires both to align with the national development reference. This dashboard still uses the historical 2019 census geography (13 regions, 45 provinces, 351 communes); it does not identify a current post-reform authority from a historic territory name.',
         'cycle':'The 2024 guides describe five-year planning horizons; current application to each selected post-reform authority must be checked against the 2025 code and actual plan.',
+        'legal_basis':[{'source_id':'bfa-collectivities-code-2025','articles':'23, 99, 102, 149, 165, 220, 313',
+                        'status':'article_text_checked_against_scanned_pages',
+                        'meaning':'Commune and region planning mandates; programme budget as plan implementation/evaluation tool; annual commune and region reports address plan execution. This is not evidence that a particular local plan or budget was acquired or approved.'}],
         'source_ids':['bfa-mef-pcd-guide-2024','bfa-mef-prd-guide-2024','bfa-collectivities-code-2025'],
     },
     'outputs':['markdown','html','evidence_csv','documents_csv'],
@@ -72,9 +77,12 @@ base['planning'] = {
         *[{'label':name,'url':url} for _,name,url,*_ in specs],
     ],
     'update':{'status':'current','checked_at':checked_at,
-              'message':'Source locations and national bodies checked. Area-specific plans, budgets and legal unit correspondence remain unverified.'},
+              'message':'Selected 2025 code articles checked against page images. Area-specific plans, budgets, current consolidated status and post-reform legal-unit correspondence remain unverified.'},
 }
-base['collection']['adapters'].append('bfa-local-planning-source-catalogue')
-base['collection']['notes'].append('2024 PCD/PRD methodology and 2025 territorial code are linked separately; no historic census region is declared a current legal plan authority by inference.')
+if 'bfa-local-planning-source-catalogue' not in base['collection']['adapters']:
+    base['collection']['adapters'].append('bfa-local-planning-source-catalogue')
+note='2024 PCD/PRD methodology and 2025 territorial code are linked separately; no historic census region is declared a current legal plan authority by inference.'
+if note not in base['collection']['notes']:
+    base['collection']['notes'].append(note)
 DATA.write_text(json.dumps(base,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps({'sources':len(specs),'documents':len(base['documents']),'related_links':len(base['planning']['related_links'])}))

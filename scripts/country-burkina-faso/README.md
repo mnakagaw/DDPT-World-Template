@@ -21,6 +21,7 @@ python "$project/scripts/check-boundaries.py"
 python "$project/scripts/build-dashboard.py"
 python "$project/scripts/add-age-groups.py"
 python "$project/scripts/add-census-themes.py"
+python "$project/scripts/add-census-expanded.py"
 python "$project/scripts/add-communal-model.py"
 python "$project/scripts/add-poverty-atlas.py"
 python "$project/scripts/add-planning.py"
@@ -32,6 +33,6 @@ node scripts/build-country.mjs --project $project
 node scripts/country-burkina-faso/check-outputs.mjs $project
 ```
 
-The source PDFs and 2017 reference boundaries are acquired with byte hashes and receipts. `check-boundaries.py` writes candidate commune matches **for audit only**; unresolved ADM3 geometry is not joined to the dashboard. `write-evidence.py` inventories 12 acquired INSD PDFs and 581 statistical-table headings. Eight selected tables have adopted values; 573 need full numeric-column review. `SOURCE_RESOURCE_INVENTORY.json`, `SOURCE_TABLE_INVENTORY.csv`, `INDICATOR_INVENTORY.csv`, `THEME_COVERAGE.json`, the source receipts, and the validation report are evidence of the exact scope.
+The source PDFs and 2017 reference boundaries are acquired with byte hashes and receipts. `check-boundaries.py` writes candidate commune matches **for audit only**; unresolved ADM3 geometry is not joined to the dashboard. `write-evidence.py` inventories 12 acquired INSD PDFs and 581 statistical-table headings. Fifteen selected tables have adopted values; 566 need full numeric-column review. `SOURCE_RESOURCE_INVENTORY.json`, `SOURCE_TABLE_INVENTORY.csv`, `INDICATOR_INVENTORY.csv`, `THEME_COVERAGE.json`, the source receipts, and the validation report are evidence of the exact scope.
 
-The four-level output check exercises Markdown, HTML and CSV, including 2019 population and 2018 modeled poverty. It does **not** replace the 42-scenario acceptance, full visual/print inspection, article-level law review, plan/budget collection, Word review, independent audit, hosting, or public verification. The source-specific review record is [the Burkina Faso adaptation note](../../docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md).
+The four-level output check exercises Markdown, HTML and CSV, including 2019 population and 2018 modeled poverty. It does **not** replace the 42-scenario acceptance, full visual/print inspection, current consolidated-law review, local plan/budget collection, independent audit, hosting, or public verification. DOCX is not an adopted BFA output under the current planning contract; a real Word export would need review if adopted later. The source-specific review record is [the Burkina Faso adaptation note](../../docs/evidence/burkina-faso-areadata-adaptation-2026-09-24.md).

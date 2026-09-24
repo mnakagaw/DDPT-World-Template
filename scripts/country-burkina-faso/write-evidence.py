@@ -31,7 +31,8 @@ tables = {}
 for identifier, title in table_headings:
     tables.setdefault(identifier.upper(), title.strip())
 assert len(tables) == 581, len(tables)
-adopted_tables = {"I.20", "III.9", "VII.11", "VII.50", "VII.55", "VII.65", "VIII.7", "IX.1"}
+adopted_tables = {"I.20", "III.9", "VII.11", "VII.50", "VII.55", "VII.65", "VII.74",
+                  "VIII.7", "VIII.19", "VIII.27", "VIII.43", "VIII.50", "IX.1", "IX.22", "XII.4"}
 assert adopted_tables <= tables.keys()
 with (EVIDENCE / "SOURCE_TABLE_INVENTORY.csv").open("w", encoding="utf-8-sig", newline="") as stream:
     writer = csv.writer(stream)
@@ -44,6 +45,22 @@ with (EVIDENCE / "SOURCE_TABLE_INVENTORY.csv").open("w", encoding="utf-8-sig", n
             "check adopted column, definition and printed page" if adopted else
             "inspect full table, geography, denominators and numeric columns before adoption",
         ])
+
+selected_indicators = [item for item in DATA["indicators"]
+                       if item.get("source_id") == "bfa-insd-rgph2019-statistical-tables"
+                       and item.get("upstream_table")]
+assert len(selected_indicators) == 14, len(selected_indicators)
+with (EVIDENCE / "SELECTED_COLUMN_AUDIT.csv").open("w", encoding="utf-8-sig", newline="") as stream:
+    writer = csv.writer(stream)
+    writer.writerow(["indicator_id", "table", "selected_column", "period", "national_printed_value",
+                     "historical_region_count", "meaning", "source_sha256"])
+    for indicator in selected_indicators:
+        rows = [row for row in DATA["observations"] if row["indicator_id"] == indicator["id"] and row["status"] == "observed"]
+        assert len(rows) == 14 and {row["period"] for row in rows} == {"2019"}, indicator["id"]
+        national = next(row for row in rows if row["territory_id"] == "BFA")
+        writer.writerow([indicator["id"], indicator["upstream_table"], indicator["upstream_column"],
+                         "2019", national["value"], 13, indicator["definition"],
+                         next(source["sha256"] for source in DATA["sources"] if source["id"] == indicator["source_id"])])
 
 dataset_sources = {source["id"]: source for source in DATA["sources"]}
 adopted_resources = {

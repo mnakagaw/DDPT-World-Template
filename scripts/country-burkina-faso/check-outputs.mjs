@@ -16,6 +16,22 @@ const observation = (area, indicator) => dataset.observations.find(row =>
   row.territory_id === area.id && row.indicator_id === indicator && row.status === 'observed');
 assert.equal(observation(national, 'BFA_RGPH2019_POP_TOTAL')?.value, 20505155);
 assert.equal(observation(national, 'BFA_INSD_POVERTY_INCIDENCE_MODEL')?.value, 39.3);
+const expanded2019 = [
+  ['SCHOOL_ATTENDING_6_16', 45.9, 69.6],
+  ['GROSS_PRESCHOOL_ENROLMENT', 3.6, 15.9],
+  ['NET_POSTPRIMARY_ENROLMENT', 21.2, 39.3],
+  ['NET_SECONDARY_ENROLMENT', 6.3, 14.4],
+  ['ILO_UNEMPLOYMENT_RATE', 7.1, 9.5],
+  ['WASTEWATER_STREET_NATURE', 74.3, 72.2],
+  ['DISABILITY_PREVALENCE_5PLUS', 1.1, 0.9],
+];
+for (const [suffix, expectedNational, expectedCentre] of expanded2019) {
+  const id = `BFA_RGPH2019_${suffix}_REGIONAL`;
+  assert.equal(observation(national, id)?.value, expectedNational, id);
+  assert.equal(observation(centre, id)?.value, expectedCentre, id);
+  assert.equal(observation(centre, id)?.period, '2019');
+  assert.equal(observation(centre, id)?.source_id, 'bfa-insd-rgph2019-statistical-tables');
+}
 
 const cases = [
   { area: national, expectedChild: centre.name },
@@ -33,6 +49,10 @@ for (const { area, expectedChild } of cases) {
   assert(markdown.includes(`# Territorial diagnostic — ${area.name}`));
   assert(html.includes(`<h1>Territorial diagnostic — ${area.name}</h1>`));
   assert(csv.includes(area.id) && csv.includes('BFA_RGPH2019_POP_TOTAL'));
+  if (['BFA', centre.id].includes(area.id)) {
+    for (const [suffix] of expanded2019)
+      assert(csv.includes(`BFA_RGPH2019_${suffix}_REGIONAL`), `${area.name}: ${suffix}`);
+  }
   assert(markdown.includes(population.value.toLocaleString('en-US')));
   assert(html.includes(population.value.toLocaleString('en-US')));
   assert(csv.includes(String(population.value)));
