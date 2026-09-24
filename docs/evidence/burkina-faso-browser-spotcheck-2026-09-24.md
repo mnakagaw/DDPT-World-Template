@@ -1,6 +1,6 @@
 # Burkina Faso local browser spot check 2026-09-24
 
-This is a **producer spot check**, not the 42-scenario acceptance or an independent audit. The test used local Chrome at 1366×900 against `http://127.0.0.1:4175/`, with the BFA dataset SHA-256 `53d17c6d10f60cdea5fcb8c317e43e37123c680a37d9af386875f9eb0715baa2` and AreaData template commit `8d2f01d` plus the current uncommitted Word/screening changes. The private in-app browser bridge was unavailable, so headless Chrome/Playwright exercised native `<select>` controls. Screenshots remain in the ignored local `tmp/` directory.
+This is a **producer spot check**, not the 42-scenario acceptance or an independent audit. The test used local Chrome at 1366×900 against `http://127.0.0.1:4175/`, with the BFA dataset SHA-256 `53e2de7488ea6fd3657270006a858a609f80e3b3d969dcda2d129048c4681aa7` and AreaData template commit `8d2f01d` plus then-uncommitted Word/screening changes. The later dataset SHA-256 `53d17c6d10f60cdea5fcb8c317e43e37123c680a37d9af386875f9eb0715baa2` adds four source-location records and their planning links; this browser flow was not repeated after that change. The private in-app browser bridge was unavailable, so headless Chrome/Playwright exercised native `<select>` controls. Screenshots remain in the ignored local `tmp/` directory.
 
 | Step | Observed result |
 | --- | --- |

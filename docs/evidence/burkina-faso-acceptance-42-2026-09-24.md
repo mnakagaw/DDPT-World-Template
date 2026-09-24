@@ -1,6 +1,6 @@
 # Burkina Faso — 42-scenario acceptance ledger
 
-2026-09-24 local review of AreaData template 0.12.1, dataset SHA-256 `53d17c6d10f60cdea5fcb8c317e43e37123c680a37d9af386875f9eb0715baa2`. Browser target: `http://127.0.0.1:4175/` (local only). Representative areas: Burkina Faso, historical Centre, Kadiogo, Komki-Ipala. This ledger uses the four statuses in `templates/ACCEPTANCE.md`; partial checks are recorded as evidence but do not make a scenario pass. The independent audit and public release are **not complete**.
+2026-09-24 local review of AreaData template 0.12.1, dataset SHA-256 `53d17c6d10f60cdea5fcb8c317e43e37123c680a37d9af386875f9eb0715baa2`. Browser target: `http://127.0.0.1:4175/` (local only). The recorded browser spot check used the immediately preceding dataset SHA `53e2de7488ea6fd3657270006a858a609f80e3b3d969dcda2d129048c4681aa7`; the current dataset adds four source-location records and has not received a new full browser pass. Representative areas: Burkina Faso, historical Centre, Kadiogo, Komki-Ipala. This ledger uses the four statuses in `templates/ACCEPTANCE.md`; partial checks are recorded as evidence but do not make a scenario pass. The independent audit and public release are **not complete**.
 
 | ID | Status | Evidence and remaining check |
 | --- | --- | --- |
