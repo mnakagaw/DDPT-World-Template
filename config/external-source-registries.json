@@ -1,6 +1,6 @@
 {
   "schema_version": "0.2",
-  "checked_at": "2026-09-24",
+  "checked_at": "2026-09-25",
   "purpose": "Pinned discovery registries and workflow references from the public Census Dashboard Kit. Source-address preflight inputs are not evidence of acquisition, content verification, geography matching or indicator adoption; workflow references are not evidence that an audit was performed.",
   "upstream": {
     "repository": "https://github.com/mnakagaw/Census-Dashboard-Kit",
@@ -81,6 +81,17 @@
       "source_location_count": 7,
       "evidence_stage": "official_location_identified",
       "meaning": "Corrected the Lao 2015 report URL; Kit retains the prior SDG page only as superseded history. Source leads remain discovery context, not Kit acquisition or adoption."
+    },
+    {
+      "country_ids": ["BFA", "BGD", "LAO", "UGA"],
+      "bundle_path": "evidence/KIT_SOURCE_FEEDBACK.json",
+      "bundle_commit": "7cd02125fdec4b693a075c7ade9c0c057420a38d",
+      "bundle_sha256": "ec5e99cbdc752ecef6ecf2d0a6c1560b0c049caf4e22741614d7a969f6f01b19",
+      "kit_registry_path": "config/areadata-source-feedback.json",
+      "kit_import_commit": "fefd82e2a2ed380eb17244e4f15b67279e2ea90f",
+      "source_location_count": 21,
+      "evidence_stage": "official_location_identified",
+      "meaning": "The 21-location bundle includes 14 BFA leads. Kit imported two newly located BFA candidates and updated 19 existing leads; no Kit country project acquired or adopted their data."
     }
   ]
 }
