@@ -58,5 +58,18 @@
       "sha256": "e247e8e24b40587276cb40da2580577052cd265159c0ca53c515292c3a642e1b",
       "use": "Independent read-only completion audit after the builder closes a country candidate; do not publish before ACCEPT."
     }
+  ],
+  "feedback_returns": [
+    {
+      "country_ids": ["BGD", "LAO", "UGA"],
+      "bundle_path": "evidence/KIT_SOURCE_FEEDBACK.json",
+      "bundle_commit": "0aba9570d565978aa4081c4bb370d5677fed8245",
+      "bundle_sha256": "fea8beefbbc5fd995427425dcf6f2881f588eacdced630e0af20704ff8fed5d1",
+      "kit_registry_path": "config/areadata-source-feedback.json",
+      "kit_import_commit": "12992c6c54c445b12764cc994a697a731c574269",
+      "source_location_count": 7,
+      "evidence_stage": "official_location_identified",
+      "meaning": "Seven public source-location leads were returned to Kit; no current Kit project has acquired or adopted them."
+    }
   ]
 }
