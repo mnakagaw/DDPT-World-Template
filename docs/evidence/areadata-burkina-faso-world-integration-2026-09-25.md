@@ -15,6 +15,13 @@ This release adds Burkina Faso's historical 2019 Census geography to the existin
 
 This is a source-limited integrated branch, not a declaration that the country edition passed all 42 acceptance scenarios. The separate BFA ledger still records 0 full passes, 39 uncompleted and 3 outside scope, and no independent audit. The 2019 statistical volume contains 581 table IDs; only part of it has undergone printed-page and semantic review. The source-conflicting INSD fertility table is withheld. Current administrative/legal correspondence, local plans and budgets remain unresolved. These omissions must not be converted to zero, inferred from lower areas, or described as a completed planning system.
 
+## Git, FTPS and public verification
+
+- The integration code and scoped release preparation were pushed to `main` in commits `7ccd257` and `9597571`. The public release was built from the exact AreaData v0.12.1 assets already on the server, preserving the existing 48 country shards.
+- FTPS deployment to `areadata.net` completed on 2026-09-25 JST. The 421 changed or added files were read back and matched by SHA-256: 410 area-specific Word reports, three BFA country/boundary shards, one release-evidence JSON, the world root dataset, the app module and five page entrypoints. The other 120 staged files were untouched; no remote file was deleted. The local deployment receipt is `.work/ftp-deployment-areadata-v0.12.2-bfa-public-base-2026-09-25.json`.
+- Public HTTPS SHA-256 matched the staged bytes for 12 sampled files: the world root dataset, app module, four HTML entrypoints, all three BFA shards, and Word reports for the national area, Centre and the final commune. The public browser rendered Burkina Faso's 2019 Census population (20,505,155), 13-region comparison, thematic view, four national planning/legal references and the national Word link. The public entry is [AreaData's Burkina Faso regional diagnostic](https://areadata.net/territorial/?country=WLD&territory=BFA&metric=BFA_RGPH2019_POP_TOTAL&period=latest-available&lang=ja).
+- These checks establish that the scoped BFA branch is deployed and functioning. They do not replace the unfinished source-table inventory, independent country audit or 42-scenario acceptance record described above.
+
 ## Reproduction
 
 1. Build the BFA country project from the archived receipts and scripts under `scripts/country-burkina-faso/`.
