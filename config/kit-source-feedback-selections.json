@@ -31,6 +31,7 @@
       "sources": [
         {
           "id": "lao-phc-2015",
+          "supersedes_url": "https://www.lsb.gov.la/sdg/en/17-19-2/",
           "role": "census_results",
           "authority_type": "official_national",
           "geographic_levels": ["national", "province", "district"],

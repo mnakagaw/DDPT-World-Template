@@ -46,4 +46,6 @@ test('committed bundle retains the first three country source-location leads', a
   assert.ok(bundle.sources.every(source => source.artifact_sha256 === null));
   assert.ok(bundle.sources.every(source => source.origin_evidence_path.startsWith('docs/evidence/')));
   assert.ok(bundle.sources.every(source => !JSON.stringify(source).includes('C:\\Users\\')));
+  assert.equal(bundle.sources.find(source => source.source_id === 'LAO_LAO_PHC_2015')?.supersedes_url,
+    'https://www.lsb.gov.la/sdg/en/17-19-2/');
 });

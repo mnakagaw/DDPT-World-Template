@@ -70,6 +70,7 @@ export async function buildKitSourceFeedback({ base = root, commit, exportedAt }
         reuse_note: requireValue(chosen.reuse_note, 'reuse_note'),
         origin_evidence_path: evidencePath,
         artifact_sha256: null,
+        ...(chosen.supersedes_url ? { supersedes_url: publicUrl(chosen.supersedes_url) } : {}),
       });
     }
   }

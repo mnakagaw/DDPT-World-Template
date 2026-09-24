@@ -8,11 +8,13 @@ The seven selected URLs below are location leads, not an independent AreaData so
 | --- | --- | --- |
 | Bangladesh | `bgd-bbs-preliminary-2022` | https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220 |
 | Bangladesh | `bgd-bbs-community-series-2022` | https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220 |
-| Lao PDR | `lao-phc-2015` | https://www.lsb.gov.la/sdg/en/17-19-2/ |
+| Lao PDR | `lao-phc-2015` | https://lao.unfpa.org/en/publications/results-population-and-housing-census-2015-english-version |
 | Lao PDR | `lao-cod-ps` | https://data.humdata.org/dataset/cod-ps-lao |
 | Uganda | `uga-lgdp-census-normalized` | https://statistics.ubos.org/nphc/report?cat=resources |
 | Uganda | `uga-plan-lgdp_guidelines_2020` | https://npa.go.ug/wp-content/uploads/2026/07/LOCAL-GOVERNMENT-DEVELOPMENT-PLANNING-GUIDELINES-2020.pdf?x56883 |
 | Uganda | `uga-plan-npa_plan_catalog` | https://npa.go.ug/local-government-development-plans/ |
+
+The earlier Lao 2015 feedback URL was an SDG indicator page, not the census report. The corrected UNFPA/LSB report listing supersedes that feedback entry; the old record is retained only as correction history and must not be offered as a source lead.
 
 These are separate country projects under `generated/`, based on already acquired country evidence. The source projects were read but not modified. This is an AreaData integration and local functional check, not an independent country-source audit or a public release.
 
