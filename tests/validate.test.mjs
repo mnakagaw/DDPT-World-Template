@@ -21,6 +21,10 @@ test('unsafe source URLs and raw evidence paths are rejected', () => {
   const d=fixture(); d.sources[0].url='javascript:alert(1)'; d.sources[0].raw_path='../secret.env';
   const errors=validateDataset(d).errors.join(' '); assert.match(errors,/HTTPS/); assert.match(errors,/Unsafe raw_path/);
 });
+test('a ready source without local raw evidence is visible as a warning', () => {
+  const d=fixture(); delete d.sources[0].raw_path;
+  assert.match(validateDataset(d).warnings.join(' '), /Ready source has no local raw evidence: test/);
+});
 test('invalid and unclosed boundary rings are rejected', () => {
   const d=fixture(); d.boundaries.features[0].geometry.coordinates[0][4]=[300,100];
   const errors=validateDataset(d).errors.join(' '); assert.match(errors,/coordinate/); assert.match(errors,/closed/);
