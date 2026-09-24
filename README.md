@@ -16,6 +16,8 @@
 
 公開画面の見出し・導入文は、国勢調査で地域を知る、地図をたどる、地域を比較する、研究・計画へデータを再利用するという利用者の目的を先に伝える。試作段階・取得工程・欠測処理・集計方式をサイトの主見出しやキャッチコピーにしない。世界から地域へつながる構想と、現在の収録国・利用可能な地域階層を区別し、実装済みの機能だけを案内する。数値の解釈に必要な年・出典・欠測表示は各数値に残し、詳しい算出方法は出典欄で確認できる形にする。英語・スペイン語・日本語で同じ説明方針を使う。
 
+国別のカバー拡張で確認した公開source所在は、[`config/kit-source-feedback-selections.json`](config/kit-source-feedback-selections.json)に選び、`npm run sources:export:kit-feedback`で[`evidence/KIT_SOURCE_FEEDBACK.json`](evidence/KIT_SOURCE_FEEDBACK.json)へ書き出す。Kit側でdry-run、取込、検証してから両方のcommitを記録する。これは資料の所在を戻す経路であり、数値やAreaDataでの採用判定をKitへ自動移植しない。独立監査前の候補は所在確認段階として扱う。
+
 ## 新しいAIプロジェクトへの依頼
 
 ```text

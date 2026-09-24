@@ -10,6 +10,7 @@
 - 初期生成した`evidence/SOURCE_PREFLIGHT.md`と`.json`を最初に読む。国別事前台帳の国勢調査・計画法・手引き・計画資料・境界の所在を再確認し、未調査国では同じ区分の所在調査から始める。国際共通sourceは対象国・テーマ・年・粒度のavailabilityを確認し、所在・取得・地理照合・指標採用を別の状態として記録する。
 - `docs/research/uganda-lessons-2026-09-14.md`の教訓を使い、確認した原資料の全表・数値列と採否を棚卸しする。一つのExcelの不足を国勢調査全体の不存在へ広げない。条件の異なる代表地域で操作・資料・実出力を通してから全国へ展開し、`templates/COUNTRY_LESSON_AUDIT.md`に結果を残す。
 - 取得不能・対象外・未公開・未照合は根拠と次の行動を記録する。原資料不足時も動作する代替表示と出力を完成させ、未完成の業務を明示する。
+- 新しい国・地域の公式source所在を確認したら、`config/kit-source-feedback-selections.json`に公開可能な候補だけを追加し、`npm run sources:export:kit-feedback`で`evidence/KIT_SOURCE_FEEDBACK.json`を更新する。Kit側の`docs/AREADATA_SOURCE_FEEDBACK.md`に従ってdry-run、取込、検証し、両リポジトリのcommitを記録する。独立監査未了なら`official_location_identified`を超える段階を付けず、元がKitからの再利用なら新規発見と書かない。
 - 新しい国の成果は別ディレクトリへ生成する。テンプレート本体をその国用に書き換えない。中断・再開点は案件のHANDOFF.mdへ残す。
 - 参照実装0.4（データschemaは0.2）とUX仕様v1.0の最終採用を区別する。v1.0未確定を理由に、許可された国別試作・調査・検証を停止しない。
 

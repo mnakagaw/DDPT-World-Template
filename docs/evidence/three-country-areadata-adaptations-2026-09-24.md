@@ -1,5 +1,19 @@
 # Three AreaData country adaptations — local verification, 2026-09-24
 
+## Kit source-location feedback
+
+The seven selected URLs below are location leads, not an independent AreaData source audit. Bangladesh and Laos were copied from their Kit country projects, so their presence here is a return of reusable metadata, not a claim of new discovery. Uganda's leads came through the Uganda-LGDP adaptation. `config/kit-source-feedback-selections.json` selects these exact dataset source IDs; `evidence/KIT_SOURCE_FEEDBACK.json` is the export. All seven have the conservative stage `official_location_identified`. Source terms and current content must be rechecked before any Kit country adoption.
+
+| Country | Dataset source ID | Source location |
+| --- | --- | --- |
+| Bangladesh | `bgd-bbs-preliminary-2022` | https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220 |
+| Bangladesh | `bgd-bbs-community-series-2022` | https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220 |
+| Lao PDR | `lao-phc-2015` | https://www.lsb.gov.la/sdg/en/17-19-2/ |
+| Lao PDR | `lao-cod-ps` | https://data.humdata.org/dataset/cod-ps-lao |
+| Uganda | `uga-lgdp-census-normalized` | https://statistics.ubos.org/nphc/report?cat=resources |
+| Uganda | `uga-plan-lgdp_guidelines_2020` | https://npa.go.ug/wp-content/uploads/2026/07/LOCAL-GOVERNMENT-DEVELOPMENT-PLANNING-GUIDELINES-2020.pdf?x56883 |
+| Uganda | `uga-plan-npa_plan_catalog` | https://npa.go.ug/local-government-development-plans/ |
+
 These are separate country projects under `generated/`, based on already acquired country evidence. The source projects were read but not modified. This is an AreaData integration and local functional check, not an independent country-source audit or a public release.
 
 | Country | Project | Principal adopted series | Areas | Indicators | Observations | Documents | Site JSON |

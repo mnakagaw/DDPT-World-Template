@@ -31,6 +31,7 @@
     "build:country": "node scripts/build-country.mjs",
     "validate:country": "node scripts/validate-country.mjs",
     "serve": "node scripts/serve.mjs",
-    "sources:plan": "node scripts/source-plan.mjs"
+    "sources:plan": "node scripts/source-plan.mjs",
+    "sources:export:kit-feedback": "node scripts/export-kit-source-feedback.mjs"
   }
 }

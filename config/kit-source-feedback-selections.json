@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "checked_at": "2026-09-24",
+  "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+  "projects": [
+    {
+      "path": "generated/bangladesh-areadata-20260924-v2",
+      "iso3": "BGD",
+      "sources": [
+        {
+          "id": "bgd-bbs-preliminary-2022",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national"],
+          "formats": ["PDF", "HTML"],
+          "reuse_note": "Reused from the Kit Bangladesh project, not newly discovered by AreaData. Recheck the current BBS page and exact report before acquisition; AreaData independent audit and redistribution-terms review are pending."
+        },
+        {
+          "id": "bgd-bbs-community-series-2022",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["district", "lower local area"],
+          "formats": ["XLSX", "HTML"],
+          "reuse_note": "Reused from the Kit Bangladesh project, not newly discovered by AreaData. Verify each district workbook and local geography independently; AreaData audit and source-terms review are pending."
+        }
+      ]
+    },
+    {
+      "path": "generated/laos-areadata-20260924",
+      "iso3": "LAO",
+      "sources": [
+        {
+          "id": "lao-phc-2015",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "province", "district"],
+          "formats": ["PDF"],
+          "reuse_note": "Reused from the Kit Lao project, not newly discovered by AreaData. This is the detailed 2015 census, not published 2025 local census results. Recheck report and geography; AreaData independent audit is pending."
+        },
+        {
+          "id": "lao-cod-ps",
+          "role": "machine_readable_data",
+          "authority_type": "international_organization",
+          "geographic_levels": ["province"],
+          "formats": ["CSV"],
+          "reuse_note": "Reused from the Kit Lao project, not newly discovered by AreaData. UNFPA/LSB 2024 population statistics distributed via HDX are not 2024 census counts; recheck definitions, geography and redistribution terms."
+        }
+      ]
+    },
+    {
+      "path": "generated/uganda-areadata-20260924",
+      "iso3": "UGA",
+      "sources": [
+        {
+          "id": "uga-lgdp-census-normalized",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "region", "subregion", "district", "subcounty-equivalent"],
+          "formats": ["HTML", "XLSX"],
+          "reuse_note": "AreaData adapted Uganda-LGDP normalized UBOS 2024 census data. The original UBOS workbook was not present in the adapter source checkout; reacquire and verify official originals and scope, including APAA, before use. Independent AreaData audit is pending."
+        },
+        {
+          "id": "uga-plan-lgdp_guidelines_2020",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["district", "lower local government"],
+          "formats": ["PDF"],
+          "reuse_note": "AreaData inherited this NPA guidance location through Uganda-LGDP resources. Verify the exact edition, applicability and PDF before use; AreaData independent audit and redistribution-terms review are pending."
+        },
+        {
+          "id": "uga-plan-npa_plan_catalog",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["district", "city", "municipality"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "NPA local-government plan catalogue location only. Area-specific plans, dates, duplicates and content must be checked individually; no plan is assumed current or adopted in Kit."
+        }
+      ]
+    }
+  ]
+}
