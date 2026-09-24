@@ -139,7 +139,7 @@ def main() -> None:
     for page in ("index.html", "territorial/index.html", "thematic/index.html", "planning/index.html", "database/index.html"):
         html_path = out / page
         html = html_path.read_text(encoding="utf-8")
-        old_version = "app.mjs?v=0.12.0"
+        old_version = "app.mjs?v=0.12.1"
         if html.count(old_version) != 1:
             raise RuntimeError(f"App version hook changed: {page}")
         html_path.write_text(html.replace(old_version, "app.mjs?v=0.12.2-bfa"), encoding="utf-8")
