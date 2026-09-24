@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
-import { readFile, rename, unlink, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rename, unlink, writeFile } from 'node:fs/promises';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const selectionPath = path.join(root, 'config/kit-source-feedback-selections.json');
@@ -83,6 +83,7 @@ async function main() {
   const commit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
   const bundle = await buildKitSourceFeedback({ commit });
   if (!dryRun) {
+    await mkdir(path.dirname(outputPath), { recursive: true });
     const temporary = `${outputPath}.tmp-${process.pid}`;
     try {
       await writeFile(temporary, `${JSON.stringify(bundle, null, 2)}\n`, { flag: 'wx' });
