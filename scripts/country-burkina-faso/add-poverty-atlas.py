@@ -197,10 +197,21 @@ for annex in range(5, 10):
 
 incomplete = []
 source_anomalies = []
+withheld_source_columns = [{
+    "annex": 8, "indicator_suffix": "DEMOGRAPHIC_DEPENDENCY",
+    "published_national_value": "48,5", "definition_pdf_page": 94,
+    "table_pdf_page": 241,
+    "reason": ("The PDF defines this rate as persons under 18 or over 64 divided by "
+               "persons aged 18-64. Its own 2019 national age totals imply a strict "
+               "lower bound of 94.7%, inconsistent with the table's 48.5%. The "
+               "underlying measure or denominator needs source clarification."),
+}]
 for annex, specs in definitions.items():
-    indicator_ids = [indicator(*spec, annex, spec[1]) for spec in specs]
+    # Preserve the source column position, but do not publish the conflicted column.
+    indicator_ids = [None if spec[0] == "DEMOGRAPHIC_DEPENDENCY" else indicator(*spec, annex, spec[1])
+                     for spec in specs]
     bounded_rates = {iid for iid, spec in zip(indicator_ids, specs)
-                     if spec[3] == "%" and spec[0] != "DEMOGRAPHIC_DEPENDENCY"}
+                     if iid is not None and spec[3] == "%"}
     rows, aligned = annex_rows[annex]
     for index, tid in match.items():
         values = rows[aligned[index]]
@@ -209,6 +220,8 @@ for annex, specs in definitions.items():
                                "name": annex4[index][1], "values": values[1:]})
             continue
         for iid, value in zip(indicator_ids, values[1:]):
+            if iid is None:
+                continue
             numeric_value = number(value)
             if iid in bounded_rates and not 0 <= numeric_value <= 100:
                 source_anomalies.append({
@@ -229,8 +242,16 @@ for anomaly in source_anomalies:
         "next_action": "Check an official erratum or corrected source table before adopting a replacement value.",
     })
 
+data["gaps"].append({
+    "category": "source_definition_conflict", "status": "pending",
+    "detail": ("INSD RGPH 2019 poverty atlas Annex 8 gives 48.5% nationally for demographic "
+               "dependency, but its printed definition and 2019 age-group counts imply at "
+               "least 94.7%. All 408 values in this column are withheld pending source clarification."),
+    "next_action": "Obtain an INSD erratum or documented definition/denominator before adopting the column.",
+})
+
 data["collection"]["adapters"].append("insd-rgph2019-poverty-atlas-annexes-4-9")
-data["collection"]["notes"].append("INSD Volume 3 Annexes 4-9 add 29 distinct indicators with geography matched to published Annex 4 codes and census population. The 2018-based monetary-poverty model is separate from 2019 census measures.")
+data["collection"]["notes"].append("INSD Volume 3 Annexes 4-9 add 28 distinct indicators with geography matched to published Annex 4 codes and census population. Annex 8 demographic dependency is withheld because its printed definition conflicts with the reported values. The 2018-based monetary-poverty model is separate from 2019 census measures.")
 data["collection"]["notes"].append("Twenty Ouagadougou/Bobo subdivision rows were not assigned to the two city-wide commune records; 2019 city aggregate values are left missing rather than averaged. Partial PDF rows for three communes were withheld for the affected annex.")
 data["gaps"].append({"category": "poverty_atlas_city_aggregation", "status": "not_collected",
                      "detail": "Annexes 4-9 report 20 Ouagadougou/Bobo subdivision rows but not the two whole-city commune values in this dataset. No rate is inferred by averaging.",
@@ -241,8 +262,8 @@ evidence = {
     "source_url": URL, "source_sha256": sha256(PDF.read_bytes()).hexdigest(),
     "annex4_rows": len(annex4), "matched_geographies_including_national": len(match),
     "unmatched_subcity_rows": unmatched, "incomplete_extracted_rows": incomplete,
-    "source_anomalies": source_anomalies,
-    "indicator_count": len(poverty_specs)+sum(len(x) for x in definitions.values()),
+    "source_anomalies": source_anomalies, "withheld_source_columns": withheld_source_columns,
+    "indicator_count": len(poverty_specs)+sum(len(x) for x in definitions.values())-1,
     "observations_added": len(data["observations"]) - observation_count_before,
     "method": "Exact Annex 4 parent/order/name/population crosswalk; Annexes 5-9 aligned by published row sequence and normalized label. Incomplete numeric rows and impossible percentages are withheld, with raw source text retained in evidence.",
 }
