@@ -26,6 +26,7 @@ content = TXT.read_text(encoding="utf-8")
 starts = [content.index(f"Annexe {n} :", 100000) for n in range(4, 11)]
 data = json.loads(DATA.read_text(encoding="utf-8"))
 assert not any(s["id"] == "bfa-insd-poverty-atlas-2019" for s in data["sources"])
+observation_count_before = len(data["observations"])
 
 
 def key(value):
@@ -195,8 +196,11 @@ for annex in range(5, 10):
     annex_rows[annex] = (rows, aligned)
 
 incomplete = []
+source_anomalies = []
 for annex, specs in definitions.items():
     indicator_ids = [indicator(*spec, annex, spec[1]) for spec in specs]
+    bounded_rates = {iid for iid, spec in zip(indicator_ids, specs)
+                     if spec[3] == "%" and spec[0] != "DEMOGRAPHIC_DEPENDENCY"}
     rows, aligned = annex_rows[annex]
     for index, tid in match.items():
         values = rows[aligned[index]]
@@ -205,7 +209,25 @@ for annex, specs in definitions.items():
                                "name": annex4[index][1], "values": values[1:]})
             continue
         for iid, value in zip(indicator_ids, values[1:]):
-            source_observation(tid, iid, number(value), "2019", "source_reported", f"Annex {annex}, geographic code {annex4[index][0] or 'national'}")
+            numeric_value = number(value)
+            if iid in bounded_rates and not 0 <= numeric_value <= 100:
+                source_anomalies.append({
+                    "annex": annex, "code": annex4[index][0],
+                    "name": annex4[index][1], "territory_id": tid,
+                    "indicator_id": iid, "published_text": value,
+                    "reason": "Source-published percentage is outside the possible 0-100 range; withheld without correction.",
+                })
+                continue
+            source_observation(tid, iid, numeric_value, "2019", "source_reported", f"Annex {annex}, geographic code {annex4[index][0] or 'national'}")
+
+for anomaly in source_anomalies:
+    data["gaps"].append({
+        "category": "source_value_anomaly", "status": "pending",
+        "detail": (f"INSD RGPH 2019 poverty atlas Annex {anomaly['annex']} prints "
+                   f"{anomaly['published_text']} for {anomaly['name']} / {anomaly['indicator_id']}; "
+                   "this impossible percentage is withheld, not converted to zero or silently corrected."),
+        "next_action": "Check an official erratum or corrected source table before adopting a replacement value.",
+    })
 
 data["collection"]["adapters"].append("insd-rgph2019-poverty-atlas-annexes-4-9")
 data["collection"]["notes"].append("INSD Volume 3 Annexes 4-9 add 29 distinct indicators with geography matched to published Annex 4 codes and census population. The 2018-based monetary-poverty model is separate from 2019 census measures.")
@@ -219,11 +241,10 @@ evidence = {
     "source_url": URL, "source_sha256": sha256(PDF.read_bytes()).hexdigest(),
     "annex4_rows": len(annex4), "matched_geographies_including_national": len(match),
     "unmatched_subcity_rows": unmatched, "incomplete_extracted_rows": incomplete,
+    "source_anomalies": source_anomalies,
     "indicator_count": len(poverty_specs)+sum(len(x) for x in definitions.values()),
-    "observations_added": len(match)*len(poverty_specs) +
-       sum(len(match)*len(specs)-len([x for x in incomplete if x["annex"]==annex])*len(specs)
-           for annex,specs in definitions.items()),
-    "method": "Exact Annex 4 parent/order/name/population crosswalk; Annexes 5-9 aligned by published row sequence and normalized label. Incomplete numeric rows are withheld whole.",
+    "observations_added": len(data["observations"]) - observation_count_before,
+    "method": "Exact Annex 4 parent/order/name/population crosswalk; Annexes 5-9 aligned by published row sequence and normalized label. Incomplete numeric rows and impossible percentages are withheld, with raw source text retained in evidence.",
 }
 (ROOT / "evidence/POVERTY_ATLAS_IMPORT.json").write_text(json.dumps(evidence, indent=2, ensure_ascii=False)+"\n", encoding="utf-8")
 print(json.dumps({k:v for k,v in evidence.items() if k not in ("unmatched_subcity_rows", "incomplete_extracted_rows")}, indent=2))
