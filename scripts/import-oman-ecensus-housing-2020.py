@@ -126,6 +126,9 @@ def main():
              "unresolved": ["Other eCensus products and housing breakdowns not value-audited",
                             "2020 legal code/polygon edition", "Local planning and financial originals",
                             "Full 42-scenario and independent acceptance"]}
+    tables["v_public_ds_housing_unit_en"]["decision"] = "2020_total_housing_units_73_observations_adopted"
+    (project / "evidence/OMN_ECENSUS_PRODUCT_INVENTORY.json").write_text(
+        json.dumps(inventory, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (project / "evidence/OMN_ECENSUS_2020_HOUSING_IMPORT_AUDIT.json").write_text(
         json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     dataset_path.write_text(json.dumps(dataset, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

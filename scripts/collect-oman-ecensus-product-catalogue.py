@@ -60,6 +60,11 @@ def main():
     products = [item for category in catalogue for item in category["dashboards"]]
     if len(products) != 13 or len({item["id"]["en"] for item in products}) != 13:
         raise ValueError("Unexpected eCensus product inventory")
+    dataset = json.loads((project / "data/dashboard.json").read_text(encoding="utf-8"))
+    population_ids = {"OMN_ECENSUS_2020_TOTAL", "OMN_ECENSUS_2020_OMANI", "OMN_ECENSUS_2020_EXPAT"}
+    population_rows = [x for x in dataset["observations"] if x["indicator_id"] in population_ids]
+    if dataset["country"]["id"] != "OMN" or len(population_rows) != 219:
+        raise ValueError("Run on the Oman candidate with 219 adopted 2020 population rows")
     records = []
     for category in catalogue:
         for product in category["dashboards"]:
@@ -73,7 +78,8 @@ def main():
                             "fields": [x["field"] for x in metadata["columns"]],
                             "measures": [x["field"] for x in metadata["measures"]],
                             "metadata_sha256": receipt["sha256"],
-                            "decision": "housing_2020_pivot_under_review" if table == "v_public_ds_housing_unit_en"
+                            "decision": "2020_population_219_observations_already_adopted" if table == "v_public_ds_population_en"
+                                        else "housing_2020_pivots_acquired_not_yet_adopted" if table == "v_public_ds_housing_unit_en"
                                         else "metadata_only_values_not_adopted"})
     housing = "v_public_ds_housing_unit_en"
     for scope, rows in (("national", []), ("governorate", ["LOCATION_GOVERNORATE"]),
