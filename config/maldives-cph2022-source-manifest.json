@@ -1,0 +1,600 @@
+{
+  "schema_version": "1.0",
+  "catalogues": [
+    {
+      "url": "https://statisticsmaldives.gov.mv/census-2022-results-summary/",
+      "status": "acquired",
+      "sha256": "0b9c2e312e202451ff9d3c56af95858edfbf6fb5930c3a94d6eabda5127c3023",
+      "bytes": 83650
+    },
+    {
+      "url": "https://statisticsmaldives.gov.mv/census-2022-island-and-atoll-level-indicator-sheets/",
+      "status": "acquired",
+      "sha256": "d5ad9aa92751bdf6736da1a7cd32990b4935114d28b9cdf33b23b2ad242b9daa",
+      "bytes": 53471
+    }
+  ],
+  "source_files": [
+    {
+      "id": "mdv-cph2022-ec1",
+      "code": "EC1",
+      "title": "Table EC1: Resident Population 15 Years and over by Labour Force Status, Sex and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC1_090423.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ec1.xlsx",
+      "bytes": 81446,
+      "sha256": "f5e9bf56621bd842c7c2b6b43e276c5496a3af53dff57bbc192cc71388d1899a"
+    },
+    {
+      "id": "mdv-cph2022-ec2",
+      "code": "EC2",
+      "title": "Table EC2: Resident Population 15 Years of Age and over by Labour Force Status, Sex, Age and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC2_090423.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ec2.xlsx",
+      "bytes": 82273,
+      "sha256": "e617216932a05e8a20c22511c420358593926fd662e3bab72341c96a70f95aa8"
+    },
+    {
+      "id": "mdv-cph2022-ec3",
+      "code": "EC3",
+      "title": "Table EC3: Resident Population 15 Years of Age and over by Economic Activity Status, Administrative Islands in Atolls, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC3_090423.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ec3.xlsx",
+      "bytes": 77286,
+      "sha256": "65347c3621563f3c4b3d50d23798bc6f3db4ec46c9ab8231582863835ecd7c1a"
+    },
+    {
+      "id": "mdv-cph2022-ec4",
+      "code": "EC4",
+      "title": "Table EC4: Number of Employed Resident Population 15 Years of Age and over by Industry, Sex and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC4_090423.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ec4.xlsx",
+      "bytes": 75260,
+      "sha256": "106b06da7add9738345ceba24d44a342c993a4363ed147cfca6a4cd90d542731"
+    },
+    {
+      "id": "mdv-cph2022-ec5",
+      "code": "EC5",
+      "title": "Table EC5: Number of Employed Resident Population 15 Years of Age and over by Occupation, Sex and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC5_090423.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ec5.xlsx",
+      "bytes": 73625,
+      "sha256": "7638ef901dd20c8817e83b6fa9a206ab26ede1ff6fce34f27eec67832e27389f"
+    },
+    {
+      "id": "mdv-cph2022-ec6",
+      "code": "EC6",
+      "title": "Table EC6: Number of Employed Resident Population 15 Years of Age and over by Employment Status, Sex and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC6_090423.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ec6.xlsx",
+      "bytes": 73213,
+      "sha256": "a8bed3f904f0665c6a58f005fc035858f739c6f1bba435c162c9c747a77d8214"
+    },
+    {
+      "id": "mdv-cph2022-ed1",
+      "code": "ED1",
+      "title": "Table ED1: Resident Population 10 Years of Age and Over by Literacy in Mother Tongue, Age and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED1.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed1.xlsx",
+      "bytes": 80405,
+      "sha256": "c6ab6bec6528f23d31b37d3a6614ca84cd29db1f2ec6345c23d0bafb9ae960c6"
+    },
+    {
+      "id": "mdv-cph2022-ed10",
+      "code": "ED10",
+      "title": "Table ED10: Resident Maldivian Population 2 Years and Over Currently Attending other Educational Institutions, by Level of Education, Age, Sex and Locality",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED10.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed10.xlsx",
+      "bytes": 27762,
+      "sha256": "e3f92b16873be8b4af6fe1cb4e601d93015e31bf7f18f44cefae0ce5dc524738"
+    },
+    {
+      "id": "mdv-cph2022-ed11",
+      "code": "ED11",
+      "title": "Table ED11: Resident Maldivian Population by Highest Grade Completed for those having Completed Current Grade System in Maldives, Sex and Locality, 2014",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED11.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed11.xlsx",
+      "bytes": 24952,
+      "sha256": "f1495f148560380c28f6a1be5a2071d382dfff3d6fb67c52033e33116e605962"
+    },
+    {
+      "id": "mdv-cph2022-ed12",
+      "code": "ED12",
+      "title": "Table ED12: Highest Educational Attainment of Resident Maldivian Population 15 Years of Age and Over who has ever Attended School or Training Institution by Sex, Age and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED12.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed12.xlsx",
+      "bytes": 24985,
+      "sha256": "f3d943f94c52561d222d47d7fc18878cd5c374ace2674c73d42101d21568dc1f"
+    },
+    {
+      "id": "mdv-cph2022-ed13",
+      "code": "ED13",
+      "title": "Table ED13 : Resident Maldivian Population 15 Years of Age and Over who has ever Attended School or Training Institution by Highest Educational Attainment, Sex and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED13.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed13.xlsx",
+      "bytes": 23423,
+      "sha256": "03b10299c7108049e67da9efa9c8db9b44c980517b6e8c33af6216751d7f1647"
+    },
+    {
+      "id": "mdv-cph2022-ed14",
+      "code": "ED14",
+      "title": "Table ED14: Highest Educational Attainment of Resident Foreign Population 15 Years of Age and Over who has ever Attended School or Training Institution by Sex, Age and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED14.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed14.xlsx",
+      "bytes": 25879,
+      "sha256": "b858843cbb41d2d1767e12e6d908fbd13718e4dfa9df19313b9aebea51e8f79d"
+    },
+    {
+      "id": "mdv-cph2022-ed15",
+      "code": "ED15",
+      "title": "Table ED15: Resident Foreign Population 15 Years of Age and Over who has ever Attended School or Training Institution by Highest Educational Attainment, Sex and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED15.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed15.xlsx",
+      "bytes": 23874,
+      "sha256": "32ab652d76f065030f60b0841ae6dd5248502555fd965d1241eef6ce4b718739"
+    },
+    {
+      "id": "mdv-cph2022-ed16",
+      "code": "ED16",
+      "title": "Table ED16: Literate Population 10 Years of Age and Over in Mother Tongue, Sex and Island, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED16.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed16.xlsx",
+      "bytes": 83206,
+      "sha256": "bf833f5e1e88ce943db290e440b2359eca7b2a185dea721d8f32ef4628fffcb6"
+    },
+    {
+      "id": "mdv-cph2022-ed17",
+      "code": "ED17",
+      "title": "Table ED17: Resident Maldivian Population 2 Years of Age and Over by the Status of Current Attendance, Age and Island, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED17.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed17.xlsx",
+      "bytes": 129461,
+      "sha256": "4c0b2df98ac4446b6f9213732038ddd54eddd29b7548d3fbfe47037e7fbec897"
+    },
+    {
+      "id": "mdv-cph2022-ed18",
+      "code": "ED18",
+      "title": "Table ED18: Resident Maldivian Population 2 Years and Over Currently Attending Educational Institution by Level, and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED18.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed18.xlsx",
+      "bytes": 25947,
+      "sha256": "4c35f27a7558d55c22d0e64f1c0358561c12e1e99e1c981f1b67757f7428f28d"
+    },
+    {
+      "id": "mdv-cph2022-ed19",
+      "code": "ED19",
+      "title": "Table ED19: Resident Maldivian Population 15 Years of Age and Over who has ever Attended School or Training Institution by Highest Educational Attainment, and Island, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED19.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed19.xlsx",
+      "bytes": 46132,
+      "sha256": "52b1ece3be82b0a6b9d90d80083f332758c1c185c0898caa5f4e446db8311afe"
+    },
+    {
+      "id": "mdv-cph2022-ed2",
+      "code": "ED2",
+      "title": "Table ED2: Resident Population 10 Years of Age and Over by Literacy in Mother Tongue, Sex and Atoll, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED2.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed2.xlsx",
+      "bytes": 42214,
+      "sha256": "dc9cd1c8480f400afc361ec3a07b227c25def11bb83cfb579456199680ff9be0"
+    },
+    {
+      "id": "mdv-cph2022-ed3",
+      "code": "ED3",
+      "title": "Table ED3: Resident Population 10 Years of Age and Over by Literacy in English, Age Group and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED3.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed3.xlsx",
+      "bytes": 24457,
+      "sha256": "e2758cacafaf236f848d3911edbc851e524a8b3e389470d5de121067720f53af"
+    },
+    {
+      "id": "mdv-cph2022-ed4",
+      "code": "ED4",
+      "title": "Table ED4: Resident Population 10 Years of Age and Over by Literacy In English, Age Group And Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED4.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed4.xlsx",
+      "bytes": 21096,
+      "sha256": "bfbdf8fc7c87696d7146dccf3789924a53b19717914016e1aca87f0e8585e7e5"
+    },
+    {
+      "id": "mdv-cph2022-ed5",
+      "code": "ED5",
+      "title": "Table ED5: Resident Maldivian Population 2 Years of Age and Over by The Status of Current Attendance in Educational Establishment, Age and Sex, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED5.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed5.xlsx",
+      "bytes": 44662,
+      "sha256": "7034c9f08cdf1f96cf3d9e02e9dff37325d12d802244aafc2bbc4de8013c0f79"
+    },
+    {
+      "id": "mdv-cph2022-ed6",
+      "code": "ED6",
+      "title": "Table ED6 : Resident Maldivian Population 2 Years of Age and Over by the Status of Current Attendance in Educational Establishment and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED6.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed6.xlsx",
+      "bytes": 16455,
+      "sha256": "77c622f9a2ecb2651ae8f5dd1a4c3cea26aced134621c592c1b9aa8fb79a753b"
+    },
+    {
+      "id": "mdv-cph2022-ed7",
+      "code": "ED7",
+      "title": "Table ED7: Resident Maldivian Population 2 Years and Over Currently Studying, Sex, Age and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED7.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed7.xlsx",
+      "bytes": 22480,
+      "sha256": "de6a56a6da601556dbf5cdefd4b5381c887023ec4da802b381ca2f02f8d2bdc6"
+    },
+    {
+      "id": "mdv-cph2022-ed8",
+      "code": "ED8",
+      "title": "Table ED8: Resident Maldivian Population 5 Years and Over Currently Studying in Training Institutions by Mode of Study, Sex, Age and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED8.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed8.xlsx",
+      "bytes": 12999,
+      "sha256": "cce8b21cf1c00cca8b883972ea52780c9433972a8a0f07e8c35bc525e63a901c"
+    },
+    {
+      "id": "mdv-cph2022-ed9",
+      "code": "ED9",
+      "title": "Table ED9: Resident Maldivian Population 2 Years and Over Currently Attending School, by Grade, Age, Sex and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED9.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-ed9.xlsx",
+      "bytes": 30951,
+      "sha256": "10c61de68409fdfa93aebfe7edb55e256ccdea435232bf4854bb2438652a5d9e"
+    },
+    {
+      "id": "mdv-cph2022-employment-atoll-indicators",
+      "code": "employment-atoll-indicators",
+      "title": "Atoll Level Indicator Sheet Emp",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/10/Atoll-Level-Indicator-Sheet-Emp.xlsx",
+      "catalogue": "indicator_sheets",
+      "raw_path": "raw/mdv-cph2022-employment-atoll-indicators.xlsx",
+      "bytes": 49372,
+      "sha256": "5010481d850f678c6ffc0a715f81ab6a80c5fbca0692657be23a4686d150c411"
+    },
+    {
+      "id": "mdv-cph2022-employment-indicator-definitions",
+      "code": "employment-indicator-definitions",
+      "title": "Definitions Employment",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Definitions-Employment.xlsx",
+      "catalogue": "indicator_sheets",
+      "raw_path": "raw/mdv-cph2022-employment-indicator-definitions.xlsx",
+      "bytes": 9552,
+      "sha256": "fa800296d61d4fd09a20a1c4685957e23e093429153deb8047375ad3d4cda68f"
+    },
+    {
+      "id": "mdv-cph2022-employment-island-indicators",
+      "code": "employment-island-indicators",
+      "title": "Island Level Indicator Sheet Emp",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/10/Island-Level-Indicator-Sheet-Emp.xlsx",
+      "catalogue": "indicator_sheets",
+      "raw_path": "raw/mdv-cph2022-employment-island-indicators.xlsx",
+      "bytes": 129900,
+      "sha256": "f8e12862f57b20dfc08626319e502b3108882e46b43921c56dc1bfca8d2d6109"
+    },
+    {
+      "id": "mdv-cph2022-h1",
+      "code": "H1",
+      "title": "Table H1: Households By Type Of Living Quarters And By Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H1.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-h1.xlsx",
+      "bytes": 12653,
+      "sha256": "0d110a068b7e4af7c59323a42e58a11a05b5d8fcb583ddc4f3c6a386a55dea06"
+    },
+    {
+      "id": "mdv-cph2022-h2",
+      "code": "H2",
+      "title": "Table H2: Households By Type Of Living Quarters And By Island, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H2.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-h2.xlsx",
+      "bytes": 22771,
+      "sha256": "9e1c5a0e39ec9052b902065ed1b7a8db737c13f457c15f3504061e67571c4163"
+    },
+    {
+      "id": "mdv-cph2022-h3",
+      "code": "H3",
+      "title": "Table H3: Population By Type Of Living Quarters And By Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H3.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-h3.xlsx",
+      "bytes": 12341,
+      "sha256": "35db268536c4fc317b4fe6a9d66843ac6995a990d9cff46fb516330ae8a9b6e2"
+    },
+    {
+      "id": "mdv-cph2022-h4",
+      "code": "H4",
+      "title": "Table H4: Population By Type Of Living Quarters And By Island, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H4.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-h4.xlsx",
+      "bytes": 21969,
+      "sha256": "6861e78646dcdf8af1ed340609a01667c56e454cb0302142310e8eec9a1492fa"
+    },
+    {
+      "id": "mdv-cph2022-h5",
+      "code": "H5",
+      "title": "Table H5: Average Household Size By Type Of Living Quarters And By Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H5.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-h5.xlsx",
+      "bytes": 11387,
+      "sha256": "c18b98305208fde9deccf38a41bff2250f1ae2458608e40f3f01dc1fce53a999"
+    },
+    {
+      "id": "mdv-cph2022-h6",
+      "code": "H6",
+      "title": "Table H6: Number Of Households In House/ Flat/ Apartments By Number Of Room And By Island, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H6.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-h6.xlsx",
+      "bytes": 20333,
+      "sha256": "e81f868d3affbf505874480b46849d73014438abf2696bcd7fc966389e6d5ad8"
+    },
+    {
+      "id": "mdv-cph2022-h7",
+      "code": "H7",
+      "title": "Table H7: Households By The Type Of Drinking Water Used And Locality (Atolls), 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H7.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-h7.xlsx",
+      "bytes": 11976,
+      "sha256": "a7570cc3b44efa26ae28a34f2d74b00e29fcd1f99d85c5ba6b350b71a37bab23"
+    },
+    {
+      "id": "mdv-cph2022-h8",
+      "code": "H8",
+      "title": "Table H8: Households In House/Flat/Appartments By The Ownership Of Selected Assets And Locality (Atolls), 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H8.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-h8.xlsx",
+      "bytes": 13708,
+      "sha256": "bc059b9268bfd7bf3f879691ed4ae3c2bcd4478eeee1c7a5b80e0a609cd93ca3"
+    },
+    {
+      "id": "mdv-cph2022-mg1",
+      "code": "MG1",
+      "title": "Table MG1 : Resident Maldivian Population by Place of Registration Cross Classified by Place of Birth, Sex and Locality (Atoll), 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG1.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg1.xlsx",
+      "bytes": 20234,
+      "sha256": "19c56c73dd343d5deff4c3e4ca25acf99de47b347592b728d6accd024c9f391d"
+    },
+    {
+      "id": "mdv-cph2022-mg10",
+      "code": "MG10",
+      "title": "Table MG10: Resident Population by Place of Enumeration, Usual Residence and by Nationality, Sex and Island 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG10.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg10.xlsx",
+      "bytes": 28814,
+      "sha256": "ba1cc707d25d4ab509c362bb285bee4bc824c55c513319cd87c56615c12a6dd8"
+    },
+    {
+      "id": "mdv-cph2022-mg11",
+      "code": "MG11",
+      "title": "Table MG11: Usual Resident Population by Nationality and Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG11.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg11.xlsx",
+      "bytes": 11415,
+      "sha256": "77a27bc6c2d1ef338cda33eee6109238f05d0007650c0474ffd3250a3bab00b5"
+    },
+    {
+      "id": "mdv-cph2022-mg12",
+      "code": "MG12",
+      "title": "Table MG12: Usual Resident Population by Nationality and by Island, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG12.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg12.xlsx",
+      "bytes": 17032,
+      "sha256": "8ced577f0260afcb72a0d16e6b40e3a6bfd99bda7a98d33eb2422fb2fee9a3c5"
+    },
+    {
+      "id": "mdv-cph2022-mg13",
+      "code": "MG13",
+      "title": "Table MG13: Usual Resident Maldivian Population of Maale by Registered Island, by Sex, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG13.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg13.xlsx",
+      "bytes": 16917,
+      "sha256": "57c5764758c8e480fbfc3d4c946c8f021f534c6d0b01325d062ca2e02c00d614"
+    },
+    {
+      "id": "mdv-cph2022-mg2",
+      "code": "MG2",
+      "title": "Table MG2 : Resident Maldivian Population by Place of Registration Cross Classified by Place of Usual Residence, Sex and Locality (Atoll), 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG2.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg2.xlsx",
+      "bytes": 21133,
+      "sha256": "0a525d95a68926464d942e3aed82317cdacd9348d6e7ca709c8ec427489e2da2"
+    },
+    {
+      "id": "mdv-cph2022-mg3",
+      "code": "MG3",
+      "title": "Table MG3 : Resident Maldivian Population by Place of Usual Residence Cross Classified by Place of Birth, Sex and Locality (Atoll), 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG3.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg3.xlsx",
+      "bytes": 32279,
+      "sha256": "a7e8d246f000bb22e5da4c0edb14abb9a05e132b04f96aee872da7a9500757f0"
+    },
+    {
+      "id": "mdv-cph2022-mg4",
+      "code": "MG4",
+      "title": "Table MG4 : Resident Maldivian Population by Place of Enumeration Cross Classified by Place of Usual Residence, Sex and Locality (Atoll), 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG4.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg4.xlsx",
+      "bytes": 32571,
+      "sha256": "89bc388b49814b93e1612c01e2d0e2a79d4cfb4bf6d93b8865e5eb9131869539"
+    },
+    {
+      "id": "mdv-cph2022-mg5",
+      "code": "MG5",
+      "title": "Table MG5 : Resident Maldivian Population by Place Of Enumeration Cross Classified by Place of Birth, Sex and Locality (Atoll), 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG5.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg5.xlsx",
+      "bytes": 26414,
+      "sha256": "4f071dad78e0d6c04a10170cdb16ab7bec0dfb04cc545737561bebef61821911"
+    },
+    {
+      "id": "mdv-cph2022-mg6",
+      "code": "MG6",
+      "title": "Table MG6 : Resident Maldivian Population by Place Of Enumeration Cross Classified by Place of Registration , Sex and Locality (Atoll), 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG6.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg6.xlsx",
+      "bytes": 19944,
+      "sha256": "ea2a3d31d272e834e29fd909c0ea927d824fd4cc0f89a9e33000948107d9cfa7"
+    },
+    {
+      "id": "mdv-cph2022-mg7",
+      "code": "MG7",
+      "title": "Table MG7: Resident Maldivian Population by Place of Enumeration, Usual Residence and Place of Registration by Sex, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG7.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg7.xlsx",
+      "bytes": 14088,
+      "sha256": "b812e2462cd6aecbb7769dc494fec7a48ec0380e057e4a1fe7b2a53cbdfa3032"
+    },
+    {
+      "id": "mdv-cph2022-mg8",
+      "code": "MG8",
+      "title": "Table MG8: Resident Maldivian Population by Place of Enumeration, Usual Residence and Place of Registration by Sex and Island, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG8.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg8.xlsx",
+      "bytes": 23752,
+      "sha256": "490e233ea23886efbe9d619ad8bbe1ddf632c413f2a151485e1f8f1d100470cf"
+    },
+    {
+      "id": "mdv-cph2022-mg9",
+      "code": "MG9",
+      "title": "Table MG9: Resident Population by Place of Enumeration, Usual Residence and by Nationality and Sex, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG9.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-mg9.xlsx",
+      "bytes": 16201,
+      "sha256": "6c883b401966a96d3ba9a62ba95f6f355d7eb2008defc5d9366ada157404ba58"
+    },
+    {
+      "id": "mdv-cph2022-p1",
+      "code": "P1",
+      "title": "Table P1: Resident Population by Place of Enumeration by Nationality, Sex and Locality, 2014 and 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P1.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-p1.xlsx",
+      "bytes": 11414,
+      "sha256": "d9f86b35d7506b2894b7b9e5dcca0fd45ee46fc18bbe17b3e1cac37899deee93"
+    },
+    {
+      "id": "mdv-cph2022-p2",
+      "code": "P2",
+      "title": "Table P2: Resident Population by Place of Enumeration and Administrative Division and Intercensal Growth Rate, 2022 & 2014",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P2.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-p2.xlsx",
+      "bytes": 14715,
+      "sha256": "d5c8db2cb88c2b02ea01430733d2c85d6043f7f2c3f3523b2cc0049aa91d922d"
+    },
+    {
+      "id": "mdv-cph2022-p3",
+      "code": "P3",
+      "title": "Table P3: Resident Population by Place of Enumeration and by Island, 2014-2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P3.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-p3.xlsx",
+      "bytes": 37974,
+      "sha256": "362ec941232c39bd35084ce1cd586def6931c58864898e9ed65270db52919029"
+    },
+    {
+      "id": "mdv-cph2022-p4",
+      "code": "P4",
+      "title": "Table P4: Resident Population by Place of Enumeration, by Locality and Sex, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P4.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-p4.xlsx",
+      "bytes": 12855,
+      "sha256": "25ba9fc5613342ec56e00636332a1a217f4cd01718da2b9dfce716cf1e7f1db3"
+    },
+    {
+      "id": "mdv-cph2022-p5",
+      "code": "P5",
+      "title": "Table P5: Resident Population by Island and Sex, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P5.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-p5.xlsx",
+      "bytes": 26987,
+      "sha256": "5a4588640048d5cc5dbfe7bdf064d45195583f264729f114393e6de9b294afba"
+    },
+    {
+      "id": "mdv-cph2022-p6",
+      "code": "P6",
+      "title": "Table P6: Resident Population by 5 Year Age Group by Sex, Nationality and by Locality, 2022",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P6.xlsx",
+      "catalogue": "summary",
+      "raw_path": "raw/mdv-cph2022-p6.xlsx",
+      "bytes": 37737,
+      "sha256": "a325daa2f4afed57bb3544ef3014caac67b3774030ee7cb7f46d76048a4cba9d"
+    },
+    {
+      "id": "mdv-cph2022-population-atoll-indicators",
+      "code": "population-atoll-indicators",
+      "title": "Atoll Level Indicator Sheet Population",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Atoll-Level-Indicator-Sheet-Population.xlsx",
+      "catalogue": "indicator_sheets",
+      "raw_path": "raw/mdv-cph2022-population-atoll-indicators.xlsx",
+      "bytes": 81486,
+      "sha256": "51b40084818fdb6b26950524871ac132304b673e2c4eab9b5672e3f520fc6214"
+    },
+    {
+      "id": "mdv-cph2022-population-indicator-definitions",
+      "code": "population-indicator-definitions",
+      "title": "Definitions Population",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Definitions-Population.xlsx",
+      "catalogue": "indicator_sheets",
+      "raw_path": "raw/mdv-cph2022-population-indicator-definitions.xlsx",
+      "bytes": 77208,
+      "sha256": "445542e5f5715c67e8f5db20efede354f68791de05b77dc70f300595b058be5c"
+    },
+    {
+      "id": "mdv-cph2022-population-island-indicators",
+      "code": "population-island-indicators",
+      "title": "Island Level Indicator Sheet Population",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Island-Level-Indicator-Sheet-Population.xlsx",
+      "catalogue": "indicator_sheets",
+      "raw_path": "raw/mdv-cph2022-population-island-indicators.xlsx",
+      "bytes": 141459,
+      "sha256": "cdfd3c0ab3926e7c7036abcb05b08896a90e1d3cdbd1e556e46a4949381cbbd6"
+    }
+  ],
+  "failed_sources": []
+}

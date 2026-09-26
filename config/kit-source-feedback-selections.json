@@ -1490,6 +1490,770 @@
         {"id":"btn-phcb2017-local-government-rules-2012","role":"planning_law","authority_type":"official_national","geographic_levels":["Dzongkhag Tshogdu","Gewog Tshogde"],"formats":["PDF"],"reuse_note":"Official 2012 Rules PDF acquired; clauses 247-256 discuss Five Year, rolling and annual plans and budgets. Current force, later changes, jurisdiction and actual local plans require independent review."},
         {"id":"btn-phcb2017-national-plan-13fyp","role":"planning_guidance","authority_type":"official_national","geographic_levels":["national planning framework; local implications unassessed"],"formats":["PDF"],"reuse_note":"Official PMO 13th FYP PDF location only. AreaData acquisition failed TLS peer verification; no certificate bypass, body-content audit, local requirement or approval fact transferred. Reacquire through verifiable official channel."}
       ]
+    },
+    {
+      "path": "generated/maldives-areadata-20260927",
+      "iso3": "MDV",
+      "evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "sources": [
+        {
+          "id": "mdv-cph2022-ec1",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ec2",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ec3",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national",
+            "2022 administrative island",
+            "non-administrative-island aggregate"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "AreaData adopted only selected direct count fields; other fields, geography and terms need Kit independent audit. 2022 census atoll rows are not 2026 councils. Two island-name mismatches withheld; no inferred code join."
+        },
+        {
+          "id": "mdv-cph2022-ec4",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ec5",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ec6",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed1",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed10",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed11",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed12",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed13",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed14",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed15",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed16",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national",
+            "2022 administrative island",
+            "non-administrative-island aggregate"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "AreaData adopted only selected direct count fields; other fields, geography and terms need Kit independent audit. 2022 census atoll rows are not 2026 councils. Two island-name mismatches withheld; no inferred code join."
+        },
+        {
+          "id": "mdv-cph2022-ed17",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed18",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed19",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed2",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed3",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed4",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed5",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed6",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed7",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed8",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-ed9",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-employment-atoll-indicators",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-employment-indicator-definitions",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-employment-island-indicators",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-h1",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-h2",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national",
+            "Maale census part",
+            "2022 administrative island",
+            "non-administrative-island aggregate"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "AreaData adopted only selected direct count fields; other fields, geography and terms need Kit independent audit. 2022 census atoll rows are not 2026 councils."
+        },
+        {
+          "id": "mdv-cph2022-h3",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-h4",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-h5",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-h6",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-h7",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national",
+            "2022 atoll/city census row",
+            "non-administrative-island aggregate"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "AreaData adopted only selected direct count fields; other fields, geography and terms need Kit independent audit. 2022 census atoll rows are not 2026 councils. Source safe/unsafe is not WHO/JMP service tier."
+        },
+        {
+          "id": "mdv-cph2022-h8",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg1",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg10",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg11",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg12",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg13",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg2",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg3",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg4",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg5",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg6",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg7",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg8",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-mg9",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-p1",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-p2",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-p3",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-p4",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national",
+            "2022 atoll/city census row"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "AreaData adopted only selected direct count fields; other fields, geography and terms need Kit independent audit. 2022 census atoll rows are not 2026 councils."
+        },
+        {
+          "id": "mdv-cph2022-p5",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national",
+            "Maale census part",
+            "2022 administrative island",
+            "non-administrative-island aggregate"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "AreaData adopted only selected direct count fields; other fields, geography and terms need Kit independent audit. 2022 census atoll rows are not 2026 councils. P5 G17 Maldivian female is blank, not inferred zero."
+        },
+        {
+          "id": "mdv-cph2022-p6",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-population-atoll-indicators",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-population-indicator-definitions",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-cph2022-population-island-indicators",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "2022 census table; exact grain unassessed"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms."
+        },
+        {
+          "id": "mdv-fonadhoo-development-plan-2022-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": [
+            "L Fonadhoo Council publication area; legal polygon match unverified"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "Official Fonadhoo Council publication; PDF body acquired with cover and contents inspected where applicable. Full Dhivehi text, approval, implementation, jurisdiction and terms need Kit audit. No L Atoll or national plan implied."
+        },
+        {
+          "id": "mdv-fonadhoo-plan-page",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": [
+            "L Fonadhoo Council publication area; legal polygon match unverified"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "Official Fonadhoo Council publication; PDF body acquired with cover and contents inspected where applicable. Full Dhivehi text, approval, implementation, jurisdiction and terms need Kit audit. No L Atoll or national plan implied."
+        },
+        {
+          "id": "mdv-presidency-atoll-councils-ended-2026",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Maldives local councils; 2026 legal context"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "President Office 2026 local-governance announcement, not the consolidated statute or local approved plan. Kit must inspect current law, jurisdiction, commencement and terms independently."
+        },
+        {
+          "id": "mdv-presidency-local-governance-amendment-2026",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Maldives local councils; 2026 legal context"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "President Office 2026 local-governance announcement, not the consolidated statute or local approved plan. Kit must inspect current law, jurisdiction, commencement and terms independently."
+        }
+      ]
     }
   ]
 }

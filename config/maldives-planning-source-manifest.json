@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "mdv-fonadhoo-development-plan-2022-2026",
+      "title": "L. Fonadhoo Council Development Plan 2022–2026, revised",
+      "url": "https://fonadhoo.gov.mv/wp-content/uploads/2025/01/L.Fonadhoo-Development-Plan-2022-2026-revised__1.pdf",
+      "landing_url": "https://fonadhoo.gov.mv/5033",
+      "publisher": "L. Fonadhoo Council",
+      "raw_path": "raw/mdv-fonadhoo-development-plan-2022-2026.pdf",
+      "bytes": 735524,
+      "sha256": "910b8c66ec27fd03dcc2b6dbc7cbad9ec82ae40a71bf75f228207628f6773e60",
+      "pages": 114,
+      "category": "plan",
+      "period": "2022–2026",
+      "status": "body_acquired",
+      "content_note": "Cover and contents checked; full Dhivehi body, approval and execution not audited. The official council site links this PDF."
+    },
+    {
+      "id": "mdv-fonadhoo-plan-page",
+      "title": "Fonadhoo Council plan publication page",
+      "url": "https://fonadhoo.gov.mv/5033",
+      "publisher": "L. Fonadhoo Council",
+      "raw_path": "raw/mdv-fonadhoo-plan-page.html",
+      "bytes": 38060,
+      "sha256": "f2858bcbd16a7b418c7299255ad442f95383d352fef9f1e774b08b7fb7de7f47",
+      "category": "reference",
+      "status": "body_acquired"
+    },
+    {
+      "id": "mdv-presidency-atoll-councils-ended-2026",
+      "title": "Presidency announcement of atoll council abolition, May 2026",
+      "url": "https://presidency.gov.mv/Press/Article/36690",
+      "publisher": "The President's Office, Maldives",
+      "raw_path": "raw/mdv-presidency-atoll-councils-ended-2026.html",
+      "bytes": 33233,
+      "sha256": "3733f79471734d67e0331c5935203fe500c1807804c879a0e90bd4bb4a4f44ab",
+      "category": "reference",
+      "status": "body_acquired"
+    },
+    {
+      "id": "mdv-presidency-local-governance-amendment-2026",
+      "title": "Presidency announcement of nineteenth local governance amendment, September 2026",
+      "url": "https://presidency.gov.mv/Press/Article/37284",
+      "publisher": "The President's Office, Maldives",
+      "raw_path": "raw/mdv-presidency-local-governance-amendment-2026.html",
+      "bytes": 31594,
+      "sha256": "410e561dc77d6e2ddc4cd1f902075f70b14a9a070983f580da7ea4b730955177",
+      "category": "reference",
+      "status": "body_acquired"
+    }
+  ]
+}
