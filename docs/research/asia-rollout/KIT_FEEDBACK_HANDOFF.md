@@ -143,3 +143,16 @@ Twelve public official leads were selected: the CSB 2021 census catalog and eigh
 | Validation | AreaData check, 218/218 tests, country validation (zero errors, one missing-plan warning), build and 15-case actual output verifier passed. Kit dry-run/import accepted 99 leads; Kit check, 173/173 tests and readiness (`ready: true`, 99 feedback sources) passed. |
 
 All twelve Kuwait feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. Kit must independently acquire and assess source files, scope, codes, terms and planning authority before reuse. Kuwait remains partial and unpublished; no independent `ACCEPT` or hosting is implied.
+
+## Georgia Geostat 2024 census and planning leads — 2026-09-26
+
+Thirteen public official leads were selected: the Geostat final-2024 census catalogue and five selectively adopted workbooks, Geostat GIS portal, the Matsne spatial and local-government codes, Ordinance 260, the Tbilisi plan and initial 2026 budget records, and Batumi municipality's budget portal. [The Georgia source audit](../../evidence/georgia-geostat2024-source-audit-2026-09-26.md) distinguishes five audited/adopted tables from 43 other acquired but semantically unassessed originals, no official code/polygon join and location-only planning materials. Feedback transfers no raw XLSX/PDF, observation, plan body, budget amount, official status or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, source/producer audit and status | `8bf8d222f0b4b664486fc1ad3aed27bac1d56f47` on `codex/asia-domestic-20260926` |
+| AreaData 112-source / eighteen-country bundle | `d2a5c42b817c6552787d2ef68b014039625b5029` on the same branch; bundle `origin_commit` = `8bf8d222f0b4b664486fc1ad3aed27bac1d56f47` |
+| Kit import | `b390195c9b030f96ca651a4cb1c7c77dc8e1dac5` on `codex/asia-source-feedback-20260926`; 13 inserted, 99 existing origin histories updated, 113 records total |
+| Validation | AreaData check, 218/218 tests, country validation (zero errors, one missing-plan warning), build and 13-case actual output verifier passed. Kit dry-run/import accepted 112 leads; Kit check, 173/173 tests and readiness (`ready: true`, 112 feedback sources) passed. Both branches were pushed. |
+
+All thirteen Georgia stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. Kit must independently acquire and classify the workbooks, official geography, terms, planning authority and actual fiscal documents. Georgia remains partial and unpublished; no independent `ACCEPT` or hosting is implied.
