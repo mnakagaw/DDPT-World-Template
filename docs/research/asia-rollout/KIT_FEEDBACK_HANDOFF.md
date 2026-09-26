@@ -25,3 +25,15 @@ On 2026-09-26 AreaData identified two further specific official URLs: a 2024 COS
 | Kit import | `2ad6c340d5a0d5b5dc379a51504b5aedb9df00e1` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 32, inserted two and updated 30 (33 total records). `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. Pushed branch head equals `git ls-remote` result. |
 
 The Kit records carry source URLs, provenance and cautions. They do not carry raw PDFs or adopted numeric observations, and each next country project starts its own acquisition and independent review. AreaData's Iraq edition is still partial; the Asia independent `ACCEPT` count is zero and no site was published.
+
+## Yemen Taiz yearbook and planning source continuation
+
+AreaData next acquired three CSO-authored 2004 tables from IHSN, the Taiz CSO branch's 2024 statistical yearbook and a Taiz planning-office 2024 progress/2025 priorities presentation. [The source audit](../../evidence/yemen-taiz-official-sources-2026-09-26.md) records the original hashes, table arithmetic and document meanings. In particular, the yearbook's 23 district rows conflict with its printed governorate totals and male/female labels, and no official 2024-to-2017 district crosswalk is established. The planning presentation gives estimated project costs, not an approved budget, actual expenditure or an official evaluation. **No Yemen domestic observation or local document was adopted.**
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData source evidence, scripts and selection | `dec40a6a2160102a8b02226559330eb8efe2dcca` on `codex/asia-domestic-continuation-20260926` | Yemen r2 dataset SHA-256 `fa6a57f80ad698e09c158717eea0416588e8caa2f12636dc824bb7b6c1d03c56`; country validator zero errors, two expected national-only/planning warnings; local site built. `npm run check` and `npm test` 218/218 passed. |
+| AreaData export | `0443784718e5ef8df2879150101c4bd1255e1b1d`; `evidence/KIT_SOURCE_FEEDBACK.json` SHA-256 `051342a5062280c63b1abdb80f59d5040b2dc57c8cc2ec97b9c622a0fe1faeb7` | Export contains 35 leads in eight countries, including six Yemen leads. `origin_commit` is `dec40a6a2160102a8b02226559330eb8efe2dcca`; every lead remains `official_location_identified`. |
+| Kit import | `14b5f19a7652897cc3989778e4daaa2b67133e7e` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 35, inserted three and updated 32 (36 total records). `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. Both GitHub branch heads matched `git ls-remote`. |
+
+These three new Yemen records are new specific public locations; the other carried leads retain their earlier provenance. Kit import remains a source-location preflight, and the independent Asia `ACCEPT` count is still zero. No Yemen site was published.
