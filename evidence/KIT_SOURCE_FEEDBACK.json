@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-24T22:52:35.532Z",
-  "origin_commit": "ea122db498f8bf84abd0cb36ab328f4e02e5ce00",
+  "exported_at": "2026-09-26T04:29:26.818Z",
+  "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
   "sources": [
     {
       "iso3": "BFA",
@@ -13,7 +13,7 @@
       "url": "https://gouvernement.gov.bf/conseil-des-ministres/conseil-des-ministres-n19-du-04-juin-2026/",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "commune"
       ],
@@ -37,7 +37,7 @@
       "url": "https://microdata.insd.bf/index.php/catalog/69/download/270",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "national",
         "region (2019)",
@@ -64,7 +64,7 @@
       "url": "https://www.finances.gov.bf/fileadmin/user_upload/storage/fichiers/GMPL_PCD_Version_definitive_1.pdf",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "commune"
       ],
@@ -88,7 +88,7 @@
       "url": "https://www.finances.gov.bf/fileadmin/user_upload/storage/fichiers/GMPL_PRD_Version_definitive_1.pdf",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "region"
       ],
@@ -112,7 +112,7 @@
       "url": "https://gouvernement.gov.bf/conseil-des-ministres/conseil-des-ministres-n25-du-30-juillet-2026/",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "region",
         "commune"
@@ -137,7 +137,7 @@
       "url": "https://www.academiedepolice.bf/index.php/telechargement/category/25-deconcentration-et-decentralisation?download=226:code-general-des-colectivite",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "region",
         "commune"
@@ -162,7 +162,7 @@
       "url": "https://www.cns.bf/publications/matm/?mode=liste&par_page=12&rubrique=41&tri=recent",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "national",
         "region",
@@ -189,7 +189,7 @@
       "url": "https://www.dgcmef.gov.bf/sites/default/files/2025-07/Quotidien%20N%C2%B04176.pdf",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "commune"
       ],
@@ -213,7 +213,7 @@
       "url": "https://www.finances.gov.bf/fileadmin/user_upload/storage/fichiers/MEF_RAPPORT_NATIONAL_2024_SUIVI_PLD_FINAL.pdf",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "national",
         "region",
@@ -239,7 +239,7 @@
       "url": "https://microdata.insd.bf/index.php/catalog/69/download/272",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "province (2019)",
         "commune (2019)"
@@ -264,7 +264,7 @@
       "url": "https://microdata.insd.bf/index.php/catalog/69/download/275",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "national",
         "region (2019)",
@@ -291,7 +291,7 @@
       "url": "https://web2.insd.bf/sites/default/files/2024-06/Volume%20des%20tableaux%20statistiques_%205e%20RGPH.pdf",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "national",
         "region (2019)"
@@ -316,7 +316,7 @@
       "url": "https://www.insd.bf/fr/statistiques/autres-statitiques/annuaires-statistiques-regionaux?combine=&items_per_page=10&page=1",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "region (historical)"
       ],
@@ -341,7 +341,7 @@
       "url": "https://www.insd.bf/sites/default/files/2026-01/Annuaire%20statistique%20national%202024%20VF26-12-2025.pdf",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "national",
         "region",
@@ -368,7 +368,7 @@
       "url": "https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "national"
       ],
@@ -393,7 +393,7 @@
       "url": "https://bbs.gov.bd/pages/static-pages/6922e073933eb65569e27220",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "district",
         "lower local area"
@@ -411,6 +411,31 @@
       "artifact_sha256": null
     },
     {
+      "iso3": "IRQ",
+      "source_id": "IRQ_IRQ_COSIT_CENSUS_2024_FINAL_GOVERNORATES",
+      "role": "census_results",
+      "title": "COSIT final results of the 2024 Population and Housing Census",
+      "publisher": "Iraq Commission of Statistics and GIS (COSIT)",
+      "url": "https://nogp.gov.iq/DatasetDetails.aspx?id=17",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate"
+      ],
+      "reference_periods": [
+        "2024"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "CC BY 4.0 portal envelope; resource terms review pending",
+      "reuse_note": "New AreaData source location: Iraq COSIT 2024 final census summary in the government open-data portal. AreaData checked 18 governorate rows and five numeric columns locally. Kit must independently audit its own acquisition, adjusted versus original population definitions, code/boundary matching and resource-specific terms before adoption.",
+      "origin_evidence_path": "docs/evidence/iraq-census-source-location-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
       "iso3": "LAO",
       "source_id": "LAO_LAO_PHC_2015",
       "role": "census_results",
@@ -419,7 +444,7 @@
       "url": "https://lao.unfpa.org/en/publications/results-population-and-housing-census-2015-english-version",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "national",
         "province",
@@ -446,7 +471,7 @@
       "url": "https://data.humdata.org/dataset/cod-ps-lao",
       "authority_type": "international_organization",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "province"
       ],
@@ -462,6 +487,32 @@
       "artifact_sha256": null
     },
     {
+      "iso3": "TUR",
+      "source_id": "TUR_TUR_TUIK_ADNKS_2025_FAVORITE_TABLES",
+      "role": "machine_readable_data",
+      "title": "TÜİK ADNKS 2025 — favorite tables",
+      "publisher": "Turkish Statistical Institute (TÜİK)",
+      "url": "https://www.tuik.gov.tr/media/announcements/2025ADNKS_FavoriTablolar.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "province (il)",
+        "district (ilçe)"
+      ],
+      "reference_periods": [
+        "31 December 2025"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New AreaData source location: TÜİK 2025 annual ADNKS population register, not a decennial census. AreaData locally checks province/district totals, but Kit must audit its own acquisition, source fields, 2025 geography, reuse terms and adoption independently.",
+      "origin_evidence_path": "docs/evidence/turkey-adnks-source-location-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
       "iso3": "UGA",
       "source_id": "UGA_UGA_LGDP_CENSUS_NORMALIZED",
       "role": "census_catalog",
@@ -470,7 +521,7 @@
       "url": "https://statistics.ubos.org/nphc/report?cat=resources",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "national",
         "region",
@@ -499,7 +550,7 @@
       "url": "https://npa.go.ug/wp-content/uploads/2026/07/LOCAL-GOVERNMENT-DEVELOPMENT-PLANNING-GUIDELINES-2020.pdf?x56883",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "district",
         "lower local government"
@@ -524,7 +575,7 @@
       "url": "https://npa.go.ug/local-government-development-plans/",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-24",
+      "checked_at": "2026-09-26",
       "geographic_levels": [
         "district",
         "city",
