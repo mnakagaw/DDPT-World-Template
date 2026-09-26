@@ -4,7 +4,7 @@ import {readFile, writeFile, mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {diagnosticCsv, diagnosticHtml} from '../scaffold/site/diagnostic.mjs';
-import {planningHtml, evidenceCsv} from '../scaffold/site/model.mjs';
+import {planningHtml, evidenceCsv, initialState, comparisonCompatibility, comparisonRows} from '../scaffold/site/model.mjs';
 
 const flag = process.argv.indexOf('--project');
 if (flag < 0 || !process.argv[flag + 1] || process.argv.length !== 4) {
@@ -40,6 +40,15 @@ const byName = name => {
   if (matches.length !== 1) throw new Error(`Expected one source geography: ${name}`);
   return matches[0];
 };
+for (const selected of ['GEO', byName('Imereti').id]) {
+  const state = initialState(dataset, `?territory=${encodeURIComponent(selected)}&metric=GEO_GEOSTAT_2024_POP_TOTAL&period=2024-11-14&level=regional_reporting_unit`);
+  const rows = comparisonRows(dataset, state);
+  if (!comparisonCompatibility(dataset, state).comparable || rows.length !== 11 ||
+      rows.filter(row => row.status === 'observed' && row.value !== null).length !== 11 ||
+      rows.reduce((sum, row) => sum + row.value, 0) !== 3929581) {
+    throw new Error(`Georgia source-backed thematic cohort is not 11/11 at ${selected}`);
+  }
+}
 const get = (name, suffix, source = 'POP') => map.get(`${byName(name).id}/GEO_GEOSTAT_2024_${source}_${suffix}`);
 for (const [name, pop, idp] of [
   ['Georgia', 3929581, 210628], ['C. Tbilisi', 1331485, 95563],
