@@ -22,3 +22,13 @@ test('core interface and source-series labels have all three display languages',
   assert.equal(sourceSeriesLabel({series_family:'international_reference'},{series_stage:'medium_projection'},'2026','ja'),'国連中位推計 2026年');
   assert.equal(sourceSeriesLabel({series_family:'international_reference',series_stage_by_period:{2026:'medium_projection'}},null,'2026','en'),'UN medium projection 2026');
 });
+
+test('regional hierarchy and diagnostic exports translate the selected area',()=>{
+  assert.equal(translateText('Whole Central Asia · no lower area selected','ja'),'中央アジア全体・下位地域の選択なし');
+  assert.equal(translateText('Belongs to Central Asia · a lower area is selected','es'),'Dentro de Asia Central · área inferior seleccionada');
+  assert.equal(translateText('macroregion · within Asia','ja'),'広域・アジア内');
+  assert.equal(translateText('country · within Central Asia','es'),'país · dentro de Asia Central');
+  assert.equal(translateText('Diagnostic report — Central Asia','ja'),'地域診断レポート — 中央アジア');
+  assert.equal(translateText('Editable Diagnostic report','es'),'Informe de diagnóstico editable');
+  assert.equal(translateText('Full diagnostic data CSV','ja'),'地域診断の全データ CSV');
+});

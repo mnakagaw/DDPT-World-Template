@@ -162,7 +162,11 @@ export function selectTerritory(dataset, state, id) {
     return initialState(dataset,query.toString());
   }
   const levels=comparisonLevelsForTerritory(dataset,id);
-  const preferred=!['national','country'].includes(territory.level)?territory.level:comparisonLevelForArea(dataset,id,state.level);
+  // A supra-country area compares its members, not itself as a peer of its
+  // siblings. Use the destination's child/cohort level on both first selection
+  // and a return from a country, so the URL and comparison stay identical.
+  const preferred=territory.type==='exploration_scope'?comparisonLevelForArea(dataset,id,state.level):
+    !['national','country'].includes(territory.level)?territory.level:comparisonLevelForArea(dataset,id,state.level);
   return {...state,selected:id,level:levels.includes(preferred)?preferred:levels[0]||'',notices:[]};
 }
 export function territoryLineage(dataset, selectedId) {
