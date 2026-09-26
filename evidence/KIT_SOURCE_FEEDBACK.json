@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T10:56:46.372Z",
-  "origin_commit": "bdbc4c2e7f84e22b5a2220c43aa5c7d258b9051d",
+  "exported_at": "2026-09-26T10:58:16.465Z",
+  "origin_commit": "365d0faae2ab52da4af6b07d6e0bf5966c563cce",
   "sources": [
     {
       "iso3": "ARE",
@@ -1462,6 +1462,54 @@
     },
     {
       "iso3": "PSE",
+      "source_id": "PSE_PSE_PCBS2017_LOCALITY_CLASSIFICATION",
+      "role": "administrative_codes",
+      "title": "PCBS Palestinian localities classification 2017",
+      "publisher": "Palestinian Central Bureau of Statistics",
+      "url": "https://www.pcbs.gov.ps/Portals/_PCBS/Class/Arabic/Geography/localities-2017-class.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2017 census locality codes; polygons not supplied"
+      ],
+      "reference_periods": [
+        "May 2017"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "May 2017 PCBS locality guide. 577 of 585 updated Table 29 codes occur here; eight do not. Code presence does not certify current local-government type or polygon. Kit must review code editions, boundary histories and terms.",
+      "origin_evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PSE",
+      "source_id": "PSE_PSE_MOLG_GEOMOLG_2017_BOUNDARY_NOTE",
+      "role": "boundaries",
+      "title": "PCBS/MoLG 2017 census boundary revision note",
+      "publisher": "Palestinian Central Bureau of Statistics; Ministry of Local Government",
+      "url": "https://www.pcbs.gov.ps/Portals/_Rainbow/Documents/Land-use-table%201E-2019.html",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2017 governorate/locality boundary revision note; no shapes"
+      ],
+      "reference_periods": [
+        "2017 census geography; page checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "PCBS/MoLG 2017 census boundary-revision note. AreaData acquired no GeoMOLG polygon or official spatial code edition and did not join 2021 reference shapes. Kit must obtain actual geometry and verify version.",
+      "origin_evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PSE",
       "source_id": "PSE_PSE_PCBS2017_OLDER_SUMMARY",
       "role": "census_results",
       "title": "PCBS 2017 older final summary edition",
@@ -1560,54 +1608,6 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "PCBS governorate midyear projection table includes 2026 forecasts published in 2021. AreaData adopted no observation; these pre-2023 forecasts must not be presented as measured current population. Confirm version and terms.",
-      "origin_evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
-      "artifact_sha256": null
-    },
-    {
-      "iso3": "PSE",
-      "source_id": "PSE_PSE_PCBS2017_LOCALITY_CLASSIFICATION",
-      "role": "official_geography",
-      "title": "PCBS Palestinian localities classification 2017",
-      "publisher": "Palestinian Central Bureau of Statistics",
-      "url": "https://www.pcbs.gov.ps/Portals/_PCBS/Class/Arabic/Geography/localities-2017-class.pdf",
-      "authority_type": "official_national",
-      "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
-      "geographic_levels": [
-        "2017 census locality codes; polygons not supplied"
-      ],
-      "reference_periods": [
-        "May 2017"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "license_or_terms": "terms_review_required",
-      "reuse_note": "May 2017 PCBS locality guide. 577 of 585 updated Table 29 codes occur here; eight do not. Code presence does not certify current local-government type or polygon. Kit must review code editions, boundary histories and terms.",
-      "origin_evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
-      "artifact_sha256": null
-    },
-    {
-      "iso3": "PSE",
-      "source_id": "PSE_PSE_MOLG_GEOMOLG_2017_BOUNDARY_NOTE",
-      "role": "official_geography",
-      "title": "PCBS/MoLG 2017 census boundary revision note",
-      "publisher": "Palestinian Central Bureau of Statistics; Ministry of Local Government",
-      "url": "https://www.pcbs.gov.ps/Portals/_Rainbow/Documents/Land-use-table%201E-2019.html",
-      "authority_type": "official_national",
-      "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
-      "geographic_levels": [
-        "2017 governorate/locality boundary revision note; no shapes"
-      ],
-      "reference_periods": [
-        "2017 census geography; page checked 2026-09-26"
-      ],
-      "formats": [
-        "HTML"
-      ],
-      "license_or_terms": "terms_review_required",
-      "reuse_note": "PCBS/MoLG 2017 census boundary-revision note. AreaData acquired no GeoMOLG polygon or official spatial code edition and did not join 2021 reference shapes. Kit must obtain actual geometry and verify version.",
       "origin_evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
       "artifact_sha256": null
     },
