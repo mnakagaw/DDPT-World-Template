@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T18:08:35.081Z",
-  "origin_commit": "ec1a13b52896e8b6a747514ae815dd5adf2a44dd",
+  "exported_at": "2026-09-26T19:02:42.709Z",
+  "origin_commit": "6275e6edeb02d94e413a8ef04e7663fe51c33ac6",
   "sources": [
     {
       "iso3": "ARE",
@@ -149,6 +149,283 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "New Dubai Municipality executive-summary PDF location. AreaData checked selected pages and attached one Dubai-only plan reference. The preliminary monitoring KPIs and proposed implementation budget are not observed outcomes or expenditure; full plan content, later updates and terms require independent Kit review.",
       "origin_evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_ECONOMY_MINISTRY_ADMIN_CLASSIFIER_2026",
+      "role": "administrative_codes",
+      "title": "2026 administrative-territorial classifier, Order 143-N",
+      "publisher": "Ministry of Economy of Armenia / ARLIS",
+      "url": "https://www.arlis.am/hy/acts/220427",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "marz",
+        "community",
+        "settlement"
+      ],
+      "reference_periods": [
+        "effective 2026-02-15"
+      ],
+      "formats": [
+        "ARLIS HTML"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "Current HD 002-2023 classifier amendment effective 2026-02-15; nine-digit codes include check digit. It is a code table, not a dated polygon dataset. Verify legal edition and historic area joins independently.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARMSTAT_CENSUS_2022_PXWEB_MARZES",
+      "role": "census_results",
+      "title": "2022 population census, permanent population by marz",
+      "publisher": "Statistical Committee of Armenia",
+      "url": "https://statbank.armstat.am/pxweb/en/ArmStatBank/ArmStatBank__2%20Population%20and%20social%20processes__20%20Census/PS-pp-1-1-2.px/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "Yerevan",
+        "ten marzes; finer extent not inferred"
+      ],
+      "reference_periods": [
+        "2022 census"
+      ],
+      "formats": [
+        "PxWeb HTML"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "AreaData adopted only the 2022 total permanent-population slice for national and first-level areas. Thirteen other Census 2022 tables and other axes/years remain unassessed; Kit must reacquire originals, verify local geography and terms.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARMSTAT_PERMANENT_POPULATION_2026_01_01",
+      "role": "official_statistics_office",
+      "title": "Permanent population on 1 January 2026 (2022 census based)",
+      "publisher": "Statistical Committee of Armenia",
+      "url": "https://www.armstat.am/file/article/population_01_01_26.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "Yerevan",
+        "ten marzes",
+        "69 other current communities"
+      ],
+      "reference_periods": [
+        "2026-01-01"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "2026-01-01 census-based current permanent population in thousand persons, not direct Census 2022 counts. The 2025 Khoy merger and 2026 code edition need fresh checks. No values are transferred to Kit.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_YEREVAN_LOCAL_SELF_GOVERNMENT_LAW_2026",
+      "role": "planning_law",
+      "title": "Law on Local Self-Government in Yerevan, current incorporation",
+      "publisher": "ARLIS",
+      "url": "https://www.arlis.am/hy/acts/229984",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Yerevan city-community"
+      ],
+      "reference_periods": [
+        "as checked 2026-09-27"
+      ],
+      "formats": [
+        "ARLIS HTML"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "Special Yerevan local-government law; do not infer its program procedure from the general community law or a generic city website description. Check current incorporation and operative decisions.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_LOCAL_SELF_GOVERNMENT_LAW_2026",
+      "role": "planning_law",
+      "title": "Local Self-Government Law, current Armenian incorporation",
+      "publisher": "ARLIS",
+      "url": "https://www.arlis.am/hy/acts/231070",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "ordinary communities"
+      ],
+      "reference_periods": [
+        "as checked 2026-09-27"
+      ],
+      "formats": [
+        "ARLIS HTML"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "Current Armenian incorporation contains community plan, annual program and budget provisions; an older English translation has obsolete four-year wording. Check current articles and applicability; Yerevan has a separate special law.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_ASHTARAK_PLAN_DECISION_2022_2026",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Ashtarak Council Decision 194-N approving 2022–2026 plan",
+      "publisher": "Ashtarak Council / ARLIS",
+      "url": "https://www.arlis.am/hy/acts/173115",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Ashtarak community"
+      ],
+      "reference_periods": [
+        "2022-2026"
+      ],
+      "formats": [
+        "ARLIS HTML",
+        "linked PDF annex"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "Council Decision 194-N approves a 2022–2026 development plan. The 59-page annex was acquired, but numeric targets and current revisions remain to be audited independently.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_YEREVAN_FIVE_YEAR_PLAN_DECISION_2024_2028",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Yerevan Council Decision 46-A approving 2024–2028 development plan",
+      "publisher": "Yerevan Council / ARLIS",
+      "url": "https://www.arlis.am/hy/acts/188571",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Yerevan city-community"
+      ],
+      "reference_periods": [
+        "2024-2028"
+      ],
+      "formats": [
+        "ARLIS HTML",
+        "linked PDF annex"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "Council Decision 46-A approves a 2024–2028 plan; later revisions and numeric targets have not been audited for Kit use. Do not apply the edition to other communities.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_ASHTARAK_BUDGET_DECISION_2026",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Ashtarak Council Decision 170-N approving 2026 budget",
+      "publisher": "Ashtarak Council / ARLIS",
+      "url": "https://www.arlis.am/hy/acts/219910",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Ashtarak community"
+      ],
+      "reference_periods": [
+        "2026"
+      ],
+      "formats": [
+        "ARLIS HTML",
+        "linked XLS annex"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "Council Decision 170-N is an approved 2026 budget, not execution. AreaData checked only three high-level controls; 6,431 other XLS numeric cells remain unassessed. Verify amendments and actuals separately.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_YEREVAN_BUDGET_2026_INCORPORATED",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Yerevan 2026 budget, September 2026 incorporation",
+      "publisher": "Yerevan Council / ARLIS",
+      "url": "https://www.arlis.am/hy/acts/230905",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Yerevan city-community"
+      ],
+      "reference_periods": [
+        "2026"
+      ],
+      "formats": [
+        "ARLIS HTML",
+        "annex links"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "2026 budget incorporation was amended in September 2026. Current annex amounts and terms were not adopted; compare amendment 643-N and annexes before any budget indicator.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_YEREVAN_IMPLEMENTATION_REPORT_DECISION_2025",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Yerevan Council Decision 513-A taking note of 2025 program implementation report",
+      "publisher": "Yerevan Council",
+      "url": "https://www.yerevan.am/hy/elders-decisions/513-a-2/",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Yerevan city-community"
+      ],
+      "reference_periods": [
+        "2025"
+      ],
+      "formats": [
+        "Yerevan Council HTML",
+        "linked PDF annex"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "Council Decision 513-A takes note of the mayor's 2025 implementation report. It is not a formal certification of target achievement or a budget-execution figure; project numerics need review.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARM_YEREVAN_ANNUAL_PROGRAM_DECISION_2026",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Yerevan Council Decision 460-A approving 2026 annual program",
+      "publisher": "Yerevan Council",
+      "url": "https://yerevan.am/hy/elders-decisions/460-a-1/",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Yerevan city-community"
+      ],
+      "reference_periods": [
+        "2026"
+      ],
+      "formats": [
+        "Yerevan Council HTML",
+        "linked PDF annex"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "Council Decision 460-A approves the 2026 annual program; planned actions are not achieved results. The 34-page annex is acquired but targets need semantic review.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
       "artifact_sha256": null
     },
     {
