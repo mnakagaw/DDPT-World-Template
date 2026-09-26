@@ -324,9 +324,13 @@ export function routeQuery(dataset, state) {
   }
   return query.toString();
 }
+function selectedComparisonConfig(dataset,state){
+  const matchesLevel=item=>item.member_ids.some(id=>dataset.territories.find(area=>area.id===id)?.level===state.level);
+  return dataset.analysis?.comparisons?.find(item=>item.parent_id===state.selected&&matchesLevel(item))
+    || dataset.analysis?.comparisons?.find(item=>item.member_ids.includes(state.selected)&&matchesLevel(item));
+}
 function comparisonAreas(dataset,state){
-  const configured=dataset.analysis?.comparisons?.find(item=>item.parent_id===state.selected&&item.member_ids.some(id=>dataset.territories.find(area=>area.id===id)?.level===state.level))
-    || dataset.analysis?.comparisons?.find(item=>item.member_ids.includes(state.selected)&&item.member_ids.some(id=>dataset.territories.find(area=>area.id===id)?.level===state.level));
+  const configured=selectedComparisonConfig(dataset,state);
   if(configured){const members=new Set(configured.member_ids);return dataset.territories.filter(area=>members.has(area.id)&&area.level===state.level);}
   const direct=dataset.territories.filter(area=>area.parent_id===state.selected&&area.level===state.level);
   if(direct.length)return direct;
@@ -335,10 +339,18 @@ function comparisonAreas(dataset,state){
 }
 export function comparisonCompatibility(dataset, state) {
   const areas = comparisonAreas(dataset,state);
+  const configured=selectedComparisonConfig(dataset,state);
+  const sourceIds=configured?.source_ids || [];
+  const memberIds=new Set(configured?.member_ids || []);
+  const sourceBacked=!!configured?.membership_note?.trim() && sourceIds.length>0
+    && sourceIds.every(id=>['ready','partial'].includes(dataset.sources?.find(source=>source.id===id)?.status))
+    && memberIds.size===areas.length && areas.every(area=>memberIds.has(area.id));
   const types = [...new Set(areas.map(area => area.type || 'unspecified'))];
   const editions = [...new Set(areas.map(area => area.boundary_version || 'unverified'))];
   const reasons=[];
-  if(types.length>1)reasons.push(`different administrative types (${types.join(', ')})`);
+  // An explicit source-backed reporting cohort can contain different legal
+  // administrative types, as in Georgia's 11 disjoint census reporting areas.
+  if(types.length>1 && !sourceBacked)reasons.push(`different administrative types (${types.join(', ')}) without an acquired, source-backed comparison membership`);
   if(editions.length>1)reasons.push(`different boundary editions (${editions.join(', ')})`);
   return {comparable:!reasons.length, reason:reasons.length?`Local comparison is not established: this geographic level contains ${reasons.join(' and ')}. Verify a compatible geographic cohort before enabling ranks, median or map value classes. Selected-area observations remain available.`:''};
 }

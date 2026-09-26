@@ -395,6 +395,17 @@ test('mixed same-level types or boundary editions cannot silently become a compa
   assert.equal(distribution(comparisonRows(data,state)).count,0);
 });
 
+test('an acquired source-backed mixed-type reporting cohort works in thematic comparison',()=>{
+  const data=localValues(fixture()),state=initialState(data,'?metric=water&period=2024');
+  data.territories[2].type='city';
+  data.analysis={kind:'country',comparisons:[{parent_id:'TST',member_ids:['a','b','c'],membership_note:'One source reports these three disjoint areas as a single cohort.',source_ids:['s2']}]};
+  assert.equal(comparisonCompatibility(data,state).comparable,true);
+  assert.equal(comparisonRows(data,state).filter(row=>row.value!==null).length,2);
+  data.sources.find(source=>source.id==='s2').status='link_verified';
+  assert.equal(comparisonCompatibility(data,state).comparable,false);
+  assert.equal(rankedRows(comparisonRows(data,state)).length,0);
+});
+
 test('map uses safe polygon coordinates, fits selection immediately and retains full national extent on return',()=>{
   const data=fixture();
   const all=mapGeometry(data.boundaries.features),selected=mapGeometry(data.boundaries.features,'a');
