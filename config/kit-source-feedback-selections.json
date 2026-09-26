@@ -1363,6 +1363,19 @@
         {"id": "pak-ict-local-government-act-2015", "role": "planning_law", "authority_type": "official_national", "geographic_levels": ["Islamabad Capital Territory local government"], "formats": ["PDF"], "reuse_note": "Official Pakistan Code Act sections 48-49 address local development-plan approval/budget. Later amendments, competent current body and actual ICT plan status require review."},
         {"id": "pak-pc-psdp-2026-27", "role": "plans_budgets_implementation_evaluation", "authority_type": "official_national", "geographic_levels": ["federal programme", "ministerial expenditure"], "formats": ["HTML", "PDF"], "reuse_note": "Official FY 2026-27 federal PSDP and monthly expenditure catalogue location. It is not a 2023 census district or local council approved plan, budget, expenditure or evaluation."}
       ]
+    },
+    {
+      "path": "generated/afghanistan-areadata-20260927",
+      "iso3": "AFG",
+      "evidence_path": "docs/evidence/afghanistan-nsia1404-source-audit-2026-09-27.md",
+      "sources": [
+        {"id": "afg-nsia-population-1404", "role": "official_statistics_office", "authority_type": "official_national", "geographic_levels": ["full national including nomadic", "settled 34-province subtotal", "34 named province statistical rows", "lower administrative units in unassessed tables"], "formats": ["PDF"], "reuse_note": "NSIA 1404/2025-26 population estimate, not a new census or WDI midyear estimate. AreaData adopted only Table 4 latest-year counts; 75 other tables and household discrepancies remain unresolved. Direct acquisition encountered a TLS certificate-name mismatch, so Kit must reacquire through validated identity and independently inspect source, geography, terms and method."},
+        {"id": "afg-km-urban-laws-index", "role": "planning_law", "authority_type": "official_subnational", "geographic_levels": ["Kabul municipality/city"], "formats": ["HTML"], "reuse_note": "Official Kabul Municipality index lists older urban laws. Current amendments, force and applicability beyond Kabul city are unverified; not a Kabul Province planning law determination."},
+        {"id": "afg-km-annual-development-plans", "role": "plans_budgets_implementation_evaluation", "authority_type": "official_subnational", "geographic_levels": ["Kabul municipality/city"], "formats": ["HTML"], "reuse_note": "Official plan catalogue visibly lists historical 1395-1400 years. Exact plan bodies, present edition, approval, fiscal figures and city/province boundary match were not acquired."},
+        {"id": "afg-km-city-plans", "role": "plans_budgets_implementation_evaluation", "authority_type": "official_subnational", "geographic_levels": ["Kabul city"], "formats": ["HTML"], "reuse_note": "Interactive city-plan catalogue location only. Exact plan body, edition, legal effect and spatial correspondence remain unverified; do not promote to a province-wide plan."},
+        {"id": "afg-mudh-herat-city-masterplan-announcement", "role": "plans_budgets_implementation_evaluation", "authority_type": "official_national", "geographic_levels": ["Herat city, not entire Herat Province"], "formats": ["HTML"], "reuse_note": "Ministry article says a Herat city urban master plan was handed to the governor. The plan document, legal approval/effect, city boundary, budget and execution were not acquired; the article is not a province plan."},
+        {"id": "afg-mof-budget-document-catalogue", "role": "plans_budgets_implementation_evaluation", "authority_type": "official_national", "geographic_levels": ["national budget catalogue"], "formats": ["HTML"], "reuse_note": "National ministry budget index location. Older visible documents do not establish current province/city budget, allocations, actual expenditure or evaluation."}
+      ]
     }
   ]
 }
