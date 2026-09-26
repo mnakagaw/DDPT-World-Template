@@ -701,7 +701,7 @@
         },
         {
           "id": "pse-pcbs2017-locality-classification",
-          "role": "official_geography",
+          "role": "administrative_codes",
           "authority_type": "official_national",
           "geographic_levels": ["2017 census locality codes; polygons not supplied"],
           "formats": ["PDF"],
@@ -757,7 +757,7 @@
         },
         {
           "id": "pse-molg-geomolg-2017-boundary-note",
-          "role": "official_geography",
+          "role": "boundaries",
           "authority_type": "official_national",
           "geographic_levels": ["2017 governorate/locality boundary revision note; no shapes"],
           "formats": ["HTML"],
