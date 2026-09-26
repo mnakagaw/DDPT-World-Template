@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T04:29:26.818Z",
-  "origin_commit": "e6954033e7ebc6f7105eb39c1de536112b0a4521",
+  "exported_at": "2026-09-26T04:38:45.455Z",
+  "origin_commit": "e02c499696797710e9d1b6345af572f8d90a4e74",
   "sources": [
     {
       "iso3": "BFA",
@@ -484,6 +484,31 @@
       "license_or_terms": "https://data.humdata.org/about/license",
       "reuse_note": "Reused from the Kit Lao project, not newly discovered by AreaData. UNFPA/LSB 2024 population statistics distributed via HDX are not 2024 census counts; recheck definitions, geography and redistribution terms.",
       "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SAU",
+      "source_id": "SAU_SAU_MOH_YEARBOOK_2022_CENSUS_REGIONS",
+      "role": "census_results",
+      "title": "Ministry of Health Statistical Yearbook 2022, Table 1-12",
+      "publisher": "Saudi Ministry of Health",
+      "url": "https://www.moh.gov.sa/en/Ministry/Statistics/book/Documents/Statistical-Yearbook-2022.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "administrative region"
+      ],
+      "reference_periods": [
+        "2022"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New AreaData source location: Saudi Ministry of Health 2022 yearbook Table 1-12 cites GASTAT for the 2022 census population of 13 administrative regions. Its 2010–2021 columns are recalculated estimates, not census counts. Kit must independently audit direct GASTAT tables, geographic codes/boundaries, terms and adoption.",
+      "origin_evidence_path": "docs/evidence/saudi-census-source-location-2026-09-26.md",
       "artifact_sha256": null
     },
     {
