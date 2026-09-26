@@ -1183,6 +1183,126 @@
           "reuse_note": "Official 59-page plan PDF location. Direct local retrieval timed out for AreaData, so no raw PDF hash, page extraction, plan findings or current-revision confirmation is transferred."
         }
       ]
+    },
+    {
+      "path": "generated/bahrain-areadata-20260926",
+      "iso3": "BHR",
+      "evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+      "sources": [
+        {
+          "id": "bhr-iga-census2020-catalog",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national",
+            "governorate in 20 of 45 datasets"
+          ],
+          "formats": [
+            "JSON",
+            "HTML"
+          ],
+          "reuse_note": "Official Census-theme API catalogue of 45 datasets, not a completed semantic audit. AreaData mechanically inventoried every numeric field but adopted selected cells only; Kit must reacquire, review definitions and source terms."
+        },
+        {
+          "id": "bhr-iga-census2020-pop",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "four post-2014 named governorates"
+          ],
+          "formats": [
+            "JSON",
+            "HTML"
+          ],
+          "reuse_note": "2020 administrative-record census population by governorate, nationality and sex. AreaData adopted 16 subgroup cells only after cross-table checks; official code and polygon edition are not joined. Do not merge with annual June or WDI population."
+        },
+        {
+          "id": "bhr-iga-pop-governorate-annual",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "four named governorates"
+          ],
+          "formats": [
+            "JSON",
+            "HTML"
+          ],
+          "reuse_note": "Annual portal population by June/December date, nationality and sex; AreaData selected complete June 2020-2025 cells. Metadata does not state statistical method. Distinct from the 2020 census and WDI."
+        },
+        {
+          "id": "bhr-iga-area-governorate-2024",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "four named governorates"
+          ],
+          "formats": [
+            "JSON",
+            "HTML"
+          ],
+          "reuse_note": "2024 reported km2 values from a 2007-2024 area series. The source describes 2014 redivision from five to four governorates. Values do not provide a matched official polygon or census-density denominator."
+        },
+        {
+          "id": "bhr-lloc-urban-planning-1994",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national planning framework"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "Original urban-planning law; 2022 amendment and 2023 zoning regulation are separate leads. Kit must verify operative consolidated text and actual municipality/UPDA roles; law is not an approved governorate plan."
+        },
+        {
+          "id": "bhr-lloc-urban-planning-amendment-2022",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national planning framework"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "2022 legislative amendment location. Check current consolidated application alongside original law and later regulations before inferring planning duties or plan status."
+        },
+        {
+          "id": "bhr-lloc-zoning-decision-93-2023",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national zoning framework"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "2023 zoning decision location; do not infer current Capital map edition or governorate-specific approved plan from national regulation alone."
+        },
+        {
+          "id": "bhr-upda-procedures-manual-2023",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national procedures; competent municipalities"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "UPDA 83-page June 2023 procedures manual acquired by AreaData. Pages 5 and 9-10 separate authority and municipal roles. Not a governorate development plan; verify later revisions and legal effect."
+        },
+        {
+          "id": "bhr-capital-zones-decision-15-2017",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Capital Governorate historical zoning map"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "Six-page Official Gazette Decision 15/2017 and maps establish a historical Capital zoning approval, not current applicability, a complete governorate development plan or fiscal execution. Later map revisions and 2020 boundary match are unverified."
+        }
+      ]
     }
   ]
 }
