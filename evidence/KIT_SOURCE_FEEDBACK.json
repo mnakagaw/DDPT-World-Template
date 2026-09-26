@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T11:58:08.374Z",
-  "origin_commit": "c858618645f3b54464951cc34459ad1e02376100",
+  "exported_at": "2026-09-26T12:24:39.096Z",
+  "origin_commit": "dde002c9ba972c2ca991ad09eacc4dcfcdbf5421",
   "sources": [
     {
       "iso3": "ARE",
@@ -1135,6 +1135,234 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "New specific official 2015 census table catalogue location. No individual 2015 table was acquired or adopted by AreaData in this pass. Inspect actual originals, fields, definitions and reuse terms; do not treat end-2025 estimates as census counts.",
       "origin_evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KWT",
+      "source_id": "KWT_KWT_CSB_CENSUS_CATALOGUE",
+      "role": "census_catalog",
+      "title": "2021 census population, building and establishment tables",
+      "publisher": "Central Statistical Bureau",
+      "url": "https://census.csb.gov.kw/CensusData_EN?CatID=1",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate",
+        "area tables to inventory"
+      ],
+      "reference_periods": [
+        "2021 registration census"
+      ],
+      "formats": [
+        "HTML",
+        "PDF and XLSX links"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official catalogue locates population, building and establishment tables. AreaData audited only Table 1 and Table 51; all other products and columns remain open.",
+      "origin_evidence_path": "docs/evidence/kuwait-csb-2021-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KWT",
+      "source_id": "KWT_KWT_CSB_CENSUS_METHODOLOGY",
+      "role": "census_catalog",
+      "title": "2021 registration census methods and purpose",
+      "publisher": "Central Statistical Bureau",
+      "url": "https://census.csb.gov.kw/CensusInfo_EN",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national methodology"
+      ],
+      "reference_periods": [
+        "2021 registration census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official CSB page describes the 2021 project as an administrative-register census. The exact register extraction date for Table 1 and detailed field universes require confirmation in the originals.",
+      "origin_evidence_path": "docs/evidence/kuwait-csb-2021-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KWT",
+      "source_id": "KWT_KWT_CSB_REGISTRATION_CENSUS_2021_TABLE51",
+      "role": "census_results",
+      "title": "Kuwait 2021 registration census, Table 51: habitual-residence area population",
+      "publisher": "Central Statistical Bureau / Public Authority for Civil Information",
+      "url": "https://census.csb.gov.kw/CensusData_EN?handler=ExportExcel&st_id=71",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "157 area labels; parent governorate and official code unverified"
+      ],
+      "reference_periods": [
+        "2021 registration census"
+      ],
+      "formats": [
+        "XLSX",
+        "companion PDF"
+      ],
+      "license_or_terms": "official_publication_redistribution_terms_review_required",
+      "reuse_note": "AreaData acquired and crosschecked all 159 Table 51 rows but adopted no area value. Exact row-block subtotals do not certify official area codes, parent-governorate keys, boundary edition or planning jurisdiction.",
+      "origin_evidence_path": "docs/evidence/kuwait-csb-2021-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KWT",
+      "source_id": "KWT_KWT_CSB_REGISTRATION_CENSUS_2021_TABLE1",
+      "role": "census_results",
+      "title": "Kuwait 2021 registration census, Table 1: governorate, nationality and gender",
+      "publisher": "Central Statistical Bureau / Public Authority for Civil Information",
+      "url": "https://census.csb.gov.kw/CensusData_EN?st_id=4&handler=ExportExcel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "six governorates",
+        "nonterritorial Not Stated row"
+      ],
+      "reference_periods": [
+        "2021 registration census; precise register-extraction date not verified from Table 1"
+      ],
+      "formats": [
+        "XLSX",
+        "companion PDF"
+      ],
+      "license_or_terms": "official_publication_redistribution_terms_review_required",
+      "reuse_note": "AreaData checked all nine direct Table 1 count columns for nation and six 2021 registration-census governorates. The 4,578 Not Stated people are not assigned to a governorate. Kit must independently acquire source formats, verify field universe/exclusions, codes, dates and reuse terms; no counts transfer.",
+      "origin_evidence_path": "docs/evidence/kuwait-csb-2021-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KWT",
+      "source_id": "KWT_KWT_MPW_THIRD_MASTER_PLAN",
+      "role": "planning_guidance",
+      "title": "Third Kuwait national structural plan archive",
+      "publisher": "Ministry of Public Works",
+      "url": "https://www.mpw.gov.kw/sites/ar/Pages/InfoPages/ImprovingHeirachyPlan.aspx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national historical spatial master-plan archive"
+      ],
+      "reference_periods": [
+        "historical third master-plan archive"
+      ],
+      "formats": [
+        "HTML",
+        "linked PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official Ministry of Public Works archive locates third master-plan products; direct acquisition timed out. Current fourth-plan status and local plan authority are unverified.",
+      "origin_evidence_path": "docs/evidence/kuwait-csb-2021-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KWT",
+      "source_id": "KWT_KWT_MUNICIPALITY_LAW_33_2016",
+      "role": "planning_law",
+      "title": "Kuwait Municipality Law 33/2016 official PDF",
+      "publisher": "Kuwait Municipality",
+      "url": "https://www.baladia.gov.kw/sites/ar/municipalityLaws/Documents/%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%A7%D9%84%D8%A8%D9%84%D8%AF%D9%8A%D8%A9%20%D8%B1%D9%82%D9%85%2033%20%D9%84%D8%B3%D9%86%D8%A9%202016.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national municipality and urban-planning law"
+      ],
+      "reference_periods": [
+        "2016 law; current amendments to verify"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official municipality Law 33/2016 PDF location identified; direct download reset in AreaData environment. Acquire full current text/amendments and determine actual governorate versus municipality planning obligations before reuse.",
+      "origin_evidence_path": "docs/evidence/kuwait-csb-2021-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KWT",
+      "source_id": "KWT_KWT_SCPD_ANNUAL_PLAN_2021_22",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Kuwait annual development plan 2021/2022",
+      "publisher": "General Secretariat of the Supreme Council for Planning and Development",
+      "url": "https://scpd.gov.kw/archive/plan%2021-2022.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national historical annual plan"
+      ],
+      "reference_periods": [
+        "2021/2022 historical national annual plan"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official 2021/22 national annual plan location identified, but direct acquisition timed out. This historical national plan is not a verified current plan, governorate budget, actual expenditure or evaluation.",
+      "origin_evidence_path": "docs/evidence/kuwait-csb-2021-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KWT",
+      "source_id": "KWT_KWT_CSB_CENSUS_GOVERNORATE_WEB",
+      "role": "table_catalog",
+      "title": "2021 registration census governorate table and exclusion note",
+      "publisher": "Central Statistical Bureau / PACI",
+      "url": "https://census.csb.gov.kw/Census_Gov_EN",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "six governorates",
+        "Not Stated"
+      ],
+      "reference_periods": [
+        "2021 registration census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official CSB governorate page repeats Table 1 counts and names three excluded non-Kuwaiti categories. Webpage was checked but not pinned as a local original; do not treat this as an additional independent value series.",
+      "origin_evidence_path": "docs/evidence/kuwait-csb-2021-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KWT",
+      "source_id": "KWT_KWT_CSB_POPULATION_PUBLICATIONS",
+      "role": "table_catalog",
+      "title": "Population estimates and final census bulletin catalogue",
+      "publisher": "Central Statistical Bureau",
+      "url": "https://csb.gov.kw/Pages/Statistics_en?ID=67&ParentCatID=+1",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "local coverage to verify"
+      ],
+      "reference_periods": [
+        "2022 census bulletin and 2023-2025 estimates listed"
+      ],
+      "formats": [
+        "HTML catalogue",
+        "linked PDF and Excel"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Catalogue separately lists a final census bulletin for 1 January 2022 and annual population estimates through 1 January 2025. AreaData did not acquire or harmonize these publications with 2021 Table 1.",
+      "origin_evidence_path": "docs/evidence/kuwait-csb-2021-official-sources-2026-09-26.md",
       "artifact_sha256": null
     },
     {
