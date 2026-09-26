@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T06:36:33.843Z",
-  "origin_commit": "6c348e5f1452f6b523cd4a09b2144a3295c7ac75",
+  "exported_at": "2026-09-26T07:43:00.804Z",
+  "origin_commit": "af9b28f7f6175a6b8259139195b24678f99e28fc",
   "sources": [
     {
       "iso3": "BFA",
@@ -510,6 +510,160 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "New COSIT official 2024 census table catalogue location. Thirty PDFs were listed; seven acquired by AreaData and two household-service tables locally adapted. Kit must independently audit acquisition, every table field, official geography, terms and adoption.",
       "origin_evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
+      "source_id": "JOR_JOR_DOS_2025_MUNICIPALITIES",
+      "role": "machine_readable_data",
+      "title": "DoS 2025 Population Estimates by Municipality",
+      "publisher": "Jordan Department of Statistics",
+      "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/Municipalities.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "municipality",
+        "locality"
+      ],
+      "reference_periods": [
+        "End of 2025"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New AreaData source location. The workbook was acquired and mechanically inventoried, but no municipal value was adopted. Municipality and administrative district are separate classifications; Kit must audit identities and terms independently.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
+      "source_id": "JOR_JOR_DOS_2025_POPULATION_ESTIMATES",
+      "role": "machine_readable_data",
+      "title": "DoS 2025 Population Estimates, Tables 2.2, 2.3 and 2.6",
+      "publisher": "Jordan Department of Statistics",
+      "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimates.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate"
+      ],
+      "reference_periods": [
+        "End of 2025"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New AreaData source location: 2025 DoS urban/rural and population-density workbook. Values are annual estimates and reported area, not a new census or a 2006 geoBoundaries calculation. Kit must independently verify cells, definitions, codes and terms.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
+      "source_id": "JOR_JOR_DOS_2025_POPULATION_BY_LOCALITY",
+      "role": "machine_readable_data",
+      "title": "DoS 2025 Population Estimates by Locality, Sex and Households",
+      "publisher": "Jordan Department of Statistics",
+      "url": "https://dosweb.dos.gov.jo/databank/Population/Population_Estimares/PopulationEstimatesbyLocality.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate",
+        "district",
+        "sub-district",
+        "locality tables unassessed"
+      ],
+      "reference_periods": [
+        "End of 2025"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New AreaData source location: DoS annual end-2025 population estimates based on the 2015 census, not a 2025 census. AreaData partially adopted the summary, but Kit must independently audit raw fields, official codes, boundary edition, terms and any adoption.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
+      "source_id": "JOR_JOR_MOI_GOVERNORATE_PLANNING_GUIDE_2018",
+      "role": "planning_guidance",
+      "title": "Guide for the Preparation of Governorate Strategic Development and Implementation Plans",
+      "publisher": "Jordan Ministry of Interior",
+      "url": "https://www.mola.gov.jo/ebv4.0/root_storage/ar/eb_list_page/guide_for_the_preparation_of_governorate_strategic_development_and_implementation_plans.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate"
+      ],
+      "reference_periods": [
+        "2018 guidance"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New AreaData source location for the 2018 Ministry of Interior guide. It cites the 2015 decentralization law. Current applicability under the 2021 local administration law and any actual governorate plan remain unverified.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
+      "source_id": "JOR_JOR_MOLA_LOCAL_ADMINISTRATION_LAW_2021",
+      "role": "planning_law",
+      "title": "Local Administration Law No. 22 of 2021",
+      "publisher": "Jordan Ministry of Local Administration",
+      "url": "https://mola.gov.jo/EBV4.0/Root_Storage/AR/EB_Info_Page/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%A7%D9%84%D8%A7%D8%AF%D8%A7%D8%B1%D8%A9_%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A%D8%A92021.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate",
+        "municipality; provisions unassessed"
+      ],
+      "reference_periods": [
+        "2021 law"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New AreaData source location for a 53-page image PDF titled Local Administration Law No. 22 of 2021. Articles, amendments and current planning duties require OCR or manual legal review before adoption.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
+      "source_id": "JOR_JOR_DOS_2015_CENSUS_TABLE_CATALOGUE",
+      "role": "table_catalog",
+      "title": "DoS 2015 Population and Housing Census statistical table catalogue",
+      "publisher": "Jordan Department of Statistics",
+      "url": "https://dosweb.dos.gov.jo/censuses/population_housing/census2015/census2015_tables/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate and other levels to verify per table"
+      ],
+      "reference_periods": [
+        "2015"
+      ],
+      "formats": [
+        "HTML",
+        "PDF",
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New AreaData official 2015 census catalogue location only. Individual thematic tables, source fields, geography and terms have not been acquired or adopted; the 2025 estimate workbooks are separate.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
       "artifact_sha256": null
     },
     {
