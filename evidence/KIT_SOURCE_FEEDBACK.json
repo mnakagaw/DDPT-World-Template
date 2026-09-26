@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T21:35:01.480Z",
-  "origin_commit": "008064712056deac4b28ceaae2f099615262d837",
+  "exported_at": "2026-09-26T23:22:02.327Z",
+  "origin_commit": "93385cd44c00876c1c83457786df5218a66bbae2",
   "sources": [
     {
       "iso3": "ARE",
@@ -2443,6 +2443,216 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "Annual 1 January population estimates are distinct from the 14 November 2024 census and WDI estimates. AreaData identified the location but did not acquire or harmonize the linked workbooks.",
       "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_ORGI_LOCATION_CODE_DIRECTORY_2011",
+      "role": "administrative_codes",
+      "title": "ORGI Census 2011 Location Code Directory",
+      "publisher": "Office of the Registrar General & Census Commissioner, India",
+      "url": "https://censusindia.gov.in/nada/index.php/catalog/42648/download/46323/PC11_TV_DIR.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2011 state/UT",
+        "2011 district",
+        "2011 sub-district",
+        "2011 town/village"
+      ],
+      "reference_periods": [
+        "2011"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Historic ORGI keys, not current LGD legal-body IDs. The source has 15 selected composite keys with multiple labels and omits 30 PCA district residuals coded 99999. Reproduction permission and a dated current crosswalk need separate review.",
+      "origin_evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_CURRENT_LGD_CATALOGUE",
+      "role": "administrative_codes",
+      "title": "Local Government Directory data catalogue",
+      "publisher": "Ministry of Panchayati Raj / Open Government Data Platform India",
+      "url": "https://data.gov.in/catalog/local-government-directory-lgd",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "current state",
+        "district",
+        "sub-district",
+        "Gram/Intermediate/District Panchayat",
+        "urban local body"
+      ],
+      "reference_periods": [
+        "current monthly updates; exact file edition unacquired"
+      ],
+      "formats": [
+        "HTML",
+        "CSV leads"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official current legal/revenue-code directory location, not a 2011-to-current crosswalk. Exact monthly files, definitions, rights and change history were not acquired; do not name-join to PCA rows.",
+      "origin_evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_SOI_ABDB",
+      "role": "boundaries",
+      "title": "Survey of India Administrative Boundary Data Base",
+      "publisher": "Survey of India",
+      "url": "https://surveyofindia.gov.in/pages/administrative-boundary-data-base-abdb-",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "current state",
+        "district",
+        "sub-district",
+        "village product locations"
+      ],
+      "reference_periods": [
+        "current catalogue; exact boundary edition unacquired"
+      ],
+      "formats": [
+        "HTML",
+        "RAR/ZIP product leads"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official boundary product location only. No file, dated edition, redistribution right, polygon or 2011 Census code match is transferred; the AreaData candidate intentionally has zero shapes.",
+      "origin_evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_ORGI_2011_VILLAGE_PCA_CATALOGUE",
+      "role": "census_catalog",
+      "title": "ORGI 2011 village Primary Census Abstract workbook catalogue",
+      "publisher": "Office of the Registrar General & Census Commissioner, India",
+      "url": "https://censusindia.gov.in/nada/index.php/catalog/42554",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2011 village and lower statistical products"
+      ],
+      "reference_periods": [
+        "2011"
+      ],
+      "formats": [
+        "HTML catalogue",
+        "XLSX lead"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Separate large village PCA workbook was located but not downloaded or field-audited. No village observations or rights to reproduce the source are transferred.",
+      "origin_evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_ORGI_PCA_2011_NATIONAL_STATE_DISTRICT_SUBDISTRICT_TOWN",
+      "role": "census_results",
+      "title": "ORGI Census 2011 Primary Census Abstract: national/state/district/sub-district/town",
+      "publisher": "Office of the Registrar General & Census Commissioner, India",
+      "url": "https://censusindia.gov.in/nada/index.php/catalog/42559/download/46185/2011-IndiaStateDistSbDistTwn-0000.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2011 national",
+        "2011 state/UT",
+        "2011 district",
+        "2011 sub-district",
+        "2011 town"
+      ],
+      "reference_periods": [
+        "2011"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Historical 2011 PCA source. AreaData's eight direct count fields are a private partial candidate, not transferable Kit observations. The 77 remaining numeric fields and village/ward products are unassessed. ORGI website policy requires prior permission for reproduction; no publication or current LGD/legal-unit match is implied.",
+      "origin_evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_MOPR_PANCHAYAT_PLAN_BOOKLET_2026_27",
+      "role": "planning_guidance",
+      "title": "Preparation of Panchayat Development Plan Booklet 2026–27",
+      "publisher": "Ministry of Panchayati Raj, India",
+      "url": "https://panchayat.gov.in/en/document/preparation-of-panchayat-development-plan-booklet-2026-27/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national Panchayat planning guidance"
+      ],
+      "reference_periods": [
+        "financial year 2026–27"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "The 88-page 2026-27 guidance was acquired, but internal 2025-26 references remain. It is not an individual approved Panchayat plan, budget, expenditure or evaluation; check state-specific law and current authority separately.",
+      "origin_evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_CONSTITUTION_ARTICLE_243ZD",
+      "role": "planning_law",
+      "title": "Constitution of India, Article 243ZD District Planning Committee",
+      "publisher": "Legislative Department, Ministry of Law and Justice",
+      "url": "https://www.legislative.gov.in/static/uploads/2025/08/7af1daa22d65f9d04c00ae9b9aa5a799.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "district planning institutions; state-law conditions"
+      ],
+      "reference_periods": [
+        "current constitutional text; state applicability to verify"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Article 243ZD concerns district consolidation of Panchayat/Municipality plans and state-law functions. It does not make a 2011 Census district or sub-district an approved plan or uniquely identify a current authority.",
+      "origin_evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_EGRAMSWARAJ_SYSTEM",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "eGramSwaraj planning, progress and accounting system",
+      "publisher": "Ministry of Panchayati Raj",
+      "url": "https://panchayat.gov.in/en/e-gramswaraj/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "current Panchayats; exact local records unacquired"
+      ],
+      "reference_periods": [
+        "current portal; individual periods unverified"
+      ],
+      "formats": [
+        "HTML system description"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "MoPR describes distinct planning, physical/financial progress and accounting modules. No individual plan, budget, actual, approval or evaluation is transferred. Live report access and reproduction terms require separate review.",
+      "origin_evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md",
       "artifact_sha256": null
     },
     {
