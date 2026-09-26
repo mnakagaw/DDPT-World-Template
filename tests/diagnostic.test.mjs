@@ -149,6 +149,18 @@ test('print HTML contains full opened evidence and no clickable selection contro
   assert.doesNotMatch(html,/<script\b|data-action="inspect-internal"|role="button"/);
   assert.match(html,/@media print/);assert.match(html,/overflow:visible/);assert.match(html,/Membership sources/);
 });
+test('print HTML defines repeated map geometry once while retaining each indicator map and row',()=>{
+  const html=diagnosticHtml(analysisFixture(),'river','2024');
+  const definitions=[...html.matchAll(/<path id="(diagnostic-shape-\d+)" d="[^"]+"\/>/g)].map(match=>match[1]);
+  const uses=[...html.matchAll(/<use href="#(diagnostic-shape-\d+)"/g)].map(match=>match[1]);
+  assert.ok(definitions.length>0);
+  assert.ok(uses.length>definitions.length);
+  assert.equal(new Set(definitions).size,definitions.length);
+  assert.ok(uses.every(id=>definitions.includes(id)));
+  assert.equal((html.match(/class="internal-map"/g)||[]).length,2);
+  assert.equal((html.match(/data-internal-row=/g)||[]).length,60);
+  assert.doesNotMatch(html,/<path d="/);
+});
 test('CSV quoting protects every source text field while negative numeric observations remain numeric',()=>{
   const data=analysisFixture(),area=data.territories.find(row=>row.id==='city');area.name='=HYPERLINK("https://example.org","test")';
   const row=statistic(data,'city');row.value=-4;row.definition=' @SUM(1,2)\nQuoted "evidence"';row.population='\t=population';row.method='-method';
