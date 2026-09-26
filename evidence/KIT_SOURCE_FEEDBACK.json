@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T08:17:49.891Z",
-  "origin_commit": "ea09dccdcd07ae376b2849481248458c8509fa10",
+  "exported_at": "2026-09-26T08:34:08.761Z",
+  "origin_commit": "8de3d9eb0781e62a63ba585de6aeba738f6edead",
   "sources": [
     {
       "iso3": "BFA",
@@ -614,6 +614,33 @@
     },
     {
       "iso3": "SAU",
+      "source_id": "SAU_SAU_GASTAT_POPULATION_DETAILED_AGE_TABLEAU",
+      "role": "census_results",
+      "title": "GASTAT Population by Detailed Age Tableau view",
+      "publisher": "General Authority for Statistics (GASTAT)",
+      "url": "https://tableau.stats.gov.sa/views/TA3-PopulationbydetailedAgebyRegionGovernorateNationalityandGender_17298115570530/NW-PopulationbydetailedAgebyRegionGovernorateNationalityandGender",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "region filter",
+        "governorate filter; row coverage unverified"
+      ],
+      "reference_periods": [
+        "unverified in the inspected view"
+      ],
+      "formats": [
+        "HTML",
+        "Tableau"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New specific official GASTAT Tableau table location with metadata code TTCENPOP0105. Age, region, governorate, nationality and gender dimensions are visible, but reference period, full row inventory and downloadable original were not verified. AreaData adopted no observation from this view. Kit must independently acquire and audit the table, codes, boundaries, terms and geographic coverage.",
+      "origin_evidence_path": "docs/evidence/saudi-gastat-tableau-source-location-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SAU",
       "source_id": "SAU_SAU_MOH_YEARBOOK_2022_CENSUS_REGIONS",
       "role": "census_results",
       "title": "Ministry of Health Statistical Yearbook 2022, Table 1-12",
@@ -633,8 +660,8 @@
         "PDF"
       ],
       "license_or_terms": "terms_review_required",
-      "reuse_note": "New AreaData source location: Saudi Ministry of Health 2022 yearbook Table 1-12 cites GASTAT for the 2022 census population of 13 administrative regions. Its 2010–2021 columns are recalculated estimates, not census counts. Kit must independently audit direct GASTAT tables, geographic codes/boundaries, terms and adoption.",
-      "origin_evidence_path": "docs/evidence/saudi-census-source-location-2026-09-26.md",
+      "reuse_note": "Previously recorded AreaData source location, carried forward unchanged: Saudi Ministry of Health 2022 yearbook Table 1-12 cites GASTAT for the 2022 census population of 13 administrative regions. Its 2010–2021 columns are recalculated estimates, not census counts. Kit must independently audit direct GASTAT tables, geographic codes/boundaries, terms and adoption.",
+      "origin_evidence_path": "docs/evidence/saudi-gastat-tableau-source-location-2026-09-26.md",
       "artifact_sha256": null
     },
     {
