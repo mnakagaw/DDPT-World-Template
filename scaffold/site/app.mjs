@@ -69,7 +69,13 @@ function localizedGap(gap){
   const boundaryCountries=new Set((dataset.boundaries?.features||[]).map(feature=>feature.properties?.territory_id).filter(id=>areaFor(id)?.type==='country')).size;
   const wpp=dataset.analysis?.coverage?.un_wpp_country_area_count;
   const missingWpp=dataset.analysis?.coverage?.un_wpp_missing_country_area_ids||[];
+  const asiaScope=dataset.country?.id==='ASI';
   const dynamic={
+    ...(asiaScope?{domestic_census_coverage:{
+      category:['Domestic Census coverage','Cobertura censal subnacional','国内国勢調査の収録範囲'],
+      detail:[`Domestic Census data are integrated for ${coverage.domestic_branch_count} of ${total} Asia countries/areas. A missing branch does not mean no census exists.`,`Se han integrado datos censales subnacionales de ${coverage.domestic_branch_count} de ${total} países/áreas de Asia. La falta de una rama no significa que no exista un censo.`,`アジアの${total}か国・地域のうち、国内地域の国勢調査データを統合したのは${coverage.domestic_branch_count}件です。未統合は国勢調査が存在しないという意味ではありません。`],
+      next:['Acquire and verify country-specific census tables, codes and local geography.','Obtener y verificar tablas censales, códigos y geografía local de cada país.','国別の国勢調査表、コード、国内地域を取得・照合する。']
+    }}:{}),
     census_country_coverage:{
       category:['Census country coverage','Cobertura censal por país','国別Censusの収録範囲'],
       detail:[coverageSummaryText(coverage),coverageSummaryText(coverage,'es'),coverageSummaryText(coverage,'ja')],
@@ -80,6 +86,11 @@ function localizedGap(gap){
       detail:[`${boundaryCountries} of ${total} countries/areas have exact-joined country reference map units. Missing shapes stay in the registry and tables.`,`${boundaryCountries} de ${total} países/áreas tienen una unión exacta con unidades cartográficas nacionales de referencia. Las geometrías faltantes permanecen en el registro y las tablas.`,`${total}の国・地域のうち${boundaryCountries}件を国レベルの参照図形へ完全一致で結合しています。図形がない地域も台帳と表から削除しません。`],
       next:REGIONAL_GAP_COPY.boundary_reconciliation.next
     },
+    ...(asiaScope?{planning_materials:{
+      category:REGIONAL_GAP_COPY.planning_materials.category,
+      detail:['The Asia exploration scope is not a legal planning authority. Country and local planning laws, plans, budgets and evaluations are not generalized across Asia.','El ámbito de exploración de Asia no es una autoridad legal de planificación. Las leyes, planes, presupuestos y evaluaciones nacionales y locales no se generalizan a toda Asia.','アジアの探索範囲は法定計画主体ではありません。各国・地域の計画法、計画、予算、評価資料をアジア全体へ一般化していません。'],
+      next:REGIONAL_GAP_COPY.planning_materials.next
+    }}:{}),
     un_wpp_country_area_coverage:{
       category:REGIONAL_GAP_COPY.un_wpp_country_area_coverage.category,
       detail:[`UN WPP country/area rows are available for ${wpp??0} of ${total} registry entries. Missing: ${missingWpp.join(', ')||'none recorded'}. Missing remains distinct from zero.`,`UN WPP contiene filas para ${wpp??0} de las ${total} entradas del registro. Faltan: ${missingWpp.join(', ')||'ninguna registrada'}. Los datos faltantes no se tratan como cero.`,`UN WPPは${total}件中${wpp??0}件に国・地域行があります。欠測：${missingWpp.join(', ')||'記録なし'}。欠測をゼロとして扱いません。`],
