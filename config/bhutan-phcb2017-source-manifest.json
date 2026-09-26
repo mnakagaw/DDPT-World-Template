@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0",
+  "catalogue_url": "https://nsb.gov.bt/phcb/",
+  "catalogue_sha256": "8a388ccec0d9143505cd12e10156d74410e47419597c844e90e7d8dab42e044e",
+  "geographic_code_catalogue_url": "https://nsb.gov.bt/bhutan-standard-statistical-geograpgic-codes-2/",
+  "geographic_code_catalogue_sha256": "efe9280363de04beb9e51873363b1b7c95b2a59821e2511adf1e2b8bb3454f5d",
+  "scope": "2017 PHCB national and 20 Dzongkhag reports, current code publication and two planning references; adoption separate",
+  "source_files": [
+    {
+      "id": "btn-phcb2017-district-bumthang",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Bumthang.pdf",
+      "raw_path": "raw/btn-phcb2017-district-bumthang.pdf",
+      "bytes": 1631450,
+      "sha256": "60971c3ce78fe5b7b0bdeb7936adc022fcda30a42860888f36344a32a8d9e7d1",
+      "pages": 59
+    },
+    {
+      "id": "btn-phcb2017-district-chhukha",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Chhukha.pdf",
+      "raw_path": "raw/btn-phcb2017-district-chhukha.pdf",
+      "bytes": 1371877,
+      "sha256": "327915eee3d2538d01b86ed7a10c58ab150ca99e350e325d65a1320d2d919a09",
+      "pages": 97
+    },
+    {
+      "id": "btn-phcb2017-district-dagana",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Dagana.pdf",
+      "raw_path": "raw/btn-phcb2017-district-dagana.pdf",
+      "bytes": 1054409,
+      "sha256": "0146b860651bacc0e73b41ccc4644090b344b77505b8aebaed9944298670e53f",
+      "pages": 79
+    },
+    {
+      "id": "btn-phcb2017-district-gasa",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Gasa.pdf",
+      "raw_path": "raw/btn-phcb2017-district-gasa.pdf",
+      "bytes": 1095231,
+      "sha256": "25f9d4704a84296d1b62501742f8463625d7a9ea815ec6406170505110b8fa28",
+      "pages": 61
+    },
+    {
+      "id": "btn-phcb2017-district-haa",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Haa.pdf",
+      "raw_path": "raw/btn-phcb2017-district-haa.pdf",
+      "bytes": 1107681,
+      "sha256": "4106531dd9f6b3be645c9579c3a1c4a4a7c7c2c291c6ded6d48e346ff69cd127",
+      "pages": 65
+    },
+    {
+      "id": "btn-phcb2017-district-lhuentse",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Lhuentse.pdf",
+      "raw_path": "raw/btn-phcb2017-district-lhuentse.pdf",
+      "bytes": 995555,
+      "sha256": "bf978926526e5db6b4fde62c0e026fdc40cc0867e905d11b8ca23f3a291be9d4",
+      "pages": 69
+    },
+    {
+      "id": "btn-phcb2017-district-monggar",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Monggar.pdf",
+      "raw_path": "raw/btn-phcb2017-district-monggar.pdf",
+      "bytes": 1623906,
+      "sha256": "4ef791c53028485b8bd3561aecfccb079d0bcc89811ed95c6d1919e5a77d35f5",
+      "pages": 96
+    },
+    {
+      "id": "btn-phcb2017-district-paro",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Paro.pdf",
+      "raw_path": "raw/btn-phcb2017-district-paro.pdf",
+      "bytes": 1005412,
+      "sha256": "690864eeb8df1f940d9436aea23042b7f7b3adb96ad55c5dfadde970152eef60",
+      "pages": 73
+    },
+    {
+      "id": "btn-phcb2017-district-pema-gatshel",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Pema-Gatshel.pdf",
+      "raw_path": "raw/btn-phcb2017-district-pema-gatshel.pdf",
+      "bytes": 1063924,
+      "sha256": "97002ee20fcf7a030a3107bc15295912bf8e851729346bab06e0a0fc4c41dcbb",
+      "pages": 83
+    },
+    {
+      "id": "btn-phcb2017-district-punakha",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Punakha.pdf",
+      "raw_path": "raw/btn-phcb2017-district-punakha.pdf",
+      "bytes": 1034583,
+      "sha256": "fb0a4507f0e908f244ed766177508cc4b16a384428d593fc2cc04a17cfe55a86",
+      "pages": 73
+    },
+    {
+      "id": "btn-phcb2017-district-samdrup-jongkhar",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samdrup-Jongkhar.pdf",
+      "raw_path": "raw/btn-phcb2017-district-samdrup-jongkhar.pdf",
+      "bytes": 1344523,
+      "sha256": "9fefc48c0dd2dd5399ae0a8722c9793b0e505d1f0da7d7aaabfcda9c6edb0600",
+      "pages": 81
+    },
+    {
+      "id": "btn-phcb2017-district-samtse",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+      "raw_path": "raw/btn-phcb2017-district-samtse.pdf",
+      "bytes": 1401094,
+      "sha256": "84ba6deb6d7fce8b2ccfbc1db3cecfd5ce7fe437d31dc9e3840279bec5b7453c",
+      "pages": 87
+    },
+    {
+      "id": "btn-phcb2017-district-sarpang",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Sarpang.pdf",
+      "raw_path": "raw/btn-phcb2017-district-sarpang.pdf",
+      "bytes": 1256584,
+      "sha256": "c641a7370492ba7667420c151f702e161a4704da1a28dd25da62c429e6faf5a9",
+      "pages": 77
+    },
+    {
+      "id": "btn-phcb2017-district-thimphu",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Thimphu.pdf",
+      "raw_path": "raw/btn-phcb2017-district-thimphu.pdf",
+      "bytes": 1141628,
+      "sha256": "10b0b69f8fcd224c3d1e201d9ef89dd8e14b12b4f64f5ce53392b86f83077159",
+      "pages": 73
+    },
+    {
+      "id": "btn-phcb2017-district-trashi-yangtse",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Trashi-Yangtse.pdf",
+      "raw_path": "raw/btn-phcb2017-district-trashi-yangtse.pdf",
+      "bytes": 1167534,
+      "sha256": "bccdc6b3806027b7a7e457a56845f2e92e24765fdd91f33bdc2cecfe3d96d46f",
+      "pages": 71
+    },
+    {
+      "id": "btn-phcb2017-district-trashigang",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Trashigang.pdf",
+      "raw_path": "raw/btn-phcb2017-district-trashigang.pdf",
+      "bytes": 1091868,
+      "sha256": "2830345fb7a936bf5d7e5f5f892fc98773185683e445c751312df361156611e2",
+      "pages": 86
+    },
+    {
+      "id": "btn-phcb2017-district-trongsa",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Trongsa.pdf",
+      "raw_path": "raw/btn-phcb2017-district-trongsa.pdf",
+      "bytes": 1080838,
+      "sha256": "e0108cfef9531504ce4b3c582843a953f8888cd8734cdb820da3b1edb28253b0",
+      "pages": 61
+    },
+    {
+      "id": "btn-phcb2017-district-tsirang",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Tsirang.pdf",
+      "raw_path": "raw/btn-phcb2017-district-tsirang.pdf",
+      "bytes": 1161606,
+      "sha256": "5fef38a59b4122c728f5c0ad261c64d8a4d4b72de80815d2070a7e327cb1df15",
+      "pages": 69
+    },
+    {
+      "id": "btn-phcb2017-district-wangdue-phodrang",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Wangdue-Phodrang.pdf",
+      "raw_path": "raw/btn-phcb2017-district-wangdue-phodrang.pdf",
+      "bytes": 1130841,
+      "sha256": "6f09713615e0f73ca2ab805fb16e205e6022278ee4cf9fe7d3b608300bab5eef",
+      "pages": 85
+    },
+    {
+      "id": "btn-phcb2017-district-zhemgang",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Zhemgang.pdf",
+      "raw_path": "raw/btn-phcb2017-district-zhemgang.pdf",
+      "bytes": 1098819,
+      "sha256": "67bf7b1bfd7d05bca40935357c88955387e44bdc122a811a60aa6426ea9935be",
+      "pages": 65
+    },
+    {
+      "id": "btn-phcb2017-geographic-codes",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/Bhutan-Standard-Statistical-Geograpgic-Codes.pdf",
+      "raw_path": "raw/btn-phcb2017-geographic-codes.pdf",
+      "bytes": 6653604,
+      "sha256": "7ba2aaf68727aa0d0ea803843882d21afcaa7cb8bd5d78ba1f9460c943206bf1",
+      "pages": 115
+    },
+    {
+      "id": "btn-phcb2017-local-government-rules-2012",
+      "url": "https://www.dlgdm.gov.bt/storage/upload-documents/2021/12/16/umXB6iM4gC.pdf",
+      "raw_path": "raw/btn-phcb2017-local-government-rules-2012.pdf",
+      "bytes": 5811174,
+      "sha256": "29f1e4623517ab2f486ab1b77bfa565441cc894c7c66bf09fdb043207960c677",
+      "pages": 253
+    },
+    {
+      "id": "btn-phcb2017-national-2017",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/2017-PHCB-report-_national.pdf",
+      "raw_path": "raw/btn-phcb2017-national-2017.pdf",
+      "bytes": 5894308,
+      "sha256": "507308d9ab0fa44f15545fe810b299dcba26b8e1167db4eba27af974f8b03153",
+      "pages": 288
+    }
+  ],
+  "failed_sources": [
+    {
+      "id": "btn-phcb2017-national-plan-13fyp",
+      "url": "https://www.pmo.gov.bt/api/uploads/plans/document-1751451996345.pdf",
+      "status": "failed",
+      "reason": "SSLError: HTTPSConnectionPool(host='www.pmo.gov.bt', port=443): Max retries exceeded with url: /api/uploads/plans/document-1751451996345.pdf (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1077)')))"
+    }
+  ]
+}
