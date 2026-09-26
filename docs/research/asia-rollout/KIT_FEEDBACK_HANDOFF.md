@@ -130,3 +130,16 @@ Six public official leads were selected: the NCSI 2026 Statistical Year Book Tab
 | Validation | AreaData check, 218/218 tests, country validation (zero errors, one missing-plan warning), build and twelve-case output verifier passed. Kit dry-run/import accepted 87 leads; Kit check, 173/173 tests and readiness (`ready: true`, 87 feedback sources) passed. |
 
 All six Oman stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. Kit must independently inspect the yearbook, eCensus, legal terms and plan bodies before reuse. Oman remains partial and unpublished; no independent `ACCEPT` or hosting is implied.
+
+## Kuwait CSB registration census and planning leads — 2026-09-26
+
+Twelve public official leads were selected: the CSB 2021 census catalog and eight table locations, a historical CSB geography report, the municipality-law catalog and an archived national plan. [The Kuwait source audit](../../evidence/kuwait-csb2021-source-audit-2026-09-26.md) identifies the eight adopted tables and their 3,246 checked numeric cells, the 110 cataloged tables whose numeric bodies remain unaudited, and the boundary and planning gaps. The feedback contains source locations only; it transfers no original workbook, PDF, observation, code/boundary join or acceptance state.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, source/producer audit and status | `94a9adeb9f14f6f3653570ad87c68eeede46eb83` on `codex/asia-domestic-20260926` |
+| AreaData 99-source / seventeen-country bundle | `2717366ebb7d413f137bad6a2fc70e631b40538a` on the same branch; the Kuwait entries have `origin_commit` = `94a9adeb9f14f6f3653570ad87c68eeede46eb83` |
+| Kit import | `c1868b039440c137b8d52425df9711378af3a422` on `codex/asia-source-feedback-20260926`; twelve inserted, 87 existing origin histories updated, 100 records total |
+| Validation | AreaData check, 218/218 tests, country validation (zero errors, one missing-plan warning), build and 15-case actual output verifier passed. Kit dry-run/import accepted 99 leads; Kit check, 173/173 tests and readiness (`ready: true`, 99 feedback sources) passed. |
+
+All twelve Kuwait feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. Kit must independently acquire and assess source files, scope, codes, terms and planning authority before reuse. Kuwait remains partial and unpublished; no independent `ACCEPT` or hosting is implied.

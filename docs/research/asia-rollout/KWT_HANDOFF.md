@@ -39,4 +39,4 @@ Country validation passed with zero errors and one material missing-plan warning
 4. Complete all applicable 42 scenarios, long-table print rendering, document layout, source terms and independent `ACCEPT` before hosting.
 5. Continue the user-requested Middle East order. At this checkpoint Asia 50 = **0 ACCEPT, 15 partial, 1 research-only, 34 unstarted**; Middle East 19 = **0 ACCEPT, 13 partial, 1 research-only, 5 unstarted**. Next unstarted country: Georgia.
 
-Only code, public-source leads, evidence and status, not the private dataset or original files, are saved to GitHub. Kit feedback and both repositories' commit IDs are recorded in `KIT_FEEDBACK_HANDOFF.md` after transfer.
+Only code, public-source leads, evidence and status, not the private dataset or original files, are saved to GitHub. Kit feedback and both repositories' commit IDs are recorded in `KIT_FEEDBACK_HANDOFF.md`. The twelve leads were imported into Kit at `c1868b039440c137b8d52425df9711378af3a422`, all at `official_location_identified`.
