@@ -680,9 +680,9 @@
       ]
     },
     {
-      "path": "generated/oman-areadata-20260926",
+      "path": "generated/oman-housing-remediation-r2-20260926",
       "iso3": "OMN",
-      "evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
       "sources": [
         {
           "id": "omn-ecensus-2020-population",
@@ -763,6 +763,30 @@
           "geographic_levels": ["national", "governorate", "wilayat dimensions to audit"],
           "formats": ["SDMX metadata XML", "data endpoint access to test"],
           "reuse_note": "NCSI data.gov.om population-series metadata responded but the data endpoint returned HTTP 403 in AreaData's environment. No value was adopted; access failure does not mean zero or nonpublication."
+        },
+        {
+          "id": "omn-south-sharqiyah-governor-article11",
+          "role": "planning_law",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["governorate institutional duties"],
+          "formats": ["HTML official governorate page"],
+          "reuse_note": "South Al Sharqiyah's official governor page quotes Article 11 of Decree 36/2022 for governorate plan-project preparation/monitoring and annual budget/final-account preparation. Verify the operative legal original, unit and period; no approved plan or financial value was adopted."
+        },
+        {
+          "id": "omn-mof-e-library",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate-labelled schedules to inspect"],
+          "formats": ["HTML catalogue", "PDF links"],
+          "reuse_note": "Ministry of Finance library locates budget and final-account publications. Each edition, fiscal period, government unit and geography needs independent audit; AreaData adopted no local financial value."
+        },
+        {
+          "id": "omn-mof-2024-final-account-schedules",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["governorate-labelled government-unit rows; geographic expenditure unverified"],
+          "formats": ["PDF"],
+          "reuse_note": "Official 2024 final-account schedules PDF has governorate-labelled government-unit expenditure rows on pages 47-49. No value was adopted. Do not treat a unit's spending as all expenditure within its territory."
         }
       ]
     },

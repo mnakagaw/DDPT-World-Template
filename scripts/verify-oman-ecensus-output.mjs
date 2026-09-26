@@ -74,6 +74,29 @@ const sample = [
   ['OMN:ECENSUS2020:WIL:AL-BATINAH-NORTH:SOHAR', 232849],
   ['OMN:ECENSUS2020:GOV:AL-WUSTA', 52344],
 ];
+const housingId='OMN_ECENSUS_2020_HOUSING_UNITS';
+const housing=dataset.indicators.find(item=>item.id===housingId);
+const housingSource=housing&&dataset.sources.find(item=>item.id==='omn-ecensus-2020-housing-units');
+const housingControls=[1312327,412033,6868,136188,39307,70438,12343];
+if(housing){
+  // The API emits a variable query_time_ms in metadata. Pin the substantive
+  // structure, headers, data and totals, and check each complete response
+  // against its own acquisition receipt.
+  const expected={national:'749075acbfa2249b239d890933e19344f55c61024254dd95cf8b81331180667d',
+    governorate:'23c4d0c1ff4904586b41cc078f1d15789f825c7cc4fe90f8e3a35a608847b9ba',
+    wilayat:'f631e095b328ac800917cb06effe9dd949695e337a39dec26782b3e23adff0b3'};
+  const canonical=value=>Array.isArray(value)?value.map(canonical):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,canonical(value[key])])):value;
+  for(const [scope,payloadHash] of Object.entries(expected)){
+    const name=`raw/oman-ecensus-moi/ecensus-housing-unit-${scope}-pivot.json`;
+    const receipt=JSON.parse(await readFile(path.join(project,`${name}.receipt.json`),'utf8'));
+    const bytes=await readFile(path.join(project,name)),payload=JSON.parse(bytes);
+    const {metadata,...substantive}=payload;
+    if(receipt.sha256!==sha(bytes) || sha(JSON.stringify(canonical(substantive)))!==payloadHash)throw new Error(`Housing ${scope} original/receipt or substantive cells changed`);
+  }
+  const wilayatReceipt=JSON.parse(await readFile(path.join(project,'raw/oman-ecensus-moi/ecensus-housing-unit-wilayat-pivot.json.receipt.json'),'utf8'));
+  if(!housingSource || housingSource.sha256!==wilayatReceipt.sha256 || dataset.observations.filter(row=>row.indicator_id===housingId).length!==73 ||
+      housing.unit!=='housing units' || housing.period_policy!=='latest_available_per_indicator')throw new Error('Housing indicator scope or meaning changed');
+}
 function csvRows(csv) {
   const rows = []; let row = [], cell = '', quoted = false;
   for (let i = csv.charCodeAt(0) === 0xfeff ? 1 : 0; i < csv.length; i++) {
@@ -93,7 +116,7 @@ function csvRows(csv) {
 const out = path.join(project, 'evidence/output-verification');
 await mkdir(out, {recursive: true});
 const checks = [];
-for (const [areaId, total] of sample) {
+for (const [sampleIndex,[areaId, total]] of sample.entries()) {
   const area = areaById.get(areaId);
   if (!area || observations.get(`${areaId}/${ids[0]}`).value !== total) {
     throw new Error(`Independent sample control changed: ${areaId}`);
@@ -133,6 +156,14 @@ for (const [areaId, total] of sample) {
         throw new Error(`Child comparison differs: ${child.id}/${id}`);
       }
     }
+  }
+  if(housing){
+    const housingRow=dataset.observations.find(item=>item.territory_id===areaId&&item.indicator_id===housingId);
+    const overall=rows.filter(row=>row[col('Record scope')]==='overall'&&row[col('Indicator ID')]===housingId);
+    if(housingRow?.value!==housingControls[sampleIndex] || overall.length!==1 ||
+        Number(overall[0][col('Value')])!==housingControls[sampleIndex] || overall[0][col('Period')]!=='2020' ||
+        overall[0][col('Source URL')]!==housingSource.url || overall[0][col('Territory ID')]!==areaId ||
+        !outputs['planning.html'].includes('Housing units (eCensus 2020)'))throw new Error(`Housing output differs: ${areaId}`);
   }
   if (!outputs['diagnostic.html'].includes('2025 Ministry of Interior') ||
       !outputs['planning.html'].includes(area.name)) {

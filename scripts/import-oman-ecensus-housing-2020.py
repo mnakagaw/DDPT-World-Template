@@ -6,6 +6,7 @@ No occupancy, water, sanitation, or household interpretation is implied.
 import argparse
 import hashlib
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -117,6 +118,18 @@ def main():
             "source_locator": f"{locator}; RUN_DATE={DATE}; source pivot row {row['source_row']}; AMOUNT sum over all housing-unit categories"})
     if len(mapped) != 73:
         raise ValueError("Housing adoption should contain exactly 73 values")
+    for gap in dataset["gaps"]:
+        if gap["category"] == "subnational_statistics":
+            gap["status"] = "partial"
+            gap["detail"] = ("NCSI 12-Dec-2020 eCensus nationality counts remain adopted for nation, 11 governorates and 61 wilayats: 219 records in three indicators. "
+                             "A separately receipted housing-unit pivot now contributes 73 counts at the same date and reporting units. "
+                             "The other 11 public products have metadata only; housing use/type/occupancy breakdowns, other demographic fields and later dates are not adopted.")
+            gap["next_action"] = ("Audit values, definitions and geographic coverage for the other 11 products and housing subgroups; "
+                                  "assess 2021/2023-26 snapshots separately and retain the 2020 legal boundary/code gap.")
+    dataset["collection"]["adapters"] = sorted(set(dataset["collection"]["adapters"] + ["oman-ecensus-2020-housing-units-partial"]))
+    dataset["country"]["geography_note"] += (" The 12-Dec-2020 housing-unit pivot reports an independent 73-area unit-count series "
+                                              "on the same eCensus reporting IDs; it is not a household or occupancy measure.")
+    dataset["generated_at"] = datetime.now(timezone.utc).isoformat()
     audit = {"status": "partial_candidate_not_accepted", "source": SOURCE_ID,
              "indicator": INDICATOR_ID, "source_national_housing_units": national,
              "governorate_rows": 11, "wilayat_observed_rows": 61,
