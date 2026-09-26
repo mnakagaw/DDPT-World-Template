@@ -1,8 +1,8 @@
 phase,iso3,name,m49_subregion,population_2026,edition_status,note
 "1","IRN","Iran (Islamic Republic of)","Southern Asia","93168497","local_census_partial_not_accepted","Middle East first; remains M49 Southern Asia; one edition counted once; 2016 SCI-authored copies integrated for 31 ostans and 429 shahrestans; official codes, boundaries, planning and independent acceptance remain unresolved"
 "1","TUR","Türkiye","Western Asia","87926082","local_adnks_partial_not_accepted","Official 2025 TÜİK ADNKS: 81 provinces and 973 districts, 9 indicators, 7845 observations; 2021 reference province geometry matched by code; district boundaries, planning and independent acceptance remain unresolved"
-"1","IRQ","Iraq","Western Asia","48007437","local_census_partial_not_accepted","Official 2024 COSIT census summary: national and 18 governorates, five distinct numeric fields, 95 observations; district tables, official boundary/code match, planning and independent acceptance remain unresolved"
-"1","YEM","Yemen","Western Asia","42961653","not_started",""
+"1","IRQ","Iraq","Western Asia","48007437","local_census_partial_not_accepted","Official 2024 COSIT census summary plus two governorate household-service PDFs: 11 distinct local indicators, 209 observations; official boundary/code match, planning, other source-table review and independent acceptance unresolved"
+"1","YEM","Yemen","Western Asia","42961653","source_research_started_not_accepted","National-only bootstrap and official census/yearbook/law source discovery; census PDF acquisition failed, no domestic observations or matched official geography"
 "1","SAU","Saudi Arabia","Western Asia","35165787","local_census_partial_not_accepted","Official MOH yearbook Table 1-12 citing GASTAT: 2022 census-based population for national and 13 administrative regions; governorate data, codes, boundaries, planning and independent acceptance remain unresolved"
 "1","SYR","Syrian Arab Republic","Western Asia","26472497","not_started",""
 "1","JOR","Jordan","Western Asia","11589532","not_started",""
