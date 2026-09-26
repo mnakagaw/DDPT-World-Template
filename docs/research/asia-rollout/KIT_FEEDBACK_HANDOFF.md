@@ -260,3 +260,16 @@ Thirty-four public official locations were selected: four NSO 2021 workbook fami
 | Validation | AreaData check 152 modules/templates, 218/218 tests, Nepal validator zero errors/warnings, build and eight actual-output cases. Kit check 52 JS/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 217 feedback sources). |
 
 All 34 Nepal feedback stages remain `official_location_identified`; Kit stores `not_acquired_by_kit_preflight`. Kit must independently reacquire and audit source bodies, code geography, legal applicability, city document contents and source terms before use. Nepal remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Sri Lanka DCS CPH 2024 source leads — 2026-09-27 JST
+
+Thirty-five public official locations were selected: the 23 numbered DCS Population/Housing A workbooks, nine GN workbooks, administrative-code workbook, English final census report, and a municipal budget-rule Gazette location. [The Sri Lanka source audit](../../evidence/sri-lanka-cph2024-source-audit-2026-09-27.md) identifies the three adopted final DS tables and one province report table; it separately marks other acquired tables, provisional GN counts and uninspected Gazette body. No raw original, observation, code/boundary acceptance, plan/budget fact or country approval is transferred.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, audit and status | `b8cfe0c` on `codex/asia-domestic-20260926`; scoped source files, scripts and country evidence pushed. |
+| AreaData 35 source selections and 252-source / 27-country bundle | Selections commit `0741eb439bd713d298765c74e00fb734f0b09a9d`; `evidence/KIT_SOURCE_FEEDBACK.json` carries that exact `origin_commit`. Both adapter and selections were pushed. |
+| Kit feedback import | `46f245d881a572f1c7bfc696f96b28bdea5aac5f` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 252 leads, inserted 35 Sri Lanka records and updated 217 prior origin histories, 253 Kit records total. Pushed; remote branch head matched. |
+| Validation | AreaData check 153 modules/templates, 218/218 tests, Sri Lanka validator zero errors and one planning warning, build and eight actual-output cases. Kit check 52 JS/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 252 feedback sources). |
+
+All 35 Sri Lanka feedback stages are `official_location_identified`; Kit records `not_acquired_by_kit_preflight`. Kit must independently acquire and audit originals, final/provisional census editions, statistical versus council geography, source terms and planning rules. Sri Lanka remains a partial unpublished candidate without independent `ACCEPT`.

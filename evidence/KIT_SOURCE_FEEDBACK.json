@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T21:13:08.172Z",
-  "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
+  "exported_at": "2026-09-26T21:51:04.772Z",
+  "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
   "sources": [
     {
       "iso3": "AFG",
@@ -3226,6 +3226,860 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "CAS 2018-19 LFHLCS main survey report. AreaData adopted only Table 1.1 rounded population and household estimates for mid-2018 residential-dwelling residents; this is not a census or an all-resident count. Kit must independently audit other tables, coverage, geography and reuse terms.",
       "origin_evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_ADMIN_CODES",
+      "role": "administrative_codes",
+      "title": "DCS CPH 2024 admin-codes official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/qlink/AdminDivCodes_Excel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "province",
+        "district",
+        "Divisional Secretary division",
+        "GN"
+      ],
+      "reference_periods": [
+        "official code register, edition not yet confirmed"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS code workbook acquired. Its 14,008 GN code-component keys match the provisional GN population workbook; 2024 legal boundary edition and compatible polygons remain unverified.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_HOUSING_PROVISIONAL",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-housing-provisional official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GN_housing_excel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_POPULATION_PROVISIONAL",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-population-provisional official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GN_population_excel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "country",
+        "district",
+        "Divisional Secretary division",
+        "GN"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "DCS GN population workbook says Provisional. Code keys match the official register, but age totals differ from final DS age counts in eight divisions. No GN observation adopted by AreaData; Kit must resolve edition and terms.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_ETHNICITY",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-ethnicity official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Ethnic_Group",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_FIVE_YEAR_AGE",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-five-year-age official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_LOCAL_GOVERNMENT_AREA",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-local-government-area official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Local_Government_Area",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_RELIGION",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-religion official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Religion",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_SECTOR",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-sector official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Sector",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_HOUSEHOLDS",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-households official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HH_GND_excel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A1",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a1 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A1",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A10",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a10 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A10",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A11",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a11 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A11",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A12",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a12 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A12",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A13",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a13 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A13",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A14",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a14 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A14",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "country",
+        "district",
+        "Divisional Secretary division"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Final DCS CPH 2024 housing A14. AreaData audited household denominator and 15 drinking-water source counts; source categories are not JMP service levels. Kit must independently inspect original and terms.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A15",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a15 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A15",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A16",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a16 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A16",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "country",
+        "district",
+        "Divisional Secretary division"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Final DCS CPH 2024 housing A16. AreaData audited toilet categories and cross-checked its duplicate household denominator against A14; no sanitation rate was inferred. Kit must independently inspect original and terms.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A2",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a2 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A2",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A3",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a3 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A3",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A4",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a4 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A4",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A5",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a5 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A5",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A6",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a6 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A6",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A7",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a7 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A7",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A8",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a8 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A8",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_HOUSINGA_A9",
+      "role": "census_results",
+      "title": "DCS CPH 2024 housinga-a9 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A9",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_GN_OCCUPIED_HOUSING",
+      "role": "census_results",
+      "title": "DCS CPH 2024 gn-occupied-housing official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/OHU_GN_excel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "GN and parent levels, exact reporting scope unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 GN workbook acquired; only sheet extent was inventoried. Numeric field meaning, provisional/final edition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A1",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a1 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A1",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A2",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a2 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A2",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A3",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a3 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A3",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A4",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a4 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A4",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A5",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a5 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A5",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "country",
+        "district",
+        "Divisional Secretary division"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Final DCS CPH 2024 population A5. AreaData audited selected direct population/sex/age counts for country, 25 districts and 340 DS divisions; Kit must independently inspect original and terms.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A6",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a6 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A6",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_POPULATIONA_A7",
+      "role": "census_results",
+      "title": "DCS CPH 2024 populationa-a7 official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A7",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2024 census reporting units, exact table levels unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official DCS CPH 2024 numbered A workbook acquired; only sheet extent was inventoried. Numeric fields, definition, geography and terms remain priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_DCS2024_FINAL_REPORT_EN",
+      "role": "census_results",
+      "title": "DCS CPH 2024 final-report-en official original",
+      "publisher": "Department of Census and Statistics, Sri Lanka",
+      "url": "https://www.statistics.gov.lk/Resource/en/Population/CPH_2024/CPH2024_Final_Eng.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "country",
+        "province",
+        "other report tables unassessed"
+      ],
+      "reference_periods": [
+        "2024 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public download; redistribution terms unverified",
+      "reuse_note": "Official 266-page final census report acquired. AreaData adopted only Table 3.2 province population from PDF p68 (printed p51); all other tables and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LKA",
+      "source_id": "LKA_LKA_MUNICIPAL_BUDGET_RULES_2020",
+      "role": "planning_law",
+      "title": "Sri Lanka Gazette Extraordinary 2199/15 municipal budget and development-plan rules",
+      "publisher": "Department of Government Printing, Sri Lanka",
+      "url": "https://documents.gov.lk/view/extra-gazettes/2020/10/2199-15_E.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "municipal councils only; not census DS areas"
+      ],
+      "reference_periods": [
+        "2020 publication; current applicability unverified"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public Gazette; terms unverified",
+      "reuse_note": "Official Gazette location only. PDF body, current legal force, detailed provisions, jurisdiction and terms were not audited or adopted; this is not an approved local plan or budget.",
+      "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
