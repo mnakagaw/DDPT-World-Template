@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T11:25:35.631Z",
-  "origin_commit": "e38724e882d186e2e69e5c848333d5536e768885",
+  "exported_at": "2026-09-26T11:58:08.374Z",
+  "origin_commit": "c858618645f3b54464951cc34459ad1e02376100",
   "sources": [
     {
       "iso3": "ARE",
@@ -1697,6 +1697,181 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "Ministry of Economy library links the acquired main 11th plan and other programme/performance volumes. The latter have not been acquired or assigned to governorates by AreaData.",
       "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PSE",
+      "source_id": "PSE_PSE_PCBS_REPORT_HISTORY",
+      "role": "census_catalog",
+      "title": "PCBS official report-history catalogue",
+      "publisher": "Palestinian Central Bureau of Statistics",
+      "url": "https://www.pcbs.gov.ps/en/reference/report-history/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national and linked governorate publications"
+      ],
+      "reference_periods": [
+        "2017 census and other report editions"
+      ],
+      "formats": [
+        "HTML catalogue",
+        "linked PDFs"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official PCBS report history locates multiple 2017 census and governorate products. AreaData has not inventoried all products, tables or licence terms; this is a location lead only.",
+      "origin_evidence_path": "docs/evidence/palestine-pcbs-2017-molg-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PSE",
+      "source_id": "PSE_PSE_PCBS_PHC_2017_SUMMARY_TABLE2",
+      "role": "census_results",
+      "title": "PCBS Population, Housing and Establishments Census 2017, Final Results Summary, Table 2",
+      "publisher": "Palestinian Central Bureau of Statistics",
+      "url": "https://www.pcbs.gov.ps/Downloads/book2383.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "West Bank/Gaza Strip reporting regions",
+        "16 governorates"
+      ],
+      "reference_periods": [
+        "2017 final census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "official_publication_redistribution_terms_review_required",
+      "reuse_note": "PCBS 2017 Final Summary Table 2 has four checked count columns for nation, two regions and 16 governorates. Population includes post-enumeration estimates. Other tables and 585 coded locality rows are unassessed, and this is not a current 2026 count. Kit must independently acquire and audit original fields, geography and terms.",
+      "origin_evidence_path": "docs/evidence/palestine-pcbs-2017-molg-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PSE",
+      "source_id": "PSE_PSE_PCBS_2017_DETAILED_POPULATION",
+      "role": "census_results",
+      "title": "PCBS PHC 2017 detailed population final results",
+      "publisher": "Palestinian Central Bureau of Statistics",
+      "url": "https://www.pcbs.gov.ps/Downloads/book2425.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate",
+        "locality tables to verify"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "official_publication_redistribution_terms_review_required",
+      "reuse_note": "PCBS 270-page detailed 2017 population report acquired by AreaData, but its physical tables, columns, locality-code semantics and values have not been inventoried or adopted. Do not infer absence from the partial Summary adaptation.",
+      "origin_evidence_path": "docs/evidence/palestine-pcbs-2017-molg-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PSE",
+      "source_id": "PSE_PSE_MOLG_SDIP_TOWNS_GUIDE_2018",
+      "role": "planning_guidance",
+      "title": "Ministry of Local Government 2018 local development planning guide for Palestinian cities and towns",
+      "publisher": "Ministry of Local Government (Palestine)",
+      "url": "https://molg.pna.ps/uploads/files/SDIP_d2ff2339671b4f1fbbd1c083e0ccd038.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "city and town local government planning methodology"
+      ],
+      "reference_periods": [
+        "2018"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "official_publication_redistribution_terms_review_required",
+      "reuse_note": "AreaData acquired a 2018 third-edition city/town SDIP planning guide and checked cover/preparation pages. It does not establish the current statutory duty, approval or existence of a plan for any named municipality or governorate.",
+      "origin_evidence_path": "docs/evidence/palestine-pcbs-2017-molg-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PSE",
+      "source_id": "PSE_PSE_MOLG_GOVERNORATE_PLANNING_GUIDE",
+      "role": "planning_guidance",
+      "title": "MoLG strategic governorate planning facilitator guide",
+      "publisher": "Ministry of Local Government (Palestine)",
+      "url": "https://www.molg.pna.ps/uploads/userfiles/file/pdfs/DSDPmanualArabic.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate regional planning guidance"
+      ],
+      "reference_periods": [
+        "historical guide hosted by ministry; current standing to verify"
+      ],
+      "formats": [
+        "PDF",
+        "HTML catalogue"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Ministry catalogue links the governorate planning facilitator guide and its direct PDF returned HTTP 200. AreaData did not acquire or audit the body, effective period or current legal standing; no governorate plan was attributed.",
+      "origin_evidence_path": "docs/evidence/palestine-pcbs-2017-molg-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PSE",
+      "source_id": "PSE_PSE_MOLG_SECTOR_STRATEGY_2025_2027",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Ministry of Local Government sector strategy 2025–2027",
+      "publisher": "Ministry of Local Government (Palestine)",
+      "url": "https://www.molg.pna.ps/uploads/files/%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%D8%A9%20-%20%D8%A7%D9%84%D8%AE%D8%B7%D8%A9%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%D9%8A%D8%AC%D9%8A%D8%A9%20%D9%83%D8%A7%D9%85%D9%84%D8%A9%20%D9%84%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%AD%D9%83%D9%85%20%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A%20-2025-2027_24690cbe335f4e548e8e7d73c9702de7.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national ministry sector strategy"
+      ],
+      "reference_periods": [
+        "2025-2027"
+      ],
+      "formats": [
+        "PDF",
+        "HTML catalogue"
+      ],
+      "license_or_terms": "official_publication_redistribution_terms_review_required",
+      "reuse_note": "Ministry 2025-2027 sector strategy original acquired; selected pages checked. It is one national MoLG strategy, not 16 governorate or municipality plans. Its budget and monitoring chapters have not been adopted as local approved budgets, actual expenditure or achieved results.",
+      "origin_evidence_path": "docs/evidence/palestine-pcbs-2017-molg-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PSE",
+      "source_id": "PSE_PSE_PCBS_2017_GOVERNORATE_AREA",
+      "role": "table_catalog",
+      "title": "PCBS governorate land-area table (2017 geography, hosted in 2019 table)",
+      "publisher": "Palestinian Central Bureau of Statistics",
+      "url": "https://www.pcbs.gov.ps/Portals/_Rainbow/Documents/Land-use-table%201E-2019.html",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate area table; dated boundary correspondence to verify"
+      ],
+      "reference_periods": [
+        "2017 territorial area; page hosted in 2019 collection"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "official_publication_redistribution_terms_review_required",
+      "reuse_note": "PCBS 2019-hosted table describes 2017 governorate area/geography. AreaData acquired it but adopted no area value, official code or polygon. Reconcile the 2017 census geography and Jerusalem distinction before joins.",
+      "origin_evidence_path": "docs/evidence/palestine-pcbs-2017-molg-sources-2026-09-26.md",
       "artifact_sha256": null
     },
     {
