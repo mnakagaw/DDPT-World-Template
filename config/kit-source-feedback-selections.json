@@ -1861,6 +1861,14 @@
       "geographic_levels": ["Panchayat audit system; exact local report unacquired"], "reference_periods": ["current system entry point; local report period unverified"], "formats": ["HTML"],
       "reuse_note": "System-level audit and action-taken-report location. No selected West Tripura or Gram Panchayat audit report, opinion, actual spending, corrective action or plan evaluation was acquired.",
       "evidence_path": "docs/evidence/india-tripura-planning-finance-followup-2026-09-27.md"
+    },
+    {
+      "iso3": "IND", "id": "ind-lgd-statewise-entity-summary", "role": "administrative_codes",
+      "title": "LGD state-wise administrative-unit and PRI count report", "publisher": "Ministry of Panchayati Raj / National Informatics Centre",
+      "url": "https://lgdirectory.gov.in/demo/reportonStatewiseEntityDetails.do", "authority_type": "official_national",
+      "geographic_levels": ["state-wise counts of revenue and rural/urban local-body types"], "reference_periods": ["dynamic page generated 2026-09-27; exact future edition varies"], "formats": ["HTML report"],
+      "reuse_note": "Dynamic official count summary, not the coded entity register or 2011 crosswalk. The captured Tripura row has eight districts versus four in the AreaData 2011 Census hierarchy; no individual ID, boundary, mapping, plan or value is transferred. Re-fetch a dated report and obtain coded change history separately.",
+      "evidence_path": "docs/evidence/india-tripura-planning-finance-followup-2026-09-27.md"
     }
   ]
 }
