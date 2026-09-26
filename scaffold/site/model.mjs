@@ -14,7 +14,8 @@ export function displayValue(value, locale = 'en', maximumFractionDigits = 2) {
   try { return new Intl.NumberFormat(locale, {maximumFractionDigits: digits}).format(value); }
   catch { return new Intl.NumberFormat('en', {maximumFractionDigits: digits}).format(value); }
 }
-export function statusLabel(status) {
+export function statusLabel(status,provenance) {
+  if(status==='calculated' && provenance==='calculated')return 'Calculated from source values';
   return ({observed:'Source reported', calculated:'AreaData calculated', incomplete:'Incomplete coverage', missing:'No data', not_collected:'Not collected', not_available:'Not available', unavailable:'Unavailable', not_applicable:'Not applicable', incomparable:'Comparison not established', unverified:'Unverified', failed:'Acquisition failed', error:'Acquisition failed', ready:'Acquired', link_verified:'Link verified', downloaded:'Body acquired', body_acquired:'Body acquired', content_extracted:'Content extracted; not cross-checked', content_verified:'Content cross-checked', extracted:'Extracted', pending:'Pending'})[status] || String(status || 'Not collected').replaceAll('_', ' ');
 }
 export function sourceFor(dataset, indicator, observation) {
@@ -69,12 +70,13 @@ export function observationFor(dataset, territoryId, indicatorId, period) {
   return dataset.observations.find(row => row.territory_id === territoryId && row.indicator_id === indicatorId && String(row.period) === String(period));
 }
 export function observedValue(observation) { return observation?.status === 'observed' && finite(observation.value) ? observation.value : null; }
+export function observationDisplayStatus(observation) { return observation?.status==='observed'&&observation.provenance==='calculated'?'calculated':observation?.status || 'unverified'; }
 export function observationState(dataset, territoryId, indicatorId, period) {
   const indicator=dataset.indicators.find(item=>item.id===indicatorId);
   const rows=dataset.observations.filter(item=>item.territory_id===territoryId&&item.indicator_id===indicatorId);
   const mixed=String(period)===LATEST_AVAILABLE_PERIOD&&indicator?.period_policy==='latest_available_by_component';
   const row = mixed?[...rows].filter(item=>observedValue(item)!==null).sort((a,b)=>String(b.period).localeCompare(String(a.period),'en',{numeric:true}))[0] || null:observationFor(dataset, territoryId, indicatorId, period);
-  if (row) return {row, value:observedValue(row), status:row.status || 'unverified'};
+  if (row) return {row, value:observedValue(row), status:observationDisplayStatus(row)};
   const hasSeries = rows.length>0;
   return {row:null, value:null, status:hasSeries ? 'missing' : 'not_collected'};
 }
@@ -364,7 +366,7 @@ export function comparisonRows(dataset, state) {
   return comparisonAreas(dataset,state).map(area => {
     const result=observationState(dataset,area.id,state.metric,effectivePeriod);
     const meaning=observationContext(dataset,area,indicator,result.row);
-    return {area,...result,period:result.row?.period || effectivePeriod,...(!compatibility.comparable || !meaning.comparable?{value:null,status:'incomparable',reason:[compatibility.reason,meaning.reason].filter(Boolean).join(' ')}:{})};
+    return {area,...result,provenance:result.row?.provenance==='calculated'?'calculated':result.value!==null?'source_reported':'none',period:result.row?.period || effectivePeriod,...(!compatibility.comparable || !meaning.comparable?{value:null,status:'incomparable',reason:[compatibility.reason,meaning.reason].filter(Boolean).join(' ')}:{})};
   });
 }
 export function rankedRows(rows, order = 'desc') {
@@ -432,6 +434,20 @@ export function evidenceCsv(dataset, territoryId, period, indicatorIds) {
       return [dataset.country.name, area?.id, area?.name, area?.level, area?.official_code, area?.code_system, area?.boundary_version, indicator.id, indicator.name, effectivePeriod, value, meaning.unit, status,...(aggregation?[aggregate.provenance, aggregate.note, aggregate.components.map(item=>item.territory_id).join('; '), aggregate.components.map(item=>`${item.territory_id}@${item.period}`).join('; '), aggregate.missing_ids.join('; '), aggregate.covered_value]:[]), meaning.definition, source?.name, safeUrl(source?.url), source?.retrieved_at, dataset.generated_at,...(extended?[meaning.definition_id,meaning.population,meaning.method,meaning.comparable,meaning.reason]:[])];
     })
   ]);
+}
+export function seriesCsv(dataset,territoryId,indicatorId) {
+  const indicator=dataset.indicators.find(item=>item.id===indicatorId),area=dataset.territories.find(item=>item.id===territoryId);
+  const rows=seriesFor(dataset,territoryId,indicatorId),extended=!!dataset.analysis || rows.some(row=>!observationContext(dataset,area,indicator,row).comparable);
+  return makeCsv([['Country','Territory','Territory ID','Level','Indicator','Indicator ID','Period','Value','Unit','Status','Source URL','Retrieved at','Data edition',...(extended?['Definition ID','Definition','Population','Method','Comparable context','Comparison reason','Observation boundary edition','Value provenance']:[])],...rows.map(row=>{const context=observationContext(dataset,area,indicator,row),source=context.source;return [dataset.country.name,area.name,area.id,area.level,indicator.name,indicator.id,row.period,observedValue(row),context.unit,observationDisplayStatus(row),safeUrl(source?.url),source?.retrieved_at,dataset.generated_at,...(extended?[context.definition_id,context.definition,context.population,context.method,context.comparable,context.reason,row.boundary_version,row.provenance==='calculated'?'calculated':observedValue(row)!==null?'source_reported':'none']:[])];})]);
+}
+export function observationsCsv(dataset,territoryIds) {
+  const ids=new Set(territoryIds || dataset.territories.map(area=>area.id)),extended=!!dataset.analysis;
+  return makeCsv([['Territory ID','Indicator ID','Period','Value','Unit','Status','Source ID','Definition ID','Definition','Population','Measurement method','Boundary edition','Footnote','Data edition',...(extended?['Value provenance']:[])],...dataset.observations.filter(row=>ids.has(row.territory_id)).map(row=>{const indicator=dataset.indicators.find(item=>item.id===row.indicator_id);return [row.territory_id,row.indicator_id,row.period,observedValue(row),row.unit || indicator?.unit,observationDisplayStatus(row),row.source_id,row.definition_id || indicator?.definition_id,row.definition || indicator?.definition,row.population || indicator?.population,row.measurement_method || indicator?.measurement_method,row.boundary_version,row.footnote,dataset.generated_at,...(extended?[row.provenance==='calculated'?'calculated':observedValue(row)!==null?'source_reported':'none']:[])];})]);
+}
+export function comparisonCsv(dataset,state) {
+  const indicator=dataset.indicators.find(item=>item.id===state.metric),entries=comparisonRows(dataset,state);
+  const extended=!!dataset.analysis || entries.some(row=>row.status==='incomparable');
+  return makeCsv([['Country','Level','Territory ID','Territory','Code','Indicator ID','Indicator','Period','Value','Unit','Status','Source URL','Data edition',...(extended?['Comparison eligible','Comparison reason','Definition ID','Definition','Population','Method','Value provenance']:[])],...entries.map(row=>{const context=observationContext(dataset,row.area,indicator,row.row);return [dataset.country.name,row.area.level,row.area.id,row.area.name,row.area.official_code,indicator.id,indicator.name,row.period || state.period,observedValue(row.row),context.unit,row.row?observationDisplayStatus(row.row):row.status,safeUrl(context.source?.url),dataset.generated_at,...(extended?[finite(row.value),row.reason || context.reason,context.definition_id,context.definition,context.population,context.method,row.provenance]:[])];})]);
 }
 export function safeFilename(value) { return String(value).replace(/[^\p{L}\p{N}._-]/gu,'-').replace(/-+/g,'-').slice(0,100) || 'dashboard'; }
 const markdownText = value => String(value ?? '').replaceAll('\\','\\\\').replace(/[\[\]<>]/g, character => `\\${character}`).replaceAll('|','\\|').replace(/[\r\n]+/g,' ');
@@ -514,7 +530,7 @@ export function planningMarkdown(dataset, territoryId, period, language='en') {
     `## 2. ${copy.evidence}`, '',
     copy.evidenceRule, '',
     '| Indicator | Value | Unit | Status | Source |', '|---|---:|---|---|---|',
-    ...evidence.map(({indicator, row, value, status, source}) => `| ${markdownText(indicator.name)} | ${value === null ? '—' : String(value)} | ${markdownText(row?.unit || indicator.unit)} | ${markdownText(statusLabel(status))} | ${markdownText(source?.name || 'No source acquired')} |`), '',
+    ...evidence.map(({indicator, row, value, status, source}) => `| ${markdownText(indicator.name)} | ${value === null ? '—' : String(value)} | ${markdownText(row?.unit || indicator.unit)} | ${markdownText(statusLabel(status,row?.provenance))} | ${markdownText(source?.name || 'No source acquired')} |`), '',
     ...evidence.map(({indicator, row, source}) => `- ${markdownText(indicator.name)}: ${markdownText(row?.definition || indicator.definition || 'Definition not acquired')}. ${safeUrl(source?.url) ? `Source: <${safeUrl(source.url)}>.` : 'No verified source link.'} Retrieved: ${markdownText(source?.retrieved_at || 'Not recorded')}.`), '',
     ...evidence.flatMap(({indicator,row})=>{
       const meaning=observationContext(dataset,area,indicator,row);

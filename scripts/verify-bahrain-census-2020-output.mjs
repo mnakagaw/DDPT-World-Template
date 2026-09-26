@@ -3,8 +3,8 @@
 import {readFile, writeFile, mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
-import {diagnosticCsv, diagnosticHtml} from '../scaffold/site/diagnostic.mjs';
-import {planningHtml, evidenceCsv} from '../scaffold/site/model.mjs';
+import {diagnosticCsv, diagnosticHtml, diagnosticMarkdown} from '../scaffold/site/diagnostic.mjs';
+import {planningHtml, evidenceCsv, comparisonCsv, seriesCsv, observationsCsv} from '../scaffold/site/model.mjs';
 
 const flag = process.argv.indexOf('--project');
 if (flag < 0 || !process.argv[flag + 1] || process.argv.length !== 4) {
@@ -63,6 +63,14 @@ function csvRows(csv) {
   if (row.length || cell) rows.push([...row, cell]);
   return rows.filter(item => item.some(value => value !== ''));
 }
+const exportedObservations = csvRows(observationsCsv(data, governorates.map(area => area.id)));
+const observationHeader = exportedObservations.shift();
+const observationCol = name => observationHeader.indexOf(name);
+const domesticExports = exportedObservations.filter(row => row[observationCol('Indicator ID')].startsWith('BHR_CENSUS2020_'));
+if (domesticExports.length !== 40 || domesticExports.some(row =>
+  row[observationCol('Status')] !== 'calculated' || row[observationCol('Value provenance')] !== 'calculated')) {
+  throw new Error('All-observations CSV lost domestic calculated provenance');
+}
 const out = path.join(project, 'evidence/output-verification');
 await mkdir(out, {recursive: true});
 const checks = [];
@@ -70,6 +78,7 @@ for (const area of [data.territories.find(row => row.id === 'BHR'), ...governora
   const outputs = {
     'diagnostic.csv': diagnosticCsv(data, area.id, 'latest-available'),
     'diagnostic.html': diagnosticHtml(data, area.id, 'latest-available'),
+    'diagnostic.md': diagnosticMarkdown(data, area.id, 'latest-available'),
     'planning.html': planningHtml(data, area.id, 'latest-available', 'en'),
     'evidence.csv': evidenceCsv(data, area.id, 'latest-available'),
   };
@@ -93,7 +102,41 @@ for (const area of [data.territories.find(row => row.id === 'BHR'), ...governora
     for (const child of governorates.filter(row => row.parent_id === area.id)) {
       const exported = within.find(row => row[col('Territory ID')] === child.id);
       if (!exported || Number(exported[col('Value')]) !== obs.get(`${child.id}/${id}`)?.value ||
-          exported[col('Comparable')] !== 'true') throw new Error(`Comparison value changed: ${child.id}/${id}`);
+          exported[col('Comparable')] !== 'true' || exported[col('Status')] !== 'calculated' ||
+          exported[col('Value provenance')] !== 'calculated' || exported[col('Period')] !== '2020' ||
+          exported[col('Source URL')] !== source.url ||
+          !exported[col('Aggregation note')].includes('sum')) throw new Error(`Comparison value or provenance changed: ${child.id}/${id}`);
+      const htmlRow = outputs['diagnostic.html'].split(`data-internal-comparison="${id}"`)[1]?.split(`data-internal-row="${child.id}"`)[1]?.split('</tr>')[0] || '';
+      const markdownRow = outputs['diagnostic.md'].split('\n').find(line => line.includes(`${child.name} / ${child.id}`) && line.includes(`| ${obs.get(`${child.id}/${id}`).value.toLocaleString('en')} |`)) || '';
+      if (!htmlRow.includes('Calculated from source values') ||
+          !markdownRow.includes('Calculated from source values')) {
+        throw new Error(`Comparison display provenance changed: ${child.id}/${id}`);
+      }
+      const [comparisonHeader, ...comparisonRows] = csvRows(comparisonCsv(data,{selected:'BHR',level:'adm1',metric:id,period:'2020'}));
+      const comparisonCol = name => comparisonHeader.indexOf(name);
+      const comparisonExport = comparisonRows.find(row => row[comparisonCol('Territory ID')] === child.id);
+      if (!comparisonExport || comparisonExport[comparisonCol('Status')] !== 'calculated' ||
+          comparisonExport[comparisonCol('Value provenance')] !== 'calculated' ||
+          Number(comparisonExport[comparisonCol('Value')]) !== obs.get(`${child.id}/${id}`).value ||
+          comparisonExport[comparisonCol('Source URL')] !== source.url) {
+        throw new Error(`Thematic comparison CSV provenance changed: ${child.id}/${id}`);
+      }
+      const [seriesHeader, ...seriesRows] = csvRows(seriesCsv(data,child.id,id));
+      const seriesCol = name => seriesHeader.indexOf(name);
+      if (seriesRows.length !== 1 || seriesRows[0][seriesCol('Status')] !== 'calculated' ||
+          seriesRows[0][seriesCol('Value provenance')] !== 'calculated' ||
+          Number(seriesRows[0][seriesCol('Value')]) !== obs.get(`${child.id}/${id}`).value) {
+        throw new Error(`Thematic history CSV provenance changed: ${child.id}/${id}`);
+      }
+    }
+  }
+  const [evidenceHeader, ...evidenceRows] = csvRows(outputs['evidence.csv']);
+  const evidenceCol = name => { const index = evidenceHeader.indexOf(name); if (index < 0) throw new Error(`Evidence CSV column missing: ${name}`); return index; };
+  for (const suffix of Object.keys(controls)) {
+    const row = evidenceRows.find(item => item[evidenceCol('Indicator ID')] === `BHR_CENSUS2020_${suffix}`);
+    if (!row || row[evidenceCol('Status')] !== 'calculated' ||
+        row[evidenceCol('Value provenance')] !== (area.id === 'BHR' ? 'areadata_calculated' : 'calculated')) {
+      throw new Error(`Evidence CSV provenance changed: ${area.id}/${suffix}`);
     }
   }
   if (!outputs['planning.html'].includes(area.name) || !outputs['diagnostic.html'].includes(area.name)) {

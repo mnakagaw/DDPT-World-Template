@@ -99,6 +99,7 @@ const COPY={
   'Unverified':['No verificado','未確認'],
   'Source reported':['Publicado por la fuente','出典公表値'],
   'AreaData calculated':['Calculado por AreaData','AreaData算出値'],
+  'Calculated from source values':['Calculado a partir de los valores de la fuente','出典の数値から算出'],
   'Incomplete coverage':['Cobertura incompleta','被覆不完全'],
   'Comparison not established':['Comparación no establecida','比較未成立'],
   'Acquisition failed':['Falló la adquisición','取得失敗'],
@@ -331,7 +332,8 @@ const patternTranslations=[
   [/^(.+) — available materials$/,(m,l)=>l==='es'?`${m[1]} — materiales disponibles`:`${m[1]} — 利用可能な資料`],
   [/^Source reported · (.+)$/,(m,l)=>l==='es'?`Publicado por la fuente · ${m[1]}`:`出典公表値・${m[1]}`],
   [/^AreaData calculated · (.+)$/,(m,l)=>l==='es'?`Calculado por AreaData · ${m[1]}`:`AreaData算出値・${m[1]}`],
-  [/^(.+) · (.+) · (AreaData calculated|Source reported|No data|Not available)$/,(m,l)=>`${translateText(m[1],l)} · ${m[2]} · ${translateText(m[3],l)}`],
+  [/^Calculated from source values · (.+)$/,(m,l)=>l==='es'?`Calculado a partir de los valores de la fuente · ${m[1]}`:`出典の数値から算出・${m[1]}`],
+  [/^(.+) · (.+) · (AreaData calculated|Calculated from source values|Source reported|No data|Not available)$/,(m,l)=>`${translateText(m[1],l)} · ${m[2]} · ${translateText(m[3],l)}`],
   [/^people · (.+)$/,(m,l)=>l==='es'?`personas · ${m[1]}`:`人・${m[1]}`],
   [/^Code (.+)$/,(m,l)=>l==='es'?`Código ${m[1]}`:`コード ${m[1]}`]
 ];

@@ -195,3 +195,17 @@ The [Oman housing remediation record](../../evidence/oman-ecensus-housing-remedi
 | Kit import | `92837ab7b1ba5d2549ea009a3660829670721f50` on `codex/asia-source-feedback-iraq-20260926` | Dry-run/import accepted 133, inserted three and updated 130, total 134; repeat dry-run unchanged 133. All three new Oman records retain `not_acquired_by_kit_preflight`; Kit check, 173/173 tests and `verify:kit` passed. |
 
 Both AreaData and Kit branch heads were pushed and matched `git ls-remote`. Oman remains a partial local country candidate; the feedback contains source locations and reuse cautions only. Kit must acquire and audit originals independently before changing evidence stages or using values.
+
+## Bahrain Census 2020 and planning-source location return
+
+AreaData acquired the official iGA Census 2020 catalogue and all 45 titled tables but adopted only ten calculated count indicators from five tables. The [Bahrain source audit](../../evidence/bahrain-census-2020-official-sources-2026-09-26.md) records the 2,602-row inventory, four null cells, the separate 2020 annual population series, four reporting governorates without verified codes/polygons, and zero adopted local plans or financial amounts. Kit receives five table locations, the catalogue and three legal/aggregate-finance locations, with caution text; it receives no raw originals or observations.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData producer | `41ddaafa54b9e9ceeeabef2800f34bd625478bb6` on `codex/asia-domestic-continuation-20260926` | Current candidate dataset SHA-256 `ec7f076ac69effcd5feae72a834561a877abcad3f02f2aebf76dd4f427eca776`. Two acquisitions matched all 45 substantive table bodies and 40 adopted numeric tuples. Validator zero errors/one planning warning, build, five-area output check, browser checks, AreaData check and 220/220 tests passed. Country acceptance remains pending. |
+| AreaData feedback bundle | `316a9c56a6c22f4cfdc0439fa20d4cd3385aaf5e`; bundle SHA-256 `e95d3135b7d2b15ad5ffebf683fcf835a8515337e11219c42e3fecf253110785` | 142 public leads in 19 countries, nine for Bahrain. `origin_commit` is the producer commit. Every stage is capped at `official_location_identified`. |
+| Kit import | `e2a06a9865441ac14c8052b78e3d2c01d785fee7` on `codex/asia-source-feedback-iraq-20260926` | Dry-run/import accepted 142, inserted nine, updated 133, total 143; repeat dry-run unchanged 142. Nine Bahrain records remain `not_acquired_by_kit_preflight`. Kit check, 173/173 tests and `verify:kit` passed. |
+
+Both branch heads were pushed and remote SHA read-back matched. Bahrain remains a partial local country candidate; Kit must independently reacquire originals, inspect the unassessed fields and portal terms, and verify current planning law and geography before using any value or advancing evidence stage.
+
+The separate [Bahrain fixed-edition audit](../../evidence/bahrain-independent-audit-2026-09-27.md) rejected producer `41ddaafa` for a P1 display/export provenance error while confirming its acquired numeric cells. AreaData is correcting that producer code without changing the nine public source-location leads or the Kit import. The feedback bundle's `origin_commit` remains the original source-discovery checkpoint; it is not a statement that the country edition passed independent acceptance.

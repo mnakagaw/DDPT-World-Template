@@ -150,7 +150,8 @@ export function internalComparison(data,parentId,indicatorId,period) {
     const areaObservations=observationsByArea.get(area.id)||[];
     const observation=mixed?[...areaObservations].filter(row=>row?.status==='observed'&&finite(row.value)).sort((a,b)=>String(b.period).localeCompare(String(a.period),'en',{numeric:true}))[0]||null:areaObservations.find(row=>String(row.period)===String(period))||null;
     const value=observation?.status==='observed' && finite(observation.value)?observation.value:null;
-    const status=observation?.status || (areaObservations.length?'missing':'not_collected');
+    const status=observation?.status==='observed' && observation.provenance==='calculated'?'calculated':observation?.status || (areaObservations.length?'missing':'not_collected');
+    const provenance=value!==null?(observation?.provenance==='calculated'?'calculated':'source_reported'):'none';
     const candidates=boundariesByArea.get(area.id)||[];
     const match=candidates.length===1?boundaryIdentity(candidates[0],area):null;
     const boundary=match?.matches?candidates[0]:null;
@@ -158,7 +159,7 @@ export function internalComparison(data,parentId,indicatorId,period) {
     const context=observationContext(data,area,indicator,observation);
     const reasons=[!indicator?'Indicator is unavailable.':'',commonReason,membershipUnavailable?'Comparison membership source is not available.':'',context.reason];
     if(value===null)reasons.push(status==='not_collected'?'No observations collected for this indicator and area.':`No observed value in the exact requested period (${status}).`);
-    return {area,observation,value,status,period:observation?.period || period,...context,comparable:reasons.every(reason=>!reason),reason:reasons.filter(Boolean).join(' '),boundary,boundary_reason};
+    return {area,observation,value,status,provenance,note:observation?.footnote || '',period:observation?.period || period,...context,comparable:reasons.every(reason=>!reason),reason:reasons.filter(Boolean).join(' '),boundary,boundary_reason};
   });
   const scale=buildScale(set.color_scale,rows);
   const reason=!set.parent?'Selected area is unavailable.':set.terminal || set.incompleteCover?set.note:!set.members.length?'No internal comparison areas are configured or collected.':commonReason || (!rows.some(row=>row.comparable)?'No comparable numeric values are available for this exact indicator and period.':'');

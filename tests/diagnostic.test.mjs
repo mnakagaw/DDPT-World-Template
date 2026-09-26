@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {diagnosticMarkdown,diagnosticHtml,diagnosticCsv,renderInternalComparison,comparisonSummary,seriesSourceLabel} from '../scaffold/site/diagnostic.mjs';
 import {internalComparison} from '../scaffold/site/analysis.mjs';
-import {countryDiagnosticUrl,initialState,routeQuery,selectHierarchyOption} from '../scaffold/site/model.mjs';
+import {countryDiagnosticUrl,initialState,routeQuery,selectHierarchyOption,observationState,statusLabel,comparisonCsv,seriesCsv,observationsCsv} from '../scaffold/site/model.mjs';
 import {analysisFixture} from './analysis-fixture.mjs';
 import {hierarchyFixture} from './hierarchy-fixture.mjs';
 import {fixture} from './fixture.mjs';
@@ -42,6 +42,26 @@ test('all thirty members, exact zero and missing are retained in HTML, Markdown 
   assert.equal(numericRows.filter(row=>row.Territory==='Same name').length,2);
   assert.match(comparisonSummary(data,comparison),/29 of 30.*Minimum Same name \(city\): 0 people; maximum Same name \(municipality\): 100 people\. Gap 100 people\./);
   assert.match(comparisonSummary(data,comparison),/not necessarily the whole region/);
+});
+test('source-derived exact values keep calculated provenance in selected history and internal comparison',()=>{
+  const data=analysisFixture(),sourceRow=statistic(data,'city');
+  sourceRow.provenance='calculated';sourceRow.footnote='Sum of two fictional published source cells.';
+  const comparison=internalComparison(data,'river','people','2024').rows.find(row=>row.area.id==='city');
+  assert.equal(sourceRow.status,'observed');assert.equal(observationState(data,'city','people','2024').status,'calculated');
+  assert.equal(comparison.value,0);assert.equal(comparison.status,'calculated');assert.equal(comparison.provenance,'calculated');
+  assert.equal(statusLabel(comparison.status,comparison.provenance),'Calculated from source values');
+  const overall=csvRecords(diagnosticCsv(data,'city','2024')).find(row=>row['Indicator ID']==='people');
+  const within=csvRecords(diagnosticCsv(data,'river','2024')).find(row=>row['Indicator ID']==='people'&&row['Territory ID']==='city');
+  for(const row of [overall,within]){assert.equal(row.Status,'calculated');assert.equal(row['Value provenance'],'calculated');assert.match(row['Aggregation note'],/Sum of two fictional/);}
+  const html=diagnosticHtml(data,'river','2024'),markdown=diagnosticMarkdown(data,'river','2024');
+  assert.match(html,/data-internal-row="city"[\s\S]*?Calculated from source values/);
+  assert.match(html,/Sum of two fictional published source cells/);
+  assert.match(markdown,/Same name \/ city[^\n]*Calculated from source values/);
+  assert.match(diagnosticHtml(data,'city','2024'),/Acquired history[\s\S]*?Calculated from source values/);
+  const comparisonExport=csvRecords(comparisonCsv(data,{selected:'river',level:'municipality',metric:'people',period:'2024'})).find(row=>row['Territory ID']==='city');
+  const seriesExport=csvRecords(seriesCsv(data,'city','people')).find(row=>row.Period==='2024');
+  const observationsExport=csvRecords(observationsCsv(data,new Set(['city']))).find(row=>row['Indicator ID']==='people'&&row.Period==='2024');
+  for(const row of [comparisonExport,seriesExport,observationsExport]){assert.equal(row.Status,'calculated');assert.equal(row['Value provenance'],'calculated');assert.equal(row.Value,'0');}
 });
 test('percentage gaps use percentage points and exclude missing members',()=>{
   const data=analysisFixture(),comparison=internalComparison(data,'river','water','2024');
