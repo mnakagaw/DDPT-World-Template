@@ -138,7 +138,7 @@ Oman remains a partial country candidate with no independent `ACCEPT` or Hosting
 
 ## Palestine PCBS 2017 census and MoLG source locations
 
-AreaData acquired the [PCBS 2017 Final Summary and detailed volume, and two MoLG planning originals](../../evidence/palestine-pcbs-2017-molg-sources-2026-09-26.md). Only four direct Table 2 count fields for 19 source reporting areas were adopted; the 585 locality rows, current legal polygons and individual local plan/finance records remain unassessed. Kit receives seven public source URLs with source-role and period cautions, without PDFs, population counts or national-document content.
+AreaData acquired the [PCBS 2017 Final Summary and detailed volume, and two MoLG planning originals](../../evidence/palestine-pcbs-2017-molg-sources-2026-09-26.md). Only four direct Table 2 count fields for 19 source reporting areas were adopted; the 585 locality cells have since been extracted without adoption because their sum differs from the printed national total by 281,163; current legal polygons and individual local plan/finance records remain unassessed. Kit receives seven public source URLs with source-role and period cautions, without PDFs, population counts or national-document content.
 
 | Step | Commit / artifact | Verification |
 |---|---|---|
