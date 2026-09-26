@@ -183,3 +183,15 @@ AreaData acquired 11 official originals and adopted only the 2026 SSC age/reside
 | Kit import | `7bcdd5a99f8999829856190a083ca8af626eb544` on `codex/asia-source-feedback-iraq-20260926` | Dry-run/import accepted 130, inserted 14, updated 116, total 131; repeat dry-run unchanged 130. All 14 Azerbaijan Kit records remain `not_acquired_by_kit_preflight`. Kit check, 173/173 tests and `verify:kit` passed. |
 
 Both branch heads were pushed and independently matched the remote SHA. Azerbaijan remains local and unpublished. Kit must independently acquire and audit each original, code/boundary edition and plan role before assigning an evidence stage beyond location identified or using values.
+
+## Oman housing extension and governorate/finance location return
+
+The [Oman housing remediation record](../../evidence/oman-ecensus-housing-remediation-2026-09-26.md) distinguishes 73 adopted 2020 housing-unit counts from 11 other metadata-only eCensus products. Three additional public locations were confirmed: South Al Sharqiyah's Article 11 governorate-duties page, the Ministry of Finance e-library and the 2024 final-account schedules PDF. None of their plan or financial values was adopted. The existing ten Oman feedback leads were retained.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData housing, output controls and source selection | `32cbaba6e396bdb84fd3458db1e9f06d4449fe4c` on `codex/asia-domestic-continuation-20260926` | Current Oman housing candidate dataset SHA-256 `5d9b5af1d2f208f2c007c2bf96afb774a251d035272e8b043add5d0dbf688326`; 292 domestic observations, 312 separate WDI records. Two API acquisitions matched substantive pivot cells; validator zero errors/warnings, build, seven-area CSV/HTML and browser checks passed. AreaData check and 220/220 tests passed. |
+| AreaData feedback bundle | `5cd8d2d7c29654209a34e943ccc516c27bffd09c`; bundle SHA-256 `3ceb8acc4ca3c3bea8f87bdd7e5a0f7f923ee6fe1d3c37638a1e5c4afcc3a8c2` | 133 leads in 18 countries, 13 for Oman; every stage remains `official_location_identified`. `origin_commit` is the producer commit above. |
+| Kit import | `92837ab7b1ba5d2549ea009a3660829670721f50` on `codex/asia-source-feedback-iraq-20260926` | Dry-run/import accepted 133, inserted three and updated 130, total 134; repeat dry-run unchanged 133. All three new Oman records retain `not_acquired_by_kit_preflight`; Kit check, 173/173 tests and `verify:kit` passed. |
+
+Both AreaData and Kit branch heads were pushed and matched `git ls-remote`. Oman remains a partial local country candidate; the feedback contains source locations and reuse cautions only. Kit must acquire and audit originals independently before changing evidence stages or using values.
