@@ -677,6 +677,93 @@
           "reuse_note": "Official DGU overview mentions a 2009/2366 decree. AreaData did not acquire the plan body or current legal status and did not verify selected-area plans, finance, implementation or evaluation. Kit must inspect independently."
         }
       ]
+    },
+    {
+      "path": "generated/palestine-areadata-20260926-pse",
+      "iso3": "PSE",
+      "evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+      "sources": [
+        {
+          "id": "pse-pcbs2017-updated-final-summary",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "two census regions", "16 governorates", "585 coded localities"],
+          "formats": ["PDF"],
+          "reuse_note": "Updated PCBS 2017 PHC summary. AreaData adopted selected fields of Tables 2 and 29 only. The 4,781,248 national value includes post-enumeration estimates and is historical. Other 27 tables, reuse terms, code/boundary reconciliation and current comparability need independent Kit audit."
+        },
+        {
+          "id": "pse-pcbs2017-detailed-counted-population",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate; finer levels to inspect"],
+          "formats": ["PDF"],
+          "reuse_note": "Separate PCBS detailed-report counted population is 4,705,855, distinct from the updated summary with post-enumeration estimate. AreaData did not adopt its 44 tables; Kit must audit definitions, numeric fields and terms independently."
+        },
+        {
+          "id": "pse-pcbs2017-locality-classification",
+          "role": "official_geography",
+          "authority_type": "official_national",
+          "geographic_levels": ["2017 census locality codes; polygons not supplied"],
+          "formats": ["PDF"],
+          "reuse_note": "May 2017 PCBS locality guide. 577 of 585 updated Table 29 codes occur here; eight do not. Code presence does not certify current local-government type or polygon. Kit must review code editions, boundary histories and terms."
+        },
+        {
+          "id": "pse-pcbs2017-older-summary",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "locality; fields held"],
+          "formats": ["PDF"],
+          "reuse_note": "Older PCBS 2017 summary edition reports 4,780,978 nationally, 270 below the updated edition. AreaData held all its fields. Do not mix editions or infer a present count; Kit must independently examine revisions and terms."
+        },
+        {
+          "id": "pse-pcbs-midyear-projection-catalog",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "region", "governorate"],
+          "formats": ["HTML"],
+          "reuse_note": "PCBS governorate midyear projection table includes 2026 forecasts published in 2021. AreaData adopted no observation; these pre-2023 forecasts must not be presented as measured current population. Confirm version and terms."
+        },
+        {
+          "id": "pse-molg-law-catalog",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national law catalogue; local applicability to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "Ministry of Local Government law listing only. Current consolidated text, plan-making units, duties and geographic applicability are unverified; do not infer legal obligations from this catalogue."
+        },
+        {
+          "id": "pse-molg-planning-guides",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["local planning guidance; applicable unit to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "MoLG guidance catalogue location only. AreaData did not establish an applicable current mandatory format or adopted local plan; Kit must inspect each manual and edition."
+        },
+        {
+          "id": "pse-molg-icud-projects",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["selected cities/project locations; completeness to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "MoLG ICUD project catalogue lead only. AreaData verified no selected-area approved plan, decision, budget, implementation or evaluation record; Kit must obtain and classify actual bodies independently."
+        },
+        {
+          "id": "pse-molg-budget-portal",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["local-government budget process; public area records to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "MoLG local-government budget portal location only. No public selected-area budget or approval record was adopted; login and publication scope remain unassessed."
+        },
+        {
+          "id": "pse-molg-geomolg-2017-boundary-note",
+          "role": "official_geography",
+          "authority_type": "official_national",
+          "geographic_levels": ["2017 governorate/locality boundary revision note; no shapes"],
+          "formats": ["HTML"],
+          "reuse_note": "PCBS/MoLG 2017 census boundary-revision note. AreaData acquired no GeoMOLG polygon or official spatial code edition and did not join 2021 reference shapes. Kit must obtain actual geometry and verify version."
+        }
+      ]
     }
   ]
 }
