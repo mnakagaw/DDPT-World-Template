@@ -46,6 +46,23 @@ node scripts/create-world.mjs --source-dir generated/world/raw --out generated/w
 
 国版への接続は、収集済み国版のISO3と相対URLを確認して`analysis.country_sites`へ後から設定する。国内行政階層・国勢調査・計画資料・法的承認状態の確認は各国アダプターの作業であり、世界系列から補間しない。AreaDataの派生広域試作で集計を明示的に採用する場合も、この世界収集datasetは変更せず、別datasetの`analysis.aggregation`に完全範囲・方法・期間方針を記録する。国勢調査の異なる年を使う集計は[国勢調査系列契約](CENSUS_SERIES_CONTRACT.md)に従い、同一年の国際系列とは分ける。
 
+## アジア全域の候補版
+
+既存の採用済み世界ポートフォリオを入力に、`scripts/create-asia.mjs`でUN M49 Asia (142) の50 country/areaと5 subregionだけの入口を生成する。新しい国際データを取得したと誤認しないよう、入力ファイルSHA-256、データ版、50の構成ID、被覆を`evidence/ASIA_SCOPE.json`へ固定する。`scripts/audit-asia-coverage.mjs`が指標・国・広域ごとの採用値と年、Census事前掲載と国内統合数を別に棚卸しする。[候補版の範囲と状態](ASIA_SCOPE_AND_STATUS.md)を参照。国際データが50か国で見えることは、国内Census版が50件完成したことを意味しない。
+
+WPPのAsia/Eastern Asia直接値には、M49比較表に独立行のないWPP location 158（台湾）が含まれる。WPP公表値を保持し、画面・診断出力に比較集合との差を表示する。元の国際4系列（WPP、SDG、UNSD AMA、IMF）と世界台帳・WDI・位置図の原本は、公開サイトとGitから分けたprivate候補の`raw/asia-sources/`へハッシュ照合して置く。再抽出した採用値と候補全観測を突合し、`ASIA_SOURCE_RAW_MANIFEST.json`と`ASIA_SOURCE_REPLAY.json`をdataset SHAへ結び付ける。
+
+```sh
+npm run create:asia -- --world-portfolio .work/areadata-world-v0.12.1-latest-regions/data/dashboard.json --out .work/asia-candidate
+npm run audit:asia -- --project .work/asia-candidate
+npm run verify:asia -- --project .work/asia-candidate
+npm run verify:asia:m49 -- --project .work/asia-candidate
+npm run sources:asia:materialize -- --project .work/asia-candidate --legacy-world-raw .work/world-v0.4/new/raw --wpp-dir .work/un-wpp2024
+npm run sources:asia:replay -- --project .work/asia-candidate
+```
+
+生成器は既存出力を上書きせず、公開を行わない。公開前には`templates/REGIONAL_ACCEPTANCE.md`と独立監査を候補データ版に対して実施する。
+
 ## アメリカ大陸版
 
 世界datasetのUN M49 Americas（019）だけを切り出し、57のcountry/areaと3つの探索入口を持つ別成果物を作る。UN WPP 2024原本からは行が確認できる55 country/areaだけを取り込み、BVTとSGSは国別値を欠測として残す。同じ原表のSouth America（WPP location code 931、SDMX 005）公表値は南米の直接観測として別source IDで採用する。北米と独自Central America + Caribbeanは、全構成地域に同一年WPP値がある場合だけ計算する。Americas全体のWPP値はこの重複しない3地域を完全被覆で加算したAreaData計算値であり、国連がその独自3区分の合計を公表した値ではない。国別WPP欠測をゼロに置き換えず、Census値とも混ぜない。検証済みの中米7か国成果を指定すると、その7か国に限って国勢調査と国内階層を再利用する。残りの国・地域へCensus値をコピーせず、全大陸のCensus合計も完全被覆になるまで出さない。
