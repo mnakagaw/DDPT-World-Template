@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T16:10:15.725Z",
-  "origin_commit": "48eae9b94f70b23a98412a27204ae63ffa41b67c",
+  "exported_at": "2026-09-26T18:08:35.081Z",
+  "origin_commit": "ec1a13b52896e8b6a747514ae815dd5adf2a44dd",
   "sources": [
     {
       "iso3": "ARE",
@@ -3295,6 +3295,174 @@
     },
     {
       "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_DAAYEN_ZONING_2",
+      "role": "planning_guidance",
+      "title": "QNMP daayen November 2017 zoning map",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads/MSDP/msdp-new/English/Al_Daayen_Zoning_English_16thNovember2017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Al Daayen zoning map"
+      ],
+      "reference_periods": [
+        "November 2017 map"
+      ],
+      "formats": [
+        "PDF map"
+      ],
+      "license_or_terms": "Map copyright notice requires express UPDS permission to reproduce; link only",
+      "reuse_note": "November 2017 map; current operative status unverified. The PDF expressly prohibits map reproduction without UPDS permission; link only.",
+      "origin_evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_RAYYAN_ZONING_2",
+      "role": "planning_guidance",
+      "title": "QNMP rayyan November 2017 zoning map",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads/MSDP/msdp-new/English/Al_Rayyan_Zoning_16thNovember2017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Al Rayyan zoning map"
+      ],
+      "reference_periods": [
+        "November 2017 map"
+      ],
+      "formats": [
+        "PDF map"
+      ],
+      "license_or_terms": "Map copyright notice requires express UPDS permission to reproduce; link only",
+      "reuse_note": "November 2017 urban map; current operative status unverified. The PDF expressly prohibits map reproduction without UPDS permission; link only.",
+      "origin_evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_RAYYAN_ZONING_3",
+      "role": "planning_guidance",
+      "title": "QNMP rayyan November 2017 zoning map",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads/MSDP/msdp-new/English/Al_Rayyan1_Zoning_Rural_16thNovember2017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Al Rayyan rural zoning map"
+      ],
+      "reference_periods": [
+        "November 2017 map"
+      ],
+      "formats": [
+        "PDF map"
+      ],
+      "license_or_terms": "Map copyright notice requires express UPDS permission to reproduce; link only",
+      "reuse_note": "November 2017 rural map; current operative status unverified. The PDF expressly prohibits map reproduction without UPDS permission; link only.",
+      "origin_evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_SHAMAL_ZONING_2",
+      "role": "planning_guidance",
+      "title": "QNMP shamal November 2017 zoning map",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads/MSDP/msdp-new/English/Al_Shamal_Zoning_16thNovember2017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Al Shamal zoning map"
+      ],
+      "reference_periods": [
+        "November 2017 map"
+      ],
+      "formats": [
+        "PDF map"
+      ],
+      "license_or_terms": "Map copyright notice requires express UPDS permission to reproduce; link only",
+      "reuse_note": "November 2017 map; current operative status unverified. The PDF expressly prohibits map reproduction without UPDS permission; link only.",
+      "origin_evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_SHEEHANIYA_ZONING_1",
+      "role": "planning_guidance",
+      "title": "QNMP sheehaniya November 2017 zoning map",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads/MSDP/msdp-new/English/Al_Sheehaniya_Zoning_16thNovember2017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Al Sheehaniya zoning map"
+      ],
+      "reference_periods": [
+        "November 2017 map"
+      ],
+      "formats": [
+        "PDF map"
+      ],
+      "license_or_terms": "Map copyright notice requires express UPDS permission to reproduce; link only",
+      "reuse_note": "November 2017 map; municipality strategy panel says Coming Soon. The PDF expressly prohibits map reproduction without UPDS permission; link only.",
+      "origin_evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_DOHA_ZONING_2",
+      "role": "planning_guidance",
+      "title": "QNMP doha November 2017 zoning map",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads/MSDP/msdp-new/English/Doha_Zoning_16thNovember2017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Doha zoning map"
+      ],
+      "reference_periods": [
+        "November 2017 map"
+      ],
+      "formats": [
+        "PDF map"
+      ],
+      "license_or_terms": "Map copyright notice requires express UPDS permission to reproduce; link only",
+      "reuse_note": "November 2017 map; current operative status unverified. The PDF expressly prohibits map reproduction without UPDS permission; link only.",
+      "origin_evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_UMM_SLAL_ZONING_2",
+      "role": "planning_guidance",
+      "title": "QNMP umm-slal November 2017 zoning map",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads/MSDP/msdp-new/English/Umm_Slal_Zoning_16thNovember2017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Umm Slal zoning map"
+      ],
+      "reference_periods": [
+        "November 2017 map"
+      ],
+      "formats": [
+        "PDF map"
+      ],
+      "license_or_terms": "Map copyright notice requires express UPDS permission to reproduce; link only",
+      "reuse_note": "November 2017 map; current operative status unverified. The PDF expressly prohibits map reproduction without UPDS permission; link only.",
+      "origin_evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
       "source_id": "QAT_QAT_MM_QNMP_MSDP_EIGHT",
       "role": "planning_guidance",
       "title": "QNMP page describing eight municipality spatial development plans",
@@ -3368,6 +3536,104 @@
     },
     {
       "iso3": "QAT",
+      "source_id": "QAT_QAT_LAW_WAKRA_BOUNDARY_109_2024",
+      "role": "planning_law",
+      "title": "Ministerial Resolution 109 of 2024 changing Al Wakra Municipality boundary",
+      "publisher": "Qatar Al Meezan legal portal / Ministry of Municipality",
+      "url": "https://almeezan.qa/LawPage.aspx?id=9617&language=ar",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Al Wakra legal municipal boundary"
+      ],
+      "reference_periods": [
+        "Effective 2024-05-30; Gazette 2024-07-10"
+      ],
+      "formats": [
+        "HTML legal text",
+        "PDF Gazette page",
+        "JPEG map annex"
+      ],
+      "license_or_terms": "Official legal page; map/image republication terms not established; link only",
+      "reuse_note": "Resolution 109/2024 changes Al Wakra boundary effective 2024-05-30; official Gazette page and attached map acquired. Current GIS polygon has not been matched coordinate-by-coordinate to annex. Do not reinterpret Census 2020 geography.",
+      "origin_evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_DAAYEN_MSDP_VOLUME1",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "QNMP daayen Municipality Vision and Development Strategy Volume 1",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads-qnmp/MunicipalityStrategy/English/Al%20Daayan%20Dec%202017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "historical Al Daayen municipality plan area"
+      ],
+      "reference_periods": [
+        "Historical MSDP Volume 1; content date differs by municipality"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "PDF reuse rights for republication not verified; link only",
+      "reuse_note": "Historical Vision and Development Strategy Volume 1; cover dated June 2014. Current operative revision, approval, budget, actual implementation and evaluation are unverified. Link only.",
+      "origin_evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_RAYYAN_MSDP_VOLUME1",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "QNMP rayyan Municipality Vision and Development Strategy Volume 1",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads-qnmp/MunicipalityStrategy/English/Al%20Raayan%20Dec%202017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "historical Al Rayyan and Al Shahhaniya plan area"
+      ],
+      "reference_periods": [
+        "Historical MSDP Volume 1; content date differs by municipality"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "PDF reuse rights for republication not verified; link only",
+      "reuse_note": "Cover names Al Rayyan and Al Shahhaniya together. Do not assign it to the current separate municipalities without jurisdiction and edition review. No current budget, actual or evaluation verified. Link only.",
+      "origin_evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_SHAMAL_MSDP_VOLUME1",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "QNMP shamal Municipality Vision and Development Strategy Volume 1",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads-qnmp/MunicipalityStrategy/English/Al%20Shamal%20Dec%20%202017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "historical Al Shamal municipality plan area"
+      ],
+      "reference_periods": [
+        "Historical MSDP Volume 1; content date differs by municipality"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "PDF reuse rights for republication not verified; link only",
+      "reuse_note": "Historical Vision and Development Strategy Volume 1; cover dated June 2014. Current operative revision, approval, budget, actual implementation and evaluation are unverified. Link only.",
+      "origin_evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
       "source_id": "QAT_QAT_MM_DOHA_MSDP_VOLUME1_2014",
       "role": "plans_budgets_implementation_evaluation",
       "title": "Doha Municipality Vision and Development Strategy, Volume 1",
@@ -3388,6 +3654,30 @@
       "license_or_terms": "Official source reuse terms require review before external release",
       "reuse_note": "Official PDF Volume 1 cover says 1 June 2014 although URL filename says Dec 2017. Current revision, legal effect, 2020 area match and fiscal/implementation evidence are unverified.",
       "origin_evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_UMM_SLAL_MSDP_VOLUME1",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "QNMP umm-slal Municipality Vision and Development Strategy Volume 1",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads-qnmp/MunicipalityStrategy/English/Umm%20Slal%20Dec%202017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "historical Umm Slal municipality plan area"
+      ],
+      "reference_periods": [
+        "Historical MSDP Volume 1; content date differs by municipality"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "PDF reuse rights for republication not verified; link only",
+      "reuse_note": "Historical Vision and Development Strategy Volume 1; cover dated June 2014. Current operative revision, approval, budget, actual implementation and evaluation are unverified. Link only.",
+      "origin_evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {

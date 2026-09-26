@@ -234,3 +234,16 @@ The separate [R2 geography account](../../evidence/qatar-census-2020-geography-2
 | Kit import | `96862fb071ae17f62007f31d8c90f2d7dea3959d` on `codex/asia-source-feedback-qatar-20260927` | Dry-run accepted eight, inserted two and updated six; import total 33 registry records. Repeat dry-run found eight unchanged. All Qatar records remain `not_acquired_by_kit_preflight`. Kit check, 173/173 tests and `verify:kit ready:true` passed. |
 
 Both producer and Kit commits above were pushed and remote SHA read-back matched. R2 is a partial local country candidate. Public map release still requires GIS/NPC reuse review, current legal boundary/change history, current plan originals and full independent country acceptance.
+
+## Qatar R3: boundary law and historical municipal plan locations
+
+The [R3 blocker/source audit](../../evidence/qatar-r3-blocker-audit-2026-09-27.md) verifies the Al Wakra 2024 boundary-law location, four additional historical Volume 1 strategy URLs and seven November 2017 zoning-map URLs. The 12 new Kit leads carry URLs and cautions only; no plan approval, municipality budget, actual execution, evaluation, raw PDF, polygon or observation was transferred. Zoning-map reuse notes explicitly require UPDS permission to reproduce; the 2020 census geography remains distinct from current legal boundaries.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData R3 source audit and selection | `ec1a13b52896e8b6a747514ae815dd5adf2a44dd` on `codex/asia-domestic-continuation-20260926` | R3 dataset SHA-256 `dae42267a5041b57dea3b7d5c049e5d2d0b432bfbeba02bed701a241260ff564`; only source records changed from R2. Validator zero errors/one expected planning warning. AreaData check and 223/223 tests passed. Full country `REJECT`. |
+| AreaData full feedback bundle | `evidence/KIT_SOURCE_FEEDBACK.json` SHA-256 `bd1df249bc6b71e1a909d856f92353043d00ee4bdff3aa5a08df00849f892f71` | 162 public leads in 20 countries, 20 for Qatar. All source stages are `official_location_identified`; `origin_commit` is the R3 audit commit above. |
+| Qatar-only transfer slice | Local `QAT_KIT_SOURCE_FEEDBACK_R3.json` SHA-256 `2593ba7ec646af0270f0a47593f426b4f731f347f67279ae26623b1e852079a2` | Scoped to Qatar, leaving unrelated countries on Kit main untouched. |
+| Kit import | `2bc81f016d39ccec2489308d480d900ceb858809` on `codex/asia-source-feedback-qatar-20260927` | Dry-run/import accepted 20, inserted 12 and updated eight; total 45 records. Repeat dry-run found 20 unchanged. Kit check, 173/173 tests and `verify:kit ready:true` passed. |
+
+Both branch heads were pushed and read back from GitHub. Kit records remain source leads in its own `not_acquired_by_kit_preflight` state. Qatar R3 remains an unpublished, rejected full-country candidate with plan-original and reuse-rights blockers.
