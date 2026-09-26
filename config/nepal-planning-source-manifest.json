@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "checked_at_utc": "2026-09-26",
+  "scope": "Four official PDFs acquired for a bounded Nepal local-planning reference and Kathmandu city example; acquisition is not content/approval acceptance",
+  "files": [
+    {"source_id":"npl-npc-local-planning-guide-2078","raw_path":"raw/npc-local-planning-guide-2078.pdf","bytes":2035415,"sha256":"753caa944015fdb73a4c94e750ed02e04afd80158625c1e6f8a40a52e8ac9c20","pages":244,"page_raw_path":"raw/npc-local-planning-guide-2078-page.html","page_bytes":209276,"page_sha256":"3ae7c472d23197c46139075b856ebf0673587fe15b3d90134efaa79ee12e5417","reviewed_pages":[1]},
+    {"source_id":"npl-kmc-action-plan-2083-84","raw_path":"raw/kmc-action-2083-84.pdf","bytes":32167183,"sha256":"2f624225b4eb80ace0ec90bb028732a30fe1cf2a7ddabc6ff96c24fcdde6c153","pages":187,"page_raw_path":"raw/kmc-action-2083-84-page.html","page_bytes":147658,"page_sha256":"48fdda667222020e75f53ca262bdcd8d23c56de4cf16f39eda9dc5ad156309d9","reviewed_pages":[3]},
+    {"source_id":"npl-kmc-budget-2083-84","raw_path":"raw/kmc-budget-2083-84.pdf","bytes":2436449,"sha256":"179e09f654a0337475acba6fc4ff361d22ffeec68e1ddafabb4f1e8cb321499e","pages":116,"page_raw_path":"raw/kmc-budget-2083-84-page.html","page_bytes":149900,"page_sha256":"d615a768b0d4b1bc8b8c379692bfa3abe85416f33cb5c2201594d380a577c1d2","reviewed_pages":[1,2]},
+    {"source_id":"npl-kmc-progress-2082-83","raw_path":"raw/kmc-progress-2082-83.pdf","bytes":3456741,"sha256":"8d89a2a5336a7ad2a867fd8d14dcce2f26631ebeae24ee8ecb7be4b452afbadc","pages":5,"page_raw_path":"raw/kmc-progress-2082-83-page.html","page_bytes":148428,"page_sha256":"665376e0318ecac8a7602670aef2b51b8d8aba10fc51302b54c88f16fb8f149b","reviewed_pages":[1]}
+  ]
+}

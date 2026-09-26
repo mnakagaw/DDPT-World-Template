@@ -1,0 +1,240 @@
+{
+  "schema_version": "1.0",
+  "checked_at_utc": "2026-09-26",
+  "catalogue_url": "https://censusresults.nsonepal.gov.np/downloads/provincial/1?type=data",
+  "catalogue_page_sha256": "788ce352056323754558a288b319c7347b5135d31eab4217353c49bfff479f8a",
+  "catalogue_script_sha256": "50d8067844aaf6a02bdbcae566d4daab60edbc96d837bf1dde247fcd28ed98cb",
+  "catalogue_entries": 91,
+  "catalogue_xlsx_entries": 89,
+  "administrative_code_source_url": "https://giwmscdnone.gov.np/media/app/public/36/posts/1695378470_83.xls",
+  "administrative_code_url": "https://nsonepal.gov.np/content/7694/7694-geographical-codes-map-provi/",
+  "administrative_code_raw_path": "raw/NSO-geographical-codes-local-unit-2023.xls",
+  "administrative_code_sha256": "b6d139e1d160f9d756a9f42b6e385c1227a58edac51efd2eb64fb68efe472279",
+  "administrative_code_bytes": 167936,
+  "source_files": [
+    {
+      "province_directory": "P1",
+      "table": "Indv01",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P1/Indv01-PopulationBySex.xlsx",
+      "raw_path": "raw/NPL-P1-Indv01.xlsx",
+      "bytes": 19753,
+      "sha256": "a4fa080fcbc2049dc98e8f4480bbed4701d1dc0c97430ccd8051ce77abf1ac4c"
+    },
+    {
+      "province_directory": "P1",
+      "table": "Hhld06",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P1/Hhld06_SourceOfDrinkingWater.xlsx",
+      "raw_path": "raw/NPL-P1-Hhld06.xlsx",
+      "bytes": 25076,
+      "sha256": "1fc26e3de8813642c997e702c209219997e4ae972404a8d88874fcf1bf493f60"
+    },
+    {
+      "province_directory": "P1",
+      "table": "Hhld09",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P1/Hhld09_TypeOfToiletUsed.xlsx",
+      "raw_path": "raw/NPL-P1-Hhld09.xlsx",
+      "bytes": 22078,
+      "sha256": "65edd1d53b8c8b6f42df1568464fc0eb0952fad9ffdc573d72c4b70cfd4bcdcd"
+    },
+    {
+      "province_directory": "P1",
+      "table": "Indv17",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P1/Indv17-PopulationByLiteracyStatus.xlsx",
+      "raw_path": "raw/NPL-P1-Indv17.xlsx",
+      "bytes": 646964,
+      "sha256": "f5b0d83e4f00954e7983fe080123bbfc7a2f5a9b2d0a1272b6d8f6d271b67409"
+    },
+    {
+      "province_directory": "P2",
+      "table": "Indv01",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P2/Indv01-PopulationBySex.xlsx",
+      "raw_path": "raw/NPL-P2-Indv01.xlsx",
+      "bytes": 19168,
+      "sha256": "8f8063939d18f8b0444d582f6beeb993aa329b9ea87bcd2a3d39701969c74abc"
+    },
+    {
+      "province_directory": "P2",
+      "table": "Hhld06",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P2/Hhld06_SourceOfDrinkingWater.xlsx",
+      "raw_path": "raw/NPL-P2-Hhld06.xlsx",
+      "bytes": 24626,
+      "sha256": "c8deb8b56365373b95061c981ddb135cab8867a59f9853b747d8cb5f8a722ea5"
+    },
+    {
+      "province_directory": "P2",
+      "table": "Hhld09",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P2/Hhld09_TypeOfToiletUsed.xlsx",
+      "raw_path": "raw/NPL-P2-Hhld09.xlsx",
+      "bytes": 21631,
+      "sha256": "c32e69cfb004341bdc7055c43912efb45c2a60f42aa511ac19a91483f58e8337"
+    },
+    {
+      "province_directory": "P2",
+      "table": "Indv17",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P2/Indv17-PopulationByLiteracyStatus.xlsx",
+      "raw_path": "raw/NPL-P2-Indv17.xlsx",
+      "bytes": 612496,
+      "sha256": "e54656d5c75727d8ed23cdc965616aa510bc4510fcf11c5df36fda7a4d081784"
+    },
+    {
+      "province_directory": "P3",
+      "table": "Indv01",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P3/Indv01-PopulationBySex.xlsx",
+      "raw_path": "raw/NPL-P3-Indv01.xlsx",
+      "bytes": 19117,
+      "sha256": "4bf15c4f96037acc41e0a20e90ac6425d3f3fccfe51fe297deba0cafb3946570"
+    },
+    {
+      "province_directory": "P3",
+      "table": "Hhld06",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P3/Hhld06_SourceOfDrinkingWater.xlsx",
+      "raw_path": "raw/NPL-P3-Hhld06.xlsx",
+      "bytes": 24058,
+      "sha256": "07aaa074d61f4e96872d512aced0b58144c5f07443d31bf493608e8629542611"
+    },
+    {
+      "province_directory": "P3",
+      "table": "Hhld09",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P3/Hhld09_TypeOfToiletUsed.xlsx",
+      "raw_path": "raw/NPL-P3-Hhld09.xlsx",
+      "bytes": 21008,
+      "sha256": "68eb133a2008eb91f6973984ae7989fe52808b56e44bdcd8c7cc4a7da887067a"
+    },
+    {
+      "province_directory": "P3",
+      "table": "Indv17",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P3/Indv17-PopulationByLiteracyStatus.xlsx",
+      "raw_path": "raw/NPL-P3-Indv17.xlsx",
+      "bytes": 571886,
+      "sha256": "1d39ce0cc171711f24f34f5178125a411eeae26c1ffe72bc0f0b61737e62148d"
+    },
+    {
+      "province_directory": "P4",
+      "table": "Indv01",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P4/Indv01-PopulationBySex.xlsx",
+      "raw_path": "raw/NPL-P4-Indv01.xlsx",
+      "bytes": 16723,
+      "sha256": "3a4ebb0bbe1eab2acd89b97bc4bb9183fd60d03a9b15896accd37aa058e6d794"
+    },
+    {
+      "province_directory": "P4",
+      "table": "Hhld06",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P4/Hhld06_SourceOfDrinkingWater.xlsx",
+      "raw_path": "raw/NPL-P4-Hhld06.xlsx",
+      "bytes": 20835,
+      "sha256": "839451d898f87e1a6f4b2258c290119658a2b1ef124bc3f4e7a1fe3242efc45c"
+    },
+    {
+      "province_directory": "P4",
+      "table": "Hhld09",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P4/Hhld09_TypeOfToiletUsed.xlsx",
+      "raw_path": "raw/NPL-P4-Hhld09.xlsx",
+      "bytes": 18686,
+      "sha256": "a92c263977c67407ed052851de8ea526834c608c4ee92b066da9bf5c186709f0"
+    },
+    {
+      "province_directory": "P4",
+      "table": "Indv17",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P4/Indv17-PopulationByLiteracyStatus.xlsx",
+      "raw_path": "raw/NPL-P4-Indv17.xlsx",
+      "bytes": 424887,
+      "sha256": "b5d1fd61f87c737e30900eebed62a9ab4e3c3e58693314135fa431cb169a6a7e"
+    },
+    {
+      "province_directory": "P5",
+      "table": "Indv01",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P5/Indv01-PopulationBySex.xlsx",
+      "raw_path": "raw/NPL-P5-Indv01.xlsx",
+      "bytes": 18191,
+      "sha256": "f830894da5a661100c6ddf5556c6b11c9aa4ad2e8c472fd37270d002577e3133"
+    },
+    {
+      "province_directory": "P5",
+      "table": "Hhld06",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P5/Hhld06_SourceOfDrinkingWater.xlsx",
+      "raw_path": "raw/NPL-P5-Hhld06.xlsx",
+      "bytes": 23155,
+      "sha256": "4801fbfde620a2dee8f67f6151497aa41f6ab709cdf2d1de77bf0d450721cfb7"
+    },
+    {
+      "province_directory": "P5",
+      "table": "Hhld09",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P5/Hhld09_TypeOfToiletUsed.xlsx",
+      "raw_path": "raw/NPL-P5-Hhld09.xlsx",
+      "bytes": 20364,
+      "sha256": "bb86bb68e9eb82873e7479f8163a506b95b96f9a2e50f32d08e2fb5208716a58"
+    },
+    {
+      "province_directory": "P5",
+      "table": "Indv17",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P5/Indv17-PopulationByLiteracyStatus.xlsx",
+      "raw_path": "raw/NPL-P5-Indv17.xlsx",
+      "bytes": 533645,
+      "sha256": "5235263a84bbc413bd1124ec4206a4bb1b65016b0de0bcc935454e5988657bcb"
+    },
+    {
+      "province_directory": "P6",
+      "table": "Indv01",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P6/Indv01-PopulationBySex.xlsx",
+      "raw_path": "raw/NPL-P6-Indv01.xlsx",
+      "bytes": 16296,
+      "sha256": "eddb9a1647d40be1530ce6d0f543513a447f34160d7ba7b9dc750463feee041e"
+    },
+    {
+      "province_directory": "P6",
+      "table": "Hhld06",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P6/Hhld06_SourceOfDrinkingWater.xlsx",
+      "raw_path": "raw/NPL-P6-Hhld06.xlsx",
+      "bytes": 20133,
+      "sha256": "6fcb574f7a7440aec34fe20411f116d90644d9cf410ee99bf77c75c23884cda2"
+    },
+    {
+      "province_directory": "P6",
+      "table": "Hhld09",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P6/Hhld09_TypeOfToiletUsed.xlsx",
+      "raw_path": "raw/NPL-P6-Hhld09.xlsx",
+      "bytes": 18152,
+      "sha256": "d5ac9a993790187dec020c33815b7c088f4a4deea89aa2364c06946cccdae667"
+    },
+    {
+      "province_directory": "P6",
+      "table": "Indv17",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P6/Indv17-PopulationByLiteracyStatus.xlsx",
+      "raw_path": "raw/NPL-P6-Indv17.xlsx",
+      "bytes": 392553,
+      "sha256": "4ef2a5778e8cd039afc1c96f1fe96c43eea5cfd28b01079fd835af1f177421b6"
+    },
+    {
+      "province_directory": "P7",
+      "table": "Indv01",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P7/Indv01-PopulationBySex.xlsx",
+      "raw_path": "raw/NPL-P7-Indv01.xlsx",
+      "bytes": 16808,
+      "sha256": "1b29961aed4ddc482f4af6afab3429b81b0cf1b0fd9560483894f5539100592c"
+    },
+    {
+      "province_directory": "P7",
+      "table": "Hhld06",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P7/Hhld06_SourceOfDrinkingWater.xlsx",
+      "raw_path": "raw/NPL-P7-Hhld06.xlsx",
+      "bytes": 20851,
+      "sha256": "2148f7c02368ab076e874e137af3861080b09f68acb694a50225d1c37ea1e355"
+    },
+    {
+      "province_directory": "P7",
+      "table": "Hhld09",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P7/Hhld09_TypeOfToiletUsed.xlsx",
+      "raw_path": "raw/NPL-P7-Hhld09.xlsx",
+      "bytes": 18763,
+      "sha256": "42c5927722e136ccef32a6b7632b853246ef6d222f6295d31cd1a568eb72e5d4"
+    },
+    {
+      "province_directory": "P7",
+      "table": "Indv17",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P7/Indv17-PopulationByLiteracyStatus.xlsx",
+      "raw_path": "raw/NPL-P7-Indv17.xlsx",
+      "bytes": 422523,
+      "sha256": "a2d8b57e29b5a63d33b255bdc0e1663f310d6ba31a878ad2aa4a1824f3a5da03"
+    }
+  ]
+}
