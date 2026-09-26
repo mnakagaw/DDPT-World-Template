@@ -342,6 +342,29 @@
       ]
     },
     {
+      "path": "generated/syria-areadata-20260926",
+      "iso3": "SYR",
+      "evidence_path": "docs/evidence/syria-budget-iom-sources-2026-09-26.md",
+      "sources": [
+        {
+          "id": "syr-mof-citizen-budget-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["national; local-plan target mentioned, no governorate document"],
+          "formats": ["PDF"],
+          "reuse_note": "New official Syrian Ministry of Finance 2026 citizen-budget PDF. AreaData checked cover and selected pages; page 50 targets preparation of 14 governorate development plans in 2026. It does not prove any local plan was completed or approved, nor supply a local budget, actual expenditure or official evaluation. Kit must independently review original, terms and current planning institutions."
+        },
+        {
+          "id": "syr-iom-dtm-baseline-round17-june-2026",
+          "role": "international_complement",
+          "authority_type": "international_organization",
+          "geographic_levels": ["national", "governorate report table; code and boundary matching unverified"],
+          "formats": ["PDF"],
+          "reuse_note": "New public IOM DTM June 2026 Syria humanitarian-baseline report location, not a census. Its key-informant estimates and rounded mobility shares are unadopted by AreaData. IOM DTM terms require prior written permission for extraction and redistribution; obtain permission and independently audit meanings, geographic codes and boundaries before any numeric use. No raw report or values are transferred."
+        }
+      ]
+    },
+    {
       "path": "generated/saudi-arabia-areadata-20260926-r2",
       "iso3": "SAU",
       "evidence_path": "docs/evidence/saudi-gastat-tableau-source-location-2026-09-26.md",
