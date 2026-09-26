@@ -14,7 +14,8 @@ export function displayValue(value, locale = 'en', maximumFractionDigits = 2) {
   try { return new Intl.NumberFormat(locale, {maximumFractionDigits: digits}).format(value); }
   catch { return new Intl.NumberFormat('en', {maximumFractionDigits: digits}).format(value); }
 }
-export function statusLabel(status) {
+export function statusLabel(status, observation=null) {
+  if(status==='observed' && (observation?.provenance==='calculated' || observation?.measurement_method==='areadata_calculated'))return 'AreaData calculated';
   return ({observed:'Source reported', calculated:'AreaData calculated', incomplete:'Incomplete coverage', missing:'No data', not_collected:'Not collected', not_available:'Not available', unavailable:'Unavailable', not_applicable:'Not applicable', incomparable:'Comparison not established', unverified:'Unverified', failed:'Acquisition failed', error:'Acquisition failed', ready:'Acquired', link_verified:'Link verified', downloaded:'Body acquired', body_acquired:'Body acquired', content_extracted:'Content extracted; not cross-checked', content_verified:'Content cross-checked', extracted:'Extracted', pending:'Pending'})[status] || String(status || 'Not collected').replaceAll('_', ' ');
 }
 export function sourceFor(dataset, indicator, observation) {

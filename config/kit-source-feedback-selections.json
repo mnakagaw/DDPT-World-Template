@@ -819,6 +819,109 @@
           "reuse_note": "MoHUP projects catalogue location only. No actual Salalah or selected-area structural plan, decision, budget, execution or evaluation was adopted."
         }
       ]
+    },
+    {
+      "path": "generated/kuwait-areadata-20260926",
+      "iso3": "KWT",
+      "evidence_path": "docs/evidence/kuwait-csb2021-source-audit-2026-09-26.md",
+      "sources": [
+        {
+          "id": "kwt-csb-census-catalog",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["118 official 2021 registration-census table titles across six categories"],
+          "formats": ["HTML"],
+          "reuse_note": "CSB census catalog entry. AreaData inventoried 118 titles, acquired and numeric-audited eight table bodies; the other 110 table bodies are unassessed. Category URLs 1-6 require separate inspection and source-terms review."
+        },
+        {
+          "id": "kwt-csb-registration2021-table1",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "six governorates", "geography not stated"],
+          "formats": ["XLSX", "PDF"],
+          "reuse_note": "Table 1 all nine nationality/sex columns audited in AreaData; national 4,385,717 includes 4,578 unassigned geography. Six governorates alone are incomplete national coverage. Registration census scope excludes CSB-stated non-Kuwaiti categories; Kit must inspect original, terms and codes independently."
+        },
+        {
+          "id": "kwt-csb-registration2021-table2",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "six governorates", "geography not stated"],
+          "formats": ["XLSX", "PDF"],
+          "reuse_note": "Table 2 age-by-sex values were checked against Table 1. AreaData calculated selected broad-age counts, not a current population estimate. All source age/sex rows are in a private field audit; Kit must independently inspect definitions and terms."
+        },
+        {
+          "id": "kwt-csb-registration2021-table10",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "six governorates", "geography not stated"],
+          "formats": ["XLSX", "PDF"],
+          "reuse_note": "Table 10 education universe is age 10+ and includes Not Stated. AreaData selected only four direct categories, not an all-population education rate; remaining cells stay in private audit. Kit must verify original and terms."
+        },
+        {
+          "id": "kwt-csb-registration2021-table22",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "six governorates", "geography not stated"],
+          "formats": ["XLSX", "PDF"],
+          "reuse_note": "Table 22 economically active age-15+ total was independently reconciled with Table 26's four active statuses by area and sex. It is a census source universe, not the WDI modeled labour-force series."
+        },
+        {
+          "id": "kwt-csb-registration2021-table26",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "six governorates", "geography not stated"],
+          "formats": ["XLSX", "PDF"],
+          "reuse_note": "Table 26 age-15+ work-status categories were audited. AreaData used its unemployed count with Table 22's matching labour-force denominator for a separately labelled calculated share; no source-published unemployment rate is claimed."
+        },
+        {
+          "id": "kwt-csb-registration2021-table42",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "six governorates", "geography not stated"],
+          "formats": ["XLSX", "PDF"],
+          "reuse_note": "Table 42 people-with-disabilities age/sex totals were reconciled; AreaData adopted counts only, without inferring a prevalence rate or current disability caseload. Kit must independently review source definitions and terms."
+        },
+        {
+          "id": "kwt-csb-registration2021-table51",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["157 named Area rows", "geography not stated", "national"],
+          "formats": ["XLSX", "PDF"],
+          "reuse_note": "Table 51 has 157 Area population totals that match Table 52 row by row. AreaData used this as a cross-check, not a duplicate adopted indicator. Official Area codes, parent membership and polygons remain unverified."
+        },
+        {
+          "id": "kwt-csb-registration2021-table52",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["157 named Area rows", "geography not stated", "national"],
+          "formats": ["XLSX", "PDF"],
+          "reuse_note": "Table 52 has nine nationality/sex numeric columns for 157 Areas. Six contiguous row blocks reconcile to the Table 1 governorates in every column, but this is not an official code or boundary crosswalk. Kit must independently verify names, parent units and reuse terms."
+        },
+        {
+          "id": "kwt-csb-2011-geography",
+          "role": "boundaries",
+          "authority_type": "official_national",
+          "geographic_levels": ["2011 historical governorate and Area maps; no compatible 2021 polygon acquired"],
+          "formats": ["PDF"],
+          "reuse_note": "Official CSB 2011 census geography report is historical and supplies no verified 2021-compatible code/polygon join. AreaData did not join it or the geoBoundaries reference shapes to current statistics."
+        },
+        {
+          "id": "kwt-baladia-municipal-law",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national law catalog; local applicability unverified"],
+          "formats": ["HTML"],
+          "reuse_note": "Municipality catalog location for Law 33/2016 only. Operative consolidated text, local plan-making duties, commencement and selected-area application have not been audited."
+        },
+        {
+          "id": "kwt-scpd-plan-archive",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["historical national plan; local applicability unverified"],
+          "formats": ["PDF"],
+          "reuse_note": "Historical national development-plan archive location. It does not establish a current 2025-2030 approved plan, a governorate plan, budget execution or evaluation. Kit must obtain and classify actual current bodies."
+        }
+      ]
     }
   ]
 }
