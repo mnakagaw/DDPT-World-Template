@@ -30,4 +30,13 @@ The candidate passed `validate-country` with zero errors/warnings, `build-countr
 4. Review CYSTAT PxWeb copyright/reuse terms and layer-specific spatial terms. Complete representative and missing-value paths, all applicable 42 scenarios, print/device/accessibility checks and independent `ACCEPT` before hosting.
 5. Record the Cyprus public official source locations in the Kit feedback loop at `official_location_identified` only. After this checkpoint, Asia 50 = **0 ACCEPT, 20 partial, 1 research-only, 29 unstarted**; Middle East 19 = **0 ACCEPT, 18 partial, 1 research-only, 0 unstarted**. Next unstarted country in the requested order is India; Middle East remains incomplete until independent gates close.
 
-The generated project and raw originals are ignored locally. Only repeatable scripts, public source locations, bounded audit, status and source-feedback bundle belong in Git. AreaData and Kit commits, remote parity and any actual hosting/public verification must be appended here after those steps occur.
+The generated project and raw originals are ignored locally. Only repeatable scripts, public source locations, bounded audit, status and source-feedback bundle belong in Git. Kit imported source locations only; it did not import raw cells or accept this country edition.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, evidence, status and 14 selections | `21b524f4199802c154417a5ee734de4300a8585b` on `codex/asia-domestic-20260926` |
+| AreaData 152-source / 22-country bundle | `74ec4af5560dafa9878a385a62e1498693b30005` on the same branch; Cyprus origin entries carry full `21b524f4199802c154417a5ee734de4300a8585b` |
+| Kit source-feedback import | `92e87ad9e46462eec13f1b0f8969bd1bb085359a` on `codex/asia-source-feedback-20260926`; dry-run and import accepted 152 leads, 14 Cyprus inserted, 138 prior updated, 153 total records. All 14 Cyprus records remain `official_location_identified` and `not_acquired_by_kit_preflight`. |
+| Kit verification | `npm run check`, `npm test` (173/173), `npm run verify:kit` (`ready: true`, 152 AreaData feedback sources) passed. Kit branch was pushed. |
+
+AreaData push and remote parity are checked separately in the final handoff commit. No Hosting or Public was performed.

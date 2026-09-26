@@ -195,3 +195,16 @@ Nine official public leads were selected: the iGA 45-dataset Census-theme catalo
 | Validation | AreaData check, 218/218 tests, country validation (zero errors/six source-terms warnings), build and eight-case actual output verifier passed. Kit dry-run/import each accepted 138 leads; Kit check, 173/173 tests and readiness (`ready: true`, 138 feedback sources) passed. |
 
 All nine Bahrain stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`. Kit must independently reacquire and classify sources, check annual method and planning editions, resolve local building values, source terms and official polygons before reuse. The feedback `checked_at` is 2026-09-26 UTC; this handoff is dated 2026-09-27 in Japan. Bahrain remains partial and unpublished, with no independent `ACCEPT` or hosting implied.
+
+## Cyprus CYSTAT 2021 census, GEOCODES and planning leads — 2026-09-27 JST
+
+Fourteen official public leads were selected: CYSTAT's 46-table census catalogue, seven selectively adopted matrix URLs, its final release, the 2015 GEOCODES classification, the DLS INSPIRE administrative-boundary catalogue, the DTPH development-plan catalogue and 2026 process notice, and the Ministry's district-local-government-organisation page. [The Cyprus source audit](../../evidence/cyprus-cystat2021-source-audit-2026-09-27.md) separates seven archived matrices from 39 location-only tables, 120 inventoried source-field combinations from the 65 still unassessed, historical code existence from matched boundaries, and a plan location/process from plan content or legal effect. Feedback transfers no raw API body/PDF/CSV, observation, polygon join, plan status or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, evidence, status and fourteen selections | `21b524f4199802c154417a5ee734de4300a8585b` on `codex/asia-domestic-20260926` |
+| AreaData 152-source / 22-country bundle | `74ec4af5560dafa9878a385a62e1498693b30005` on the same branch; Cyprus entries carry the full AreaData adapter commit as origin |
+| Kit import | `92e87ad9e46462eec13f1b0f8969bd1bb085359a` on `codex/asia-source-feedback-20260926`; dry-run and import accepted 152 leads, fourteen inserted, 138 existing updated, 153 records total |
+| Validation | AreaData check 148 modules/templates, 218/218 tests, Cyprus country validation zero errors/warnings, build and eight-case actual output verification. Kit check, 173/173 tests and readiness (`ready: true`, 152 feedback sources) passed. Kit branch was pushed. |
+
+All fourteen Cyprus feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`. The 2015 GEOCODES and DLS boundary listing require current geographic reconciliation, and PxWeb source terms need independent review. Cyprus remains a partial local candidate without independent `ACCEPT` or hosting. Feedback `checked_at` is 2026-09-26 UTC, the day the official sources were checked.
