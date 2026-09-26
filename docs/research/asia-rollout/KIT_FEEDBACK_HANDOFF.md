@@ -73,3 +73,17 @@ AreaData then acquired the official [Syrian Ministry of Finance Citizen Budget 2
 | Kit import | `b6177d6feb2cc2c42626fde9821d37ce8ff13904` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 39, inserted two and updated 37 (40 total records). `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. Both new Kit leads remain `not_acquired_by_kit_preflight`. |
 
 Syria remains a national-only research candidate with no adopted local numeric observation or independent `ACCEPT`, and no country site was published.
+
+## Jordan DoS 2025 estimates and planning source leads
+
+AreaData acquired the official [DoS end-2025 population-estimates PDF](https://dosweb.dos.gov.jo/DataBank/population/population_Estimares/PopulationEstimates.pdf) and adopted only five country/governorate count fields from Tables 2.2 and 2.3 after source arithmetic checks. Its [source audit](../../evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md) separates the 2015 census catalogue, 2006 reference shapes, older planning guidance and the published but not-yet-effective 2026 local-administration law. The Kit bundle contains **locations and caveats only**, with no PDF or numeric observations.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData acquisition/import scripts, evidence and selection | `81b2ae8c2c00fdbe12b84f9cebd6ab1f4e6d9b59` on `codex/asia-domestic-continuation-20260926` | Jordan candidate dataset SHA-256 `bcd53b8268c7f5570399230a0cd59355bf9e3892259aeaa0e15411fdae93ad72`; 13 territories, 17 indicators, 377 records, zero documents. Validator zero errors and one planning warning; site built; browser and selected-area HTML/CSV checks passed. `npm run check`, `npm test` 218/218 passed. |
+| AreaData feedback bundle | `0dea8a1dc68c6d973ad18748e7fda4335ede3d50`; `evidence/KIT_SOURCE_FEEDBACK.json` SHA-256 `bcf0cff35cd30f465bc451f81225708e7877f09d48f048d97ecbd31861f75fa1` | 45 leads in ten countries, six new Jordan leads. `origin_commit` is `81b2ae8c2c00fdbe12b84f9cebd6ab1f4e6d9b59`; every stage is capped at `official_location_identified`. |
+| Kit import | `723c7637776bc5a4fffe280d370c11105e577367` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and actual import accepted 45, inserted six and updated 39 (46 total records). Jordan's six records remain `not_acquired_by_kit_preflight`. `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. |
+
+The Ministry of Interior's governorate-name page was recorded in the Jordan source audit but not exported as an `administrative_codes` lead because it does not supply an official code table. Kit must independently acquire and inspect the other originals, verify the effective planning regime and geographic code/boundary edition, and only then consider indicator adoption. Jordan remains partial without independent `ACCEPT`; no country site was published.
+
+The AreaData feedback-bundle commit and Kit import commit were pushed, and `git ls-remote` returned the exact two hashes above for their respective branches.
