@@ -299,3 +299,16 @@ Sixty-two public official locations were selected: 52 numbered MBS 2022 census X
 | Validation | AreaData check 155 modules/templates, 218/218 tests, Maldives validator zero errors/warnings, build and six actual-output cases. Kit check 52 JS/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 338 feedback sources). |
 
 All 62 Maldives feedback stages are `official_location_identified`; Kit records `not_acquired_by_kit_preflight` even when AreaData already acquired an original. Kit must independently obtain and inspect bodies, definitions, council law/jurisdiction, source geography and terms. Maldives remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Indonesia BPS SP2020 and regional-planning source leads — 2026-09-27 JST
+
+Forty-one public official locations were selected: BPS SP2020 Table 1 country page and 34 province drill-down pages, the five-table population catalogue, Surabaya JDIH's record/PDF copy of Permendagri 86/2017, Jawa Barat's official plan catalogue/JDIH RPJMD location, and a Kemendagri code-register PDF location. [The Indonesia source audit](../../evidence/indonesia-sp2020-source-audit-2026-09-27.md) limits adoption to three Table 1 direct count columns in 549 historical BPS reporting units, preserving duplicate TOTAL rows, same-name Bogor codes and the later Papua split boundary. The code-register and RPJMD bodies were **not** acquired; neither is treated as matched current geography or verified local plan. Feedback transfers no raw HTML/PDF, 1,647 observations, code/polygon join or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, evidence, status and 41 selected source locations | `dd97f2b64bb27511cdd9c50be4c7b6c3ba9748a2` on `codex/asia-domestic-20260926`; pushed and remote head matched. |
+| AreaData 379-source / 30-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that full AreaData adapter commit as `origin_commit`; bundle and this handoff are committed in the following AreaData commit. |
+| Kit feedback import | `4573180f88b14280f78c9f76019955d0c9e6f959` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 379 leads, inserted 41 Indonesia records, updated 338 earlier origin histories, 380 total. Pushed and remote head matched. |
+| Validation | AreaData check 156 modules/templates, 218/218 tests, Indonesia validator zero errors/warnings, build and seven actual-output cases. Kit check 52 JS/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 379 feedback sources). |
+
+All 41 Indonesia feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, including for originals already acquired by AreaData. Kit must independently acquire and inspect source bodies, definitions, legal jurisdiction, geography and terms. Indonesia remains a partial unpublished candidate without independent `ACCEPT`.

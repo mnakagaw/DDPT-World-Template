@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T22:50:24.003Z",
-  "origin_commit": "7f800c05c281823328f5102426a6a408c4663e7e",
+  "exported_at": "2026-09-26T23:17:41.748Z",
+  "origin_commit": "dd97f2b64bb27511cdd9c50be4c7b6c3ba9748a2",
   "sources": [
     {
       "iso3": "AFG",
@@ -2578,6 +2578,991 @@
       "license_or_terms": "source_terms_review_required",
       "reuse_note": "Initial Tbilisi 2026 budget ordinance location only. Later amendments/current consolidation and execution are unverified; no initial amount is a current adopted budget value.",
       "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_KEMENDAGRI_2025_CODE_REGISTER",
+      "role": "administrative_codes",
+      "title": "Kemendagri 2025 administrative-code decision PDF",
+      "publisher": "Kementerian Dalam Negeri",
+      "url": "https://ppid.kemendagri.go.id/storage/dokumen/QBPTW8gxbngpCGprIS5ybgC1puZYD1b8S0F0Uyes.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2025 administrative-code register; exact contents unacquired"
+      ],
+      "reference_periods": [
+        "2025 code edition"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official location only; source body not acquired",
+      "reuse_note": "Kemendagri PDF location identified; connection timed out. Code edition, BPS 2020 crosswalk, subtype, polygons and terms unverified.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_NATIONAL",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 country",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Indonesia country and 34 BPS 2020 provinces"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only Table 1 male, female and total direct counts. Historical BPS codes are not current legal geography. Kit must audit original, definition, geography and terms independently.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P09",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 09",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/10/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P10",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 10",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/11/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P11",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 11",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/12/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P12",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 12",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/13/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P13",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 13",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/14/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P14",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 14",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/15/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P15",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 15",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/16/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P16",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 16",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/17/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P17",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 17",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/18/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P18",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 18",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/19/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P01",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 01",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/2/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P19",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 19",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/20/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P20",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 20",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/21/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P21",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 21",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/22/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P22",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 22",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/23/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P23",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 23",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/24/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P24",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 24",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/25/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P25",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 25",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/26/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P26",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 26",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/27/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P27",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 27",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/28/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P28",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 28",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/29/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P02",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 02",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/3/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P29",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 29",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/30/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P30",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 30",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/31/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P31",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 31",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/32/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P32",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 32",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/33/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P33",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 33",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/34/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P34",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 34",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/35/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P03",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 03",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/4/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P04",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 04",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/5/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P05",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 05",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/6/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P06",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 06",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/7/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P07",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 07",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/8/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_TABLE1_P08",
+      "role": "census_results",
+      "title": "BPS SP2020 Table 1 province 08",
+      "publisher": "Badan Pusat Statistik (BPS)",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/9/0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 BPS kabupaten/kota reporting rows within one province"
+      ],
+      "reference_periods": [
+        "2020 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public HTML; reuse terms unverified",
+      "reuse_note": "AreaData adopted only three direct count columns for 2020 child rows. Province-page TOTAL duplicates the national-page parent and is not re-adopted. Kit must audit legal subtype, current codes, polygons and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_SURABAYA_JDIH_PERMENDAGRI_86_2017_PAGE",
+      "role": "planning_law",
+      "title": "Surabaya JDIH Permendagri 86/2017 record",
+      "publisher": "JDIH Pemerintah Kota Surabaya (hosted copy of Ministry of Home Affairs regulation)",
+      "url": "https://jdih.surabaya.go.id/others/3803",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Indonesia regional-planning legal reference"
+      ],
+      "reference_periods": [
+        "2017 regulation"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public material; reuse terms unverified",
+      "reuse_note": "Surabaya municipal JDIH hosts the national Permendagri 86/2017 record. Current amendments and complete effects need Kit independent review.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_PERMENDAGRI_86_2017_SURABAYA_COPY",
+      "role": "planning_law",
+      "title": "Permendagri 86/2017 PDF, Surabaya JDIH copy",
+      "publisher": "JDIH Pemerintah Kota Surabaya (hosted copy of Ministry of Home Affairs regulation)",
+      "url": "https://jdih.surabaya.go.id/peraturan/download/3803",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Indonesia regional-planning legal reference"
+      ],
+      "reference_periods": [
+        "2017 regulation"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public material; reuse terms unverified",
+      "reuse_note": "AreaData acquired 644-page municipal JDIH copy of national law; only selected provisions inspected. Not a local plan. Kit must verify current law, all clauses, forms and terms.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_JABAR_OFFICIAL_PLAN_CATALOGUE",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Jawa Barat official 2025 plan catalogue",
+      "publisher": "Pemerintah Provinsi Jawa Barat",
+      "url": "https://jabarprov.go.id/arsip-dan-dokumen?kategori=dokumen+perencanaan&tahun=2025",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Jawa Barat province plan catalogue"
+      ],
+      "reference_periods": [
+        "2025 plan catalogue"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public material; reuse terms unverified",
+      "reuse_note": "Province archive HTML acquired; lists Perda 7/2025 RPJMD. Plan PDF body and historical BPS/current legal-area match not verified.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_JABAR_RPJMD_2025_2029",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Jawa Barat RPJMD 2025–2029 JDIH record",
+      "publisher": "JDIH Pemerintah Provinsi Jawa Barat",
+      "url": "https://jdih.jabarprov.go.id/page/info/produk/53538?tentang=peraturan-daerah-provinsi-jawa-barat-nomor-7-tahun-2025-tentang-rencana-pembangunan-jangka-menengah-daerah-tahun-2025-2029",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Jawa Barat province, legal extent unverified against BPS 2020"
+      ],
+      "reference_periods": [
+        "2025–2029"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "Official location only; source body not acquired",
+      "reuse_note": "JDIH metadata identifies Perda 7/2025 RPJMD; PDF GET failed and body not acquired. Source location only, not verified local plan, budget, result or evaluation.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IDN",
+      "source_id": "IDN_IDN_BPS_SP2020_POPULATION_CATALOGUE",
+      "role": "table_catalog",
+      "title": "BPS SP2020 population dataset catalogue",
+      "publisher": "BPS",
+      "url": "https://sensus.bps.go.id/topik/dataset/sp2020/16",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "SP2020 population catalogue; table grain varies"
+      ],
+      "reference_periods": [
+        "2020 census catalogue"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public material; reuse terms unverified",
+      "reuse_note": "Five-table BPS catalogue acquired. Only Table 1 bodies and selected fields audited by AreaData; four other population table bodies and other census themes priority_unassessed.",
+      "origin_evidence_path": "docs/evidence/indonesia-sp2020-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
