@@ -147,3 +147,15 @@ AreaData acquired the [PCBS 2017 Final Summary and detailed volume, and two MoLG
 | Kit import | `3cf0622d2da1fd3a8947fe61628c2bc6cf973589` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 89, inserted seven and updated 82 (90 total records). Repeat dry-run returned 89 unchanged. Kit `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. Seven PSE records remain `not_acquired_by_kit_preflight`; remote branch head matched the commit. |
 
 The AreaData and Kit GitHub branch heads are checked separately from local candidate validation. Palestine remains partial with no independent `ACCEPT`; no country site or Asia entrance was deployed to Hosting/Public.
+
+## Kuwait CSB 2021 registration census and planning-source locations
+
+AreaData acquired the official CSB 2021 registration-census Table 1 and Table 51 PDF/XLSX pairs, checked corresponding source rows and adopted only nine Table 1 count fields for the nation and six governorates. The [source audit](../../evidence/kuwait-csb-2021-official-sources-2026-09-26.md) records the nonterritorial “Not Stated” row, the unlinked named-area detail, the difference between the pinned Table 1 total and the census-homepage headline, and the absence of accepted official codes and legal polygons. The Kit bundle conveys nine public source locations and cautions only; it conveys no values, raw originals, planning status or country acceptance.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData scripts, audit, country status and selection | `dde002c9ba972c2ca991ad09eacc4dcfcdbf5421` on `codex/asia-domestic-continuation-20260926` | Candidate and independent replay reproduced 63 domestic tuples and nine official source records. Both validated and built; selected CSV/HTML and browser checks passed. `npm run check` and `npm test` 218/218 passed. |
+| AreaData feedback bundle | `688fb80f7adbe7760e7fcee5cb228150c05210e4`; `evidence/KIT_SOURCE_FEEDBACK.json` SHA-256 `0267d974437f1faa2138d5bce0340f5f6782e13814d7acbc7c4384384cdb7d34` | 98 leads in 16 countries, nine for Kuwait; `origin_commit` is `dde002c9ba972c2ca991ad09eacc4dcfcdbf5421`. Every stage is capped at `official_location_identified`. |
+| Kit import | `70ecf86d075a9d20c58ee52e4ccfa189abee2a5a` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 98, inserted nine and updated 89 (99 total records). Repeat dry-run returned 98 unchanged. Nine Kuwait records remain `not_acquired_by_kit_preflight`; Kit `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. |
+
+The AreaData and Kit GitHub branch heads matched these hashes after push. Kuwait remains a partial local candidate with zero acquired local planning documents and no independent `ACCEPT`; no country site or Asia entrance was deployed to Hosting/Public. Kit must independently acquire and inspect the originals, code and boundary editions, and local planning/finance records before using their values or advancing an evidence stage.
