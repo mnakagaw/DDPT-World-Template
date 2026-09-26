@@ -31,4 +31,6 @@ npm run sources:asia:replay -- --project .work/areadata-asia-20260926-candidate
 
 候補の `evidence/ASIA_SCOPE.json` は世界版入力ファイルの絶対パス・SHAと地域ID、`ASIA_COVERAGE.json` とCSVは指標ごとの被覆・年・国勢調査所在、`ASIA_CANDIDATE_VERIFICATION.json` は照合済み内容と未実施事項を記録する。`ASIA_M49_LIVE_CHECK.json` は現行M49との照合、`ASIA_SOURCE_RAW_MANIFEST.json` は18原本のURL・保存先・SHA・サイズ・候補datasetへの結合を記録する。WPP・SDG・UNSD AMA・IMFの採用9,524観測は原本から再抽出して全件値・状態を突合し、`ASIA_SOURCE_REPLAY.json`へ記録する。WDI 4指標の国別1,000セルも原本API JSONに照合する。広域の欠測144行はAreaData側の明示的な欠測記録であり、WDI原本行とは扱わない。大容量の原本はGitにも公開サイトにも複製しない。
 
-標準データ検証はエラー0、警告5件。うち4件はdatasetの従来source schemaにprivate原本パスがないという警告だが、候補の別manifestで原本とSHAを照合済み。残る国別計画資料は未取得。`npm run check`、`npm test` は通過。地域選択、地図、出力、3言語を実ブラウザーで確認する受入と再独立監査は未了なので、この候補を完成・公開済みとは報告しない。国際系列のAsia地域値がない指標は国別比較の件数・年・範囲として表示し、地域全体の値と区別する。
+標準データ検証はエラー0、警告5件。うち4件はdatasetの従来source schemaにprivate原本パスがないという警告だが、候補の別manifestで原本とSHAを照合済み。残る国別計画資料は未取得。`npm run check`、`npm test` は通過。国際系列のAsia地域値がない指標は国別比較の件数・年・範囲として表示し、地域全体の値と区別する。
+
+コード候補 `cd8124f935b386f37b95312ca5a2a898bc7c801c` から生成したdatasetのSHA-256は `a7097530857c252656b7395c99d2ab97e30188a3dba6f271aca7f1d8cc094a50`。独立担当がclean archiveから再生成し、datasetと公開用dataがbyte単位で一致した。Edge実画面でGDPの出典範囲注記などを確認した一方、アジアの広域から国を選ぶと共通GDP指標と期間が人口の最新年へ戻る不具合が見つかり、この候補は `REJECT` となった。共有指標・期間を保ち、切替先にない国専用指標は選び直す修正と回帰テストを追加した。修正版の再生成・実画面再確認・独立監査は別候補として実施する。ブラウザーから保存されたファイルの内容と狭幅の検証も残る。公開ゲートが要求する `ACCEPT` には達していないため、FTP・公開サイトへの反映は行っていない。旧候補の受入票と監査報告は `.work/areadata-asia-20260926-commit-cd8124f/evidence/` に保存する。

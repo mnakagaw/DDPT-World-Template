@@ -152,10 +152,14 @@ export function selectTerritory(dataset, state, id) {
   if (!territory) return {...state, notices:[`Area “${id}” is unavailable. The current selection was retained.`]};
   const previousCountry=countryBranchId(dataset,state.selected),nextCountry=countryBranchId(dataset,id);
   if(previousCountry!==nextCountry) {
-    // A country change is one atomic state transition. Re-resolve the metric,
-    // period and comparison level from the destination branch so no indicator,
-    // URL or output state from the previous country survives.
-    return initialState(dataset,new URLSearchParams({territory:id}).toString());
+    // Re-resolve the destination branch atomically. A shared indicator and its
+    // explicit period remain selected when moving between a regional scope
+    // and a country (or between countries). A branch-only indicator must fall
+    // back to an available destination indicator, without carrying old data.
+    const metricAvailable=indicatorsForTerritorialScope(dataset,id).some(row=>row.id===state.metric);
+    const query=new URLSearchParams({territory:id});
+    if(metricAvailable){query.set('metric',state.metric);if(state.period)query.set('period',state.period);}
+    return initialState(dataset,query.toString());
   }
   const levels=comparisonLevelsForTerritory(dataset,id);
   const preferred=!['national','country'].includes(territory.level)?territory.level:comparisonLevelForArea(dataset,id,state.level);

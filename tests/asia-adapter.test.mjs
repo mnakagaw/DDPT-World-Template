@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {buildAsia} from '../lib/asia-adapter.mjs';
-import {comparisonRows,initialState,territorialIndicatorState} from '../scaffold/site/model.mjs';
+import {comparisonRows,initialState,selectHierarchyOption,selectTerritory,territorialIndicatorState} from '../scaffold/site/model.mjs';
 import {translateText} from '../scaffold/site/i18n.mjs';
 import {sourceScopeNote,diagnosticCsv} from '../scaffold/site/diagnostic.mjs';
 
@@ -57,6 +57,36 @@ test('Asia comparison uses only the selected M49 subregion',()=>{
   assert.equal(asia.analysis.coverage.un_wpp_country_area_count,2);
   assert.equal(translateText('Asia','ja'),'アジア');
   assert.equal(translateText('South-eastern Asia','es'),'Asia Sudoriental');
+});
+
+test('Asia hierarchy keeps a shared GDP indicator and chosen year when a country or parent is selected',()=>{
+  const asia=buildAsia(fixture());
+  asia.indicators.push(indicator('UN_AMA_GDP_CURRENT_USD','ama','US$'));
+  asia.observations.push(
+    {territory_id:'M49:142',indicator_id:'UN_AMA_GDP_CURRENT_USD',period:'2024',value:500,status:'observed',source_id:'ama'},
+    {territory_id:'M49:035',indicator_id:'UN_AMA_GDP_CURRENT_USD',period:'2024',value:90,status:'observed',source_id:'ama'},
+    {territory_id:'LAO',indicator_id:'UN_AMA_GDP_CURRENT_USD',period:'2024',value:20,status:'observed',source_id:'ama'},
+    {territory_id:'JPN',indicator_id:'UN_AMA_GDP_CURRENT_USD',period:'2024',value:200,status:'observed',source_id:'ama'}
+  );
+  asia.analysis.supranational_indicator_ids.push('UN_AMA_GDP_CURRENT_USD');
+  const start=initialState(asia,'?country=ASI&territory=M49%3A142&metric=UN_AMA_GDP_CURRENT_USD&period=2024');
+  const region=selectHierarchyOption(asia,start,'M49:142','area:M49:035');
+  const country=selectHierarchyOption(asia,region,'M49:035','area:LAO');
+  for(const state of [region,country]){
+    assert.equal(state.metric,'UN_AMA_GDP_CURRENT_USD');
+    assert.equal(state.period,'2024');
+  }
+  assert.equal(territorialIndicatorState(asia,country.selected,country.metric,country.period).result.value,20);
+  const backToRegion=selectHierarchyOption(asia,country,'M49:142','area:M49:035');
+  assert.equal(backToRegion.selected,'M49:035');
+  assert.equal(backToRegion.metric,'UN_AMA_GDP_CURRENT_USD');
+  assert.equal(backToRegion.period,'2024');
+  assert.equal(territorialIndicatorState(asia,backToRegion.selected,backToRegion.metric,backToRegion.period).result.value,90);
+  const otherCountry=selectTerritory(asia,country,'JPN');
+  assert.equal(otherCountry.metric,'UN_AMA_GDP_CURRENT_USD');
+  assert.equal(otherCountry.period,'2024');
+  const branchOnly=initialState(asia,'?country=ASI&territory=LAO&metric=LAO_CENSUS_POP&period=2020');
+  assert.equal(selectTerritory(asia,branchOnly,'JPN').metric,'UN_WPP_POP_TOTAL');
 });
 
 test('a provider regional scope difference is disclosed in the screen copy and diagnostic export',()=>{
