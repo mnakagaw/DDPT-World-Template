@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T14:12:50.909Z",
-  "origin_commit": "32cbaba6e396bdb84fd3458db1e9f06d4449fe4c",
+  "exported_at": "2026-09-26T14:46:16.076Z",
+  "origin_commit": "41ddaafa54b9e9ceeeabef2800f34bd625478bb6",
   "sources": [
     {
       "iso3": "ARE",
@@ -899,6 +899,229 @@
       "license_or_terms": null,
       "reuse_note": "Reused from the Kit Bangladesh project, not newly discovered by AreaData. Verify each district workbook and local geography independently; AreaData audit and source-terms review are pending.",
       "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_IGA_CENSUS2020_CATALOGUE",
+      "role": "census_catalog",
+      "title": "Bahrain official Census 2020 table catalogue",
+      "publisher": "Information & eGovernment Authority (Bahrain)",
+      "url": "https://www.data.gov.bh/api/explore/v2.1/catalog/datasets?search=Census%202020&limit=100&offset=0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate; 20 of 45 tables"
+      ],
+      "reference_periods": [
+        "2020 Census; portal as checked 2026-09-26"
+      ],
+      "formats": [
+        "JSON API",
+        "HTML catalogue"
+      ],
+      "license_or_terms": "official_portal_terms_review_required",
+      "reuse_note": "AreaData acquired all 45 titled Census 2020 tables but adopted selected cells from five. Kit must independently reacquire and audit fields, scope, governorate codes, boundaries and current portal terms.",
+      "origin_evidence_path": "docs/evidence/bahrain-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_IGA_CENSUS2020_ECONOMICALLY_ACTIVE_GOVERNORATE",
+      "role": "census_results",
+      "title": "Economically Active Population (15 Years & Above) by Governorate, Nationality and Sex - Census 2020",
+      "publisher": "Information & eGovernment Authority (Bahrain)",
+      "url": "https://www.data.gov.bh/explore/dataset/economically-active-population-15-years-and-above-by-governorate-nationality-and/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "four 2020 census governorate reporting categories"
+      ],
+      "reference_periods": [
+        "2020 Census (UNSD listing: 17 March 2020); not the annual 2020 estimate"
+      ],
+      "formats": [
+        "JSON API",
+        "CSV"
+      ],
+      "license_or_terms": "https://www.data.gov.bh/pages/terms-and-conditions/",
+      "reuse_note": "Economically active persons aged 15+ are a count, not an activity or unemployment rate. Employed/unemployed detail is crosscheck-only; definitions and denominator require source audit.",
+      "origin_evidence_path": "docs/evidence/bahrain-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_IGA_CENSUS2020_HOUSING_GOVERNORATE",
+      "role": "census_results",
+      "title": "Housing Units by Housing Type and Governorate - Census 2020",
+      "publisher": "Information & eGovernment Authority (Bahrain)",
+      "url": "https://www.data.gov.bh/explore/dataset/housing-units-by-housing-type-and-governorate-census-2020/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "four 2020 census governorate reporting categories"
+      ],
+      "reference_periods": [
+        "2020 Census (UNSD listing: 17 March 2020); not the annual 2020 estimate"
+      ],
+      "formats": [
+        "JSON API",
+        "CSV"
+      ],
+      "license_or_terms": "https://www.data.gov.bh/pages/terms-and-conditions/",
+      "reuse_note": "Housing-type counts are summed within each governorate; national four-area control is 387126 units. Occupancy is a separate crosscheck, not an adopted subgroup. Check all detailed cells and terms independently.",
+      "origin_evidence_path": "docs/evidence/bahrain-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_IGA_CENSUS2020_POP_GOVERNORATE",
+      "role": "census_results",
+      "title": "Population by Governorate, Nationality and Sex - Census 2020",
+      "publisher": "Information & eGovernment Authority (Bahrain)",
+      "url": "https://www.data.gov.bh/explore/dataset/population-by-governorate-nationality-and-sex-census-2020/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "four 2020 census governorate reporting categories"
+      ],
+      "reference_periods": [
+        "2020 Census (UNSD listing: 17 March 2020); not the annual 2020 estimate"
+      ],
+      "formats": [
+        "JSON API",
+        "CSV"
+      ],
+      "license_or_terms": "https://www.data.gov.bh/pages/terms-and-conditions/",
+      "reuse_note": "Nationality-by-sex source cells sum to Census 2020 population 1501635 across four reporting governorates. This is distinct from 2020 annual/midyear estimate 1472204. Kit must recheck raw cells, date, official codes, legal polygons and portal terms.",
+      "origin_evidence_path": "docs/evidence/bahrain-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_IGA_CENSUS2020_SCHOOL_ENROLLED_GOVERNORATE",
+      "role": "census_results",
+      "title": "School Enrolled Population (3 Years & Above) by Governorate, Nationality and Sex - Census 2020",
+      "publisher": "Information & eGovernment Authority (Bahrain)",
+      "url": "https://www.data.gov.bh/explore/dataset/school-enrolled-population-3-years-and-above-by-governorate-nationality-and-sex-/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "four 2020 census governorate reporting categories"
+      ],
+      "reference_periods": [
+        "2020 Census (UNSD listing: 17 March 2020); not the annual 2020 estimate"
+      ],
+      "formats": [
+        "JSON API",
+        "CSV"
+      ],
+      "license_or_terms": "https://www.data.gov.bh/pages/terms-and-conditions/",
+      "reuse_note": "Persons enrolled in school aged 3+ are a count, not an enrollment rate. National four-area control is 309557; stage detail was crosschecked only.",
+      "origin_evidence_path": "docs/evidence/bahrain-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_IGA_CENSUS2020_HOUSEHOLDS_GOVERNORATE",
+      "role": "census_results",
+      "title": "Total Households by Governorate and Type Of Household - Census 2020",
+      "publisher": "Information & eGovernment Authority (Bahrain)",
+      "url": "https://www.data.gov.bh/explore/dataset/total-households-by-governorate-and-type-of-household-census-2020/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "four 2020 census governorate reporting categories"
+      ],
+      "reference_periods": [
+        "2020 Census (UNSD listing: 17 March 2020); not the annual 2020 estimate"
+      ],
+      "formats": [
+        "JSON API",
+        "CSV"
+      ],
+      "license_or_terms": "https://www.data.gov.bh/pages/terms-and-conditions/",
+      "reuse_note": "All-household and private-household counts are separate measures from mutually exclusive source categories. Other household detail remains unassessed; do not add overlapping totals.",
+      "origin_evidence_path": "docs/evidence/bahrain-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_URBAN_PLANNING_LAW_1994",
+      "role": "planning_law",
+      "title": "Urban Planning Law, Decree-Law 2/1994",
+      "publisher": "Legislation and Legal Opinion Commission (Bahrain)",
+      "url": "https://www.lloc.gov.bh/Legislation/HTM/L0294",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national planning framework"
+      ],
+      "reference_periods": [
+        "1994 original; later amendments to verify"
+      ],
+      "formats": [
+        "HTML legal text"
+      ],
+      "license_or_terms": "official_legal_source_terms_review_required",
+      "reuse_note": "Separate 1994 urban-planning law location. Later amendments, current competent authorities and relation to municipal local plans need review before assigning planning duties.",
+      "origin_evidence_path": "docs/evidence/bahrain-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_MUNICIPAL_REGULATION_2002",
+      "role": "planning_law",
+      "title": "2002 implementing regulation of Municipalities Law, Articles 36–39",
+      "publisher": "Legislation and Legal Opinion Commission (Bahrain)",
+      "url": "https://www.lloc.gov.bh/Legislation/HTM/RCAB1602",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "municipality"
+      ],
+      "reference_periods": [
+        "2002 original; 2026 operative text unverified"
+      ],
+      "formats": [
+        "HTML legal text"
+      ],
+      "license_or_terms": "official_legal_source_terms_review_required",
+      "reuse_note": "Original 2002 implementing regulation Articles 36-39 locate municipal local-plan and budget procedures. The operative consolidated 2026 wording and actual municipality plans, approvals and accounts are unverified.",
+      "origin_evidence_path": "docs/evidence/bahrain-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_MUNICIPAL_BUDGET_2025_2026_AGGREGATE",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Approved budget for the four municipalities, fiscal years 2025–2026",
+      "publisher": "Ministry of Municipalities Affairs and Agriculture (Bahrain)",
+      "url": "https://www.mun.gov.bh/newportal/en/municipal-affairs/approved-budget-fiscal-years-2025-and-2026",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "aggregate four municipalities; no individual allocation verified"
+      ],
+      "reference_periods": [
+        "FY 2025–2026"
+      ],
+      "formats": [
+        "HTML page"
+      ],
+      "license_or_terms": "official_page_reuse_terms_review_required",
+      "reuse_note": "Official ministry page location for an aggregate four-municipality 2025-26 budget. No individual municipality amount, executed expenditure or evaluation was acquired; do not assign the aggregate to a governorate.",
+      "origin_evidence_path": "docs/evidence/bahrain-census-2020-official-sources-2026-09-26.md",
       "artifact_sha256": null
     },
     {
