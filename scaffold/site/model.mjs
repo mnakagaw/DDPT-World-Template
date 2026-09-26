@@ -81,6 +81,14 @@ export function observationState(dataset, territoryId, indicatorId, period) {
 export function areaObservationState(dataset, territoryId, indicatorId, period) {
   return resolvedObservation(dataset,territoryId,indicatorId,period);
 }
+export function thematicReferenceState(dataset, state, effectivePeriod) {
+  const scopeIsInternational=['world','regional'].includes(dataset.analysis?.kind);
+  const territoryId=scopeIsInternational?state.selected:dataset.country.national_territory_id;
+  return {
+    area:dataset.territories.find(area=>area.id===territoryId),
+    observation:areaObservationState(dataset,territoryId,state.metric,effectivePeriod)
+  };
+}
 export function territorialIndicatorState(dataset, territoryId, indicatorId, requestedPeriod) {
   const indicator=dataset.indicators.find(item=>item.id===indicatorId) || null;
   const period=effectivePeriodForTerritoryIndicator(dataset,territoryId,indicatorId,requestedPeriod);

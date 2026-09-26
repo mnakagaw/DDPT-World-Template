@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {buildAsia} from '../lib/asia-adapter.mjs';
-import {comparisonRows,initialState,routeQuery,selectHierarchyOption,selectTerritory,territorialIndicatorState} from '../scaffold/site/model.mjs';
+import {comparisonRows,initialState,routeQuery,selectHierarchyOption,selectTerritory,territorialIndicatorState,thematicReferenceState} from '../scaffold/site/model.mjs';
 import {translateText} from '../scaffold/site/i18n.mjs';
 import {sourceScopeNote,diagnosticCsv} from '../scaffold/site/diagnostic.mjs';
 
@@ -78,6 +78,10 @@ test('Asia hierarchy keeps a shared GDP indicator and chosen year when a country
     assert.equal(state.period,'2024');
   }
   assert.equal(territorialIndicatorState(asia,country.selected,country.metric,country.period).result.value,20);
+  assert.equal(thematicReferenceState(asia,start,'2024').observation.value,500);
+  assert.equal(thematicReferenceState(asia,region,'2024').observation.value,90);
+  assert.equal(thematicReferenceState(asia,region,'2024').area.name,'South-eastern Asia');
+  assert.equal(thematicReferenceState(asia,country,'2024').observation.value,20);
   const backToRegion=selectHierarchyOption(asia,country,'M49:142','area:M49:035');
   assert.equal(backToRegion.selected,'M49:035');
   assert.equal(backToRegion.metric,'UN_AMA_GDP_CURRENT_USD');
@@ -85,6 +89,7 @@ test('Asia hierarchy keeps a shared GDP indicator and chosen year when a country
   assert.equal(backToRegion.level,region.level);
   assert.equal(routeQuery(asia,backToRegion),routeQuery(asia,region));
   assert.equal(territorialIndicatorState(asia,backToRegion.selected,backToRegion.metric,backToRegion.period).result.value,90);
+  assert.equal(thematicReferenceState(asia,backToRegion,'2024').observation.value,90);
   const otherCountry=selectTerritory(asia,country,'JPN');
   assert.equal(otherCountry.metric,'UN_AMA_GDP_CURRENT_USD');
   assert.equal(otherCountry.period,'2024');

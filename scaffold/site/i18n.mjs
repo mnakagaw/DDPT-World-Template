@@ -200,6 +200,7 @@ const COPY={
   'No local areas acquired':['No se recopilaron áreas locales','取得済みの地方地域なし'],
   'World value · source-reported':['Valor mundial · publicado por la fuente','世界値・出典公表値'],
   'Regional value · source-reported':['Valor regional · publicado por la fuente','広域値・出典公表値'],
+  'Selected-area value':['Valor del área seleccionada','選択地域の値'],
   'National value · source-reported':['Valor nacional · publicado por la fuente','全国値・出典公表値'],
   'Median of comparable areas':['Mediana de las áreas comparables','比較可能な地域の中央値'],
   'Median of comparable local areas':['Mediana de áreas locales comparables','比較可能な地域の中央値'],
