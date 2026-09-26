@@ -104,3 +104,16 @@ Seven public official leads were selected: the CAS LFHLCS main survey PDF and de
 | Validation | AreaData check, 218/218 tests, country validation (zero errors, one missing-plan warning), build and eight-case output verifier passed. Kit dry-run/import accepted 71 leads; Kit check, 173/173 tests and readiness (`ready: true`, 71 feedback sources) passed. Both branches were pushed. |
 
 All seven Lebanon feedback stages are `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. Kit must independently acquire and inspect them before reuse. Lebanon remains partial and unpublished; no independent `ACCEPT` or hosting is implied.
+
+## Palestine PCBS census and MoLG leads — 2026-09-26
+
+Ten public official leads were selected: four PCBS 2017 original PDFs (updated summary, separate counted-population detail, earlier summary and locality code guide), the PCBS projection table location, MoLG law/guidance/project/budget locations and the PCBS/MoLG boundary-revision note. [The Palestine source audit](../../evidence/palestine-pcbs2017-source-audit-2026-09-26.md) separates the selected updated-summary Table 2/29 fields from the 71 unadopted or unassessed report tables, projection, code-edition differences, absent polygons and location-only planning leads. No raw file, observation, formal planning state or country acceptance is transferred.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, source/producer audit and status | `bdbc4c2e7f84e22b5a2220c43aa5c7d258b9051d` on `codex/asia-domestic-20260926`; Kit role mapping corrected at `365d0faae2ab52da4af6b07d6e0bf5966c563cce` |
+| AreaData final 81-source / fifteen-country bundle | `9b25bff7363880f733d66fcc7eabc0afb13475fb` on the same branch; bundle `origin_commit` = `365d0faae2ab52da4af6b07d6e0bf5966c563cce` |
+| Kit import | `e4233578211dc6c1fd7d8d9dc4bd909c8a348504` on `codex/asia-source-feedback-20260926`; ten inserted, 71 existing origin histories updated, 82 records total |
+| Validation | AreaData check, 218/218 tests, country validation (zero errors, one missing-plan warning), build and twelve-case output verifier passed. Kit dry-run/import accepted 81 leads; Kit check, 173/173 tests and readiness (`ready: true`, 81 feedback sources) passed. |
+
+All ten Palestine feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. The 2026 pre-conflict projection is not an observed present population series. Kit must independently review PDFs, 2017 code/boundary edition, current law and actual plan/fiscal bodies before use. Palestine remains partial and unpublished.
