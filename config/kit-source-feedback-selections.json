@@ -972,7 +972,7 @@
         {
           "id": "geo-kutaisi-municipal-action-plan-2026-2029",
           "role": "plans_budgets_implementation_evaluation",
-          "authority_type": "official_local",
+          "authority_type": "official_subnational",
           "geographic_levels": ["Kutaisi municipality only"],
           "formats": ["PDF"],
           "reuse_note": "Mayoral order of 1 September 2025 approves the 2026-2029 medium-term action plan. A programme to prepare a city general plan does not prove that general plan's final adoption or achieved targets. Later revisions unverified."
@@ -980,7 +980,7 @@
         {
           "id": "geo-kutaisi-budget-2026-original-ordinance",
           "role": "plans_budgets_implementation_evaluation",
-          "authority_type": "official_local",
+          "authority_type": "official_subnational",
           "geographic_levels": ["Kutaisi municipality only"],
           "formats": ["PDF", "HTML act page"],
           "reuse_note": "Original Sakrebulo 2026 budget ordinance approved 24 December 2025. Matsne says this original edition was valid only through 28 January 2026; current amendments, executed amounts and official evaluation remain unverified."
@@ -1052,7 +1052,7 @@
         {
           "id": "geo-kutaisi-document-register",
           "role": "plans_budgets_implementation_evaluation",
-          "authority_type": "official_local",
+          "authority_type": "official_subnational",
           "geographic_levels": ["Kutaisi municipality register"],
           "formats": ["HTML catalogue", "linked PDFs"],
           "reuse_note": "Official Kutaisi register locates the 2025 mayoral order and other planning proceedings. A listed document does not prove every local plan, general-plan approval, budget execution or evaluation has been acquired."
