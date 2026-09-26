@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T21:51:04.772Z",
-  "origin_commit": "0741eb439bd713d298765c74e00fb734f0b09a9d",
+  "exported_at": "2026-09-26T22:18:16.670Z",
+  "origin_commit": "5b3ca07c824cfa48d42a577aebb38cf1c471e1f0",
   "sources": [
     {
       "iso3": "AFG",
@@ -1282,6 +1282,606 @@
       "license_or_terms": null,
       "reuse_note": "Six-page Official Gazette Decision 15/2017 and maps establish a historical Capital zoning approval, not current applicability, a complete governorate development plan or fiscal execution. Later map revisions and 2020 boundary match are unverified.",
       "origin_evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_GEOGRAPHIC_CODES",
+      "role": "administrative_codes",
+      "title": "Nsb Phcb 2017 Geographic Codes",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/Bhutan-Standard-Statistical-Geograpgic-Codes.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Dzongkhag",
+        "Gewog",
+        "other 2020 code categories unassessed"
+      ],
+      "reference_periods": [
+        "2020 code edition"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "NSB Bhutan Standard Statistical Geographic Codes December 2020 version 1.0 acquired. No historical 2017 code or polygon correspondence has been established; do not assign its codes to PHCB 2017 rows without crosswalk.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_NATIONAL_2017",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 National 2017",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/2017-PHCB-report-_national.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "Dzongkhag and selected Thromde rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "NSB PHCB 2017 national report acquired. AreaData adopted Table 2.1 only; detailed-analysis 727145 and all-found 735553 are distinct, with 8408 hotel visitors lacking local detailed data. Kit must independently audit body, terms and geography.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_BUMTHANG",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Bumthang",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Bumthang.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Bumthang Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. AreaData audited only Table A2.1 population/sex rows; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_CHHUKHA",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Chhukha",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Chhukha.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Chhukha Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_DAGANA",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Dagana",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Dagana.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Dagana Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_GASA",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Gasa",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Gasa.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Gasa Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_HAA",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Haa",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Haa.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Haa Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired; Table A2.1 PDF p41 visually checked. Haa 13655, Haa Town 2596 and Bji rural row 3321. Remaining tables, 2017 geographic/legal crosswalk and terms need independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_LHUENTSE",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Lhuentse",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Lhuentse.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Lhuentse Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_MONGGAR",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Monggar",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Monggar.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Monggar Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_PARO",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Paro",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Paro.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Paro Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_PEMA_GATSHEL",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Pema Gatshel",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Pema-Gatshel.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Pema Gatshel Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_PUNAKHA",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Punakha",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Punakha.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Punakha Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_SAMDRUP_JONGKHAR",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Samdrup Jongkhar",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samdrup-Jongkhar.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Samdrup Jongkhar Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_SAMTSE",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Samtse",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Samtse.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Samtse Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_SARPANG",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Sarpang",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Sarpang.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Sarpang Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_THIMPHU",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Thimphu",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Thimphu.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Thimphu Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. AreaData adopted Table A2.1 Thimphu 138736 and Thimphu Thromde 114551; other numeric fields, boundary/legal scope and terms need independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_TRASHI_YANGTSE",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Trashi Yangtse",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Trashi-Yangtse.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Trashi Yangtse Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_TRASHIGANG",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Trashigang",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Trashigang.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Trashigang Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_TRONGSA",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Trongsa",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Trongsa.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Trongsa Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_TSIRANG",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Tsirang",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Tsirang.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Tsirang Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_WANGDUE_PHODRANG",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Wangdue Phodrang",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Wangdue-Phodrang.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Wangdue Phodrang Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_DISTRICT_ZHEMGANG",
+      "role": "census_results",
+      "title": "Nsb Phcb 2017 District Zhemgang",
+      "publisher": "National Statistics Bureau, Royal Government of Bhutan",
+      "url": "https://nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_Zhemgang.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Zhemgang Dzongkhag",
+        "town and rural Gewog-part rows"
+      ],
+      "reference_periods": [
+        "2017 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2017 district report acquired. Only Table A2.1 population/sex rows were adopted; other numeric fields, 2017 codes/boundaries, legal planning geography and terms require independent audit.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_NATIONAL_PLAN_13FYP",
+      "role": "planning_guidance",
+      "title": "Bhutan 13th Five Year Plan official PDF",
+      "publisher": "Prime Minister's Office, Royal Government of Bhutan",
+      "url": "https://www.pmo.gov.bt/api/uploads/plans/document-1751451996345.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national planning framework; local implications unassessed"
+      ],
+      "reference_periods": [
+        "2024–2029 national plan, body not acquired"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official PDF location; terms unverified",
+      "reuse_note": "Official PMO 13th FYP PDF location only. AreaData acquisition failed TLS peer verification; no certificate bypass, body-content audit, local requirement or approval fact transferred. Reacquire through verifiable official channel.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BTN",
+      "source_id": "BTN_BTN_PHCB2017_LOCAL_GOVERNMENT_RULES_2012",
+      "role": "planning_law",
+      "title": "Nsb Phcb 2017 Local Government Rules 2012",
+      "publisher": "Department of Local Governance and Disaster Management, Bhutan",
+      "url": "https://www.dlgdm.gov.bt/storage/upload-documents/2021/12/16/umXB6iM4gC.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Dzongkhag Tshogdu",
+        "Gewog Tshogde"
+      ],
+      "reference_periods": [
+        "2012 rules, present force unverified"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; raw redistribution terms unverified",
+      "reuse_note": "Official 2012 Rules PDF acquired; clauses 247-256 discuss Five Year, rolling and annual plans and budgets. Current force, later changes, jurisdiction and actual local plans require independent review.",
+      "origin_evidence_path": "docs/evidence/bhutan-phcb2017-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {

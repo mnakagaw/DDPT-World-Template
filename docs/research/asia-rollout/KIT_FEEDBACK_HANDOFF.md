@@ -273,3 +273,16 @@ Thirty-five public official locations were selected: the 23 numbered DCS Populat
 | Validation | AreaData check 153 modules/templates, 218/218 tests, Sri Lanka validator zero errors and one planning warning, build and eight actual-output cases. Kit check 52 JS/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 252 feedback sources). |
 
 All 35 Sri Lanka feedback stages are `official_location_identified`; Kit records `not_acquired_by_kit_preflight`. Kit must independently acquire and audit originals, final/provisional census editions, statistical versus council geography, source terms and planning rules. Sri Lanka remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Bhutan NSB PHCB 2017 and planning source leads — 2026-09-27 JST
+
+Twenty-four public official locations were selected: the NSB national PHCB 2017 report, 20 Dzongkhag reports, December 2020 geographic-code PDF, 2012 Local Government Rules PDF and PMO 13th FYP PDF location. [The Bhutan source audit](../../evidence/bhutan-phcb2017-source-audit-2026-09-27.md) identifies the adopted national Table 2.1 and district Table A2.1 population/sex cells, and keeps 641 other numbered table headings unassessed. It distinguishes the detailed-analysis 727,145 from the hotel-inclusive all-found 735,553, the 2020 code edition from unverified 2017 geography, and acquired rules from current legal force. The PMO PDF was **not** acquired because TLS peer verification failed. Feedback transfers no raw PDF, 871 observations, code/polygon join, local plan or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, evidence, status and 24 selected source locations | `5b3ca07c824cfa48d42a577aebb38cf1c471e1f0` on `codex/asia-domestic-20260926`; pushed and remote head matched. |
+| AreaData 276-source / 28-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that full AreaData adapter commit as `origin_commit`; bundle and this handoff are committed in the following AreaData commit. |
+| Kit feedback import | `97356cefa61fa4468de891a463f804b15f882e27` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 276 leads, 24 Bhutan records inserted, 252 earlier origin histories updated, 277 total. Pushed and remote head matched. |
+| Validation | AreaData check 154 modules/templates, 218/218 tests, Bhutan validator zero errors and one planning warning, build and six actual-output cases. Kit check 52 JS/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 276 feedback sources). |
+
+All 24 Bhutan feedback stages remain `official_location_identified`; Kit stores `not_acquired_by_kit_preflight`, including for originals acquired by AreaData. Kit must independently obtain and inspect originals, resolve the hotel-inclusive count, historical geographic codes, current rule/plan contents and terms before reuse. Bhutan remains a partial unpublished candidate without independent `ACCEPT`.
