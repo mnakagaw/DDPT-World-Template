@@ -307,6 +307,61 @@
           "reuse_note": "New AreaData source location: Saudi Ministry of Health 2022 yearbook Table 1-12 cites GASTAT for the 2022 census population of 13 administrative regions. Its 2010–2021 columns are recalculated estimates, not census counts. Kit must independently audit direct GASTAT tables, geographic codes/boundaries, terms and adoption."
         }
       ]
+    },
+    {
+      "path": "generated/jordan-areadata-20260926",
+      "iso3": "JOR",
+      "evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+      "sources": [
+        {
+          "id": "jor-dos-2025-population-by-locality",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate", "district", "sub-district", "locality tables unassessed"],
+          "formats": ["XLSX"],
+          "reuse_note": "New AreaData source location: DoS annual end-2025 population estimates based on the 2015 census, not a 2025 census. AreaData partially adopted the summary, but Kit must independently audit raw fields, official codes, boundary edition, terms and any adoption."
+        },
+        {
+          "id": "jor-dos-2025-population-estimates",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate"],
+          "formats": ["XLSX"],
+          "reuse_note": "New AreaData source location: 2025 DoS urban/rural and population-density workbook. Values are annual estimates and reported area, not a new census or a 2006 geoBoundaries calculation. Kit must independently verify cells, definitions, codes and terms."
+        },
+        {
+          "id": "jor-dos-2025-municipalities",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["municipality", "locality"],
+          "formats": ["XLSX"],
+          "reuse_note": "New AreaData source location. The workbook was acquired and mechanically inventoried, but no municipal value was adopted. Municipality and administrative district are separate classifications; Kit must audit identities and terms independently."
+        },
+        {
+          "id": "jor-dos-2015-census-table-catalogue",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate and other levels to verify per table"],
+          "formats": ["HTML", "PDF", "XLSX"],
+          "reuse_note": "New AreaData official 2015 census catalogue location only. Individual thematic tables, source fields, geography and terms have not been acquired or adopted; the 2025 estimate workbooks are separate."
+        },
+        {
+          "id": "jor-moi-governorate-planning-guide-2018",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["governorate"],
+          "formats": ["PDF"],
+          "reuse_note": "New AreaData source location for the 2018 Ministry of Interior guide. It cites the 2015 decentralization law. Current applicability under the 2021 local administration law and any actual governorate plan remain unverified."
+        },
+        {
+          "id": "jor-mola-local-administration-law-2021",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["governorate", "municipality; provisions unassessed"],
+          "formats": ["PDF"],
+          "reuse_note": "New AreaData source location for a 53-page image PDF titled Local Administration Law No. 22 of 2021. Articles, amendments and current planning duties require OCR or manual legal review before adoption."
+        }
+      ]
     }
   ]
 }

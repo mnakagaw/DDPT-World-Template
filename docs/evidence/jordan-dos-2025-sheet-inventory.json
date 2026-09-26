@@ -1,0 +1,906 @@
+{
+  "PopulationEstimates.xlsx": {
+    "sha256": "0917681306aa728e501464a8a42c0ec31ed81e66cf16245862ede53f007f7002",
+    "bytes": 88000,
+    "sheets": [
+      {
+        "name": "الغلاف",
+        "rows": 50,
+        "columns": 9,
+        "numeric_columns": {},
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "2.2",
+        "rows": 77,
+        "columns": 11,
+        "numeric_columns": {
+          "A": {
+            "count": 32,
+            "first_cell": "A5",
+            "last_cell": "A43"
+          },
+          "B": {
+            "count": 39,
+            "first_cell": "B5",
+            "last_cell": "B43"
+          },
+          "C": {
+            "count": 39,
+            "first_cell": "C5",
+            "last_cell": "C43"
+          },
+          "D": {
+            "count": 39,
+            "first_cell": "D5",
+            "last_cell": "D43"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "2.3",
+        "rows": 56,
+        "columns": 13,
+        "numeric_columns": {
+          "B": {
+            "count": 28,
+            "first_cell": "B6",
+            "last_cell": "B40"
+          },
+          "C": {
+            "count": 28,
+            "first_cell": "C6",
+            "last_cell": "C40"
+          },
+          "D": {
+            "count": 28,
+            "first_cell": "D6",
+            "last_cell": "D40"
+          },
+          "E": {
+            "count": 13,
+            "first_cell": "E6",
+            "last_cell": "E18"
+          }
+        },
+        "disposition": "partially_adopted",
+        "adopted_cells_or_checks": "B27:C39; B6:D18 used only to reconcile the summary workbook"
+      },
+      {
+        "name": "2.4",
+        "rows": 124,
+        "columns": 12,
+        "numeric_columns": {
+          "D": {
+            "count": 35,
+            "first_cell": "D5",
+            "last_cell": "D39"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "2.5",
+        "rows": 87,
+        "columns": 10,
+        "numeric_columns": {
+          "D": {
+            "count": 43,
+            "first_cell": "D5",
+            "last_cell": "D47"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "2.6",
+        "rows": 54,
+        "columns": 12,
+        "numeric_columns": {
+          "D": {
+            "count": 40,
+            "first_cell": "D5",
+            "last_cell": "D44"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "2.7",
+        "rows": 56,
+        "columns": 22,
+        "numeric_columns": {
+          "C": {
+            "count": 15,
+            "first_cell": "C5",
+            "last_cell": "C19"
+          },
+          "D": {
+            "count": 28,
+            "first_cell": "D5",
+            "last_cell": "D41"
+          },
+          "E": {
+            "count": 28,
+            "first_cell": "E5",
+            "last_cell": "E41"
+          },
+          "F": {
+            "count": 28,
+            "first_cell": "F5",
+            "last_cell": "F41"
+          },
+          "G": {
+            "count": 28,
+            "first_cell": "G5",
+            "last_cell": "G41"
+          },
+          "H": {
+            "count": 15,
+            "first_cell": "H5",
+            "last_cell": "H19"
+          },
+          "I": {
+            "count": 15,
+            "first_cell": "I5",
+            "last_cell": "I19"
+          }
+        },
+        "disposition": "partially_adopted",
+        "adopted_cells_or_checks": "E29:E41 and G29:G41; D29:D41 used only to reconcile population"
+      }
+    ]
+  },
+  "PopulationEstimatesbyLocality.xlsx": {
+    "sha256": "ebf49f985570c25de141a26c75fc70790a0f7225fb351b3ecd04b68402bd0ef8",
+    "bytes": 203558,
+    "sheets": [
+      {
+        "name": "الغلاف",
+        "rows": 52,
+        "columns": 9,
+        "numeric_columns": {},
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "تقديم",
+        "rows": 34,
+        "columns": 5,
+        "numeric_columns": {
+          "B": {
+            "count": 13,
+            "first_cell": "B11",
+            "last_cell": "B23"
+          },
+          "C": {
+            "count": 13,
+            "first_cell": "C11",
+            "last_cell": "C23"
+          },
+          "D": {
+            "count": 13,
+            "first_cell": "D11",
+            "last_cell": "D23"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "الملخص ",
+        "rows": 153,
+        "columns": 12,
+        "numeric_columns": {
+          "B": {
+            "count": 119,
+            "first_cell": "B3",
+            "last_cell": "B122"
+          },
+          "C": {
+            "count": 118,
+            "first_cell": "C5",
+            "last_cell": "C122"
+          },
+          "D": {
+            "count": 118,
+            "first_cell": "D5",
+            "last_cell": "D122"
+          },
+          "E": {
+            "count": 118,
+            "first_cell": "E5",
+            "last_cell": "E122"
+          }
+        },
+        "disposition": "partially_adopted",
+        "adopted_cells_or_checks": "B5:E122, excluding B118:E121 pending Aqaba hierarchy review"
+      },
+      {
+        "name": "العاصمة ",
+        "rows": 130,
+        "columns": 10,
+        "numeric_columns": {
+          "D": {
+            "count": 127,
+            "first_cell": "D3",
+            "last_cell": "D130"
+          },
+          "E": {
+            "count": 126,
+            "first_cell": "E5",
+            "last_cell": "E130"
+          },
+          "F": {
+            "count": 126,
+            "first_cell": "F5",
+            "last_cell": "F130"
+          },
+          "G": {
+            "count": 126,
+            "first_cell": "G5",
+            "last_cell": "G130"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "البلقاء ",
+        "rows": 122,
+        "columns": 12,
+        "numeric_columns": {
+          "D": {
+            "count": 81,
+            "first_cell": "D3",
+            "last_cell": "D84"
+          },
+          "E": {
+            "count": 80,
+            "first_cell": "E5",
+            "last_cell": "E84"
+          },
+          "F": {
+            "count": 80,
+            "first_cell": "F5",
+            "last_cell": "F84"
+          },
+          "G": {
+            "count": 80,
+            "first_cell": "G5",
+            "last_cell": "G84"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "الزرقاء ",
+        "rows": 119,
+        "columns": 10,
+        "numeric_columns": {
+          "D": {
+            "count": 64,
+            "first_cell": "D3",
+            "last_cell": "D67"
+          },
+          "E": {
+            "count": 63,
+            "first_cell": "E5",
+            "last_cell": "E67"
+          },
+          "F": {
+            "count": 63,
+            "first_cell": "F5",
+            "last_cell": "F67"
+          },
+          "G": {
+            "count": 63,
+            "first_cell": "G5",
+            "last_cell": "G67"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "مادبا ",
+        "rows": 118,
+        "columns": 11,
+        "numeric_columns": {
+          "D": {
+            "count": 82,
+            "first_cell": "D3",
+            "last_cell": "D85"
+          },
+          "E": {
+            "count": 81,
+            "first_cell": "E5",
+            "last_cell": "E85"
+          },
+          "F": {
+            "count": 81,
+            "first_cell": "F5",
+            "last_cell": "F85"
+          },
+          "G": {
+            "count": 81,
+            "first_cell": "G5",
+            "last_cell": "G85"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "إربد",
+        "rows": 151,
+        "columns": 10,
+        "numeric_columns": {
+          "D": {
+            "count": 148,
+            "first_cell": "D3",
+            "last_cell": "D151"
+          },
+          "E": {
+            "count": 147,
+            "first_cell": "E5",
+            "last_cell": "E151"
+          },
+          "F": {
+            "count": 147,
+            "first_cell": "F5",
+            "last_cell": "F151"
+          },
+          "G": {
+            "count": 147,
+            "first_cell": "G5",
+            "last_cell": "G151"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "المفرق ",
+        "rows": 180,
+        "columns": 10,
+        "numeric_columns": {
+          "D": {
+            "count": 177,
+            "first_cell": "D3",
+            "last_cell": "D180"
+          },
+          "E": {
+            "count": 176,
+            "first_cell": "E5",
+            "last_cell": "E180"
+          },
+          "F": {
+            "count": 176,
+            "first_cell": "F5",
+            "last_cell": "F180"
+          },
+          "G": {
+            "count": 176,
+            "first_cell": "G5",
+            "last_cell": "G180"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "جرش ",
+        "rows": 120,
+        "columns": 10,
+        "numeric_columns": {
+          "D": {
+            "count": 58,
+            "first_cell": "D3",
+            "last_cell": "D61"
+          },
+          "E": {
+            "count": 57,
+            "first_cell": "E5",
+            "last_cell": "E61"
+          },
+          "F": {
+            "count": 57,
+            "first_cell": "F5",
+            "last_cell": "F61"
+          },
+          "G": {
+            "count": 57,
+            "first_cell": "G5",
+            "last_cell": "G61"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "عجلون ",
+        "rows": 121,
+        "columns": 10,
+        "numeric_columns": {
+          "D": {
+            "count": 58,
+            "first_cell": "D3",
+            "last_cell": "D61"
+          },
+          "E": {
+            "count": 57,
+            "first_cell": "E5",
+            "last_cell": "E61"
+          },
+          "F": {
+            "count": 57,
+            "first_cell": "F5",
+            "last_cell": "F61"
+          },
+          "G": {
+            "count": 57,
+            "first_cell": "G5",
+            "last_cell": "G61"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "الكرك ",
+        "rows": 127,
+        "columns": 11,
+        "numeric_columns": {
+          "D": {
+            "count": 124,
+            "first_cell": "D3",
+            "last_cell": "D127"
+          },
+          "E": {
+            "count": 123,
+            "first_cell": "E5",
+            "last_cell": "E127"
+          },
+          "F": {
+            "count": 123,
+            "first_cell": "F5",
+            "last_cell": "F127"
+          },
+          "G": {
+            "count": 123,
+            "first_cell": "G5",
+            "last_cell": "G127"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "الطفيلة ",
+        "rows": 119,
+        "columns": 10,
+        "numeric_columns": {
+          "D": {
+            "count": 42,
+            "first_cell": "D3",
+            "last_cell": "D45"
+          },
+          "E": {
+            "count": 41,
+            "first_cell": "E5",
+            "last_cell": "E45"
+          },
+          "F": {
+            "count": 41,
+            "first_cell": "F5",
+            "last_cell": "F45"
+          },
+          "G": {
+            "count": 41,
+            "first_cell": "G5",
+            "last_cell": "G45"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "معان ",
+        "rows": 125,
+        "columns": 10,
+        "numeric_columns": {
+          "D": {
+            "count": 76,
+            "first_cell": "D3",
+            "last_cell": "D79"
+          },
+          "E": {
+            "count": 75,
+            "first_cell": "E5",
+            "last_cell": "E79"
+          },
+          "F": {
+            "count": 75,
+            "first_cell": "F5",
+            "last_cell": "F79"
+          },
+          "G": {
+            "count": 75,
+            "first_cell": "G5",
+            "last_cell": "G79"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "العقبة ",
+        "rows": 37,
+        "columns": 10,
+        "numeric_columns": {
+          "D": {
+            "count": 34,
+            "first_cell": "D3",
+            "last_cell": "D37"
+          },
+          "E": {
+            "count": 33,
+            "first_cell": "E5",
+            "last_cell": "E37"
+          },
+          "F": {
+            "count": 33,
+            "first_cell": "F5",
+            "last_cell": "F37"
+          },
+          "G": {
+            "count": 33,
+            "first_cell": "G5",
+            "last_cell": "G37"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      }
+    ]
+  },
+  "Municipalities.xlsx": {
+    "sha256": "3f880201fd685830e5c77f6505797a2bc91086412f72a758399dd4f92dda4b97",
+    "bytes": 157842,
+    "sheets": [
+      {
+        "name": "الغلاف",
+        "rows": 49,
+        "columns": 12,
+        "numeric_columns": {},
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "ملخص البلديات",
+        "rows": 172,
+        "columns": 18,
+        "numeric_columns": {
+          "D": {
+            "count": 123,
+            "first_cell": "D5",
+            "last_cell": "D127"
+          },
+          "E": {
+            "count": 123,
+            "first_cell": "E5",
+            "last_cell": "E127"
+          },
+          "F": {
+            "count": 123,
+            "first_cell": "F5",
+            "last_cell": "F127"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "العاصمة",
+        "rows": 211,
+        "columns": 8,
+        "numeric_columns": {
+          "C": {
+            "count": 168,
+            "first_cell": "C5",
+            "last_cell": "C172"
+          },
+          "D": {
+            "count": 168,
+            "first_cell": "D5",
+            "last_cell": "D172"
+          },
+          "E": {
+            "count": 168,
+            "first_cell": "E5",
+            "last_cell": "E172"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "البلقاء",
+        "rows": 172,
+        "columns": 11,
+        "numeric_columns": {
+          "C": {
+            "count": 88,
+            "first_cell": "C5",
+            "last_cell": "C92"
+          },
+          "D": {
+            "count": 88,
+            "first_cell": "D5",
+            "last_cell": "D92"
+          },
+          "E": {
+            "count": 88,
+            "first_cell": "E5",
+            "last_cell": "E92"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "الزرقاء",
+        "rows": 172,
+        "columns": 7,
+        "numeric_columns": {
+          "C": {
+            "count": 70,
+            "first_cell": "C5",
+            "last_cell": "C74"
+          },
+          "D": {
+            "count": 70,
+            "first_cell": "D5",
+            "last_cell": "D74"
+          },
+          "E": {
+            "count": 70,
+            "first_cell": "E5",
+            "last_cell": "E74"
+          },
+          "B": {
+            "count": 1,
+            "first_cell": "B71",
+            "last_cell": "B71"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "مادبا",
+        "rows": 172,
+        "columns": 11,
+        "numeric_columns": {
+          "C": {
+            "count": 78,
+            "first_cell": "C5",
+            "last_cell": "C82"
+          },
+          "D": {
+            "count": 78,
+            "first_cell": "D5",
+            "last_cell": "D82"
+          },
+          "E": {
+            "count": 78,
+            "first_cell": "E5",
+            "last_cell": "E82"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "اربد",
+        "rows": 172,
+        "columns": 9,
+        "numeric_columns": {
+          "C": {
+            "count": 157,
+            "first_cell": "C5",
+            "last_cell": "C161"
+          },
+          "D": {
+            "count": 157,
+            "first_cell": "D5",
+            "last_cell": "D161"
+          },
+          "E": {
+            "count": 157,
+            "first_cell": "E5",
+            "last_cell": "E161"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "المفرق",
+        "rows": 198,
+        "columns": 7,
+        "numeric_columns": {
+          "C": {
+            "count": 181,
+            "first_cell": "C5",
+            "last_cell": "C185"
+          },
+          "D": {
+            "count": 181,
+            "first_cell": "D5",
+            "last_cell": "D185"
+          },
+          "E": {
+            "count": 181,
+            "first_cell": "E5",
+            "last_cell": "E185"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "جرش",
+        "rows": 172,
+        "columns": 11,
+        "numeric_columns": {
+          "C": {
+            "count": 60,
+            "first_cell": "C5",
+            "last_cell": "C64"
+          },
+          "D": {
+            "count": 60,
+            "first_cell": "D5",
+            "last_cell": "D64"
+          },
+          "E": {
+            "count": 60,
+            "first_cell": "E5",
+            "last_cell": "E64"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "عجلون",
+        "rows": 172,
+        "columns": 12,
+        "numeric_columns": {
+          "C": {
+            "count": 58,
+            "first_cell": "C5",
+            "last_cell": "C62"
+          },
+          "D": {
+            "count": 58,
+            "first_cell": "D5",
+            "last_cell": "D62"
+          },
+          "E": {
+            "count": 58,
+            "first_cell": "E5",
+            "last_cell": "E62"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "الكرك",
+        "rows": 172,
+        "columns": 12,
+        "numeric_columns": {
+          "C": {
+            "count": 123,
+            "first_cell": "C5",
+            "last_cell": "C127"
+          },
+          "D": {
+            "count": 123,
+            "first_cell": "D5",
+            "last_cell": "D127"
+          },
+          "E": {
+            "count": 123,
+            "first_cell": "E5",
+            "last_cell": "E127"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "الطفيلة",
+        "rows": 172,
+        "columns": 12,
+        "numeric_columns": {
+          "C": {
+            "count": 42,
+            "first_cell": "C5",
+            "last_cell": "C46"
+          },
+          "D": {
+            "count": 42,
+            "first_cell": "D5",
+            "last_cell": "D46"
+          },
+          "E": {
+            "count": 42,
+            "first_cell": "E5",
+            "last_cell": "E46"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "معان",
+        "rows": 172,
+        "columns": 18,
+        "numeric_columns": {
+          "C": {
+            "count": 75,
+            "first_cell": "C5",
+            "last_cell": "C79"
+          },
+          "D": {
+            "count": 75,
+            "first_cell": "D5",
+            "last_cell": "D79"
+          },
+          "E": {
+            "count": 75,
+            "first_cell": "E5",
+            "last_cell": "E79"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      },
+      {
+        "name": "العقبة",
+        "rows": 172,
+        "columns": 7,
+        "numeric_columns": {
+          "C": {
+            "count": 35,
+            "first_cell": "C5",
+            "last_cell": "C39"
+          },
+          "D": {
+            "count": 35,
+            "first_cell": "D5",
+            "last_cell": "D39"
+          },
+          "E": {
+            "count": 35,
+            "first_cell": "E5",
+            "last_cell": "E39"
+          }
+        },
+        "disposition": "not_adopted_pending_semantic_review",
+        "adopted_cells_or_checks": null
+      }
+    ]
+  }
+}

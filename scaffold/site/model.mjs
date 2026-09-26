@@ -135,8 +135,9 @@ export function initialState(dataset, search = '') {
   const orderedIndicators=orderedTerritorialIndicators(dataset,selected);
   const indicator = scopedIndicators.find(row => row.id === suppliedMetric);
   if (suppliedMetric && !indicator) notices.push(`The linked indicator “${suppliedMetric}” is not available for the selected country or area. An available indicator is shown and the URL has been corrected.`);
+  const configuredIndicator = scopedIndicators.find(row => row.id === dataset.analysis?.default_indicator_id);
   const firstObservedIndicator = orderedIndicators.find(item => dataset.observations.some(row => row.indicator_id === item.id && observedValue(row) !== null));
-  const metric = indicator?.id || firstObservedIndicator?.id || orderedIndicators[0]?.id || '';
+  const metric = indicator?.id || configuredIndicator?.id || firstObservedIndicator?.id || orderedIndicators[0]?.id || '';
   const requestedPeriod = query.get('period');
   // A syntactically valid requested period remains selected even when its value is missing.
   const validPeriod = requestedPeriod && /^[\p{L}\p{N} ._/:–-]{1,40}$/u.test(requestedPeriod);
