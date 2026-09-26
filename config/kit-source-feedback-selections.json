@@ -417,6 +417,45 @@
           "reuse_note": "Official Ministry of Finance 2026 national citizen-budget location. AreaData has not audited its table fields. It is not a selected governorate plan, local budget execution or official evaluation."
         }
       ]
+    },
+    {
+      "path": "generated/united-arab-emirates-areadata-20260926",
+      "iso3": "ARE",
+      "evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+      "sources": [
+        {
+          "id": "are-fcsc-2009-report-census-by-emirate",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "emirate (2005)"],
+          "formats": ["PDF"],
+          "reuse_note": "Official FCSC 2009 report PDF. AreaData adopted only the December 2005 census population table for seven emirates and national; other pages and 1975/1985/1995 columns await semantic review. Do not call it current population or assume 2017 reference shapes are certified 2005 geography."
+        },
+        {
+          "id": "are-scad-abu-dhabi-register-2024",
+          "role": "machine_readable_data",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Abu Dhabi emirate", "Abu Dhabi/Al Ain/Al Dhafra statistical regions"],
+          "formats": ["HTML"],
+          "reuse_note": "SCAD 2024 administrative-register population with revised 2023 R1 regional values. It covers Abu Dhabi only; regional counts are rounded to multiples of five. Kit must review raw table, code/boundary identities, methods, terms and other emirate sources independently."
+        },
+        {
+          "id": "are-fcsc-uaestat-population-explorer",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national; emirate availability to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "Official UAE.Stat population-estimate explorer lead. The visible national series through 2024 is not proof of available comparable emirate rows. Verify actual dataflow, subnational coverage, method, format and terms before adoption."
+        },
+        {
+          "id": "are-government-dubai-2040-plan",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["Dubai emirate / urban areas"],
+          "formats": ["HTML"],
+          "reuse_note": "Official government overview of Dubai 2040 Urban Master Plan. Full plan text, current implementation, local budgets and selected-area relevance need separate acquisition; do not treat the overview as an approved local planning dossier."
+        }
+      ]
     }
   ]
 }
