@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T15:30:22.652Z",
-  "origin_commit": "6fbe93a6e7c2b240d0f69c63f3e4eb8dbc472836",
+  "exported_at": "2026-09-26T16:19:16.375Z",
+  "origin_commit": "21b524f4199802c154417a5ee734de4300a8585b",
   "sources": [
     {
       "iso3": "ARE",
@@ -1135,6 +1135,378 @@
       "license_or_terms": null,
       "reuse_note": "Six-page Official Gazette Decision 15/2017 and maps establish a historical Capital zoning approval, not current applicability, a complete governorate development plan or fiscal execution. Later map revisions and 2020 boundary match are unverified.",
       "origin_evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_CYSTAT_GEOCODES_2015",
+      "role": "administrative_codes",
+      "title": "CYSTAT GEOCODES 2015 municipality, community and quarter classification",
+      "publisher": "Statistical Service of Cyprus",
+      "url": "https://www.data.gov.cy/index.php/en/dataset/821",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "district",
+        "municipality/community",
+        "quarter"
+      ],
+      "reference_periods": [
+        "2015-12-31"
+      ],
+      "formats": [
+        "CSV",
+        "HTML"
+      ],
+      "license_or_terms": "Government open-data page states CC BY 4.0",
+      "reuse_note": "Official 2015 classification CSV acquired by AreaData: all 410 census locality and 99 quarter codes occur, but code existence in an older edition does not prove 2021/2024 legal boundaries or council identity. Portal says CC BY 4.0.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_DLS_ADMIN_UNITS_INSPIRE",
+      "role": "boundaries",
+      "title": "Department of Lands and Surveys INSPIRE administrative units",
+      "publisher": "Cyprus Department of Lands and Surveys",
+      "url": "https://data.gov.cy/en/dataset/542",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "district",
+        "municipality/community",
+        "parish polygons"
+      ],
+      "reference_periods": [
+        "2016 source coverage; catalogue modified 2026-03-16"
+      ],
+      "formats": [
+        "WFS",
+        "WMS",
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "Government open-data catalogue states CC BY 4.0; inspect layer-specific terms",
+      "reuse_note": "Official DLS INSPIRE spatial-service location. Portal metadata gives 2016 temporal coverage and 2026 catalogue modification; no layer body or match to 2021 census/2024 councils was acquired. Kit must verify layer edition, code attributes and service conditions.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_CYSTAT_2021_CATALOG",
+      "role": "census_catalog",
+      "title": "CYSTAT-DB 2021 census table catalogue",
+      "publisher": "Statistical Service of Cyprus",
+      "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "government-controlled census area",
+        "district",
+        "2021 municipality/community statistical locality",
+        "quarter"
+      ],
+      "reference_periods": [
+        "2021-10-01"
+      ],
+      "formats": [
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "Source page marks copyright; redistribution terms need review",
+      "reuse_note": "Official 2021 census API catalogue: 46 tables in 12 directories. AreaData archived seven selected complete matrices, but 39 table bodies remain location-only. Kit must independently reacquire, inspect all relevant matrices, census scope, terms and definitions.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_CYSTAT_2021_1895114E",
+      "role": "census_results",
+      "title": "Households Enumerated by Household Size, Average Household Size, District and Municipality/Community 1.10.2021 by DISTRICT, MUNICIPALITY/COMMUNITY and HOUSEHOLD SIZE",
+      "publisher": "Statistical Service of Cyprus",
+      "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Households/Households%20-%20Household%20Size/1895114E.px",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "government-controlled census area",
+        "five districts",
+        "source-coded localities"
+      ],
+      "reference_periods": [
+        "2021-10-01"
+      ],
+      "formats": [
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "PxWeb table marks copyright; confirm redistribution terms before publication",
+      "reuse_note": "Official household-size matrix. AreaData selected one-person, six-plus and source-reported mean; seven no-household means are N.A., not zero. One institution-only locality has no row. Verify definitions and terms before reuse.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_CYSTAT_2021_1891213E",
+      "role": "census_results",
+      "title": "Population Enumerated by Citizenship Group, Sex, District and Municipality/Community 1.10.2021 by DISTRICT, MUNICIPALITY/COMMUNITY, CITIZENSHIP GROUP and SEX",
+      "publisher": "Statistical Service of Cyprus",
+      "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Country%20of%20Citizenship%2C%20Country%20of%20Birth/1891213E.px",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "government-controlled census area",
+        "five districts",
+        "source-coded localities"
+      ],
+      "reference_periods": [
+        "2021-10-01"
+      ],
+      "formats": [
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "PxWeb table marks copyright; confirm redistribution terms before publication",
+      "reuse_note": "Official citizenship-group by sex matrix. AreaData selected four total-sex groups and held sex-specific alternatives; 14 population-zero localities have no social-table row. Kit must check categories, source universe and terms.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_CYSTAT_2021_1891515E",
+      "role": "census_results",
+      "title": "Population (Aged 15 and Over) Enumerated by Sex, Educational Attainment, District and Municipality/Community 1.10.2021 by DISTRICT, MUNICIPALITY/COMMUNITY, SEX and EDUCATIONAL ATTAINMENT",
+      "publisher": "Statistical Service of Cyprus",
+      "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Education%20Attainment/1891515E.px",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "government-controlled census area",
+        "five districts",
+        "source-coded localities"
+      ],
+      "reference_periods": [
+        "2021-10-01"
+      ],
+      "formats": [
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "PxWeb table marks copyright; confirm redistribution terms before publication",
+      "reuse_note": "Official education-attainment matrix for population aged 15+. AreaData selected three fields, with other sex/attainment cells unassessed. Counts are not enrolment rates; Kit must review source definitions and eligibility.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_CYSTAT_2021_1891712E",
+      "role": "census_results",
+      "title": "Economically Active and Inactive Population (Aged 15 and Over) Enumerated by District and Municipality/Community 1.10.2021 by DISTRICT, MUNICIPALITY / COMMUNITY and ECONOMICALLY ACTIVE, INACTIVE POPULATION",
+      "publisher": "Statistical Service of Cyprus",
+      "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Labour%20Force/1891712E.px",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "government-controlled census area",
+        "five districts",
+        "source-coded localities"
+      ],
+      "reference_periods": [
+        "2021-10-01"
+      ],
+      "formats": [
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "PxWeb table marks copyright; confirm redistribution terms before publication",
+      "reuse_note": "Official census economic-activity counts for age 15+, not a labour-force-survey unemployment rate. AreaData selected active, employed, unemployed and inactive counts; Kit must independently inspect method and comparability.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_CYSTAT_2021_1891108E",
+      "role": "census_results",
+      "title": "Population Enumerated by District, Municipality/Community, Sex and Age 1.10.2021 by DISTRICT, MUNICIPALITY/COMMUNITY, SEX and AGE",
+      "publisher": "Statistical Service of Cyprus",
+      "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891108E.px",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "government-controlled census area",
+        "five districts",
+        "410 statistical localities"
+      ],
+      "reference_periods": [
+        "2021-10-01"
+      ],
+      "formats": [
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "PxWeb table marks copyright; confirm redistribution terms before publication",
+      "reuse_note": "Official 2021 sex/age/population matrix. AreaData selected census usual-resident totals and three calculated broad-age groups; other sex-age combinations remain unassessed. The total 923381 excludes areas outside government control and is distinct from WDI country midyear population.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_CYSTAT_2021_1891161E",
+      "role": "census_results",
+      "title": "Housing Units, Households, Institutions and Population Enumerated by District and Municipality/Community 1.10.2021 by DISTRICT, MUNICIPALITY/COMMUNITY and HOUSING UNITS, HOUSEHOLDS, INSTITUTIONS, POPULATION",
+      "publisher": "Statistical Service of Cyprus",
+      "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891161E.px",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "government-controlled census area",
+        "five districts",
+        "source-coded localities"
+      ],
+      "reference_periods": [
+        "2021-10-01"
+      ],
+      "formats": [
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "PxWeb table marks copyright; confirm redistribution terms before publication",
+      "reuse_note": "Official 2021 housing, household and institution matrix for localities. AreaData selected seven counts, cross-checked population separately; six census population-zero localities have no housing row. Kit must independently inspect definitions and terms.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_CYSTAT_2021_1891164E",
+      "role": "census_results",
+      "title": "Housing Units, Households, Institutions and Population Enumerated by District, Municipality/Community and Quarter 1.10.2021 by DISTRICT, MUNICIPALITY / COMMUNITY, QUARTER and HOUSING UNITS, HOUSEHOLDS, INSTITUTIONS, POPULATION",
+      "publisher": "Statistical Service of Cyprus",
+      "url": "https://cystatdb.cystat.gov.cy/api/v1/en/8.CYSTAT-DB/Population/Census%20of%20Population%20and%20Housing%202021/Population/Population%20-%20Place%20of%20Residence/1891164E.px",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "99 source-coded quarters",
+        "parent localities"
+      ],
+      "reference_periods": [
+        "2021-10-01"
+      ],
+      "formats": [
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "PxWeb table marks copyright; confirm redistribution terms before publication",
+      "reuse_note": "Official 2021 quarter-level housing and population matrix. AreaData checked all eight fields against 18 parent localities and adopted quarter observations only; no age, citizenship, education or labour quarter values are inferred.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_CYSTAT_2021_FINAL_RELEASE",
+      "role": "census_results",
+      "title": "Census of Population and Housing 2021: Final Results (9-page press release)",
+      "publisher": "Statistical Service of Cyprus",
+      "url": "https://library.cystat.gov.cy/NEW/Census2021-Final_Results-EN-090824.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "government-controlled census area",
+        "five districts"
+      ],
+      "reference_periods": [
+        "2021-10-01"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official government press release; redistribution terms need review",
+      "reuse_note": "Nine-page final 2021 census release acquired by AreaData. Its government-controlled-area total 923381 and district figures cross-check selected API cells; 2023 preliminary and WDI country midyear series are separate. Kit must inspect PDF and reuse terms independently.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_DTPH_LOCAL_PLAN_PROCESS_2026",
+      "role": "planning_guidance",
+      "title": "DTPH 2026 local-plan preparation for Lefkosia, Lemesos, Larnaka and Pafos",
+      "publisher": "Cyprus Department of Town Planning and Housing",
+      "url": "https://www.gov.cy/moi-tph/documents/ekponisi-topikon-schedion-leykosias-lemesoy-larnakas-kai-pafoy/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Lefkosia",
+        "Lemesos",
+        "Larnaka",
+        "Pafos local-plan areas"
+      ],
+      "reference_periods": [
+        "2026-06 to 2026-10"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Source location only; linked circular and report bodies need review",
+      "reuse_note": "Official 2026 local-plan preparation/consultation location. AreaData did not acquire the linked circular/report bodies, exact polygons or revised approved plans; do not treat an open process as adopted 2026 content.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_DTLGOS_REFORM_2024",
+      "role": "planning_guidance",
+      "title": "Ministry of Interior: District Local Government Organisations",
+      "publisher": "Cyprus Ministry of Interior",
+      "url": "https://www.gov.cy/moi/ypoyrgeio/domh/topiki-aytodioikisi/eparchiakoi-organismoi-aytodioikisis/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "five district local-government organisations"
+      ],
+      "reference_periods": [
+        "2024 onward"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Source location only; terms need review",
+      "reuse_note": "Official ministry location for district organisations established in July 2024. It is institutional context, not a 2021 census-code crosswalk or proof each body authored a specific plan.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "CYP",
+      "source_id": "CYP_CYP_DTPH_DEVELOPMENT_PLANS_CATALOGUE",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Department of Town Planning and Housing development plan catalogue",
+      "publisher": "Cyprus Department of Town Planning and Housing",
+      "url": "https://www.gov.cy/moi-tph/documents/schedia-anaptyxis/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "plan-specific areas; not whole districts"
+      ],
+      "reference_periods": [
+        "Catalogue indexed September 2026"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Source location only; terms and document bodies need review",
+      "reuse_note": "Official DTPH catalogue names Local Plans, Area Plans and Policy Statements, including a 2024 Paralimni/Agia Napa/Deryneia entry. Direct body retrieval returned 403 and linked plan PDF timed out; no plan content/current effect, budget or evaluation is transferred.",
+      "origin_evidence_path": "docs/evidence/cyprus-cystat2021-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
