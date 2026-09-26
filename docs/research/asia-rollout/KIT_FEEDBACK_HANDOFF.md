@@ -221,3 +221,16 @@ The [Qatar source account](../../evidence/qatar-census-2020-official-sources-202
 | Kit import | `7738c4dd9b1a7493eb90139c2522750fb636897c` on `codex/asia-source-feedback-qatar-20260927` | A local Qatar-only slice of the exported bundle (SHA-256 `ebe509ea62717f9c2e08caea0f40fa364d7bbb8272679a32f5675793f6bc9b5f`) avoided changing other countries on Kit main. Dry-run/import accepted six and inserted six, total 31 registry records. The six Kit entries remain `not_acquired_by_kit_preflight`. Kit check, 173/173 tests and `verify:kit` passed. |
 
 The source feedback is discovery context. Kit must independently reacquire and inspect the workbook, dated municipality codes/boundaries, planning editions and applicable terms before adopting values or raising evidence stages. Qatar is still an unpublished local candidate.
+
+## Qatar R2: historical 2020 GIS and eight-MSDP page
+
+The separate [R2 geography account](../../evidence/qatar-census-2020-geography-2026-09-27.md) records the official `Census_Zone_2020` 91-zone source and the QNMP page saying plans were completed for eight municipalities. AreaData crosschecked 2020 municipality codes/population and adopted eight display polygons in an ignored local R2 candidate. Kit receives only two additional public URLs and revised cautions for the prior six; it receives no polygon bytes, observations, source-acquisition status or plan approval.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData producer | `48eae9b94f70b23a98412a27204ae63ffa41b67c` on `codex/asia-domestic-continuation-20260926` | R2 dataset SHA-256 `225636c5e6f9103993adc9025ea7f521415cef8713a8b09c647edda5b4446dea`. Eight 2020 display polygons, 153 direct cells and zero adopted plans. Validator zero errors/one expected plan warning; build and nine-area output verifier passed. AreaData check and 221/221 tests passed. Full-country independent ACCEPT remains pending. |
+| AreaData full feedback bundle | `048e358`; `evidence/KIT_SOURCE_FEEDBACK.json` SHA-256 `05ef514153ee6c55aba4e8dcf4e38ccc5353ca8a7d683380e1ce3ea295720add` | 150 public leads in 20 countries, eight for Qatar; `origin_commit` is the producer commit above. All Qatar stages remain `official_location_identified`. |
+| Qatar-only transfer slice | Local `QAT_KIT_SOURCE_FEEDBACK_R2.json` SHA-256 `645d181d809ef0dfe6c6ab8c82b3a55f93dd2e9eb63c1f8882639b4dd166e240` | Scoped Kit import to Qatar while its main registry lacks the other countries on the full AreaData branch. |
+| Kit import | `96862fb071ae17f62007f31d8c90f2d7dea3959d` on `codex/asia-source-feedback-qatar-20260927` | Dry-run accepted eight, inserted two and updated six; import total 33 registry records. Repeat dry-run found eight unchanged. All Qatar records remain `not_acquired_by_kit_preflight`. Kit check, 173/173 tests and `verify:kit ready:true` passed. |
+
+Both producer and Kit commits above were pushed and remote SHA read-back matched. R2 is a partial local country candidate. Public map release still requires GIS/NPC reuse review, current legal boundary/change history, current plan originals and full independent country acceptance.
