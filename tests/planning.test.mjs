@@ -160,6 +160,11 @@ test('scoped gaps and documents remain exact-territory; parent selection does no
   assert.ok(planningDocuments(data,'city').every(doc=>doc.territory_id==='city'));
   assert.ok(!selectedGaps(data,'city').some(gap=>gap.territory_id==='district'||gap.territory_id==='north'));
   assert.ok(selectedGaps(data,'north').some(gap=>gap.category==='planning_documents'));
+  data.sources.find(source=>source.id==='guidance').geographic_level='national';
+  data.gaps.push({category:'national_series_gap',source_id:'guidance',status:'partial',detail:'National-only context has no local observation.',next_action:'Do not copy it locally.'});
+  assert.ok(selectedGaps(data,'TST').some(gap=>gap.category==='national_series_gap'));
+  assert.ok(!selectedGaps(data,'city').some(gap=>gap.category==='national_series_gap'));
+  assert.ok(selectedGaps(data,'city').some(gap=>gap.category==='country_guidance'));
   assert.match(errorText(data=>data.gaps[1].territory_id='not-a-territory'),/gaps\[1\].territory_id/);
   assert.match(errorText(data=>data.gaps[1].source_id='not-a-source'),/gaps\[1\].source_id/);
 });

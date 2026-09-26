@@ -77,6 +77,39 @@ export async function buildKitSourceFeedback({ base = root, commit, exportedAt }
       });
     }
   }
+  // A frozen country candidate may gain later official-source leads without
+  // changing its audited dataset. Return those locations with the same evidence
+  // and safety checks, while keeping the candidate edition untouched.
+  for (const chosen of selection.location_sources || []) {
+    if (!/^[A-Z]{3}$/.test(chosen.iso3 || '')) throw new Error('Invalid ISO3 in feedback location');
+    const projectEvidencePath = requireValue(chosen.evidence_path, 'location evidence_path').replaceAll('\\', '/');
+    if (path.isAbsolute(projectEvidencePath) || projectEvidencePath.split('/').includes('..') || !projectEvidencePath.startsWith('docs/evidence/')) {
+      throw new Error('Unsafe location evidence_path');
+    }
+    await readFile(path.join(base, projectEvidencePath));
+    const url = publicUrl(chosen.url);
+    const key = `${chosen.iso3}|${chosen.role}|${url}`;
+    if (seen.has(key)) throw new Error(`Duplicate feedback source: ${key}`);
+    seen.add(key);
+    sources.push({
+      iso3: chosen.iso3,
+      source_id: `${chosen.iso3}_${requireValue(chosen.id, 'location id').replace(/[^a-zA-Z0-9]+/g, '_').toUpperCase()}`,
+      role: requireValue(chosen.role, 'role'),
+      title: requireValue(chosen.title, 'title'),
+      publisher: requireValue(chosen.publisher, 'publisher'),
+      url,
+      authority_type: requireValue(chosen.authority_type, 'authority_type'),
+      evidence_stage: 'official_location_identified',
+      checked_at: selection.checked_at,
+      geographic_levels: chosen.geographic_levels || [],
+      reference_periods: chosen.reference_periods || [],
+      formats: chosen.formats || [],
+      license_or_terms: chosen.license_or_terms || null,
+      reuse_note: requireValue(chosen.reuse_note, 'reuse_note'),
+      origin_evidence_path: projectEvidencePath,
+      artifact_sha256: null,
+    });
+  }
   sources.sort((a, b) => `${a.iso3}|${a.role}|${a.url}`.localeCompare(`${b.iso3}|${b.role}|${b.url}`, 'en'));
   return { schema_version: '1.0', produced_by: 'AreaData', exported_at: date, origin_commit: commit, sources };
 }

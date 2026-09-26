@@ -50,7 +50,14 @@ export function officialMapState(dataset,territoryId) {
   if(!status)return {key:'unknown',label:'No matched official-state evidence',color:'#e3e7e8',documents};
   return {key:status.id,label:status.label,color:status.color,documents};
 }
-export function selectedGaps(dataset,territoryId) {return dataset.gaps.filter(gap=>!gap.territory_id||gap.territory_id===territoryId);}
+export function selectedGaps(dataset,territoryId) {
+  const national=territoryId===dataset.country?.national_territory_id;
+  return dataset.gaps.filter(gap=>{
+    if(gap.territory_id&&gap.territory_id!==territoryId)return false;
+    if(!national&&gap.source_id&&dataset.sources.find(source=>source.id===gap.source_id)?.geographic_level==='national')return false;
+    return true;
+  });
+}
 export function documentEvidence(dataset,evidence) {
   const source=dataset.sources.find(row=>row.id===evidence?.source_id);
   return source?`${source.name}; ${evidence.locator}; checked ${evidence.checked_at}${evidence.authority?`; authority: ${evidence.authority}`:''}; ${source.url}`:'Evidence not recorded';

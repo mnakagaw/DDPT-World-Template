@@ -22,18 +22,31 @@ test('exporter reads a selected country source without publishing local paths or
         id: 'bbs-census', role: 'census_results', authority_type: 'official_national',
         geographic_levels: ['national'], formats: ['PDF'], reuse_note: 'Location only.',
       }] }],
+      location_sources: [{
+        iso3: 'ARM', id: 'new-boundary-standard', role: 'boundaries',
+        title: 'Administrative boundary standard', publisher: 'Armenian Government',
+        url: 'https://www.arlis.am/hy/acts/205200', authority_type: 'official_national',
+        geographic_levels: ['community'], reference_periods: ['2024'], formats: ['HTML'],
+        reuse_note: 'A source-location lead, not an adopted boundary layer.',
+        evidence_path: 'docs/evidence/country.md',
+      }],
     }));
     await writeFile(path.join(base, 'generated/sample/data/dashboard.json'), JSON.stringify({
       country: { id: 'BGD' }, sources: [{ id: 'bbs-census', name: 'Census report',
         publisher: 'BBS', url: 'https://bbs.gov.bd/census', reference_period: '2022', license: null }],
     }));
     const bundle = await buildKitSourceFeedback({ base, commit: 'a'.repeat(40), exportedAt: '2026-09-24T12:00:00Z' });
-    assert.equal(bundle.sources.length, 1);
-    assert.equal(bundle.sources[0].evidence_stage, 'official_location_identified');
-    assert.equal(bundle.sources[0].artifact_sha256, null);
-    assert.deepEqual(bundle.sources[0].reference_periods, ['2022']);
-    assert.equal(bundle.sources[0].origin_evidence_path, 'docs/evidence/country.md');
+    assert.equal(bundle.sources.length, 2);
+    const countryLead = bundle.sources.find(source => source.iso3 === 'BGD');
+    assert.equal(countryLead.evidence_stage, 'official_location_identified');
+    assert.equal(countryLead.artifact_sha256, null);
+    assert.deepEqual(countryLead.reference_periods, ['2022']);
+    assert.equal(countryLead.origin_evidence_path, 'docs/evidence/country.md');
     assert.ok(!JSON.stringify(bundle).includes(base));
+    const frozenLead = bundle.sources.find(source => source.source_id === 'ARM_NEW_BOUNDARY_STANDARD');
+    assert.equal(frozenLead.evidence_stage, 'official_location_identified');
+    assert.equal(frozenLead.origin_evidence_path, 'docs/evidence/country.md');
+    assert.equal(frozenLead.artifact_sha256, null);
   } finally {
     await rm(base, { recursive: true, force: true });
   }

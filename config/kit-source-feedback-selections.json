@@ -1466,7 +1466,7 @@
           "authority_type": "official_national",
           "geographic_levels": ["national", "Yerevan", "ten marzes; finer extent not inferred"],
           "formats": ["PxWeb HTML"],
-          "reuse_note": "AreaData adopted only the 2022 total permanent-population slice for national and first-level areas. Thirteen other Census 2022 tables and other axes/years remain unassessed; Kit must reacquire originals, verify local geography and terms."
+          "reuse_note": "AreaData adopted only the 2022 total permanent-population slice for national and first-level areas. All 14 table responses and 4,653 cells were structurally decoded; the other 13 tables have no marz/community axis. Other axes and local Census releases still need a separate semantic review. Kit must reacquire originals, verify geography and terms."
         },
         {
           "id": "armstat-permanent-population-2026-01-01",
@@ -1597,6 +1597,159 @@
           "reuse_note": "ArmstatBank 2024 length of streets and crossings in its urban road-economy category; not a measure of all roads or rural access. Other axes and source geography edition require independent audit."
         }
       ]
+    },
+    {
+      "path": "generated/cyprus-areadata-20260927",
+      "iso3": "CYP",
+      "evidence_path": "docs/evidence/cyprus-areadata-partial-2026-09-27.md",
+      "sources": [
+        {
+          "id": "cystat-census-2021-1891108E",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["government-controlled area", "five 2021 Census districts", "410 historic locality reporting units"],
+          "formats": ["PxWeb HTML"],
+          "reuse_note": "Only table 1891108E population, sex and age was acquired and decoded. It reports 2021-10-01 government-controlled geography, not post-2024 municipalities or WDI midyear population. Kit must reacquire and independently inspect the source and its local codes."
+        },
+        {
+          "id": "cyprus-dls-pre-2024-coded-boundaries",
+          "role": "boundaries",
+          "authority_type": "official_national",
+          "geographic_levels": ["pre-2024 municipality/community polygons"],
+          "formats": ["SHP ZIP"],
+          "reuse_note": "DLS resource 2947 has coded shapes and CC BY 4.0 catalogue terms. Its 2021-05-26 portal date predates Census day; 410 exact code joins are display-only and exact legal 2021-10-01 geometry is unverified. Do not carry polygons or joins to Kit."
+        },
+        {
+          "id": "cystat-data-reusability",
+          "role": "official_statistics_office",
+          "authority_type": "official_national",
+          "geographic_levels": ["national reuse policy"],
+          "formats": ["HTML"],
+          "reuse_note": "CYSTAT aggregate reuse policy requires attribution and a disclaimer for modifications. Recheck current terms for the intended Kit product; no source bytes or observations are transferred."
+        },
+        {
+          "id": "cyprus-mof-municipal-budget-circular-2026",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["current municipalities"],
+          "formats": ["HTML entrypoint"],
+          "reuse_note": "Official Ministry entrypoint for the 2026 budget circular and 2026-2028 templates. Direct fetch returned HTTP 403; attachment bodies and edition were not verified. Not a municipality budget or an adopted amount."
+        },
+        {
+          "id": "cyprus-pafos-municipal-budget-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["current Pafos municipality"],
+          "formats": ["PDF"],
+          "reuse_note": "The 2026-2028 surplus values conflict between PDF pages 1 and 2. No amount was adopted. Current municipal identity must be crosswalked before connection to any 2021 Census locality."
+        },
+        {
+          "id": "cyprus-pafos-budget-approval-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["current Pafos municipality"],
+          "formats": ["PDF"],
+          "reuse_note": "The 2026-02-27 ministerial approval is conditional and does not approve individual projects or resolve the underlying budget's conflicting surplus rows. No number or execution finding is transferred."
+        },
+        {
+          "id": "cyprus-larnaka-strategic-plan-minutes-2025",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["current Larnaka municipality"],
+          "formats": ["PDF minutes"],
+          "reuse_note": "The 2025 council minutes confirm a strategic-plan decision, but Appendix B and plan contents were not acquired. Do not infer current plan text, results, or a link to a historical Census locality."
+        },
+        {
+          "id": "cyprus-limassol-strategy-minutes-2025",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["current Limassol municipality"],
+          "formats": ["PDF minutes"],
+          "reuse_note": "2025 decision minutes identify strategic objectives; the underlying plan body and implementation were not acquired. Keep present municipality and 2021 statistical unit distinct."
+        },
+        {
+          "id": "cyprus-limassol-strategy-minutes-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["current Limassol municipality"],
+          "formats": ["PDF minutes"],
+          "reuse_note": "2026 decision minutes are a source lead only; underlying plan and results remain unverified. The example 3-5-year span is not a universal statutory cycle."
+        }
+      ]
+    }
+  ],
+  "location_sources": [
+    {
+      "iso3": "ARM", "id": "arm-boundary-data-standard-1569-n", "role": "boundaries",
+      "title": "Government decision 1569-N administrative boundary data standard", "publisher": "Government of Armenia / ARLIS",
+      "url": "https://www.arlis.am/hy/acts/205200", "authority_type": "official_national",
+      "geographic_levels": ["marz", "community", "settlement", "Yerevan district"], "reference_periods": ["2024 decision; current applicability to verify"], "formats": ["ARLIS HTML"],
+      "reuse_note": "Specifies cadastral boundary fields and validity dates, but is not a downloadable polygon layer. Its community code is not proven equal to the nine-digit HD statistical code. No geometry is transferred.",
+      "evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "ARM", "id": "arm-spatial-availability-1499-n", "role": "boundaries",
+      "title": "Government decision 1499-N spatial-data availability list", "publisher": "Government of Armenia / ARLIS",
+      "url": "https://www.arlis.am/hy/acts/197902", "authority_type": "official_national",
+      "geographic_levels": ["administrative boundaries"], "reference_periods": ["2024 decision; current applicability to verify"], "formats": ["ARLIS HTML"],
+      "reuse_note": "Lists availability of non-secret boundaries but gives neither a current coded download nor redistribution permission. Recheck rights and exact layer edition independently.",
+      "evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "ARM", "id": "arm-mtad-community-entrypoints", "role": "table_catalog",
+      "title": "Ministry community homepage directory", "publisher": "Ministry of Territorial Administration and Infrastructure, Armenia",
+      "url": "https://www.mtad.am/pages/armenian-communities", "authority_type": "official_national",
+      "geographic_levels": ["community homepage locations"], "reference_periods": ["checked 2026-09-26"], "formats": ["HTML"],
+      "reuse_note": "The directory had 69 homepage links for 70 communities including Yerevan; Shamiram had no link. It is an entrypoint list, not proof that every plan, budget, report or legal code has been acquired.",
+      "evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "ARM", "id": "arm-mtad-community-register-2025", "role": "table_catalog",
+      "title": "Ministry November 2025 communities and settlements workbook", "publisher": "Ministry of Territorial Administration and Infrastructure, Armenia",
+      "url": "https://api.mtad.am/storage/pages/files/2025/11/xlsx/19_11-23-sc589-691d708e2b1e0.xlsx", "authority_type": "official_national",
+      "geographic_levels": ["community", "settlement"], "reference_periods": ["2025-11"], "formats": ["XLSX"],
+      "reuse_note": "Lists 70 community rows including Yerevan and supports locating municipal homepages. It is not a coded, dated polygon crosswalk; reconcile spelling and later mergers before use.",
+      "evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "ARM", "id": "arm-goris-plan-2022-2027", "role": "plans_budgets_implementation_evaluation",
+      "title": "Goris 2022-2027 community plan PDF", "publisher": "Syunik Governorate, Armenia",
+      "url": "http://syunik.mtad.am/files/docs/61886.pdf", "authority_type": "official_subnational",
+      "geographic_levels": ["Goris community"], "reference_periods": ["2022-2027 stated on cover"], "formats": ["PDF"],
+      "reuse_note": "Plan body and cover were acquired. Separate approval-decision date, current amendments, official community-code match and plan targets need review; not adopted into the frozen candidate.",
+      "evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "ARM", "id": "arm-tatev-plan-period-conflict", "role": "plans_budgets_implementation_evaluation",
+      "title": "Tatev community plan PDF with catalogue-period conflict", "publisher": "Syunik Governorate, Armenia",
+      "url": "http://syunik.mtad.am/files/docs/61885.pdf", "authority_type": "official_subnational",
+      "geographic_levels": ["Tatev community"], "reference_periods": ["catalogue 2021-2026; PDF cover 2022-2026"], "formats": ["PDF"],
+      "reuse_note": "Governorate index and PDF cover disagree on the plan period. Confirm the operative council decision and edition before reuse; no plan contents or figures were adopted.",
+      "evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "ARM", "id": "arm-kapan-plan-2022-2026-zip", "role": "plans_budgets_implementation_evaluation",
+      "title": "Kapan 2022-2026 community plan archive", "publisher": "Syunik Governorate, Armenia",
+      "url": "http://syunik.mtad.am/files/docs/61784.zip", "authority_type": "official_subnational",
+      "geographic_levels": ["Kapan community"], "reference_periods": ["2022-2026 stated"], "formats": ["ZIP", "DOC", "XLSX"],
+      "reuse_note": "The package includes plan and finance bodies, but the cover lacks an approval decision number. Financial cells and present validity remain unassessed; no approved-plan claim is transferred.",
+      "evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "ARM", "id": "arm-kajaran-annual-plan-2026", "role": "plans_budgets_implementation_evaluation",
+      "title": "Kajaran 2026 annual work plan PDF", "publisher": "Kajaran Municipality, Armenia",
+      "url": "https://kajaran.am/upload/DocFlow/Projects/Tu2630315145231817_tap21.pdf", "authority_type": "official_subnational",
+      "geographic_levels": ["Kajaran community"], "reference_periods": ["2026 annual plan"], "formats": ["PDF"],
+      "reuse_note": "The council decision on the cover was inspected; quantitative targets and relation to the five-year plan remain unassessed. Annual work plan is distinct from budget, execution and evaluation.",
+      "evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "ARM", "id": "arm-kajaran-implementation-report-2025", "role": "plans_budgets_implementation_evaluation",
+      "title": "Kajaran 2025 annual work-plan implementation report PDF", "publisher": "Kajaran Municipality, Armenia",
+      "url": "https://kajaran.am/upload/DocFlow/4CDPReports/Tu2630315180451817_Tap2025hashv.pdf", "authority_type": "official_subnational",
+      "geographic_levels": ["Kajaran community"], "reference_periods": ["2025 implementation report"], "formats": ["PDF"],
+      "reuse_note": "The first page and council decision were checked; numerical content is unassessed. A report is not by itself independent target-achievement evaluation or budget execution.",
+      "evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md"
     }
   ]
 }
