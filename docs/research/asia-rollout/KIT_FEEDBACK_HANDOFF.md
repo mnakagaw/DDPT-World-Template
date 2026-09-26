@@ -49,3 +49,15 @@ The Taiz planning office's separate [42-page English plan PDF](https://www.mopic
 | Kit import | `e48d47733a007f40cc3f99a84440bd2c2717f59d` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 36, inserted one and updated 35 (37 total records). `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. Both GitHub branch heads matched `git ls-remote`. |
 
 This lead preserves the 17-district restriction for the next Kit preflight. The Asia `ACCEPT` count remains zero, and no country site was published.
+
+## Saudi GASTAT detailed-age Tableau location
+
+AreaData identified the official [GASTAT Population by Detailed Age view](https://tableau.stats.gov.sa/views/TA3-PopulationbydetailedAgebyRegionGovernorateNationalityandGender_17298115570530/NW-PopulationbydetailedAgebyRegionGovernorateNationalityandGender) and its metadata code `TTCENPOP0105`. [The evidence record](../../evidence/saudi-gastat-tableau-source-location-2026-09-26.md) states that the reference period, complete row coverage and original export were **not** verified. This is one new specific URL lead, separate from the previously transferred MOH yearbook source. Saudi r2 keeps 13 indicators, 326 observations and zero documents; this Tableau view contributes no adopted value.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData source evidence, registration script and selection | `8de3d9eb0781e62a63ba585de6aeba738f6edead` | Saudi r2 dataset SHA-256 `d45e8c2a7a7ff6f2deb7fca60c5cd6e30746b094cade2b4eea1c3e8ee2ac649b`; country validator zero errors and one missing-planning warning, site built, `npm run check` and `npm test` 218/218 passed. |
+| AreaData exported bundle | `2d7ef023c0c8d6a2f674551a241247e63b89e675`; `evidence/KIT_SOURCE_FEEDBACK.json` SHA-256 `63218bad4241a5a370f608ead7b6891f9ea5306a36657986b12b788c3f45b4cc` | 37 leads in eight countries; `origin_commit` is `8de3d9eb0781e62a63ba585de6aeba738f6edead`; all stages are `official_location_identified`. |
+| Kit import | `789acb46961ebce0623da8015ee94037e60fc66a` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 37, inserted one and updated 36 (38 total records). `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. The new Kit source stays `not_acquired_by_kit_preflight`. |
+
+The Saudi candidate is still partial and has no independent `ACCEPT`; no country site was published. The next Kit project must acquire and inspect the table before using any value.
