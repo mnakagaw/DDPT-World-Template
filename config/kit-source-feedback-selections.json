@@ -907,6 +907,157 @@
           "reuse_note": "Official Ministry of Public Works archive locates third master-plan products; direct acquisition timed out. Current fourth-plan status and local plan authority are unverified."
         }
       ]
+    },
+    {
+      "path": "generated/georgia-areadata-20260926",
+      "iso3": "GEO",
+      "evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "sources": [
+        {
+          "id": "geo-geostat-census-2024-01",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "regional", "named settlements; codes and hierarchy pending"],
+          "formats": ["XLSX"],
+          "reuse_note": "AreaData acquired the detailed settlement/sex workbook and inventoried three numeric columns with 612 suppression markers. No settlement indicator was adopted without official codes, hierarchy and boundary reconciliation. Kit must independently acquire and inspect it."
+        },
+        {
+          "id": "geo-geostat-census-2024-population-by-local-unit",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "11 regional and self-governing-city rows", "63 municipalities", "10 Tbilisi districts"],
+          "formats": ["XLSX"],
+          "reuse_note": "AreaData checked nine direct 14 November 2024 population fields for 85 printed rows; 27 source dashes remain missing. The source excludes occupied territories. Source labels are not official codes, and Kit must independently acquire, check and match geography before adopting values."
+        },
+        {
+          "id": "geo-geostat-census-2024-03",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["birthplace and age groups; current-residence join pending"],
+          "formats": ["XLSX"],
+          "reuse_note": "AreaData inventoried 19 numeric columns but adopted no value. Birthplace must not be read as present residence; Kit must inspect source universes and geography independently."
+        },
+        {
+          "id": "geo-geostat-census-2024-04",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["current residence by former residence matrix"],
+          "formats": ["XLSX"],
+          "reuse_note": "AreaData inventoried 14 numeric columns but adopted no migration indicator. Origin and destination geography, period and denominators need independent semantic review."
+        },
+        {
+          "id": "geo-geostat-census-2024-05",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national IDP age and urban/rural groups"],
+          "formats": ["XLSX"],
+          "reuse_note": "AreaData inventoried nine numeric columns but did not adopt this national age/settlement sheet. IDPs are a subset of residents; do not add its counts to total population."
+        },
+        {
+          "id": "geo-geostat-census-2024-idp-by-residence-origin",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "11 regional rows", "63 municipalities; no Tbilisi district rows"],
+          "formats": ["XLSX"],
+          "reuse_note": "AreaData checked nine direct IDP fields for 75 printed rows. Former residence is an origin attribute; no Tbilisi-district value is printed. Kit must re-acquire and inspect before reuse, and never add IDPs to total residents."
+        },
+        {
+          "id": "geo-geostat-census-2024-main-results",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national summary"],
+          "formats": ["PDF"],
+          "reuse_note": "Official 22 June 2026 main-results PDF is a summary of the 2024 census. AreaData compared selected national numbers with the XLSX but did not adopt the PDF as another series; Kit must check the exact edition and tables itself."
+        },
+        {
+          "id": "geo-kutaisi-municipal-action-plan-2026-2029",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_local",
+          "geographic_levels": ["Kutaisi municipality only"],
+          "formats": ["PDF"],
+          "reuse_note": "Mayoral order of 1 September 2025 approves the 2026-2029 medium-term action plan. A programme to prepare a city general plan does not prove that general plan's final adoption or achieved targets. Later revisions unverified."
+        },
+        {
+          "id": "geo-kutaisi-budget-2026-original-ordinance",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_local",
+          "geographic_levels": ["Kutaisi municipality only"],
+          "formats": ["PDF", "HTML act page"],
+          "reuse_note": "Original Sakrebulo 2026 budget ordinance approved 24 December 2025. Matsne says this original edition was valid only through 28 January 2026; current amendments, executed amounts and official evaluation remain unverified."
+        },
+        {
+          "id": "geo-geostat-census-2024-catalogue",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national and local; table-specific"],
+          "formats": ["HTML", "linked XLSX/PDF"],
+          "reuse_note": "Official 2024 population-census catalogue has additional topical sections; AreaData audited six geography/migration workbooks only. Kit must inventory every relevant table before any completion claim."
+        },
+        {
+          "id": "geo-geostat-agriculture-2024-catalogue",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["agricultural publication geography to check"],
+          "formats": ["HTML", "linked files"],
+          "reuse_note": "Official agricultural-census catalogue located, but its table bodies and local geography were not audited by AreaData."
+        },
+        {
+          "id": "geo-geostat-regional-portal",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["region", "municipality; series-specific"],
+          "formats": ["HTML portal"],
+          "reuse_note": "Official regional portal location identified; detailed series, dates, export paths, denominators and geography have not been assessed. No portal value was adopted."
+        },
+        {
+          "id": "geo-geostat-population-estimates",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "regional and municipal coverage to check"],
+          "formats": ["HTML catalogue", "linked XLSX"],
+          "reuse_note": "Annual 1 January population estimates are distinct from the 14 November 2024 census and WDI estimates. AreaData identified the location but did not acquire or harmonize the linked workbooks."
+        },
+        {
+          "id": "geo-napr-nsdi-boundaries",
+          "role": "boundaries",
+          "authority_type": "official_national",
+          "geographic_levels": ["region", "municipality"],
+          "formats": ["HTML geoportal", "geospatial layers to acquire"],
+          "reuse_note": "Official NSDI/Public Registry portal lists municipality and region layers. Dated polygons, official code fields, territorial exclusions and 2024 census crosswalk were not acquired or certified by AreaData."
+        },
+        {
+          "id": "geo-spatial-planning-code",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national law with municipal planning provisions"],
+          "formats": ["HTML legal text"],
+          "reuse_note": "Official spatial-planning code location identified. Current consolidated 2026 edition, implementing rules, plan types and municipal approval conditions require legal review before claiming local obligations."
+        },
+        {
+          "id": "geo-local-self-government-code",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["municipal self-government law"],
+          "formats": ["HTML legal text"],
+          "reuse_note": "Official local-self-government code location identified; current consolidated provisions, municipal roles and city/community distinctions need review before reuse."
+        },
+        {
+          "id": "geo-budget-code",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["municipal budget framework"],
+          "formats": ["HTML legal text"],
+          "reuse_note": "Official Budget Code location identified; exact current edition and local budget obligations need review. An original 2026 Kutaisi ordinance does not establish current appropriations or expenditure."
+        },
+        {
+          "id": "geo-kutaisi-document-register",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_local",
+          "geographic_levels": ["Kutaisi municipality register"],
+          "formats": ["HTML catalogue", "linked PDFs"],
+          "reuse_note": "Official Kutaisi register locates the 2025 mayoral order and other planning proceedings. A listed document does not prove every local plan, general-plan approval, budget execution or evaluation has been acquired."
+        }
+      ]
     }
   ]
 }
