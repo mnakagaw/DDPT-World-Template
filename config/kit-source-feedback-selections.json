@@ -1120,6 +1120,69 @@
           "reuse_note": "Official NPC/PSA atlas location only. AreaData did not acquire or join a 2020 code/polygon edition; 2015 geoBoundaries shapes were left unjoined."
         }
       ]
+    },
+    {
+      "path": "generated/armenia-areadata-20260926",
+      "iso3": "ARM",
+      "evidence_path": "docs/evidence/armenia-armstat2022-source-audit-2026-09-26.md",
+      "sources": [
+        {
+          "id": "arm-armstat-census2022-results-catalog",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "marz", "community", "Yerevan district"],
+          "formats": ["HTML", "7Z", "XLSX", "DOCX"],
+          "reuse_note": "Official 2022 census results directory. AreaData acquired all nine chapter archives but only selected population cells of two Chapter 1 tables were adopted; Kit must audit the other fields and source terms independently."
+        },
+        {
+          "id": "arm-armstat-census2022-table-1.1.2",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "Yerevan and districts", "ten marzes", "70 enlarged marz communities"],
+          "formats": ["7Z", "XLSX", "DOCX"],
+          "reuse_note": "Chapter 1 archive has both present and usual-resident population workbooks, plus a narrative. AreaData adopted only selected 2022 D/G/J cells of 94 rows; other years and tables remain unassessed. Keep definitions and the Shirak published sex-subtotal discrepancy."
+        },
+        {
+          "id": "arm-arlis-hd002-2025",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["marz", "community", "Yerevan district"],
+          "formats": ["HTML"],
+          "reuse_note": "2025 ARLIS classifier incorporation supplies codes, not polygons; verify the 2022 census geography against this edition and investigate the narrative's 72-versus-71 community discrepancy."
+        },
+        {
+          "id": "arm-arlis-lsg-2026",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["Armenian communities; Yerevan has separate provisions"],
+          "formats": ["HTML"],
+          "reuse_note": "Articles 82, 82.1 and 83 distinguish community development programme, annual work plan and budget. Check current amendments and applicable Yerevan rules; this law is not proof of an individual approved plan."
+        },
+        {
+          "id": "arm-arlis-ashtarak-194-n",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Ashtarak community"],
+          "formats": ["HTML"],
+          "reuse_note": "Council decision N 194-N, clause 1, approves the 2022-2026 Ashtarak plan. It does not supply the plan body, subsequent revisions, budget, execution or evaluation."
+        },
+        {
+          "id": "arm-ashtarak-plan-catalog-2022-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Ashtarak community"],
+          "formats": ["HTML"],
+          "reuse_note": "Municipal catalogue entry identifies a 2022-2026 plan PDF. AreaData did not acquire the full PDF locally; check document body, amendments and boundary scope before adopting contents."
+        },
+        {
+          "id": "arm-ashtarak-plan-2022-2026-pdf",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Ashtarak community"],
+          "formats": ["PDF"],
+          "reuse_note": "Official 59-page plan PDF location. Direct local retrieval timed out for AreaData, so no raw PDF hash, page extraction, plan findings or current-revision confirmation is transferred."
+        }
+      ]
     }
   ]
 }
