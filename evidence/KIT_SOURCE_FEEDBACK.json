@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T23:22:02.327Z",
-  "origin_commit": "93385cd44c00876c1c83457786df5218a66bbae2",
+  "exported_at": "2026-09-26T23:32:56.050Z",
+  "origin_commit": "6d118e180c0c3a40dcab8f38aff5cc68dce1a1a5",
   "sources": [
     {
       "iso3": "ARE",
@@ -2609,6 +2609,56 @@
     },
     {
       "iso3": "IND",
+      "source_id": "IND_IND_TRIPURA_GPDP_INSTRUCTIONS",
+      "role": "planning_guidance",
+      "title": "Tripura GPDP BPDP DPDP instruction compendium",
+      "publisher": "Tripura Directorate of Panchayats",
+      "url": "https://panchayat.tripura.gov.in/sites/default/files/2024-08/Compendium%20of%20instructions%20on%20GPDP-BPDP-DPDP.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Tripura rural local planning bodies"
+      ],
+      "reference_periods": [
+        "2023 circulars in official compendium; current application unverified"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official planning-instruction location only; local original retrieval timed out. It is not a selected authority's approved plan, budget, implementation report or evaluation.",
+      "origin_evidence_path": "docs/evidence/india-tripura-planning-finance-followup-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_TRIPURA_PANCHAYATS_ACT_1993",
+      "role": "planning_law",
+      "title": "Tripura Panchayats Act 1993 official PDF",
+      "publisher": "Tripura State Election Commission",
+      "url": "https://sec.tripura.gov.in/sites/default/files/2022-05/The%20Tripura%20Panchayats%20Act,%201993.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Tripura Gram Panchayat",
+        "Panchayat Samiti",
+        "Zilla Parishad"
+      ],
+      "reference_periods": [
+        "1993 act; amendment and current applicability unverified"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official law-copy location only. Local retrieval timed out; confirm full text, amendments, territorial exceptions and present authority before applying. No 2011 Census-to-current legal body crosswalk is implied.",
+      "origin_evidence_path": "docs/evidence/india-tripura-planning-finance-followup-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
       "source_id": "IND_IND_CONSTITUTION_ARTICLE_243ZD",
       "role": "planning_law",
       "title": "Constitution of India, Article 243ZD District Planning Committee",
@@ -2633,6 +2683,30 @@
     },
     {
       "iso3": "IND",
+      "source_id": "IND_IND_MOPR_AUDITONLINE",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "AuditOnline official audit-system entry point",
+      "publisher": "Ministry of Panchayati Raj",
+      "url": "https://panchayat.gov.in/en/auditonline/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Panchayat audit system; exact local report unacquired"
+      ],
+      "reference_periods": [
+        "current system entry point; local report period unverified"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "System-level audit and action-taken-report location. No selected West Tripura or Gram Panchayat audit report, opinion, actual spending, corrective action or plan evaluation was acquired.",
+      "origin_evidence_path": "docs/evidence/india-tripura-planning-finance-followup-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
       "source_id": "IND_IND_EGRAMSWARAJ_SYSTEM",
       "role": "plans_budgets_implementation_evaluation",
       "title": "eGramSwaraj planning, progress and accounting system",
@@ -2653,6 +2727,56 @@
       "license_or_terms": null,
       "reuse_note": "MoPR describes distinct planning, physical/financial progress and accounting modules. No individual plan, budget, actual, approval or evaluation is transferred. Live report access and reproduction terms require separate review.",
       "origin_evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_TRIPURA_ELECTION_FUND_SUBALLOCATION_2024_25",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Tripura 2024-25 Panchayat election fund sub-allocation memorandum",
+      "publisher": "Tripura RD Panchayats Department",
+      "url": "https://panchayat.tripura.gov.in/sites/default/files/2024-11/PDF_0001_0.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "state disbursement",
+        "West Tripura District Panchayat Officer entry"
+      ],
+      "reference_periods": [
+        "2024-25"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official finance-record location; local original retrieval timed out. The West Tripura entry concerns election administrative expenses, not a Zilla Parishad development-plan budget, expenditure actual, audited account or plan evaluation. No amount is transferred.",
+      "origin_evidence_path": "docs/evidence/india-tripura-planning-finance-followup-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_TRIPURA_PDI_SCORECARD",
+      "role": "table_catalog",
+      "title": "Tripura Panchayat Development Index scorecard",
+      "publisher": "Tripura Directorate of Panchayats",
+      "url": "https://www.panchayat.tripura.gov.in/sites/default/files/2025-10/PDI%20Score%20Card_0.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "West Tripura block",
+        "Gram Panchayat or village committee rows"
+      ],
+      "reference_periods": [
+        "source year and scoring vintage unverified"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official PDI-score location only; source period, definitions, full coverage and current LGD codes need original inspection. A thematic PDI score is not evaluation of a selected plan's targets or budget execution; do not name-join to 2011 Census areas.",
+      "origin_evidence_path": "docs/evidence/india-tripura-planning-finance-followup-2026-09-27.md",
       "artifact_sha256": null
     },
     {

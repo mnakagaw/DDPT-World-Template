@@ -273,3 +273,16 @@ The [India partial source account](../../evidence/india-areadata-partial-2026-09
 | Kit import | `6ddc30ccad4e10ac805122f533969b4f26280a2f` on `codex/asia-source-feedback-qatar-20260927` | Dry-run/import accepted eight, inserted eight, zero rejected, total registry records 88; repeat dry-run reported eight unchanged. Kit `npm run check`, `npm test` 173/173 and `npm run verify:kit` (`ready:true`) passed. All eight remain `not_acquired_by_kit_preflight`; push and remote SHA matched. |
 
 The full bundle is committed separately after this producer checkpoint to retain a stable origin SHA. Neither the India local candidate nor the Asia entrance was released to Hosting/Public. Kit must independently acquire and inspect each source, rights, historic/current code and exact boundary edition before increasing an evidence stage or using values.
+
+## India Tripura planning, finance and audit source follow-up
+
+The [Tripura follow-up](../../evidence/india-tripura-planning-finance-followup-2026-09-27.md) added five official locations: Tripura Panchayats Act, state GPDP/BPDP/DPDP instructions, an election-administration fund sub-allocation memorandum with a West Tripura District Panchayat Officer entry, a Panchayat Development Index scorecard, and MoPR AuditOnline. Direct local retrieval of the Tripura PDFs timed out; their originals, hashes, full content, current-law effect and reuse terms are unverified. The memorandum is not a development-plan budget or actual expenditure; a PDI score is not an individual plan evaluation. No record enters the frozen India dataset, whose SHA-256 and `REJECT` verdict remain unchanged.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData source-location producer | `6d118e180c0c3a40dcab8f38aff5cc68dce1a1a5` on `codex/asia-domestic-continuation-20260926` | Tracked source audit and five Kit selections; JSON parsed and `git diff --check` passed. The prior 6,664-area India dataset SHA-256 remains `81933e13f0636fdfa562d0b02e4c2cae8e49e3deb0a01e8295a51828361b2425`; no code or dataset changed. GitHub push succeeded. |
+| AreaData full feedback bundle | `evidence/KIT_SOURCE_FEEDBACK.json`, SHA-256 `f039cbbb04d4fc0941b1117249e9bfd669f95945462bab2a69eb81ad9cb0d5a5` | 210 public location leads in 23 countries, 13 for India; the five new entries cite the producer commit and stay at `official_location_identified`. |
+| Scoped transfer file | Ignored `generated/india-areadata-20260927/evidence/KIT_SOURCE_FEEDBACK_TRIPURA_ONLY.json`, SHA-256 `e2683d02ed3a147642863ad31bf7e6f92a861f13ea61597811eb7a3035cf39e4` | Contains only five new India entries, leaving the previously imported eight and other countries untouched. |
+| Kit import | `4ad8663` on `codex/asia-source-feedback-qatar-20260927` | Dry-run/import accepted five, inserted five, zero rejected; repeat dry-run reported five unchanged. Registry has 93 records; these five are `not_acquired_by_kit_preflight`. Kit `npm run check` checked 52 JS/JSON and 67 Markdown files; `npm test` passed 173/173; `npm run verify:kit` returned `ready:true`. GitHub push succeeded. |
+
+No Tripura plan, budget, actual or evaluation document was adopted or published. AreaData and Kit require their own source acquisition, legal-unit/code reconciliation and rights checks before any evidence-stage increase.
