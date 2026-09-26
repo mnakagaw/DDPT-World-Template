@@ -1,9 +1,156 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T09:13:02.893Z",
-  "origin_commit": "81b2ae8c2c00fdbe12b84f9cebd6ab1f4e6d9b59",
+  "exported_at": "2026-09-26T09:42:27.143Z",
+  "origin_commit": "f68d4ca1be495b4ff61652640b4d59e708da7c1d",
   "sources": [
+    {
+      "iso3": "ARE",
+      "source_id": "ARE_ARE_SCAD_ABU_DHABI_CENSUS_2024",
+      "role": "census_results",
+      "title": "Abu Dhabi Census 2024 population web report",
+      "publisher": "Statistics Centre - Abu Dhabi",
+      "url": "https://census.scad.gov.ae/home/population?fid=0&lang=en&tab=webreport",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Abu Dhabi emirate",
+        "Abu Dhabi, Al Ain and Al Dhafra regions unadopted by AreaData"
+      ],
+      "reference_periods": [
+        "2024"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "This SCAD census location was already linked in Kit's UNSD preflight and is not a new AreaData discovery. AreaData separately acquired the 2024 register-based page and adopted three Abu Dhabi emirate counts; it did not infer a seven-emirate national 2023 census or match the three internal regions to official boundaries. Kit must audit current source content and terms itself.",
+      "origin_evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARE",
+      "source_id": "ARE_ARE_FCSC_CENSUS_FIGURES_2005",
+      "role": "census_results",
+      "title": "U.A.E. in Figures 2005: census-by-emirate tables",
+      "publisher": "Federal Competitiveness and Statistics Centre",
+      "url": "https://fcsc.gov.ae/wp-content/uploads/2025/04/%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A8%D8%A7%D9%84%D8%A3%D8%B1%D9%82%D8%A7%D9%85-2006.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "seven emirates"
+      ],
+      "reference_periods": [
+        "1975, 1980, 1985, 1995, 2005"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New specific FCSC 2005 publication location. AreaData adopted four historical count tables for 1975-2005 after arithmetic checks, but the remaining fields, official code/boundary correspondence, reuse terms and independent audit are open. The URL filename says 2006 while the publication itself says 2005. Kit must acquire and audit the original independently.",
+      "origin_evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARE",
+      "source_id": "ARE_ARE_FCSC_UAESTAT_EMIRATE_VITAL_DATAFLOW",
+      "role": "machine_readable_data",
+      "title": "UAE.Stat births by emirate dataflow FCSA:DF_BIRTHS(1.9.0)",
+      "publisher": "Federal Competitiveness and Statistics Centre",
+      "url": "https://uaestat.fcsc.gov.ae/en",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national and seven-emirate filters shown; exported series coverage unverified"
+      ],
+      "reference_periods": [
+        "annual births dataflow, site lists update 2026-03-25"
+      ],
+      "formats": [
+        "HTML",
+        "SDMX/export to investigate"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New official UAE.Stat catalogue lead: FCSA:DF_BIRTHS(1.9.0) lists births by emirate, gender and citizenship. Direct acquisition returned HTTP 403 to AreaData. No rows, periods, denominators, code mappings or reuse terms were verified; Kit must obtain and audit the actual export before adoption.",
+      "origin_evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARE",
+      "source_id": "ARE_ARE_DSC_DUBAI_POPULATION_BULLETIN_2024_LOCATION",
+      "role": "machine_readable_data",
+      "title": "Dubai population bulletin, end 2024",
+      "publisher": "Dubai Data and Statistics Establishment",
+      "url": "https://www.dsc.gov.ae/Publication/Population%20Bulletin%20Emirate%20of%20Dubai%20-%202024.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Dubai emirate only"
+      ],
+      "reference_periods": [
+        "end 2024 estimates, reportedly revised using 2025 register approach"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New specific official Dubai 2024 end-year population bulletin location, search-indexed but direct acquisition returned HTTP 403. AreaData adopted no number from it. Obtain and inspect the original and its revised-estimate method; do not silently combine it with SCAD Abu Dhabi register census.",
+      "origin_evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARE",
+      "source_id": "ARE_ARE_DUBAI_URBAN_PLANNING_LAW_16_2023",
+      "role": "planning_law",
+      "title": "Dubai Law No. 16 of 2023 concerning urban planning",
+      "publisher": "Dubai Legislation Portal",
+      "url": "https://dlp.dubai.gov.ae/Legislation%20Reference/2023/Law%20No.%20%2816%29%20of%202023%20Concerning%20Urban%20Planning.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Dubai emirate only"
+      ],
+      "reference_periods": [
+        "2023 law; current amendment status unverified"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New Dubai Legislation Portal law PDF location. AreaData reviewed Article 3 scope and Article 24 commencement only; Gazette publication date, later amendments and implementing decisions remain unverified. This law does not define the planning system of the other emirates.",
+      "origin_evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARE",
+      "source_id": "ARE_ARE_DUBAI_2040_STRUCTURE_PLAN",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Dubai 2040 Structure Plan executive summary",
+      "publisher": "Dubai Municipality",
+      "url": "https://dmpmedia.dm.gov.ae/uploads/2024/04/Dubai-2040-Urban-Master-Plan-2040-Executive-Summary-v1.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Dubai emirate only"
+      ],
+      "reference_periods": [
+        "2021-2040; PDF prepared June 2022"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New Dubai Municipality executive-summary PDF location. AreaData checked selected pages and attached one Dubai-only plan reference. The preliminary monitoring KPIs and proposed implementation budget are not observed outcomes or expenditure; full plan content, later updates and terms require independent Kit review.",
+      "origin_evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
     {
       "iso3": "BFA",
       "source_id": "BFA_BFA_GOVERNMENT_COMMUNE_STATUS_2026",
