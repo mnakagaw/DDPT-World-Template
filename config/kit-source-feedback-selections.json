@@ -764,6 +764,61 @@
           "reuse_note": "PCBS/MoLG 2017 census boundary-revision note. AreaData acquired no GeoMOLG polygon or official spatial code edition and did not join 2021 reference shapes. Kit must obtain actual geometry and verify version."
         }
       ]
+    },
+    {
+      "path": "generated/oman-areadata-20260926",
+      "iso3": "OMN",
+      "evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+      "sources": [
+        {
+          "id": "omn-ncsi-yearbook2026-table7-2",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "11 NCSI governorate rows", "63 NCSI Wilayat rows"],
+          "formats": ["PDF"],
+          "reuse_note": "AreaData adopted only Table 7-2's six 2023-2025 Omani/expatriate registered-population columns. This is year-end registration, not the 2020 eCensus or WDI midyear population. Table 6-2 and 8-2 were cross-checks; other yearbook tables, official codes, compatible polygons and reuse terms need independent Kit audit."
+        },
+        {
+          "id": "omn-ecensus2020-portal",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["2020 census portal; local table availability unassessed"],
+          "formats": ["HTML"],
+          "reuse_note": "Official 2020 eCensus portal location only. AreaData acquired no eCensus local observations; do not replace 2020 census values with the 2023-2025 registration series."
+        },
+        {
+          "id": "omn-mjla-urban-planning-law2026",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national law; local applicability to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "Official 2026 Urban Planning Law location only. AreaData has not audited commencement, consolidated provisions, plan-making unit, legal duty or selected-area decisions."
+        },
+        {
+          "id": "omn-mjla-governorates-system2022",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national governorate governance; plan-making implication unverified"],
+          "formats": ["HTML"],
+          "reuse_note": "Official 2022 Governorates System location only. Governance law is not evidence of a Wilayat planning duty or an approved local plan."
+        },
+        {
+          "id": "omn-mohup-onss",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["national spatial strategy; governorate components to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "Official Oman National Spatial Strategy overview location only. AreaData has not acquired full approved strategy, legal status, area plan bodies, implementation or evaluation."
+        },
+        {
+          "id": "omn-mohup-structural-plan-catalog",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["selected cities and project locations; exact area match to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "MoHUP projects catalogue location only. No actual Salalah or selected-area structural plan, decision, budget, execution or evaluation was adopted."
+        }
+      ]
     }
   ]
 }
