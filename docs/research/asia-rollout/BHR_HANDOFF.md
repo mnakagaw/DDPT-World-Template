@@ -22,7 +22,7 @@ The importer is intentionally bounded to the original 45 Census-theme datasets, 
 
 Planning evidence is national law/guidance plus one historical Capital zoning-map decision. UPDA's 83-page June 2023 procedure manual and six-page Capital 2017 Gazette maps are locally acquired, but current Capital zoning applicability, other governorates' actual plan bodies, budgets, execution and evaluations are unverified. The dashboard treats statistical governorates and competent municipalities separately and does not promote a 2017 decision to a complete current governorate development plan.
 
-Browser checked national → Capital, Capital → national, the Capital planning page, and all four national governorate rankings; thematic focus Northern retained Bahrain as the analysis target. Eight real output cases checked five output formats, source row locators, values/periods and full printable comparison rows. Country validation has zero errors/six source-terms warnings. The later commit/export/Kit replay hashes and shared test results are recorded below when complete. No independent `ACCEPT`, Hosting or Public was done.
+Browser checked national → Capital, Capital → national, the Capital planning page, and all four national governorate rankings; thematic focus Northern retained Bahrain as the analysis target. Eight real output cases checked five output formats, source row locators, values/periods and full printable comparison rows. Country validation has zero errors/six source-terms warnings. `npm run check` checked 147 JavaScript modules/templates and `npm test` passed **218/218**. No independent `ACCEPT`, Hosting or Public was done.
 
 ## Next work
 
@@ -32,4 +32,13 @@ Browser checked national → Capital, Capital → national, the Capital planning
 4. Complete applicable 42 scenarios, printed/report/device checks, source terms and independent `ACCEPT` before any hosting.
 5. Continue the Middle East priority order with Cyprus. After Bahrain as partial, Asia 50 = **0 ACCEPT, 19 partial, 1 research-only, 30 unstarted**; Middle East 19 = **0 ACCEPT, 17 partial, 1 research-only, 1 unstarted**.
 
-Only code, public source leads, evidence and status belong in Git. Raw originals, inventory, candidate and generated output files remain ignored. The Kit feedback transfer stops at `official_location_identified` and does not carry observations or acceptance. Commit IDs and remote parity are appended after the two-repository handoff.
+Only code, public source leads, evidence and status belong in Git. Raw originals, inventory, candidate and generated output files remain ignored. The Kit feedback transfer stops at `official_location_identified` and does not carry observations or acceptance. The feedback bundle's check date is **2026-09-26 UTC**, the same UTC day the sources were acquired; this handoff is dated 2026-09-27 Japan time.
+
+| Step | Commit / result |
+|---|---|
+| AreaData adapter, source/producer audit, status and nine selections | `6fbe93a6e7c2b240d0f69c63f3e4eb8dbc472836` on `codex/asia-domestic-20260926` |
+| AreaData 138-source / 21-country exported bundle | `b241538e904ac5399bab8815198368ce13cb9233` on the same branch; Bahrain entries carry the full `6fbe93a6e7c2b240d0f69c63f3e4eb8dbc472836` origin commit |
+| Kit import | `abee464955a966b2cb6645ea70188a9ffb4880bf` on `codex/asia-source-feedback-20260926`; dry-run and import accepted 138 leads, nine inserted, 129 updated, 139 records total |
+| Kit validation | `npm run check`, `npm test` (173/173), `npm run verify:kit` (`ready: true`, 138 AreaData feedback sources) passed. The nine Bahrain records retain `not_acquired_by_kit_preflight`. |
+
+GitHub push and remote parity are checked separately after this handoff commit.

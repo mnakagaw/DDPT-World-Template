@@ -182,3 +182,16 @@ Seven official public leads were selected: the ArmStat 2022 results directory an
 | Validation | AreaData check, 218/218 tests, country validation (zero errors, eight source-terms warnings), build and nine-case actual output verifier passed. Kit dry-run/import each accepted 129 leads; Kit check, 173/173 tests and readiness (`ready: true`, 129 feedback sources) passed. |
 
 All seven Armenia stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. Kit must independently acquire and inspect originals, source terms, classifier edition, actual planning material and dated polygons before reuse. Armenia remains partial and unpublished; no independent `ACCEPT` or hosting is implied.
+
+## Bahrain iGA Census 2020 and UPDA leads — 2026-09-27 JST
+
+Nine official public leads were selected: the iGA 45-dataset Census-theme catalogue, the selectively adopted 2020 population table, separate annual population and area series, the 1994 planning law, its 2022 amendment, the 2023 zoning decision, the UPDA procedure manual and the historical Capital 2017 zoning-map decision. [The Bahrain source audit](../../evidence/bahrain-iga2020-source-audit-2026-09-27.md) records the 45 numeric-field inventory, selected cell checks, 27 unassessed fields and the excluded three-building-table governorate conflict. Feedback transfers public locations and reuse cautions only, not raw API pages/PDFs, 184 observations, a code/polygon join, current planning status or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, evidence, status and nine selections | `6fbe93a6e7c2b240d0f69c63f3e4eb8dbc472836` on `codex/asia-domestic-20260926` |
+| AreaData 138-source / 21-country bundle | `b241538e904ac5399bab8815198368ce13cb9233` on the same branch; the nine Bahrain entries carry the full `6fbe93a6e7c2b240d0f69c63f3e4eb8dbc472836` origin commit |
+| Kit import | `abee464955a966b2cb6645ea70188a9ffb4880bf` on `codex/asia-source-feedback-20260926`; nine inserted, 129 older origin histories updated, 139 records total |
+| Validation | AreaData check, 218/218 tests, country validation (zero errors/six source-terms warnings), build and eight-case actual output verifier passed. Kit dry-run/import each accepted 138 leads; Kit check, 173/173 tests and readiness (`ready: true`, 138 feedback sources) passed. |
+
+All nine Bahrain stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`. Kit must independently reacquire and classify sources, check annual method and planning editions, resolve local building values, source terms and official polygons before reuse. The feedback `checked_at` is 2026-09-26 UTC; this handoff is dated 2026-09-27 in Japan. Bahrain remains partial and unpublished, with no independent `ACCEPT` or hosting implied.
