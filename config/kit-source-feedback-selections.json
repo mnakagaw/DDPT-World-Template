@@ -386,6 +386,61 @@
           "reuse_note": "New specific official GASTAT Tableau table location with metadata code TTCENPOP0105. Age, region, governorate, nationality and gender dimensions are visible, but reference period, full row inventory and downloadable original were not verified. AreaData adopted no observation from this view. Kit must independently acquire and audit the table, codes, boundaries, terms and geographic coverage."
         }
       ]
+    },
+    {
+      "path": "generated/jordan-areadata-20260926",
+      "iso3": "JOR",
+      "evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+      "sources": [
+        {
+          "id": "jor-dos-population-estimates-end-2025",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "12 governorates", "district/subdistrict table present but not adopted"],
+          "formats": ["PDF"],
+          "reuse_note": "New official DoS January 2026 PDF location for end-2025 population estimates, distinct from the 2015 census and WDI midyear series. AreaData adopted only five printed count fields from Tables 2.2 and 2.3 after sums; Kit must independently acquire original, verify terms, all fields, codes and current boundary edition before its own adoption."
+        },
+        {
+          "id": "jor-dos-census-2015-tables-catalog",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate", "administrative division by table"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "New specific official 2015 census table catalogue location. No individual 2015 table was acquired or adopted by AreaData in this pass. Inspect actual originals, fields, definitions and reuse terms; do not treat end-2025 estimates as census counts."
+        },
+        {
+          "id": "jor-mola-local-administration-law-2021-location",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["governorate and municipality legal framework to audit"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "New official Ministry of Local Administration listing for Law No. 22 of 2021. AreaData did not review the full PDF or assign planning duties. Compare with the enacted but not-yet-effective Law No. 16 of 2026 and its transition provisions before adapting current governance."
+        },
+        {
+          "id": "jor-mola-governorate-planning-guide-location",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["governorate"],
+          "formats": ["PDF"],
+          "reuse_note": "New official 2018 governorate strategic/implementation planning guide location. Search-indexed text refers to the 2015 decentralization law, so current applicability under 2021 and 2026 local-administration laws requires review. A guide is not an actual governorate plan or budget."
+        },
+        {
+          "id": "jor-mopic-planning-law-2024",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national"],
+          "formats": ["HTML"],
+          "reuse_note": "New specific official Ministry of Planning and International Cooperation text of Law No. 10 of 2024. It describes national methodologies and institutional roles; it does not prove an individual governorate plan, approval, budget or execution."
+        },
+        {
+          "id": "jor-pm-local-administration-law-2026-gazette-location",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["local-administration framework, scope to audit"],
+          "formats": ["HTML", "document viewer"],
+          "reuse_note": "New official Gazette listing for Law No. 16 of 2026. Published 2026-09-10 with effectiveness 60 days after publication according to official Petra notice, so it was not yet effective on AreaData's 2026-09-26 check. Independently review full text, amendments, transition and later effective status before using."
+        }
+      ]
     }
   ]
 }
