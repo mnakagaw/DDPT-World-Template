@@ -31,6 +31,7 @@ def main() -> None:
     catalogue = read("ARM_CENSUS_2022_CATALOGUE.json")
     bulletin = read("ARM_POPULATION_2026_TABLE_INVENTORY.json")
     budget = read("ARM_ASHTARAK_BUDGET_INVENTORY.json")
+    geoportal = read("ARM_GEOPORTAL_LAYER_INVENTORY.json")
     census_extract = read("ARM_CENSUS_2022_MARZ_POPULATION_EXTRACT.json")
     if len(catalogue["tables"]) != 14 or len(census_extract["rows"]) != 12:
         raise ValueError("Census catalogue or adopted extract changed")
@@ -50,6 +51,8 @@ def main() -> None:
             stage = "three_approved_document_controls_only"
         elif sid.startswith("arm-yerevan-budget") or sid == "arm-yerevan-budget-execution-2025-decision":
             stage = "acquired_not_semantically_adopted"
+        elif sid == "arm-geoportal-admin-boundary-map":
+            stage = "official_location_inspected_no_geometry_adopted"
         elif sid.startswith("arm-") or sid.startswith("armstat-"):
             stage = "location_and_selected_document_content_checked"
         else:
@@ -61,9 +64,11 @@ def main() -> None:
                           "audit_stage": stage})
     save("SOURCE_RESOURCE_INVENTORY.json", {
         "edition": dataset["generated_at"], "resource_count": len(resources), "resources": resources,
-        "additional_location_only": [{"role": "official_boundary_catalogue", "url": "https://www.geoportal.am/",
-                                     "stage": "official_location_identified",
-                                     "gap": "Layer version, code attributes, download, valid period and reuse terms unverified"}],
+        "official_boundary_observation": {"map_url": geoportal["source_page"],
+                                          "marz_feature_count": geoportal["marz_feature_count"],
+                                          "marz_property_keys": geoportal["marz_property_keys"],
+                                          "community_endpoint_status": geoportal["community_endpoint_status"],
+                                          "disposition": geoportal["disposition"]},
         "interpretation": "Acquisition and structural indexing do not imply semantic acceptance or permission to redistribute originals."
     })
 

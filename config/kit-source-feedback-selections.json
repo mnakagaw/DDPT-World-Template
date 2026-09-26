@@ -1547,6 +1547,14 @@
           "geographic_levels": ["Yerevan city-community"],
           "formats": ["ARLIS HTML", "annex links"],
           "reuse_note": "2026 budget incorporation was amended in September 2026. Current annex amounts and terms were not adopted; compare amendment 643-N and annexes before any budget indicator."
+        },
+        {
+          "id": "arm-geoportal-admin-boundary-map",
+          "role": "boundaries",
+          "authority_type": "official_national",
+          "geographic_levels": ["marz map lead", "community layer location unverified"],
+          "formats": ["HTML map", "GeoJSON lead"],
+          "reuse_note": "Official geoportal map page points to an 11-feature marz GeoJSON with only Province_N names, no official codes or dated validity. Its referenced community_settlement endpoint returned HTTP 404. Copyright/redistribution and boundary edition need review; no polygons are transferred or adopted."
         }
       ]
     }

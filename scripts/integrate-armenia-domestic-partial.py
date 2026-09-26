@@ -32,6 +32,7 @@ CENSUS = EVIDENCE / "ARM_CENSUS_2022_MARZ_POPULATION_EXTRACT.json"
 OFFICIAL_RECEIPTS = EVIDENCE / "ARM_OFFICIAL_PLANNING_RECEIPTS.json"
 BULLETIN_RECEIPTS = EVIDENCE / "ARM_POPULATION_BULLETIN_RECEIPTS.json"
 YEREVAN_RECEIPTS = EVIDENCE / "ARM_YEREVAN_PLANNING_RECEIPTS.json"
+GEOPORTAL_RECEIPTS = EVIDENCE / "ARM_GEOPORTAL_RECEIPTS.json"
 CODE_SYSTEM = "ARM HD 002-2023, 2026-02-15 classifier; nine digits including check digit"
 EDITION = "ARM-HD002-2023-2026-02-15"
 CENSUS_SOURCE = "armstat-census-2022-pxweb-marzes"
@@ -52,6 +53,7 @@ YEREVAN_REPORT_PDF_SOURCE = "arm-yerevan-implementation-report-pdf-2025"
 YEREVAN_BUDGET_SOURCE = "arm-yerevan-budget-2026-incorporated"
 YEREVAN_BUDGET_AMENDMENT_SOURCE = "arm-yerevan-budget-2026-september-amendment"
 YEREVAN_EXECUTION_SOURCE = "arm-yerevan-budget-execution-2025-decision"
+GEOPORTAL_SOURCE = "arm-geoportal-admin-boundary-map"
 DATE = "2026-09-27"
 
 
@@ -249,6 +251,7 @@ def main() -> None:
     budget_decision_receipt = receipt(OFFICIAL_RECEIPTS, "ashtarak-budget-decision-2026.html")
     budget_xls_receipt = receipt(OFFICIAL_RECEIPTS, "ashtarak-budget-2026-annexes.xls")
     yr = lambda filename: receipt(YEREVAN_RECEIPTS, filename)
+    geo_receipt = receipt(GEOPORTAL_RECEIPTS, "map_geoportal.html")
     sources = [
         source(CENSUS_SOURCE, "2022 population census, permanent population by marz", "https://statbank.armstat.am/pxweb/en/ArmStatBank/ArmStatBank__2%20Population%20and%20social%20processes__20%20Census/PS-pp-1-1-2.px/", "Statistical Committee of Armenia", "2022 census", "national_and_adm1", census_receipt,
                "Direct PxWeb response, all marzes total settlement/sex. Source table lists 2001 and 2011 too; these were not extracted here. Census population is distinct from WDI midyear de facto estimates."),
@@ -287,6 +290,11 @@ def main() -> None:
         source(YEREVAN_EXECUTION_SOURCE, "Yerevan Council Decision 518-N approving 2025 budget execution report", yr("yerevan-budget-2025-execution-decision.html")["url"], "Yerevan Council", "2025", "Yerevan community", yr("yerevan-budget-2025-execution-decision.html"),
                "Execution decision located and acquired; annex values have not been inventoried or adopted."),
     ]
+    geo_source = source(GEOPORTAL_SOURCE, "National Geoportal administrative-boundary map", geo_receipt["url"],
+                        "Cadastre Committee of Armenia", "edition not verified", "marz and community boundary leads",
+                        geo_receipt, "Map page/script acquired. Referenced marzer GeoJSON has 11 uncoded features in EPSG:3857; referenced community_settlement GeoJSON returned HTTP 404. No dated official code join, rights decision or polygon adoption.")
+    geo_source["status"] = "partial"
+    sources.append(geo_source)
     dataset["sources"].extend(sources)
     dataset["indicators"].append({"id": "ARM_CENSUS_2022_PERMANENT_POP", "name": "Permanent population, 2022 census", "theme": "Population",
                                    "unit": "people", "definition": "Direct 2022 population census permanent (de jure) population, including residents temporarily absent at census date; not the WDI midyear de facto estimate.",
@@ -408,7 +416,7 @@ def main() -> None:
     dataset["collection"]["status"] = "partial"
     dataset["collection"]["notes"].append("Official 2026 community values, Ashtarak plan/budget, and Yerevan five-year/annual plans plus a council-noted implementation report are integrated; all 2005 provider polygons are withheld. Other themes, full census cross-tabs, current budget annexes, and systematic plan/budget/implementation/evaluation coverage remain open.")
     receipt_files = [EVIDENCE / "ARM_CENSUS_2022_RECEIPTS.json", BULLETIN_RECEIPTS,
-                     OFFICIAL_RECEIPTS, YEREVAN_RECEIPTS]
+                     OFFICIAL_RECEIPTS, YEREVAN_RECEIPTS, GEOPORTAL_RECEIPTS]
     retrieved_at = [datetime.fromisoformat(record["retrieved_at_utc"])
                     for receipt_file in receipt_files
                     for record in json.loads(receipt_file.read_text(encoding="utf-8"))
