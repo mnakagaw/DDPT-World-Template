@@ -330,6 +330,14 @@
           "geographic_levels": ["Taiz governorate"],
           "formats": ["PDF"],
           "reuse_note": "New Taiz planning-office presentation location: 2024 implementation/ongoing counts and 2025 priorities under a 2024-2026 plan. Project costs are estimates, not approved budgets or actual expenditure; 232 combines completed and ongoing, and no official evaluation or territorial crosswalk is inferred."
+        },
+        {
+          "id": "yem-taiz-mopic-economic-social-plan-2024-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Taiz plan area: 17 named districts"],
+          "formats": ["PDF"],
+          "reuse_note": "New direct PDF of the Taiz planning office's 42-page English 2024-2026 plan. Page 4 explicitly limits scope to 17 named liberated districts, whereas the 2024 CSO yearbook has 23 Taiz district rows. Do not assign to the whole governorate or 2017 reference polygon without exact geography. Approval, adopted budget, expenditure and evaluation are unverified."
         }
       ]
     },
