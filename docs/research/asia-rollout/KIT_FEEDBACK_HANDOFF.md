@@ -61,3 +61,15 @@ AreaData identified the official [GASTAT Population by Detailed Age view](https:
 | Kit import | `789acb46961ebce0623da8015ee94037e60fc66a` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 37, inserted one and updated 36 (38 total records). `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. The new Kit source stays `not_acquired_by_kit_preflight`. |
 
 The Saudi candidate is still partial and has no independent `ACCEPT`; no country site was published. The next Kit project must acquire and inspect the table before using any value.
+
+## Syria national budget and restricted humanitarian source
+
+AreaData then acquired the official [Syrian Ministry of Finance Citizen Budget 2026](https://docs.mof.gov.sy/citizen_budget_2026.pdf) and the public [IOM DTM June 2026 report](https://dtm.iom.int/reports/syrian-arab-republic-population-mobility-and-baseline-assessment-round-17-01-30-june-2026). [The source audit](../../evidence/syria-budget-iom-sources-2026-09-26.md) distinguishes the national budget and its **target** of preparing 14 governorate plans from actual local plans. It also records IOM's requirement for prior written permission for extraction/redistribution. The Kit bundle transfers only URLs, roles and restrictions; it transfers no IOM observations or raw report.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData acquisition scripts, evidence and selection | `63e27099b42e0c42da2773d986ff7e8c6f377d0f` | Syria candidate dataset SHA-256 `a5e30192a35c4817284c1fed6a17514d3b2c72094d865ade646d68815470c9da`; 15 territories, 12 national WDI indicators, 312 records and one national budget reference. Validator zero errors and one national-only warning; site built; browser and national/Aleppo planning outputs checked. `npm run check` and `npm test` 218/218 passed. |
+| AreaData export | `866faa3bf308ef638926403d110fd5a900428732`; `evidence/KIT_SOURCE_FEEDBACK.json` SHA-256 `68458671013d4cdfee1476dd27e06db06d400e3cab02880ddb50e8fb06cf8571` | 39 leads in nine countries; `origin_commit` is `63e27099b42e0c42da2773d986ff7e8c6f377d0f`. All stages remain `official_location_identified`. |
+| Kit import | `b6177d6feb2cc2c42626fde9821d37ce8ff13904` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 39, inserted two and updated 37 (40 total records). `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. Both new Kit leads remain `not_acquired_by_kit_preflight`. |
+
+Syria remains a national-only research candidate with no adopted local numeric observation or independent `ACCEPT`, and no country site was published.
