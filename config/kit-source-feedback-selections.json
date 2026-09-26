@@ -441,6 +441,61 @@
           "reuse_note": "New official Gazette listing for Law No. 16 of 2026. Published 2026-09-10 with effectiveness 60 days after publication according to official Petra notice, so it was not yet effective on AreaData's 2026-09-26 check. Independently review full text, amendments, transition and later effective status before using."
         }
       ]
+    },
+    {
+      "path": "generated/uae-areadata-20260926",
+      "iso3": "ARE",
+      "evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+      "sources": [
+        {
+          "id": "are-fcsc-census-figures-2005",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "seven emirates"],
+          "formats": ["PDF"],
+          "reuse_note": "New specific FCSC 2005 publication location. AreaData adopted four historical count tables for 1975-2005 after arithmetic checks, but the remaining fields, official code/boundary correspondence, reuse terms and independent audit are open. The URL filename says 2006 while the publication itself says 2005. Kit must acquire and audit the original independently."
+        },
+        {
+          "id": "are-scad-abu-dhabi-census-2024",
+          "role": "census_results",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Abu Dhabi emirate", "Abu Dhabi, Al Ain and Al Dhafra regions unadopted by AreaData"],
+          "formats": ["HTML"],
+          "reuse_note": "This SCAD census location was already linked in Kit's UNSD preflight and is not a new AreaData discovery. AreaData separately acquired the 2024 register-based page and adopted three Abu Dhabi emirate counts; it did not infer a seven-emirate national 2023 census or match the three internal regions to official boundaries. Kit must audit current source content and terms itself."
+        },
+        {
+          "id": "are-dubai-2040-structure-plan",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Dubai emirate only"],
+          "formats": ["PDF"],
+          "reuse_note": "New Dubai Municipality executive-summary PDF location. AreaData checked selected pages and attached one Dubai-only plan reference. The preliminary monitoring KPIs and proposed implementation budget are not observed outcomes or expenditure; full plan content, later updates and terms require independent Kit review."
+        },
+        {
+          "id": "are-dubai-urban-planning-law-16-2023",
+          "role": "planning_law",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Dubai emirate only"],
+          "formats": ["PDF"],
+          "reuse_note": "New Dubai Legislation Portal law PDF location. AreaData reviewed Article 3 scope and Article 24 commencement only; Gazette publication date, later amendments and implementing decisions remain unverified. This law does not define the planning system of the other emirates."
+        },
+        {
+          "id": "are-fcsc-uaestat-emirate-vital-dataflow",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national and seven-emirate filters shown; exported series coverage unverified"],
+          "formats": ["HTML", "SDMX/export to investigate"],
+          "reuse_note": "New official UAE.Stat catalogue lead: FCSA:DF_BIRTHS(1.9.0) lists births by emirate, gender and citizenship. Direct acquisition returned HTTP 403 to AreaData. No rows, periods, denominators, code mappings or reuse terms were verified; Kit must obtain and audit the actual export before adoption."
+        },
+        {
+          "id": "are-dsc-dubai-population-bulletin-2024-location",
+          "role": "machine_readable_data",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Dubai emirate only"],
+          "formats": ["PDF"],
+          "reuse_note": "New specific official Dubai 2024 end-year population bulletin location, search-indexed but direct acquisition returned HTTP 403. AreaData adopted no number from it. Obtain and inspect the original and its revised-estimate method; do not silently combine it with SCAD Abu Dhabi register census."
+        }
+      ]
     }
   ]
 }
