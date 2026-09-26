@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T14:46:16.076Z",
-  "origin_commit": "41ddaafa54b9e9ceeeabef2800f34bd625478bb6",
+  "exported_at": "2026-09-26T15:39:36.260Z",
+  "origin_commit": "31a8dad57f391219b5871f36e754a4c7b1aef76a",
   "sources": [
     {
       "iso3": "ARE",
@@ -3189,6 +3189,155 @@
       "license_or_terms": "official_publication_redistribution_terms_review_required",
       "reuse_note": "PCBS 2019-hosted table describes 2017 governorate area/geography. AreaData acquired it but adopted no area value, official code or polygon. Reconcile the 2017 census geography and Jerusalem distinction before joins.",
       "origin_evidence_path": "docs/evidence/palestine-pcbs-2017-molg-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_GIS_MUNICIPALITY_CURRENT",
+      "role": "administrative_codes",
+      "title": "MunicipalityAT GIS service current municipality attributes",
+      "publisher": "Qatar GIS service",
+      "url": "https://services.gisqatar.org.qa/server/rest/services/Vector/MunicipalityAT/MapServer/0/query?where=1%3D1&outFields=OBJECTID%2CCODE%2CGFCODE%2CMNCP_KEY%2CMNCP_NO%2CENAME%2CSTARTDATE%2CENDDATE%2CSOURCE%2CRELIABLE&returnGeometry=false&f=json",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "current municipality attributes; historical 2020 match unverified"
+      ],
+      "reference_periods": [
+        "Source body as acquired on 2026-09-26; source-specific period in note"
+      ],
+      "formats": [
+        "ArcGIS REST JSON"
+      ],
+      "license_or_terms": "Official source reuse terms require review before external release",
+      "reuse_note": "Current MunicipalityAT records contain code candidates but all eight STARTDATE values postdate December 2020. Do not attach them to Census 2020 cells or polygons without a dated crosswalk.",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_NPC_CENSUS2020_CATALOGUE",
+      "role": "census_catalog",
+      "title": "Census 2020 detailed results catalogue",
+      "publisher": "Qatar National Planning Council",
+      "url": "https://www.npc.qa/en/statistics/census2020/Pages/results/default.aspx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "eight December 2020 census municipalities"
+      ],
+      "reference_periods": [
+        "Source body as acquired on 2026-09-26; source-specific period in note"
+      ],
+      "formats": [
+        "HTML catalogue",
+        "XLSX",
+        "PDF"
+      ],
+      "license_or_terms": "Official source reuse terms require review before external release",
+      "reuse_note": "NPC official Census 2020 catalogue location. AreaData acquired a 209-sheet workbook and selected a partial cell candidate; no independent country acceptance exists. Kit must reacquire and audit all tables, terms and geography.",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_NPC_CENSUS2020_TABLE_1",
+      "role": "census_results",
+      "title": "Census 2020 Table 1: Population by Sex and Municipality",
+      "publisher": "Qatar National Planning Council, Census 2020 results",
+      "url": "https://www.npc.qa/en/statistics/census2020/results/Documents/Census_Final_Results.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "eight December 2020 census municipalities"
+      ],
+      "reference_periods": [
+        "December 2020 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official NPC website reuse terms require review before external release",
+      "reuse_note": "Official workbook includes population Table 1 and many other municipal/zone tables. The URL is a source location, not a transfer of AreaData values or the current 2020 boundary crosswalk.",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_QNMP_ZONING",
+      "role": "planning_guidance",
+      "title": "Municipality spatial development plan zoning page",
+      "publisher": "Ministry of Municipality (Qatar)",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/English/msdp-zoning.aspx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "six named zoning municipalities; two future extensions on source page"
+      ],
+      "reference_periods": [
+        "Source body as acquired on 2026-09-26; source-specific period in note"
+      ],
+      "formats": [
+        "HTML page"
+      ],
+      "license_or_terms": "Official source reuse terms require review before external release",
+      "reuse_note": "Source names six MSDP zoning municipalities and calls Al Khor and Al Wakra future extensions. Page currency and 2026 operative coverage are unverified.",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_QNMP_PRODUCTS",
+      "role": "planning_guidance",
+      "title": "Qatar National Master Plan product catalogue",
+      "publisher": "Ministry of Municipality (Qatar)",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/English/Product.html",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "municipality planning products"
+      ],
+      "reference_periods": [
+        "Source body as acquired on 2026-09-26; source-specific period in note"
+      ],
+      "formats": [
+        "HTML catalogue"
+      ],
+      "license_or_terms": "Official source reuse terms require review before external release",
+      "reuse_note": "Official QNMP product location. Current municipality plan editions, approvals and applicable law require fresh source review.",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_DOHA_MSDP_VOLUME1_2014",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Doha Municipality Vision and Development Strategy, Volume 1",
+      "publisher": "Ministry of Municipality (Qatar), Qatar National Master Plan",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads-qnmp/MunicipalityStrategy/English/Doha%20Dec%202017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Doha municipality in the historical plan"
+      ],
+      "reference_periods": [
+        "Source body as acquired on 2026-09-26; source-specific period in note"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official source reuse terms require review before external release",
+      "reuse_note": "Official PDF Volume 1 cover says 1 June 2014 although URL filename says Dec 2017. Current revision, legal effect, 2020 area match and fiscal/implementation evidence are unverified.",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
       "artifact_sha256": null
     },
     {
