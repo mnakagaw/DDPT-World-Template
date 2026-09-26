@@ -591,6 +591,93 @@
           "reuse_note": "Official government audited-finance dataset location only. Data not acquired or code-matched by AreaData. Distinguish audited accounts, authorized budgets, actual spending and plan evaluation."
         }
       ]
+    },
+    {
+      "path": "generated/lebanon-areadata-20260926",
+      "iso3": "LBN",
+      "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-moph-2026-09-26.md",
+      "sources": [
+        {
+          "id": "lbn-cas-lfhlcs-2018-19-hl5",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "eight LFHLCS reporting governorates", "26 caza"],
+          "formats": ["XLS"],
+          "reuse_note": "AreaData acquired CAS Demography XLS and adopted only three HL5 count columns for 2018 sample-survey estimates. This is not a census; residents outside residential dwellings are excluded. Kit must independently acquire, audit all fields, boundaries and reuse terms before adoption."
+        },
+        {
+          "id": "lbn-cas-lfhlcs-2018-19-full-report",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "eight LFHLCS reporting governorates", "26 caza"],
+          "formats": ["PDF"],
+          "reuse_note": "AreaData inspected only methodology and Table 1.1 on PDF pages 19-21. The source gives a midyear-2018 survey reference and residential-dwelling universe; the rest of the report and its annexes require independent Kit audit."
+        },
+        {
+          "id": "lbn-cas-lfs-district-profiles-2018-19",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["26 caza in source reporting geography"],
+          "formats": ["HTML", "26 English PDF links", "26 Arabic PDF alternatives"],
+          "reuse_note": "AreaData acquired all 26 English profile PDFs and inventoried Arabic alternatives, but adopted no additional field. Kit should inspect profile contents, metadata, geography and terms; these are survey profiles, not census profiles."
+        },
+        {
+          "id": "lbn-moph-adm1-map",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["nine MOPH governorate map features"],
+          "formats": ["ArcGIS REST", "GeoJSON query"],
+          "reuse_note": "Government-hosted map service has nine ADM1 features including KSH, unlike CAS LFHLCS eight reporting governorates. The service edition, legal PCODE status and 2018 geography equivalence are unverified; no survey governorate value was mapped to these polygons."
+        },
+        {
+          "id": "lbn-moph-adm2-map",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["26 MOPH caza map features"],
+          "formats": ["ArcGIS REST", "GeoJSON query"],
+          "reuse_note": "AreaData name-matched 26 CAS caza to MOPH reference polygons for navigation only. Provider PCODE is not a verified legal or CAS survey code; temporal boundary equivalence and redistribution terms need independent Kit review."
+        },
+        {
+          "id": "lbn-cas-lfhlcs-2018-19-survey-page",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate", "district"],
+          "formats": ["HTML", "linked workbooks and report"],
+          "reuse_note": "CAS survey catalogue located. The acquired LFHLCS subset is a 2018-19 household sample survey, not a population census; the full linked product inventory and other thematic workbooks remain to be assessed."
+        },
+        {
+          "id": "lbn-cas-subnational-mics-2023",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["five of eight governorates", "specified displaced settlements and camps"],
+          "formats": ["HTML", "PDF report"],
+          "reuse_note": "Official MICS 2023 location only. Security limited governorate field coverage; three unreported governorates are not zero. AreaData adopted no MICS value. Kit must inspect coverage, tables, universe and terms independently."
+        },
+        {
+          "id": "lbn-dglac-administrative-structures",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["governorates", "districts", "municipalities", "municipal unions"],
+          "formats": ["HTML"],
+          "reuse_note": "Institutional overview location only. AreaData has not audited current legal duties or effective dates; it did not infer that CAS survey districts are statutory local planning units."
+        },
+        {
+          "id": "lbn-dglac-municipalities",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["municipalities"],
+          "formats": ["HTML directory"],
+          "reuse_note": "Official municipality directory location only, not a downloaded dated legal code table. No local plan or finance record was linked by a verified municipality identifier."
+        },
+        {
+          "id": "lbn-dgu-master-plan",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["spatial master-plan areas, precise coverage to inspect"],
+          "formats": ["HTML catalogue", "plan originals to acquire"],
+          "reuse_note": "Official master-plan discovery page only. No specific plan body, approval status, municipal applicability, implementation, budget or evaluation was acquired or adopted by AreaData."
+        }
+      ]
     }
   ]
 }
