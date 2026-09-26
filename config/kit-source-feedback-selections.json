@@ -1282,9 +1282,9 @@
       ]
     },
     {
-      "path": "generated/qatar-areadata-20260926",
+      "path": "generated/qatar-census-r2-20260927",
       "iso3": "QAT",
-      "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
       "sources": [
         {
           "id": "qat-npc-census2020-catalogue",
@@ -1333,6 +1333,22 @@
           "geographic_levels": ["Doha municipality in the historical plan"],
           "formats": ["PDF"],
           "reuse_note": "Official PDF Volume 1 cover says 1 June 2014 although URL filename says Dec 2017. Current revision, legal effect, 2020 area match and fiscal/implementation evidence are unverified."
+        },
+        {
+          "id": "qat-gis-census-zone-2020",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["91 Census_Zone_2020 polygons", "eight 2020 census municipalities"],
+          "formats": ["ArcGIS REST GeoJSON", "ArcGIS REST JSON"],
+          "reuse_note": "A separate official GIS layer identifies 2020 zone polygons and municipality codes. AreaData reconciled eight historical municipal population controls, but Kit must reacquire, audit and review GIS reuse terms and later legal boundary changes independently. No numeric values or adopted polygons are transferred by this lead."
+        },
+        {
+          "id": "qat-mm-qnmp-msdp-eight",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["eight named municipalities on QNMP page"],
+          "formats": ["HTML page"],
+          "reuse_note": "QNMP page says an MSDP was completed for each of eight municipalities. Current operative plan editions, approvals, budgets, implementation and evaluation remain unverified; do not treat the page as adopted plan documents."
         }
       ]
     }

@@ -22,9 +22,28 @@ if (data.country.id !== 'QAT' || !receipt || receipt.sha256 !== audit.source_sha
 const areas = data.territories.filter(row => row.parent_id === 'QAT');
 const indicators = data.indicators.filter(row => row.id.startsWith('QAT_CENSUS2020_'));
 const observations = data.observations.filter(row => row.indicator_id.startsWith('QAT_CENSUS2020_'));
+const boundaryCount=data.boundaries.features.length;
 if (areas.length !== 8 || indicators.length !== 17 || observations.length !== 153 ||
-    data.boundaries.features.length !== 0 || data.documents.length !== 0 || audit.adopted_direct_cells.length !== 153) {
+    ![0,8].includes(boundaryCount) || data.documents.length !== 0 || audit.adopted_direct_cells.length !== 153) {
   throw new Error('Qatar partial adoption scope changed');
+}
+if(boundaryCount===8) {
+  const geoAudit=JSON.parse(await readFile(path.join(project,'evidence/QAT_CENSUS2020_GEOGRAPHY_AUDIT.json')));
+  const topology=JSON.parse(await readFile(path.join(project,'evidence/QAT_CENSUS2020_TOPOLOGY_AUDIT.json')));
+  const derived=JSON.parse(await readFile(path.join(project,'evidence/QAT_CENSUS2020_MUNICIPAL_BOUNDARIES.geojson')));
+  const source=data.sources.find(row=>row.id==='qat-gis-census-zone-2020');
+  if(geoAudit.census_zone_features!==91||geoAudit.reported_2020_population_rows!==90||
+     geoAudit.missing_2020_population_zones?.length!==1||geoAudit.missing_2020_population_zones[0].zone_no!==99||
+     topology.derived_municipality_count!==8||topology.source_geojson_sha256!==geoAudit.geojson_sha256||
+     sha(await readFile(path.join(project,'evidence/QAT_CENSUS2020_MUNICIPAL_BOUNDARIES.geojson')))!==topology.derived_geojson_sha256||
+     source?.sha256!==geoAudit.geojson_sha256||JSON.stringify(derived.features)!==JSON.stringify(data.boundaries.features))
+    throw new Error('Historical geography receipt, topology or site boundaries changed');
+  for(const area of areas) {
+    const feature=data.boundaries.features.find(row=>row.properties.territory_id===area.id);
+    if(!feature||area.official_code!==feature.properties.official_code||area.boundary_version!=='Census_Zone_2020'||
+       observations.filter(row=>row.territory_id===area.id).some(row=>row.boundary_version!=='Census_Zone_2020'))
+      throw new Error(`Historical 2020 boundary identity mismatch: ${area.id}`);
+  }
 }
 const csvRows = csv => {
   const rows=[]; let row=[],cell='',quoted=false;
@@ -99,9 +118,9 @@ const domestic=allRows.filter(row=>row[acol('Indicator ID')].startsWith('QAT_CEN
 if(domestic.length!==153||domestic.some(row=>row[acol('Status')]!=='observed'||row[acol('Value provenance')]!=='source_reported'))
   throw new Error('All-observations export changed');
 const report={status:'partial_candidate_output_check',checked_at:new Date().toISOString(),
-  dataset_sha256:sha(dashboardBytes),source_sha256:audit.source_sha256,checks,
+  dataset_sha256:sha(dashboardBytes),source_sha256:audit.source_sha256,boundary_count:boundaryCount,checks,
   limitations:['Only 17 indicators from nine of 156 numbered source tables are adopted',
-    'Official 2020 codes/polygons and current individual planning/fiscal documents unverified',
+    boundaryCount===8?'Historical 2020 codes/polygons are matched for display only; current legal boundaries and individual planning/fiscal documents unverified':'Official 2020 codes/polygons and current individual planning/fiscal documents unverified',
     'Browser download bytes, physical print, applicable acceptance scenarios and independent country audit pending']};
 await writeFile(path.join(project,'evidence/QAT_OUTPUT_VERIFICATION.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(checks.map(row=>({area_id:row.area_id,rows:row.diagnostic_csv_rows})),null,2));
