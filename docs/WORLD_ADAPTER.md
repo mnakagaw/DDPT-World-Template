@@ -50,7 +50,7 @@ node scripts/create-world.mjs --source-dir generated/world/raw --out generated/w
 
 既存の採用済み世界ポートフォリオを入力に、`scripts/create-asia.mjs`でUN M49 Asia (142) の50 country/areaと5 subregionだけの入口を生成する。新しい国際データを取得したと誤認しないよう、入力ファイルSHA-256、データ版、50の構成ID、被覆を`evidence/ASIA_SCOPE.json`へ固定する。`scripts/audit-asia-coverage.mjs`が指標・国・広域ごとの採用値と年、Census事前掲載と国内統合数を別に棚卸しする。[候補版の範囲と状態](ASIA_SCOPE_AND_STATUS.md)を参照。国際データが50か国で見えることは、国内Census版が50件完成したことを意味しない。
 
-WPPのAsia/Eastern Asia直接値には、M49比較表に独立行のないWPP location 158（台湾）が含まれる。WPP公表値を保持し、画面・診断出力に比較集合との差を表示する。元の国際4系列（WPP、SDG、UNSD AMA、IMF）と世界台帳・WDI・位置図の原本は、公開サイトとGitから分けたprivate候補の`raw/asia-sources/`へハッシュ照合して置く。再抽出した採用値と候補全観測を突合し、`ASIA_SOURCE_RAW_MANIFEST.json`と`ASIA_SOURCE_REPLAY.json`をdataset SHAへ結び付ける。
+WPPのAsia/Eastern Asia直接値には、M49比較表に独立行のないWPP location 158（台湾）が含まれる。WPP公表値を保持し、画面・診断出力に比較集合との差を表示する。UNSD AMAのAsia/Eastern Asia直接GDP値もM49掲載国・地域の合計と一致しない。取得済み原本だけでは構成差の原因を確定できないため、GDPについては原因を推定せず、指標別の2024年の差を画面・診断出力に表示する。元の国際4系列（WPP、SDG、UNSD AMA、IMF）と世界台帳・WDI・位置図の原本は、公開サイトとGitから分けたprivate候補の`raw/asia-sources/`へハッシュ照合して置く。再抽出した採用値と候補全観測を突合し、`ASIA_SOURCE_RAW_MANIFEST.json`と`ASIA_SOURCE_REPLAY.json`をdataset SHAへ結び付ける。
 
 ```sh
 npm run create:asia -- --world-portfolio .work/areadata-world-v0.12.1-latest-regions/data/dashboard.json --out .work/asia-candidate

@@ -29,9 +29,14 @@ const legendHtml = scale => `${e(scale.mode==='fixed'?'Common fixed thresholds':
 const identityText = area => `${area.name} · ${area.type} · ID ${area.id} · ${area.code_system || 'Code system not recorded'}: ${area.official_code || 'unverified'} · parent ${area.parent_id || 'none'} · boundary ${area.boundary_version || 'unverified'}`;
 export function sourceScopeNote(data,territoryId,indicatorId,language='en') {
   const indicator=data.indicators.find(row=>row.id===indicatorId);
-  const difference=data.analysis?.source_scope_differences?.find(row=>row.territory_id===territoryId&&row.source_id===indicator?.source_id);
+  const difference=data.analysis?.source_scope_differences?.find(row=>row.territory_id===territoryId&&row.source_id===indicator?.source_id&&(!row.indicator_id||row.indicator_id===indicatorId));
   if(!difference)return '';
-  const delta=new Intl.NumberFormat(language==='ja'?'ja-JP':language==='es'?'es-ES':'en-US').format(difference.difference);
+  const delta=new Intl.NumberFormat(language==='ja'?'ja-JP':language==='es'?'es-ES':'en-US').format(Math.round(Math.abs(difference.difference)));
+  if(difference.kind==='published_vs_listed_sum_unreconciled'){
+    if(language==='ja')return `UNSD AMAの${difference.reference_period}年の広域GDP公表値は、下のM49掲載${difference.listed_member_count}か国・地域の値の合計と約${delta}米ドル異なります。公表値の構成・調整方法は取得済み資料だけでは照合できていません。広域の公表値をこの表の合計とみなさないでください。`;
+    if(language==='es')return `El PIB regional publicado por UNSD AMA en ${difference.reference_period} difiere en unos ${delta} dólares de la suma de los ${difference.listed_member_count} países/áreas M49 mostrados abajo. La composición y los ajustes del agregado no se han conciliado con las fuentes obtenidas. No interprete el valor regional como la suma de estas filas.`;
+    return `The UNSD AMA ${difference.reference_period} regional GDP differs by about US$${delta} from the sum of the ${difference.listed_member_count} M49 countries/areas listed below. The acquired sources do not yet reconcile the aggregate composition and adjustments. Do not read the regional value as a sum of these rows.`;
+  }
   if(language==='ja')return `国連WPPのこの広域公表値には台湾（WPP location 158）が含まれます。一方、下の国別比較はUN M49の掲載地域${difference.listed_member_count}件で、台湾を独立した行として含みません。2026年総人口では公表値と掲載国・地域の合計の差は${delta}人です。広域値を下の行の合計として読まないでください。`;
   if(language==='es')return `El valor regional publicado por UN WPP incluye Taiwán (ubicación WPP 158). La comparación inferior usa ${difference.listed_member_count} países/áreas del registro UN M49 y no muestra Taiwán por separado. Para la población total de 2026, la diferencia con la suma de las filas mostradas es ${delta} personas. El valor regional no es la suma de estas filas.`;
   return `The UN WPP published regional value includes Taiwan (WPP location 158). The comparison below uses ${difference.listed_member_count} countries/areas in the UN M49 registry and does not list Taiwan separately. For 2026 total population, the difference from the displayed member sum is ${delta} people. Do not read the regional value as a sum of these rows.`;

@@ -24,10 +24,13 @@ export async function verifyAsiaCandidate(project){
   assert.equal(data.analysis.census_source_preflight.records.length,50);
   assert.equal(data.analysis.coverage.un_wpp_country_area_count,50);
   assert.equal(data.analysis.coverage.census_integrated_country_ids.length,0);
-  const scopeDifferences=data.analysis.source_scope_differences;
+  const scopeDifferences=data.analysis.source_scope_differences.filter(row=>row.source_id==='un-wpp2024-global-rev1');
   assert.deepEqual(scopeDifferences.map(row=>row.territory_id),['M49:142','M49:030']);
   assert.equal(scopeDifferences[1].difference,23011292,'Eastern Asia WPP/M49 Taiwan scope difference changed');
   assert.ok(Math.abs(scopeDifferences[0].difference-23011292)<=2,'Asia WPP/M49 scope difference changed');
+  const amaDifferences=data.analysis.source_scope_differences.filter(row=>row.source_id==='unsd-ama-2024');
+  assert.equal(amaDifferences.length,4,'Asia/Eastern Asia UNSD AMA GDP totals need separate member-sum disclosures');
+  assert.ok(amaDifferences.every(row=>row.reference_period==='2024'&&row.difference>0));
   const countryIds=new Set(countries.map(area=>area.id));
   assert.ok(data.observations.every(row=>data.territories.some(area=>area.id===row.territory_id)));
   assert.ok(data.analysis.census_source_preflight.records.every(row=>countryIds.has(row.country_id)));
@@ -46,6 +49,7 @@ export async function verifyAsiaCandidate(project){
   const asiaDiagnostic=diagnosticCsv(data,'M49:142','2026');
   assert.match(asiaDiagnostic,/Regional source scope note/);
   assert.match(asiaDiagnostic,/Taiwan/);
+  assert.match(asiaDiagnostic,/aggregate composition and adjustments/);
   const html=await readFile(path.join(root,'site/index.html'),'utf8');
   const app=await readFile(path.join(root,'site/assets/app.mjs'),'utf8');
   assert.match(html,/assets\/app\.mjs/);assert.match(app,/All Asia/);assert.match(app,/source-scope-note/);

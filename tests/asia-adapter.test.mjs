@@ -67,4 +67,8 @@ test('a provider regional scope difference is disclosed in the screen copy and d
   assert.match(diagnosticCsv(asia,'M49:142','2024'),/Regional source scope note/);
   assert.match(diagnosticCsv(asia,'M49:142','2024'),/Taiwan/);
   assert.equal(sourceScopeNote(asia,'JPN','UN_WPP_POP_TOTAL','en'),'');
+  asia.indicators.push(indicator('UN_AMA_GDP_CURRENT_USD','ama','US$'));
+  asia.analysis.source_scope_differences.push({kind:'published_vs_listed_sum_unreconciled',territory_id:'M49:142',indicator_id:'UN_AMA_GDP_CURRENT_USD',source_id:'ama',reference_period:'2024',listed_member_count:2,difference:797003778521});
+  assert.match(sourceScopeNote(asia,'M49:142','UN_AMA_GDP_CURRENT_USD','en'),/aggregate composition and adjustments/);
+  assert.match(sourceScopeNote(asia,'M49:142','UN_AMA_GDP_CURRENT_USD','ja'),/照合できていません/);
 });
