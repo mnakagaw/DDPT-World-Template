@@ -33,6 +33,8 @@ OFFICIAL_RECEIPTS = EVIDENCE / "ARM_OFFICIAL_PLANNING_RECEIPTS.json"
 BULLETIN_RECEIPTS = EVIDENCE / "ARM_POPULATION_BULLETIN_RECEIPTS.json"
 YEREVAN_RECEIPTS = EVIDENCE / "ARM_YEREVAN_PLANNING_RECEIPTS.json"
 GEOPORTAL_RECEIPTS = EVIDENCE / "ARM_GEOPORTAL_RECEIPTS.json"
+MARZ_THEME_RECEIPTS = EVIDENCE / "ARM_MARZ_THEME_RECEIPTS.json"
+MARZ_THEME_INVENTORY = EVIDENCE / "ARM_MARZ_THEME_INVENTORY.json"
 CODE_SYSTEM = "ARM HD 002-2023, 2026-02-15 classifier; nine digits including check digit"
 EDITION = "ARM-HD002-2023-2026-02-15"
 CENSUS_SOURCE = "armstat-census-2022-pxweb-marzes"
@@ -54,6 +56,29 @@ YEREVAN_BUDGET_SOURCE = "arm-yerevan-budget-2026-incorporated"
 YEREVAN_BUDGET_AMENDMENT_SOURCE = "arm-yerevan-budget-2026-september-amendment"
 YEREVAN_EXECUTION_SOURCE = "arm-yerevan-budget-execution-2025-decision"
 GEOPORTAL_SOURCE = "arm-geoportal-admin-boundary-map"
+POVERTY_METHOD_SOURCE = "armstat-poverty-incidence-quality-declaration"
+MARZ_THEME_SPECS = {
+    "schools": {"source_id": "armstat-marz-state-schools-2025", "indicator_id": "ARM_MARZ_STATE_SCHOOLS",
+                "name": "State general schools", "theme": "Education", "unit": "schools", "decimals": 0,
+                "definition": "Published number of state general schools in Armstat's 2025 marz table. Source time convention and institution register details require further review; not a count of all public and private schools.",
+                "population": "state general school institutions", "method": "armstat_pxweb_reported_institution_count_method_detail_unverified", "family": "administrative", "additive": True},
+    "hospitals": {"source_id": "armstat-marz-hospitals-2025", "indicator_id": "ARM_MARZ_HOSPITALS",
+                  "name": "Hospitals reported in health system table", "theme": "Health", "unit": "hospitals", "decimals": 0,
+                  "definition": "Published 'Number of hospitals' in Armstat's 2025 health-system marz table. Facility scope and ownership should be checked in the sector metadata; this is not a hospital-bed or service-access rate.",
+                  "population": "hospital institutions in source table", "method": "armstat_pxweb_reported_hospital_count_method_detail_unverified", "family": "administrative", "additive": True},
+    "consumer_water": {"source_id": "armstat-marz-consumer-water-2024", "indicator_id": "ARM_MARZ_CONSUMER_WATER",
+                       "name": "Water delivered to consumers", "theme": "Water and housing", "unit": "thousand cubic metres", "decimals": 1,
+                       "definition": "Published 'volume of water given to consumers, total' in the 2024 marz water-supply-system table, in thousand cubic metres. This is system volume, not household drinking-water access or per-person consumption.",
+                       "population": "consumers served by the reported water-supply system", "method": "armstat_pxweb_reported_water_volume_method_detail_unverified", "family": "administrative", "additive": True},
+    "poverty": {"source_id": "armstat-marz-poverty-2024", "indicator_id": "ARM_MARZ_POOR_POPULATION_SHARE",
+                "name": "Poor population share, 2024 ILCS", "theme": "Livelihood and poverty", "unit": "percent", "decimals": 1,
+                "definition": "Armstat's 2024 'Poor population' percentage. The linked quality declaration defines poor persons by per-adult consumption below the upper common poverty line; the table warns that 2024 survey weights were recalibrated against 2022-census-based population records, making 2024 rates incomparable with 2022–2023.",
+                "population": "Integrated Living Conditions Survey weighted persons", "method": "armstat_ilcs_2024_recalibrated_survey", "family": "survey", "additive": False},
+    "street_length": {"source_id": "armstat-marz-street-length-2024", "indicator_id": "ARM_MARZ_CITY_STREET_LENGTH",
+                      "name": "Length of streets and crossings", "theme": "Infrastructure", "unit": "km", "decimals": 1,
+                      "definition": "Published 2024 total length of streets and crossings by marz in Armstat's urban road-economy category. This does not represent all roads or rural access.",
+                      "population": "reported streets and crossings in city/urban road economy", "method": "armstat_pxweb_reported_street_length_method_detail_unverified", "family": "administrative", "additive": True},
+}
 DATE = "2026-09-27"
 
 
@@ -295,6 +320,20 @@ def main() -> None:
                         geo_receipt, "Map page/script acquired. Referenced marzer GeoJSON has 11 uncoded features in EPSG:3857; referenced community_settlement GeoJSON returned HTTP 404. No dated official code join, rights decision or polygon adoption.")
     geo_source["status"] = "partial"
     sources.append(geo_source)
+    marz_theme_tables = json.loads(MARZ_THEME_INVENTORY.read_text(encoding="utf-8"))["tables"]
+    if {table["slug"] for table in marz_theme_tables} != set(MARZ_THEME_SPECS):
+        raise ValueError("Five-table Armstat theme inventory changed")
+    for table in marz_theme_tables:
+        spec = MARZ_THEME_SPECS[table["slug"]]
+        response_receipt = receipt(MARZ_THEME_RECEIPTS, f"{table['slug']}-{table['selected_year']}-slice.html")
+        sources.append(source(spec["source_id"], table["title"], table["source_url"], "Statistical Committee of Armenia",
+                              table["selected_year"], "national_and_adm1", response_receipt,
+                              f"One direct published {table['selected_year']} slice for '{table['selected_indicator']}' and all 12 first-level/national reporting rows. Other {table['other_indicator_count']} indicator options and other years remain unassessed; source geography lacks official codes and polygons."))
+    poverty_method_receipt = receipt(MARZ_THEME_RECEIPTS, "poverty-quality-declaration.pdf")
+    sources.append(source(POVERTY_METHOD_SOURCE, "Poverty incidence quality declaration", poverty_method_receipt["url"],
+                          "Statistical Committee of Armenia", "edition/date not verified", "national survey method",
+                          poverty_method_receipt,
+                          "Linked from Armstat's Poverty Level table. Describes ILCS consumption-based poverty and upper common poverty line; do not carry its historical sample size forward to 2024. The table's 2024 weight-recalibration footnote controls cross-year comparability."))
     dataset["sources"].extend(sources)
     dataset["indicators"].append({"id": "ARM_CENSUS_2022_PERMANENT_POP", "name": "Permanent population, 2022 census", "theme": "Population",
                                    "unit": "people", "definition": "Direct 2022 population census permanent (de jure) population, including residents temporarily absent at census date; not the WDI midyear de facto estimate.",
@@ -338,6 +377,62 @@ def main() -> None:
                                              "measurement_method": "armstat_census_based_current_population_estimate",
                                              "boundary_version": EDITION,
                                              "source_locator": f"PDF page {row['page']}, text line {row['text_line']}, {row['name_en_source']}, {suffix.lower()} column"})
+    english_first_level = {row["name_en_source"].title().casefold(): marz_id[row["marz_prefix"]]
+                           for row in primary if row["kind"] == "marz"}
+    if len(english_first_level) != 10:
+        raise ValueError("Marz English labels for thematic tables are not unique")
+    adopted_theme_rows = []
+    for table in marz_theme_tables:
+        spec = MARZ_THEME_SPECS[table["slug"]]
+        period = table["selected_year"]
+        dataset["indicators"].append({"id": spec["indicator_id"], "name": spec["name"], "theme": spec["theme"],
+                                       "unit": spec["unit"], "definition": spec["definition"],
+                                       "population": spec["population"], "measurement_method": spec["method"],
+                                       "source_id": spec["source_id"], "aggregation": "none", "display_decimals": spec["decimals"],
+                                       "series_family": spec["family"], "display_role": "primary",
+                                       "period_policy": "latest_available_per_indicator"})
+        seen_targets = set()
+        mapped = []
+        for index, row in enumerate(table["rows"], 1):
+            label = row["marz_label"]
+            if label in ("Total RA", "National average"):
+                target = "ARM"
+            elif label == "Yerevan city":
+                target = yid
+            else:
+                normalized = label.removesuffix(" Marz").casefold()
+                target = english_first_level.get(normalized)
+            if target is None or target in seen_targets or row["numeric_value"] is None:
+                raise ValueError(f"Unmatched, duplicate or nonnumeric Armstat theme row: {table['slug']}: {row}")
+            seen_targets.add(target)
+            value = row["numeric_value"]
+            if spec["decimals"] == 0:
+                if not float(value).is_integer():
+                    raise ValueError(f"Nonintegral institution count: {table['slug']}: {row}")
+                value = int(value)
+            mapped.append({"territory_id": target, "source_label": label, "source_value": row["raw_value"], "value": value})
+            dataset["observations"].append({"territory_id": target, "indicator_id": spec["indicator_id"],
+                                             "period": period, "value": value, "status": "observed",
+                                             "source_id": spec["source_id"], "measurement_method": spec["method"],
+                                             "boundary_version": None,
+                                             "source_locator": f"PxWeb {table['slug']} {period}; indicators={table['selected_codes']['indicators'][0]}; marzes={label}; result row {index}"})
+        if seen_targets != {"ARM", yid, *marz_id.values()}:
+            raise ValueError(f"Armstat theme reporting cohort changed: {table['slug']}")
+        national = next(row["value"] for row in mapped if row["territory_id"] == "ARM")
+        child_sum = sum(row["value"] for row in mapped if row["territory_id"] != "ARM")
+        if spec["additive"] and abs(national - child_sum) > 0.11:
+            raise ValueError(f"Armstat national control mismatch: {table['slug']}: {national} vs {child_sum}")
+        adopted_theme_rows.append({"slug": table["slug"], "source_id": spec["source_id"],
+                                   "indicator_id": spec["indicator_id"], "period": period, "unit": spec["unit"],
+                                   "method": spec["method"], "source_hash": table["response_sha256"],
+                                   "national_value": national, "sum_of_first_level_values": child_sum if spec["additive"] else None,
+                                   "additive_control": spec["additive"], "rows": mapped,
+                                   "decision": "adopted_direct_selected_slice_only",
+                                   "unassessed_indicator_options": table["other_indicator_count"],
+                                   "geography_note": "All 12 labels crosswalk to Armstat 2026 first-level labels and official classifier IDs; source table has no code/dated polygon, so observation boundary edition remains null."})
+    (EVIDENCE / "ARM_MARZ_THEME_ADOPTION.json").write_text(json.dumps({"table_count": len(adopted_theme_rows),
+        "observation_count": sum(len(table["rows"]) for table in adopted_theme_rows), "tables": adopted_theme_rows,
+        "caution": "Direct values are source-reported. National controls are checked but no parent value is calculated from children. Other indicators/years and community-level thematic coverage remain unassessed."}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     ashtarak = next(t for t in dataset["territories"] if t.get("native_name") == "աշտարակ" and t["type"] == "community")
     match = {"territory_id": ashtarak["id"], "country_id": "ARM", "type": "community",
              "code_system": CODE_SYSTEM, "official_code": ashtarak["official_code"], "boundary_version": EDITION,
@@ -398,6 +493,7 @@ def main() -> None:
         "Rows are matched to the 2026-02-15 official HD 002-2023 classifier by Armenian name and marz; the classifier has 70 communities including Yerevan. "
         "The 2025 Khoy community merged into Vagharshapat in 2025; the 2025 bulletin is not joined to the 2026 geography. "
         "Census 2022 and census-based 2026 current counts are distinct, as are WDI de facto midyear estimates. "
+        "Five Armstat 2024/2025 marz thematic slices are direct first-level reports; their source tables do not provide official codes or dated polygons, and no community theme values are inferred. "
         "The bootstrap geoBoundaries ADM1 polygons were made for a 2005 provider edition and are withheld until official 2022/2026 geometry can be matched.")
     dataset["analysis"]["terminal_territory_ids"] = sorted(community_id.values())
     dataset["analysis"]["comparisons"] = [{"parent_id": "ARM", "member_ids": [yid] + [marz_id[p] for p in sorted(marz_id)],
@@ -412,11 +508,11 @@ def main() -> None:
                                                        "membership_note": "All 2026 official community codes in this marz match the Armstat bulletin by Armenian name and parent. No 2022 community series or verified polygon is implied.",
                                                        "source_ids": [CLASSIFIER_SOURCE, BULLETIN_SOURCE],
                                                        "color_scale": {"mode": "within_selection"}})
-    dataset["collection"]["adapters"] = sorted(set(dataset["collection"]["adapters"] + ["armenia-armstat-2022-census-marz-partial", "armenia-armstat-2026-annual-population", "armenia-ashtarak-planning-partial", "armenia-yerevan-planning-partial"]))
+    dataset["collection"]["adapters"] = sorted(set(dataset["collection"]["adapters"] + ["armenia-armstat-2022-census-marz-partial", "armenia-armstat-2026-annual-population", "armenia-armstat-2024-2025-marz-themes-partial", "armenia-ashtarak-planning-partial", "armenia-yerevan-planning-partial"]))
     dataset["collection"]["status"] = "partial"
-    dataset["collection"]["notes"].append("Official 2026 community values, Ashtarak plan/budget, and Yerevan five-year/annual plans plus a council-noted implementation report are integrated; all 2005 provider polygons are withheld. Other themes, full census cross-tabs, current budget annexes, and systematic plan/budget/implementation/evaluation coverage remain open.")
+    dataset["collection"]["notes"].append("Official 2026 community population, five 2024/2025 first-level Armstat theme slices, Ashtarak plan/budget, and Yerevan five-year/annual plans plus a council-noted implementation report are integrated; all 2005 provider polygons are withheld. Community thematic depth, full census cross-tabs, current budget annexes, and systematic plan/budget/implementation/evaluation coverage remain open.")
     receipt_files = [EVIDENCE / "ARM_CENSUS_2022_RECEIPTS.json", BULLETIN_RECEIPTS,
-                     OFFICIAL_RECEIPTS, YEREVAN_RECEIPTS, GEOPORTAL_RECEIPTS]
+                     OFFICIAL_RECEIPTS, YEREVAN_RECEIPTS, GEOPORTAL_RECEIPTS, MARZ_THEME_RECEIPTS]
     retrieved_at = [datetime.fromisoformat(record["retrieved_at_utc"])
                     for receipt_file in receipt_files
                     for record in json.loads(receipt_file.read_text(encoding="utf-8"))
@@ -426,7 +522,7 @@ def main() -> None:
         if gap["category"] == "boundary_reconciliation":
             gap.update(status="partial", detail="2026 official HD 002-2023 classifier matched to 2026 population bulletin for all 70 communities by Armenian name and marz. 2025 Khoy merger recorded. No official dated polygons matched; 2005 provider polygons withheld.", next_action="Acquire official national geoportal marz and community geometries with version, codes, rights and 2022/2026 validity; verify all joins and Yerevan internal districts separately.")
         elif gap["category"] == "subnational_statistics":
-            gap.update(status="partial", detail="Direct 2022 census permanent population for 11 first-level areas and national was checked; 2026 census-based current population total/urban/rural for national, 10 marzes, Yerevan and 69 other communities was integrated in 0.1-thousand units. Other census tables and local themes remain unassessed.", next_action="Audit remaining 13 Census 2022 PxWeb tables, official sector/local tables, and 2025 boundary crosswalk; assess fields before adding indicators.")
+            gap.update(status="partial", detail="Direct 2022 census permanent population for 11 first-level areas and national was checked; 2026 census-based current population total/urban/rural for national, 10 marzes, Yerevan and 69 other communities was integrated in 0.1-thousand units. Five direct Armstat 2024/2025 marz slices add schools, hospitals, consumer water volume, 2024 ILCS poverty share and city street length at national/first-level only. Other source columns, 13 census tables and community-level themes remain unassessed.", next_action="Audit remaining 13 Census 2022 PxWeb tables and the other columns/years of five new marz tables; seek official community-level sector sources, 2025 boundary crosswalk and source geography codes before broad adoption.")
         elif gap["category"] == "planning_documents":
             gap.update(status="partial", detail="Ashtarak council-approved 2022–2026 plan PDF and original approved 2026 budget XLS, plus Yerevan 2024–2028 plan, 2026 program and council-noted 2025 implementation report, were acquired and code-linked. Yerevan's current 2026 budget incorporates a September annex amendment; numeric annexes and budget execution are not adopted.", next_action="Inventory official community sites and decisions for the other 68 units; audit current annexes, actual budget execution and formal evaluations separately.")
     DATA.write_text(json.dumps(dataset, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -441,7 +537,8 @@ def main() -> None:
                              "join_status": "exact_armenian_name_and_parent_matched_2026",
                              "geometry_status": "official_polygon_not_verified"})
     print(json.dumps({"territories": len(dataset["territories"]), "observations": len(dataset["observations"]),
-                      "new_population_observations": len(dataset["observations"]) - 312,
+                      "new_population_observations": len(dataset["observations"]) - 312 - sum(len(table["rows"]) for table in adopted_theme_rows),
+                      "new_marz_theme_observations": sum(len(table["rows"]) for table in adopted_theme_rows),
                       "community_count": len(dataset["analysis"]["terminal_territory_ids"]),
                       "documents": len(dataset["documents"]), "polygons": len(dataset["boundaries"]["features"]),
                       "dashboard_sha256": hashlib.sha256(DATA.read_bytes()).hexdigest()}, ensure_ascii=False))

@@ -32,6 +32,8 @@ def main() -> None:
     bulletin = read("ARM_POPULATION_2026_TABLE_INVENTORY.json")
     budget = read("ARM_ASHTARAK_BUDGET_INVENTORY.json")
     geoportal = read("ARM_GEOPORTAL_LAYER_INVENTORY.json")
+    marz_themes = read("ARM_MARZ_THEME_INVENTORY.json")
+    marz_adoption = read("ARM_MARZ_THEME_ADOPTION.json")
     census_extract = read("ARM_CENSUS_2022_MARZ_POPULATION_EXTRACT.json")
     if len(catalogue["tables"]) != 14 or len(census_extract["rows"]) != 12:
         raise ValueError("Census catalogue or adopted extract changed")
@@ -53,6 +55,10 @@ def main() -> None:
             stage = "acquired_not_semantically_adopted"
         elif sid == "arm-geoportal-admin-boundary-map":
             stage = "official_location_inspected_no_geometry_adopted"
+        elif sid.startswith("armstat-marz-"):
+            stage = "one_direct_latest_year_slice_adopted_other_options_unassessed"
+        elif sid == "armstat-poverty-incidence-quality-declaration":
+            stage = "methodology_acquired_edition_unverified"
         elif sid.startswith("arm-") or sid.startswith("armstat-"):
             stage = "location_and_selected_document_content_checked"
         else:
@@ -125,6 +131,28 @@ def main() -> None:
                    "decision": "81_primary_rows_adopted_other_rows_withheld_or_duplicate"})
     tables.append({"source_id": "armstat-permanent-population-2025-01-01", "kind": "PDF_acquired_not_adopted",
                    "reason": "2025 Khoy-to-Vagharshapat merger prevents direct 2026-code join; source table and crosswalk remain unaudited"})
+    adoption_by_slug = {table["slug"]: table for table in marz_adoption["tables"]}
+    for table in marz_themes["tables"]:
+        adopted = adoption_by_slug[table["slug"]]
+        if adopted["source_hash"] != table["response_sha256"] or len(adopted["rows"]) != 12:
+            raise ValueError(f"Marz thematic adoption changed: {table['slug']}")
+        indicator = next(item for item in dataset["indicators"] if item["id"] == adopted["indicator_id"])
+        tables.append({"source_id": adopted["source_id"], "kind": "PxWeb_marz_theme_table",
+                       "title": table["title"], "url": table["source_url"], "form_sha256": table["form_sha256"],
+                       "response_sha256": table["response_sha256"],
+                       "axes": [{"name": axis["name"], "options": axis["options"]} for axis in table["variables"]],
+                       "selected_year": table["selected_year"], "selected_indicator": table["selected_indicator"],
+                       "selected_row_count": 12, "other_indicator_options_unassessed": table["other_indicator_count"],
+                       "decision": "adopted_direct_selected_slice_only"})
+        rows.append({"source_id": adopted["source_id"], "source_hash": table["response_sha256"],
+                     "table_or_sheet": table["title"], "column_or_variable": table["selected_indicator"],
+                     "original_label": table["selected_indicator"], "unit": indicator["unit"],
+                     "universe": indicator["population"], "period": table["selected_year"],
+                     "geography_type": "national plus Yerevan and 10 marzes; no community observations",
+                     "role": "direct_published_selected_slice", "indicator_id": indicator["id"],
+                     "decision": "adopted_12_cells_other_options_unassessed",
+                     "reason": f"{table['other_indicator_count']} other indicator options and other years remain unassessed; source has no geographic codes or dated polygons",
+                     "locator": f"{table['source_url']} tableViewLayout1; {table['selected_indicator']}; {table['selected_year']}"})
     save("SOURCE_TABLE_INVENTORY.json", {"table_count": len(tables), "tables": tables,
                                           "status": "structural_inventory_partial_semantic_audit"})
     with (EVIDENCE / "INDICATOR_INVENTORY.csv").open("w", newline="", encoding="utf-8-sig") as handle:
@@ -134,11 +162,11 @@ def main() -> None:
 
     themes = [
         ("population", "2022 census first-level permanent totals and 2026 census-based current total/urban/rural across communities adopted", "partial", "Audit census age/sex, historical years and comparable 2025 crosswalk"),
-        ("education", "2022 census education table metadata found, numeric cells and local detail unassessed", "candidate_identified", "Request and audit exact numeric slices and universe"),
-        ("health_nutrition", "No Armenia-specific official health/nutrition original acquired in this run", "not_yet_searched", "Search health ministry and Armstat official local tables"),
-        ("water_sanitation_housing_energy", "2022 census housing, water, toilet, sewage and heating table metadata found; values unassessed", "candidate_identified", "Audit source universes, geographic axes and numeric slices"),
-        ("livelihood_poverty_economy", "Ashtarak 2026 approved budget acquired, but it is not household livelihood or poverty data", "not_yet_searched", "Search Armstat economic and poverty local releases"),
-        ("access_infrastructure_environment", "No comparable local official infrastructure/environment original adopted", "not_yet_searched", "Search sector ministries and Armstat local tables"),
+        ("education", "2025 state general-school count adopted for national and 11 first-level reporting areas; 2022 census education table values unassessed", "partial_first_level", "Seek official community education records and assess 21 other school-table options"),
+        ("health_nutrition", "2025 hospital count adopted for national and 11 first-level reporting areas; no nutrition or community health values", "partial_first_level", "Verify facility scope and seek official community/nutrition data"),
+        ("water_sanitation_housing_energy", "2024 consumer water-system volume adopted for national and first-level areas; not a household service-access measure", "partial_first_level", "Audit other water/census WASH fields and community service evidence"),
+        ("livelihood_poverty_economy", "2024 ILCS poor-population percentage adopted for national and first-level areas; survey weights revised and 2022-2023 rates incomparable", "partial_first_level", "Audit poverty methodology edition, uncertainty and community/economic sources"),
+        ("access_infrastructure_environment", "2024 city streets/crossings length adopted for national and first-level areas; not the whole rural road network", "partial_first_level", "Find official community access/environment indicators and verify road-economy scope"),
     ]
     save("THEME_COVERAGE.json", {"country": "ARM", "as_of": dataset["generated_at"],
                                  "themes": [{"theme": theme, "evidence": evidence, "stage": stage, "next_action": action}

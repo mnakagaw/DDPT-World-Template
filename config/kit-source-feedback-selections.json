@@ -1555,6 +1555,46 @@
           "geographic_levels": ["marz map lead", "community layer location unverified"],
           "formats": ["HTML map", "GeoJSON lead"],
           "reuse_note": "Official geoportal map page points to an 11-feature marz GeoJSON with only Province_N names, no official codes or dated validity. Its referenced community_settlement endpoint returned HTTP 404. Copyright/redistribution and boundary edition need review; no polygons are transferred or adopted."
+        },
+        {
+          "id": "armstat-marz-state-schools-2025",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "Yerevan", "ten marzes"],
+          "formats": ["PxWeb HTML"],
+          "reuse_note": "ArmstatBank education table location. AreaData inspected only the 2025 state general schools slice; other indicators and years remain unassessed. Source rows lack official geography codes and dated boundary edition. Kit must reacquire and audit independently."
+        },
+        {
+          "id": "armstat-marz-hospitals-2025",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "Yerevan", "ten marzes"],
+          "formats": ["PxWeb HTML"],
+          "reuse_note": "ArmstatBank health-system table location. AreaData inspected only the 2025 hospital-count slice; facility scope and other axes require independent audit. Source rows lack official codes and dated boundary edition; no values are transferred."
+        },
+        {
+          "id": "armstat-marz-consumer-water-2024",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "Yerevan", "ten marzes"],
+          "formats": ["PxWeb HTML"],
+          "reuse_note": "ArmstatBank 2024 water-delivered-volume table location, in thousand cubic metres; it is not a household drinking-water-access rate. Other axes, service scope and geography edition need independent review."
+        },
+        {
+          "id": "armstat-marz-poverty-2024",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "Yerevan", "ten marzes"],
+          "formats": ["PxWeb HTML"],
+          "reuse_note": "ArmstatBank ILCS poverty table location. The 2024 rate is a survey percentage, not an additive count. The table warns that recalibrated 2024 weights make it incomparable with 2022–2023; survey uncertainty and source geography require independent audit."
+        },
+        {
+          "id": "armstat-marz-street-length-2024",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "Yerevan", "ten marzes"],
+          "formats": ["PxWeb HTML"],
+          "reuse_note": "ArmstatBank 2024 length of streets and crossings in its urban road-economy category; not a measure of all roads or rural access. Other axes and source geography edition require independent audit."
         }
       ]
     }
