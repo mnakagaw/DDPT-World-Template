@@ -32,7 +32,10 @@ test('regional hierarchy and diagnostic exports translate the selected area',()=
   assert.equal(translateText('Editable Diagnostic report','es'),'Informe de diagnóstico editable');
   assert.equal(translateText('Full diagnostic data CSV','ja'),'地域診断の全データ CSV');
   assert.equal(translateText('ASIA · TERRITORIAL DIAGNOSTIC','ja'),'アジア・地域診断');
+  assert.equal(translateText('Asia · Territorial diagnostic','ja'),'アジア・地域診断');
+  assert.equal(translateText('country reference boundaries','ja'),'国の参照境界');
   assert.equal(translateText('COUNTRY REFERENCE BOUNDARIES','es'),'LÍMITES DE REFERENCIA DE PAÍSES');
   assert.equal(translateText('Time-series values and sources (10)','ja'),'時系列の値と出典（10件）');
   assert.equal(translateText('Within the selected area — Countries and areas in Central Asia','ja'),'選択地域内の比較 — 中央アジアの国・地域');
+  assert.equal(translateText('Countries and areas in Central Asia · GDP · 2024','ja'),'Countries and areas in Central Asia · GDP · 2024');
 });

@@ -299,9 +299,11 @@ export function resolveLanguage({query='',stored='',browserLanguages=[]}={}){
 export function languageLocale(language){return language==='es'?'es':language==='ja'?'ja-JP':'en-US';}
 
 const patternTranslations=[
+  [/^(.+) · Territorial diagnostic$/,(m,l)=>l==='es'?`${translateText(m[1],l)} · Diagnóstico territorial`:`${translateText(m[1],l)}・地域診断`],
   [/^(.+) · TERRITORIAL DIAGNOSTIC$/,(m,l)=>l==='es'?`${translateText(m[1],l).toUpperCase()} · DIAGNÓSTICO TERRITORIAL`:`${translateText(m[1],l)}・地域診断`],
+  [/^(.+) reference boundaries$/,(m,l)=>l==='es'?`Límites de referencia: ${translateText(m[1],l)}`:`${translateText(m[1],l)}の参照境界`],
   [/^Time-series values and sources \((\d+)\)$/,(m,l)=>l==='es'?`Valores y fuentes de la serie temporal (${m[1]})`:`時系列の値と出典（${m[1]}件）`],
-  [/^Countries and areas in (.+)$/,(m,l)=>l==='es'?`Países y áreas de ${translateText(m[1],l)}`:`${translateText(m[1],l)}の国・地域`],
+  [/^Countries and areas in ([^·—]+)$/,(m,l)=>l==='es'?`Países y áreas de ${translateText(m[1],l)}`:`${translateText(m[1],l)}の国・地域`],
   [/^Diagnostic report — (.+)$/,(m,l)=>l==='es'?`Informe de diagnóstico — ${translateText(m[1],l)}`:`地域診断レポート — ${translateText(m[1],l)}`],
   [/^Whole (.+) · no lower area selected$/,(m,l)=>l==='es'?`Área completa: ${translateText(m[1],l)} · sin área inferior seleccionada`:`${translateText(m[1],l)}全体・下位地域の選択なし`],
   [/^Whole (.+)$/,(m,l)=>l==='es'?`Área completa: ${translateText(m[1],l)}`:`${translateText(m[1],l)}全体`],
