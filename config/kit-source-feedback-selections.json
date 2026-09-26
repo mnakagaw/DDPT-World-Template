@@ -342,9 +342,9 @@
       ]
     },
     {
-      "path": "generated/saudi-arabia-areadata-20260926",
+      "path": "generated/saudi-arabia-areadata-20260926-r2",
       "iso3": "SAU",
-      "evidence_path": "docs/evidence/saudi-census-source-location-2026-09-26.md",
+      "evidence_path": "docs/evidence/saudi-gastat-tableau-source-location-2026-09-26.md",
       "sources": [
         {
           "id": "sau-moh-yearbook-2022-census-regions",
@@ -352,7 +352,15 @@
           "authority_type": "official_national",
           "geographic_levels": ["national", "administrative region"],
           "formats": ["PDF"],
-          "reuse_note": "New AreaData source location: Saudi Ministry of Health 2022 yearbook Table 1-12 cites GASTAT for the 2022 census population of 13 administrative regions. Its 2010–2021 columns are recalculated estimates, not census counts. Kit must independently audit direct GASTAT tables, geographic codes/boundaries, terms and adoption."
+          "reuse_note": "Previously recorded AreaData source location, carried forward unchanged: Saudi Ministry of Health 2022 yearbook Table 1-12 cites GASTAT for the 2022 census population of 13 administrative regions. Its 2010–2021 columns are recalculated estimates, not census counts. Kit must independently audit direct GASTAT tables, geographic codes/boundaries, terms and adoption."
+        },
+        {
+          "id": "sau-gastat-population-detailed-age-tableau",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "region filter", "governorate filter; row coverage unverified"],
+          "formats": ["HTML", "Tableau"],
+          "reuse_note": "New specific official GASTAT Tableau table location with metadata code TTCENPOP0105. Age, region, governorate, nationality and gender dimensions are visible, but reference period, full row inventory and downloadable original were not verified. AreaData adopted no observation from this view. Kit must independently acquire and audit the table, codes, boundaries, terms and geographic coverage."
         }
       ]
     }
