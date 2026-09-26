@@ -496,6 +496,101 @@
           "reuse_note": "New specific official Dubai 2024 end-year population bulletin location, search-indexed but direct acquisition returned HTTP 403. AreaData adopted no number from it. Obtain and inspect the original and its revised-estimate method; do not silently combine it with SCAD Abu Dhabi register census."
         }
       ]
+    },
+    {
+      "path": "generated/israel-areadata-20260926",
+      "iso3": "ISR",
+      "evidence_path": "docs/evidence/israel-cbs-2022-official-sources-2026-09-26.md",
+      "sources": [
+        {
+          "id": "isr-cbs-census-2022-broad-geographical",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["nationwide", "six districts", "separately reported Judea and Samaria Area", "other sheets: locality and statistical area"],
+          "formats": ["XLSX"],
+          "reuse_note": "AreaData acquired the CBS original and adopted only 12 checked columns for nation and six districts. The separately reported CBS code-7 area reconciles to the national total, but is not one of six mapped districts. Kit must acquire and audit its own copy, column semantics, territorial scope and reuse terms; AreaData acceptance is pending."
+        },
+        {
+          "id": "isr-cbs-census-2022-selected-localities-statistical-areas",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["locality", "statistical area"],
+          "formats": ["XLSX"],
+          "reuse_note": "AreaData acquired this original and inventoried columns but adopted no value. Official locality/statistical-area codes, suppression, definitions and boundary version need independent Kit review."
+        },
+        {
+          "id": "isr-cbs-census-2022-population-group-religion-age-sex",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["nationwide; other geography unverified"],
+          "formats": ["XLSX"],
+          "reuse_note": "AreaData acquired and structurally inventoried the workbook but adopted no value. Its national total differs by rounding from the broad-geography table. Kit must independently audit the source universe and fields."
+        },
+        {
+          "id": "isr-cbs-census-2022-population-households-locality",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["locality"],
+          "formats": ["XLSX"],
+          "reuse_note": "AreaData acquired and structurally inventoried this locality workbook but adopted no value. Some values differ from rounded broad-table counts; household and institutional-resident definitions need independent review."
+        },
+        {
+          "id": "isr-cbs-census-2022-population-selected-characteristics",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["nationwide; selected characteristics"],
+          "formats": ["XLSX"],
+          "reuse_note": "Acquired but no value adopted. Keep 2022 census, end-2021 estimate and 2008 census columns distinct; audit each source field and terms."
+        },
+        {
+          "id": "isr-cbs-census-2022-households-selected-characteristics",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["nationwide; selected household characteristics"],
+          "formats": ["XLSX"],
+          "reuse_note": "Acquired but no value adopted. Separate 2022 and 2008 census estimates and audit denominators, units and redistribution conditions."
+        },
+        {
+          "id": "isr-cbs-census-2022-catalogue",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["nationwide", "district", "locality", "statistical area"],
+          "formats": ["HTML", "XLSX links"],
+          "reuse_note": "Official catalogue links six acquired Excel originals. AreaData did not close the full expected census-product list or acquire the sample questionnaire; Kit should independently inventory the catalogue."
+        },
+        {
+          "id": "isr-cbs-dictionary-geo-api",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["district", "subdistrict", "locality", "planning committee"],
+          "formats": ["HTML", "API to inspect"],
+          "reuse_note": "Official documentation identifies year/code resources. Actual API responses and dated boundary equivalence were not acquired or verified by AreaData."
+        },
+        {
+          "id": "isr-knesset-planning-building-law-1965",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national framework; institutional and local applicability to audit"],
+          "formats": ["HTML", "law text to acquire"],
+          "reuse_note": "Official Knesset law record located. Current consolidated Hebrew text, amendments and local planning duties remain unverified; do not use an old English translation as current law."
+        },
+        {
+          "id": "isr-iplan-xplan-catalogue",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["plan footprints and planning institutions; not automatically CBS districts"],
+          "formats": ["HTML", "plan documents to acquire"],
+          "reuse_note": "Government XPLAN discovery service located. Coverage varies by period/district; no specific plan or official approval/implementation status was acquired for AreaData."
+        },
+        {
+          "id": "isr-moin-local-authorities-audited-2024",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["local authorities; code join unverified"],
+          "formats": ["government data portal; resource format to inspect"],
+          "reuse_note": "Official government audited-finance dataset location only. Data not acquired or code-matched by AreaData. Distinguish audited accounts, authorized budgets, actual spending and plan evaluation."
+        }
+      ]
     }
   ]
 }
