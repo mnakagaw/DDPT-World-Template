@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T23:32:56.050Z",
-  "origin_commit": "6d118e180c0c3a40dcab8f38aff5cc68dce1a1a5",
+  "exported_at": "2026-09-26T23:41:05.031Z",
+  "origin_commit": "a5ca0c356df96c54d42f3b34a128a45750dd7a76",
   "sources": [
     {
       "iso3": "ARE",
@@ -2499,6 +2499,30 @@
       "license_or_terms": null,
       "reuse_note": "Official current legal/revenue-code directory location, not a 2011-to-current crosswalk. Exact monthly files, definitions, rights and change history were not acquired; do not name-join to PCA rows.",
       "origin_evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_LGD_STATEWISE_ENTITY_SUMMARY",
+      "role": "administrative_codes",
+      "title": "LGD state-wise administrative-unit and PRI count report",
+      "publisher": "Ministry of Panchayati Raj / National Informatics Centre",
+      "url": "https://lgdirectory.gov.in/demo/reportonStatewiseEntityDetails.do",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "state-wise counts of revenue and rural/urban local-body types"
+      ],
+      "reference_periods": [
+        "dynamic page generated 2026-09-27; exact future edition varies"
+      ],
+      "formats": [
+        "HTML report"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Dynamic official count summary, not the coded entity register or 2011 crosswalk. The captured Tripura row has eight districts versus four in the AreaData 2011 Census hierarchy; no individual ID, boundary, mapping, plan or value is transferred. Re-fetch a dated report and obtain coded change history separately.",
+      "origin_evidence_path": "docs/evidence/india-tripura-planning-finance-followup-2026-09-27.md",
       "artifact_sha256": null
     },
     {

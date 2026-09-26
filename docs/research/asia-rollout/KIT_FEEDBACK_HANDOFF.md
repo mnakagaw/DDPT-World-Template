@@ -286,3 +286,16 @@ The [Tripura follow-up](../../evidence/india-tripura-planning-finance-followup-2
 | Kit import | `4ad8663` on `codex/asia-source-feedback-qatar-20260927` | Dry-run/import accepted five, inserted five, zero rejected; repeat dry-run reported five unchanged. Registry has 93 records; these five are `not_acquired_by_kit_preflight`. Kit `npm run check` checked 52 JS/JSON and 67 Markdown files; `npm test` passed 173/173; `npm run verify:kit` returned `ready:true`. GitHub push succeeded. |
 
 No Tripura plan, budget, actual or evaluation document was adopted or published. AreaData and Kit require their own source acquisition, legal-unit/code reconciliation and rights checks before any evidence-stage increase.
+
+## India Tripura LGD aggregate: historical/current district mismatch
+
+The [same India follow-up](../../evidence/india-tripura-planning-finance-followup-2026-09-27.md) now includes a direct private capture of the official LGD state-wise aggregate report. The 27/09/2026 source-generated Tripura row counts eight districts and eight District Panchayats; the 2011 ORGI candidate has four Tripura Census districts. This is evidence of a changed hierarchy, **not** the current coded register, an authority-level crosswalk, or a polygon. The raw HTML and receipt stay in the ignored India project; Kit receives only the public report URL and a caution at `official_location_identified`.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData capture/selection | `a5ca0c356df96c54d42f3b34a128a45750dd7a76` on `codex/asia-domestic-continuation-20260926` | `scripts/collect-india-lgd-state-summary.py` saved a 159,695-byte HTML original, SHA-256 `c11bef2f8da1f897f178d6971e542c0746f404b88d4bb16f81cad99b6edbd163`, with its local receipt; the Tripura row and column headers were inspected. India dataset SHA-256 remains `81933e13f0636fdfa562d0b02e4c2cae8e49e3deb0a01e8295a51828361b2425` and `REJECT`. Producer branch pushed. |
+| AreaData full feedback bundle | `evidence/KIT_SOURCE_FEEDBACK.json`, SHA-256 `2923990c3c35fd07f7de1b7f5a4f3ecea6b47dd20849380b585dc5be55504ce2` | 211 accumulated public leads in 23 countries, 14 for India; the single new LGD summary entry cites the producer commit and is capped at `official_location_identified`. |
+| Scoped transfer file | Ignored `generated/india-areadata-20260927/evidence/KIT_SOURCE_FEEDBACK_LGD_ONLY.json`, SHA-256 `bdc10eb4f62d53751fbc26a8e0d97dfc5ff3b0fba6eeae1f26d9dca1166b21ec` | One public report URL and caveat only; no HTML original, aggregate count, local code or AreaData acquisition status transferred. |
+| Kit import | `e3996e0` on `codex/asia-source-feedback-qatar-20260927` | Dry-run/import accepted and inserted one (registry 94), repeat dry-run one unchanged. Kit record remains `not_acquired_by_kit_preflight`. `npm run check` passed 52 JS/JSON and 67 Markdown files; `npm test` passed 173/173; `npm run verify:kit` returned `ready:true`. Branch pushed. |
+
+The LGD download directory still requires CAPTCHA for a coded report, and the OGD LGD catalogue returned HTTP 503 to a direct request. Current entity IDs, change events, official boundary edition and selected authority plan/finance/evaluation originals remain open.
