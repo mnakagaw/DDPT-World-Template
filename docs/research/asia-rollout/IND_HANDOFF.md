@@ -28,3 +28,12 @@ node scripts/serve.mjs --dir generated/india-areadata-NEW/site --port 4203
 5. Feed eight newly confirmed public official locations to Kit at `official_location_identified` only. Next unstarted country in the requested priority is Pakistan. All Middle East editions still lack independent completion; progress into South Asia is not a declaration that phase 1 is complete.
 
 The generated candidate, source originals, receipts, complete inventory and output artifacts are ignored locally. Git stores repeatable code, bounded audit, status, handoff and public source-location metadata. Kit receives no raw records or country acceptance. Local, GitHub, Hosting and Public state must be reported separately.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData India adapter, evidence, status and eight source selections | `f2f76938e324c77e44141bb0d9566c7058df5025` |
+| AreaData 160-source / 23-country feedback bundle | `385c7e56308cd817238a55475a0f78b0655aef0b`; India origin = full adapter commit |
+| Kit source-feedback import | `7709e71860ea8f4a1c6c70651077cdb16e00181b`; eight India leads at `official_location_identified` / `not_acquired_by_kit_preflight` |
+| Kit check | 52 JS/templates, 67 Markdown, 173/173 tests and `ready: true` with 160 feedback sources |
+
+Both branches are pushed and checked against their remote heads in the final handoff commit. Hosting/Public were not performed because no independent `ACCEPT` or India destination exists.

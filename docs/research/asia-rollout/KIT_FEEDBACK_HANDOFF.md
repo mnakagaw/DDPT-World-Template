@@ -208,3 +208,16 @@ Fourteen official public leads were selected: CYSTAT's 46-table census catalogue
 | Validation | AreaData check 148 modules/templates, 218/218 tests, Cyprus country validation zero errors/warnings, build and eight-case actual output verification. Kit check, 173/173 tests and readiness (`ready: true`, 152 feedback sources) passed. Kit branch was pushed. |
 
 All fourteen Cyprus feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`. The 2015 GEOCODES and DLS boundary listing require current geographic reconciliation, and PxWeb source terms need independent review. Cyprus remains a partial local candidate without independent `ACCEPT` or hosting. Feedback `checked_at` is 2026-09-26 UTC, the day the official sources were checked.
+
+## India ORGI 2011 PCA, geography and Panchayat planning leads — 2026-09-27 JST
+
+Eight public official locations were selected: the acquired ORGI 2011 state/district PCA workbook, lower-unit Population Finder catalogue, 2011 administrative atlas, current LGD catalogue, acquired Constitution Articles 243G/243W, two acquired MoPR FY 2026–27 planning guidance PDFs, and eGramSwaraj's portal information page. [The India source audit](../../evidence/india-orgi-pca2011-source-audit-2026-09-27.md) distinguishes 24 adopted field/reporting-row combinations from 231 unassessed, 2011 census units from current LGD/Panchayats, and national planning guidance from local plan/financial bodies. The feedback contains source addresses and cautions only: no raw workbook/PDF, numerical observation, legal plan status, polygon join or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData India adapter, evidence, status and eight selections | `f2f76938e324c77e44141bb0d9566c7058df5025` on `codex/asia-domestic-20260926` |
+| AreaData 160-source / 23-country bundle | `385c7e56308cd817238a55475a0f78b0655aef0b` on the same branch; India origin events carry the full adapter commit |
+| Kit feedback import | `7709e71860ea8f4a1c6c70651077cdb16e00181b` on `codex/asia-source-feedback-20260926`; dry-run and import accepted 160 leads, eight India records inserted, 152 prior records updated, 161 total |
+| Validation | AreaData check 149 modules/templates, 218/218 tests, India country validation zero errors/warnings, build and seven-case actual output verification. Kit check 52 JS/templates + 67 Markdown, 173/173 tests and readiness (`ready: true`, 160 AreaData feedback sources) passed. Remote parity is recorded after branch push. |
+
+All eight India feedback stages are `official_location_identified` and Kit stores `not_acquired_by_kit_preflight`; the source bodies acquired by AreaData were not copied to Kit. Both states are intentionally conservative until Kit independently checks each source. This feedback does not close the India candidate's current geography, state law, local plan/fiscal, source-terms or independent-audit gaps. Feedback `checked_at` is 2026-09-26 UTC; the handoff is dated 2026-09-27 JST.
