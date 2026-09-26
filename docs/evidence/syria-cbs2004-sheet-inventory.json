@@ -1,0 +1,4427 @@
+{
+  "country": "SYR",
+  "inspected_at_utc": "2026-09-26T08:15:14.619625+00:00",
+  "source_sha256": {
+    "syr_pop_2004_sycensus_0.xls": "3ef15cc2cd20f4a37f07016a4e9485319caf4f4eeed7a4cd9ecadbdbd4af3d61",
+    "cbs2004-pop-moh.pdf": "296374d5d2f306e803a4cf7631000e93576e08e57a3d527eb57e922e518ab628",
+    "cbs2004-pop-man.pdf": "21c02896cc6d4b19561f17c2a55a0109e8d7dd2e1c6de9558485e44edcf5cfa7"
+  },
+  "source_bytes": {
+    "syr_pop_2004_sycensus_0.xls": 2616832,
+    "cbs2004-pop-moh.pdf": 37511,
+    "cbs2004-pop-man.pdf": 180798
+  },
+  "sheet_inventory": [
+    {
+      "sheet": "Pop by Gov",
+      "rows_including_header": 24,
+      "columns": 7,
+      "fields": [
+        {
+          "column_number": 1,
+          "header": "* السكان السوريون حسب الجنس و المحافظة وفق سجلات الأحوال المدنية في 1 / 1 / 2010 ( بالألف )",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        },
+        {
+          "column_number": 2,
+          "header": "",
+          "numeric_cells": 15,
+          "first_numeric_row": 8,
+          "last_numeric_row": 22,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        },
+        {
+          "column_number": 3,
+          "header": "",
+          "numeric_cells": 15,
+          "first_numeric_row": 8,
+          "last_numeric_row": 22,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        },
+        {
+          "column_number": 4,
+          "header": "",
+          "numeric_cells": 15,
+          "first_numeric_row": 8,
+          "last_numeric_row": 22,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        },
+        {
+          "column_number": 5,
+          "header": "",
+          "numeric_cells": 15,
+          "first_numeric_row": 8,
+          "last_numeric_row": 22,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        },
+        {
+          "column_number": 6,
+          "header": "",
+          "numeric_cells": 15,
+          "first_numeric_row": 8,
+          "last_numeric_row": 22,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        },
+        {
+          "column_number": 7,
+          "header": "",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        }
+      ]
+    },
+    {
+      "sheet": "Palestinian Refugees",
+      "rows_including_header": 21,
+      "columns": 7,
+      "fields": [
+        {
+          "column_number": 1,
+          "header": "2009.0",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        },
+        {
+          "column_number": 2,
+          "header": "",
+          "numeric_cells": 9,
+          "first_numeric_row": 8,
+          "last_numeric_row": 16,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        },
+        {
+          "column_number": 3,
+          "header": "",
+          "numeric_cells": 9,
+          "first_numeric_row": 8,
+          "last_numeric_row": 16,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        },
+        {
+          "column_number": 4,
+          "header": "",
+          "numeric_cells": 9,
+          "first_numeric_row": 8,
+          "last_numeric_row": 16,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        },
+        {
+          "column_number": 5,
+          "header": "",
+          "numeric_cells": 9,
+          "first_numeric_row": 8,
+          "last_numeric_row": 16,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        },
+        {
+          "column_number": 6,
+          "header": "",
+          "numeric_cells": 9,
+          "first_numeric_row": 8,
+          "last_numeric_row": 16,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        },
+        {
+          "column_number": 7,
+          "header": "",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "not_adopted_different_2009_or_2010_population"
+        }
+      ]
+    },
+    {
+      "sheet": "Admin1_Governorate",
+      "rows_including_header": 15,
+      "columns": 170,
+      "fields": [
+        {
+          "column_number": 1,
+          "header": "GOVERNORATE Mohafaza_p",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 2,
+          "header": "GOVERNORATE\nMohafaza English",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 3,
+          "header": "GOVERNORATE Mohafaza Arabic",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 4,
+          "header": "Total_population",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "adopt_from_cbs_pdf_xls_identity_only"
+        },
+        {
+          "column_number": 5,
+          "header": "Total_number_of_males",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "adopt_from_cbs_pdf_xls_identity_only"
+        },
+        {
+          "column_number": 6,
+          "header": "Total_number_of_female",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "adopt_from_cbs_pdf_xls_identity_only"
+        },
+        {
+          "column_number": 7,
+          "header": "Total_number_of_households",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "adopt_from_cbs_governorate_pdf"
+        },
+        {
+          "column_number": 8,
+          "header": "Rate_of_Illiteracy_male",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 9,
+          "header": "Rate_of_Illiteracy_female",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 10,
+          "header": "Rate_of_Illiteracy_15_years_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 11,
+          "header": "Percentage_of_High_School_of_males",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 12,
+          "header": "Percentage_of_High_School_of_females",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 13,
+          "header": "Percentage_of_High_School_of_15_years_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 14,
+          "header": "Percentage_of_college_and_above_males",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 15,
+          "header": "Percentage_of_college_and_above_females",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 16,
+          "header": "Percentage_of_college_and_above_15_years_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 17,
+          "header": "Percentage_of_School_enrollment_age_5_to_24",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 18,
+          "header": "Percentage_of_School_enrollment_age_6_to_11",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 19,
+          "header": "Percentage_of_Dependency",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 20,
+          "header": "Percentage_of_Dependency_males",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 21,
+          "header": "Percentage_of_Dependency_females",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 22,
+          "header": "Percentage_of_males_under_15_years",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 23,
+          "header": "Percentage_of_females_under_15_years",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 24,
+          "header": "Percentage_of_population_under_15_years",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 25,
+          "header": "Percentage_of_males_age_15_to_64_years",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 26,
+          "header": "Percentage_of_females_age_15_to_64_years",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 27,
+          "header": "Percentage_of_population_age_15_to_64_years",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 28,
+          "header": "Percentage_of_males_age_15_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 29,
+          "header": "Percentage_of_females_age_15_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 30,
+          "header": "Percentage_of_population_age_15_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 31,
+          "header": "Percentage_of_households_headed_by_women",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 32,
+          "header": "Percentage_of_employer",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 33,
+          "header": "Percentage_of_self-employed",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 34,
+          "header": "Percentage_of_paid_work",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 35,
+          "header": "Percentage_of_working_without_pay",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 36,
+          "header": "Rate_of_Unemployment_males",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 37,
+          "header": "Rate_of_Unemployment_females",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 38,
+          "header": "Rate_of_Unemployment_for_15_years_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 39,
+          "header": "Rate_of_Unemployment_Illiterate",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 40,
+          "header": "Rate_of_Unemployment_educated",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 41,
+          "header": "Rate_of_Unemployment_educated_illiterate",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 42,
+          "header": "Rate_of_Unemployment_aged_15_and_24",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 43,
+          "header": "Rate_of_Unemployment_age_25_and_34",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 44,
+          "header": "Rate_of_Unemployment_age_35_and_44",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 45,
+          "header": "Rate_of_Unemployment_45_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 46,
+          "header": "Family_size",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 47,
+          "header": "Percentage_of_children<6_years",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 48,
+          "header": "Percentage_of_children_6_and_14_years",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 49,
+          "header": "Percentage_of_employers_in_agricultural_activity",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 50,
+          "header": "Percentage_of_self_employed_in_agricultural_activity",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 51,
+          "header": "Percentage_of_wage_worker_in_agricultural_activity",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 52,
+          "header": "Percentage_of_unpaid_worker_in_agricultural_activity",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 53,
+          "header": "Percentage_of_employers_in_non_agricultural_activity",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 54,
+          "header": "Percentage_of_self_employed_in_non_agricultural_activity",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 55,
+          "header": "Percentage_of_wage_worker_in_non_agricultural_activity",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 56,
+          "header": "Percentage_of_unpaid_worker_in_non_agricultural_activity",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 57,
+          "header": "Percentage_of_working_children",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 58,
+          "header": "Rate_of_enrollment_6-11_Total",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 59,
+          "header": "Rate_of_enrollment_6-11_male",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 60,
+          "header": "Rate_of_enrollment_6-11_females",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 61,
+          "header": "Rate_of_enrollment_failure_6-11_Total",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 62,
+          "header": "Rate_of_enrollment_failure_6-11_male",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 63,
+          "header": "Rate_of_enrollment_failure_6-11_female",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 64,
+          "header": "Rate_of_dropout_6-11_Total",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 65,
+          "header": "Rate_of_dropout_6-11_males",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 66,
+          "header": "Rate_of_dropout_6-11_females",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 67,
+          "header": "Rate_of_enrollment_12-14_Total",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 68,
+          "header": "Rate_of_enrollment_12-14_male",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 69,
+          "header": "Rate_of_enrollment_12-14_female",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 70,
+          "header": "Rate_of_enrollment_failure_12-14_Total",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 71,
+          "header": "Rate_of_enrollment_failure_12-14_male",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 72,
+          "header": "Rate_of_enrollment_failure_12-14_Female",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 73,
+          "header": "Rate_of_dropout_12-14_Total",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 74,
+          "header": "Rate_of_dropout_12-14_male",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 75,
+          "header": "Rate_of_dropout_12-14_female",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 76,
+          "header": "Rate_of_Enrollment_15-17_Total",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 77,
+          "header": "Rate_of_Enrollment_15-17_male",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 78,
+          "header": "Rate_of_Enrollment_15-17_female",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 79,
+          "header": "Rate_of_enrollment_failure_15-17_Total",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 80,
+          "header": "Rate_of_enrollment_failure_15-17_male",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 81,
+          "header": "Rate_of_enrollment_failure_15-17_Female",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 82,
+          "header": "Rate_of_dropout_15-17_Total",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 83,
+          "header": "Rate_of_dropout_15-17_male",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 84,
+          "header": "Rate_of_dropout_15-17_female",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 85,
+          "header": "Percentage_of_illiteracy_males_15_years_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 86,
+          "header": "Percentage_of_illiteracy_female_15_years_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 87,
+          "header": "Percentage_of_illiteracy_Total_15_years_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 88,
+          "header": "Percentage_of_illiterate_mail_15_years_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 89,
+          "header": "Percentage_of_illiterate_female_15_years_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 90,
+          "header": "Percentage_of_illiterate_Total_15_years_and_over",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 91,
+          "header": "Percentage_of_elementary_school_males>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 92,
+          "header": "Percentage_of_elementary_school_female>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 93,
+          "header": "Percentage_of_elementary_school_Total>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 94,
+          "header": "Percentage_of_secondary_school_males>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 95,
+          "header": "Percentage_of_secondary_school_female>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 96,
+          "header": "Percentage_of_secondary_school_Total>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 97,
+          "header": "Percentage_of_high_school_males>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 98,
+          "header": "Percentage_of_high_school_female>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 99,
+          "header": "Percentage_of_high_school_Total>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 100,
+          "header": "Percentage_of_middle_college_males>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 101,
+          "header": "Percentage_of_middle_college_female>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 102,
+          "header": "Percentage_of_middle_college_Total>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 103,
+          "header": "Percentage_of_college_males>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 104,
+          "header": "Percentage_of_college_female>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 105,
+          "header": "Percentage_of_college_Total>15",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 106,
+          "header": "Percentage_of_workers_in_regular_employment",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 107,
+          "header": "Percentage_of_workers_in_temporary_work",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 108,
+          "header": "Percentage_of_workers_in_seasonal_work",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 109,
+          "header": "Percentage_of_workers_in_the_work_intermittently",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 110,
+          "header": "Percentage_of_workers_in agriculture_and_forestry",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 111,
+          "header": "Percentage_of_workers_in_industrial",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 112,
+          "header": "Percentage_of_workers_in_the_building_and_construction",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 113,
+          "header": "Percentage_of_workers_in_hotels_and_restaurants",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 114,
+          "header": "Percentage_of_workers_in_the_transport",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 115,
+          "header": "Percentage_of_workers_in_the_capital_and_real_estate",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 116,
+          "header": "Percentage_of_workers_in_services",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 117,
+          "header": "Percentage_of_workers_with_unclear_activity",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 118,
+          "header": "Percentage_of_workers_in_occupations_administrators_and_clerks",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 119,
+          "header": "Percentage_of_workers_in_professionals_and_technicians_occupations",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 120,
+          "header": "Percentage_of_workers_in_service_and_sales_occupations",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 121,
+          "header": "Percentage_of_workers_in_agriculture",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 122,
+          "header": "Percentage_of_workers_in_production_occupations",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 123,
+          "header": "Percentage_of_workers_in_government_sector",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 124,
+          "header": "Percentage_of_workers_in_private_sector",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 125,
+          "header": "Percentage_of_workers_in_cooperative_sector",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 126,
+          "header": "Percentage_of_workers_in_ joint_sector",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 127,
+          "header": "Percentage_of_workers_in_household_sector",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 128,
+          "header": "Percentage_of_workers_in_national_sector",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 129,
+          "header": "Percentage_of_workers_self_employed_with_paid_employees",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 130,
+          "header": "Percentage_of_workers_self_employed_without_paid_employees",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 131,
+          "header": "Percentage_of_workers_employees_paid_cash_or_in_kind",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 132,
+          "header": "Percentage_of_workers_involved_with_the_family",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 133,
+          "header": "Percentage_of_Total_economic_dependency",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 134,
+          "header": "Percentage_of_dependency_males",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 135,
+          "header": "Percentage_of_dependency_females",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 136,
+          "header": "Percentage_of_Total_age_dependency",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 137,
+          "header": "Percentage_of_males_age_dependency",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 138,
+          "header": "Percentage_of_females_age_dependency",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 139,
+          "header": "Rate_of_Crude_total_economic_activity",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 140,
+          "header": "Rate_of_revised_total_economic_activity",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 141,
+          "header": "Rate_of_Crude_total_economic_activity_males",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 142,
+          "header": "Rate_of_revised_total_economic_activity_males",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 143,
+          "header": "Rate_of_Crude_total_economic_activity_females",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 144,
+          "header": "Rate_of_revised_total_economic_activity_females",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 145,
+          "header": "Average_area_of_​​the_building",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 146,
+          "header": "Average_age_of_housing",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 147,
+          "header": "Number_of_occupied_housing",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "adopt_from_cbs_governorate_pdf"
+        },
+        {
+          "column_number": 148,
+          "header": "Number_of_vacant_housing",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "adopt_from_cbs_governorate_pdf"
+        },
+        {
+          "column_number": 149,
+          "header": "Number_of_housing_units_under_Siding",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 150,
+          "header": "Percentage_of_housing_with_safe_water",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 151,
+          "header": "Percentage_of_homes_with_sanitation",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 152,
+          "header": "Percentage_of_homes_equipped_with_public_electricity_network",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 153,
+          "header": "Percentage_of_houses_Villa",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 154,
+          "header": "Percentage_of_houses_Apartment",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 155,
+          "header": "Percentage_of_traditional_proportion_of_arabic_houses",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 156,
+          "header": "Percentage_of_other_houses",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 157,
+          "header": "Percentage_of_owned_houses",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 158,
+          "header": "Percentage_of_rent_houses",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 159,
+          "header": "Percentage_of_legal_status_of_Tabou_systems",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 160,
+          "header": "Percentage_of_legal_status_of_agricultural_Tabou",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 161,
+          "header": "Percentage_of_legal_status_of_notary",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 162,
+          "header": "Percentage_of_construction_material_Cement",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 163,
+          "header": "Percentage_of_building_material_clay",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 164,
+          "header": "Percentage_of_Stone_building_material",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 165,
+          "header": "Percentage_of_other_construction_material",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 166,
+          "header": "Rate_of_overcrowding",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 167,
+          "header": "Percentage_of_occupied_housing",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 168,
+          "header": "Percentage_of_vacant_housing",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 169,
+          "header": "Percentage_of_dwellings_under_Siding",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 170,
+          "header": "Rate_of_marital_fertility",
+          "numeric_cells": 14,
+          "first_numeric_row": 2,
+          "last_numeric_row": 15,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        }
+      ]
+    },
+    {
+      "sheet": "Admin2_District",
+      "rows_including_header": 62,
+      "columns": 173,
+      "fields": [
+        {
+          "column_number": 1,
+          "header": "GOVERNORATE Mohafeza_p",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 2,
+          "header": "GOVERNORATE\nMohafaza English",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 3,
+          "header": "GOVERNORATE Mohafaza Arabic",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 4,
+          "header": "Mantika_pc",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 5,
+          "header": "DISTRICT Mantika English",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 6,
+          "header": "DISTRICT Mantika Arabic",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 7,
+          "header": "Total_population",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "adopt_from_cbs_pdf_xls_identity_only"
+        },
+        {
+          "column_number": 8,
+          "header": "Total_number_of_males",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "adopt_from_cbs_pdf_xls_identity_only"
+        },
+        {
+          "column_number": 9,
+          "header": "Total_number_of_female",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "adopt_from_cbs_pdf_xls_identity_only"
+        },
+        {
+          "column_number": 10,
+          "header": "Total_number_of_households",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 11,
+          "header": "Rate_of_Illiteracy_male",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 12,
+          "header": "Rate_of_Illiteracy_female",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 13,
+          "header": "Rate_of_Illiteracy_15_years_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 14,
+          "header": "Percentage_of_High_School_of_males",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 15,
+          "header": "Percentage_of_High_School_of_females",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 16,
+          "header": "Percentage_of_High_School_of_15_years_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 17,
+          "header": "Percentage_of_college_and_above_males",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 18,
+          "header": "Percentage_of_college_and_above_females",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 19,
+          "header": "Percentage_of_college_and_above_15_years_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 20,
+          "header": "Percentage_of_School_enrollment_age_5_to_24",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 21,
+          "header": "Percentage_of_School_enrollment_age_6_to_11",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 22,
+          "header": "Percentage_of_Dependency",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 23,
+          "header": "Percentage_of_Dependency_males",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 24,
+          "header": "Percentage_of_Dependency_females",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 25,
+          "header": "Percentage_of_males_under_15_years",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 26,
+          "header": "Percentage_of_females_under_15_years",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 27,
+          "header": "Percentage_of_population_under_15_years",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 28,
+          "header": "Percentage_of_males_age_15_to_64_years",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 29,
+          "header": "Percentage_of_females_age_15_to_64_years",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 30,
+          "header": "Percentage_of_population_age_15_to_64_years",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 31,
+          "header": "Percentage_of_males_age_15_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 32,
+          "header": "Percentage_of_females_age_15_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 33,
+          "header": "Percentage_of_population_age_15_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 34,
+          "header": "Percentage_of_households_headed_by_women",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 35,
+          "header": "Percentage_of_employer",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 36,
+          "header": "Percentage_of_self-employed",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 37,
+          "header": "Percentage_of_paid_work",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 38,
+          "header": "Percentage_of_working_without_pay",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 39,
+          "header": "Rate_of_Unemployment_males",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 40,
+          "header": "Rate_of_Unemployment_females",
+          "numeric_cells": 60,
+          "first_numeric_row": 2,
+          "last_numeric_row": 61,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 41,
+          "header": "Rate_of_Unemployment_for_15_years_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 42,
+          "header": "Rate_of_Unemployment_Illiterate",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 43,
+          "header": "Rate_of_Unemployment_educated",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 44,
+          "header": "Rate_of_Unemployment_educated_illiterate",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 45,
+          "header": "Rate_of_Unemployment_aged_15_and_24",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 46,
+          "header": "Rate_of_Unemployment_age_25_and_34",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 47,
+          "header": "Rate_of_Unemployment_age_35_and_44",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 48,
+          "header": "Rate_of_Unemployment_45_and_over",
+          "numeric_cells": 60,
+          "first_numeric_row": 2,
+          "last_numeric_row": 61,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 49,
+          "header": "Family_size",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 50,
+          "header": "Percentage_of_children<6_years",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 51,
+          "header": "Percentage_of_children_6_and_14_years",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 52,
+          "header": "Percentage_of_employers_in_agricultural_activity",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 53,
+          "header": "Percentage_of_self_employed_in_agricultural_activity",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 54,
+          "header": "Percentage_of_wage_worker_in_agricultural_activity",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 55,
+          "header": "Percentage_of_unpaid_worker_in_agricultural_activity",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 56,
+          "header": "Percentage_of_employers_in_non_agricultural_activity",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 57,
+          "header": "Percentage_of_self_employed_in_non_agricultural_activity",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 58,
+          "header": "Percentage_of_wage_worker_in_non_agricultural_activity",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 59,
+          "header": "Percentage_of_unpaid_worker_in_non_agricultural_activity",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 60,
+          "header": "Percentage_of_working_children",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 61,
+          "header": "Rate_of_enrollment_6-11_Total",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 62,
+          "header": "Rate_of_enrollment_6-11_male",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 63,
+          "header": "Rate_of_enrollment_6-11_females",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 64,
+          "header": "Rate_of_enrollment_failure_6-11_Total",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 65,
+          "header": "Rate_of_enrollment_failure_6-11_male",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 66,
+          "header": "Rate_of_enrollment_failure_6-11_female",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 67,
+          "header": "Rate_of_dropout_6-11_Total",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 68,
+          "header": "Rate_of_dropout_6-11_males",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 69,
+          "header": "Rate_of_dropout_6-11_females",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 70,
+          "header": "Rate_of_enrollment_12-14_Total",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 71,
+          "header": "Rate_of_enrollment_12-14_male",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 72,
+          "header": "Rate_of_enrollment_12-14_female",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 73,
+          "header": "Rate_of_enrollment_failure_12-14_Total",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 74,
+          "header": "Rate_of_enrollment_failure_12-14_male",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 75,
+          "header": "Rate_of_enrollment_failure_12-14_Female",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 76,
+          "header": "Rate_of_dropout_12-14_Total",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 77,
+          "header": "Rate_of_dropout_12-14_male",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 78,
+          "header": "Rate_of_dropout_12-14_female",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 79,
+          "header": "Rate_of_Enrollment_15-17_Total",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 80,
+          "header": "Rate_of_Enrollment_15-17_male",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 81,
+          "header": "Rate_of_Enrollment_15-17_female",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 82,
+          "header": "Rate_of_enrollment_failure_15-17_Total",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 83,
+          "header": "Rate_of_enrollment_failure_15-17_male",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 84,
+          "header": "Rate_of_enrollment_failure_15-17_Female",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 85,
+          "header": "Rate_of_dropout_15-17_Total",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 86,
+          "header": "Rate_of_dropout_15-17_male",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 87,
+          "header": "Rate_of_dropout_15-17_female",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 88,
+          "header": "Percentage_of_illiteracy_males_15_years_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 89,
+          "header": "Percentage_of_illiteracy_female_15_years_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 90,
+          "header": "Percentage_of_illiteracy_Total_15_years_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 91,
+          "header": "Percentage_of_illiterate_mail_15_years_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 92,
+          "header": "Percentage_of_illiterate_female_15_years_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 93,
+          "header": "Percentage_of_illiterate_Total_15_years_and_over",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 94,
+          "header": "Percentage_of_elementary_school_males>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 95,
+          "header": "Percentage_of_elementary_school_female>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 96,
+          "header": "Percentage_of_elementary_school_Total>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 97,
+          "header": "Percentage_of_secondary_school_males>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 98,
+          "header": "Percentage_of_secondary_school_female>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 99,
+          "header": "Percentage_of_secondary_school_Total>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 100,
+          "header": "Percentage_of_high_school_males>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 101,
+          "header": "Percentage_of_high_school_female>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 102,
+          "header": "Percentage_of_high_school_Total>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 103,
+          "header": "Percentage_of_middle_college_males>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 104,
+          "header": "Percentage_of_middle_college_female>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 105,
+          "header": "Percentage_of_middle_college_Total>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 106,
+          "header": "Percentage_of_college_males>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 107,
+          "header": "Percentage_of_college_female>15",
+          "numeric_cells": 60,
+          "first_numeric_row": 2,
+          "last_numeric_row": 61,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 108,
+          "header": "Percentage_of_college_Total>15",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 109,
+          "header": "Percentage_of_workers_in_regular_employment",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 110,
+          "header": "Percentage_of_workers_in_temporary_work",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 111,
+          "header": "Percentage_of_workers_in_seasonal_work",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 112,
+          "header": "Percentage_of_workers_in_the_work_intermittently",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 113,
+          "header": "Percentage_of_workers_in agriculture_and_forestry",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 114,
+          "header": "Percentage_of_workers_in_industrial",
+          "numeric_cells": 60,
+          "first_numeric_row": 2,
+          "last_numeric_row": 61,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 115,
+          "header": "Percentage_of_workers_in_the_building_and_construction",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 116,
+          "header": "Percentage_of_workers_in_hotels_and_restaurants",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 117,
+          "header": "Percentage_of_workers_in_the_transport",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 118,
+          "header": "Percentage_of_workers_in_the_capital_and_real_estate",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 119,
+          "header": "Percentage_of_workers_in_services",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 120,
+          "header": "Percentage_of_workers_with_unclear_activity",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 121,
+          "header": "Percentage_of_workers_in_occupations_administrators_and_clerks",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 122,
+          "header": "Percentage_of_workers_in_professionals_and_technicians_occupations",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 123,
+          "header": "Percentage_of_workers_in_service_and_sales_occupations",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 124,
+          "header": "Percentage_of_workers_in_agriculture",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 125,
+          "header": "Percentage_of_workers_in_production_occupations",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 126,
+          "header": "Percentage_of_workers_in_government_sector",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 127,
+          "header": "Percentage_of_workers_in_private_sector",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 128,
+          "header": "Percentage_of_workers_in_cooperative_sector",
+          "numeric_cells": 60,
+          "first_numeric_row": 2,
+          "last_numeric_row": 61,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 129,
+          "header": "Percentage_of_workers_in_ joint_sector",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 130,
+          "header": "Percentage_of_workers_in_household_sector",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 131,
+          "header": "Percentage_of_workers_in_national_sector",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 132,
+          "header": "Percentage_of_workers_self_employed_with_paid_employees",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 133,
+          "header": "Percentage_of_workers_self_employed_without_paid_employees",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 134,
+          "header": "Percentage_of_workers_employees_paid_cash_or_in_kind",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 135,
+          "header": "Percentage_of_workers_involved_with_the_family",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 136,
+          "header": "Percentage_of_Total_economic_dependency",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 137,
+          "header": "Percentage_of_dependency_males",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 138,
+          "header": "Percentage_of_dependency_females",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 139,
+          "header": "Percentage_of_Total_age_dependency",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 140,
+          "header": "Percentage_of_males_age_dependency",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 141,
+          "header": "Percentage_of_females_age_dependency",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 142,
+          "header": "Rate_of_Crude_total_economic_activity",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 143,
+          "header": "Rate_of_revised_total_economic_activity",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 144,
+          "header": "Rate_of_Crude_total_economic_activity_males",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 145,
+          "header": "Rate_of_revised_total_economic_activity_males",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 146,
+          "header": "Rate_of_Crude_total_economic_activity_females",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 147,
+          "header": "Rate_of_revised_total_economic_activity_females",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 148,
+          "header": "Average_area_of_​​the_building",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 149,
+          "header": "Average_age_of_housing",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 150,
+          "header": "Number_of_occupied_housing",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 151,
+          "header": "Number_of_vacant_housing",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 152,
+          "header": "Number_of_housing_units_under_Siding",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 153,
+          "header": "Percentage_of_housing_with_safe_water",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 154,
+          "header": "Percentage_of_homes_with_sanitation",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 155,
+          "header": "Percentage_of_homes_equipped_with_public_electricity_network",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 156,
+          "header": "Percentage_of_houses_Villa",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 157,
+          "header": "Percentage_of_houses_Apartment",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 158,
+          "header": "Percentage_of_traditional_proportion_of_arabic_houses",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 159,
+          "header": "Percentage_of_other_houses",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 160,
+          "header": "Percentage_of_owned_houses",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 161,
+          "header": "Percentage_of_rent_houses",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 162,
+          "header": "Percentage_of_legal_status_of_Tabou_systems",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 163,
+          "header": "Percentage_of_legal_status_of_agricultural_Tabou",
+          "numeric_cells": 60,
+          "first_numeric_row": 2,
+          "last_numeric_row": 61,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 164,
+          "header": "Percentage_of_legal_status_of_notary",
+          "numeric_cells": 60,
+          "first_numeric_row": 2,
+          "last_numeric_row": 61,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 165,
+          "header": "Percentage_of_construction_material_Cement",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 166,
+          "header": "Percentage_of_building_material_clay",
+          "numeric_cells": 60,
+          "first_numeric_row": 2,
+          "last_numeric_row": 61,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 167,
+          "header": "Percentage_of_Stone_building_material",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 168,
+          "header": "Percentage_of_other_construction_material",
+          "numeric_cells": 60,
+          "first_numeric_row": 2,
+          "last_numeric_row": 61,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 169,
+          "header": "Rate_of_overcrowding",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 170,
+          "header": "Percentage_of_occupied_housing",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 171,
+          "header": "Percentage_of_vacant_housing",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 172,
+          "header": "Percentage_of_dwellings_under_Siding",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 173,
+          "header": "Rate_of_marital_fertility",
+          "numeric_cells": 61,
+          "first_numeric_row": 2,
+          "last_numeric_row": 62,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        }
+      ]
+    },
+    {
+      "sheet": "Admin3_Sub-district",
+      "rows_including_header": 271,
+      "columns": 176,
+      "fields": [
+        {
+          "column_number": 1,
+          "header": "GOVERNORATE Mohafeza_p",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 2,
+          "header": "GOVERNORATE\nMohafaza English",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 3,
+          "header": "GOVERNORATE Mohafaza Arabic",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 4,
+          "header": "Mantika_pc",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 5,
+          "header": "DISTRICT Mantika English",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 6,
+          "header": "DISTRICT Mantika Arabic",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 7,
+          "header": "Nahya_pcod",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 8,
+          "header": "SUB-DISTRICT Nahya English",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 9,
+          "header": "SUB-DISTRICT Nahya Arabic",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 10,
+          "header": "Total_population",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "adopt_from_cbs_pdf_xls_identity_only"
+        },
+        {
+          "column_number": 11,
+          "header": "Total_number_of_males",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "adopt_from_cbs_pdf_xls_identity_only"
+        },
+        {
+          "column_number": 12,
+          "header": "Total_number_of_female",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "adopt_from_cbs_pdf_xls_identity_only"
+        },
+        {
+          "column_number": 13,
+          "header": "Total_number_of_households",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 14,
+          "header": "Rate_of_Illiteracy_male",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 15,
+          "header": "Rate_of_Illiteracy_female",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 16,
+          "header": "Rate_of_Illiteracy_15_years_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 17,
+          "header": "Percentage_of_High_School_of_males",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 18,
+          "header": "Percentage_of_High_School_of_females",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 19,
+          "header": "Percentage_of_High_School_of_15_years_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 20,
+          "header": "Percentage_of_college_and_above_males",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 21,
+          "header": "Percentage_of_college_and_above_females",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 22,
+          "header": "Percentage_of_college_and_above_15_years_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 23,
+          "header": "Percentage_of_School_enrollment_age_5_to_24",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 24,
+          "header": "Percentage_of_School_enrollment_age_6_to_11",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 25,
+          "header": "Percentage_of_Dependency",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 26,
+          "header": "Percentage_of_Dependency_males",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 27,
+          "header": "Percentage_of_Dependency_females",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 28,
+          "header": "Percentage_of_males_under_15_years",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 29,
+          "header": "Percentage_of_females_under_15_years",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 30,
+          "header": "Percentage_of_population_under_15_years",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 31,
+          "header": "Percentage_of_males_age_15_to_64_years",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 32,
+          "header": "Percentage_of_females_age_15_to_64_years",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 33,
+          "header": "Percentage_of_population_age_15_to_64_years",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 34,
+          "header": "Percentage_of_males_age_15_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 35,
+          "header": "Percentage_of_females_age_15_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 36,
+          "header": "Percentage_of_population_age_15_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 37,
+          "header": "Percentage_of_households_headed_by_women",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 38,
+          "header": "Percentage_of_employer",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 39,
+          "header": "Percentage_of_self-employed",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 40,
+          "header": "Percentage_of_paid_work",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 41,
+          "header": "Percentage_of_working_without_pay",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 42,
+          "header": "Rate_of_Unemployment_males",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 43,
+          "header": "Rate_of_Unemployment_females",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 270,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 44,
+          "header": "Rate_of_Unemployment_for_15_years_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 45,
+          "header": "Rate_of_Unemployment_Illiterate",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 46,
+          "header": "Rate_of_Unemployment_educated",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 47,
+          "header": "Rate_of_Unemployment_educated_illiterate",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 48,
+          "header": "Rate_of_Unemployment_aged_15_and_24",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 49,
+          "header": "Rate_of_Unemployment_age_25_and_34",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 50,
+          "header": "Rate_of_Unemployment_age_35_and_44",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 51,
+          "header": "Rate_of_Unemployment_45_and_over",
+          "numeric_cells": 267,
+          "first_numeric_row": 2,
+          "last_numeric_row": 270,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 52,
+          "header": "Family_size",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 53,
+          "header": "Percentage_of_children<6_years",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 54,
+          "header": "Percentage_of_children_6_and_14_years",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 55,
+          "header": "Percentage_of_employers_in_agricultural_activity",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 56,
+          "header": "Percentage_of_self_employed_in_agricultural_activity",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 57,
+          "header": "Percentage_of_wage_worker_in_agricultural_activity",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 58,
+          "header": "Percentage_of_unpaid_worker_in_agricultural_activity",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 59,
+          "header": "Percentage_of_employers_in_non_agricultural_activity",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 60,
+          "header": "Percentage_of_self_employed_in_non_agricultural_activity",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 61,
+          "header": "Percentage_of_wage_worker_in_non_agricultural_activity",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 62,
+          "header": "Percentage_of_unpaid_worker_in_non_agricultural_activity",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 63,
+          "header": "Percentage_of_working_children",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 64,
+          "header": "Rate_of_enrollment_6-11_Total",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 65,
+          "header": "Rate_of_enrollment_6-11_male",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 66,
+          "header": "Rate_of_enrollment_6-11_females",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 67,
+          "header": "Rate_of_enrollment_failure_6-11_Total",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 68,
+          "header": "Rate_of_enrollment_failure_6-11_male",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 69,
+          "header": "Rate_of_enrollment_failure_6-11_female",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 70,
+          "header": "Rate_of_dropout_6-11_Total",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 71,
+          "header": "Rate_of_dropout_6-11_males",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 72,
+          "header": "Rate_of_dropout_6-11_females",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 73,
+          "header": "Rate_of_enrollment_12-14_Total",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 74,
+          "header": "Rate_of_enrollment_12-14_male",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 75,
+          "header": "Rate_of_enrollment_12-14_female",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 76,
+          "header": "Rate_of_enrollment_failure_12-14_Total",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 77,
+          "header": "Rate_of_enrollment_failure_12-14_male",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 78,
+          "header": "Rate_of_enrollment_failure_12-14_Female",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 79,
+          "header": "Rate_of_dropout_12-14_Total",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 80,
+          "header": "Rate_of_dropout_12-14_male",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 81,
+          "header": "Rate_of_dropout_12-14_female",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 82,
+          "header": "Rate_of_Enrollment_15-17_Total",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 83,
+          "header": "Rate_of_Enrollment_15-17_male",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 84,
+          "header": "Rate_of_Enrollment_15-17_female",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 85,
+          "header": "Rate_of_enrollment_failure_15-17_Total",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 86,
+          "header": "Rate_of_enrollment_failure_15-17_male",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 87,
+          "header": "Rate_of_enrollment_failure_15-17_Female",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 88,
+          "header": "Rate_of_dropout_15-17_Total",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 89,
+          "header": "Rate_of_dropout_15-17_male",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 90,
+          "header": "Rate_of_dropout_15-17_female",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 91,
+          "header": "Percentage_of_illiteracy_males_15_years_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 92,
+          "header": "Percentage_of_illiteracy_female_15_years_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 93,
+          "header": "Percentage_of_illiteracy_Total_15_years_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 94,
+          "header": "Percentage_of_illiterate_mail_15_years_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 95,
+          "header": "Percentage_of_illiterate_female_15_years_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 96,
+          "header": "Percentage_of_illiterate_Total_15_years_and_over",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 97,
+          "header": "Percentage_of_elementary_school_males>15",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 98,
+          "header": "Percentage_of_elementary_school_female>15",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 99,
+          "header": "Percentage_of_elementary_school_Total>15",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 100,
+          "header": "Percentage_of_secondary_school_males>15",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 101,
+          "header": "Percentage_of_secondary_school_female>15",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 102,
+          "header": "Percentage_of_secondary_school_Total>15",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 103,
+          "header": "Percentage_of_high_school_males>15",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 104,
+          "header": "Percentage_of_high_school_female>15",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 105,
+          "header": "Percentage_of_high_school_Total>15",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 106,
+          "header": "Percentage_of_middle_college_males>15",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 107,
+          "header": "Percentage_of_middle_college_female>15",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 108,
+          "header": "Percentage_of_middle_college_Total>15",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 109,
+          "header": "Percentage_of_college_males>15",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 110,
+          "header": "Percentage_of_college_female>15",
+          "numeric_cells": 265,
+          "first_numeric_row": 2,
+          "last_numeric_row": 270,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 111,
+          "header": "Percentage_of_college_Total>15",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 112,
+          "header": "Percentage_of_workers_in_regular_employment",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 113,
+          "header": "Percentage_of_workers_in_temporary_work",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 114,
+          "header": "Percentage_of_workers_in_seasonal_work",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 115,
+          "header": "Percentage_of_workers_in_the_work_intermittently",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 116,
+          "header": "Percentage_of_workers_in agriculture_and_forestry",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 117,
+          "header": "Percentage_of_workers_in_industrial",
+          "numeric_cells": 268,
+          "first_numeric_row": 2,
+          "last_numeric_row": 270,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 118,
+          "header": "Percentage_of_workers_in_the_building_and_construction",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 119,
+          "header": "Percentage_of_workers_in_hotels_and_restaurants",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 120,
+          "header": "Percentage_of_workers_in_the_transport",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 121,
+          "header": "Percentage_of_workers_in_the_capital_and_real_estate",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 122,
+          "header": "Percentage_of_workers_in_services",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 123,
+          "header": "Percentage_of_workers_with_unclear_activity",
+          "numeric_cells": 258,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 124,
+          "header": "Percentage_of_workers_in_occupations_administrators_and_clerks",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 125,
+          "header": "Percentage_of_workers_in_professionals_and_technicians_occupations",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 126,
+          "header": "Percentage_of_workers_in_service_and_sales_occupations",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 127,
+          "header": "Percentage_of_workers_in_agriculture",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 128,
+          "header": "Percentage_of_workers_in_production_occupations",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 129,
+          "header": "Percentage_of_workers_in_government_sector",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 130,
+          "header": "Percentage_of_workers_in_private_sector",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 131,
+          "header": "Percentage_of_workers_in_cooperative_sector",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 270,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 132,
+          "header": "Percentage_of_workers_in_ joint_sector",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 133,
+          "header": "Percentage_of_workers_in_household_sector",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 134,
+          "header": "Percentage_of_workers_in_national_sector",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 135,
+          "header": "Percentage_of_workers_self_employed_with_paid_employees",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 136,
+          "header": "Percentage_of_workers_self_employed_without_paid_employees",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 137,
+          "header": "Percentage_of_workers_employees_paid_cash_or_in_kind",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 138,
+          "header": "Percentage_of_workers_involved_with_the_family",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 139,
+          "header": "Percentage_of_Total_economic_dependency",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 140,
+          "header": "Percentage_of_dependency_males",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 141,
+          "header": "Percentage_of_dependency_females",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 142,
+          "header": "Percentage_of_Total_age_dependency",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 143,
+          "header": "Percentage_of_males_age_dependency",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 144,
+          "header": "Percentage_of_females_age_dependency",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 145,
+          "header": "Rate_of_Crude_total_economic_activity",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 146,
+          "header": "Rate_of_revised_total_economic_activity",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 147,
+          "header": "Rate_of_Crude_total_economic_activity_males",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 148,
+          "header": "Rate_of_revised_total_economic_activity_males",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 149,
+          "header": "Rate_of_Crude_total_economic_activity_females",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 150,
+          "header": "Rate_of_revised_total_economic_activity_females",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 151,
+          "header": "Average_area_of_​​the_building",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 152,
+          "header": "Average_age_of_housing",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 153,
+          "header": "Number_of_occupied_housing",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 154,
+          "header": "Number_of_vacant_housing",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 155,
+          "header": "Number_of_housing_units_under_Siding",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 156,
+          "header": "Percentage_of_housing_with_safe_water",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 157,
+          "header": "Percentage_of_homes_with_sanitation",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 158,
+          "header": "Percentage_of_homes_equipped_with_public_electricity_network",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 159,
+          "header": "Percentage_of_houses_Villa",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 160,
+          "header": "Percentage_of_houses_Apartment",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 161,
+          "header": "Percentage_of_traditional_proportion_of_arabic_houses",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 162,
+          "header": "Percentage_of_other_houses",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 163,
+          "header": "Percentage_of_owned_houses",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 164,
+          "header": "Percentage_of_rent_houses",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 165,
+          "header": "Percentage_of_legal_status_of_Tabou_systems",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 166,
+          "header": "Percentage_of_legal_status_of_agricultural_Tabou",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 270,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 167,
+          "header": "Percentage_of_legal_status_of_notary",
+          "numeric_cells": 262,
+          "first_numeric_row": 2,
+          "last_numeric_row": 270,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 168,
+          "header": "Percentage_of_construction_material_Cement",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 169,
+          "header": "Percentage_of_building_material_clay",
+          "numeric_cells": 268,
+          "first_numeric_row": 2,
+          "last_numeric_row": 270,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 170,
+          "header": "Percentage_of_Stone_building_material",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 171,
+          "header": "Percentage_of_other_construction_material",
+          "numeric_cells": 265,
+          "first_numeric_row": 2,
+          "last_numeric_row": 270,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 172,
+          "header": "Rate_of_overcrowding",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 173,
+          "header": "Percentage_of_occupied_housing",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 174,
+          "header": "Percentage_of_vacant_housing",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 175,
+          "header": "Percentage_of_dwellings_under_Siding",
+          "numeric_cells": 269,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        },
+        {
+          "column_number": 176,
+          "header": "Rate_of_marital_fertility",
+          "numeric_cells": 270,
+          "first_numeric_row": 2,
+          "last_numeric_row": 271,
+          "decision": "not_adopted_definition_or_pdf_row_discrepancy_unresolved"
+        }
+      ]
+    },
+    {
+      "sheet": "Admin4_City",
+      "rows_including_header": 6136,
+      "columns": 13,
+      "fields": [
+        {
+          "column_number": 1,
+          "header": "GOVERNORATE Mohafeza_p",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 2,
+          "header": "GOVERNORATE\nMohafaza English",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 3,
+          "header": "GOVERNORATE Mohafaza Arabic",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 4,
+          "header": "Mantika_pc",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 5,
+          "header": "DISTRICT Mantika English",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 6,
+          "header": "DISTRICT Mantika Arabic",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 7,
+          "header": "Nahya_pcod",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 8,
+          "header": "SUB-DISTRICT Nahya English",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 9,
+          "header": "SUB-DISTRICT Nahya Arabic",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 10,
+          "header": "City_Qrya_Pcode",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 11,
+          "header": "City_Qarya_EN",
+          "numeric_cells": 0,
+          "first_numeric_row": null,
+          "last_numeric_row": null,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 12,
+          "header": "City_Qarya_AR",
+          "numeric_cells": 17,
+          "first_numeric_row": 133,
+          "last_numeric_row": 1308,
+          "decision": "identity_name_or_provider_code"
+        },
+        {
+          "column_number": 13,
+          "header": "Total_population",
+          "numeric_cells": 6135,
+          "first_numeric_row": 2,
+          "last_numeric_row": 6136,
+          "decision": "not_adopted_city_locality_status_and_coverage_unverified"
+        }
+      ]
+    }
+  ],
+  "scope_note": "Every XLS sheet and column inventoried. The two CBS PDFs contain population/housing counts only; other census tables and rate definitions are not audited."
+}

@@ -370,6 +370,53 @@
           "reuse_note": "New AreaData source location for a 53-page image PDF titled Local Administration Law No. 22 of 2021. Articles, amendments and current planning duties require OCR or manual legal review before adoption."
         }
       ]
+    },
+    {
+      "path": "generated/syria-areadata-20260926",
+      "iso3": "SYR",
+      "evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+      "sources": [
+        {
+          "id": "syr-cbs2004-population-governorates-archived",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate (2004)"],
+          "formats": ["PDF"],
+          "reuse_note": "Archived copy of an original CBS 2004 governorate PDF, not a live current CBS endpoint. AreaData adopted six historical count fields; current population, legal boundary equivalence, reuse terms and independent Kit audit remain open. The old cbssyr.sy site returned HTTP 403 in this session."
+        },
+        {
+          "id": "syr-cbs2004-population-districts-archived",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["district (2004)", "sub-district (2004)"],
+          "formats": ["PDF"],
+          "reuse_note": "Archived copy of original CBS 2004 district/sub-district PDF. AreaData adopted historical population and sex counts only. Lower housing rows are unresolved; P-codes are not verified official codes, and Kit must independently audit source rows and current relevance."
+        },
+        {
+          "id": "syr-ocha-mirror-2004-census-workbook",
+          "role": "machine_readable_data",
+          "authority_type": "international_organization",
+          "geographic_levels": ["governorate", "district", "sub-district", "city/locality with unverified coverage"],
+          "formats": ["XLS"],
+          "reuse_note": "Archived OCHA distribution of CBS census material. AreaData uses English labels and P-codes only: 213 numeric fields conflict with original CBS PDFs. Do not adopt mirror numbers or its separate 2009/2010 sheets without independent reconciliation, geography and terms review."
+        },
+        {
+          "id": "syr-sana-local-planning-methodology-2025",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["governorate"],
+          "formats": ["HTML"],
+          "reuse_note": "Official SANA report describes discussion of a proposed 2025 governorate local-development planning method. The method text, legal planning duty, actual selected-area plan and approval have not been obtained; the article is a lead, not adopted guidance."
+        },
+        {
+          "id": "syr-mof-citizen-budget-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["national; subnational detail unassessed"],
+          "formats": ["PDF"],
+          "reuse_note": "Official Ministry of Finance 2026 national citizen-budget location. AreaData has not audited its table fields. It is not a selected governorate plan, local budget execution or official evaluation."
+        }
+      ]
     }
   ]
 }
