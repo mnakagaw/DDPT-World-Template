@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T08:08:55.519Z",
-  "origin_commit": "dec40a6a2160102a8b02226559330eb8efe2dcca",
+  "exported_at": "2026-09-26T08:17:49.891Z",
+  "origin_commit": "ea09dccdcd07ae376b2849481248458c8509fa10",
   "sources": [
     {
       "iso3": "BFA",
@@ -791,6 +791,30 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "New parliament location for original Law No. 4 of 2000. A 40-page PDF was acquired, but current consolidated applicability, amendments and actual local plan status are unverified.",
+      "origin_evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "YEM",
+      "source_id": "YEM_YEM_TAIZ_MOPIC_ECONOMIC_SOCIAL_PLAN_2024_2026",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Taiz Economic and Social Development Plan 2024-2026, English PDF",
+      "publisher": "Taiz Governorate Planning and International Cooperation Office",
+      "url": "https://www.mopic-taiz.com/wp-content/uploads/2023/11/Taiz-Economic-and-Social-Development-Plan-3-1.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Taiz plan area: 17 named districts"
+      ],
+      "reference_periods": [
+        "2024-2026"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New direct PDF of the Taiz planning office's 42-page English 2024-2026 plan. Page 4 explicitly limits scope to 17 named liberated districts, whereas the 2024 CSO yearbook has 23 Taiz district rows. Do not assign to the whole governorate or 2017 reference polygon without exact geography. Approval, adopted budget, expenditure and evaluation are unverified.",
       "origin_evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
       "artifact_sha256": null
     },
