@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T12:21:03.249Z",
-  "origin_commit": "94a9adeb9f14f6f3653570ad87c68eeede46eb83",
+  "exported_at": "2026-09-26T13:07:58.287Z",
+  "origin_commit": "8bf8d222f0b4b664486fc1ad3aed27bac1d56f47",
   "sources": [
     {
       "iso3": "ARE",
@@ -733,6 +733,330 @@
       "license_or_terms": null,
       "reuse_note": "Reused from the Kit Bangladesh project, not newly discovered by AreaData. Verify each district workbook and local geography independently; AreaData audit and source-terms review are pending.",
       "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_GIS_PORTAL",
+      "role": "boundaries",
+      "title": "Geostat GIS portal",
+      "publisher": "Geostat",
+      "url": "https://gis.geostat.ge/en/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "portal location; 2024-compatible region/municipality/district code and polygon editions unverified"
+      ],
+      "reference_periods": [
+        "location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "https://www.geostat.ge/en/page/monacemta-gamoyenebis-pirobebi",
+      "reuse_note": "Official Geostat GIS portal location only. AreaData acquired no 2024-compatible code edition or polygon and did not join 2015 geoBoundaries shapes.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS2024_CATALOG",
+      "role": "census_catalog",
+      "title": "Geostat 2024 census thematic table catalog",
+      "publisher": "Geostat",
+      "url": "https://www.geostat.ge/en/modules/categories/12/2024-population-census-of-georgia-results",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "eight thematic catalogue sections; 48 XLSX originals, local geography varies by table"
+      ],
+      "reference_periods": [
+        "location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML",
+        "XLSX"
+      ],
+      "license_or_terms": "https://www.geostat.ge/en/page/monacemta-gamoyenebis-pirobebi",
+      "reuse_note": "AreaData acquired all 48 listed workbooks and mechanically located 85,449 numeric cells, including numeric headers. Only five workbooks were partially adopted; 43 lack semantic field audit. Kit must independently inspect exact originals, geographic universes and terms.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS2024_909_02",
+      "role": "census_results",
+      "title": "Geostat final 2024 population census: Population of Georgia by self-governed units, urban-rural settlements and sex",
+      "publisher": "National Statistics Office of Georgia (Geostat)",
+      "url": "https://geostat.ge/media/80611/2.-Population-of-Georgia-by-self-governed-units%2C-urban-rural-settlements-and-sex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "11 top-level reporting rows",
+        "63 municipalities",
+        "ten Tbilisi internal districts"
+      ],
+      "reference_periods": [
+        "2024-11-14 census reference time (some mountainous locations enumerated September 2024)"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "https://www.geostat.ge/en/page/monacemta-gamoyenebis-pirobebi",
+      "reuse_note": "Final 2024 census population/sex/urban-rural table. AreaData checked nine fields and complete source-row sums. National 3,929,581 excludes occupied territories. Source row identity is not an official code or polygon join; Kit must inspect independently.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS2024_912_01",
+      "role": "census_results",
+      "title": "Geostat final 2024 population census: Population 10 years of age and over by regions, self-governed units, sex and educational attainment",
+      "publisher": "National Statistics Office of Georgia (Geostat)",
+      "url": "https://geostat.ge/media/80633/1.-Population-10-years-of-age-and-over-by-regions%2C-self-governed-units%2C-sex-and-educational-attainment.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "11 top-level reporting rows",
+        "63 municipalities; no Tbilisi district education rows"
+      ],
+      "reference_periods": [
+        "2024-11-14 census reference time (some mountainous locations enumerated September 2024)"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "https://www.geostat.ge/en/page/monacemta-gamoyenebis-pirobebi",
+      "reuse_note": "Education table universe is age 10+. AreaData adopted only three direct counts and checked category/sex totals against the age denominator; no general-population education rate is transferred.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS2024_913_01",
+      "role": "census_results",
+      "title": "Geostat final 2024 population census: Population 15 years of age and over by regions, self-governed units, sex, activity status and employment status",
+      "publisher": "National Statistics Office of Georgia (Geostat)",
+      "url": "https://geostat.ge/media/80640/1.-Population-15-years-of-age-and-over-by-regions%2C-self-governed-units%2C-sex%2C-activity-status-and-employment-status.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "11 top-level reporting rows",
+        "63 municipalities; no Tbilisi district labour rows"
+      ],
+      "reference_periods": [
+        "2024-11-14 census reference time (some mountainous locations enumerated September 2024)"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "https://www.geostat.ge/en/page/monacemta-gamoyenebis-pirobebi",
+      "reuse_note": "Economic activity table universe is age 15+. AreaData adopted four source counts and calculated unemployment / economically active; that share is not the WDI modelled ILO rate. Kit must check original definitions.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS2024_915_01",
+      "role": "census_results",
+      "title": "Geostat final 2024 population census: Number of private households by size, regions, self-governed units, urban-rural settlements",
+      "publisher": "National Statistics Office of Georgia (Geostat)",
+      "url": "https://geostat.ge/media/80715/1.-Number-of-private-households-by-size%2C-regions%2C-self-governed-units%2C-urban-rural-settlements.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "11 top-level reporting rows",
+        "63 municipalities; no Tbilisi district household rows"
+      ],
+      "reference_periods": [
+        "2024-11-14 census reference time (some mountainous locations enumerated September 2024)"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "https://www.geostat.ge/en/page/monacemta-gamoyenebis-pirobebi",
+      "reuse_note": "Private households and people in private households are separate counts and the latter is a subset of all census residents. AreaData adopted two direct indicators; remaining size/settlement fields need independent Kit assessment.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS2024_910_02",
+      "role": "census_results",
+      "title": "Geostat final 2024 population census: Population by regions, self-governed units, 5-year age groups, urban-rural settlements and sex",
+      "publisher": "National Statistics Office of Georgia (Geostat)",
+      "url": "https://geostat.ge/media/80811/1.1-Population-by-regions%2C-self-governed-units%2C-5-year-age-groups%2C-urban-rural-settlements-and-sex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "11 top-level reporting rows",
+        "63 municipalities; no Tbilisi district age rows"
+      ],
+      "reference_periods": [
+        "2024-11-14 census reference time (some mountainous locations enumerated September 2024)"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "https://www.geostat.ge/en/page/monacemta-gamoyenebis-pirobebi",
+      "reuse_note": "Five-year age, sex and urban-rural source table. AreaData checked complete age blocks and calculated three broad-age counts; these are not source-published broad bands. District age values remain missing.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_MATSNE_ORDINANCE260",
+      "role": "planning_guidance",
+      "title": "Government Ordinance 260 on spatial-planning document procedure",
+      "publisher": "Legislative Herald of Georgia",
+      "url": "https://matsne.gov.ge/ka/document/view/4579368?publication=0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national procedure; municipality and special-area application to verify"
+      ],
+      "reference_periods": [
+        "location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "Official Ordinance 260 location only. Current amendments, operative procedural steps and applicable official form were not adopted in AreaData.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_MATSNE_LOCAL_SELF_GOVERNMENT_CODE",
+      "role": "planning_law",
+      "title": "Georgia Organic Law Local Self-Government Code",
+      "publisher": "Legislative Herald of Georgia",
+      "url": "https://matsne.gov.ge/en/document/view/2244429",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national municipal governance; exact planning/fiscal duty to verify"
+      ],
+      "reference_periods": [
+        "location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "Official self-government code location only. Municipality powers are not proof of an approved plan, fiscal execution or district planning duty. Check current consolidation.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_MATSNE_SPATIAL_CODE",
+      "role": "planning_law",
+      "title": "Georgia Code on Spatial Planning, Architecture and Construction Activities",
+      "publisher": "Legislative Herald of Georgia",
+      "url": "https://matsne.gov.ge/en/document/view/4276845",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national framework; ordinary municipality and special-regulation applicability to verify"
+      ],
+      "reference_periods": [
+        "location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "Spatial-planning code location and initial reading only. Verify operative consolidation and Articles 28/31/35/36, special-regulation exception, plan authority and actual local approval independently.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_BATUMI_BUDGET_PORTAL",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Batumi municipality budget portal",
+      "publisher": "Batumi Municipality",
+      "url": "https://batumi.gov.ge/budget",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Batumi municipality budget catalogue"
+      ],
+      "reference_periods": [
+        "location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "Batumi municipal budget portal location only. Actual ordinance, current period, amendments, line items, implementation and evaluation need Kit's independent inspection.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_MATSNE_TBILISI_PLAN2019",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Tbilisi 2019 land-use general plan record",
+      "publisher": "Legislative Herald of Georgia",
+      "url": "https://www.matsne.gov.ge/ka/document/view/4508064",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Tbilisi city land-use plan; district-level applicability unverified"
+      ],
+      "reference_periods": [
+        "location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "Matsne 2019 Tbilisi plan record location only. Current amendments, operative mapped plan body, approval and district application were not adopted.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_MATSNE_TBILISI_BUDGET2026_INITIAL",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Tbilisi 2026 initial budget ordinance",
+      "publisher": "Legislative Herald of Georgia",
+      "url": "https://www.matsne.gov.ge/ka/document/view/6712283",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Tbilisi initial 2026 fiscal ordinance"
+      ],
+      "reference_periods": [
+        "location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "Initial Tbilisi 2026 budget ordinance location only. Later amendments/current consolidation and execution are unverified; no initial amount is a current adopted budget value.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
       "artifact_sha256": null
     },
     {
