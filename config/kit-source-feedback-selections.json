@@ -1280,6 +1280,61 @@
           "reuse_note": "Official ministry page location for an aggregate four-municipality 2025-26 budget. No individual municipality amount, executed expenditure or evaluation was acquired; do not assign the aggregate to a governorate."
         }
       ]
+    },
+    {
+      "path": "generated/qatar-areadata-20260926",
+      "iso3": "QAT",
+      "evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "sources": [
+        {
+          "id": "qat-npc-census2020-catalogue",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "eight December 2020 census municipalities"],
+          "formats": ["HTML catalogue", "XLSX", "PDF"],
+          "reuse_note": "NPC official Census 2020 catalogue location. AreaData acquired a 209-sheet workbook and selected a partial cell candidate; no independent country acceptance exists. Kit must reacquire and audit all tables, terms and geography."
+        },
+        {
+          "id": "qat-npc-census2020-table-1",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "eight December 2020 census municipalities"],
+          "formats": ["XLSX"],
+          "reuse_note": "Official workbook includes population Table 1 and many other municipal/zone tables. The URL is a source location, not a transfer of AreaData values or the current 2020 boundary crosswalk."
+        },
+        {
+          "id": "qat-gis-municipality-current",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["current municipality attributes; historical 2020 match unverified"],
+          "formats": ["ArcGIS REST JSON"],
+          "reuse_note": "Current MunicipalityAT records contain code candidates but all eight STARTDATE values postdate December 2020. Do not attach them to Census 2020 cells or polygons without a dated crosswalk."
+        },
+        {
+          "id": "qat-mm-qnmp-products",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "municipality planning products"],
+          "formats": ["HTML catalogue"],
+          "reuse_note": "Official QNMP product location. Current municipality plan editions, approvals and applicable law require fresh source review."
+        },
+        {
+          "id": "qat-mm-qnmp-zoning",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["six named zoning municipalities; two future extensions on source page"],
+          "formats": ["HTML page"],
+          "reuse_note": "Source names six MSDP zoning municipalities and calls Al Khor and Al Wakra future extensions. Page currency and 2026 operative coverage are unverified."
+        },
+        {
+          "id": "qat-mm-doha-msdp-volume1-2014",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["Doha municipality in the historical plan"],
+          "formats": ["PDF"],
+          "reuse_note": "Official PDF Volume 1 cover says 1 June 2014 although URL filename says Dec 2017. Current revision, legal effect, 2020 area match and fiscal/implementation evidence are unverified."
+        }
+      ]
     }
   ]
 }
