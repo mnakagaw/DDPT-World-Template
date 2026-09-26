@@ -221,3 +221,16 @@ Eight public official locations were selected: the acquired ORGI 2011 state/dist
 | Validation | AreaData check 149 modules/templates, 218/218 tests, India country validation zero errors/warnings, build and seven-case actual output verification. Kit check 52 JS/templates + 67 Markdown, 173/173 tests and readiness (`ready: true`, 160 AreaData feedback sources) passed. Remote parity is recorded after branch push. |
 
 All eight India feedback stages are `official_location_identified` and Kit stores `not_acquired_by_kit_preflight`; the source bodies acquired by AreaData were not copied to Kit. Both states are intentionally conservative until Kit independently checks each source. This feedback does not close the India candidate's current geography, state law, local plan/fiscal, source-terms or independent-audit gaps. Feedback `checked_at` is 2026-09-26 UTC; the handoff is dated 2026-09-27 JST.
+
+## Pakistan PBS 2023 census, geography and local-government leads — 2026-09-27 JST
+
+Seventeen public official locations were selected: the PBS numbered-table catalogue and six Table 1 workbooks, PBS GIS/administrative-district and Census District code references, five provincial/ICT local-government law locations plus KP tehsil rules, and the federal PSDP page. [The Pakistan source audit](../../evidence/pakistan-pbs2023-source-audit-2026-09-27.md) distinguishes the six partly adopted Table 1 count fields from unassessed lower-unit fields and the 32 other numbered tables. It also records the Topi Tehsil source-cell conflict, the four-province-plus-ICT scope, and the absence of an official administrative-district code/polygon join. The feedback carries no raw workbook, observations, legal body, plan or budget record, district code, or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, evidence, status and seventeen selections | `c7d2678c0907a2be5c6605f4146376c4a87bd93b` on `codex/asia-domestic-20260926` |
+| AreaData 177-source / 24-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries `origin_commit` = `c7d2678c0907a2be5c6605f4146376c4a87bd93b` |
+| Kit import | `3af46382fda7941fc88722727f9a82ba321d7fa2` on `codex/asia-source-feedback-20260926`; dry-run and import accepted 177 leads, seventeen Pakistan records inserted, 160 existing origin histories updated, 178 records total |
+| Validation | AreaData check 150 modules/templates, 218/218 tests, Pakistan country validation zero errors/warnings, build and nine-case actual output verifier passed. Kit check 52 JS/templates + 67 Markdown, 173/173 tests and readiness (`ready: true`, 177 feedback sources) passed. Kit remote branch head matched `git ls-remote`. |
+
+All seventeen Pakistan feedback stages are `official_location_identified`; Kit stores `not_acquired_by_kit_preflight`. Kit must independently acquire and inspect the source bodies, Table 1 scope, census versus administrative district codes, provincial law editions, local plan/fiscal records and source terms before reuse. Pakistan remains a partial local candidate without independent `ACCEPT` or hosting.

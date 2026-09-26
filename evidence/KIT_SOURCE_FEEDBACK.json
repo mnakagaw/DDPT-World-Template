@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T17:16:08.342Z",
-  "origin_commit": "f2f76938e324c77e44141bb0d9566c7058df5025",
+  "exported_at": "2026-09-26T18:30:02.613Z",
+  "origin_commit": "c7d2678c0907a2be5c6605f4146376c4a87bd93b",
   "sources": [
     {
       "iso3": "ARE",
@@ -3225,6 +3225,443 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "AreaData adopted only Table 7-2's six 2023-2025 Omani/expatriate registered-population columns. This is year-end registration, not the 2020 eCensus or WDI midyear population. Table 6-2 and 8-2 were cross-checks; other yearbook tables, official codes, compatible polygons and reuse terms need independent Kit audit.",
       "origin_evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_PBS_FOP_CENSUS_DISTRICT_CODES_2023",
+      "role": "administrative_codes",
+      "title": "PBS Census 2023 field operation plan: census district codes",
+      "publisher": "Pakistan Bureau of Statistics",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/FOP_final_26-2-23_final.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2023 census district",
+        "administrative district relation"
+      ],
+      "reference_periods": [
+        "location checked 2026-09-27"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Link verified; exact body and redistribution terms require review",
+      "reuse_note": "PBS field operation plan lists Census District codes; an administrative district can contain multiple Census District entries. No one-to-one code match to Table 1 administrative district rows has been established.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_PBS_ADMIN_DISTRICTS_2023",
+      "role": "administrative_codes",
+      "title": "PBS administrative districts as of 1 March 2023",
+      "publisher": "Pakistan Bureau of Statistics",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/List-of-Administrative-Districts-2023.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2023 province",
+        "division",
+        "administrative district",
+        "AJK",
+        "GB"
+      ],
+      "reference_periods": [
+        "location checked 2026-09-27"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Link verified; exact body and redistribution terms require review",
+      "reuse_note": "Official 1 March 2023 administrative district list location. Its serial numbers are not adopted as official geographic codes; compare exact names, hierarchy and census workbook row edition before a join.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_PBS_CENSUS2023_GIS",
+      "role": "boundaries",
+      "title": "PBS Census 2023 GIS and administrative unit sources",
+      "publisher": "Pakistan Bureau of Statistics",
+      "url": "https://www.pbs.gov.pk/gis/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2023 census district",
+        "tehsil",
+        "census block"
+      ],
+      "reference_periods": [
+        "location checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "Link verified; exact body and redistribution terms require review",
+      "reuse_note": "PBS GIS describes frozen census geography and nine-digit census-block codes. AreaData acquired no official source-compatible polygon or district-to-current-council crosswalk.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_PBS2023_RESULT_EXCEL",
+      "role": "census_catalog",
+      "title": "PBS 7th Population and Housing Census detailed Excel table catalogue",
+      "publisher": "Pakistan Bureau of Statistics",
+      "url": "https://www.pbs.gov.pk/result-excel/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Table 1 four-province-plus-ICT scope",
+        "province",
+        "district",
+        "lower census reporting unit"
+      ],
+      "reference_periods": [
+        "2023 census"
+      ],
+      "formats": [
+        "HTML",
+        "XLSX"
+      ],
+      "license_or_terms": "Official public catalogue; redistribution terms for workbook bodies need review",
+      "reuse_note": "PBS official 2023 detailed Excel catalogue lists 33 numbered entries; AreaData acquired only six Table 1 bodies. Table 10 KP link points to a Table 1 file. Kit must inspect exact source, meaning, coverage and terms independently.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_PBS2023_TABLE1_BALOCHISTAN",
+      "role": "census_results",
+      "title": "PBS Census 2023 Table 1, balochistan direct XLSX",
+      "publisher": "Pakistan Bureau of Statistics",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_1_balochistan_districts.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Balochistan",
+        "34 2023 administrative districts",
+        "tehsil",
+        "sub-division"
+      ],
+      "reference_periods": [
+        "2023 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public XLSX; redistribution terms need review",
+      "reuse_note": "Official Table 1 district workbook; six selected direct counts adopted for province/district only. Tehsil/sub-division rows remain unassessed; no district-code or current council join.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_PBS2023_TABLE1_ISLAMABAD",
+      "role": "census_results",
+      "title": "PBS Census 2023 Table 1, islamabad direct XLSX",
+      "publisher": "Pakistan Bureau of Statistics",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_1_islamabad.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Islamabad Capital Territory district",
+        "tehsil"
+      ],
+      "reference_periods": [
+        "2023 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public XLSX; redistribution terms need review",
+      "reuse_note": "Official Table 1 ICT district workbook. The district is a direct child of the four-province-plus-ICT source scope, not a fifth province or proof of a present local-government plan.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_PBS2023_TABLE1_KP",
+      "role": "census_results",
+      "title": "PBS Census 2023 Table 1, kp direct XLSX",
+      "publisher": "Pakistan Bureau of Statistics",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_1_kp_districts.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Khyber Pakhtunkhwa",
+        "35 2023 administrative districts",
+        "tehsil",
+        "sub-division"
+      ],
+      "reference_periods": [
+        "2023 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public XLSX; redistribution terms need review",
+      "reuse_note": "Official Table 1 district workbook. AreaData adopted only six 2023 direct-count classes at province/district level. Topi Tehsil rural population C474 conflicts with sex and rural/urban sums; preserve source and withhold lower-unit adoption.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_PBS2023_TABLE1_NATIONAL",
+      "role": "census_results",
+      "title": "PBS Census 2023 Table 1, national direct XLSX",
+      "publisher": "Pakistan Bureau of Statistics",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_1_national.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "four provinces and ICT national Table 1 reporting scope"
+      ],
+      "reference_periods": [
+        "2023 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public XLSX; redistribution terms need review",
+      "reuse_note": "Table 1 reports 241499431 people for its four provinces plus ICT; AJK/GB are not rows in the acquired national workbook. Footnote says restricted-area headcounts differ from Table 4 onward detailed-characteristic base. Not a WDI national midyear estimate.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_PBS2023_TABLE1_PUNJAB",
+      "role": "census_results",
+      "title": "PBS Census 2023 Table 1, punjab direct XLSX",
+      "publisher": "Pakistan Bureau of Statistics",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_1_punjab_districts.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Punjab",
+        "36 2023 administrative districts",
+        "tehsil"
+      ],
+      "reference_periods": [
+        "2023 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public XLSX; redistribution terms need review",
+      "reuse_note": "Official Table 1 district workbook; six selected direct counts were adopted for Punjab and districts only. Workbook rows carry no official district code or compatible polygon.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_PBS2023_TABLE1_SINDH",
+      "role": "census_results",
+      "title": "PBS Census 2023 Table 1, sindh direct XLSX",
+      "publisher": "Pakistan Bureau of Statistics",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/table_1_sindh_districts.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Sindh",
+        "30 2023 administrative districts",
+        "taluka",
+        "sub-division"
+      ],
+      "reference_periods": [
+        "2023 census"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public XLSX; redistribution terms need review",
+      "reuse_note": "Official Table 1 district workbook; six selected direct counts adopted for province/district only. Taluka and sub-division hierarchy/terms require separate review.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_KP_TEHSIL_RULES_2022",
+      "role": "planning_guidance",
+      "title": "KP City/Tehsil Local Government Rules of Business 2022",
+      "publisher": "kpcode.kp.gov.pk",
+      "url": "https://kpcode.kp.gov.pk/uploads/Khyber_Pakhtunkhwa_CityTehsil_Local_Government_Rules_of_Business_2022.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "KP city and tehsil local governments"
+      ],
+      "reference_periods": [
+        "cited law version; amendments pending review"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official law location; local copy and latest amendments not acquired",
+      "reuse_note": "Official 2022 Tehsil rules location includes annual development-plan provision. It is not proof any selected district or Tehsil has an approved current plan or expenditure.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_BALOCHISTAN_LOCAL_GOVERNMENT_ACT_2010",
+      "role": "planning_law",
+      "title": "Balochistan Local Government Act 2010, Sections 86, 94-95",
+      "publisher": "balochistan.gov.pk",
+      "url": "https://balochistan.gov.pk/wp-content/uploads/2024/10/Balochistan-Local-Government-Act-2010.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Balochistan local councils"
+      ],
+      "reference_periods": [
+        "cited law version; amendments pending review"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "license_or_terms": "Official law location; local copy and latest amendments not acquired",
+      "reuse_note": "Official law and amendment catalogue location. Sections 86 and 94-95 discuss Local Council plans and budget; 2013-2023 amendments and actual area plans remain to be checked.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_PUNJAB_LOCAL_GOVERNMENT_ACT_2025",
+      "role": "planning_law",
+      "title": "Punjab Local Government Act 2025",
+      "publisher": "lgcd.punjab.gov.pk",
+      "url": "https://lgcd.punjab.gov.pk/system/files/PLGA_2025.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Punjab local-government bodies"
+      ],
+      "reference_periods": [
+        "cited law version; amendments pending review"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "license_or_terms": "Official law location; local copy and latest amendments not acquired",
+      "reuse_note": "Official Punjab LG&CD lists its 2025 Act. AreaData verified location only; exact operative sections, later amendments, local-body boundaries and actual approved plans require review.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_ICT_LOCAL_GOVERNMENT_ACT_2015",
+      "role": "planning_law",
+      "title": "Islamabad Capital Territory Local Government Act 2015, Sections 48-49",
+      "publisher": "pakistancode.gov.pk",
+      "url": "https://pakistancode.gov.pk/pdffiles/administrator2cd0fb199558bc5fb239d66d51d21e27.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Islamabad Capital Territory local government"
+      ],
+      "reference_periods": [
+        "cited law version; amendments pending review"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official law location; local copy and latest amendments not acquired",
+      "reuse_note": "Official Pakistan Code Act sections 48-49 address local development-plan approval/budget. Later amendments, competent current body and actual ICT plan status require review.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_KP_LOCAL_GOVERNMENT_ACT_2013",
+      "role": "planning_law",
+      "title": "Khyber Pakhtunkhwa Local Government Act 2013",
+      "publisher": "pakp.gov.pk",
+      "url": "https://www.pakp.gov.pk/act/the-khyber-pakhtunkhwa-local-government-act-2013/",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "KP local-government bodies"
+      ],
+      "reference_periods": [
+        "cited law version; amendments pending review"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "Official law location; local copy and latest amendments not acquired",
+      "reuse_note": "Provincial Assembly law location; current amendments, competent Tehsil/council bodies, actual plans and geography must be checked separately.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_SINDH_LOCAL_GOVERNMENT_ACT_2013",
+      "role": "planning_law",
+      "title": "Sindh Local Government Act 2013, Section 76",
+      "publisher": "sindhlaws.gov.pk",
+      "url": "https://www.sindhlaws.gov.pk/setup/publications_SindhCode/PUB-NEW-18-000156.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Sindh councils"
+      ],
+      "reference_periods": [
+        "cited law version; amendments pending review"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official law location; local copy and latest amendments not acquired",
+      "reuse_note": "Official Sindh law section 76 addresses Council development plans and budget; amendments, current councils and area-specific approved plans require review.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PAK",
+      "source_id": "PAK_PAK_PC_PSDP_2026_27",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Federal PSDP 2026-27 and expenditure catalogue",
+      "publisher": "Ministry of Planning, Development & Special Initiatives",
+      "url": "https://www.pc.gov.pk/web/psdp",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "federal programme",
+        "ministerial expenditure"
+      ],
+      "reference_periods": [
+        "location checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "Link verified; exact body and redistribution terms require review",
+      "reuse_note": "Official FY 2026-27 federal PSDP and monthly expenditure catalogue location. It is not a 2023 census district or local council approved plan, budget, expenditure or evaluation.",
+      "origin_evidence_path": "docs/evidence/pakistan-pbs2023-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {

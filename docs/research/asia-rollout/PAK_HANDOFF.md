@@ -28,3 +28,7 @@ node scripts/serve.mjs --dir generated/pakistan-areadata-NEW/site --port 4204
 5. AreaData新規確認の公開公式所在をKitに`official_location_identified`のみでfeedbackする。Kitは独立に原本/地理/意味/利用条件を確認する。
 
 Pakistanは南アジアの部分候補に追加するが、**中東段階1の18部分/1調査も全件未完成**。次の未着手国は段階2のAfghanistan。既存Bangladesh候補は独立監査待ちであり、南アジア完成に計上しない。Local、GitHub、Hosting、Publicの状態は別記録とする。
+
+## GitHubとKitへの引き継ぎ
+
+AreaDataのimporter・監査・17件の公式source選定は`c7d2678c0907a2be5c6605f4146376c4a87bd93b`へcommitした。`evidence/KIT_SOURCE_FEEDBACK.json`は同commitをoriginとする177件・24か国のbundleで、Pakistanの17件はいずれも`official_location_identified`。Kitの取込commitは`3af46382fda7941fc88722727f9a82ba321d7fa2`で、Kit側17件はすべて`not_acquired_by_kit_preflight`。Kit branchのremote head一致を確認した。AreaData bundleとこの引き継ぎは同じbranchの後続commitに保存する。[取込台帳](KIT_FEEDBACK_HANDOFF.md)を参照。
