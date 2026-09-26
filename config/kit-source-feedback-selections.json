@@ -1454,6 +1454,101 @@
           "reuse_note": "Resolution 109/2024 changes Al Wakra boundary effective 2024-05-30; official Gazette page and attached map acquired. Current GIS polygon has not been matched coordinate-by-coordinate to annex. Do not reinterpret Census 2020 geography."
         }
       ]
+    },
+    {
+      "path": "generated/armenia-areadata-20260927",
+      "iso3": "ARM",
+      "evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "sources": [
+        {
+          "id": "armstat-census-2022-pxweb-marzes",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "Yerevan", "ten marzes; finer extent not inferred"],
+          "formats": ["PxWeb HTML"],
+          "reuse_note": "AreaData adopted only the 2022 total permanent-population slice for national and first-level areas. Thirteen other Census 2022 tables and other axes/years remain unassessed; Kit must reacquire originals, verify local geography and terms."
+        },
+        {
+          "id": "armstat-permanent-population-2026-01-01",
+          "role": "official_statistics_office",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "Yerevan", "ten marzes", "69 other current communities"],
+          "formats": ["PDF"],
+          "reuse_note": "2026-01-01 census-based current permanent population in thousand persons, not direct Census 2022 counts. The 2025 Khoy merger and 2026 code edition need fresh checks. No values are transferred to Kit."
+        },
+        {
+          "id": "arm-economy-ministry-admin-classifier-2026",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["marz", "community", "settlement"],
+          "formats": ["ARLIS HTML"],
+          "reuse_note": "Current HD 002-2023 classifier amendment effective 2026-02-15; nine-digit codes include check digit. It is a code table, not a dated polygon dataset. Verify legal edition and historic area joins independently."
+        },
+        {
+          "id": "arm-local-self-government-law-2026",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["ordinary communities"],
+          "formats": ["ARLIS HTML"],
+          "reuse_note": "Current Armenian incorporation contains community plan, annual program and budget provisions; an older English translation has obsolete four-year wording. Check current articles and applicability; Yerevan has a separate special law."
+        },
+        {
+          "id": "arm-yerevan-local-self-government-law-2026",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["Yerevan city-community"],
+          "formats": ["ARLIS HTML"],
+          "reuse_note": "Special Yerevan local-government law; do not infer its program procedure from the general community law or a generic city website description. Check current incorporation and operative decisions."
+        },
+        {
+          "id": "arm-ashtarak-plan-decision-2022-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Ashtarak community"],
+          "formats": ["ARLIS HTML", "linked PDF annex"],
+          "reuse_note": "Council Decision 194-N approves a 2022–2026 development plan. The 59-page annex was acquired, but numeric targets and current revisions remain to be audited independently."
+        },
+        {
+          "id": "arm-ashtarak-budget-decision-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Ashtarak community"],
+          "formats": ["ARLIS HTML", "linked XLS annex"],
+          "reuse_note": "Council Decision 170-N is an approved 2026 budget, not execution. AreaData checked only three high-level controls; 6,431 other XLS numeric cells remain unassessed. Verify amendments and actuals separately."
+        },
+        {
+          "id": "arm-yerevan-five-year-plan-decision-2024-2028",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Yerevan city-community"],
+          "formats": ["ARLIS HTML", "linked PDF annex"],
+          "reuse_note": "Council Decision 46-A approves a 2024–2028 plan; later revisions and numeric targets have not been audited for Kit use. Do not apply the edition to other communities."
+        },
+        {
+          "id": "arm-yerevan-annual-program-decision-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Yerevan city-community"],
+          "formats": ["Yerevan Council HTML", "linked PDF annex"],
+          "reuse_note": "Council Decision 460-A approves the 2026 annual program; planned actions are not achieved results. The 34-page annex is acquired but targets need semantic review."
+        },
+        {
+          "id": "arm-yerevan-implementation-report-decision-2025",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Yerevan city-community"],
+          "formats": ["Yerevan Council HTML", "linked PDF annex"],
+          "reuse_note": "Council Decision 513-A takes note of the mayor's 2025 implementation report. It is not a formal certification of target achievement or a budget-execution figure; project numerics need review."
+        },
+        {
+          "id": "arm-yerevan-budget-2026-incorporated",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Yerevan city-community"],
+          "formats": ["ARLIS HTML", "annex links"],
+          "reuse_note": "2026 budget incorporation was amended in September 2026. Current annex amounts and terms were not adopted; compare amendment 643-N and annexes before any budget indicator."
+        }
+      ]
     }
   ]
 }

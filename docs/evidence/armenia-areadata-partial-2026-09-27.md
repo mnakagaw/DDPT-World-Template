@@ -1,0 +1,42 @@
+# Armenia AreaData partial candidate — 2026-09-27
+
+## Decision and scope
+
+**REJECT for country-edition publication.** This is a reproducible local partial candidate at `generated/armenia-areadata-20260927` (ignored from Git). Template branch start commit `2d8d2616d0ff9a4fe9de99372df3e499180aaa79`; candidate dataset schema 0.2, edition `2026-09-26T18:43:07.008347+00:00` (2026-09-27 JST), SHA-256 `22ee9983fedec6b93eb4d0a4cc03fa51970a16b0edd4b45e4446e5314c41cd8c` before any later replay. Reference implementation 0.4 candidate does not imply common UX v1.0 acceptance. No Armenian hosting target or permission was supplied; no public site is changed.
+
+## Acquired and integrated
+
+| Evidence | What was confirmed | Adoption and limit |
+|---|---|---|
+| [Armstat Census 2022 PxWeb](https://statbank.armstat.am/pxweb/en/ArmStatBank/ArmStatBank__2%20Population%20and%20social%20processes__20%20Census/) | 14 table entries and axes saved; one direct 2022 permanent-population total slice has national 2,932,731 and 11 first-level records whose sum agrees | 12 direct observations. Other cells, 13 tables and years remain unassessed; no community census figure inferred. |
+| [Armstat 2026 population bulletin](https://www.armstat.am/file/article/population_01_01_26.pdf) | Pages 4–9, one-decimal thousand persons, 81 primary national/marz/community reporting rows | 243 total/urban/rural observations including source dashes as non-applicable. These are census-based *current population statistics*, not direct 2022 census counts or WDI estimates. Of 154 structurally indexed rows, 48 town rows and 13 Yerevan district rows are withheld and 12 are duplicates. |
+| [2026 official administrative classifier](https://www.arlis.am/hy/acts/220427) | 1,094 code rows indexed; 10 marzes plus 70 communities including Yerevan matched to the 2026 bulletin by Armenian name and parent | 81 territory records (national + 10 marzes + 70 communities), 70 terminal community IDs. Nine-digit code and 2026-02-15 edition retained. 2025 Khoy merger prevents direct 2025-to-2026 code carry-over. |
+| [General local-government law](https://www.arlis.am/hy/acts/231070) and [Yerevan special law](https://www.arlis.am/hy/acts/229984) | Current Armenian incorporations inspected for planning authority and distinct Yerevan regime | Institutional source only; no generic one-country form inferred. |
+| [Ashtarak plan decision](https://www.arlis.am/hy/acts/173115), [Ashtarak 2026 budget decision](https://www.arlis.am/hy/acts/219910) | Approved 2022–2026 plan annex (59 pages) and 2026 original XLS annex (13 sheets) acquired and linked to Ashtarak code `020010005` | Two selected-area documents. Budget decision and XLS controls agree on planned revenue 7,693,615.1, expenditure 8,622,091.5, balance −928,476.4 thousand AMD. None is actual execution. XLS has 6,434 numeric cells/107 numeric columns; 6,431 cells remain `priority_unassessed`. |
+| [Yerevan five-year decision](https://www.arlis.am/hy/acts/188571), [2026 program decision](https://yerevan.am/hy/elders-decisions/460-a-1/), [2025 implementation-report decision](https://www.yerevan.am/hy/elders-decisions/513-a-2/) | Decisions and 52/34/36-page annexes acquired; selected covers inspected. The council **took note** of the implementation report; this does not certify achievement | Three documents linked to Yerevan code `010010007`. Numeric targets/results remain unassessed. [Current 2026 budget incorporation](https://www.arlis.am/hy/acts/230905), [September amendment](https://www.arlis.am/hy/acts/230892), and [2025 budget execution decision](https://www.yerevan.am/hy/elders-decisions/518-n-2/) are located/acquired but current annex values and actuals are not adopted. |
+| [National geoportal](https://www.geoportal.am/) | Official administrative-boundary source location and metadata search found | Layer edition, code attributes, valid period, rights and download not verified. Bootstrap 2005 geoBoundaries shapes are withheld: 0 displayed polygons; selectors and full tables are the working alternative. |
+
+The dataset has **567 observations**, including 312 original WDI records, 12 2022 direct census totals and 243 2026 current-population field records. It has 16 indicators and five selected-area document records. The counts are collection counts, not broad statistical or planning completeness.
+
+## Source disposition and six themes
+
+Local `evidence/SOURCE_RESOURCE_INVENTORY.json` lists all 32 registered sources and receipt paths. `SOURCE_TABLE_INVENTORY.json` covers 14 census table entries, 13 XLS sheets, the 2026 bulletin row table and the acquired but unadopted 2025 bulletin. `INDICATOR_INVENTORY.csv` indexes 124 structural result measures/columns; the budget cell-level CSV has all 6,434 numeric cells. `THEME_COVERAGE.json` distinguishes partial population adoption, education and water/housing catalogue leads, and health, livelihood and infrastructure themes still requiring official local source searches. Metadata capture is not semantic acceptance.
+
+The generated `SOURCE_PREFLIGHT.md/.json` are the original 2026-09-14 discovery plan and remain intact. The Armenia recheck is in `evidence/SOURCE_PREFLIGHT_RECHECK.md`; international common-source country availability has not been checked and is not marked unavailable.
+
+## Validation on this candidate
+
+- `python -X utf8 scripts/integrate-armenia-domestic-partial.py`, `python -X utf8 scripts/inspect-armenia-ashtarak-budget.py`, and `python -X utf8 scripts/audit-armenia-source-inventory.py` replay the local candidate from saved originals.
+- `node scripts/validate-country.mjs --project generated/armenia-areadata-20260927`: 0 errors, 0 warnings. `node scripts/build-country.mjs --project ...`: built the local site.
+- `npm run check`: 148 JavaScript modules and JSON templates checked. `npm test`: 223/223 passing on 2026-09-27. These are template tests, not a country completion count.
+- In the local browser, Ashtarak selection retained the indicator/period; the Aragatsotn parent reselect cleared Ashtarak and its two materials without leaving the child value. Yerevan showed only its three materials. A thematic row focus on Talin retained Ashtarak as the analysis area. 2026 population comparison for Aragatsotn displayed 8/8 community rows; no polygon was substituted.
+- Browser download actions reported a prepared Yerevan Markdown and evidence CSV. The same bundled export functions were run in Node against this dataset: Yerevan/Ashtarak/Aragatsotn Markdown, HTML, statistical CSV and materials CSV had the selected area, no cross-area document residue, and 17 statistical CSV lines (header + 16 indicator records). Aragatsotn materials CSV had header only; Yerevan had three rows, Ashtarak two. Ashtarak comparison CSV had eight rows plus header, first Ashtarak, last Shamiram, and the Armstat URL/data edition. Browser-downloaded file bytes, print pagination, narrow widths, 200% zoom, keyboard, back/forward and update-failure recovery remain unverified.
+
+## Publication blockers and next pass
+
+1. Semantically inspect the 13 remaining Census 2022 tables and the rest of the adopted table axes. Add verified education, housing/water and other local themes only after definition, universe, geography and period checks; search health, livelihood and infrastructure primary releases. Do not infer absence from this catalogue.
+2. Obtain a dated official boundary layer with codes, rights and full coverage; match all 81 display areas and handle Yerevan districts and the Khoy merger explicitly.
+3. Audit planning and budget/actual/implementation/evaluation sources beyond Ashtarak and Yerevan, starting with representative sparse communities. Review Ashtarak's 6,431 unresolved numeric cells and Yerevan's amended budget annexes before adopting additional figures.
+4. Complete all applicable 42 acceptance scenarios and 12 Uganda lessons, actual downloaded file inspection, responsive/accessibility checks, an independent candidate audit and an explicit hosting decision. Until then this is a local, unpublished partial candidate.
+
+Reproduction, detailed receipt hashes, gaps and resume actions are in the ignored candidate's `HANDOFF.md` and `evidence/` directory. Raw PDFs/XLS/HTML and the generated site are intentionally outside Git pending source-rights review and completion audit.
