@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T12:24:39.096Z",
-  "origin_commit": "dde002c9ba972c2ca991ad09eacc4dcfcdbf5421",
+  "exported_at": "2026-09-26T13:07:29.859Z",
+  "origin_commit": "dee7bbd45b8535293a2d2e65589ace928e9ff847",
   "sources": [
     {
       "iso3": "ARE",
@@ -555,6 +555,454 @@
       "license_or_terms": null,
       "reuse_note": "Reused from the Kit Bangladesh project, not newly discovered by AreaData. Verify each district workbook and local geography independently; AreaData audit and source-terms review are pending.",
       "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_NAPR_NSDI_BOUNDARIES",
+      "role": "boundaries",
+      "title": "Municipal and geographic-region boundary catalogues",
+      "publisher": "National Agency of Public Registry / NSDI",
+      "url": "https://nsdi.gov.ge/en/geoportal",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "region",
+        "municipality"
+      ],
+      "reference_periods": [
+        "current portal edition not verified"
+      ],
+      "formats": [
+        "HTML geoportal",
+        "geospatial layers to acquire"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official NSDI/Public Registry portal lists municipality and region layers. Dated polygons, official code fields, territorial exclusions and 2024 census crosswalk were not acquired or certified by AreaData.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS_2024_CATALOGUE",
+      "role": "census_catalog",
+      "title": "2024 population-census results catalogue",
+      "publisher": "National Statistics Office of Georgia",
+      "url": "https://www.geostat.ge/en/modules/categories/12/2024-population-census-of-georgia-results",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national and local; table-specific"
+      ],
+      "reference_periods": [
+        "2024 census; eight topical sections"
+      ],
+      "formats": [
+        "HTML",
+        "linked XLSX/PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official 2024 population-census catalogue has additional topical sections; AreaData audited six geography/migration workbooks only. Kit must inventory every relevant table before any completion claim.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_AGRICULTURE_2024_CATALOGUE",
+      "role": "census_catalog",
+      "title": "2024 agricultural-census results catalogue",
+      "publisher": "National Statistics Office of Georgia",
+      "url": "https://www.geostat.ge/en/modules/categories/905/2024-agricultural-census-results",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "agricultural publication geography to check"
+      ],
+      "reference_periods": [
+        "2024 agricultural census"
+      ],
+      "formats": [
+        "HTML",
+        "linked files"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official agricultural-census catalogue located, but its table bodies and local geography were not audited by AreaData.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS_2024_MAIN_RESULTS",
+      "role": "census_results",
+      "title": "Main results of the 2024 population and agricultural census, 22 June 2026",
+      "publisher": "National Statistics Office of Georgia",
+      "url": "https://geostat.ge/media/80541/Main-Results-of-the-2024-Population-and-Agricultural-Census.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national summary"
+      ],
+      "reference_periods": [
+        "22 June 2026 summary of 2024 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Geostat public data use with source attribution; third-party/logo exceptions",
+      "reuse_note": "Official 22 June 2026 main-results PDF is a summary of the 2024 census. AreaData compared selected national numbers with the XLSX but did not adopt the PDF as another series; Kit must check the exact edition and tables itself.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS_2024_POPULATION_BY_LOCAL_UNIT",
+      "role": "census_results",
+      "title": "2024 census population by regional and self-governing unit, urban/rural and sex",
+      "publisher": "National Statistics Office of Georgia",
+      "url": "https://geostat.ge/media/80611/2.-Population-of-Georgia-by-self-governed-units%2C-urban-rural-settlements-and-sex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "11 regional and self-governing-city rows",
+        "63 municipalities",
+        "10 Tbilisi districts"
+      ],
+      "reference_periods": [
+        "2024-11-14 census reference moment; publication 2026"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Geostat public data use with source attribution; third-party/logo exceptions",
+      "reuse_note": "AreaData checked nine direct 14 November 2024 population fields for 85 printed rows; 27 source dashes remain missing. The source excludes occupied territories. Source labels are not official codes, and Kit must independently acquire, check and match geography before adopting values.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS_2024_03",
+      "role": "census_results",
+      "title": "2024 census place of birth by age and sex",
+      "publisher": "National Statistics Office of Georgia",
+      "url": "https://geostat.ge/media/80612/3.-Population-of-Georgia-by-place-of-birth%2C-5-year-age-groups-and-sex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "birthplace and age groups; current-residence join pending"
+      ],
+      "reference_periods": [
+        "2024-11-14 census reference moment; publication 2026"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Geostat public data use with source attribution; third-party/logo exceptions",
+      "reuse_note": "AreaData inventoried 19 numeric columns but adopted no value. Birthplace must not be read as present residence; Kit must inspect source universes and geography independently.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS_2024_04",
+      "role": "census_results",
+      "title": "2024 census internal migration current/previous residence matrix",
+      "publisher": "National Statistics Office of Georgia",
+      "url": "https://geostat.ge/media/80613/4.-Internal-migrants-by-usual-place-of-residence-and.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "current residence by former residence matrix"
+      ],
+      "reference_periods": [
+        "2024-11-14 census reference moment; publication 2026"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Geostat public data use with source attribution; third-party/logo exceptions",
+      "reuse_note": "AreaData inventoried 14 numeric columns but adopted no migration indicator. Origin and destination geography, period and denominators need independent semantic review.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS_2024_05",
+      "role": "census_results",
+      "title": "2024 census IDPs by age, urban/rural and sex",
+      "publisher": "National Statistics Office of Georgia",
+      "url": "https://geostat.ge/media/80615/5.-Number-of-IDPs-in-Georgia-by-5-year-age-groups%2C-urban-rural-settlements-and-sex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national IDP age and urban/rural groups"
+      ],
+      "reference_periods": [
+        "2024-11-14 census reference moment; publication 2026"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Geostat public data use with source attribution; third-party/logo exceptions",
+      "reuse_note": "AreaData inventoried nine numeric columns but did not adopt this national age/settlement sheet. IDPs are a subset of residents; do not add its counts to total population.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS_2024_IDP_BY_RESIDENCE_ORIGIN",
+      "role": "census_results",
+      "title": "2024 census IDPs by current residence, prior region and sex",
+      "publisher": "National Statistics Office of Georgia",
+      "url": "https://geostat.ge/media/80616/6.-IDPs-by-usual-place-of-residence%2C-place-of-residence-before-acquiring-IDP-status%2C-sex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "11 regional rows",
+        "63 municipalities; no Tbilisi district rows"
+      ],
+      "reference_periods": [
+        "2024-11-14 census reference moment; publication 2026"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Geostat public data use with source attribution; third-party/logo exceptions",
+      "reuse_note": "AreaData checked nine direct IDP fields for 75 printed rows. Former residence is an origin attribute; no Tbilisi-district value is printed. Kit must re-acquire and inspect before reuse, and never add IDPs to total residents.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_CENSUS_2024_01",
+      "role": "census_results",
+      "title": "2024 census detailed administrative/settlement population and sex",
+      "publisher": "National Statistics Office of Georgia",
+      "url": "https://geostat.ge/media/81091/1.Population-of-Georgia-by-administrative-territorial-units-and-sex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "regional",
+        "named settlements; codes and hierarchy pending"
+      ],
+      "reference_periods": [
+        "2024-11-14 census reference moment; publication 2026"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Geostat public data use with source attribution; third-party/logo exceptions",
+      "reuse_note": "AreaData acquired the detailed settlement/sex workbook and inventoried three numeric columns with 612 suppression markers. No settlement indicator was adopted without official codes, hierarchy and boundary reconciliation. Kit must independently acquire and inspect it.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_LOCAL_SELF_GOVERNMENT_CODE",
+      "role": "planning_law",
+      "title": "Organic Law on Local Self-Government",
+      "publisher": "Legislative Herald of Georgia",
+      "url": "https://matsne.gov.ge/en/document/view/2244429?impose=original",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "municipal self-government law"
+      ],
+      "reference_periods": [
+        "2014 law with later amendments"
+      ],
+      "formats": [
+        "HTML legal text"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official local-self-government code location identified; current consolidated provisions, municipal roles and city/community distinctions need review before reuse.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_SPATIAL_PLANNING_CODE",
+      "role": "planning_law",
+      "title": "Code on Spatial Planning, Architectural and Construction Activities",
+      "publisher": "Legislative Herald of Georgia",
+      "url": "https://matsne.gov.ge/en/document/view/4276845?impose=original",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national law with municipal planning provisions"
+      ],
+      "reference_periods": [
+        "2018 law with later amendments"
+      ],
+      "formats": [
+        "HTML legal text"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official spatial-planning code location identified. Current consolidated 2026 edition, implementing rules, plan types and municipal approval conditions require legal review before claiming local obligations.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_BUDGET_CODE",
+      "role": "planning_law",
+      "title": "Budget Code of Georgia",
+      "publisher": "Legislative Herald of Georgia",
+      "url": "https://matsne.gov.ge/en/document/view/91006",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "municipal budget framework"
+      ],
+      "reference_periods": [
+        "current consolidated edition to verify"
+      ],
+      "formats": [
+        "HTML legal text"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official Budget Code location identified; exact current edition and local budget obligations need review. An original 2026 Kutaisi ordinance does not establish current appropriations or expenditure.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_KUTAISI_DOCUMENT_REGISTER",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Kutaisi municipal official document register",
+      "publisher": "Kutaisi Municipality",
+      "url": "https://kutaisi.gov.ge/documents/searchDocument?document_type=69&gancxadebis_nomeri=0&page=1",
+      "authority_type": "official_local",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Kutaisi municipality register"
+      ],
+      "reference_periods": [
+        "2025-2026 documents"
+      ],
+      "formats": [
+        "HTML catalogue",
+        "linked PDFs"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official Kutaisi register locates the 2025 mayoral order and other planning proceedings. A listed document does not prove every local plan, general-plan approval, budget execution or evaluation has been acquired.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_KUTAISI_MUNICIPAL_ACTION_PLAN_2026_2029",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Kutaisi 2026–2029 medium-term action plan and mayoral approval order",
+      "publisher": "Kutaisi Municipality",
+      "url": "https://www.kutaisi.gov.ge/public/files/1757933270_%E1%83%A1%E1%83%90%E1%83%A8%E1%83%A3%E1%83%90%E1%83%9A%E1%83%9D%E1%83%95%E1%83%90%E1%83%93%E1%83%98%E1%83%90%E1%83%9C%E1%83%98%202026-2029.pdf",
+      "authority_type": "official_local",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Kutaisi municipality only"
+      ],
+      "reference_periods": [
+        "2026-2029"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "Mayoral order of 1 September 2025 approves the 2026-2029 medium-term action plan. A programme to prepare a city general plan does not prove that general plan's final adoption or achieved targets. Later revisions unverified.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_KUTAISI_BUDGET_2026_ORIGINAL_ORDINANCE",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Kutaisi 2026 budget original ordinance No. 3",
+      "publisher": "Legislative Herald of Georgia / Kutaisi Sakrebulo",
+      "url": "https://www.matsne.gov.ge/ka/document/download/6697241/0/ge/pdf",
+      "authority_type": "official_local",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Kutaisi municipality only"
+      ],
+      "reference_periods": [
+        "original 2026 budget ordinance, approved 2025-12-24"
+      ],
+      "formats": [
+        "PDF",
+        "HTML act page"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "Original Sakrebulo 2026 budget ordinance approved 24 December 2025. Matsne says this original edition was valid only through 28 January 2026; current amendments, executed amounts and official evaluation remain unverified.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_REGIONAL_PORTAL",
+      "role": "table_catalog",
+      "title": "Regional and municipal statistics portal",
+      "publisher": "National Statistics Office of Georgia",
+      "url": "https://regions.geostat.ge/regions/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "region",
+        "municipality; series-specific"
+      ],
+      "reference_periods": [
+        "mixed statistical periods"
+      ],
+      "formats": [
+        "HTML portal"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official regional portal location identified; detailed series, dates, export paths, denominators and geography have not been assessed. No portal value was adopted.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "GEO",
+      "source_id": "GEO_GEO_GEOSTAT_POPULATION_ESTIMATES",
+      "role": "table_catalog",
+      "title": "Annual population by region and self-governed unit",
+      "publisher": "National Statistics Office of Georgia",
+      "url": "https://www.geostat.ge/en/modules/categories/41/population",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "regional and municipal coverage to check"
+      ],
+      "reference_periods": [
+        "annual 1 January estimates"
+      ],
+      "formats": [
+        "HTML catalogue",
+        "linked XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Annual 1 January population estimates are distinct from the 14 November 2024 census and WDI estimates. AreaData identified the location but did not acquire or harmonize the linked workbooks.",
+      "origin_evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",
       "artifact_sha256": null
     },
     {
