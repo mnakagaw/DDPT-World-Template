@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T13:07:58.287Z",
-  "origin_commit": "8bf8d222f0b4b664486fc1ad3aed27bac1d56f47",
+  "exported_at": "2026-09-26T13:53:18.949Z",
+  "origin_commit": "69551828f7c3173d6a44b196e1b8a9e522897e81",
   "sources": [
     {
       "iso3": "ARE",
@@ -2487,6 +2487,254 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "MoLG ICUD project catalogue lead only. AreaData verified no selected-area approved plan, decision, budget, implementation or evaluation record; Kit must obtain and classify actual bodies independently.",
       "origin_evidence_path": "docs/evidence/palestine-pcbs2017-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_NPC_CENSUS2020_ZONE_CROSSWALK",
+      "role": "administrative_codes",
+      "title": "NPC/PSA Census 2020 administrative division, PDF pp. 43-47",
+      "publisher": "National Planning Council (successor to Planning and Statistics Authority)",
+      "url": "https://www.npc.qa/en/statistics/census2020/results/Documents/Census_Final_Results.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "eight municipality names",
+        "92 official Zone Nos; no polygon edition"
+      ],
+      "reference_periods": [
+        "Census 2020 administrative division"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "https://www.npc.qa/en/aboutus/pages/TermsOfUse.aspx",
+      "reuse_note": "Original Census 2020 PDF pp. 43-47 lists municipality and Zone No. membership. It does not certify current municipality codes or supply polygon geometry. Five listed Zones lack population in XLSX Table 2.",
+      "origin_evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_NPC_GIS_ATLAS",
+      "role": "boundaries",
+      "title": "NPC/PSA digital census atlas",
+      "publisher": "National Planning Council",
+      "url": "https://gis.psa.gov.qa/TestQatarAtlas/Index",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "official atlas portal; 2020 municipality/Zone No. polygons not acquired"
+      ],
+      "reference_periods": [
+        "official location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "Official NPC/PSA atlas location only. AreaData did not acquire or join a 2020 code/polygon edition; 2015 geoBoundaries shapes were left unjoined.",
+      "origin_evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_NPC_CENSUS2020_CATALOG",
+      "role": "census_catalog",
+      "title": "NPC Census 2020 detailed results catalogue",
+      "publisher": "National Planning Council",
+      "url": "https://www.npc.qa/en/statistics/census2020/Pages/results/default.aspx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "eight municipalities",
+        "92 numbered zones in administrative PDF"
+      ],
+      "reference_periods": [
+        "official location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML",
+        "XLSX",
+        "PDF"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "NPC 2020 detailed-results catalogue. The main workbook has 156 numbered tables; AreaData only partly adopted 12. Kit must classify each table and field independently.",
+      "origin_evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_NPC_CENSUS2020_TABLE_1",
+      "role": "census_results",
+      "title": "NPC/PSA General Population, Housing and Establishments Census 2020, Table 1",
+      "publisher": "National Planning Council (successor to Planning and Statistics Authority)",
+      "url": "https://www.npc.qa/en/statistics/census2020/results/Documents/Census_Final_Results.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "eight municipalities",
+        "87 populated Zone rows in Table 2"
+      ],
+      "reference_periods": [
+        "Published tables labelled December 2020; household enumeration moving reference time"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "https://www.npc.qa/en/aboutus/pages/TermsOfUse.aspx",
+      "reuse_note": "Main Census 2020 workbook. AreaData partially adopted 12 tables and 29 indicators; the other 144 numbered table bodies and unselected cells remain unassessed. December 2020 census is separate from WDI midyear estimates. Five PDF-listed Doha zones lack Table 2 rows.",
+      "origin_evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_NPC_CENSUS2020_ALTERNATE",
+      "role": "census_results",
+      "title": "NPC alternate Census 2020 workbook URL",
+      "publisher": "National Planning Council",
+      "url": "https://www.npc.qa/Style%20Library/NPC/CensusDetailedResults/documents/Qatar_Census_2022_Final_Results.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "same 2020 census sheets as main workbook"
+      ],
+      "reference_periods": [
+        "official location checked 2026-09-26"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "Filename contains 2022 but all 206 common worksheets have identical cell values to the fuller 2020 workbook; not a separate 2022 census. Prefer the main catalogue edition and recheck both originals.",
+      "origin_evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_QNMP_ZONING",
+      "role": "planning_guidance",
+      "title": "QNMP municipal zoning rules page",
+      "publisher": "Ministry of Municipality",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/English/msdp-zoning.aspx?panel=about",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "zoning discussion for six municipalities; future extension described for two"
+      ],
+      "reference_periods": [
+        "official location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "Official zoning page describes six implementations and later Al Khor/Al Wakra extension. Page vintage and operative coverage need checking; do not infer a current legal duty for every Zone No.",
+      "origin_evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_QNMP_QNDF",
+      "role": "planning_guidance",
+      "title": "Qatar National Development Framework",
+      "publisher": "Ministry of Municipality",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/English/qndf.aspx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national spatial framework"
+      ],
+      "reference_periods": [
+        "official location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "National framework location, not municipality-specific adopted planning content. Confirm operative decree/version and local application independently.",
+      "origin_evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_QNMP_AL_RAYYAN_2017",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Al Rayyan and Al Shahhaniya 2017 municipality spatial-plan strategy",
+      "publisher": "Ministry of Municipality",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads-qnmp/MunicipalityStrategy/English/Al%20Raayan%20Dec%202017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "combined historical Al Rayyan and Al Shahhaniya strategy scope"
+      ],
+      "reference_periods": [
+        "official location checked 2026-09-26"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "Historical combined-area strategy location only. Do not attach it as a current Al Rayyan-only or Al Shahhaniya-only approved plan without edition and boundary review.",
+      "origin_evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_QNMP_AL_SHAMAL_2017",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Al Shamal Municipality Vision and Development Strategy (2017)",
+      "publisher": "Ministry of Municipality",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/Downloads-qnmp/MunicipalityStrategy/English/Al%20Shamal%20Dec%20%202017.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Al Shamal municipality, 2017 strategic-context volume"
+      ],
+      "reference_periods": [
+        "2017 strategy edition"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "Official 36-page 2017 strategy volume acquired by AreaData. Sections 1.1-1.2 describe three MSDP parts and a five-year review intention. Later revisions, current legal effect, maps, fiscal content and census-zone alignment are unverified.",
+      "origin_evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_QNMP_MSDP",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Qatar National Master Plan municipal MSDP directory",
+      "publisher": "Ministry of Municipality",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/English/MSDP-Municipalities.aspx?panel=about",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "eight municipality MSDP directory"
+      ],
+      "reference_periods": [
+        "official location checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "source_terms_review_required",
+      "reuse_note": "Official QNMP directory location. Verify each strategy, zoning regulation/map, revision, legal decision and current status separately. Directory presence is not evidence of a current complete plan.",
+      "origin_evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
       "artifact_sha256": null
     },
     {
