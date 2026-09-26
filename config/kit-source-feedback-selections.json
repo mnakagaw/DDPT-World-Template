@@ -765,6 +765,69 @@
           "reuse_note": "NCSI data.gov.om population-series metadata responded but the data endpoint returned HTTP 403 in AreaData's environment. No value was adopted; access failure does not mean zero or nonpublication."
         }
       ]
+    },
+    {
+      "path": "generated/palestine-areadata-20260926-v2",
+      "iso3": "PSE",
+      "evidence_path": "docs/evidence/palestine-pcbs-2017-molg-sources-2026-09-26.md",
+      "sources": [
+        {
+          "id": "pse-pcbs-phc-2017-summary-table2",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "West Bank/Gaza Strip reporting regions", "16 governorates"],
+          "formats": ["PDF"],
+          "reuse_note": "PCBS 2017 Final Summary Table 2 has four checked count columns for nation, two regions and 16 governorates. Population includes post-enumeration estimates. Other tables and 585 coded locality rows are unassessed, and this is not a current 2026 count. Kit must independently acquire and audit original fields, geography and terms."
+        },
+        {
+          "id": "pse-pcbs-2017-detailed-population",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate", "locality tables to verify"],
+          "formats": ["PDF"],
+          "reuse_note": "PCBS 270-page detailed 2017 population report acquired by AreaData, but its physical tables, columns, locality-code semantics and values have not been inventoried or adopted. Do not infer absence from the partial Summary adaptation."
+        },
+        {
+          "id": "pse-pcbs-2017-governorate-area",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["governorate area table; dated boundary correspondence to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "PCBS 2019-hosted table describes 2017 governorate area/geography. AreaData acquired it but adopted no area value, official code or polygon. Reconcile the 2017 census geography and Jerusalem distinction before joins."
+        },
+        {
+          "id": "pse-pcbs-report-history",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national and linked governorate publications"],
+          "formats": ["HTML catalogue", "linked PDFs"],
+          "reuse_note": "Official PCBS report history locates multiple 2017 census and governorate products. AreaData has not inventoried all products, tables or licence terms; this is a location lead only."
+        },
+        {
+          "id": "pse-molg-sdip-towns-guide-2018",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["city and town local government planning methodology"],
+          "formats": ["PDF"],
+          "reuse_note": "AreaData acquired a 2018 third-edition city/town SDIP planning guide and checked cover/preparation pages. It does not establish the current statutory duty, approval or existence of a plan for any named municipality or governorate."
+        },
+        {
+          "id": "pse-molg-sector-strategy-2025-2027",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["national ministry sector strategy"],
+          "formats": ["PDF", "HTML catalogue"],
+          "reuse_note": "Ministry 2025-2027 sector strategy original acquired; selected pages checked. It is one national MoLG strategy, not 16 governorate or municipality plans. Its budget and monitoring chapters have not been adopted as local approved budgets, actual expenditure or achieved results."
+        },
+        {
+          "id": "pse-molg-governorate-planning-guide",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["governorate regional planning guidance"],
+          "formats": ["PDF", "HTML catalogue"],
+          "reuse_note": "Ministry catalogue links the governorate planning facilitator guide and its direct PDF returned HTTP 200. AreaData did not acquire or audit the body, effective period or current legal standing; no governorate plan was attributed."
+        }
+      ]
     }
   ]
 }
