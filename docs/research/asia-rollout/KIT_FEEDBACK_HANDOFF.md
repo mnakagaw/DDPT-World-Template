@@ -39,3 +39,16 @@ AreaData added the [official DoS 2015 drinking-water-source Table 2.17 PDF](../.
 | Kit validation | Import dry-run and actual import both accepted 37 leads; `npm run check`, `npm test` (173/173), `npm run verify:kit` (`ready: true`, 37 feedback sources) passed in the isolated Kit clone. Both remote branch heads matched `git ls-remote`. |
 
 The imported lead does not carry the raw PDF, the 910 numeric cells or AreaData's calculated indicators, and it does not advance any country's independent acceptance status.
+
+## Syria historical census and current planning leads — 2026-09-26
+
+Five new Syria leads were selected: two archived copies of **original CBS 2004 census PDFs**, one OCHA-distributed XLS mirror, an official SANA report about a **proposed** 2025 local-development planning method, and the Ministry of Finance's **national** 2026 citizen-budget PDF location. The [source audit](../../evidence/syria-cbs2004-source-audit-2026-09-26.md) records 213 PDF/XLS numeric differences and why AreaData used PDF values. The feedback transfers no observations or raw material, and no local plan or local budget is asserted.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData selection, importer and evidence | `fdcedd992c03099c5b87bd47db5995b34179bae2` on `codex/asia-domestic-20260926` |
+| AreaData 42-source / ten-country feedback bundle | `f9bb915361da5f847ecdf040276e56ebd46a52b6`, with `origin_commit` = `fdcedd992c03099c5b87bd47db5995b34179bae2` |
+| Kit import | `2d5f93d5439ec4e5e9ab889ebc320df5426e34ce` on `codex/asia-source-feedback-20260926`; five inserted, 37 existing origin histories updated, 43 records total |
+| Kit validation | Dry-run and import both accepted 42 leads. `npm run check`, `npm test` (173/173), `npm run verify:kit` (`ready: true`, 42 feedback sources) passed. Both remote branch heads matched `git ls-remote`. |
+
+All five Syria feedback stages remain `official_location_identified`, and Kit's own state remains `not_acquired_by_kit_preflight`. The archive URLs preserve old official content but are not live current CBS endpoints. The SANA report is not an adopted guide and the national citizen budget is not a governorate budget. This transfer does not change Syria's partial/unpublished or the Asia independent-acceptance count.

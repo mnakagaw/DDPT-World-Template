@@ -2,7 +2,7 @@
 
 Branch: `codex/asia-domestic-20260926`. Country project: `generated/syria-areadata-20260926` (ignored local output, separate from template). Producer result: **partial historical-census candidate**, not independent `ACCEPT`, not hosted/published. The tracked [source audit](../../evidence/syria-cbs2004-source-audit-2026-09-26.md), [all-column XLS ledger](../../evidence/syria-cbs2004-sheet-inventory.json) and [12-point producer check](../../evidence/syria-country-lesson-audit-2026-09-26.md) state the adoption boundary. Raw copies, receipts, row discrepancies and representative output hashes remain in this local country project.
 
-Candidate `dashboard.json` SHA-256: `f7fcff2bbdff670337ae7e2a8af39abd4c363d0cde3eb3f530b8230a4113470b`. The ignored `evidence/OUTPUT_VERIFICATION.json` records this exact edition, export files and limitations. Environment: Windows/PowerShell, Node 24, Python 3 with `xlrd` and Poppler `pdftotext`, Codex in-app browser; date 2026-09-26. This candidate data edition is **not Git-published**. Source feedback and Kit commits are recorded in `KIT_FEEDBACK_HANDOFF.md` after transfer.
+Candidate `dashboard.json` SHA-256: `f7fcff2bbdff670337ae7e2a8af39abd4c363d0cde3eb3f530b8230a4113470b`. The ignored `evidence/OUTPUT_VERIFICATION.json` records this exact edition, export files and limitations. Environment: Windows/PowerShell, Node 24, Python 3 with `xlrd` and Poppler `pdftotext`, Codex in-app browser; date 2026-09-26. This candidate data edition is **not Git-published**. The audited importer/evidence commit is `fdcedd992c03099c5b87bd47db5995b34179bae2`; feedback bundle commit `f9bb915361da5f847ecdf040276e56ebd46a52b6`; Kit source-location import commit `2d5f93d5439ec4e5e9ab889ebc320df5426e34ce`. Both branches were pushed and their remote heads verified at those commits. See `KIT_FEEDBACK_HANDOFF.md` for transfer counts and cautions.
 
 ## Reproduce and verify
 
@@ -40,4 +40,4 @@ The fetcher reuses only exact SHA-256 matches and stops on changed content. The 
 
 ## Standard validation record
 
-`npm run check`: pass, 136 JavaScript modules and JSON templates syntax-checked. `npm test`: **218/218 passed**. `validate-country`: 0 errors, one planning-document warning. Browser: local in-app preview at `127.0.0.1:4181`; no hosting or public URL. Template/code commit and Kit feedback commits are fixed in the branch history and `KIT_FEEDBACK_HANDOFF.md` after push. An independent audit has **not** accepted this country edition.
+`npm run check`: pass, 136 JavaScript modules and JSON templates syntax-checked. `npm test`: **218/218 passed**. `validate-country`: 0 errors, one planning-document warning. Browser: local in-app preview at `127.0.0.1:4181`; no hosting or public URL. An independent audit has **not** accepted this country edition.
