@@ -1,9 +1,107 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T08:29:19.445Z",
-  "origin_commit": "fdcedd992c03099c5b87bd47db5995b34179bae2",
+  "exported_at": "2026-09-26T09:02:15.894Z",
+  "origin_commit": "ce802a37d89ef6c3aef1a18a32b5f3e52f6dedb9",
   "sources": [
+    {
+      "iso3": "ARE",
+      "source_id": "ARE_ARE_FCSC_2009_REPORT_CENSUS_BY_EMIRATE",
+      "role": "census_results",
+      "title": "FCSC UAE Numbers 2009, Population by Emirate census table",
+      "publisher": "Federal Competitiveness and Statistics Centre",
+      "url": "https://fcsc.gov.ae/wp-content/uploads/2025/04/%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A8%D8%A7%D9%84%D8%A3%D8%B1%D9%82%D8%A7%D9%85-2009.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "emirate (2005)"
+      ],
+      "reference_periods": [
+        "2005 federal census (report edition 2009)"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official FCSC 2009 report PDF. AreaData adopted only the December 2005 census population table for seven emirates and national; other pages and 1975/1985/1995 columns await semantic review. Do not call it current population or assume 2017 reference shapes are certified 2005 geography.",
+      "origin_evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARE",
+      "source_id": "ARE_ARE_SCAD_ABU_DHABI_REGISTER_2024",
+      "role": "machine_readable_data",
+      "title": "SCAD Abu Dhabi Census 2024 population and three-region table",
+      "publisher": "Statistics Centre - Abu Dhabi",
+      "url": "https://census.scad.gov.ae/home/population?fid=0&lang=en&tab=webreport",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Abu Dhabi emirate",
+        "Abu Dhabi/Al Ain/Al Dhafra statistical regions"
+      ],
+      "reference_periods": [
+        "2023 R1 revised; 2024 integrated administrative registers"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "SCAD 2024 administrative-register population with revised 2023 R1 regional values. It covers Abu Dhabi only; regional counts are rounded to multiples of five. Kit must review raw table, code/boundary identities, methods, terms and other emirate sources independently.",
+      "origin_evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARE",
+      "source_id": "ARE_ARE_GOVERNMENT_DUBAI_2040_PLAN",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "UAE government overview of Dubai 2040 Urban Master Plan",
+      "publisher": "Official Portal of the UAE Government",
+      "url": "https://u.ae/about-the-uae/strategies-initiatives-and-awards/strategies-plans-and-visions/transport-and-infrastructure/dubai-2040-urban-master-plan",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Dubai emirate / urban areas"
+      ],
+      "reference_periods": [
+        "Dubai 2040 overview"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official government overview of Dubai 2040 Urban Master Plan. Full plan text, current implementation, local budgets and selected-area relevance need separate acquisition; do not treat the overview as an approved local planning dossier.",
+      "origin_evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARE",
+      "source_id": "ARE_ARE_FCSC_UAESTAT_POPULATION_EXPLORER",
+      "role": "table_catalog",
+      "title": "FCSC UAE.Stat official population-estimate explorer",
+      "publisher": "Federal Competitiveness and Statistics Centre",
+      "url": "https://uaestat.fcsc.gov.ae/en",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national; emirate availability to verify"
+      ],
+      "reference_periods": [
+        "national population series shown through 2024; emirate scope unverified"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official UAE.Stat population-estimate explorer lead. The visible national series through 2024 is not proof of available comparable emirate rows. Verify actual dataflow, subnational coverage, method, format and terms before adoption.",
+      "origin_evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
     {
       "iso3": "BFA",
       "source_id": "BFA_BFA_GOVERNMENT_COMMUNE_STATUS_2026",
