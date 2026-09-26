@@ -279,9 +279,9 @@
       ]
     },
     {
-      "path": "generated/yemen-source-feedback-snapshot-20260926",
+      "path": "generated/yemen-areadata-20260926-r2",
       "iso3": "YEM",
-      "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
+      "evidence_path": "docs/evidence/yemen-taiz-official-sources-2026-09-26.md",
       "sources": [
         {
           "id": "yem-cso-2004-census-main-report-location",
@@ -306,6 +306,30 @@
           "geographic_levels": ["governorate", "district"],
           "formats": ["PDF"],
           "reuse_note": "New parliament location for original Law No. 4 of 2000. A 40-page PDF was acquired, but current consolidated applicability, amendments and actual local plan status are unverified."
+        },
+        {
+          "id": "yem-ihsn-cso-2004-census-table-archive",
+          "role": "table_catalog",
+          "authority_type": "international_organization",
+          "geographic_levels": ["national", "governorate where the original table reports it"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "New IHSN archival location for three CSO-authored 2004 PDF tables, not the missing main report. Table 1 concerns dwellings; Tables 2-3 are employment sample tables aged 10+ and 15+, not whole-population census counts. Review all pages, 2004 administrative geography, reuse terms and original producer independently."
+        },
+        {
+          "id": "yem-taiz-cso-statistical-yearbook-2024",
+          "role": "table_catalog",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Taiz governorate", "23 printed districts", "selected lower areas"],
+          "formats": ["PDF"],
+          "reuse_note": "New Taiz CSO branch 2024 yearbook location. AreaData acquired 314 pages and audited two 23-district tables; district sums exceed printed totals, sex labels conflict across pages and dashes mean unavailable. No district observation was adopted. Kit must resolve conflicts, official codes/boundary edition and terms."
+        },
+        {
+          "id": "yem-taiz-mopic-progress-2024-priorities-2025",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Taiz governorate"],
+          "formats": ["PDF"],
+          "reuse_note": "New Taiz planning-office presentation location: 2024 implementation/ongoing counts and 2025 priorities under a 2024-2026 plan. Project costs are estimates, not approved budgets or actual expenditure; 232 combines completed and ongoing, and no official evaluation or territorial crosswalk is inferred."
         }
       ]
     },
