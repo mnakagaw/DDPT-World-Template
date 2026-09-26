@@ -159,8 +159,11 @@ function identity(area=currentArea()) {
 }
 function stateMessage(result, local = currentArea().level !== 'national') {
   if (finite(result.value)) return '';
-  const explanation = result.status==='not_collected' ? `${local?'Local observations':'Observations'} for this indicator have not been collected.` : result.status==='missing' ? 'No observation is available for the selected source period.' : `This observation is ${statusLabel(result.status).toLowerCase()}.`;
-  return `<p class="missing-note">${e(explanation)} The selected area, indicator and period are retained.</p>`;
+  const explanation = result.status==='not_collected'
+    ? local?localCopy('Local observations for this indicator have not been collected.','No se han recopilado observaciones locales para este indicador.','この指標の地域別観測値は未収録です。'):localCopy('Observations for this indicator have not been collected.','No se han recopilado observaciones para este indicador.','この指標の観測値は未収録です。')
+    : result.status==='missing' ? localCopy('No observation is available for the selected source period.','No hay una observación disponible para el período de fuente seleccionado.','選択した出典年の観測値はありません。')
+    : localCopy(`This observation is ${statusLabel(result.status).toLowerCase()}.`,`Estado de esta observación: ${translateText(statusLabel(result.status),language)}.`,`この観測値の状態：${translateText(statusLabel(result.status),language)}。`);
+  return `<p class="missing-note">${e(explanation)} ${e(localCopy('The selected area, indicator and period are retained.','Se mantienen el área, el indicador y el período seleccionados.','選択地域・指標・期間は保持しています。'))}</p>`;
 }
 function countCoverage() {
   const local=dataset.territories.filter(area=>area.level!=='national');
@@ -290,7 +293,7 @@ function metricCard(indicator) {
   const memberLabel=localCopy(`${members?.count||0} of ${members?.total||0} countries/areas have comparable values in ${memberPeriod}`,`${members?.count||0} de ${members?.total||0} países/áreas tienen valores comparables en ${memberPeriod}`,`${memberPeriod}年の比較可能な国・地域：${members?.count||0}／${members?.total||0}`);
   const memberRange=members?.count?`<strong>${fmt(members.minimum.value,indicator)}${members.count>1?`–${fmt(members.maximum.value,indicator)}`:''} ${e(meaning.unit)}</strong><small>${e(members.minimum.area.name)}${members.count>1?` – ${e(members.maximum.area.name)}`:''}</small>`:'<strong>—</strong>';
   const memberCaution=localCopy('Country/area range; no combined regional value is inferred.','Rango de países/áreas; no se infiere un valor regional combinado.','国・地域別の値の範囲です。広域全体の値は算出していません。');
-  const overallValue=compactInternationalGap?`<div class="regional-member-summary"><span>${e(memberLabel)}</span>${memberRange}<small>${e(memberCaution)}</small></div>`:`<div class="value-row ${partial?'partial-value':!finite(result.value)?'missing-value':''}"><strong>${fmt(partial?result.covered_value:result.value,indicator)}</strong><span>${partial?`${e(meaning.unit)} · ${e(partialCaution)}`:`${e(statusLabel(result.status))} · ${e(result.row?.period || effectivePeriod || 'No source period')}`}</span></div>${partial?'':stateMessage(result)}`;
+  const overallValue=compactInternationalGap?`<div class="regional-member-summary"><span>${e(memberLabel)}</span>${memberRange}<small>${e(memberCaution)}</small></div>`:`<div class="value-row ${partial?'partial-value':!finite(result.value)?'missing-value':''}"><strong>${fmt(partial?result.covered_value:result.value,indicator)}</strong><span>${partial?`${e(meaning.unit)} · ${e(partialCaution)}`:`${e(translateText(statusLabel(result.status),language))} · ${e(result.row?.period || effectivePeriod || 'No source period')}`}</span></div>${partial?'':stateMessage(result)}`;
   const scopeNote=sourceScopeNote(dataset,state.selected,indicator.id,language);
   return `<article class="indicator-card"><div class="indicator-heading"><h3>${e(indicator.name)}</h3><span class="unit">${e(meaning.unit)}</span></div>${partial?`<p class="partial-label">${e(partialLabel)}</p>`:''}${overallValue}${scopeNote?`<p class="notice source-scope-note">${e(scopeNote)}</p>`:''}${populationContext(indicator,result)}
   ${percentVisual}
