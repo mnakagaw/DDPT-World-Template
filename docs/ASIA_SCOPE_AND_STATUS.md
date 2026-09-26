@@ -21,16 +21,18 @@ UNSD AMAの2024年GDPも、Asia/Eastern Asiaの直接公表値とM49掲載50/7�
 再生成・収録監査・静的検証:
 
 ```sh
-npm run create:asia -- --world-portfolio .work/areadata-world-v0.12.1-latest-regions/data/dashboard.json --out .work/areadata-asia-20260926-candidate
-npm run audit:asia -- --project .work/areadata-asia-20260926-candidate
-npm run verify:asia -- --project .work/areadata-asia-20260926-candidate
-npm run verify:asia:m49 -- --project .work/areadata-asia-20260926-candidate
-npm run sources:asia:materialize -- --project .work/areadata-asia-20260926-candidate --legacy-world-raw .work/world-v0.4/new/raw --wpp-dir .work/un-wpp2024
-npm run sources:asia:replay -- --project .work/areadata-asia-20260926-candidate
+npm run create:asia -- --world-portfolio .work/areadata-world-v0.12.1-latest-regions/data/dashboard.json --out .work/areadata-asia-20260926-commit-1c92fe3
+npm run audit:asia -- --project .work/areadata-asia-20260926-commit-1c92fe3
+npm run verify:asia -- --project .work/areadata-asia-20260926-commit-1c92fe3
+npm run verify:asia:m49 -- --project .work/areadata-asia-20260926-commit-1c92fe3
+npm run sources:asia:materialize -- --project .work/areadata-asia-20260926-commit-1c92fe3 --legacy-world-raw .work/world-v0.4/new/raw --wpp-dir .work/un-wpp2024
+npm run sources:asia:replay -- --project .work/areadata-asia-20260926-commit-1c92fe3
 ```
 
 候補の `evidence/ASIA_SCOPE.json` は世界版入力ファイルの絶対パス・SHAと地域ID、`ASIA_COVERAGE.json` とCSVは指標ごとの被覆・年・国勢調査所在、`ASIA_CANDIDATE_VERIFICATION.json` は照合済み内容と未実施事項を記録する。`ASIA_M49_LIVE_CHECK.json` は現行M49との照合、`ASIA_SOURCE_RAW_MANIFEST.json` は18原本のURL・保存先・SHA・サイズ・候補datasetへの結合を記録する。WPP・SDG・UNSD AMA・IMFの採用9,524観測は原本から再抽出して全件値・状態を突合し、`ASIA_SOURCE_REPLAY.json`へ記録する。WDI 4指標の国別1,000セルも原本API JSONに照合する。広域の欠測144行はAreaData側の明示的な欠測記録であり、WDI原本行とは扱わない。大容量の原本はGitにも公開サイトにも複製しない。
 
 標準データ検証はエラー0、警告5件。うち4件はdatasetの従来source schemaにprivate原本パスがないという警告だが、候補の別manifestで原本とSHAを照合済み。残る国別計画資料は未取得。`npm run check`、`npm test` は通過。国際系列のAsia地域値がない指標は国別比較の件数・年・範囲として表示し、地域全体の値と区別する。
 
-コード候補 `cd8124f935b386f37b95312ca5a2a898bc7c801c` から生成したdatasetのSHA-256は `a7097530857c252656b7395c99d2ab97e30188a3dba6f271aca7f1d8cc094a50`。独立担当がclean archiveから再生成し、datasetと公開用dataがbyte単位で一致した。Edge実画面でGDPの出典範囲注記などを確認した一方、アジアの広域から国を選ぶと共通GDP指標と期間が人口の最新年へ戻る不具合が見つかり、この候補は `REJECT` となった。共有指標・期間を保ち、切替先にない国専用指標は選び直す修正と回帰テストを追加した。修正版の再生成・実画面再確認・独立監査は別候補として実施する。ブラウザーから保存されたファイルの内容と狭幅の検証も残る。公開ゲートが要求する `ACCEPT` には達していないため、FTP・公開サイトへの反映は行っていない。旧候補の受入票と監査報告は `.work/areadata-asia-20260926-commit-cd8124f/evidence/` に保存する。
+現候補はコード `1c92fe34d0af49f901aecbefc2261d177310ec60` から生成し、dataset SHA-256は `a7097530857c252656b7395c99d2ab97e30188a3dba6f271aca7f1d8cc094a50`。旧候補 `cd8124f` は広域→国の切替で共通GDP指標・期間が戻るため `REJECT`、`4c225d8` は上位再選択時の比較階層の不一致、主要操作の未翻訳、受入証跡の欠落により `REJECT` となった。現候補では共有指標・期間・比較階層の保持、上位への選び直し、日本語・スペイン語の主要操作を修正した。Edgeで中央アジア→Kazakhstan→中央アジアのGDP・2024とURLの一致を確認し、静的CSV/Markdown/HTML照合、clean archiveからの再生成照合、原本18件からの採用9,524セルの再照合を候補の `evidence/` に記録した。`npm run check` 132モジュール、`npm test` 218件が通過している。
+
+ただし、これは制作側の確認であり、独立担当による現候補の監査判定は別に必要。ブラウザーから保存されたファイルのバイト列、狭幅、全50件の国勢調査リンク、国内枝を使う国→市の操作は未確認または未実装である。50件の国際統計入口と国内版50件の完成を区別する。公開ゲートが要求する `ACCEPT` まではFTP・公開サイトへ反映しない。候補の受入票と証跡は `.work/areadata-asia-20260926-commit-1c92fe3/evidence/` に保存している。
