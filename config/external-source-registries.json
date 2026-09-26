@@ -1,6 +1,6 @@
 {
   "schema_version": "0.2",
-  "checked_at": "2026-09-25",
+  "checked_at": "2026-09-26",
   "purpose": "Pinned discovery registries and workflow references from the public Census Dashboard Kit. Source-address preflight inputs are not evidence of acquisition, content verification, geography matching or indicator adoption; workflow references are not evidence that an audit was performed.",
   "upstream": {
     "repository": "https://github.com/mnakagaw/Census-Dashboard-Kit",
@@ -92,6 +92,17 @@
       "source_location_count": 21,
       "evidence_stage": "official_location_identified",
       "meaning": "The 21-location bundle includes 14 BFA leads. Kit imported two newly located BFA candidates and updated 19 existing leads; a subsequent import flagged the conflicting 2019 fertility values in the statistical tables and final report. No Kit country project acquired or adopted their data."
+    },
+    {
+      "country_ids": ["BFA", "BGD", "IRQ", "LAO", "TUR", "UGA"],
+      "bundle_path": "evidence/KIT_SOURCE_FEEDBACK.json",
+      "bundle_commit": "5c11091f8eef330e34f89dc295746e18881846a5",
+      "bundle_sha256": "a3de7cd6a6f8fcbf52ec1c451562814f21a96e317346d4f0612213301e657964",
+      "kit_registry_path": "config/areadata-source-feedback.json",
+      "kit_import_commit": "2afe0ef2dce795bb995a29572fa4d9df5e674d37",
+      "source_location_count": 23,
+      "evidence_stage": "official_location_identified",
+      "meaning": "The refreshed 23-location bundle adds the official Turkey ADNKS 2025 workbook and Iraq COSIT 2024 census workbook locations; all leads remain discovery context for the next Kit project, not acquisition or adoption by Kit."
     }
   ]
 }
