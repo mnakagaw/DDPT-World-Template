@@ -37,3 +37,15 @@ AreaData next acquired three CSO-authored 2004 tables from IHSN, the Taiz CSO br
 | Kit import | `14b5f19a7652897cc3989778e4daaa2b67133e7e` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 35, inserted three and updated 32 (36 total records). `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. Both GitHub branch heads matched `git ls-remote`. |
 
 These three new Yemen records are new specific public locations; the other carried leads retain their earlier provenance. Kit import remains a source-location preflight, and the independent Asia `ACCEPT` count is still zero. No Yemen site was published.
+
+### Taiz plan source follow-up
+
+The Taiz planning office's separate [42-page English plan PDF](https://www.mopic-taiz.com/wp-content/uploads/2023/11/Taiz-Economic-and-Social-Development-Plan-3-1.pdf) was then acquired and visually checked. Its printed page 3 states that the plan covers **17 named liberated districts**, so it cannot inherit the yearbook's 23-district or provider's whole-governorate scope. Approval, budgets, execution and evaluation remain separate unknowns. It was registered as one further source lead, with no Yemen observation or territory document adopted.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData plan source evidence, collector and selection | `ea09dccdcd07ae376b2849481248458c8509fa10` | Yemen r2 dataset SHA-256 `f1c9439f4b66b2cd8562937aac1a92f5e91ec717cb8dfacd808c3bbfd8817bae`; validator zero errors and two expected warnings, site built, `npm run check` and `npm test` 218/218 passed. |
+| AreaData export | `a4442ef9486794f15dc6b58f9e14c87a6d4b0b18`; `evidence/KIT_SOURCE_FEEDBACK.json` SHA-256 `4adf6531008934e8bc1ae025d984c8c8dd9688f7af3aefbe72917b956d212a43` | 36 leads in eight countries, seven for Yemen; `origin_commit` is `ea09dccdcd07ae376b2849481248458c8509fa10`; all stages are `official_location_identified`. |
+| Kit import | `e48d47733a007f40cc3f99a84440bd2c2717f59d` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 36, inserted one and updated 35 (37 total records). `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. Both GitHub branch heads matched `git ls-remote`. |
+
+This lead preserves the 17-district restriction for the next Kit preflight. The Asia `ACCEPT` count remains zero, and no country site was published.
