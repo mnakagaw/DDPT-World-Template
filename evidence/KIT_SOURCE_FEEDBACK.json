@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T13:56:49.530Z",
-  "origin_commit": "e150eb27ee907f7b816911ad4ccea9b5cbaf1009",
+  "exported_at": "2026-09-26T14:12:50.909Z",
+  "origin_commit": "32cbaba6e396bdb84fd3458db1e9f06d4449fe4c",
   "sources": [
     {
       "iso3": "ARE",
@@ -2487,7 +2487,7 @@
       ],
       "license_or_terms": "Oman Open Data License; terms_review_required",
       "reuse_note": "Ministry of Interior October-2025 directory acquired by AreaData. Its RegionId/WilayatId and Arabic names are a 2025 crosswalk, not verified 2020 census legal codes or dated polygons. Two named wilayats have null 2020 eCensus cells.",
-      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -2513,7 +2513,7 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "Official spatial-data layer says MOI owns features and NCSI supplies alternative data. AreaData matched 63 Arabic names to MOI but found different code systems, mostly 2017 feature-load dates and no verified 2020 legal boundary equivalence; no polygon was adopted.",
-      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -2540,7 +2540,7 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "eCensus library location identified. AreaData did not audit all 2020 census population, housing and establishment products; do not equate its adopted three nationality counts with a full census edition.",
-      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -2567,7 +2567,7 @@
       ],
       "license_or_terms": "official_open_data_terms_review_required",
       "reuse_note": "AreaData adopted only 2020-12-12 Omani/expatriate nationality counts for nation, 11 governors and 61 reported wilayats. English Residential Status is Arabic nationality; later dates and other fields are unassessed. Kit must independently retrieve originals, review terms and geography before adoption.",
-      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -2592,7 +2592,31 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "Ministry overview locates the national spatial strategy. AreaData did not acquire its full body, governorate plans or legal duties, and did not treat this overview as an approved local plan.",
-      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_SOUTH_SHARQIYAH_GOVERNOR_ARTICLE11",
+      "role": "planning_law",
+      "title": "South Al Sharqiyah Governorate: Governor duties under Article 11",
+      "publisher": "South Al Sharqiyah Governorate (Oman)",
+      "url": "https://ssg.gov.om/the-governor",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate institutional duties"
+      ],
+      "reference_periods": [
+        "Royal Decree 36/2022 Article 11 quoted on official page; current application to verify"
+      ],
+      "formats": [
+        "HTML official governorate page"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "South Al Sharqiyah's official governor page quotes Article 11 of Decree 36/2022 for governorate plan-project preparation/monitoring and annual budget/final-account preparation. Verify the operative legal original, unit and period; no approved plan or financial value was adopted.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -2616,7 +2640,7 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "Official Foreign Ministry economy page explicitly names Royal Decree 1/2026 for the national plan. This does not establish individual governorate plan approval or implementation. Check the original Gazette and current institutional duties independently.",
-      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -2640,7 +2664,7 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "Official Gazette 169 PDF location found, but AreaData local TLS certificate-chain verification failed, so the original was not locally acquired. Government Foreign Ministry page independently names Decree 1/2026. Recheck the Gazette and scope.",
-      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -2664,7 +2688,31 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "AreaData acquired the 124-page Ministry of Economy main Arabic plan and checked pages 1, 6, 16 and 50. It is one national 2026-2030 document; page 50's historical programme figures are not current local budgets or implementation. Other pages and local plans are unassessed.",
-      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_MOF_2024_FINAL_ACCOUNT_SCHEDULES",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Oman 2024 state final-account schedules",
+      "publisher": "Ministry of Finance (Oman)",
+      "url": "https://www.mof.gov.om/download.aspx?id=L1VwbG9hZHNBbGwvRmluYWxBY2NvdW50LzE3NDg3Nzg3MDU0NDJTY2hlZHVsZXMgb2YgdGhlIHN0YXRlcyBmaW5hbCBhY2NvdW50IGZvciBmaXNjYWwgeWVhciAyMDI0LnBkZg%3D%3D",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate-labelled government-unit rows; geographic expenditure unverified"
+      ],
+      "reference_periods": [
+        "fiscal year 2024 final-account schedules"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official 2024 final-account schedules PDF has governorate-labelled government-unit expenditure rows on pages 47-49. No value was adopted. Do not treat a unit's spending as all expenditure within its territory.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -2691,7 +2739,7 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "NCSI data.gov.om population-series metadata responded but the data endpoint returned HTTP 403 in AreaData's environment. No value was adopted; access failure does not mean zero or nonpublication.",
-      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -2716,7 +2764,33 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "Ministry of Economy library links the acquired main 11th plan and other programme/performance volumes. The latter have not been acquired or assigned to governorates by AreaData.",
-      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_MOF_E_LIBRARY",
+      "role": "table_catalog",
+      "title": "Oman Ministry of Finance e-library",
+      "publisher": "Ministry of Finance (Oman)",
+      "url": "https://www.mof.gov.om/e-library",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate-labelled schedules to inspect"
+      ],
+      "reference_periods": [
+        "budget and final-account publications; editions to inspect"
+      ],
+      "formats": [
+        "HTML catalogue",
+        "PDF links"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Ministry of Finance library locates budget and final-account publications. Each edition, fiscal period, government unit and geography needs independent audit; AreaData adopted no local financial value.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
       "artifact_sha256": null
     },
     {
