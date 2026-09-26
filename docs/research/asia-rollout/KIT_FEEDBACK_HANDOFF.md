@@ -99,3 +99,15 @@ AreaData acquired the FCSC historical census tables, SCAD's Abu Dhabi 2024 popul
 | Kit import | `2a1e65ecf988f7d321fec4db6d153bae232c5b5c` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and actual import accepted 51, inserted six and updated 45 (52 total records). A repeat dry-run returned 51 unchanged. Six UAE records remain `not_acquired_by_kit_preflight`; `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. |
 
 Both branch heads were pushed and matched `git ls-remote`. The bundle transfers URLs, provenance and reuse cautions, without observations or raw originals. Kit must separately acquire, inspect and match the sources for a future project. UAE remains a partial candidate without independent `ACCEPT`; no UAE site was published.
+
+## Israel CBS 2022 district subset and planning-source locations
+
+AreaData acquired six official CBS 2022 census Excel originals, adopted only 12 broad-geography fields for Nationwide and six districts, and [recorded the remaining field, geography and planning limits](../../evidence/israel-cbs-2022-official-sources-2026-09-26.md). The source's separately reported Judea and Samaria Area reconciles the national value but is not treated as a seventh mapped district. The Kit bundle transfers **source URLs and cautions only**; no Excel body, census value, plan status or country acceptance is transferred.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData scripts, source audit, country status and selection | `7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7` on `codex/asia-domestic-continuation-20260926` | Israel candidate and fresh replay each validated and built; 84 adopted CBS tuples, original hashes and 3,410-column inventory matched. Selected CSV/HTML and browser selection checks passed. `npm run check` and `npm test` 218/218 passed. |
+| AreaData feedback bundle | `d9b675fe1e266b5275c5fc3d8211dd16380bfdef` on the same branch; `evidence/KIT_SOURCE_FEEDBACK.json` SHA-256 `b093ce052c6f2d453ce5e60a40372b7a7dbe0726514030a76994da5f454151b0` | Bundle has 62 public source leads in 12 countries, including 11 Israel leads. `origin_commit` is `7c22fd9b0e1d4e430b6bd479e6d30c1435b39cc7`. Every stage is capped at `official_location_identified`. |
+| Kit import | `9011268b243ba29b2dc289197e4ca133bcfe1965` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and actual import accepted 62, inserted 11 and updated 51 (63 total records). Repeat dry-run reported 62 unchanged. All 11 Israel Kit records remain `not_acquired_by_kit_preflight`; Kit `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. |
+
+Both commits were pushed to their respective GitHub branches. Israel remains a partial local candidate with zero adopted planning documents and no independent `ACCEPT`; no Israel site was published. Kit must independently acquire and audit the original tables, official code/boundary editions, current planning law and actual local plan/finance records before using them in another country project.
