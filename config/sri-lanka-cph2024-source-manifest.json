@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0",
+  "catalogue_url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/",
+  "catalogue_sha256": "a59d1b319417b8b8596b8443609a17b5c2aef97d90fd423592155181c5c946b6",
+  "catalogue_bytes": 120446,
+  "catalogue_raw_path": "raw/dcs-cph2024-catalogue.html",
+  "scope": "23 numbered 2024 census A workbooks, nine GN workbooks, administrative code register and English final report; adoption is separate",
+  "source_files": [
+    {
+      "id": "housinga-a1",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A1",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a1.xlsx",
+      "bytes": 19797,
+      "sha256": "44309189a3dced7cbcc3fa040a0c6844ecde971ffbb02fe3afd198c5b38500ef"
+    },
+    {
+      "id": "housinga-a2",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A2",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a2.xlsx",
+      "bytes": 21464,
+      "sha256": "47de5ba6306ff34b69dd1663cbb2af326cd64bd243a0cbd3a9b8bd8f2339b6cb"
+    },
+    {
+      "id": "housinga-a3",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A3",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a3.xlsx",
+      "bytes": 19434,
+      "sha256": "592bf46c1ea737d457fce029c8c76c48f71596f04faa024cbd8cfb6541f8771e"
+    },
+    {
+      "id": "housinga-a4",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A4",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a4.xlsx",
+      "bytes": 19771,
+      "sha256": "b30b8ac2a27dc69f02138451abedd09045dc1cadcd66bb323fd3ac878b51b1c7"
+    },
+    {
+      "id": "housinga-a5",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A5",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a5.xlsx",
+      "bytes": 23289,
+      "sha256": "3a6f3fa43f8d601d533d891f6afcb3d7fda8e296e9a957dbfc459a160985968b"
+    },
+    {
+      "id": "housinga-a6",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A6",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a6.xlsx",
+      "bytes": 19533,
+      "sha256": "0e32ae5ea66420c705a42337c5eee63912ead0659c82d4d00df50b0107e6fd59"
+    },
+    {
+      "id": "housinga-a7",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A7",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a7.xlsx",
+      "bytes": 19595,
+      "sha256": "def404ab95f0c185f0aec579b6ff9322f666846fb8f78bc5db8fc745054b8dfc"
+    },
+    {
+      "id": "housinga-a8",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A8",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a8.xlsx",
+      "bytes": 19257,
+      "sha256": "a62691adc09b4603bcbbfd2babc03a7f6b0f6fb490be486fb86a348429ef34d0"
+    },
+    {
+      "id": "housinga-a9",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A9",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a9.xlsx",
+      "bytes": 51714,
+      "sha256": "eaf0287844492aeb4382436e960cb49d2bc85718d14d91a53dedb0f3d2cf7418"
+    },
+    {
+      "id": "housinga-a10",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A10",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a10.xlsx",
+      "bytes": 54172,
+      "sha256": "cc03307167cdb08a1ea3506dab3cff376326f5bcdbb3c2a16b471d61d94873ee"
+    },
+    {
+      "id": "housinga-a11",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A11",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a11.xlsx",
+      "bytes": 50170,
+      "sha256": "dead8fbe90cf3475bf075d49c05bfd5cfb2b124b15b91612f63f8479456e8d0e"
+    },
+    {
+      "id": "housinga-a12",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A12",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a12.xlsx",
+      "bytes": 48126,
+      "sha256": "ef543939789a1038ce3167df93973bb2ab8e29213c8ceea55650cba1d6f7efd7"
+    },
+    {
+      "id": "housinga-a13",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A13",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a13.xlsx",
+      "bytes": 48253,
+      "sha256": "da920a1cae9532017af45a922d1f7d90116d9333e0d91711e0d925f2fd173d7a"
+    },
+    {
+      "id": "housinga-a14",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A14",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a14.xlsx",
+      "bytes": 63877,
+      "sha256": "6502766c66a8a26a28cd97cb16ebccf5dc2253907838c26d1b4912d3b09313c2"
+    },
+    {
+      "id": "housinga-a15",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A15",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a15.xlsx",
+      "bytes": 46989,
+      "sha256": "afc82d212ea46f159aeb289b0e50d54f11413b63797333034110faa5c750071d"
+    },
+    {
+      "id": "housinga-a16",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HousingA/A16",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-housinga-a16.xlsx",
+      "bytes": 48171,
+      "sha256": "60f269f05fe1de3c8a57e52216237e4150adef1f17fcd54a801be45abc9ccdca"
+    },
+    {
+      "id": "populationa-a1",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A1",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-populationa-a1.xlsx",
+      "bytes": 18543,
+      "sha256": "388c7d1ef5fab8a37fbb026ebfbbabdafa84787f187d2b3dec40f2e24aec6c47"
+    },
+    {
+      "id": "populationa-a2",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A2",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-populationa-a2.xlsx",
+      "bytes": 17361,
+      "sha256": "e8aa7d4635aee9caa55c607d6da09e2b775934c60d7cfd3652d10bfe8590d427"
+    },
+    {
+      "id": "populationa-a3",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A3",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-populationa-a3.xlsx",
+      "bytes": 15841,
+      "sha256": "2486798e3a6d97945fde210d0937447a798910d10ed6279773791dce67e2802c"
+    },
+    {
+      "id": "populationa-a4",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A4",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-populationa-a4.xlsx",
+      "bytes": 17460,
+      "sha256": "f01f54e943caff86035f519893c38cb84250f522fd7a31851c9497abc098646f"
+    },
+    {
+      "id": "populationa-a5",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A5",
+      "kind": "xlsx",
+      "raw_path": "raw/cph2024-population-ds-A5.xlsx",
+      "bytes": 54687,
+      "sha256": "878d35a9f7b34cc1377144a7aca544c58c7ab380460ee71b328ea35a2b3ae092"
+    },
+    {
+      "id": "populationa-a6",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A6",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-populationa-a6.xlsx",
+      "bytes": 51828,
+      "sha256": "1b27e53e0c37d760b2fab0f480b62259edf77661d56ad6314801d6a1ef81691c"
+    },
+    {
+      "id": "populationa-a7",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/PopulationA/A7",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-populationa-a7.xlsx",
+      "bytes": 48626,
+      "sha256": "e0012c7c463f737ef4cd00a1d9e5ac130f52fe68dcc4326e6067b6d6248a270b"
+    },
+    {
+      "id": "gn-population-provisional",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GN_population_excel",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-gn-population-2024.xlsx",
+      "bytes": 1541342,
+      "sha256": "2e0168c5daa43af4c4f61a55389768d5c86508ad47252a2d8c89a52986215425"
+    },
+    {
+      "id": "gn-housing-provisional",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GN_housing_excel",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-gn-housing-provisional.xlsx",
+      "bytes": 824477,
+      "sha256": "db5a9af593316cfce8ac72282ebc0aba4edc91443d0afce233db09cd53d8c62a"
+    },
+    {
+      "id": "gn-occupied-housing",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/OHU_GN_excel",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-gn-occupied-housing.xlsx",
+      "bytes": 3686745,
+      "sha256": "7d7088eeef27fd2f1709cbe9441c2cd735f2956aa9087c0511a12c98674e1201"
+    },
+    {
+      "id": "gn-households",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/HH_GND_excel",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-gn-households.xlsx",
+      "bytes": 3722895,
+      "sha256": "c41c0d2c384fce8cba64a71efdf5ad39f9d919c893a1219a538b75653dcd5080"
+    },
+    {
+      "id": "gn-ethnicity",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Ethnic_Group",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-gn-ethnicity.xlsx",
+      "bytes": 6807560,
+      "sha256": "23aa46295be002925267c98218b24ef23dacf478118629834aed4a34c35cd782"
+    },
+    {
+      "id": "gn-five-year-age",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Five_Year_Age_Group",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-gn-five-year-age.xlsx",
+      "bytes": 2144495,
+      "sha256": "b1842df8f30fc86815ca52b5bece55d851fc25e4c40a2eabd9370dad090bfe38"
+    },
+    {
+      "id": "gn-local-government-area",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Local_Government_Area",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-gn-local-government-area.xlsx",
+      "bytes": 751727,
+      "sha256": "0a42634ef2c85bf90f6750e36ed042b0727bcd21479c697f32cc3514d4955241"
+    },
+    {
+      "id": "gn-religion",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Religion",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-gn-religion.xlsx",
+      "bytes": 1008130,
+      "sha256": "2598faf0e728021f50f76624679495969b8918e5172c877b6dc30511837a15de"
+    },
+    {
+      "id": "gn-sector",
+      "url": "https://www.statistics.gov.lk/Population/StaticalInformation/CPH2024/GNLevel/GN_Level_Population_by_Sector",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-cph2024-gn-sector.xlsx",
+      "bytes": 798805,
+      "sha256": "1eb5c73d0aa3a95114cd1a0b513ee642d91f179c2dc198327c628870039f1eec"
+    },
+    {
+      "id": "admin-codes",
+      "url": "https://www.statistics.gov.lk/qlink/AdminDivCodes_Excel",
+      "kind": "xlsx",
+      "raw_path": "raw/dcs-admin-codes.xlsx",
+      "bytes": 1287027,
+      "sha256": "c4d40c4478b306eebaba4aba3a0bf9be30d5f589d4d05440040be14524f363e0"
+    },
+    {
+      "id": "final-report-en",
+      "url": "https://www.statistics.gov.lk/Resource/en/Population/CPH_2024/CPH2024_Final_Eng.pdf",
+      "kind": "pdf",
+      "raw_path": "raw/dcs-cph2024-final-report-en.pdf",
+      "bytes": 21432384,
+      "sha256": "a6dea9388d05bbb8c9f08d32f562a258838b737938275ed4a2f6ee34ecd670ca"
+    }
+  ]
+}
