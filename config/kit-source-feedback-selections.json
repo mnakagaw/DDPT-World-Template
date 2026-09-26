@@ -1351,6 +1351,109 @@
           "reuse_note": "QNMP page says an MSDP was completed for each of eight municipalities. Current operative plan editions, approvals, budgets, implementation and evaluation remain unverified; do not treat the page as adopted plan documents."
         }
       ]
+    },
+    {
+      "path": "generated/qatar-census-r3-20260927",
+      "iso3": "QAT",
+      "evidence_path": "docs/evidence/qatar-r3-blocker-audit-2026-09-27.md",
+      "sources": [
+        {
+          "id": "qat-mm-daayen-msdp-volume1",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["historical Al Daayen municipality plan area"],
+          "formats": ["PDF"],
+          "reuse_note": "Historical Vision and Development Strategy Volume 1; cover dated June 2014. Current operative revision, approval, budget, actual implementation and evaluation are unverified. Link only."
+        },
+        {
+          "id": "qat-mm-rayyan-msdp-volume1",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["historical Al Rayyan and Al Shahhaniya plan area"],
+          "formats": ["PDF"],
+          "reuse_note": "Cover names Al Rayyan and Al Shahhaniya together. Do not assign it to the current separate municipalities without jurisdiction and edition review. No current budget, actual or evaluation verified. Link only."
+        },
+        {
+          "id": "qat-mm-shamal-msdp-volume1",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["historical Al Shamal municipality plan area"],
+          "formats": ["PDF"],
+          "reuse_note": "Historical Vision and Development Strategy Volume 1; cover dated June 2014. Current operative revision, approval, budget, actual implementation and evaluation are unverified. Link only."
+        },
+        {
+          "id": "qat-mm-umm-slal-msdp-volume1",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["historical Umm Slal municipality plan area"],
+          "formats": ["PDF"],
+          "reuse_note": "Historical Vision and Development Strategy Volume 1; cover dated June 2014. Current operative revision, approval, budget, actual implementation and evaluation are unverified. Link only."
+        },
+        {
+          "id": "qat-mm-daayen-zoning-2",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["Al Daayen zoning map"],
+          "formats": ["PDF map"],
+          "reuse_note": "November 2017 map; current operative status unverified. The PDF expressly prohibits map reproduction without UPDS permission; link only."
+        },
+        {
+          "id": "qat-mm-doha-zoning-2",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["Doha zoning map"],
+          "formats": ["PDF map"],
+          "reuse_note": "November 2017 map; current operative status unverified. The PDF expressly prohibits map reproduction without UPDS permission; link only."
+        },
+        {
+          "id": "qat-mm-rayyan-zoning-2",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["Al Rayyan zoning map"],
+          "formats": ["PDF map"],
+          "reuse_note": "November 2017 urban map; current operative status unverified. The PDF expressly prohibits map reproduction without UPDS permission; link only."
+        },
+        {
+          "id": "qat-mm-rayyan-zoning-3",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["Al Rayyan rural zoning map"],
+          "formats": ["PDF map"],
+          "reuse_note": "November 2017 rural map; current operative status unverified. The PDF expressly prohibits map reproduction without UPDS permission; link only."
+        },
+        {
+          "id": "qat-mm-shamal-zoning-2",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["Al Shamal zoning map"],
+          "formats": ["PDF map"],
+          "reuse_note": "November 2017 map; current operative status unverified. The PDF expressly prohibits map reproduction without UPDS permission; link only."
+        },
+        {
+          "id": "qat-mm-sheehaniya-zoning-1",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["Al Sheehaniya zoning map"],
+          "formats": ["PDF map"],
+          "reuse_note": "November 2017 map; municipality strategy panel says Coming Soon. The PDF expressly prohibits map reproduction without UPDS permission; link only."
+        },
+        {
+          "id": "qat-mm-umm-slal-zoning-2",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["Umm Slal zoning map"],
+          "formats": ["PDF map"],
+          "reuse_note": "November 2017 map; current operative status unverified. The PDF expressly prohibits map reproduction without UPDS permission; link only."
+        },
+        {
+          "id": "qat-law-wakra-boundary-109-2024",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["Al Wakra legal municipal boundary"],
+          "formats": ["HTML legal text", "PDF Gazette page", "JPEG map annex"],
+          "reuse_note": "Resolution 109/2024 changes Al Wakra boundary effective 2024-05-30; official Gazette page and attached map acquired. Current GIS polygon has not been matched coordinate-by-coordinate to annex. Do not reinterpret Census 2020 geography."
+        }
+      ]
     }
   ]
 }
