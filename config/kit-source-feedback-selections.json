@@ -678,6 +678,93 @@
           "reuse_note": "Official master-plan discovery page only. No specific plan body, approval status, municipal applicability, implementation, budget or evaluation was acquired or adopted by AreaData."
         }
       ]
+    },
+    {
+      "path": "generated/oman-areadata-20260926",
+      "iso3": "OMN",
+      "evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "sources": [
+        {
+          "id": "omn-ecensus-2020-population",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate", "wilayat"],
+          "formats": ["HTML portal", "public JSON table-builder API"],
+          "reuse_note": "AreaData adopted only 2020-12-12 Omani/expatriate nationality counts for nation, 11 governors and 61 reported wilayats. English Residential Status is Arabic nationality; later dates and other fields are unassessed. Kit must independently retrieve originals, review terms and geography before adoption."
+        },
+        {
+          "id": "omn-moi-governorate-wilayat-2025",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["11 governorates", "63 wilayats"],
+          "formats": ["XLSX"],
+          "reuse_note": "Ministry of Interior October-2025 directory acquired by AreaData. Its RegionId/WilayatId and Arabic names are a 2025 crosswalk, not verified 2020 census legal codes or dated polygons. Two named wilayats have null 2020 eCensus cells."
+        },
+        {
+          "id": "omn-ncsi-wilayat-feature-register",
+          "role": "boundaries",
+          "authority_type": "official_national",
+          "geographic_levels": ["63 wilayat feature records"],
+          "formats": ["ArcGIS REST metadata", "JSON attributes", "polygon query to assess"],
+          "reuse_note": "Official spatial-data layer says MOI owns features and NCSI supplies alternative data. AreaData matched 63 Arabic names to MOI but found different code systems, mostly 2017 feature-load dates and no verified 2020 legal boundary equivalence; no polygon was adopted."
+        },
+        {
+          "id": "omn-moe-eleventh-five-year-plan-2026-2030",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["national; governorate priority but no local plan files"],
+          "formats": ["PDF"],
+          "reuse_note": "AreaData acquired the 124-page Ministry of Economy main Arabic plan and checked pages 1, 6, 16 and 50. It is one national 2026-2030 document; page 50's historical programme figures are not current local budgets or implementation. Other pages and local plans are unassessed."
+        },
+        {
+          "id": "omn-fm-royal-decree-1-2026-plan-announcement",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national"],
+          "formats": ["HTML"],
+          "reuse_note": "Official Foreign Ministry economy page explicitly names Royal Decree 1/2026 for the national plan. This does not establish individual governorate plan approval or implementation. Check the original Gazette and current institutional duties independently."
+        },
+        {
+          "id": "omn-ecensus-library",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate", "wilayat; product-specific"],
+          "formats": ["HTML catalogue", "linked products to inspect"],
+          "reuse_note": "eCensus library location identified. AreaData did not audit all 2020 census population, housing and establishment products; do not equate its adopted three nationality counts with a full census edition."
+        },
+        {
+          "id": "omn-moe-library",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national; any local product scope to verify"],
+          "formats": ["HTML catalogue", "PDF links"],
+          "reuse_note": "Ministry of Economy library links the acquired main 11th plan and other programme/performance volumes. The latter have not been acquired or assigned to governorates by AreaData."
+        },
+        {
+          "id": "omn-mohup-national-spatial-strategy",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["all 11 governorates; legal local application to verify"],
+          "formats": ["HTML overview", "strategy original to locate"],
+          "reuse_note": "Ministry overview locates the national spatial strategy. AreaData did not acquire its full body, governorate plans or legal duties, and did not treat this overview as an approved local plan."
+        },
+        {
+          "id": "omn-mjla-gazette-169-decree-1-2026",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national legal record"],
+          "formats": ["Official Gazette PDF"],
+          "reuse_note": "Official Gazette 169 PDF location found, but AreaData local TLS certificate-chain verification failed, so the original was not locally acquired. Government Foreign Ministry page independently names Decree 1/2026. Recheck the Gazette and scope."
+        },
+        {
+          "id": "omn-ncsi-sdmx-population-metadata",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate", "wilayat dimensions to audit"],
+          "formats": ["SDMX metadata XML", "data endpoint access to test"],
+          "reuse_note": "NCSI data.gov.om population-series metadata responded but the data endpoint returned HTTP 403 in AreaData's environment. No value was adopted; access failure does not mean zero or nonpublication."
+        }
+      ]
     }
   ]
 }
