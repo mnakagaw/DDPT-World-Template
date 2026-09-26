@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T09:02:15.894Z",
-  "origin_commit": "ce802a37d89ef6c3aef1a18a32b5f3e52f6dedb9",
+  "exported_at": "2026-09-26T09:34:55.353Z",
+  "origin_commit": "8a03b814df077f7f9bf25a57c46a69e50eafeba8",
   "sources": [
     {
       "iso3": "ARE",
@@ -100,6 +100,233 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "Official UAE.Stat population-estimate explorer lead. The visible national series through 2024 is not proof of available comparable emirate rows. Verify actual dataflow, subnational coverage, method, format and terms before adoption.",
       "origin_evidence_path": "docs/evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_ADMINISTRATIVE_CLASSIFICATION_2024",
+      "role": "administrative_codes",
+      "title": "SSC 2024 administrative territorial classification",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/menu/5/classifications/source/Inzibati-1.05.2024.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "city",
+        "rayon",
+        "city district"
+      ],
+      "reference_periods": [
+        "source edition"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official SSC 1 May 2024 code classification. AreaData held three apparent city-versus-district label conflicts with 2026 population rows; the PDF does not provide 2026 local polygons or verify historical geography. Kit must recheck codes, type, version and terms.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_CENSUS_2019_VOLUME_A",
+      "role": "census_results",
+      "title": "2019 population census Volume A",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/menu/6/statistical_yearbooks/source/Siyahiyaalinma-2019%2C%20Cild%20A.zip",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "varies by 2019 census table"
+      ],
+      "reference_periods": [
+        "source edition"
+      ],
+      "formats": [
+        "ZIP",
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official SSC 2019 census Volume A ZIP/PDF location. AreaData acquired the 470-page volume but inspected only front matter; no Volume A fields were directly adopted. Kit must inventory every relevant table, geography, definitions and reuse terms independently.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_CENSUS_2019_VOLUME_B",
+      "role": "census_results",
+      "title": "2019 population census Volume B",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/menu/6/statistical_yearbooks/source/Siyahiyaalinma-2019%2C%20Cild%20B.zip",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "varies by 2019 census table"
+      ],
+      "reference_periods": [
+        "source edition"
+      ],
+      "formats": [
+        "ZIP",
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official SSC 2019 census Volume B ZIP/PDF location. AreaData acquired the 584-page volume but inspected only front matter; no Volume B fields were directly adopted. Household, housing and migration tables need independent Kit audit.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_DEMOGRAPHY_TABLE_1_15",
+      "role": "machine_readable_data",
+      "title": "SSC demography table 1.15: area, 2019 and 2026 population",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/source/demoqraphy/en/001_15en.xls",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "SSC economic region",
+        "city and rayon"
+      ],
+      "reference_periods": [
+        "2019 / 2026"
+      ],
+      "formats": [
+        "XLS"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New official SSC table 1.15 lead. AreaData adopted rounded 2019 census-basis and 1 January 2026 population for selected rows; Aghdara 2019 is missing. Kit must independently inspect source geography, other fields, current edition and reuse terms. These are thousand people, not exact persons or WDI midyear values.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_DEMOGRAPHY_TABLE_1_17",
+      "role": "machine_readable_data",
+      "title": "SSC demography table 1.17: historical regional population",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/source/demoqraphy/en/001_17en.xls",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "historical administrative and statistical regions"
+      ],
+      "reference_periods": [
+        "2019 / 2026"
+      ],
+      "formats": [
+        "XLS"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New official SSC historical population table 1.17 location. AreaData inventoried its 1979–2019 fields but adopted none; changing territorial groupings, row definitions and reuse terms require independent assessment.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_DEMOGRAPHY_TABLE_1_19",
+      "role": "machine_readable_data",
+      "title": "SSC demography table 1.19: population by sex, 2026",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/source/demoqraphy/en/001_19en.xls",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "SSC economic region",
+        "city and rayon",
+        "settlement rows unassessed"
+      ],
+      "reference_periods": [
+        "2019 / 2026"
+      ],
+      "formats": [
+        "XLS"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New official SSC 2026 sex and settlement table. AreaData adopted total-row men/women only after matching 101 rows to table 1.15; urban/rural and settlement fields remain unassessed. Rounded thousands and source geography need independent Kit audit.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_URBAN_PLANNING_CONSTRUCTION_CODE",
+      "role": "planning_law",
+      "title": "Azerbaijan Urban Planning and Construction Code",
+      "publisher": "Official website of the President of Azerbaijan",
+      "url": "https://president.az/az/articles/view/5773",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national law; territorial plan categories"
+      ],
+      "reference_periods": [
+        "2012 enactment; current amendments require verification"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official presidential page locates Urban Planning and Construction Code Articles 17–20. Current consolidated amendments, applicable plan maker, actual local plans and approvals need legal/content review before any planning claim.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_STATE_URBAN_PLANNING_PLAN_CATALOG",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "State Committee on Urban Planning and Architecture master-plan catalogue",
+      "publisher": "State Committee on Urban Planning and Architecture",
+      "url": "https://arxkom.gov.az/en/sehersalma/bas-planlar",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "selected cities and regions; area coverage to verify"
+      ],
+      "reference_periods": [
+        "catalogue checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "ARXKOM official master-plan catalogue lead. Individual plan body, approval instrument, period, selected-area relevance, budget, implementation and evaluation were not adopted by AreaData and require independent Kit review.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_REGIONAL_STATISTICS_CATALOG",
+      "role": "table_catalog",
+      "title": "SSC regional statistics yearbook catalogue",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/source/regions/?lang=en",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national and regional availability to verify"
+      ],
+      "reference_periods": [
+        "2025 yearbook listed; contents unassessed"
+      ],
+      "formats": [
+        "HTML",
+        "PDF listing"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official SSC regional statistics page lists the large 2025 Regions of Azerbaijan yearbook. AreaData did not download or inspect its fields; this is location only, not evidence of specific local indicator coverage.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
       "artifact_sha256": null
     },
     {

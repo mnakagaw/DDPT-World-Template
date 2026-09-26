@@ -456,6 +456,85 @@
           "reuse_note": "Official government overview of Dubai 2040 Urban Master Plan. Full plan text, current implementation, local budgets and selected-area relevance need separate acquisition; do not treat the overview as an approved local planning dossier."
         }
       ]
+    },
+    {
+      "path": "generated/azerbaijan-areadata-20260926",
+      "iso3": "AZE",
+      "evidence_path": "docs/evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md",
+      "sources": [
+        {
+          "id": "aze-ssc-demography-table-1-15",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "SSC economic region", "city and rayon"],
+          "formats": ["XLS"],
+          "reuse_note": "New official SSC table 1.15 lead. AreaData adopted rounded 2019 census-basis and 1 January 2026 population for selected rows; Aghdara 2019 is missing. Kit must independently inspect source geography, other fields, current edition and reuse terms. These are thousand people, not exact persons or WDI midyear values."
+        },
+        {
+          "id": "aze-ssc-demography-table-1-19",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "SSC economic region", "city and rayon", "settlement rows unassessed"],
+          "formats": ["XLS"],
+          "reuse_note": "New official SSC 2026 sex and settlement table. AreaData adopted total-row men/women only after matching 101 rows to table 1.15; urban/rural and settlement fields remain unassessed. Rounded thousands and source geography need independent Kit audit."
+        },
+        {
+          "id": "aze-ssc-demography-table-1-17",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "historical administrative and statistical regions"],
+          "formats": ["XLS"],
+          "reuse_note": "New official SSC historical population table 1.17 location. AreaData inventoried its 1979–2019 fields but adopted none; changing territorial groupings, row definitions and reuse terms require independent assessment."
+        },
+        {
+          "id": "aze-ssc-administrative-classification-2024",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["city", "rayon", "city district"],
+          "formats": ["PDF"],
+          "reuse_note": "Official SSC 1 May 2024 code classification. AreaData held three apparent city-versus-district label conflicts with 2026 population rows; the PDF does not provide 2026 local polygons or verify historical geography. Kit must recheck codes, type, version and terms."
+        },
+        {
+          "id": "aze-ssc-census-2019-volume-a",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["varies by 2019 census table"],
+          "formats": ["ZIP", "PDF"],
+          "reuse_note": "Official SSC 2019 census Volume A ZIP/PDF location. AreaData acquired the 470-page volume but inspected only front matter; no Volume A fields were directly adopted. Kit must inventory every relevant table, geography, definitions and reuse terms independently."
+        },
+        {
+          "id": "aze-ssc-census-2019-volume-b",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["varies by 2019 census table"],
+          "formats": ["ZIP", "PDF"],
+          "reuse_note": "Official SSC 2019 census Volume B ZIP/PDF location. AreaData acquired the 584-page volume but inspected only front matter; no Volume B fields were directly adopted. Household, housing and migration tables need independent Kit audit."
+        },
+        {
+          "id": "aze-ssc-regional-statistics-catalog",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national and regional availability to verify"],
+          "formats": ["HTML", "PDF listing"],
+          "reuse_note": "Official SSC regional statistics page lists the large 2025 Regions of Azerbaijan yearbook. AreaData did not download or inspect its fields; this is location only, not evidence of specific local indicator coverage."
+        },
+        {
+          "id": "aze-urban-planning-construction-code",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national law; territorial plan categories"],
+          "formats": ["HTML"],
+          "reuse_note": "Official presidential page locates Urban Planning and Construction Code Articles 17–20. Current consolidated amendments, applicable plan maker, actual local plans and approvals need legal/content review before any planning claim."
+        },
+        {
+          "id": "aze-state-urban-planning-plan-catalog",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["selected cities and regions; area coverage to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "ARXKOM official master-plan catalogue lead. Individual plan body, approval instrument, period, selected-area relevance, budget, implementation and evaluation were not adopted by AreaData and require independent Kit review."
+        }
+      ]
     }
   ]
 }
