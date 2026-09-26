@@ -26,3 +26,16 @@ AreaData added six new Jordan official-source leads: three 2025 DoS workbooks, t
 | Kit validation | Import dry-run and actual import both accepted 36 leads; `npm run check`, `npm test` (173/173), `npm run verify:kit` (`ready: true`, 36 feedback sources) passed in an isolated clone. |
 
 Both branches were pushed to GitHub. Kit keeps all imported leads at `not_acquired_by_kit_preflight`; the import does not reclassify Jordan as accepted or authorize publication.
+
+## Jordan Table 2.17 continuation — 2026-09-26
+
+AreaData added the [official DoS 2015 drinking-water-source Table 2.17 PDF](../../evidence/jordan-census-water-2015-source-audit-2026-09-26.md) as Jordan's seventh lead. The AreaData candidate independently uses selected 2015 fields, but the Kit transfer remains only a public source location and reuse caution. Its feedback stage is capped at `official_location_identified`; Kit's project state remains `not_acquired_by_kit_preflight`.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData source selection, importer and evidence | `38adfac5d3ec98d5203bc3efcca98377d0b36b63` on `codex/asia-domestic-20260926` |
+| AreaData 37-source / nine-country bundle | `988ad784110cea29dd1e0be46db32816306e00f6`; `evidence/KIT_SOURCE_FEEDBACK.json` has `origin_commit` = `38adfac5d3ec98d5203bc3efcca98377d0b36b63` |
+| Kit import | `f7e655080ee13f03f086231ba46a1877c44e0087` on `codex/asia-source-feedback-20260926`; one source inserted, 36 origin histories updated, 38 records total |
+| Kit validation | Import dry-run and actual import both accepted 37 leads; `npm run check`, `npm test` (173/173), `npm run verify:kit` (`ready: true`, 37 feedback sources) passed in the isolated Kit clone. Both remote branch heads matched `git ls-remote`. |
+
+The imported lead does not carry the raw PDF, the 910 numeric cells or AreaData's calculated indicators, and it does not advance any country's independent acceptance status.
