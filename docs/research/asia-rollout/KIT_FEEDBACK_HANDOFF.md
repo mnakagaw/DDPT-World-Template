@@ -169,3 +169,16 @@ Ten official public leads were selected: NPC's 2020 results catalogue, main and 
 | Validation | AreaData check, 218/218 tests, country validation (zero errors/warnings), build and 14-case actual output verifier passed. Kit dry-run/import each accepted 122 leads; Kit check, 173/173 tests and readiness (`ready: true`, 122 feedback sources) passed. Remote parity is recorded in the final handoff commit. |
 
 All ten Qatar feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. The 2017 Al Shamal volume is a historical reference, not proof of its present legal effect. Kit must independently inspect original sheets, exact geographic definitions, source terms, current plan versions and boundary data before use. Qatar remains partial and unpublished.
+
+## Armenia ArmStat 2022 census and planning leads — 2026-09-26
+
+Seven official public leads were selected: the ArmStat 2022 results directory and Chapter 1 archive, the ARLIS administrative classifier and Local Self-Government Law, the Ashtarak plan decision, municipality catalogue entry and plan PDF location. [The Armenia source audit](../../evidence/armenia-armstat2022-source-audit-2026-09-26.md) distinguishes two partly adopted population workbooks from 55 other unassessed workbooks, 2025 codes from unverified 2022 polygon geography, council approval from the unacquired PDF body and WDI estimates from census populations. No original, observation, plan content, code/polygon join or country acceptance was transferred.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, source/producer audit, status and seven selections | `0c157b289154e3bc115698b07bf90198d730a11b` on `codex/asia-domestic-20260926` |
+| AreaData 129-source / twenty-country bundle | `195cfaa67872566b48351bd262a2fc2ea2be648d` on the same branch; Armenia entries have `origin_commit` = `0c157b289154e3bc115698b07bf90198d730a11b` |
+| Kit import | `60d02046ee0fdc54b1112d31e1b6a387d1f45f4b` on `codex/asia-source-feedback-20260926`; seven inserted, 122 existing origin histories updated, 130 records total |
+| Validation | AreaData check, 218/218 tests, country validation (zero errors, eight source-terms warnings), build and nine-case actual output verifier passed. Kit dry-run/import each accepted 129 leads; Kit check, 173/173 tests and readiness (`ready: true`, 129 feedback sources) passed. |
+
+All seven Armenia stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. Kit must independently acquire and inspect originals, source terms, classifier edition, actual planning material and dated polygons before reuse. Armenia remains partial and unpublished; no independent `ACCEPT` or hosting is implied.
