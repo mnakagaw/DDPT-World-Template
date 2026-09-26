@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T08:53:35.614Z",
-  "origin_commit": "63e27099b42e0c42da2773d986ff7e8c6f377d0f",
+  "exported_at": "2026-09-26T09:13:02.893Z",
+  "origin_commit": "81b2ae8c2c00fdbe12b84f9cebd6ab1f4e6d9b59",
   "sources": [
     {
       "iso3": "BFA",
@@ -559,6 +559,157 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "New COSIT official 2024 census table catalogue location. Thirty PDFs were listed; seven acquired by AreaData and two household-service tables locally adapted. Kit must independently audit acquisition, every table field, official geography, terms and adoption.",
       "origin_evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
+      "source_id": "JOR_JOR_DOS_POPULATION_ESTIMATES_END_2025",
+      "role": "machine_readable_data",
+      "title": "Jordan DoS estimated population at end of 2025, Tables 2.2 and 2.3",
+      "publisher": "Jordan Department of Statistics",
+      "url": "https://dosweb.dos.gov.jo/DataBank/population/population_Estimares/PopulationEstimates.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "12 governorates",
+        "district/subdistrict table present but not adopted"
+      ],
+      "reference_periods": [
+        "end of 2025"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New official DoS January 2026 PDF location for end-2025 population estimates, distinct from the 2015 census and WDI midyear series. AreaData adopted only five printed count fields from Tables 2.2 and 2.3 after sums; Kit must independently acquire original, verify terms, all fields, codes and current boundary edition before its own adoption.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
+      "source_id": "JOR_JOR_MOLA_GOVERNORATE_PLANNING_GUIDE_LOCATION",
+      "role": "planning_guidance",
+      "title": "Guide for Preparation of Governorate Strategic Development and Implementation Plans",
+      "publisher": "Jordan Ministry of Local Administration",
+      "url": "https://www.mola.gov.jo/ebv4.0/root_storage/ar/eb_list_page/guide_for_the_preparation_of_governorate_strategic_development_and_implementation_plans.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate"
+      ],
+      "reference_periods": [
+        "2018 guide"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New official 2018 governorate strategic/implementation planning guide location. Search-indexed text refers to the 2015 decentralization law, so current applicability under 2021 and 2026 local-administration laws requires review. A guide is not an actual governorate plan or budget.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
+      "source_id": "JOR_JOR_MOLA_LOCAL_ADMINISTRATION_LAW_2021_LOCATION",
+      "role": "planning_law",
+      "title": "Jordan Ministry of Local Administration 2021 Local Administration Law listing",
+      "publisher": "Jordan Ministry of Local Administration",
+      "url": "https://www.mola.gov.jo/Ar/Pages/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate and municipality legal framework to audit"
+      ],
+      "reference_periods": [
+        "2021 law, listed 2026-09-26"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New official Ministry of Local Administration listing for Law No. 22 of 2021. AreaData did not review the full PDF or assign planning duties. Compare with the enacted but not-yet-effective Law No. 16 of 2026 and its transition provisions before adapting current governance.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
+      "source_id": "JOR_JOR_MOPIC_PLANNING_LAW_2024",
+      "role": "planning_law",
+      "title": "Planning and International Cooperation Law No. 10 of 2024",
+      "publisher": "Jordan Ministry of Planning and International Cooperation",
+      "url": "https://www.mop.gov.jo/En/Pages/Planning_Law",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national"
+      ],
+      "reference_periods": [
+        "2024 national planning law"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New specific official Ministry of Planning and International Cooperation text of Law No. 10 of 2024. It describes national methodologies and institutional roles; it does not prove an individual governorate plan, approval, budget or execution.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
+      "source_id": "JOR_JOR_PM_LOCAL_ADMINISTRATION_LAW_2026_GAZETTE_LOCATION",
+      "role": "planning_law",
+      "title": "Official Gazette listing of Local Administration Law No. 16 of 2026",
+      "publisher": "Jordan Prime Ministry",
+      "url": "https://www.pm.gov.jo/Ar/Pages/NewsPaperDetails/6072",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "local-administration framework, scope to audit"
+      ],
+      "reference_periods": [
+        "published 2026-09-10; future effective date"
+      ],
+      "formats": [
+        "HTML",
+        "document viewer"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New official Gazette listing for Law No. 16 of 2026. Published 2026-09-10 with effectiveness 60 days after publication according to official Petra notice, so it was not yet effective on AreaData's 2026-09-26 check. Independently review full text, amendments, transition and later effective status before using.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
+      "source_id": "JOR_JOR_DOS_CENSUS_2015_TABLES_CATALOG",
+      "role": "table_catalog",
+      "title": "Jordan DoS Population and Housing Census 2015 table catalogue",
+      "publisher": "Jordan Department of Statistics",
+      "url": "https://dosweb.dos.gov.jo/censuses/population_housing/census2015/census2015_tables/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate",
+        "administrative division by table"
+      ],
+      "reference_periods": [
+        "2015 census"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New specific official 2015 census table catalogue location. No individual 2015 table was acquired or adopted by AreaData in this pass. Inspect actual originals, fields, definitions and reuse terms; do not treat end-2025 estimates as census counts.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-estimates-official-sources-2026-09-26.md",
       "artifact_sha256": null
     },
     {
