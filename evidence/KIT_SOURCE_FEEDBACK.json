@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T10:41:40.598Z",
-  "origin_commit": "5df17b4e011dc337e8aafc52b5e3eb7635a3cea0",
+  "exported_at": "2026-09-26T11:25:35.631Z",
+  "origin_commit": "e38724e882d186e2e69e5c848333d5536e768885",
   "sources": [
     {
       "iso3": "ARE",
@@ -1443,6 +1443,260 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "Official municipality directory location only, not a downloaded dated legal code table. No local plan or finance record was linked by a verified municipality identifier.",
       "origin_evidence_path": "docs/evidence/lebanon-cas-lfhlcs-moph-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_MOI_GOVERNORATE_WILAYAT_2025",
+      "role": "administrative_codes",
+      "title": "Ministry of Interior governorate and wilayat name/ID directory, October 2025",
+      "publisher": "Ministry of Interior (Oman)",
+      "url": "https://opendata.gov.om/api/v1/datasets/file/f2e16edb-a795-49d8-8a3c-a6dd72d17b0d/1",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "11 governorates",
+        "63 wilayats"
+      ],
+      "reference_periods": [
+        "2021–2025 in workbook metadata; published October 2025"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Oman Open Data License; terms_review_required",
+      "reuse_note": "Ministry of Interior October-2025 directory acquired by AreaData. Its RegionId/WilayatId and Arabic names are a 2025 crosswalk, not verified 2020 census legal codes or dated polygons. Two named wilayats have null 2020 eCensus cells.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_NCSI_WILAYAT_FEATURE_REGISTER",
+      "role": "boundaries",
+      "title": "NCSI national spatial-data wilayat feature-register attributes",
+      "publisher": "NCSI geospatial service; stated feature owner: Ministry of Interior (Oman)",
+      "url": "https://ncsigeostatportal.ncsi.gov.om/server/rest/services/NCSIData/WilayatB/FeatureServer/3",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "63 wilayat feature records"
+      ],
+      "reference_periods": [
+        "service edition and legal validity dates unverified; most feature-load fields say 2017-03-02"
+      ],
+      "formats": [
+        "ArcGIS REST metadata",
+        "JSON attributes",
+        "polygon query to assess"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official spatial-data layer says MOI owns features and NCSI supplies alternative data. AreaData matched 63 Arabic names to MOI but found different code systems, mostly 2017 feature-load dates and no verified 2020 legal boundary equivalence; no polygon was adopted.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_ECENSUS_LIBRARY",
+      "role": "census_catalog",
+      "title": "Oman eCensus public library",
+      "publisher": "National Centre for Statistics and Information (Oman)",
+      "url": "https://www.ecensus.gov.om/web/#/en/library",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate",
+        "wilayat; product-specific"
+      ],
+      "reference_periods": [
+        "2020 census products; later reference dates require separate assessment"
+      ],
+      "formats": [
+        "HTML catalogue",
+        "linked products to inspect"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "eCensus library location identified. AreaData did not audit all 2020 census population, housing and establishment products; do not equate its adopted three nationality counts with a full census edition.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_ECENSUS_2020_POPULATION",
+      "role": "machine_readable_data",
+      "title": "NCSI Electronic Census 2020 public population dataset, 12 December 2020",
+      "publisher": "National Centre for Statistics and Information (Oman)",
+      "url": "https://www.ecensus.gov.om/web/#/en/datasets",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate",
+        "wilayat"
+      ],
+      "reference_periods": [
+        "12 December 2020 census snapshot only; later portal reference dates are distinct"
+      ],
+      "formats": [
+        "HTML portal",
+        "public JSON table-builder API"
+      ],
+      "license_or_terms": "official_open_data_terms_review_required",
+      "reuse_note": "AreaData adopted only 2020-12-12 Omani/expatriate nationality counts for nation, 11 governors and 61 reported wilayats. English Residential Status is Arabic nationality; later dates and other fields are unassessed. Kit must independently retrieve originals, review terms and geography before adoption.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_MOHUP_NATIONAL_SPATIAL_STRATEGY",
+      "role": "planning_guidance",
+      "title": "Oman National Spatial Strategy overview",
+      "publisher": "Ministry of Housing and Urban Planning (Oman)",
+      "url": "https://oman.housing.gov.om/onss",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "all 11 governorates; legal local application to verify"
+      ],
+      "reference_periods": [
+        "national long-term spatial framework; edition/effective period to audit"
+      ],
+      "formats": [
+        "HTML overview",
+        "strategy original to locate"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Ministry overview locates the national spatial strategy. AreaData did not acquire its full body, governorate plans or legal duties, and did not treat this overview as an approved local plan.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_FM_ROYAL_DECREE_1_2026_PLAN_ANNOUNCEMENT",
+      "role": "planning_law",
+      "title": "Foreign Ministry economy page naming Royal Decree 1/2026",
+      "publisher": "Ministry of Foreign Affairs (Oman)",
+      "url": "https://www.fm.gov.om/en/about-oman/state/economy/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national"
+      ],
+      "reference_periods": [
+        "2026-2030 national plan approval"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official Foreign Ministry economy page explicitly names Royal Decree 1/2026 for the national plan. This does not establish individual governorate plan approval or implementation. Check the original Gazette and current institutional duties independently.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_MJLA_GAZETTE_169_DECREE_1_2026",
+      "role": "planning_law",
+      "title": "Official Gazette 169, Royal Decree 1/2026",
+      "publisher": "Ministry of Justice and Legal Affairs (Oman)",
+      "url": "https://www.mjla.gov.om/modules/decrees/download.php?file=1396",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national legal record"
+      ],
+      "reference_periods": [
+        "1 January 2026 approval of 2026–2030 national plan"
+      ],
+      "formats": [
+        "Official Gazette PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official Gazette 169 PDF location found, but AreaData local TLS certificate-chain verification failed, so the original was not locally acquired. Government Foreign Ministry page independently names Decree 1/2026. Recheck the Gazette and scope.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_MOE_ELEVENTH_FIVE_YEAR_PLAN_2026_2030",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Oman Eleventh Five-Year Development Plan, main Arabic volume",
+      "publisher": "Ministry of Economy (Oman)",
+      "url": "https://www.economy.gov.om/PDF/%D8%AE%D8%B7%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D8%AE%D9%85%D8%B3%D9%8A%D8%A9%20%D8%A7%D9%84%D8%AD%D8%A7%D8%AF%D9%8A%D8%A9%20%D8%B9%D8%B4%D8%B1%D8%A9.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national; governorate priority but no local plan files"
+      ],
+      "reference_periods": [
+        "2026-2030"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "AreaData acquired the 124-page Ministry of Economy main Arabic plan and checked pages 1, 6, 16 and 50. It is one national 2026-2030 document; page 50's historical programme figures are not current local budgets or implementation. Other pages and local plans are unassessed.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_NCSI_SDMX_POPULATION_METADATA",
+      "role": "table_catalog",
+      "title": "NCSI population SDMX metadata",
+      "publisher": "National Centre for Statistics and Information (Oman)",
+      "url": "https://data.gov.om/api/1.0/sdmx/OMPOP2016",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate",
+        "wilayat dimensions to audit"
+      ],
+      "reference_periods": [
+        "multiple population/census periods to classify"
+      ],
+      "formats": [
+        "SDMX metadata XML",
+        "data endpoint access to test"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "NCSI data.gov.om population-series metadata responded but the data endpoint returned HTTP 403 in AreaData's environment. No value was adopted; access failure does not mean zero or nonpublication.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_MOE_LIBRARY",
+      "role": "table_catalog",
+      "title": "Oman Ministry of Economy plan publication library",
+      "publisher": "Ministry of Economy (Oman)",
+      "url": "https://economy.gov.om/library.aspx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national; any local product scope to verify"
+      ],
+      "reference_periods": [
+        "current library checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML catalogue",
+        "PDF links"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Ministry of Economy library links the acquired main 11th plan and other programme/performance volumes. The latter have not been acquired or assigned to governorates by AreaData.",
+      "origin_evidence_path": "docs/evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md",
       "artifact_sha256": null
     },
     {
