@@ -1,0 +1,7 @@
+# Saudi 2022 census regional source location
+
+Checked 2026-09-26. The [Saudi Ministry of Health Statistical Yearbook 2022](https://www.moh.gov.sa/en/Ministry/Statistics/book/Documents/Statistical-Yearbook-2022.pdf), PDF page 51, Table 1-12, gives population for 13 administrative regions in 2022 and credits the General Authority for Statistics as the source. The table explicitly describes its 2010–2021 columns as estimates recalculated on the 2022 census basis. AreaData adopts only the **2022** counts from this table as its census-based regional series.
+
+The locally acquired PDF has 300 pages, 7,314,453 bytes, SHA-256 `ad90d515309ac5b87a3864e863d0c41989b1412a1e923b86377c64f7c5a4f4c8`. Its 13 regional 2022 values sum to the printed national total 32,175,224. Local AreaData import records the page/table/row/column, retains the PDF outside Git, and marks the 2010–2021 columns unadopted. The 2017 geoBoundaries shapes are paired by manually checked region names for navigation, without official code or census-date boundary certification. Direct GASTAT governorate tables, further themes, planning materials and redistribution terms remain to be checked.
+
+Kit feedback stage: `official_location_identified` only. Its next country project must independently acquire and audit this source; the AreaData numbers are not transferred by the feedback bundle. See [SAU handoff](../research/asia-rollout/SAU_HANDOFF.md).

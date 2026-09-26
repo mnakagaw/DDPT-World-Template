@@ -32,6 +32,10 @@ const cases=[
    areas:[{level:'national',name:'Iraq',value:46118793,children:18},
           {level:'adm1',name:'Baghdad',value:9780429,children:0},
           {level:'adm1',name:'Al-Basrah',value:3664168,children:0}]},
+  {path:'generated/saudi-arabia-areadata-20260926',country:'SAU',indicator:'SAU_CENSUS_2022_POP_REGION',period:'2022',
+   areas:[{level:'national',name:'Saudi Arabia',value:32175224,children:13},
+          {level:'adm1',name:'Riyadh Region',value:8591748,children:0},
+          {level:'adm1',name:'Makkah Region',value:8021463,children:0}]},
 ];
 const checks=[];
 for(const item of cases){
