@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T07:43:00.804Z",
-  "origin_commit": "af9b28f7f6175a6b8259139195b24678f99e28fc",
+  "exported_at": "2026-09-26T08:01:38.910Z",
+  "origin_commit": "38adfac5d3ec98d5203bc3efcca98377d0b36b63",
   "sources": [
     {
       "iso3": "BFA",
@@ -514,6 +514,31 @@
     },
     {
       "iso3": "JOR",
+      "source_id": "JOR_JOR_DOS_CENSUS2015_HOUSING_TABLE_2_17",
+      "role": "census_results",
+      "title": "DoS 2015 Population and Housing Census, Table 2.17: main drinking-water source",
+      "publisher": "Jordan Department of Statistics",
+      "url": "https://dosweb.dos.gov.jo/DataBank/Census2015/HousingUnits/Housing_2.17.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate"
+      ],
+      "reference_periods": [
+        "2015 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New AreaData 2015 census Table 2.17 original for main drinking-water source by governorate. AreaData audited seven numeric fields and partially adopted public-network counts/shares, but Kit must independently verify the PDF, excluded households, numerator/denominator, official geography and terms. Public network does not establish safe water.",
+      "origin_evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "JOR",
       "source_id": "JOR_JOR_DOS_2025_MUNICIPALITIES",
       "role": "machine_readable_data",
       "title": "DoS 2025 Population Estimates by Municipality",
@@ -662,7 +687,7 @@
         "XLSX"
       ],
       "license_or_terms": "terms_review_required",
-      "reuse_note": "New AreaData official 2015 census catalogue location only. Individual thematic tables, source fields, geography and terms have not been acquired or adopted; the 2025 estimate workbooks are separate.",
+      "reuse_note": "New AreaData official 2015 census catalogue location. One separate Table 2.17 PDF was acquired and partially adopted by AreaData; the remaining individual thematic tables, source fields, geography and terms have not been fully audited. The 2025 estimate workbooks are separate.",
       "origin_evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
       "artifact_sha256": null
     },
