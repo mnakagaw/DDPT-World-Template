@@ -26,7 +26,7 @@ The fetcher refuses altered originals, and the importer replaces only its own so
 - Browser checked national population **9,601,720** and 7/7 comparable 2022 ranking; area 7 **481,940** with code, restricted scope, row 78 and no boundary; reselected national and recovered the parent value; area-7 planning page displayed **0** verified local materials, with working outputs still available. This is a narrow producer-side UI check, not all 42 scenarios.
 - Seven output cases generated diagnostic CSV/HTML/Markdown, planning HTML and evidence CSV. Values, periods, source cell locators, selected-area names, national first/last internal rows, counts and hashes matched. National diagnostic had seven internal comparison rows; local rows had zero. No full-table print, Word/PDF or final visual output rendering was completed.
 
-`validate-country` passed with zero errors and one material warning: no verified country-specific planning documents. The output verifier passed. Standard check/test, Kit handoff and Git IDs are recorded in the [feedback handoff](KIT_FEEDBACK_HANDOFF.md) once complete. Independent audit and hosting remain undone.
+`validate-country` passed with zero errors and one material warning: no verified country-specific planning documents. The output verifier passed. `npm run check` passed (139 modules and JSON templates); `npm test` passed **218/218**. Kit import, its 173/173 tests and Git IDs are recorded in the [feedback handoff](KIT_FEEDBACK_HANDOFF.md). Independent audit and hosting remain undone.
 
 ## Next work
 

@@ -78,3 +78,16 @@ Nine new public official leads were selected: SSC population tables 1.15, 1.17 a
 | Kit validation | Dry-run and import accepted 55 leads. `npm run check`, `npm test` (173/173) and `npm run verify:kit` (`ready: true`, 55 feedback sources) passed. Kit branch pushed. |
 
 All nine Azerbaijan feedback stages are `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. The 2024 code PDF has three held city/rayon joins and no local polygons; the two census volumes were acquired in AreaData but not table-by-table assessed. Kit must independently inspect them before reuse. Azerbaijan remains partial and unpublished.
+
+## Israel CBS 2022 and planning-service leads — 2026-09-26
+
+Nine new public official leads were selected: six CBS 2022 Census workbooks, Planning Administration XPLAN search, the planning/building laws index and Mavat procedural guidance. [The Israel source audit](../../evidence/israel-cbs2022-source-audit-2026-09-26.md) distinguishes the eight adopted columns and first-level rows from the unassessed fields and locality sheets. It records the Israeli-localities-only scope of CBS area 7, the unmatched 2006 reference boundary and absence of actual plan/budget records. No raw files, observations or country acceptance state were transferred.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, source/producer audit and status | `732648d4dc766dd237e811a4ece0449b53310b44` on `codex/asia-domestic-20260926` |
+| AreaData 64-source / thirteen-country bundle | `61739706af75589d14fbdd07b2516cee533091a1`; `origin_commit` = `732648d4dc766dd237e811a4ece0449b53310b44` |
+| Kit import | `7e51a594a6f2d04b045a67e5075e742d6deda67f` on `codex/asia-source-feedback-20260926`; nine inserted, 55 existing origin histories updated, 65 records total |
+| Validation | AreaData `npm run check`, `npm test` (218/218), country validation (zero errors, one missing-plan warning) and seven-case output verifier passed. Kit dry-run/import accepted 64 leads; Kit `npm run check`, `npm test` (173/173) and `npm run verify:kit` (`ready: true`, 64 feedback sources) passed. Both branches were pushed. |
+
+All nine Israel feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. Kit must independently inspect the workbooks, scope, code and source terms before any adoption. Israel remains partial and unpublished; no independent `ACCEPT` or hosting is implied.
