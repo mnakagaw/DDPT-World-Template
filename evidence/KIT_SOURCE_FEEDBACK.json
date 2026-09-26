@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T10:58:16.465Z",
-  "origin_commit": "365d0faae2ab52da4af6b07d6e0bf5966c563cce",
+  "exported_at": "2026-09-26T11:20:37.069Z",
+  "origin_commit": "a85495247cadcd677ab1a4a6b450bf511bd32737",
   "sources": [
     {
       "iso3": "ARE",
@@ -1458,6 +1458,152 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "CAS 2018-19 LFHLCS main survey report. AreaData adopted only Table 1.1 rounded population and household estimates for mid-2018 residential-dwelling residents; this is not a census or an all-resident count. Kit must independently audit other tables, coverage, geography and reuse terms.",
       "origin_evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_ECENSUS2020_PORTAL",
+      "role": "census_catalog",
+      "title": "Oman eCensus 2020 portal",
+      "publisher": "National Centre for Statistics and Information",
+      "url": "https://www.ecensus.gov.om/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2020 census portal; local table availability unassessed"
+      ],
+      "reference_periods": [
+        "catalog checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official 2020 eCensus portal location only. AreaData acquired no eCensus local observations; do not replace 2020 census values with the 2023-2025 registration series.",
+      "origin_evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_MOHUP_ONSS",
+      "role": "planning_guidance",
+      "title": "Oman National Spatial Strategy overview",
+      "publisher": "Ministry of Housing and Urban Planning, Oman",
+      "url": "https://oman.housing.gov.om/onss",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national spatial strategy; governorate components to verify"
+      ],
+      "reference_periods": [
+        "catalog checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official Oman National Spatial Strategy overview location only. AreaData has not acquired full approved strategy, legal status, area plan bodies, implementation or evaluation.",
+      "origin_evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_MJLA_URBAN_PLANNING_LAW2026",
+      "role": "planning_law",
+      "title": "Royal Decree issuing the Urban Planning Law, 2026",
+      "publisher": "Ministry of Justice and Legal Affairs, Oman",
+      "url": "https://mjla.gov.om/decrees/ar/1/show/1453",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national law; local applicability to verify"
+      ],
+      "reference_periods": [
+        "catalog checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official 2026 Urban Planning Law location only. AreaData has not audited commencement, consolidated provisions, plan-making unit, legal duty or selected-area decisions.",
+      "origin_evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_MJLA_GOVERNORATES_SYSTEM2022",
+      "role": "planning_law",
+      "title": "Royal Decree 36/2022 on Governorates System",
+      "publisher": "Ministry of Justice and Legal Affairs, Oman",
+      "url": "https://mjla.gov.om/laws/ar/1/show/186",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national governorate governance; plan-making implication unverified"
+      ],
+      "reference_periods": [
+        "catalog checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official 2022 Governorates System location only. Governance law is not evidence of a Wilayat planning duty or an approved local plan.",
+      "origin_evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_MOHUP_STRUCTURAL_PLAN_CATALOG",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "MoHUP structural-plans catalogue",
+      "publisher": "Ministry of Housing and Urban Planning, Oman",
+      "url": "https://mohup.gov.om/en/projects",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "selected cities and project locations; exact area match to verify"
+      ],
+      "reference_periods": [
+        "catalog checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "MoHUP projects catalogue location only. No actual Salalah or selected-area structural plan, decision, budget, execution or evaluation was adopted.",
+      "origin_evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "OMN",
+      "source_id": "OMN_OMN_NCSI_YEARBOOK2026_TABLE7_2",
+      "role": "table_catalog",
+      "title": "NCSI Statistical Year Book 2026, population Tables 6-2, 7-2 and 8-2",
+      "publisher": "National Centre for Statistics and Information, Sultanate of Oman",
+      "url": "https://api.ncsi.gov.om/uploads/pdfs/statistical_year_book_2026___issue_54_1777963604.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "11 NCSI governorate rows",
+        "63 NCSI Wilayat rows"
+      ],
+      "reference_periods": [
+        "year-end 2023–2025"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "AreaData adopted only Table 7-2's six 2023-2025 Omani/expatriate registered-population columns. This is year-end registration, not the 2020 eCensus or WDI midyear population. Table 6-2 and 8-2 were cross-checks; other yearbook tables, official codes, compatible polygons and reuse terms need independent Kit audit.",
+      "origin_evidence_path": "docs/evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md",
       "artifact_sha256": null
     },
     {
