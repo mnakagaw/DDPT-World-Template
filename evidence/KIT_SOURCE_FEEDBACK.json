@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T08:01:38.910Z",
-  "origin_commit": "38adfac5d3ec98d5203bc3efcca98377d0b36b63",
+  "exported_at": "2026-09-26T08:29:19.445Z",
+  "origin_commit": "fdcedd992c03099c5b87bd47db5995b34179bae2",
   "sources": [
     {
       "iso3": "BFA",
@@ -765,6 +765,131 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "New AreaData source location: Saudi Ministry of Health 2022 yearbook Table 1-12 cites GASTAT for the 2022 census population of 13 administrative regions. Its 2010–2021 columns are recalculated estimates, not census counts. Kit must independently audit direct GASTAT tables, geographic codes/boundaries, terms and adoption.",
       "origin_evidence_path": "docs/evidence/saudi-census-source-location-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SYR",
+      "source_id": "SYR_SYR_CBS2004_POPULATION_DISTRICTS_ARCHIVED",
+      "role": "census_results",
+      "title": "CBS 2004 census population and housing by district/sub-district (archived original)",
+      "publisher": "Syrian Central Bureau of Statistics",
+      "url": "https://web.archive.org/web/20130310211017/http://www.cbssyr.org/General%20census/census%202004/pop-man.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "district (2004)",
+        "sub-district (2004)"
+      ],
+      "reference_periods": [
+        "2004 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Archived copy of original CBS 2004 district/sub-district PDF. AreaData adopted historical population and sex counts only. Lower housing rows are unresolved; P-codes are not verified official codes, and Kit must independently audit source rows and current relevance.",
+      "origin_evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SYR",
+      "source_id": "SYR_SYR_CBS2004_POPULATION_GOVERNORATES_ARCHIVED",
+      "role": "census_results",
+      "title": "CBS 2004 census population and housing by governorate (archived original)",
+      "publisher": "Syrian Central Bureau of Statistics",
+      "url": "https://web.archive.org/web/20140124131814id_/http://cbssyr.sy/General%20census/census%202004/pop-moh.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate (2004)"
+      ],
+      "reference_periods": [
+        "2004 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Archived copy of an original CBS 2004 governorate PDF, not a live current CBS endpoint. AreaData adopted six historical count fields; current population, legal boundary equivalence, reuse terms and independent Kit audit remain open. The old cbssyr.sy site returned HTTP 403 in this session.",
+      "origin_evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SYR",
+      "source_id": "SYR_SYR_OCHA_MIRROR_2004_CENSUS_WORKBOOK",
+      "role": "machine_readable_data",
+      "title": "OCHA-hosted mirror of Syrian 2004 census workbook (archived)",
+      "publisher": "UN OCHA mirror of Syrian CBS census material",
+      "url": "https://web.archive.org/web/20160307093758/https://www.humanitarianresponse.info/files/syr_pop_2004_sycensus_0.xls",
+      "authority_type": "international_organization",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate",
+        "district",
+        "sub-district",
+        "city/locality with unverified coverage"
+      ],
+      "reference_periods": [
+        "2004 census with separate 2009 and 2010 sheets"
+      ],
+      "formats": [
+        "XLS"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Archived OCHA distribution of CBS census material. AreaData uses English labels and P-codes only: 213 numeric fields conflict with original CBS PDFs. Do not adopt mirror numbers or its separate 2009/2010 sheets without independent reconciliation, geography and terms review.",
+      "origin_evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SYR",
+      "source_id": "SYR_SYR_SANA_LOCAL_PLANNING_METHODOLOGY_2025",
+      "role": "planning_guidance",
+      "title": "SANA report on proposed local development planning method, 23 October 2025",
+      "publisher": "Syrian Arab News Agency",
+      "url": "https://sana.sy/locals/2313737/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate"
+      ],
+      "reference_periods": [
+        "2025"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official SANA report describes discussion of a proposed 2025 governorate local-development planning method. The method text, legal planning duty, actual selected-area plan and approval have not been obtained; the article is a lead, not adopted guidance.",
+      "origin_evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SYR",
+      "source_id": "SYR_SYR_MOF_CITIZEN_BUDGET_2026",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Ministry of Finance citizen budget 2026, national document lead",
+      "publisher": "Syrian Ministry of Finance",
+      "url": "https://docs.mof.gov.sy/citizen_budget_2026.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national; subnational detail unassessed"
+      ],
+      "reference_periods": [
+        "2026"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official Ministry of Finance 2026 national citizen-budget location. AreaData has not audited its table fields. It is not a selected governorate plan, local budget execution or official evaluation.",
+      "origin_evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
       "artifact_sha256": null
     },
     {
