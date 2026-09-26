@@ -218,13 +218,12 @@ def boundary_rows(receipt: dict, census_codes: set[int]) -> tuple[dict[int, dict
 
 
 def polygon_coordinates(geometry):
-    # Six decimals retain sub-metre display precision after the 10 m
-    # topology-preserving navigation simplification in source metres.
-    def rounded(value):
-        if isinstance(value, (list, tuple)):
-            return [rounded(item) for item in value]
-        return round(value, 6)
-    return rounded(mapping(geometry)["coordinates"])
+    # Rounding projected coordinates collapsed narrow rings in four dissolved
+    # districts. Keep Shapely's full precision and verify what JSON will store.
+    coordinates = mapping(geometry)["coordinates"]
+    if not shape({"type": geometry.geom_type, "coordinates": coordinates}).is_valid:
+        raise ValueError("Display geometry invalid after coordinate serialization")
+    return coordinates
 
 
 def make_indicator(indicator_id: str, name: str, definition: str, method: str) -> dict:
@@ -259,6 +258,15 @@ def main() -> None:
     if not BOOTSTRAP.exists():
         shutil.copy2(DATA, BOOTSTRAP)
     dataset = json.loads(BOOTSTRAP.read_text(encoding="utf-8"))
+    # Bootstrap gaps describe the initial national-WDI-only collection.  They
+    # must not survive after the official Census and planning-source receipts
+    # below are adopted; the site and every export render dataset.gaps.
+    dataset["gaps"] = [
+        gap for gap in dataset["gaps"]
+        if gap["category"] not in {
+            "boundary_reconciliation", "subnational_statistics", "planning_documents"
+        }
+    ]
     if len(dataset["territories"]) != 7 or len(dataset["observations"]) != 312:
         raise ValueError("Cyprus bootstrap changed; inspect rather than overwrite")
     dataset["generated_at"] = datetime.now(timezone.utc).isoformat()
@@ -455,6 +463,7 @@ def main() -> None:
         "DLS shapes are navigation-only; 410/410 local codes match exactly, but the 2021-05-26 ZIP predates Census day and legal boundary equivalence remains unverified.",
     ])
     dataset["gaps"].extend([
+        {"category": "planning_documents", "status": "partial", "detail": "Five current-municipality planning and budget originals were acquired for Pafos, Larnaka and Limassol, but no verified plan body, reconciled Pafos 2026 amount, implementation result, official evaluation or link to a 2021 Census reporting unit is adopted. The Ministry of Finance guidance entrypoint returned HTTP 403.", "next_action": "Resolve the Pafos PDF's conflicting surplus figures against an official corrected budget; obtain the Larnaka and Limassol plan annexes and implementation/evaluation originals; verify current legal authority codes and source reuse terms before attaching area-specific documents."},
         {"category": "post_2024_local_government", "status": "not_collected", "detail": "Current municipalities, community councils and district organizations are institutionally distinct from 2021 Census reporting units. No verified crosswalk or current local plan has been adopted.", "next_action": "Acquire the 2024 official reform register and unit-specific planning/budget originals; construct an approved historical-to-current code crosswalk before attaching documents."},
         {"category": "census_boundary_date", "status": "unverified", "detail": "DLS resource 2947 was posted 2021-05-26 and codes all 410 CYSTAT 2021 local reporting units, but its exact 2021-10-01 legal boundary date is not established.", "next_action": "Locate DLS or CYSTAT boundary release history or confirm the census map edition. Keep the current shapes display-only."},
         {"category": "local_sector_statistics", "status": "not_collected", "detail": "This pass adopted population/age/sex from one Census 2021 table, not education, housing, health, poverty, infrastructure or municipal finance detail.", "next_action": "Inventory all official Census themes and domestic sector sources, then join compatible 2021 codes/periods without carrying WDI national values locally."},
