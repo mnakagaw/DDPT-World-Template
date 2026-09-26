@@ -120,9 +120,14 @@ const sourceNote = (indicator, observation, prefix='Source', displayPeriod='') =
   return `<div class="source-note source-note-block"><span>${e(prefix)}</span>${source ? renderSourceAttribution(indicator,observation,source,sourcePeriod,language) : 'No verified source collected'}${source?.retrieved_at ? `<span>Retrieved ${e(source.retrieved_at.slice(0,10))}.</span>` : ''}${locator ? `<span>Source table: ${e(locator)}.</span>` : ''}</div>`;
 };
 function periodControl(id='period-select') {
-  const options = periodsFor(dataset,state.metric);
+  const thematicPeriods=periodsFor(dataset,state.metric);
+  // The thematic comparison has one indicator. Territorial and planning
+  // evidence cover many indicators, so their year selector must expose the
+  // years in that full portfolio, including explicit non-numeric statuses.
+  const allPeriods=page==='thematic'?[]:periodsFor(dataset);
+  const options = page==='thematic'?[...thematicPeriods]:allPeriods.length?['latest-available',...allPeriods]:[];
   if (state.period && !options.includes(state.period)) options.unshift(state.period);
-  return `<label class="field" for="${id}"><span>Source period</span><select id="${id}" data-control="period">${options.length?options.map(period=>`<option value="${e(period)}" ${period===state.period?'selected':''}>${period==='latest-available'?e(localCopy('Latest year for each indicator','Último año de cada indicador','指標ごとの最新年')):e(period)}${periodsFor(dataset,state.metric).includes(period)?'':' · no observation for this indicator'}</option>`).join(''):'<option value="">No periods acquired</option>'}</select></label>`;
+  return `<label class="field" for="${id}"><span>Source period</span><select id="${id}" data-control="period">${options.length?options.map(period=>`<option value="${e(period)}" ${period===state.period?'selected':''}>${period==='latest-available'?e(localCopy('Latest year for each indicator','Último año de cada indicador','指標ごとの最新年')):e(period)}${page==='thematic'&&!thematicPeriods.includes(period)?' · no observation for this indicator':''}</option>`).join(''):'<option value="">No periods acquired</option>'}</select></label>`;
 }
 function indicatorControl() {
   const indicators=indicatorsForTerritorialScope(dataset,state.selected),themes=[...new Set(indicators.map(indicator=>indicator.theme || 'Other'))];
@@ -314,7 +319,7 @@ function territorial() {
       added=false;
       for(const area of dataset.territories)if(area.parent_id&&branch.has(area.parent_id)&&!branch.has(area.id)){branch.add(area.id);added=true;}
     }
-    const localEvidence=new Set(dataset.observations.filter(row=>branch.has(row.territory_id)&&row.status==='observed').map(row=>row.indicator_id));
+    const localEvidence=new Set(dataset.observations.filter(row=>branch.has(row.territory_id)).map(row=>row.indicator_id));
     territorialIndicators=territorialIndicators.filter(indicator=>localEvidence.has(indicator.id));
   }
   const themes=[...new Set(territorialIndicators.map(indicator=>indicator.theme || 'Other'))];
