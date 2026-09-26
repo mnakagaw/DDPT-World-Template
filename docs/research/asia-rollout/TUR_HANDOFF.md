@@ -1,0 +1,25 @@
+# Türkiye 国内版の引き継ぎ（2026-09-26）
+
+状態：**地方人口の部分版。独立監査未了、未公開、完成件数に含めない。**
+
+## 取得して採用したもの
+
+- 出典は[TÜİK「ADNKS 2025」](https://data.tuik.gov.tr/Bulten/Index?p=Adrese-Dayali-Nufus-Kayit-Sistemi-Sonuclari-2025-53899)から案内される公式[7表のExcel](https://www.tuik.gov.tr/media/announcements/2025ADNKS_FavoriTablolar.xlsx)。SHA-256 `72e36cf8f1eeb2e8c12480e14148b42448c6aad05d19932d94add37f360980c1`、6,796,932 bytes。原本と取得receiptはローカル`generated/turkey-areadata-20260926/raw/`に保存。再配布条件は未確認なのでGit/FTPに含めない。
+- `İL NÜFUSU`と`İLÇE NÜFUSU`の人口・男女別・中心部・belde/köyの9列を採用。2025年12月31日を参照日とする**年次住所ベースの行政登録**であり、国勢調査と呼ばない。Excelの`-`は情報なしとして観測値を作らず、ゼロにしない。
+- 全国の人口86,092,168人、男性43,059,434人、女性43,032,734人。81 il（県）、973 ilçe（郡）を国別datasetへ接続。9指標、7,845観測値を追加した。
+- 郡の人口・男女別合計はすべて所属県と一致し、81県の合計は全国と一致する。提供される男女別および中心部・belde/köyの分解がすべてある行は加算整合を確認した。
+- TÜİK県コード01–81とgeoBoundaries gbOpen ADM1の`shapeISO` `TR-01`–`TR-81`を対応させ、県名も照合した。81/81件が一致。ただし、参照境界は2021年版で2025年の法定境界を証明しない。郡の図形は未結合。郡は公式`İLÇE KAYIT NO`で識別する。
+
+## 動作確認
+
+`python scripts/import-turkey-adnks-2025.py --project generated/turkey-areadata-20260926`、国別validator、site buildは通過。validatorには公式計画資料未収集の警告が1件ある。ローカルの実画面で全国値、İstanbul県15,754,053人、県内部39郡、Esenyurt郡1,003,905人の選択、郡から同じ所属県を選び直したときの郡選択解除とURL更新を確認した。「指標ごとの最新年」が既定で選ばれ、2025年のADNKS人口と2024年のWDI水指標がそれぞれ出典年付きで表示されることも確認。全国・İstanbul・Esenyurtの診断CSV/HTMLと計画HTML/根拠CSVを実生成し、人口値・年・出典URL・比較表全件数・初行と末行・hashを`evidence/OUTPUT_VERIFICATION.json`へ記録した。モバイルと公式計画文書の内容は未確認。
+
+## 未採用・未解決
+
+- 同じExcelの`BÜYÜKŞEHİR B. NÜFUSU`、`BELEDİYE NÜFUSU`、`MAHALLE NÜFUSU`、`KÖY NÜFUSU`、`KENT-KIR SINIFLAMASI`は見出し・行数まで確認したが、行政体系・母集団・コードを検証していないため未採用。特に郡を自治体と同義にしない。
+- [İBBの公式資料一覧](https://ibb.istanbul/ibb/butce-ve-yatirimlar/)に2025–2029戦略計画、予算、投資・業績資料の所在を確認。[2025活動報告一覧](https://ibb.istanbul/ibb/faaliyet-raporlari/)も確認。ただし、資料の本文・適用する法的計画主体と県境界の一致を監査していないため、選択県・郡の公式文書としてdatasetに採用していない。
+- 法令候補はBelediye Kanunu 5393条41およびİl Özel İdaresi Kanunu 5302条31。現行の公式統合本文は今回取得できなかった。法定主体、人口基準、計画周期は**未確定**として画面へ断定表示しない。
+- TÜİKの2025年行政境界・郡境界の取得、他の国勢調査系列、原本再配布条件、適切な市区計画文書、計画・予算・実施・評価の内容確認、実出力と独立監査が残る。
+- 利用者が出典年を明示的に2025に固定すると、2024年以前までしかないWDIの指標には欠測が表示される。これは指定年を保持する挙動。「指標ごとの最新年」が既定なら各指標の最新値・年を表示する。
+
+次は2025年の公式地域コード・境界を探し、残り5表の数値列と地域主体を棚卸しする。同時に法令の現行本文とİBBの計画本文を確認し、行政郡と計画主体の対応が証明できた資料だけ接続する。未解決でも次国の所在調査・取得へ進む。

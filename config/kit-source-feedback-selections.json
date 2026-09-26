@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "checked_at": "2026-09-24",
+  "checked_at": "2026-09-26",
   "evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
   "projects": [
     {
@@ -194,6 +194,47 @@
           "geographic_levels": ["region", "commune"],
           "formats": ["HTML"],
           "reuse_note": "New AreaData location: 30 July 2026 official council notice reports competence and resource transfer decrees under law 024-2025/ALT. Signed decree texts, numbers, commencement and selected-area application are not acquired; this is not a plan or budget."
+        }
+      ]
+    },
+    {
+      "path": "generated/turkey-areadata-20260926",
+      "iso3": "TUR",
+      "evidence_path": "docs/evidence/turkey-adnks-source-location-2026-09-26.md",
+      "sources": [
+        {
+          "id": "tur-tuik-adnks-2025-favorite-tables",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national",
+            "province (il)",
+            "district (ilçe)"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "New AreaData source location: TÜİK 2025 annual ADNKS population register, not a decennial census. AreaData locally checks province/district totals, but Kit must audit its own acquisition, source fields, 2025 geography, reuse terms and adoption independently."
+        }
+      ]
+    },
+    {
+      "path": "generated/iraq-areadata-20260926",
+      "iso3": "IRQ",
+      "evidence_path": "docs/evidence/iraq-census-source-location-2026-09-26.md",
+      "sources": [
+        {
+          "id": "irq-cosit-census-2024-final-governorates",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "national",
+            "governorate"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "New AreaData source location: Iraq COSIT 2024 final census summary in the government open-data portal. AreaData checked 18 governorate rows and five numeric columns locally. Kit must independently audit its own acquisition, adjusted versus original population definitions, code/boundary matching and resource-specific terms before adoption."
         }
       ]
     }

@@ -303,7 +303,20 @@ function metricCard(indicator) {
 }
 function territorial() {
   const contextualId=dataset.analysis?.population_context?.reference_indicator_id;
-  const territorialIndicators=orderedTerritorialIndicators(dataset,state.selected,state.metric).filter(indicator=>indicator.id!==contextualId);
+  let territorialIndicators=orderedTerritorialIndicators(dataset,state.selected,state.metric).filter(indicator=>indicator.id!==contextualId);
+  if(!worldMode()&&state.selected!==dataset.country.national_territory_id){
+    // A national series has no local meaning merely because it is present in
+    // the catalog. Keep it in research exports and on the country diagnosis,
+    // but do not fill a governorate/city page with national-only empty cards.
+    const branch=new Set([state.selected]);
+    let added=true;
+    while(added){
+      added=false;
+      for(const area of dataset.territories)if(area.parent_id&&branch.has(area.parent_id)&&!branch.has(area.id)){branch.add(area.id);added=true;}
+    }
+    const localEvidence=new Set(dataset.observations.filter(row=>branch.has(row.territory_id)&&row.status==='observed').map(row=>row.indicator_id));
+    territorialIndicators=territorialIndicators.filter(indicator=>localEvidence.has(indicator.id));
+  }
   const themes=[...new Set(territorialIndicators.map(indicator=>indicator.theme || 'Other'))];
   return `<div class="page-actions">${periodControl('territorial-period')}${pageLink('thematic','Compare across areas')}${pageLink('planning','Open planning resources')}</div>
   <div class="territorial-top"><section class="panel selected-profile"><h2>${e(currentArea().name)}</h2>${hierarchyNavigation()}${areaControls()}${identity()}${facts()}</section>${mapPanel()}</div>${countryDetailLink()}${dataset.analysis?.supranational_indicator_ids&&currentArea().type==='exploration_scope'?'':regionalPopulationSummary()}${renderCensusPyramid(dataset,state.selected,language)}${sourceScopeNote(dataset,state.selected,'UN_WPP_POP_TOTAL',language)?`<p class="notice source-scope-note">${e(sourceScopeNote(dataset,state.selected,'UN_WPP_POP_TOTAL',language))}</p>`:''}${renderWppDemographics(dataset,state.selected,state.period,language)}
