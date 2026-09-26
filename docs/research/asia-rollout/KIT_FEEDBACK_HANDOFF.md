@@ -117,3 +117,16 @@ Ten public official leads were selected: four PCBS 2017 original PDFs (updated s
 | Validation | AreaData check, 218/218 tests, country validation (zero errors, one missing-plan warning), build and twelve-case output verifier passed. Kit dry-run/import accepted 81 leads; Kit check, 173/173 tests and readiness (`ready: true`, 81 feedback sources) passed. |
 
 All ten Palestine feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. The 2026 pre-conflict projection is not an observed present population series. Kit must independently review PDFs, 2017 code/boundary edition, current law and actual plan/fiscal bodies before use. Palestine remains partial and unpublished.
+
+## Oman NCSI registration and planning leads — 2026-09-26
+
+Six public official leads were selected: the NCSI 2026 Statistical Year Book Table 7-2, the 2020 eCensus portal, the 2026 Urban Planning Law, the 2022 Governorates System, the national spatial strategy overview and MoHUP projects catalogue. [The Oman source audit](../../evidence/oman-ncsi-yearbook-source-audit-2026-09-26.md) records the six adopted nationality/year columns, calculated totals and independent published-total checks. The feedback carries no raw PDF, 450 source cells, 225 calculated values, plan body or acceptance state.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, source/producer audit and status | `a85495247cadcd677ab1a4a6b450bf511bd32737` on `codex/asia-domestic-20260926` |
+| AreaData 87-source / sixteen-country bundle | `dce7935204d79ec01bfedb6b4ac95e7c6905ff17` on the same branch; bundle `origin_commit` = `a85495247cadcd677ab1a4a6b450bf511bd32737` |
+| Kit import | `6fcf0afd61f46523b8f26d1c0cdfca34935d8b12` on `codex/asia-source-feedback-20260926`; six inserted, 81 origin histories updated, 88 records total |
+| Validation | AreaData check, 218/218 tests, country validation (zero errors, one missing-plan warning), build and twelve-case output verifier passed. Kit dry-run/import accepted 87 leads; Kit check, 173/173 tests and readiness (`ready: true`, 87 feedback sources) passed. |
+
+All six Oman stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. Kit must independently inspect the yearbook, eCensus, legal terms and plan bodies before reuse. Oman remains partial and unpublished; no independent `ACCEPT` or hosting is implied.
