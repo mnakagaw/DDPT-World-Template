@@ -65,3 +65,16 @@ Four public leads were selected: the FCSC 2009 report's 2005 census table, SCAD'
 | Kit validation | Dry-run/import accepted 46 leads; `npm run check`, `npm test` (173/173) and `npm run verify:kit` (`ready: true`, 46 feedback sources) passed. Both remote heads matched `git ls-remote`. |
 
 The four UAE stages remain `official_location_identified`; Kit marks them `not_acquired_by_kit_preflight`. No observation, raw file, current all-emirate comparability or country `ACCEPT` passes through feedback. The UAE candidate stays partial/unpublished.
+
+## Azerbaijan SSC and planning leads — 2026-09-26
+
+Nine new public official leads were selected: SSC population tables 1.15, 1.17 and 1.19; the 2024 administrative classification; 2019 census Volumes A/B; the regional statistics yearbook catalogue; the President's Urban Planning and Construction Code page; and ARXKOM's master-plan catalogue. [The Azerbaijan source audit](../../evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md) distinguishes the two adopted population/sex tables from the unadopted historical fields, front-matter-only census volumes and location-only planning/yearbook leads. No raw files, observations or country acceptance state are transferred.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, source/producer audit and status | `32a916ad84aedb3aae8a5721fa60271d81707bae`, then source-register extension `8a03b814df077f7f9bf25a57c46a69e50eafeba8` on `codex/asia-domestic-20260926` |
+| AreaData 55-source / twelve-country bundle | `98258093dd11c9b0de204e880c54a7735a8556fb`; `origin_commit` = `8a03b814df077f7f9bf25a57c46a69e50eafeba8` |
+| Kit import | `80482539a4081bd4ac82fefd21e210301fb33d13` on `codex/asia-source-feedback-20260926`; nine inserted, 46 existing origin histories updated, 56 records total |
+| Kit validation | Dry-run and import accepted 55 leads. `npm run check`, `npm test` (173/173) and `npm run verify:kit` (`ready: true`, 55 feedback sources) passed. Kit branch pushed. |
+
+All nine Azerbaijan feedback stages are `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. The 2024 code PDF has three held city/rayon joins and no local polygons; the two census volumes were acquired in AreaData but not table-by-table assessed. Kit must independently inspect them before reuse. Azerbaijan remains partial and unpublished.
