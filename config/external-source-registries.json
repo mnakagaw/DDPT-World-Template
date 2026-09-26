@@ -103,6 +103,17 @@
       "source_location_count": 23,
       "evidence_stage": "official_location_identified",
       "meaning": "The refreshed 23-location bundle adds the official Turkey ADNKS 2025 workbook and Iraq COSIT 2024 census workbook locations; all leads remain discovery context for the next Kit project, not acquisition or adoption by Kit."
+    },
+    {
+      "country_ids": ["BFA", "BGD", "IRQ", "LAO", "SAU", "TUR", "UGA"],
+      "bundle_path": "evidence/KIT_SOURCE_FEEDBACK.json",
+      "bundle_commit": "5f2efd80d8b47d73162e82b94eb071a727cdf98e",
+      "bundle_sha256": "c2150e7eabd58344ba4f60fa7003173a442138af043340b517fdd2e41776930b",
+      "kit_registry_path": "config/areadata-source-feedback.json",
+      "kit_import_commit": "e9716c1d7ef941d16fe33ac3a9d6a18c344ec3bd",
+      "source_location_count": 24,
+      "evidence_stage": "official_location_identified",
+      "meaning": "The 24-location bundle adds the Saudi Ministry of Health 2022 yearbook regional census-source table citing GASTAT. Kit retains it only as a source lead, not independently acquired or adopted numeric data."
     }
   ]
 }
