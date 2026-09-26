@@ -91,3 +91,16 @@ Nine new public official leads were selected: six CBS 2022 Census workbooks, Pla
 | Validation | AreaData `npm run check`, `npm test` (218/218), country validation (zero errors, one missing-plan warning) and seven-case output verifier passed. Kit dry-run/import accepted 64 leads; Kit `npm run check`, `npm test` (173/173) and `npm run verify:kit` (`ready: true`, 64 feedback sources) passed. Both branches were pushed. |
 
 All nine Israel feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. Kit must independently inspect the workbooks, scope, code and source terms before any adoption. Israel remains partial and unpublished; no independent `ACCEPT` or hosting is implied.
+
+## Lebanon CAS survey and planning leads — 2026-09-26
+
+Seven public official leads were selected: the CAS LFHLCS main survey PDF and demography workbook, CAS subnational MICS 2023 Chapter 11 workbook, CAS district-profile catalogue, DGU zoning procedure, ministry DGU office description and DGU national master-plan overview. [The Lebanon source audit](../../evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md) separates the four selectively adopted survey indicators from the unassessed source tables, incomplete MICS geography, incompatible 2017 geometry and location-only planning leads. This is a household survey, not a census. No raw files, observations or country acceptance state were transferred.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, source/producer audit and status | `dd6b31fce9fff097aca98a01c7b1008ba3a3fccc` on `codex/asia-domestic-20260926` |
+| AreaData 71-source / fourteen-country bundle | `87a822247784243b0409c3f4fee57930f97b07d7` on the same branch; bundle `origin_commit` = `dd6b31fce9fff097aca98a01c7b1008ba3a3fccc` |
+| Kit import | `07ccade0e9141b46b82061ab6a1a12397cb734b0` on `codex/asia-source-feedback-20260926`; seven inserted, 64 existing origin histories updated, 72 records total |
+| Validation | AreaData check, 218/218 tests, country validation (zero errors, one missing-plan warning), build and eight-case output verifier passed. Kit dry-run/import accepted 71 leads; Kit check, 173/173 tests and readiness (`ready: true`, 71 feedback sources) passed. Both branches were pushed. |
+
+All seven Lebanon feedback stages are `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. Kit must independently acquire and inspect them before reuse. Lebanon remains partial and unpublished; no independent `ACCEPT` or hosting is implied.
