@@ -828,6 +828,85 @@
           "reuse_note": "Ministry catalogue links the governorate planning facilitator guide and its direct PDF returned HTTP 200. AreaData did not acquire or audit the body, effective period or current legal standing; no governorate plan was attributed."
         }
       ]
+    },
+    {
+      "path": "generated/kuwait-areadata-20260926",
+      "iso3": "KWT",
+      "evidence_path": "docs/evidence/kuwait-csb-2021-official-sources-2026-09-26.md",
+      "sources": [
+        {
+          "id": "kwt-csb-registration-census-2021-table1",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "six governorates", "nonterritorial Not Stated row"],
+          "formats": ["XLSX", "companion PDF"],
+          "reuse_note": "AreaData checked all nine direct Table 1 count columns for nation and six 2021 registration-census governorates. The 4,578 Not Stated people are not assigned to a governorate. Kit must independently acquire source formats, verify field universe/exclusions, codes, dates and reuse terms; no counts transfer."
+        },
+        {
+          "id": "kwt-csb-registration-census-2021-table51",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["157 area labels; parent governorate and official code unverified"],
+          "formats": ["XLSX", "companion PDF"],
+          "reuse_note": "AreaData acquired and crosschecked all 159 Table 51 rows but adopted no area value. Exact row-block subtotals do not certify official area codes, parent-governorate keys, boundary edition or planning jurisdiction."
+        },
+        {
+          "id": "kwt-csb-census-governorate-web",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "six governorates", "Not Stated"],
+          "formats": ["HTML"],
+          "reuse_note": "Official CSB governorate page repeats Table 1 counts and names three excluded non-Kuwaiti categories. Webpage was checked but not pinned as a local original; do not treat this as an additional independent value series."
+        },
+        {
+          "id": "kwt-csb-census-methodology",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national methodology"],
+          "formats": ["HTML"],
+          "reuse_note": "Official CSB page describes the 2021 project as an administrative-register census. The exact register extraction date for Table 1 and detailed field universes require confirmation in the originals."
+        },
+        {
+          "id": "kwt-csb-census-catalogue",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate", "area tables to inventory"],
+          "formats": ["HTML", "PDF and XLSX links"],
+          "reuse_note": "Official catalogue locates population, building and establishment tables. AreaData audited only Table 1 and Table 51; all other products and columns remain open."
+        },
+        {
+          "id": "kwt-csb-population-publications",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "local coverage to verify"],
+          "formats": ["HTML catalogue", "linked PDF and Excel"],
+          "reuse_note": "Catalogue separately lists a final census bulletin for 1 January 2022 and annual population estimates through 1 January 2025. AreaData did not acquire or harmonize these publications with 2021 Table 1."
+        },
+        {
+          "id": "kwt-municipality-law-33-2016",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national municipality and urban-planning law"],
+          "formats": ["PDF"],
+          "reuse_note": "Official municipality Law 33/2016 PDF location identified; direct download reset in AreaData environment. Acquire full current text/amendments and determine actual governorate versus municipality planning obligations before reuse."
+        },
+        {
+          "id": "kwt-scpd-annual-plan-2021-22",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["national historical annual plan"],
+          "formats": ["PDF"],
+          "reuse_note": "Official 2021/22 national annual plan location identified, but direct acquisition timed out. This historical national plan is not a verified current plan, governorate budget, actual expenditure or evaluation."
+        },
+        {
+          "id": "kwt-mpw-third-master-plan",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["national historical spatial master-plan archive"],
+          "formats": ["HTML", "linked PDF"],
+          "reuse_note": "Official Ministry of Public Works archive locates third master-plan products; direct acquisition timed out. Current fourth-plan status and local plan authority are unverified."
+        }
+      ]
     }
   ]
 }
