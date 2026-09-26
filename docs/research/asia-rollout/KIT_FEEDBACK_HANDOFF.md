@@ -156,3 +156,16 @@ Thirteen public official leads were selected: the Geostat final-2024 census cata
 | Validation | AreaData check, 218/218 tests, country validation (zero errors, one missing-plan warning), build and 13-case actual output verifier passed. Kit dry-run/import accepted 112 leads; Kit check, 173/173 tests and readiness (`ready: true`, 112 feedback sources) passed. Both branches were pushed. |
 
 All thirteen Georgia stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. Kit must independently acquire and classify the workbooks, official geography, terms, planning authority and actual fiscal documents. Georgia remains partial and unpublished; no independent `ACCEPT` or hosting is implied.
+
+## Qatar NPC Census 2020 and QNMP leads — 2026-09-26
+
+Ten official public leads were selected: NPC's 2020 results catalogue, main and alternate workbook URLs, the original PDF's Zone No. crosswalk, the NPC GIS atlas location, the QNMP MSDP directory, zoning page, QNDF, historical Al Shamal strategy and historical combined Al Rayyan/Al Shahhaniya strategy. [The Qatar source audit](../../evidence/qatar-npc2020-source-audit-2026-09-26.md) distinguishes the 12 partly adopted tables from 144 unassessed numbered tables, the alternate workbook's misleading `2022` filename, five population-missing Zones and the historical planning reference. No workbook/PDF bytes, observations, current planning approval, code/polygon join or country acceptance were transferred.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, source/producer audit, status and ten selections | `69551828f7c3173d6a44b196e1b8a9e522897e81` on `codex/asia-domestic-20260926` |
+| AreaData 122-source / nineteen-country bundle | `049fec26faa627a48a09a27017eec657c415c074` on the same branch; Qatar entries have `origin_commit` = `69551828f7c3173d6a44b196e1b8a9e522897e81` |
+| Kit import | `d685a681ae1b356b73d985de4b2a77610c8c2d03` on `codex/asia-source-feedback-20260926`; ten inserted, 112 older origin histories updated, 123 records total |
+| Validation | AreaData check, 218/218 tests, country validation (zero errors/warnings), build and 14-case actual output verifier passed. Kit dry-run/import each accepted 122 leads; Kit check, 173/173 tests and readiness (`ready: true`, 122 feedback sources) passed. Remote parity is recorded in the final handoff commit. |
+
+All ten Qatar feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` for each. The 2017 Al Shamal volume is a historical reference, not proof of its present legal effect. Kit must independently inspect original sheets, exact geographic definitions, source terms, current plan versions and boundary data before use. Qatar remains partial and unpublished.
