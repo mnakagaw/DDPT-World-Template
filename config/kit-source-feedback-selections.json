@@ -1033,6 +1033,93 @@
           "reuse_note": "Batumi municipal budget portal location only. Actual ordinance, current period, amendments, line items, implementation and evaluation need Kit's independent inspection."
         }
       ]
+    },
+    {
+      "path": "generated/qatar-areadata-20260926",
+      "iso3": "QAT",
+      "evidence_path": "docs/evidence/qatar-npc2020-source-audit-2026-09-26.md",
+      "sources": [
+        {
+          "id": "qat-npc-census2020-catalog",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "eight municipalities", "92 numbered zones in administrative PDF"],
+          "formats": ["HTML", "XLSX", "PDF"],
+          "reuse_note": "NPC 2020 detailed-results catalogue. The main workbook has 156 numbered tables; AreaData only partly adopted 12. Kit must classify each table and field independently."
+        },
+        {
+          "id": "qat-npc-census2020-table-1",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "eight municipalities", "87 populated Zone rows in Table 2"],
+          "formats": ["XLSX"],
+          "reuse_note": "Main Census 2020 workbook. AreaData partially adopted 12 tables and 29 indicators; the other 144 numbered table bodies and unselected cells remain unassessed. December 2020 census is separate from WDI midyear estimates. Five PDF-listed Doha zones lack Table 2 rows."
+        },
+        {
+          "id": "qat-npc-census2020-zone-crosswalk",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["eight municipality names", "92 official Zone Nos; no polygon edition"],
+          "formats": ["PDF"],
+          "reuse_note": "Original Census 2020 PDF pp. 43-47 lists municipality and Zone No. membership. It does not certify current municipality codes or supply polygon geometry. Five listed Zones lack population in XLSX Table 2."
+        },
+        {
+          "id": "qat-npc-census2020-alternate",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["same 2020 census sheets as main workbook"],
+          "formats": ["XLSX"],
+          "reuse_note": "Filename contains 2022 but all 206 common worksheets have identical cell values to the fuller 2020 workbook; not a separate 2022 census. Prefer the main catalogue edition and recheck both originals."
+        },
+        {
+          "id": "qat-qnmp-msdp",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["eight municipality MSDP directory"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "Official QNMP directory location. Verify each strategy, zoning regulation/map, revision, legal decision and current status separately. Directory presence is not evidence of a current complete plan."
+        },
+        {
+          "id": "qat-qnmp-zoning",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["zoning discussion for six municipalities; future extension described for two"],
+          "formats": ["HTML"],
+          "reuse_note": "Official zoning page describes six implementations and later Al Khor/Al Wakra extension. Page vintage and operative coverage need checking; do not infer a current legal duty for every Zone No."
+        },
+        {
+          "id": "qat-qnmp-al-shamal-2017",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["Al Shamal municipality, 2017 strategic-context volume"],
+          "formats": ["PDF"],
+          "reuse_note": "Official 36-page 2017 strategy volume acquired by AreaData. Sections 1.1-1.2 describe three MSDP parts and a five-year review intention. Later revisions, current legal effect, maps, fiscal content and census-zone alignment are unverified."
+        },
+        {
+          "id": "qat-qnmp-al-rayyan-2017",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["combined historical Al Rayyan and Al Shahhaniya strategy scope"],
+          "formats": ["PDF"],
+          "reuse_note": "Historical combined-area strategy location only. Do not attach it as a current Al Rayyan-only or Al Shahhaniya-only approved plan without edition and boundary review."
+        },
+        {
+          "id": "qat-qnmp-qndf",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["national spatial framework"],
+          "formats": ["HTML"],
+          "reuse_note": "National framework location, not municipality-specific adopted planning content. Confirm operative decree/version and local application independently."
+        },
+        {
+          "id": "qat-npc-gis-atlas",
+          "role": "boundaries",
+          "authority_type": "official_national",
+          "geographic_levels": ["official atlas portal; 2020 municipality/Zone No. polygons not acquired"],
+          "formats": ["HTML"],
+          "reuse_note": "Official NPC/PSA atlas location only. AreaData did not acquire or join a 2020 code/polygon edition; 2015 geoBoundaries shapes were left unjoined."
+        }
+      ]
     }
   ]
 }
