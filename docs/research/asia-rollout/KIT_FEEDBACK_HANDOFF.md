@@ -123,3 +123,27 @@ AreaData acquired the official CAS LFHLCS 2018–19 survey Demography XLS, its f
 | Kit import | `111aac8b9bd8d33c76d5f7c5d9953238b1b11749` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 72, inserted 10 and updated 62 (73 total records). Repeat dry-run reported 72 unchanged. All 10 Lebanon records remain `not_acquired_by_kit_preflight`; Kit `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. |
 
 The two GitHub branch heads were checked by `git ls-remote` and matched the commits above. Lebanon remains a partial local candidate with zero verified planning documents and no independent `ACCEPT`; no country site was published. Kit must acquire and audit the originals, geographic edition and local planning evidence independently before promoting any source stage or using a value.
+
+## Oman eCensus, administrative directory and national plan sources
+
+AreaData adopted only the [checked 2020 eCensus population subset and selected pages of one national plan](../../evidence/oman-ecensus-2020-moi-national-plan-2026-09-26.md). The Ministry of Interior 2025 directory and NCSI spatial attributes do not certify the 2020 legal boundary. The two 2025-listed wilayats with null 2020 cells were not filled. Kit receives ten public locations and caveats only.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData scripts, evidence, country status and selection | `e38724e882d186e2e69e5c848333d5536e768885` on `codex/asia-domestic-continuation-20260926` | Oman candidate and fresh replay reproduced 219 adopted 2020 tuples and pinned MOI/plan hashes. Validator zero errors/warnings, build, seven-area HTML/CSV and browser checks passed; `npm run check`, `npm test` 218/218 passed. |
+| AreaData feedback bundle | `366ada58f9aef1b6c20fe77356b0192294107668`; previous bundle SHA-256 `f94a0e6ff780fa67e5fa874377399d45f99430d2b24cf264a1eb82056ffea191` | 82 leads in 14 countries, ten for Oman; all capped at `official_location_identified`. The later Palestine bundle supersedes this bundle file while retaining the ten Oman records. |
+| Kit import | `b7b3e7b343b03dec1c876d3c26677933d316bd22` on `codex/asia-source-feedback-iraq-20260926` | Dry-run/import accepted 82, inserted ten and updated 72 (83 total records). Repeat dry-run 82 unchanged; Kit check, 173 tests and `verify:kit` passed. All Oman records remain `not_acquired_by_kit_preflight`. |
+
+Oman remains a partial country candidate with no independent `ACCEPT` or Hosting/Public release. Kit must independently acquire, check terms, reconcile dated codes and inspect the remaining eCensus and plan products before using values or planning statuses.
+
+## Palestine PCBS 2017 census and MoLG source locations
+
+AreaData acquired the [PCBS 2017 Final Summary and detailed volume, and two MoLG planning originals](../../evidence/palestine-pcbs-2017-molg-sources-2026-09-26.md). Only four direct Table 2 count fields for 19 source reporting areas were adopted; the 585 locality rows, current legal polygons and individual local plan/finance records remain unassessed. Kit receives seven public source URLs with source-role and period cautions, without PDFs, population counts or national-document content.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData PCBS/MoLG scripts, evidence, country status and selection | `c858618645f3b54464951cc34459ad1e02376100` on `codex/asia-domestic-continuation-20260926` | Candidate and independent bootstrap replay matched 76 PCBS tuples, 19 areas, two national references and seven official source records; country validator zero errors/warnings. Build, seven-area HTML/CSV and browser checks passed; AreaData `npm run check`, `npm test` 218/218 passed. |
+| AreaData feedback bundle | `ff80c2dd259fcb2a199d45c741c1b71126ca0a93`; `evidence/KIT_SOURCE_FEEDBACK.json` SHA-256 `2c7b90971345114d5050570a59f1765062b6e40aeafb65332ad62a5c3d04099d` | 89 leads in 15 countries, seven for Palestine; bundle `origin_commit` is `c858618645f3b54464951cc34459ad1e02376100`. Every source stage is `official_location_identified`. |
+| Kit import | `3cf0622d2da1fd3a8947fe61628c2bc6cf973589` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and import accepted 89, inserted seven and updated 82 (90 total records). Repeat dry-run returned 89 unchanged. Kit `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. Seven PSE records remain `not_acquired_by_kit_preflight`; remote branch head matched the commit. |
+
+The AreaData and Kit GitHub branch heads are checked separately from local candidate validation. Palestine remains partial with no independent `ACCEPT`; no country site or Asia entrance was deployed to Hosting/Public.
