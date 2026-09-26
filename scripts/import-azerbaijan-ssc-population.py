@@ -23,11 +23,13 @@ SOURCES, sha256 = _fetch["SOURCES"], _fetch["sha256"]
 
 PROJECT_SOURCE = "aze-ssc-demography-table-1-15"
 SEX_SOURCE = "aze-ssc-demography-table-1-19"
+HIST_SOURCE = "aze-ssc-demography-table-1-17"
 CODE_SOURCE = "aze-ssc-administrative-classification-2024"
 CENSUS_A = "aze-ssc-census-2019-volume-a"
 CENSUS_B = "aze-ssc-census-2019-volume-b"
 PLAN_LAW = "aze-urban-planning-construction-code"
 PLAN_CATALOG = "aze-state-urban-planning-plan-catalog"
+REGIONS_CATALOG = "aze-ssc-regional-statistics-catalog"
 IDS = {
     "census_2019": "AZE_SSC_CENSUS_2019_THOUSANDS",
     "resident_2026": "AZE_SSC_RESIDENT_2026_THOUSANDS",
@@ -207,7 +209,7 @@ def main(project):
     data = json.loads(path.read_text(encoding="utf-8"))
     if data["country"]["id"] != "AZE":
         raise ValueError("Expected Azerbaijan project")
-    own_source_ids = {PROJECT_SOURCE, SEX_SOURCE, CODE_SOURCE, CENSUS_A, CENSUS_B, PLAN_LAW, PLAN_CATALOG}
+    own_source_ids = {PROJECT_SOURCE, SEX_SOURCE, HIST_SOURCE, CODE_SOURCE, CENSUS_A, CENSUS_B, PLAN_LAW, PLAN_CATALOG, REGIONS_CATALOG}
     data["territories"] = [t for t in data["territories"] if not t["id"].startswith(("AZE:SSC:", "AZE:SSC24:")) and not t["id"].startswith("AZE:gbOpen:")]
     data["indicators"] = [x for x in data["indicators"] if x["id"] not in IDS.values()]
     data["observations"] = [x for x in data["observations"] if x["indicator_id"] not in IDS.values()]
@@ -295,11 +297,13 @@ def main(project):
     for key, title, note, level in (
         (PROJECT_SOURCE, "SSC demography table 1.15: area, 2019 and 2026 population", "Only rounded 2019 census-basis and 2026 resident population columns adopted; 2019 Aghdara is missing. Area and density columns are inventoried but not adopted.", "national, statistical economic region, city, rayon"),
         (SEX_SOURCE, "SSC demography table 1.19: population by sex, 2026", "101 national/parent/local rows matched by label and total to table 1.15. Settlement rows and urban/rural fields remain unadopted.", "national, statistical economic region, city, rayon, settlement"),
+        (HIST_SOURCE, "SSC demography table 1.17: historical regional population", "1979–2019 census-year columns and sheet dimensions inventoried. Historical row geography and fields remain unadopted pending full table audit.", "national, historical administrative and statistical regions"),
         (CODE_SOURCE, "SSC 2024 administrative territorial classification", "87 first-level official codes enumerated. Three source table district labels correspond to classification city labels; their code adoption remains unresolved. This PDF is not a 2026 boundary polygon.", "city, rayon, city district"),
         (CENSUS_A, "2019 population census Volume A", "Official 470-page census volume acquired from ZIP. Contains multiple demographic, education and employment tables; only catalogue-level inspection, no direct Volume A fields adopted.", "varies by table"),
         (CENSUS_B, "2019 population census Volume B", "Official 584-page census volume acquired from ZIP. Contains household, housing and migration tables; only catalogue-level inspection, no direct Volume B fields adopted.", "varies by table"),
     ):
         filename = {PROJECT_SOURCE: "ssc-area-population-density.xls", SEX_SOURCE: "ssc-population-sex-2026.xls",
+                    HIST_SOURCE: "ssc-resident-population-regions.xls",
                     CODE_SOURCE: "ssc-admin-classification-2024.pdf", CENSUS_A: "ssc-census-2019-volume-a.zip", CENSUS_B: "ssc-census-2019-volume-b.zip"}[key]
         data["sources"].append(source(key, title, SOURCES[filename][0], raw / filename, note, level))
     data["sources"] += [
@@ -312,6 +316,11 @@ def main(project):
          "reference_period": "catalogue checked 2026-09-26", "geographic_level": "selected cities/regions",
          "status": "not_collected", "retrieved_at": datetime.now(timezone.utc).isoformat(), "license": "terms_review_required",
          "note": "Official plan locations only; individual current plan bodies, approval instruments and implementation reports have not been assessed."},
+        {"id": REGIONS_CATALOG, "name": "SSC regional statistics yearbook catalogue",
+         "url": "https://www.stat.gov.az/source/regions/?lang=en", "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+         "reference_period": "2025 yearbook listed; contents unassessed", "geographic_level": "national and regional availability to verify",
+         "status": "not_collected", "retrieved_at": datetime.now(timezone.utc).isoformat(), "license": "terms_review_required",
+         "note": "2025 Regions of Azerbaijan yearbook location only; large PDF not downloaded, table fields and local coverage not inspected."},
     ]
     original_features = data["boundaries"]["features"]
     if len(original_features) == 2:

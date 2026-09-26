@@ -1,6 +1,6 @@
 # Azerbaijan AreaData continuation — 2026-09-26
 
-Branch `codex/asia-domestic-20260926`; candidate `generated/azerbaijan-areadata-20260926` (ignored local directory). Status: **partial, unpublished, no independent `ACCEPT`**. The tracked [source audit](../../evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md) and [producer check](../../evidence/azerbaijan-country-lesson-audit-2026-09-26.md) define the evidence limit. The private `dashboard.json` SHA-256 is `c96d6e924ae737b1972fe167898afc224e26cf44e75c5dadf7cb0b428f250ef6`; private raw originals, receipts, field/crosswalk inventory and output hashes remain in the candidate. Environment: Windows/PowerShell, Node 24, Python 3, Poppler and Codex in-app browser; date 2026-09-26.
+Branch `codex/asia-domestic-20260926`; candidate `generated/azerbaijan-areadata-20260926` (ignored local directory). Status: **partial, unpublished, no independent `ACCEPT`**. The tracked [source audit](../../evidence/azerbaijan-ssc-population-source-audit-2026-09-26.md) and [producer check](../../evidence/azerbaijan-country-lesson-audit-2026-09-26.md) define the evidence limit. The private `dashboard.json` SHA-256 is `09e682745df307ce5a1ab9983298b94a5b676740bb24ed343fcf509281847844`; private raw originals, receipts, field/crosswalk inventory and output hashes remain in the candidate. Environment: Windows/PowerShell, Node 24, Python 3, Poppler and Codex in-app browser; date 2026-09-26.
 
 ## Replay
 
