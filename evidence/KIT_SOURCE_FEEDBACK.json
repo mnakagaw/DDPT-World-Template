@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T16:19:16.375Z",
-  "origin_commit": "21b524f4199802c154417a5ee734de4300a8585b",
+  "exported_at": "2026-09-26T17:16:08.342Z",
+  "origin_commit": "f2f76938e324c77e44141bb0d9566c7058df5025",
   "sources": [
     {
       "iso3": "ARE",
@@ -1831,6 +1831,217 @@
       "license_or_terms": "source_terms_review_required",
       "reuse_note": "Initial Tbilisi 2026 budget ordinance location only. Later amendments/current consolidation and execution are unverified; no initial amount is a current adopted budget value.",
       "origin_evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_LGD_DOWNLOAD",
+      "role": "administrative_codes",
+      "title": "Local Government Directory download catalogue",
+      "publisher": "Ministry of Panchayati Raj, India",
+      "url": "https://lgdirectory.gov.in/demo/downloadDirectory.do",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "current states",
+        "districts",
+        "Panchayats"
+      ],
+      "reference_periods": [
+        "2026 location check"
+      ],
+      "formats": [
+        "HTML",
+        "CSV"
+      ],
+      "license_or_terms": "Catalogue location only; terms of exact body need review",
+      "reuse_note": "Current Local Government Directory download location. AreaData did not acquire a 2011-to-current crosswalk or verify Panchayat/census district equivalence. Portal access and exact extract need independent review.",
+      "origin_evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_ORGI_CENSUS2011_ADMINISTRATIVE_ATLAS",
+      "role": "boundaries",
+      "title": "Census 2011 administrative atlas",
+      "publisher": "Office of the Registrar General & Census Commissioner, India",
+      "url": "https://censusindia.gov.in/census.website/data/atlas",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2011 state/UT",
+        "2011 district"
+      ],
+      "reference_periods": [
+        "2026 location check"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "Catalogue location only; terms of exact body need review",
+      "reuse_note": "Official 2011 atlas location only. AreaData acquired no compatible coded polygons, and removed unjoined geoBoundaries ADM1 provider shapes from the candidate. Do not infer current boundaries or a polygon match.",
+      "origin_evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_ORGI_POPULATION_FINDER",
+      "role": "census_catalog",
+      "title": "Census Population Finder / Basic Population Figures catalogue",
+      "publisher": "Office of the Registrar General & Census Commissioner, India",
+      "url": "https://censusindia.gov.in/census.website/en/data/population-finder",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "district",
+        "subdistrict",
+        "village",
+        "town",
+        "ward"
+      ],
+      "reference_periods": [
+        "2026 location check"
+      ],
+      "formats": [
+        "HTML",
+        "XLSX"
+      ],
+      "license_or_terms": "Catalogue location only; terms of exact body need review",
+      "reuse_note": "Official ORGI Population Finder location for finer 2011 census units. AreaData did not acquire its lower-unit bodies; absence from the state/district workbook does not mean absence from the census. Check exact downloads, official codes and reuse terms.",
+      "origin_evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_ORGI_PCA2011_STATE_DISTRICT",
+      "role": "census_results",
+      "title": "ORGI Census 2011 Primary Census Abstract, India/state/district",
+      "publisher": "Office of the Registrar General & Census Commissioner, India",
+      "url": "https://censusindia.gov.in/nada/index.php/catalog/6191/download/9268/DDW_PCA0000_2011_Indiastatedist.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "India",
+        "35 Census 2011 state/UT units",
+        "640 Census 2011 districts"
+      ],
+      "reference_periods": [
+        "2011"
+      ],
+      "formats": [
+        "XLSX",
+        "HTML"
+      ],
+      "license_or_terms": "Government census download; redistribution terms for original workbook need review",
+      "reuse_note": "Official ORGI 2011 PCA state/district workbook. AreaData audited 85 numeric columns x 2028 reporting rows but adopted only 24 field/reporting-row combinations. Kit must independently check source terms, field definitions and geography; no current LGD or polygon crosswalk is implied.",
+      "origin_evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_MOPR_PDP_2026_27",
+      "role": "planning_guidance",
+      "title": "Preparation of Panchayat Development Plan booklet 2026-27",
+      "publisher": "Ministry of Panchayati Raj, India",
+      "url": "https://cdnbbsr.s3waas.gov.in/s316026d60ff9b54410b3435b403afd226/uploads/2026/05/202607211776250416.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Gram Panchayat",
+        "Block Panchayat",
+        "District Panchayat"
+      ],
+      "reference_periods": [
+        "2026-27"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "license_or_terms": "Official government PDF; redistribution terms need review",
+      "reuse_note": "Acquired 88-page Ministry of Panchayati Raj FY 2026-27 booklet. Chapters 3-4 distinguish GPDP from Block and District Panchayat plans. National rural guidance is not an area-specific approved plan or 2011 census-district crosswalk.",
+      "origin_evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_MOPR_EGRAMSWARAJ_2026_27",
+      "role": "planning_guidance",
+      "title": "Panchayat planning FY 2026-27: eGramSwaraj prerequisites and updates",
+      "publisher": "Ministry of Panchayati Raj, India",
+      "url": "https://cdnbbsr.s3waas.gov.in/s316026d60ff9b54410b3435b403afd226/uploads/2026/07/20260702740329884.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Panchayat planning portal"
+      ],
+      "reference_periods": [
+        "2026-27"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "license_or_terms": "Official government PDF; redistribution terms need review",
+      "reuse_note": "Acquired three-page FY 2026-27 eGramSwaraj prerequisite note. Profile validation, resource envelope and budget allocation are process requirements, not proof of a completed local plan, budget or expenditure.",
+      "origin_evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_CONSTITUTION_2025",
+      "role": "planning_law",
+      "title": "Constitution of India, Articles 243G and 243W",
+      "publisher": "Legislative Department, Government of India",
+      "url": "https://www.legislative.gov.in/static/uploads/2025/07/359f70a69695affb9d72f8393102bd2e.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national constitutional framework",
+        "Panchayats",
+        "Municipalities"
+      ],
+      "reference_periods": [
+        "2025 source edition"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official government PDF; redistribution terms need review",
+      "reuse_note": "Acquired Legislative Department Constitution PDF; Articles 243G and 243W allow state legislation to endow planning powers. These provisions alone do not establish each state's operative law, local body, boundary, exact plan or approval.",
+      "origin_evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IND",
+      "source_id": "IND_IND_MOPR_EGRAMSWARAJ",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "eGramSwaraj official planning portal information",
+      "publisher": "Ministry of Panchayati Raj, India",
+      "url": "https://panchayat.gov.in/en/e-gramswaraj/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "current Panchayats; exact local unit unverified"
+      ],
+      "reference_periods": [
+        "2026 location check"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Catalogue location only; terms of exact body need review",
+      "reuse_note": "Official portal information location for plans, progress and accounting only. AreaData acquired no specific Panchayat plan, approval, financial execution or evaluation body; local IDs and state legal applicability need confirmation.",
+      "origin_evidence_path": "docs/evidence/india-orgi-pca2011-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
