@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T04:38:45.455Z",
-  "origin_commit": "e02c499696797710e9d1b6345af572f8d90a4e74",
+  "exported_at": "2026-09-26T06:36:33.843Z",
+  "origin_commit": "6c348e5f1452f6b523cd4a09b2144a3295c7ac75",
   "sources": [
     {
       "iso3": "BFA",
@@ -412,6 +412,56 @@
     },
     {
       "iso3": "IRQ",
+      "source_id": "IRQ_IRQ_COSIT_CENSUS_2024_ELECTRICITY_PDF",
+      "role": "census_results",
+      "title": "COSIT Iraq 2024 census electricity household table",
+      "publisher": "Iraq COSIT",
+      "url": "https://cosit.gov.iq/images/census2024/%D9%85%D8%B5%D8%A7%D8%AF%D8%B1%20%D8%A7%D9%84%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A1.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate"
+      ],
+      "reference_periods": [
+        "2024"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New official COSIT table. Electricity-source counts can overlap; the regular-responding-household denominator differs from the domestic-water table. Kit must audit its own source rows and geography; AreaData has no independent ACCEPT.",
+      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IRQ",
+      "source_id": "IRQ_IRQ_COSIT_CENSUS_2024_HOME_WATER_PDF",
+      "role": "census_results",
+      "title": "COSIT Iraq 2024 census water household table",
+      "publisher": "Iraq COSIT",
+      "url": "https://cosit.gov.iq/images/census2024/%D9%85%D8%B5%D8%A7%D8%AF%D8%B1%20%D8%A7%D9%84%D9%85%D8%A7%D8%A1.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate"
+      ],
+      "reference_periods": [
+        "2024"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New official COSIT primary water source used at home table. Piped inside dwelling is not a drinking-water or safe-water measure; denominator and categories differ from electricity. Kit must audit independently.",
+      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IRQ",
       "source_id": "IRQ_IRQ_COSIT_CENSUS_2024_FINAL_GOVERNORATES",
       "role": "census_results",
       "title": "COSIT final results of the 2024 Population and Housing Census",
@@ -432,7 +482,34 @@
       ],
       "license_or_terms": "CC BY 4.0 portal envelope; resource terms review pending",
       "reuse_note": "New AreaData source location: Iraq COSIT 2024 final census summary in the government open-data portal. AreaData checked 18 governorate rows and five numeric columns locally. Kit must independently audit its own acquisition, adjusted versus original population definitions, code/boundary matching and resource-specific terms before adoption.",
-      "origin_evidence_path": "docs/evidence/iraq-census-source-location-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IRQ",
+      "source_id": "IRQ_IRQ_COSIT_CENSUS_2024_TABLE_CATALOGUE",
+      "role": "table_catalog",
+      "title": "COSIT Iraq 2024 census table catalogue",
+      "publisher": "Iraq COSIT",
+      "url": "https://cosit.gov.iq/ar/1234-2019-09-05-07-53-20",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate",
+        "district or subdistrict where published"
+      ],
+      "reference_periods": [
+        "2024"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New COSIT official 2024 census table catalogue location. Thirty PDFs were listed; seven acquired by AreaData and two household-service tables locally adapted. Kit must independently audit acquisition, every table field, official geography, terms and adoption.",
+      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -616,6 +693,81 @@
       "license_or_terms": null,
       "reuse_note": "NPA local-government plan catalogue location only. Area-specific plans, dates, duplicates and content must be checked individually; no plan is assumed current or adopted in Kit.",
       "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "YEM",
+      "source_id": "YEM_YEM_CSO_2004_CENSUS_MAIN_REPORT_LOCATION",
+      "role": "census_results",
+      "title": "CSO 2004 census main report location",
+      "publisher": "Yemen Central Statistical Organization",
+      "url": "https://cso-ye.org/wp-content/uploads/2023/11/%D8%A7%D9%84%D9%86%D8%AA%D8%A7%D8%A6%D8%AC-%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%D8%A9-%D9%84%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF-%D8%A7%D9%84%D8%B9%D8%A7%D9%85-%D9%84%D9%84%D8%B3%D9%83%D8%A7%D9%86-%D9%88%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D9%83%D9%86-%D9%88%D8%A7%D9%84%D9%85%D9%86%D8%B4%D8%A3%D8%AA-2004-%D9%85-%D8%A7%D9%84%D8%AA%D9%82%D8%B1%D9%8A%D8%B1-%D8%A7%D9%84%D8%A6%D9%8A%D8%B3-1.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate and district coverage to inspect"
+      ],
+      "reference_periods": [
+        "2004"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New official CSO URL for a 2004 main report. AreaData acquisition returned HTTP 200 non-PDF content; no numbers adopted. Reacquire authentic original and verify its administrative epoch before any use.",
+      "origin_evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "YEM",
+      "source_id": "YEM_YEM_PARLIAMENT_LOCAL_AUTHORITY_LAW_2000",
+      "role": "planning_law",
+      "title": "Yemen Local Authority Law No. 4 of 2000",
+      "publisher": "Yemen Parliament",
+      "url": "https://yemenparliament.gov.ye/uploads/posts/documents/2018/12/1219201894218116.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate",
+        "district"
+      ],
+      "reference_periods": [
+        "2000 original enactment"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New parliament location for original Law No. 4 of 2000. A 40-page PDF was acquired, but current consolidated applicability, amendments and actual local plan status are unverified.",
+      "origin_evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "YEM",
+      "source_id": "YEM_YEM_CSO_GOVERNORATE_YEARBOOK_CATALOGUE",
+      "role": "table_catalog",
+      "title": "CSO governorate statistical yearbook catalogue",
+      "publisher": "Yemen Central Statistical Organization",
+      "url": "https://cso-ye.org/%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8-%D8%A7%D9%84%D8%A7%D8%AD%D8%B5%D8%A7%D8%A1-%D8%A7%D9%84%D8%B3%D9%86%D9%88%D9%8A-%D8%B9%D9%84%D9%89-%D9%85%D8%B3%D8%AA%D9%88%D9%89-%D8%A7%D9%84%D9%85%D8%AD%D8%A7/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "governorate"
+      ],
+      "reference_periods": [
+        "2021-2024 listings"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New CSO location lists 2024 and older governorate statistical yearbooks. Individual files, table fields, geography and terms have not been audited or adopted by AreaData.",
+      "origin_evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
       "artifact_sha256": null
     }
   ]
