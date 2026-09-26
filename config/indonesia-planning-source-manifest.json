@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "idn-bps-sp2020-population-catalogue",
+      "url": "https://sensus.bps.go.id/topik/dataset/sp2020/16",
+      "raw_path": "raw/idn-bps-sp2020-population-catalogue.html",
+      "mime_type": "text/html",
+      "bytes": 22682,
+      "sha256": "51d13f2cf45ed959b2aaf750f706e545055786d455fc5fa3ef14724620bc9fcf",
+      "retrieved_at": "2026-09-26T23:04:01.150216+00:00"
+    },
+    {
+      "id": "idn-surabaya-jdih-permendagri-86-2017-page",
+      "url": "https://jdih.surabaya.go.id/others/3803",
+      "raw_path": "raw/idn-surabaya-jdih-permendagri-86-2017-page.html",
+      "mime_type": "text/html",
+      "bytes": 110578,
+      "sha256": "8b15a9c46a686773de2160305cbba08bd29f82300b4e368fb61ab7f3df757e7f",
+      "retrieved_at": "2026-09-26T23:04:06.150115+00:00"
+    },
+    {
+      "id": "idn-permendagri-86-2017-surabaya-copy",
+      "url": "https://jdih.surabaya.go.id/peraturan/download/3803",
+      "raw_path": "raw/idn-permendagri-86-2017-surabaya-copy.pdf",
+      "mime_type": "application/pdf",
+      "bytes": 3719199,
+      "sha256": "69fde32a6753a8aa53ac14d60146bb1a47f9217940611217570c368e9f512610",
+      "retrieved_at": "2026-09-26T23:04:06.154056+00:00",
+      "pages": 644,
+      "inspected_pdf_pages": [
+        1,
+        5,
+        6,
+        7,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "idn-jabar-official-plan-catalogue",
+      "url": "https://jabarprov.go.id/arsip-dan-dokumen?kategori=dokumen+perencanaan&tahun=2025",
+      "raw_path": "raw/idn-jabar-official-plan-catalogue.html",
+      "mime_type": "text/html",
+      "bytes": 245316,
+      "sha256": "94b734ee1476586f25fd71731342ccba1a4a0140cc1412e51721843a1b7d9812",
+      "retrieved_at": "2026-09-26T23:04:07.575961+00:00"
+    }
+  ],
+  "unacquired_leads": [
+    {
+      "id": "idn-jabar-rpjmd-2025-2029",
+      "url": "https://jdih.jabarprov.go.id/page/info/produk/53538?tentang=peraturan-daerah-provinsi-jawa-barat-nomor-7-tahun-2025-tentang-rencana-pembangunan-jangka-menengah-daerah-tahun-2025-2029",
+      "status": "official_location_identified_pdf_get_403",
+      "body_acquired": false
+    },
+    {
+      "id": "idn-kemendagri-2025-code-register",
+      "url": "https://ppid.kemendagri.go.id/storage/dokumen/QBPTW8gxbngpCGprIS5ybgC1puZYD1b8S0F0Uyes.pdf",
+      "status": "official_location_identified_connect_timeout",
+      "body_acquired": false
+    }
+  ]
+}

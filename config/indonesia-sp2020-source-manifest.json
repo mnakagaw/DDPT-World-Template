@@ -1,0 +1,328 @@
+{
+  "schema_version": "1.0",
+  "catalogue_url": "https://sensus.bps.go.id/topik/dataset/sp2020/16",
+  "source_pages": [
+    {
+      "id": "idn-bps-sp2020-table1-national",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1",
+      "raw_path": "raw/idn-bps-sp2020-table1-national.html",
+      "level": "national",
+      "bytes": 53739,
+      "sha256": "e68aec143e93c46c61071f9d178f5bba3f09cc0dd9ba5d23ebc9c89aa71ad59e",
+      "retrieved_at": "2026-09-26T22:56:20.109002+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p01",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/2/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p01.html",
+      "level": "province",
+      "bytes": 48649,
+      "sha256": "38588a581650938fef186ffbf98ee4e70eb8e36833452f64be8fbd8a0be14779",
+      "retrieved_at": "2026-09-26T22:56:21.613721+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p02",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/3/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p02.html",
+      "level": "province",
+      "bytes": 53153,
+      "sha256": "d1309db4b3c23910d2e1a4da5decd47a2df2c1f26627d68afeca47e08f4f6da9",
+      "retrieved_at": "2026-09-26T22:56:21.636593+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p03",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/4/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p03.html",
+      "level": "province",
+      "bytes": 47053,
+      "sha256": "e6d078e44283be3f09c066449d1ae934eecabca148aa5e06bfc418ee4b1a86b8",
+      "retrieved_at": "2026-09-26T22:56:21.650053+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p04",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/5/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p04.html",
+      "level": "province",
+      "bytes": 44009,
+      "sha256": "de8b06b0e7f7f3133339dde14be00bc002548b9fe107276b69c4bcc4b375ffa6",
+      "retrieved_at": "2026-09-26T22:56:21.654038+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p05",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/6/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p05.html",
+      "level": "province",
+      "bytes": 43566,
+      "sha256": "a31ef695a71e1ea5ea35aa77ba6503733cc7e86f6a4eeb2a231cf09f35c6aead",
+      "retrieved_at": "2026-09-26T22:56:21.657853+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p06",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/7/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p06.html",
+      "level": "province",
+      "bytes": 46350,
+      "sha256": "57ef68576d1fa072bfed5c034f8fa77eace7d9af7ae5dfd07c9cd2942b29bb38",
+      "retrieved_at": "2026-09-26T22:56:23.031119+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p07",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/8/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p07.html",
+      "level": "province",
+      "bytes": 43133,
+      "sha256": "7202d0051a78952278be80fa2566cb0e6084783a269aa52350d933ff8bf48c60",
+      "retrieved_at": "2026-09-26T22:56:23.020526+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p08",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/9/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p08.html",
+      "level": "province",
+      "bytes": 45348,
+      "sha256": "08de936a49e73efc8766fc6892df4d86affad902c02d9d2f504bc085b32db444",
+      "retrieved_at": "2026-09-26T22:56:23.078833+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p09",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/10/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p09.html",
+      "level": "province",
+      "bytes": 42024,
+      "sha256": "12fb46e154211d79742119e848ad3818837d9423d412004c9cfb86f0ded5e451",
+      "retrieved_at": "2026-09-26T22:56:23.041838+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p10",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/11/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p10.html",
+      "level": "province",
+      "bytes": 41905,
+      "sha256": "608fadb94a7f6c13874f18e27d4d0a0576f94f536979fb676b4d095eec2be922",
+      "retrieved_at": "2026-09-26T22:56:23.060882+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p11",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/12/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p11.html",
+      "level": "province",
+      "bytes": 41556,
+      "sha256": "06b6d65e9da55c67b96667e7287c3493cabeb2b74a4145f528e9ea266fc89e81",
+      "retrieved_at": "2026-09-26T22:56:24.417193+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p12",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/13/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p12.html",
+      "level": "province",
+      "bytes": 50484,
+      "sha256": "4c40615f05da0431ea1a4714b03125a39b282f5de78bf0cc12f6a6ae48833704",
+      "retrieved_at": "2026-09-26T22:56:24.425989+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p13",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/14/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p13.html",
+      "level": "province",
+      "bytes": 53805,
+      "sha256": "197c9ea580e02128421c9b4712b5de4050b6ff4f62a3060f8a94ac1b871f2dec",
+      "retrieved_at": "2026-09-26T22:56:24.443731+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p14",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/15/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p14.html",
+      "level": "province",
+      "bytes": 41063,
+      "sha256": "2e4347613e08c4774eabc26ec76414de09c25d04275ff99833763537259415c6",
+      "retrieved_at": "2026-09-26T22:56:24.477548+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p15",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/16/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p15.html",
+      "level": "province",
+      "bytes": 55095,
+      "sha256": "07d6e3299c02fa787a001f0fbbe6c67b1a16573d1fe1f7b0dc5b37cce0a72760",
+      "retrieved_at": "2026-09-26T22:56:24.482138+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p16",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/17/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p16.html",
+      "level": "province",
+      "bytes": 42301,
+      "sha256": "ad28131a1c747507495c3a9464dd5b972eb4a95142a583108c2dbe63ddbd1d3e",
+      "retrieved_at": "2026-09-26T22:56:25.815626+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p17",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/18/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p17.html",
+      "level": "province",
+      "bytes": 42668,
+      "sha256": "bac07f24c7773f01fb043fa327b6e73f155e0d3f762b65fa4263736071cb5e81",
+      "retrieved_at": "2026-09-26T22:56:25.811670+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p18",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/19/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p18.html",
+      "level": "province",
+      "bytes": 43235,
+      "sha256": "6638096612de62c5b455b344d96478addfb365215b490c0cf7d2cf231fa458c0",
+      "retrieved_at": "2026-09-26T22:56:25.819619+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p19",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/20/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p19.html",
+      "level": "province",
+      "bytes": 48360,
+      "sha256": "e7703f419e45f028b6d80cc007089ce4d4c51f09a1c733e41b3807e03cfea949",
+      "retrieved_at": "2026-09-26T22:56:25.844844+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p20",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/21/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p20.html",
+      "level": "province",
+      "bytes": 44899,
+      "sha256": "a3e6baeb255ff7b95dc2431c51eb2a4f02f29550c4d8b12712b5a6c0801b7db7",
+      "retrieved_at": "2026-09-26T22:56:25.841351+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p21",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/22/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p21.html",
+      "level": "province",
+      "bytes": 44949,
+      "sha256": "b72bed72932f22f108e7f457eb8e6da6d0ee7a31f546b1efa7620df2226b7ec2",
+      "retrieved_at": "2026-09-26T22:56:27.218455+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p22",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/23/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p22.html",
+      "level": "province",
+      "bytes": 44558,
+      "sha256": "544e77530aa11e0940a7ce7f64e9a6ec89f69c342007a3cfac5e04d8944d5a04",
+      "retrieved_at": "2026-09-26T22:56:27.185885+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p23",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/24/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p23.html",
+      "level": "province",
+      "bytes": 43229,
+      "sha256": "965ae9c1bac447375ebc25c5f36fbe55ed02eba6c864cf6b0e5afbfa6d06c8f2",
+      "retrieved_at": "2026-09-26T22:56:27.214629+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p24",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/25/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p24.html",
+      "level": "province",
+      "bytes": 41050,
+      "sha256": "4282df48c633485f362b7e70faeaa2cc57e640cde755f43cea71b8589b8f4e76",
+      "retrieved_at": "2026-09-26T22:56:27.211922+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p25",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/26/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p25.html",
+      "level": "province",
+      "bytes": 45472,
+      "sha256": "7d9a0a4563adfb12e51c3b91c0831a42cf01c6f651572a3f248d0593c3e3cf10",
+      "retrieved_at": "2026-09-26T22:56:27.227535+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p26",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/27/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p26.html",
+      "level": "province",
+      "bytes": 44462,
+      "sha256": "823c7e4d206649f7a8e33c295f8619bb411b620d9d441ef6cb8b2e95946522cf",
+      "retrieved_at": "2026-09-26T22:56:28.491944+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p27",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/28/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p27.html",
+      "level": "province",
+      "bytes": 49167,
+      "sha256": "19b5b9875c8f1491a9ce03320b4d8a9180cd4666938044c6bc89375d61841f35",
+      "retrieved_at": "2026-09-26T22:56:28.578479+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p28",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/29/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p28.html",
+      "level": "province",
+      "bytes": 46173,
+      "sha256": "933799565d8a3209713364002157f765cbce02c5c70546652ab72e78fb99ad94",
+      "retrieved_at": "2026-09-26T22:56:28.561831+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p29",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/30/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p29.html",
+      "level": "province",
+      "bytes": 41442,
+      "sha256": "315fbcd2fddf45dd4548cc232bcf87c65d77e9d9a0e3cf9de8545d18c523a712",
+      "retrieved_at": "2026-09-26T22:56:28.572795+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p30",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/31/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p30.html",
+      "level": "province",
+      "bytes": 41478,
+      "sha256": "41fbba7e14dc5f77c5a173c5f75cae700928fce3b7087b7d56f99293ebd465de",
+      "retrieved_at": "2026-09-26T22:56:28.578189+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p31",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/32/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p31.html",
+      "level": "province",
+      "bytes": 43596,
+      "sha256": "0c8b415358cb5e62055b3ad0308143fe4a36f563ae0e1c16459d71296c308bab",
+      "retrieved_at": "2026-09-26T22:56:29.809714+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p32",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/33/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p32.html",
+      "level": "province",
+      "bytes": 43243,
+      "sha256": "afc7f330cba46a5c86441f0c8f2ef86dc6cfd6b6377942b2a8f8acfe4bb293f8",
+      "retrieved_at": "2026-09-26T22:56:29.860088+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p33",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/34/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p33.html",
+      "level": "province",
+      "bytes": 44416,
+      "sha256": "d4bde132b4de07b556093f36ef093c19981339c3e34d3a759b35d7b5fd70ae70",
+      "retrieved_at": "2026-09-26T22:56:29.860353+00:00"
+    },
+    {
+      "id": "idn-bps-sp2020-table1-p34",
+      "url": "https://sensus.bps.go.id/topik/tabular/sp2020/1/35/0",
+      "raw_path": "raw/idn-bps-sp2020-table1-p34.html",
+      "level": "province",
+      "bytes": 51117,
+      "sha256": "fc883666a7295798e06e0a0d54adc717bce5d40a97af64e41ae66d2811101ae6",
+      "retrieved_at": "2026-09-26T22:56:29.867386+00:00"
+    }
+  ],
+  "national_total": {
+    "male": 136661899,
+    "female": 133542018,
+    "population": 270203917
+  },
+  "provinces": 34,
+  "kabupaten_kota_reporting_rows": 514
+}
