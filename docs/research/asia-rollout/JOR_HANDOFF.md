@@ -2,6 +2,8 @@
 
 Branch: `codex/asia-domestic-20260926`. Country project: `generated/jordan-areadata-20260926` (ignored local output, separate from the template). Producer result: **partial domestic candidate**, not independent `ACCEPT`, not published. [Source audit](../../evidence/jordan-dos-2025-source-audit-2026-09-26.md), [numeric-column ledger](../../evidence/jordan-dos-2025-sheet-inventory.json) and [12-point producer check](../../evidence/jordan-country-lesson-audit-2026-09-26.md) are tracked. The original files, receipts, crosswalk, full source inventory and output checks are retained inside this local country project.
 
+Code/evidence commit: `af9b28f7f6175a6b8259139195b24678f99e28fc`; source-feedback bundle commit: `84fdbca1fa690cbfaac3cc28f3ed55187840eb5b`. Locally verified `data/dashboard.json` SHA-256: `a778887b6e351707e75da1273f225f266edd26fe016471f7a1fd708133c5a1ac`; this is an ignored candidate dataset, not a Git-published country data edition. Environment: Windows/PowerShell, Node 24, Python 3, local in-app browser; date 2026-09-26.
+
 ## Reproduce and validate
 
 Start from an already generated Jordan project or run `node scripts/create-country.mjs --country Jordan --out generated/jordan-areadata-20260926` in a fresh checkout. The initial `evidence/SOURCE_PREFLIGHT.md` and JSON must be read before adoption. Then:
@@ -38,4 +40,4 @@ The fetch script skips files whose pinned SHA-256 already matches. A changed ups
 
 ## Source feedback and repositories
 
-Six Jordan public official-source leads were added to `config/kit-source-feedback-selections.json`: three DoS 2025 workbooks, the 2015 census table catalogue, the 2018 governorate guide and the 2021 law. The export stage is capped at `official_location_identified` until Kit independently audits each source. Record the AreaData and Kit commits and any import result in `KIT_FEEDBACK_HANDOFF.md`; a feedback import never changes the Jordan country acceptance status.
+Six Jordan public official-source leads were added to `config/kit-source-feedback-selections.json`: three DoS 2025 workbooks, the 2015 census table catalogue, the 2018 governorate guide and the 2021 law. The export stage is capped at `official_location_identified` until Kit independently audits each source. Kit imported the bundle on `codex/asia-source-feedback-20260926` at `0f0d195e87226909e20100b6753f361793e27d94`; details and checks are in `KIT_FEEDBACK_HANDOFF.md`. A feedback import never changes the Jordan country acceptance status.
