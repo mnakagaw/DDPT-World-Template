@@ -87,3 +87,15 @@ AreaData acquired the official [DoS end-2025 population-estimates PDF](https://d
 The Ministry of Interior's governorate-name page was recorded in the Jordan source audit but not exported as an `administrative_codes` lead because it does not supply an official code table. Kit must independently acquire and inspect the other originals, verify the effective planning regime and geographic code/boundary edition, and only then consider indicator adoption. Jordan remains partial without independent `ACCEPT`; no country site was published.
 
 The AreaData feedback-bundle commit and Kit import commit were pushed, and `git ls-remote` returned the exact two hashes above for their respective branches.
+
+## UAE federal census, Abu Dhabi and Dubai source locations
+
+AreaData acquired the FCSC historical census tables, SCAD's Abu Dhabi 2024 population report, and Dubai's 2040 structure-plan summary and urban-planning law. It separately identified UAE.Stat's emirate births dataflow and Dubai's 2024 population bulletin without obtaining their data (direct requests returned HTTP 403). The [source audit](../../evidence/uae-official-census-scad-dubai-sources-2026-09-26.md) records adopted fields, page-level nonadoption and geographic limits. The SCAD URL was already present in Kit's UNSD preflight; its return is reuse context, not a new AreaData discovery.
+
+| Step | Commit / artifact | Verification |
+|---|---|---|
+| AreaData acquisition/import scripts, evidence and selection | `f68d4ca1be495b4ff61652640b4d59e708da7c1d` on `codex/asia-domestic-continuation-20260926` | UAE candidate and fresh replay each validated and built; all 163 adopted domestic observations and two Dubai document IDs reproduced. Selected HTML/CSV and browser selection checks passed; `npm run check` and `npm test` 218/218 passed. |
+| AreaData feedback bundle | `f36764dab55fcb7696581f3c4e90c795b9527c71`; `evidence/KIT_SOURCE_FEEDBACK.json` SHA-256 `2753630d462a8728b10d7e56f6066dda3122505852d00848a5434dff6d975f54` | 51 leads in 11 countries, including six UAE leads. `origin_commit` is `f68d4ca1be495b4ff61652640b4d59e708da7c1d`; every stage is `official_location_identified`. |
+| Kit import | `2a1e65ecf988f7d321fec4db6d153bae232c5b5c` on `codex/asia-source-feedback-iraq-20260926` | Dry-run and actual import accepted 51, inserted six and updated 45 (52 total records). A repeat dry-run returned 51 unchanged. Six UAE records remain `not_acquired_by_kit_preflight`; `npm run check`, `npm test` 173/173 and `npm run verify:kit` passed. |
+
+Both branch heads were pushed and matched `git ls-remote`. The bundle transfers URLs, provenance and reuse cautions, without observations or raw originals. Kit must separately acquire, inspect and match the sources for a future project. UAE remains a partial candidate without independent `ACCEPT`; no UAE site was published.
