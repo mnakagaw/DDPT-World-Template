@@ -19,6 +19,7 @@ FILES = {
     "PopulationEstimatesbyLocality.xlsx": (DOS_BASE + "PopulationEstimatesbyLocality.xlsx", "ebf49f985570c25de141a26c75fc70790a0f7225fb351b3ecd04b68402bd0ef8"),
     "Municipalities.xlsx": (DOS_BASE + "Municipalities.xlsx", "3f880201fd685830e5c77f6505797a2bc91086412f72a758399dd4f92dda4b97"),
     "YearBook_2024_Population.pdf": ("https://dosweb.dos.gov.jo/databank/yearbook/YearBook_2024/Population.pdf", "4ebf27354c51d95776b4b51cbd27a9b34a7cdb021ab31de55c8e56f981b90dea"),
+    "Census2015_Housing_2.17.pdf": ("https://dosweb.dos.gov.jo/DataBank/Census2015/HousingUnits/Housing_2.17.pdf", "266ed17dc71faabaedc308793556d0fdb56f62789bf21cfb20eb862924a8e88d"),
     "GovernoratePlanningGuide.pdf": ("https://www.mola.gov.jo/ebv4.0/root_storage/ar/eb_list_page/guide_for_the_preparation_of_governorate_strategic_development_and_implementation_plans.pdf", "ebb981db5b5afd468e3662461a0f84445732ab916b512d57f65ddd526efab85a"),
     "LocalAdministrationLaw2021.pdf": ("https://mola.gov.jo/EBV4.0/Root_Storage/AR/EB_Info_Page/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%A7%D9%84%D8%A7%D8%AF%D8%A7%D8%B1%D8%A9_%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A%D8%A92021.pdf", "715f73dc331e62764ee2ec7433ba06e402953ec706ac683df8f4e1f46d8569ac"),
 }

@@ -116,7 +116,7 @@ const scopeEntryHeading=(children,countryCount)=>dataset.analysis?.pilot?.stage=
 const sourceNote = (indicator, observation, prefix='Source', displayPeriod='') => {
   const source=sourceFor(dataset,indicator,observation);
   const sourcePeriod=observation?.period || displayPeriod || dataset.analysis?.default_period_by_indicator?.[indicator?.id] || state?.period;
-  const locator=observation?.footnote || indicator?.source_locator;
+  const locator=observation?.source_locator || indicator?.source_locator || observation?.footnote;
   return `<div class="source-note source-note-block"><span>${e(prefix)}</span>${source ? renderSourceAttribution(indicator,observation,source,sourcePeriod,language) : 'No verified source collected'}${source?.retrieved_at ? `<span>Retrieved ${e(source.retrieved_at.slice(0,10))}.</span>` : ''}${locator ? `<span>Source table: ${e(locator)}.</span>` : ''}</div>`;
 };
 function periodControl(id='period-select') {

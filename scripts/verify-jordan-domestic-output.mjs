@@ -11,12 +11,13 @@ const bytes=await readFile(path.join(project,'data/dashboard.json'));
 const data=JSON.parse(bytes.toString('utf8'));
 if(data.country.id!=='JOR')throw new Error('Expected a Jordan country dataset');
 const indicator='JOR_DOS_EST_2025_POP';
+const waterIndicator='JOR_CENSUS2015_WATER_PUBLIC_NETWORK_PERSON_SHARE';
 const cases=[
-  {name:'Jordan',level:'national',value:11937000,children:12,sourceCell:'الملخص !D122'},
-  {name:'Amman',level:'adm1',value:5004600,children:9},
-  {name:'Jizah District',level:'adm2',value:147365,children:2},
-  {name:'Jizah Sub-District',level:'adm3',value:130085,children:0},
-  {name:'Aqaba',level:'adm1',value:250900,children:0},
+  {name:'Jordan',level:'national',value:11937000,children:12,sourceCell:'الملخص !D122',waterShare:57.501097,waterChildrenObserved:12},
+  {name:'Amman',level:'adm1',value:5004600,children:9,waterShare:52.615712,waterChildrenObserved:0},
+  {name:'Jizah District',level:'adm2',value:147365,children:2,waterShare:null,waterChildrenObserved:0},
+  {name:'Jizah Sub-District',level:'adm3',value:130085,children:0,waterShare:null,waterChildrenObserved:0},
+  {name:'Aqaba',level:'adm1',value:250900,children:0,waterShare:94.150544,waterChildrenObserved:0},
 ];
 const hash=value=>createHash('sha256').update(value).digest('hex');
 function records(input){
@@ -59,10 +60,26 @@ for(const item of cases){
   if(!overall[0][col('Source URL')].includes('dosweb.dos.gov.jo/'))throw new Error(`${item.name}: no DoS source URL`);
   if(!overall[0][col('Source locator')])throw new Error(`${item.name}: no source cell locator`);
   if(item.sourceCell&&!overall[0].some(value=>value.includes(item.sourceCell)))throw new Error(`${item.name}: source cell missing`);
+  const waterOverall=rows.filter(row=>row[col('Record scope')]==='overall'&&row[col('Indicator ID')]===waterIndicator);
+  const waterChildren=rows.filter(row=>row[col('Record scope')]==='within_area'&&row[col('Indicator ID')]===waterIndicator);
+  if(waterOverall.length!==1||waterChildren.length!==item.children)throw new Error(`${item.name}: 2015 water row scope mismatch`);
+  if(item.waterShare===null){
+    if(waterOverall[0][col('Value')]!==''||waterOverall[0][col('Status')]==='observed')
+      throw new Error(`${item.name}: 2015 governorate water rate leaked into lower area`);
+  }else if(Number(waterOverall[0][col('Value')])!==item.waterShare||
+           waterOverall[0][col('Period')]!=='2015'||
+           !waterOverall[0][col('Source URL')].includes('Housing_2.17.pdf')||
+           !waterOverall[0][col('Source locator')].includes('Table 2.17 PDF p')){
+    throw new Error(`${item.name}: source and year of the 2015 water rate differ`);
+  }
+  const waterObserved=waterChildren.filter(row=>row[col('Value')]!==''&&row[col('Status')]==='observed');
+  if(waterObserved.length!==item.waterChildrenObserved)throw new Error(`${item.name}: incomplete 2015 water comparison coverage`);
   for(const suffix of ['diagnostic.html','diagnostic.md','planning.html','evidence.csv'])
     if(!contents[suffix].includes(item.name))throw new Error(`${item.name}: ${suffix} has wrong area`);
   if(item.name==='Aqaba'&&children.length!==0)throw new Error('Aqaba lower rows were silently adopted');
   checks.push({area:item.name,territory_id:area.id,level:item.level,population:item.value,
+               census2015_public_network_person_share:item.waterShare,
+               census2015_water_observed_internal_rows:waterObserved.length,
                internal_population_rows:children.length,all_diagnostic_csv_rows:rows.length,
                first_data_row:rows[0]?.slice(0,17),last_data_row:rows.at(-1)?.slice(0,17),
                hashes:Object.fromEntries(Object.entries(contents).map(([suffix,value])=>[suffix,hash(value)]))});
@@ -71,7 +88,7 @@ const audit={status:'partial_candidate_output_check_not_independent_acceptance',
              checked_at:new Date().toISOString(),dataset_sha256:hash(bytes),checks,
              limitations:['Official administrative codes and current legal boundary equivalence remain unresolved',
                           'No verified country-specific planning document has been adopted',
-                          'Detailed locality and municipality sheets and thematic census tables remain unassessed',
+                          'Detailed locality and municipality sheets and remaining thematic census tables remain unassessed',
                           'Local browser checks cover representative areas, not all 42 acceptance scenarios']};
 await writeFile(path.join(project,'evidence','OUTPUT_VERIFICATION.json'),JSON.stringify(audit,null,2)+'\n');
 console.log(JSON.stringify(checks.map(({area,population,internal_population_rows,all_diagnostic_csv_rows})=>

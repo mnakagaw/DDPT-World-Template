@@ -286,7 +286,7 @@ def main():
          "publisher": "Jordan Department of Statistics", "reference_period": "2015",
          "geographic_level": "varies by table; governorate listed in multiple tables",
          "status": "not_collected", "retrieved_at": stamp, "license": "terms_review_required",
-         "note": "Official catalogue location verified. Individual thematic tables, cell meanings, geography and reuse terms have not been acquired or audited."},
+         "note": "Official catalogue location verified. Table 2.17 is handled as a separate acquired source by the water-table adapter; remaining thematic tables, cell meanings, geography and reuse terms have not been fully audited."},
         {"id": SOURCE_GUIDE, "name": "Guide for the Preparation of Governorate Strategic Development and Implementation Plans",
          "url": GUIDE_URL, "publisher": "Jordan Ministry of Interior",
          "reference_period": "2018 guidance", "geographic_level": "governorate",
@@ -304,7 +304,7 @@ def main():
         "DoS 2025 population estimates supply 12 governorates; 49 districts and 52 sub-districts are provisionally represented for 11 governorates. Four Aqaba district-centre/qadaa rows are withheld because the source has no complete district parents, so a same-rank comparison cannot be verified. The lower levels use provisional source-scoped IDs without official codes or matched shapes. Governorate geometry is a 2006 geoBoundaries reference matched by name only, not a certified 2025 boundary. Municipalities and localities are separate classifications; the 2025 estimates are not census counts.")
     dataset["gaps"] = [item for item in dataset["gaps"] if item["category"] != "subnational_statistics"]
     dataset["gaps"].append({"category": "subnational_statistics", "status": "partial",
-                            "detail": "Official 2025 annual population estimates integrated for 12 governorates and for 49 districts plus 52 sub-districts in 11 governorates. Four Aqaba lower rows are held because the parent hierarchy and mixed-rank comparison are unresolved. Detailed locality and municipality workbooks, 2015 census thematic tables and other sectors await semantic/geographic review.",
+                            "detail": "Official 2025 annual population estimates integrated for 12 governorates and for 49 districts plus 52 sub-districts in 11 governorates. Four Aqaba lower rows are held because the parent hierarchy and mixed-rank comparison are unresolved. Detailed locality and municipality workbooks, most 2015 census thematic tables and other sectors await semantic/geographic review.",
                             "next_action": "Acquire official administrative codes and 2025 boundary version; inventory and adopt eligible census, locality, municipal and sector tables without conflating administrative and municipal units."})
     dataset["gaps"] = [item for item in dataset["gaps"] if item["category"] != "planning_documents"]
     dataset["gaps"].append({"category": "planning_documents", "status": "not_collected",

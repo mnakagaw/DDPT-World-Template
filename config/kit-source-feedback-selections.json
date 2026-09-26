@@ -343,7 +343,15 @@
           "authority_type": "official_national",
           "geographic_levels": ["national", "governorate and other levels to verify per table"],
           "formats": ["HTML", "PDF", "XLSX"],
-          "reuse_note": "New AreaData official 2015 census catalogue location only. Individual thematic tables, source fields, geography and terms have not been acquired or adopted; the 2025 estimate workbooks are separate."
+          "reuse_note": "New AreaData official 2015 census catalogue location. One separate Table 2.17 PDF was acquired and partially adopted by AreaData; the remaining individual thematic tables, source fields, geography and terms have not been fully audited. The 2025 estimate workbooks are separate."
+        },
+        {
+          "id": "jor-dos-census2015-housing-table-2-17",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate"],
+          "formats": ["PDF"],
+          "reuse_note": "New AreaData 2015 census Table 2.17 original for main drinking-water source by governorate. AreaData audited seven numeric fields and partially adopted public-network counts/shares, but Kit must independently verify the PDF, excluded households, numerator/denominator, official geography and terms. Public network does not establish safe water."
         },
         {
           "id": "jor-moi-governorate-planning-guide-2018",
