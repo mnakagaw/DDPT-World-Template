@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T22:18:16.670Z",
-  "origin_commit": "5b3ca07c824cfa48d42a577aebb38cf1c471e1f0",
+  "exported_at": "2026-09-26T22:50:24.003Z",
+  "origin_commit": "7f800c05c281823328f5102426a6a408c4663e7e",
   "sources": [
     {
       "iso3": "AFG",
@@ -4680,6 +4680,1507 @@
       "license_or_terms": "Official public Gazette; terms unverified",
       "reuse_note": "Official Gazette location only. PDF body, current legal force, detailed provisions, jurisdiction and terms were not audited or adopted; this is not an approved local plan or budget.",
       "origin_evidence_path": "docs/evidence/sri-lanka-cph2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_H2",
+      "role": "census_results",
+      "title": "Table H2: Households By Type Of Living Quarters And By Island, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H2.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "Maale census part",
+        "2022 administrative island",
+        "non-administrative-island aggregate"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "AreaData adopted only selected direct count fields; other fields, geography and terms need Kit independent audit. 2022 census atoll rows are not 2026 councils.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_H7",
+      "role": "census_results",
+      "title": "Table H7: Households By The Type Of Drinking Water Used And Locality (Atolls), 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H7.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "2022 atoll/city census row",
+        "non-administrative-island aggregate"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "AreaData adopted only selected direct count fields; other fields, geography and terms need Kit independent audit. 2022 census atoll rows are not 2026 councils. Source safe/unsafe is not WHO/JMP service tier.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_P4",
+      "role": "census_results",
+      "title": "Table P4: Resident Population by Place of Enumeration, by Locality and Sex, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P4.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "2022 atoll/city census row"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "AreaData adopted only selected direct count fields; other fields, geography and terms need Kit independent audit. 2022 census atoll rows are not 2026 councils.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_P5",
+      "role": "census_results",
+      "title": "Table P5: Resident Population by Island and Sex, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P5.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "Maale census part",
+        "2022 administrative island",
+        "non-administrative-island aggregate"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "AreaData adopted only selected direct count fields; other fields, geography and terms need Kit independent audit. 2022 census atoll rows are not 2026 councils. P5 G17 Maldivian female is blank, not inferred zero.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_EC3",
+      "role": "census_results",
+      "title": "Table EC3: Resident Population 15 Years of Age and over by Economic Activity Status, Administrative Islands in Atolls, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC3_090423.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "2022 administrative island",
+        "non-administrative-island aggregate"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "AreaData adopted only selected direct count fields; other fields, geography and terms need Kit independent audit. 2022 census atoll rows are not 2026 councils. Two island-name mismatches withheld; no inferred code join.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED16",
+      "role": "census_results",
+      "title": "Table ED16: Literate Population 10 Years of Age and Over in Mother Tongue, Sex and Island, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED16.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "2022 administrative island",
+        "non-administrative-island aggregate"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "AreaData adopted only selected direct count fields; other fields, geography and terms need Kit independent audit. 2022 census atoll rows are not 2026 councils. Two island-name mismatches withheld; no inferred code join.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_PRESIDENCY_ATOLL_COUNCILS_ENDED_2026",
+      "role": "planning_law",
+      "title": "Presidency announcement of atoll council abolition, May 2026",
+      "publisher": "The President's Office, Maldives",
+      "url": "https://presidency.gov.mv/Press/Article/36690",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Maldives local councils; 2026 legal context"
+      ],
+      "reference_periods": [
+        "2026 legal context or publication page"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public document; raw redistribution terms unverified",
+      "reuse_note": "President Office 2026 local-governance announcement, not the consolidated statute or local approved plan. Kit must inspect current law, jurisdiction, commencement and terms independently.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_PRESIDENCY_LOCAL_GOVERNANCE_AMENDMENT_2026",
+      "role": "planning_law",
+      "title": "Presidency announcement of nineteenth local governance amendment, September 2026",
+      "publisher": "The President's Office, Maldives",
+      "url": "https://presidency.gov.mv/Press/Article/37284",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Maldives local councils; 2026 legal context"
+      ],
+      "reference_periods": [
+        "2026 legal context or publication page"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public document; raw redistribution terms unverified",
+      "reuse_note": "President Office 2026 local-governance announcement, not the consolidated statute or local approved plan. Kit must inspect current law, jurisdiction, commencement and terms independently.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_FONADHOO_PLAN_PAGE",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Fonadhoo Council plan publication page",
+      "publisher": "L. Fonadhoo Council",
+      "url": "https://fonadhoo.gov.mv/5033",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "L Fonadhoo Council publication area; legal polygon match unverified"
+      ],
+      "reference_periods": [
+        "2026 legal context or publication page"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public document; raw redistribution terms unverified",
+      "reuse_note": "Official Fonadhoo Council publication; PDF body acquired with cover and contents inspected where applicable. Full Dhivehi text, approval, implementation, jurisdiction and terms need Kit audit. No L Atoll or national plan implied.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_FONADHOO_DEVELOPMENT_PLAN_2022_2026",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "L. Fonadhoo Council Development Plan 2022–2026, revised",
+      "publisher": "L. Fonadhoo Council",
+      "url": "https://fonadhoo.gov.mv/wp-content/uploads/2025/01/L.Fonadhoo-Development-Plan-2022-2026-revised__1.pdf",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "L Fonadhoo Council publication area; legal polygon match unverified"
+      ],
+      "reference_periods": [
+        "2022–2026"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public document; raw redistribution terms unverified",
+      "reuse_note": "Official Fonadhoo Council publication; PDF body acquired with cover and contents inspected where applicable. Full Dhivehi text, approval, implementation, jurisdiction and terms need Kit audit. No L Atoll or national plan implied.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_H1",
+      "role": "table_catalog",
+      "title": "Table H1: Households By Type Of Living Quarters And By Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H1.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_H3",
+      "role": "table_catalog",
+      "title": "Table H3: Population By Type Of Living Quarters And By Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H3.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_H4",
+      "role": "table_catalog",
+      "title": "Table H4: Population By Type Of Living Quarters And By Island, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H4.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_H5",
+      "role": "table_catalog",
+      "title": "Table H5: Average Household Size By Type Of Living Quarters And By Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H5.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_H6",
+      "role": "table_catalog",
+      "title": "Table H6: Number Of Households In House/ Flat/ Apartments By Number Of Room And By Island, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H6.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_H8",
+      "role": "table_catalog",
+      "title": "Table H8: Households In House/Flat/Appartments By The Ownership Of Selected Assets And Locality (Atolls), 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/H8.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_P1",
+      "role": "table_catalog",
+      "title": "Table P1: Resident Population by Place of Enumeration by Nationality, Sex and Locality, 2014 and 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P1.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_P2",
+      "role": "table_catalog",
+      "title": "Table P2: Resident Population by Place of Enumeration and Administrative Division and Intercensal Growth Rate, 2022 & 2014",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P2.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_P3",
+      "role": "table_catalog",
+      "title": "Table P3: Resident Population by Place of Enumeration and by Island, 2014-2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P3.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_P6",
+      "role": "table_catalog",
+      "title": "Table P6: Resident Population by 5 Year Age Group by Sex, Nationality and by Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/07/P6.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG1",
+      "role": "table_catalog",
+      "title": "Table MG1 : Resident Maldivian Population by Place of Registration Cross Classified by Place of Birth, Sex and Locality (Atoll), 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG1.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG10",
+      "role": "table_catalog",
+      "title": "Table MG10: Resident Population by Place of Enumeration, Usual Residence and by Nationality, Sex and Island 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG10.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG11",
+      "role": "table_catalog",
+      "title": "Table MG11: Usual Resident Population by Nationality and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG11.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG12",
+      "role": "table_catalog",
+      "title": "Table MG12: Usual Resident Population by Nationality and by Island, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG12.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG13",
+      "role": "table_catalog",
+      "title": "Table MG13: Usual Resident Maldivian Population of Maale by Registered Island, by Sex, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG13.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG2",
+      "role": "table_catalog",
+      "title": "Table MG2 : Resident Maldivian Population by Place of Registration Cross Classified by Place of Usual Residence, Sex and Locality (Atoll), 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG2.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG3",
+      "role": "table_catalog",
+      "title": "Table MG3 : Resident Maldivian Population by Place of Usual Residence Cross Classified by Place of Birth, Sex and Locality (Atoll), 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG3.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG4",
+      "role": "table_catalog",
+      "title": "Table MG4 : Resident Maldivian Population by Place of Enumeration Cross Classified by Place of Usual Residence, Sex and Locality (Atoll), 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG4.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG5",
+      "role": "table_catalog",
+      "title": "Table MG5 : Resident Maldivian Population by Place Of Enumeration Cross Classified by Place of Birth, Sex and Locality (Atoll), 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG5.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG6",
+      "role": "table_catalog",
+      "title": "Table MG6 : Resident Maldivian Population by Place Of Enumeration Cross Classified by Place of Registration , Sex and Locality (Atoll), 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG6.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG7",
+      "role": "table_catalog",
+      "title": "Table MG7: Resident Maldivian Population by Place of Enumeration, Usual Residence and Place of Registration by Sex, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG7.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG8",
+      "role": "table_catalog",
+      "title": "Table MG8: Resident Maldivian Population by Place of Enumeration, Usual Residence and Place of Registration by Sex and Island, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG8.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_MG9",
+      "role": "table_catalog",
+      "title": "Table MG9: Resident Population by Place of Enumeration, Usual Residence and by Nationality and Sex, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/08/MG9.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_POPULATION_ATOLL_INDICATORS",
+      "role": "table_catalog",
+      "title": "Atoll Level Indicator Sheet Population",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Atoll-Level-Indicator-Sheet-Population.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_EMPLOYMENT_INDICATOR_DEFINITIONS",
+      "role": "table_catalog",
+      "title": "Definitions Employment",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Definitions-Employment.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_POPULATION_INDICATOR_DEFINITIONS",
+      "role": "table_catalog",
+      "title": "Definitions Population",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Definitions-Population.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_EC1",
+      "role": "table_catalog",
+      "title": "Table EC1: Resident Population 15 Years and over by Labour Force Status, Sex and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC1_090423.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_EC2",
+      "role": "table_catalog",
+      "title": "Table EC2: Resident Population 15 Years of Age and over by Labour Force Status, Sex, Age and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC2_090423.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_EC4",
+      "role": "table_catalog",
+      "title": "Table EC4: Number of Employed Resident Population 15 Years of Age and over by Industry, Sex and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC4_090423.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_EC5",
+      "role": "table_catalog",
+      "title": "Table EC5: Number of Employed Resident Population 15 Years of Age and over by Occupation, Sex and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC5_090423.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_EC6",
+      "role": "table_catalog",
+      "title": "Table EC6: Number of Employed Resident Population 15 Years of Age and over by Employment Status, Sex and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/EC6_090423.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED1",
+      "role": "table_catalog",
+      "title": "Table ED1: Resident Population 10 Years of Age and Over by Literacy in Mother Tongue, Age and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED1.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED10",
+      "role": "table_catalog",
+      "title": "Table ED10: Resident Maldivian Population 2 Years and Over Currently Attending other Educational Institutions, by Level of Education, Age, Sex and Locality",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED10.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED11",
+      "role": "table_catalog",
+      "title": "Table ED11: Resident Maldivian Population by Highest Grade Completed for those having Completed Current Grade System in Maldives, Sex and Locality, 2014",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED11.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED12",
+      "role": "table_catalog",
+      "title": "Table ED12: Highest Educational Attainment of Resident Maldivian Population 15 Years of Age and Over who has ever Attended School or Training Institution by Sex, Age and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED12.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED13",
+      "role": "table_catalog",
+      "title": "Table ED13 : Resident Maldivian Population 15 Years of Age and Over who has ever Attended School or Training Institution by Highest Educational Attainment, Sex and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED13.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED14",
+      "role": "table_catalog",
+      "title": "Table ED14: Highest Educational Attainment of Resident Foreign Population 15 Years of Age and Over who has ever Attended School or Training Institution by Sex, Age and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED14.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED15",
+      "role": "table_catalog",
+      "title": "Table ED15: Resident Foreign Population 15 Years of Age and Over who has ever Attended School or Training Institution by Highest Educational Attainment, Sex and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED15.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED17",
+      "role": "table_catalog",
+      "title": "Table ED17: Resident Maldivian Population 2 Years of Age and Over by the Status of Current Attendance, Age and Island, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED17.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED18",
+      "role": "table_catalog",
+      "title": "Table ED18: Resident Maldivian Population 2 Years and Over Currently Attending Educational Institution by Level, and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED18.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED19",
+      "role": "table_catalog",
+      "title": "Table ED19: Resident Maldivian Population 15 Years of Age and Over who has ever Attended School or Training Institution by Highest Educational Attainment, and Island, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED19.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED2",
+      "role": "table_catalog",
+      "title": "Table ED2: Resident Population 10 Years of Age and Over by Literacy in Mother Tongue, Sex and Atoll, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED2.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED3",
+      "role": "table_catalog",
+      "title": "Table ED3: Resident Population 10 Years of Age and Over by Literacy in English, Age Group and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED3.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED4",
+      "role": "table_catalog",
+      "title": "Table ED4: Resident Population 10 Years of Age and Over by Literacy In English, Age Group And Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED4.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED5",
+      "role": "table_catalog",
+      "title": "Table ED5: Resident Maldivian Population 2 Years of Age and Over by The Status of Current Attendance in Educational Establishment, Age and Sex, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED5.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED6",
+      "role": "table_catalog",
+      "title": "Table ED6 : Resident Maldivian Population 2 Years of Age and Over by the Status of Current Attendance in Educational Establishment and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED6.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED7",
+      "role": "table_catalog",
+      "title": "Table ED7: Resident Maldivian Population 2 Years and Over Currently Studying, Sex, Age and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED7.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED8",
+      "role": "table_catalog",
+      "title": "Table ED8: Resident Maldivian Population 5 Years and Over Currently Studying in Training Institutions by Mode of Study, Sex, Age and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED8.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_ED9",
+      "role": "table_catalog",
+      "title": "Table ED9: Resident Maldivian Population 2 Years and Over Currently Attending School, by Grade, Age, Sex and Locality, 2022",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/ED9.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_POPULATION_ISLAND_INDICATORS",
+      "role": "table_catalog",
+      "title": "Island Level Indicator Sheet Population",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/Island-Level-Indicator-Sheet-Population.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_EMPLOYMENT_ATOLL_INDICATORS",
+      "role": "table_catalog",
+      "title": "Atoll Level Indicator Sheet Emp",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/10/Atoll-Level-Indicator-Sheet-Emp.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MDV",
+      "source_id": "MDV_MDV_CPH2022_EMPLOYMENT_ISLAND_INDICATORS",
+      "role": "table_catalog",
+      "title": "Island Level Indicator Sheet Emp",
+      "publisher": "Maldives Bureau of Statistics",
+      "url": "https://statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/10/Island-Level-Indicator-Sheet-Emp.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2022 census table; exact grain unassessed"
+      ],
+      "reference_periods": [
+        "2022 CPH"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; raw redistribution terms unverified",
+      "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {

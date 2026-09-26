@@ -286,3 +286,16 @@ Twenty-four public official locations were selected: the NSB national PHCB 2017 
 | Validation | AreaData check 154 modules/templates, 218/218 tests, Bhutan validator zero errors and one planning warning, build and six actual-output cases. Kit check 52 JS/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 276 feedback sources). |
 
 All 24 Bhutan feedback stages remain `official_location_identified`; Kit stores `not_acquired_by_kit_preflight`, including for originals acquired by AreaData. Kit must independently obtain and inspect originals, resolve the hotel-inclusive count, historical geographic codes, current rule/plan contents and terms before reuse. Bhutan remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Maldives MBS CPH 2022 and current local-council source leads — 2026-09-27 JST
+
+Sixty-two public official locations were selected: 52 numbered MBS 2022 census XLSX, six supplementary population/employment indicator/definition XLSX, Fonadhoo Council's published plan PDF and page, and two President's Office 2026 local-governance amendment announcements. [The Maldives source audit](../../evidence/maldives-cph2022-source-audit-2026-09-27.md) limits numerical adoption to selected fields in P4/P5/H2/H7/EC3/ED16 and holds 52 other workbooks, P5 G17's blank and two spelling conflicts in EC3/ED16. The 2022 atoll rows are statistical reporting groups, not 2026 atoll councils. Fonadhoo's plan is issuer-specific; approval and full text are unverified. Feedback transfers no raw XLSX/PDF, 3,626 observations, council/polygon join, local budget/evaluation or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, evidence, status and 62 source selections | `7f800c05c281823328f5102426a6a408c4663e7e` on `codex/asia-domestic-20260926`; pushed and remote head matched before bundle export. |
+| AreaData 338-source / 29-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that exact AreaData adapter commit as `origin_commit`; bundle and this handoff are committed in the following AreaData commit. |
+| Kit feedback import | `8b256693d7a1ad4c5824be699e1326d42e18058e` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 338 leads, inserted 62 Maldives records, updated 276 prior origin histories, 339 total records. Pushed and remote head matched. |
+| Validation | AreaData check 155 modules/templates, 218/218 tests, Maldives validator zero errors/warnings, build and six actual-output cases. Kit check 52 JS/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 338 feedback sources). |
+
+All 62 Maldives feedback stages are `official_location_identified`; Kit records `not_acquired_by_kit_preflight` even when AreaData already acquired an original. Kit must independently obtain and inspect bodies, definitions, council law/jurisdiction, source geography and terms. Maldives remains a partial unpublished candidate without independent `ACCEPT`.
