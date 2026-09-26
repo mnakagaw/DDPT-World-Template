@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T15:39:36.260Z",
-  "origin_commit": "31a8dad57f391219b5871f36e754a4c7b1aef76a",
+  "exported_at": "2026-09-26T16:10:15.725Z",
+  "origin_commit": "48eae9b94f70b23a98412a27204ae63ffa41b67c",
   "sources": [
     {
       "iso3": "ARE",
@@ -3193,6 +3193,32 @@
     },
     {
       "iso3": "QAT",
+      "source_id": "QAT_QAT_GIS_CENSUS_ZONE_2020",
+      "role": "administrative_codes",
+      "title": "Official Census_Zone_2020 polygons and municipality codes",
+      "publisher": "Qatar GIS service",
+      "url": "https://services.gisqatar.org.qa/server/rest/services/Vector/Census_Zone/MapServer/0/query?where=1%3D1&outFields=OBJECTID%2CZONE_NO%2CMUNICIPAL_CODE%2CMUNICIPALITY_NAME_EN&returnGeometry=true&outSR=4326&f=geojson",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "91 Census_Zone_2020 polygons",
+        "eight 2020 census municipalities"
+      ],
+      "reference_periods": [
+        "Census 2020 geographic edition"
+      ],
+      "formats": [
+        "ArcGIS REST GeoJSON",
+        "ArcGIS REST JSON"
+      ],
+      "license_or_terms": "Qatar GIS service reuse terms require review before external release",
+      "reuse_note": "A separate official GIS layer identifies 2020 zone polygons and municipality codes. AreaData reconciled eight historical municipal population controls, but Kit must reacquire, audit and review GIS reuse terms and later legal boundary changes independently. No numeric values or adopted polygons are transferred by this lead.",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
       "source_id": "QAT_QAT_GIS_MUNICIPALITY_CURRENT",
       "role": "administrative_codes",
       "title": "MunicipalityAT GIS service current municipality attributes",
@@ -3212,7 +3238,7 @@
       ],
       "license_or_terms": "Official source reuse terms require review before external release",
       "reuse_note": "Current MunicipalityAT records contain code candidates but all eight STARTDATE values postdate December 2020. Do not attach them to Census 2020 cells or polygons without a dated crosswalk.",
-      "origin_evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
       "artifact_sha256": null
     },
     {
@@ -3239,7 +3265,7 @@
       ],
       "license_or_terms": "Official source reuse terms require review before external release",
       "reuse_note": "NPC official Census 2020 catalogue location. AreaData acquired a 209-sheet workbook and selected a partial cell candidate; no independent country acceptance exists. Kit must reacquire and audit all tables, terms and geography.",
-      "origin_evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
       "artifact_sha256": null
     },
     {
@@ -3264,7 +3290,31 @@
       ],
       "license_or_terms": "Official NPC website reuse terms require review before external release",
       "reuse_note": "Official workbook includes population Table 1 and many other municipal/zone tables. The URL is a source location, not a transfer of AreaData values or the current 2020 boundary crosswalk.",
-      "origin_evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "QAT",
+      "source_id": "QAT_QAT_MM_QNMP_MSDP_EIGHT",
+      "role": "planning_guidance",
+      "title": "QNMP page describing eight municipality spatial development plans",
+      "publisher": "Ministry of Municipality (Qatar)",
+      "url": "https://www.mm.gov.qa/QatarMasterPlan/English/MSDP-Municipalities.aspx?panel=about",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "eight named municipalities on QNMP page"
+      ],
+      "reference_periods": [
+        "Website statement acquired 2026-09-26; current plan editions not established"
+      ],
+      "formats": [
+        "HTML page"
+      ],
+      "license_or_terms": "Ministry website reuse terms require review before external release",
+      "reuse_note": "QNMP page says an MSDP was completed for each of eight municipalities. Current operative plan editions, approvals, budgets, implementation and evaluation remain unverified; do not treat the page as adopted plan documents.",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
       "artifact_sha256": null
     },
     {
@@ -3288,7 +3338,7 @@
       ],
       "license_or_terms": "Official source reuse terms require review before external release",
       "reuse_note": "Source names six MSDP zoning municipalities and calls Al Khor and Al Wakra future extensions. Page currency and 2026 operative coverage are unverified.",
-      "origin_evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
       "artifact_sha256": null
     },
     {
@@ -3313,7 +3363,7 @@
       ],
       "license_or_terms": "Official source reuse terms require review before external release",
       "reuse_note": "Official QNMP product location. Current municipality plan editions, approvals and applicable law require fresh source review.",
-      "origin_evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
       "artifact_sha256": null
     },
     {
@@ -3337,7 +3387,7 @@
       ],
       "license_or_terms": "Official source reuse terms require review before external release",
       "reuse_note": "Official PDF Volume 1 cover says 1 June 2014 although URL filename says Dec 2017. Current revision, legal effect, 2020 area match and fiscal/implementation evidence are unverified.",
-      "origin_evidence_path": "docs/evidence/qatar-census-2020-official-sources-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/qatar-census-2020-geography-2026-09-27.md",
       "artifact_sha256": null
     },
     {
