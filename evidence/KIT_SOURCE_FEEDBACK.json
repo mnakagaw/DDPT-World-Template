@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T19:45:03.336Z",
-  "origin_commit": "58759b4c06d97ba2a2bc2ac741195dfe7ca66c01",
+  "exported_at": "2026-09-26T21:13:08.172Z",
+  "origin_commit": "9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa",
   "sources": [
     {
       "iso3": "AFG",
@@ -3226,6 +3226,893 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "CAS 2018-19 LFHLCS main survey report. AreaData adopted only Table 1.1 rounded population and household estimates for mid-2018 residential-dwelling residents; this is not a census or an all-resident count. Kit must independently audit other tables, coverage, geography and reuse terms.",
       "origin_evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO_2023_CODES",
+      "role": "administrative_codes",
+      "title": "NSO 2023 geographical code register",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://giwmscdnone.gov.np/media/app/public/36/posts/1695378470_83.xls",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "seven provinces",
+        "77 districts",
+        "753 local-level codes"
+      ],
+      "reference_periods": [
+        "2023 code release"
+      ],
+      "formats": [
+        "XLS",
+        "HTML"
+      ],
+      "license_or_terms": "Official public XLS; redistribution terms unverified",
+      "reuse_note": "Official 2023 code register was acquired by AreaData; 2021 census local names leave two unresolved identity conflicts. Code existence is not a polygon match or proof of 2021 legal boundaries.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD06_P1",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P1 Hhld06 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P1/Hhld06_SourceOfDrinkingWater.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Koshi province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household drinking-water source counts. Original categories are not JMP service classes; institutional households are outside the denominator. Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD09_P1",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P1 Hhld09 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P1/Hhld09_TypeOfToiletUsed.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Koshi province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household toilet type counts. AreaData adopted five facility categories, not a sanitation-service rate; Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV01_P1",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P1 Indv01 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P1/Indv01-PopulationBySex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Koshi province",
+        "district",
+        "local level",
+        "institutional population"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 population-by-sex direct counts. AreaData adopted four fields after arithmetic audit; institutional rows are separate. Kit must independently check original, definitions, scope and terms.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV17_P1",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P1 Indv17 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P1/Indv17-PopulationByLiteracyStatus.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Koshi province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 literacy workbook acquired and numeric columns inventoried, but age/sex row meaning remains priority_unassessed; no literacy cell adopted.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD06_P2",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P2 Hhld06 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P2/Hhld06_SourceOfDrinkingWater.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Madhesh province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household drinking-water source counts. Original categories are not JMP service classes; institutional households are outside the denominator. Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD09_P2",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P2 Hhld09 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P2/Hhld09_TypeOfToiletUsed.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Madhesh province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household toilet type counts. AreaData adopted five facility categories, not a sanitation-service rate; Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV01_P2",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P2 Indv01 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P2/Indv01-PopulationBySex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Madhesh province",
+        "district",
+        "local level",
+        "institutional population"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 population-by-sex direct counts. AreaData adopted four fields after arithmetic audit; institutional rows are separate. Kit must independently check original, definitions, scope and terms.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV17_P2",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P2 Indv17 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P2/Indv17-PopulationByLiteracyStatus.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Madhesh province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 literacy workbook acquired and numeric columns inventoried, but age/sex row meaning remains priority_unassessed; no literacy cell adopted.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD06_P3",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P3 Hhld06 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P3/Hhld06_SourceOfDrinkingWater.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Bagmati province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household drinking-water source counts. Original categories are not JMP service classes; institutional households are outside the denominator. Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD09_P3",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P3 Hhld09 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P3/Hhld09_TypeOfToiletUsed.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Bagmati province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household toilet type counts. AreaData adopted five facility categories, not a sanitation-service rate; Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV01_P3",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P3 Indv01 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P3/Indv01-PopulationBySex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Bagmati province",
+        "district",
+        "local level",
+        "institutional population"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 population-by-sex direct counts. AreaData adopted four fields after arithmetic audit; institutional rows are separate. Kit must independently check original, definitions, scope and terms.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV17_P3",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P3 Indv17 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P3/Indv17-PopulationByLiteracyStatus.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Bagmati province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 literacy workbook acquired and numeric columns inventoried, but age/sex row meaning remains priority_unassessed; no literacy cell adopted.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD06_P4",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P4 Hhld06 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P4/Hhld06_SourceOfDrinkingWater.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Gandaki province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household drinking-water source counts. Original categories are not JMP service classes; institutional households are outside the denominator. Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD09_P4",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P4 Hhld09 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P4/Hhld09_TypeOfToiletUsed.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Gandaki province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household toilet type counts. AreaData adopted five facility categories, not a sanitation-service rate; Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV01_P4",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P4 Indv01 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P4/Indv01-PopulationBySex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Gandaki province",
+        "district",
+        "local level",
+        "institutional population"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 population-by-sex direct counts. AreaData adopted four fields after arithmetic audit; institutional rows are separate. Kit must independently check original, definitions, scope and terms.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV17_P4",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P4 Indv17 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P4/Indv17-PopulationByLiteracyStatus.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Gandaki province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 literacy workbook acquired and numeric columns inventoried, but age/sex row meaning remains priority_unassessed; no literacy cell adopted.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD06_P5",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P5 Hhld06 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P5/Hhld06_SourceOfDrinkingWater.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Lumbini province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household drinking-water source counts. Original categories are not JMP service classes; institutional households are outside the denominator. Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD09_P5",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P5 Hhld09 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P5/Hhld09_TypeOfToiletUsed.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Lumbini province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household toilet type counts. AreaData adopted five facility categories, not a sanitation-service rate; Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV01_P5",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P5 Indv01 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P5/Indv01-PopulationBySex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Lumbini province",
+        "district",
+        "local level",
+        "institutional population"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 population-by-sex direct counts. AreaData adopted four fields after arithmetic audit; institutional rows are separate. Kit must independently check original, definitions, scope and terms.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV17_P5",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P5 Indv17 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P5/Indv17-PopulationByLiteracyStatus.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Lumbini province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 literacy workbook acquired and numeric columns inventoried, but age/sex row meaning remains priority_unassessed; no literacy cell adopted.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD06_P6",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P6 Hhld06 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P6/Hhld06_SourceOfDrinkingWater.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Karnali province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household drinking-water source counts. Original categories are not JMP service classes; institutional households are outside the denominator. Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD09_P6",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P6 Hhld09 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P6/Hhld09_TypeOfToiletUsed.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Karnali province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household toilet type counts. AreaData adopted five facility categories, not a sanitation-service rate; Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV01_P6",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P6 Indv01 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P6/Indv01-PopulationBySex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Karnali province",
+        "district",
+        "local level",
+        "institutional population"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 population-by-sex direct counts. AreaData adopted four fields after arithmetic audit; institutional rows are separate. Kit must independently check original, definitions, scope and terms.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV17_P6",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P6 Indv17 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P6/Indv17-PopulationByLiteracyStatus.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Karnali province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 literacy workbook acquired and numeric columns inventoried, but age/sex row meaning remains priority_unassessed; no literacy cell adopted.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD06_P7",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P7 Hhld06 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P7/Hhld06_SourceOfDrinkingWater.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Sudurpaschim province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household drinking-water source counts. Original categories are not JMP service classes; institutional households are outside the denominator. Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_HHLD09_P7",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P7 Hhld09 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P7/Hhld09_TypeOfToiletUsed.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Sudurpaschim province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 private-household toilet type counts. AreaData adopted five facility categories, not a sanitation-service rate; Kit must independently audit.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV01_P7",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P7 Indv01 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P7/Indv01-PopulationBySex.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Sudurpaschim province",
+        "district",
+        "local level",
+        "institutional population"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 population-by-sex direct counts. AreaData adopted four fields after arithmetic audit; institutional rows are separate. Kit must independently check original, definitions, scope and terms.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NSO2021_INDV17_P7",
+      "role": "census_results",
+      "title": "NSO NPHC 2021 P7 Indv17 original workbook",
+      "publisher": "National Statistics Office, Nepal",
+      "url": "https://censusresults.nsonepal.gov.np/files/province/P7/Indv17-PopulationByLiteracyStatus.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Sudurpaschim province",
+        "district",
+        "local level"
+      ],
+      "reference_periods": [
+        "2021"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms unverified",
+      "reuse_note": "NSO 2021 literacy workbook acquired and numeric columns inventoried, but age/sex row meaning remains priority_unassessed; no literacy cell adopted.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_NPC_LOCAL_PLANNING_GUIDE_2078",
+      "role": "planning_guidance",
+      "title": "NPC local-level plan formulation guidance, 2078",
+      "publisher": "National Planning Commission",
+      "url": "https://giwmscdnone.gov.np/media/app/public/56/posts/1684598335_57.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "local-level governments"
+      ],
+      "reference_periods": [
+        "2078"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms unverified",
+      "reuse_note": "AreaData acquired 244-page NPC local-plan formulation guidance and checked its cover; body and current applicability require page-level audit. It is not a plan adopted by every palika.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_LOCAL_GOVERNMENT_OPERATION_ACT_2074",
+      "role": "planning_law",
+      "title": "Local Government Operation Act 2074",
+      "publisher": "District Administration Office Kailali",
+      "url": "https://daokailali.moha.gov.np/en/post/local-government-operation-act-2074",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Nepal local governments; current application unverified"
+      ],
+      "reference_periods": [
+        "2074"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "Location only",
+      "reuse_note": "Official government publication location only. Consolidated current force, amendments and planning provisions are unassessed; no local plan approval is transferred.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_KMC_BUDGET_2083_84",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Kathmandu Metropolitan City Annual Budget and Program 2083/84",
+      "publisher": "Kathmandu Metropolitan City",
+      "url": "https://files.kathmandu.gov.np/uploads/medias/027510d56b07404bb7c73cf4ff1c039a.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Kathmandu Metropolitan City only"
+      ],
+      "reference_periods": [
+        "2083/84"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms unverified",
+      "reuse_note": "AreaData acquired city 2083/84 budget/program PDF and checked opening pages. Allocations and income estimates are not actual expenditure or plan outcomes.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_KMC_ACTION_PLAN_2083_84",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Kathmandu Metropolitan City Annual Action Plan 2083/84",
+      "publisher": "Kathmandu Metropolitan City",
+      "url": "https://files.kathmandu.gov.np/uploads/medias/19f1df22cc154bf2b521460124e25fc6.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Kathmandu Metropolitan City only"
+      ],
+      "reference_periods": [
+        "2083/84"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms unverified",
+      "reuse_note": "AreaData acquired city 2083/84 action-plan PDF and checked p3. Full content, formal approval, fiscal amounts and geography are not adopted; do not attach it to Kathmandu District.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "NPL",
+      "source_id": "NPL_NPL_KMC_PROGRESS_2082_83",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Kathmandu Metropolitan City Annual Progress Report 2082/83",
+      "publisher": "Kathmandu Metropolitan City",
+      "url": "https://files.kathmandu.gov.np/uploads/medias/766f1bd16e224e5c9748c98a8b50f6f3.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Kathmandu Metropolitan City only"
+      ],
+      "reference_periods": [
+        "2082/83"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms unverified",
+      "reuse_note": "AreaData acquired prior-year 2082/83 city progress PDF and checked p1. It is a different period from 2083/84 plan/budget; performance figures and official evaluation were not adopted.",
+      "origin_evidence_path": "docs/evidence/nepal-nso2021-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {

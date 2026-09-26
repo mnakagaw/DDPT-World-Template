@@ -247,3 +247,16 @@ Six public official locations were selected: NSIA's 1404/2025–26 estimated-pop
 | Validation | AreaData check 151 modules/templates, 218/218 tests, Afghanistan validator zero errors/warnings, build and seven actual-output cases. Kit check 52 JS/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 183 feedback sources). |
 
 All six Afghanistan feedback stages remain `official_location_identified`; Kit stores `not_acquired_by_kit_preflight`. Kit must independently reacquire the NSIA PDF through validated identity, review the unassessed tables and source terms, and resolve current planning authority, actual plan bodies and geography. Afghanistan is still a partial unpublished candidate without independent `ACCEPT`.
+
+## Nepal NSO 2021 census and Kathmandu planning leads — 2026-09-27 JST
+
+Thirty-four public official locations were selected: four NSO 2021 workbook families across seven provinces (28 original XLSX addresses), the official NSO 2023 geographical-code workbook, the Local Government Operation Act location, NPC local-planning guidance and three Kathmandu Metropolitan City PDFs. [The Nepal source audit](../../evidence/nepal-nso2021-source-audit-2026-09-27.md) separates 21 adopted count workbooks from seven acquired but semantically unassessed literacy workbooks, 2021 census records from a partly reconciled 2023 code register, and bounded city document inspection from plan approval, actual expenditure or evaluation. Feedback carries no original, observation, current boundary, code-conflict resolution, plan figure or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, audit, status and 34 selected source locations | `9b0ef7ee59a81490ce7b66e0b380bced7d6a3daa` on `codex/asia-domestic-20260926`; pushed and remote head matched. |
+| AreaData 217-source / 26-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that full AreaData adapter commit as `origin_commit`; bundle and this handoff are committed in the following AreaData commit. |
+| Kit feedback import | `8294c493d1439267953759e8b927178f8ecab667` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 217 leads, 34 Nepal records inserted, 183 earlier origin histories updated, 218 total. Pushed and remote head matched. |
+| Validation | AreaData check 152 modules/templates, 218/218 tests, Nepal validator zero errors/warnings, build and eight actual-output cases. Kit check 52 JS/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 217 feedback sources). |
+
+All 34 Nepal feedback stages remain `official_location_identified`; Kit stores `not_acquired_by_kit_preflight`. Kit must independently reacquire and audit source bodies, code geography, legal applicability, city document contents and source terms before use. Nepal remains a partial unpublished candidate without independent `ACCEPT`.
