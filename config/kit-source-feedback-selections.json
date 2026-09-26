@@ -535,6 +535,85 @@
           "reuse_note": "ARXKOM official master-plan catalogue lead. Individual plan body, approval instrument, period, selected-area relevance, budget, implementation and evaluation were not adopted by AreaData and require independent Kit review."
         }
       ]
+    },
+    {
+      "path": "generated/israel-areadata-20260926",
+      "iso3": "ISR",
+      "evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+      "sources": [
+        {
+          "id": "isr-cbs-census2022-selected-localities-statistical-areas",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["locality", "statistical area"],
+          "formats": ["XLSX"],
+          "reuse_note": "Official CBS 2022 workbook newly located by AreaData. Locality and statistical-area aggregate rows were profiled but no numeric field adopted; listed locality population does not cover the broad-geography nationwide value. Kit must assess coverage, codes, scope, methods and reuse terms independently."
+        },
+        {
+          "id": "isr-cbs-census2022-age-sex-national",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national; finer geography to verify"],
+          "formats": ["XLSX"],
+          "reuse_note": "Official CBS 2022 population-group, religion, age and sex workbook newly located by AreaData. Sheet structure only was inventoried; no field adopted. Verify group definitions, geography, denominators and reuse terms."
+        },
+        {
+          "id": "isr-cbs-census2022-population-households-locality",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["locality"],
+          "formats": ["XLSX"],
+          "reuse_note": "Official CBS locality population and household workbook newly located by AreaData. It lists 1,220 locality codes, but its population listing does not reconcile to the broad-geography nationwide value; no fields adopted. Kit must review coverage, code history, missingness and terms."
+        },
+        {
+          "id": "isr-cbs-census2022-population-selected-characteristics",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["geographic availability unassessed"],
+          "formats": ["XLSX"],
+          "reuse_note": "Official CBS selected-population-characteristics workbook newly located by AreaData. File includes 2022 Census, end-2021 estimate and 2008 Census reference material; no numeric field adopted. Distinguish periods and methods before Kit reuse."
+        },
+        {
+          "id": "isr-cbs-census2022-households-selected-characteristics",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["geographic availability unassessed"],
+          "formats": ["XLSX"],
+          "reuse_note": "Official CBS selected-household-characteristics workbook newly located by AreaData. File includes 2022 and 2008 Census estimates; no numeric field adopted. Kit must inspect denominators, geography, period and terms."
+        },
+        {
+          "id": "isr-cbs-census2022-broad-geographical-units",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "CBS first-level reporting area", "subdistrict and natural area unassessed"],
+          "formats": ["XLSX"],
+          "reuse_note": "Official CBS broad-geography workbook newly located by AreaData. Only eight fields in nationwide plus seven first-level 2022 rows were adopted; the other 446 fields of that sheet and eight other sheets remain unassessed. Area 7 covers Israeli localities in Judea and Samaria only, not all residents. The six 2006 reference shapes were not joined. Kit must review raw, geography, methods and terms independently."
+        },
+        {
+          "id": "isr-planning-administration-xplan",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["plan search; selected-area coverage to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "Official Planning Administration XPLAN plan-search service location only. AreaData acquired no selected-area plan body, approval, budget, implementation or evaluation record. Kit must search and verify documents independently."
+        },
+        {
+          "id": "isr-planning-building-law-index",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national law index; applicable local unit to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "Official Planning Administration laws index only. Current consolidated legal text, lawful plan maker and local duties were not adopted by AreaData; do not infer a planning obligation from this link alone."
+        },
+        {
+          "id": "isr-planning-mavat-guidance",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["plan submission process; applicable area to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "Official Mavat procedural guidance location only. AreaData did not adopt a current mandatory local format or an approved plan from it. Kit must inspect content, applicability and edition independently."
+        }
+      ]
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T09:34:55.353Z",
-  "origin_commit": "8a03b814df077f7f9bf25a57c46a69e50eafeba8",
+  "exported_at": "2026-09-26T09:58:18.924Z",
+  "origin_commit": "732648d4dc766dd237e811a4ece0449b53310b44",
   "sources": [
     {
       "iso3": "ARE",
@@ -835,6 +835,225 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "New COSIT official 2024 census table catalogue location. Thirty PDFs were listed; seven acquired by AreaData and two household-service tables locally adapted. Kit must independently audit acquisition, every table field, official geography, terms and adoption.",
       "origin_evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ISR",
+      "source_id": "ISR_ISR_CBS_CENSUS2022_HOUSEHOLDS_SELECTED_CHARACTERISTICS",
+      "role": "census_results",
+      "title": "CBS 2022 Census households selected characteristics",
+      "publisher": "Israel Central Bureau of Statistics",
+      "url": "https://www.cbs.gov.il/he/publications/LochutTlushim/2025/Households%20by%20selected%20characteristics%20-%202022%20Census%20estimate%20and%202008%20Census%20estimate.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "geographic availability unassessed"
+      ],
+      "reference_periods": [
+        "2022 Census estimate and 2008 Census estimate; fields unassessed"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official CBS selected-household-characteristics workbook newly located by AreaData. File includes 2022 and 2008 Census estimates; no numeric field adopted. Kit must inspect denominators, geography, period and terms.",
+      "origin_evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ISR",
+      "source_id": "ISR_ISR_CBS_CENSUS2022_POPULATION_HOUSEHOLDS_LOCALITY",
+      "role": "census_results",
+      "title": "CBS 2022 Census population households locality",
+      "publisher": "Israel Central Bureau of Statistics",
+      "url": "https://www.cbs.gov.il/he/publications/LochutTlushim/2025/Population%20and%20households%20by%20locality%20-%202022%20Census%20estimate.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "locality"
+      ],
+      "reference_periods": [
+        "2022 Census, April 2022 reference"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official CBS locality population and household workbook newly located by AreaData. It lists 1,220 locality codes, but its population listing does not reconcile to the broad-geography nationwide value; no fields adopted. Kit must review coverage, code history, missingness and terms.",
+      "origin_evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ISR",
+      "source_id": "ISR_ISR_CBS_CENSUS2022_AGE_SEX_NATIONAL",
+      "role": "census_results",
+      "title": "CBS 2022 Census population group religion age sex",
+      "publisher": "Israel Central Bureau of Statistics",
+      "url": "https://www.cbs.gov.il/he/publications/LochutTlushim/2025/Population%20by%20population%20group%2C%20religion%2C%20age%2C%20and%20sex%20-%202022%20Census%20estimate.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national; finer geography to verify"
+      ],
+      "reference_periods": [
+        "2022 Census, April 2022 reference"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official CBS 2022 population-group, religion, age and sex workbook newly located by AreaData. Sheet structure only was inventoried; no field adopted. Verify group definitions, geography, denominators and reuse terms.",
+      "origin_evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ISR",
+      "source_id": "ISR_ISR_CBS_CENSUS2022_POPULATION_SELECTED_CHARACTERISTICS",
+      "role": "census_results",
+      "title": "CBS 2022 Census population selected characteristics",
+      "publisher": "Israel Central Bureau of Statistics",
+      "url": "https://www.cbs.gov.il/he/publications/LochutTlushim/2025/Population%20by%20selected%20characteristics%20-%202022%20Census%20estimate%2C%20end%20of%202021%20population%20estimate%20and%202008%20Census%20estimate.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "geographic availability unassessed"
+      ],
+      "reference_periods": [
+        "2022 Census estimate, end-2021 population estimate and 2008 Census estimate; fields unassessed"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official CBS selected-population-characteristics workbook newly located by AreaData. File includes 2022 Census, end-2021 estimate and 2008 Census reference material; no numeric field adopted. Distinguish periods and methods before Kit reuse.",
+      "origin_evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ISR",
+      "source_id": "ISR_ISR_CBS_CENSUS2022_SELECTED_LOCALITIES_STATISTICAL_AREAS",
+      "role": "census_results",
+      "title": "CBS 2022 Census selected data localities statistical areas",
+      "publisher": "Israel Central Bureau of Statistics",
+      "url": "https://www.cbs.gov.il/he/publications/LochutTlushim/2025/Selected%20data%2C%20by%20localities%20and%20statistical%20areas%20-%20the%202022%20Census.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "locality",
+        "statistical area"
+      ],
+      "reference_periods": [
+        "2022 Census, April 2022 reference"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official CBS 2022 workbook newly located by AreaData. Locality and statistical-area aggregate rows were profiled but no numeric field adopted; listed locality population does not cover the broad-geography nationwide value. Kit must assess coverage, codes, scope, methods and reuse terms independently.",
+      "origin_evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ISR",
+      "source_id": "ISR_ISR_CBS_CENSUS2022_BROAD_GEOGRAPHICAL_UNITS",
+      "role": "machine_readable_data",
+      "title": "CBS 2022 Census broad geographical units",
+      "publisher": "Israel Central Bureau of Statistics",
+      "url": "https://www.cbs.gov.il/he/publications/LochutTlushim/2025/Summarized%20file%20of%20broad%20geographical%20units%20-%20census%202022.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "CBS first-level reporting area",
+        "subdistrict and natural area unassessed"
+      ],
+      "reference_periods": [
+        "2022 Census, April 2022 reference"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official CBS broad-geography workbook newly located by AreaData. Only eight fields in nationwide plus seven first-level 2022 rows were adopted; the other 446 fields of that sheet and eight other sheets remain unassessed. Area 7 covers Israeli localities in Judea and Samaria only, not all residents. The six 2006 reference shapes were not joined. Kit must review raw, geography, methods and terms independently.",
+      "origin_evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ISR",
+      "source_id": "ISR_ISR_PLANNING_MAVAT_GUIDANCE",
+      "role": "planning_guidance",
+      "title": "Planning Administration Mavat plan submission guidance",
+      "publisher": "Israel Planning Administration",
+      "url": "https://www.gov.il/he/pages/mavat_2020",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "plan submission process; applicable area to verify"
+      ],
+      "reference_periods": [
+        "guide page last updated 2025-07-01"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official Mavat procedural guidance location only. AreaData did not adopt a current mandatory local format or an approved plan from it. Kit must inspect content, applicability and edition independently.",
+      "origin_evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ISR",
+      "source_id": "ISR_ISR_PLANNING_BUILDING_LAW_INDEX",
+      "role": "planning_law",
+      "title": "Planning Administration planning and building laws index",
+      "publisher": "Israel Planning Administration",
+      "url": "https://www.gov.il/he/pages/planning_building_laws?chapterindex=0",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national law index; applicable local unit to verify"
+      ],
+      "reference_periods": [
+        "index checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official Planning Administration laws index only. Current consolidated legal text, lawful plan maker and local duties were not adopted by AreaData; do not infer a planning obligation from this link alone.",
+      "origin_evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ISR",
+      "source_id": "ISR_ISR_PLANNING_ADMINISTRATION_XPLAN",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Planning Administration XPLAN online plan search",
+      "publisher": "Israel Planning Administration",
+      "url": "https://www.gov.il/en/service/searching-plans-submitted-planning-institutes-in-xplan-site",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "plan search; selected-area coverage to verify"
+      ],
+      "reference_periods": [
+        "service page checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official Planning Administration XPLAN plan-search service location only. AreaData acquired no selected-area plan body, approval, budget, implementation or evaluation record. Kit must search and verify documents independently.",
+      "origin_evidence_path": "docs/evidence/israel-cbs2022-source-audit-2026-09-26.md",
       "artifact_sha256": null
     },
     {
