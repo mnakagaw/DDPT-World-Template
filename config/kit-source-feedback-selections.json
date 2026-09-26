@@ -1201,6 +1201,85 @@
           "reuse_note": "Official Kutaisi register locates the 2025 mayoral order and other planning proceedings. A listed document does not prove every local plan, general-plan approval, budget execution or evaluation has been acquired."
         }
       ]
+    },
+    {
+      "path": "generated/bahrain-census-r2-20260926",
+      "iso3": "BHR",
+      "evidence_path": "docs/evidence/bahrain-census-2020-official-sources-2026-09-26.md",
+      "sources": [
+        {
+          "id": "bhr-iga-census2020-catalogue",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate; 20 of 45 tables"],
+          "formats": ["JSON API", "HTML catalogue"],
+          "reuse_note": "AreaData acquired all 45 titled Census 2020 tables but adopted selected cells from five. Kit must independently reacquire and audit fields, scope, governorate codes, boundaries and current portal terms."
+        },
+        {
+          "id": "bhr-iga-census2020-pop-governorate",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["four 2020 census governorate reporting categories"],
+          "formats": ["JSON API", "CSV"],
+          "reuse_note": "Nationality-by-sex source cells sum to Census 2020 population 1501635 across four reporting governorates. This is distinct from 2020 annual/midyear estimate 1472204. Kit must recheck raw cells, date, official codes, legal polygons and portal terms."
+        },
+        {
+          "id": "bhr-iga-census2020-housing-governorate",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["four 2020 census governorate reporting categories"],
+          "formats": ["JSON API", "CSV"],
+          "reuse_note": "Housing-type counts are summed within each governorate; national four-area control is 387126 units. Occupancy is a separate crosscheck, not an adopted subgroup. Check all detailed cells and terms independently."
+        },
+        {
+          "id": "bhr-iga-census2020-households-governorate",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["four 2020 census governorate reporting categories"],
+          "formats": ["JSON API", "CSV"],
+          "reuse_note": "All-household and private-household counts are separate measures from mutually exclusive source categories. Other household detail remains unassessed; do not add overlapping totals."
+        },
+        {
+          "id": "bhr-iga-census2020-school-enrolled-governorate",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["four 2020 census governorate reporting categories"],
+          "formats": ["JSON API", "CSV"],
+          "reuse_note": "Persons enrolled in school aged 3+ are a count, not an enrollment rate. National four-area control is 309557; stage detail was crosschecked only."
+        },
+        {
+          "id": "bhr-iga-census2020-economically-active-governorate",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["four 2020 census governorate reporting categories"],
+          "formats": ["JSON API", "CSV"],
+          "reuse_note": "Economically active persons aged 15+ are a count, not an activity or unemployment rate. Employed/unemployed detail is crosscheck-only; definitions and denominator require source audit."
+        },
+        {
+          "id": "bhr-municipal-regulation-2002",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["municipality"],
+          "formats": ["HTML legal text"],
+          "reuse_note": "Original 2002 implementing regulation Articles 36-39 locate municipal local-plan and budget procedures. The operative consolidated 2026 wording and actual municipality plans, approvals and accounts are unverified."
+        },
+        {
+          "id": "bhr-urban-planning-law-1994",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national planning framework"],
+          "formats": ["HTML legal text"],
+          "reuse_note": "Separate 1994 urban-planning law location. Later amendments, current competent authorities and relation to municipal local plans need review before assigning planning duties."
+        },
+        {
+          "id": "bhr-municipal-budget-2025-2026-aggregate",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["aggregate four municipalities; no individual allocation verified"],
+          "formats": ["HTML page"],
+          "reuse_note": "Official ministry page location for an aggregate four-municipality 2025-26 budget. No individual municipality amount, executed expenditure or evaluation was acquired; do not assign the aggregate to a governorate."
+        }
+      ]
     }
   ]
 }

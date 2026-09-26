@@ -16,7 +16,7 @@ phase,iso3,name,m49_subregion,population_2026,edition_status,note
 "1","GEO","Georgia","Western Asia","3804642","local_geostat_2024_census_partial_not_accepted","Official Geostat 2024 census Table 02/06: 85 territories, 18 domestic indicators, 1440 observations (1413 numeric and 27 source-dash missing); two Kutaisi plan/budget originals; official codes/boundaries, other census tables, other local plans and independent acceptance unresolved"
 "1","QAT","Qatar","Western Asia","3173559","not_started",""
 "1","ARM","Armenia","Western Asia","2930915","not_started",""
-"1","BHR","Bahrain","Western Asia","1675572","not_started",""
+"1","BHR","Bahrain","Western Asia","1675572","local_iga_census_2020_partial_not_accepted","Official iGA Census 2020 API: 45 titled tables and 2602 rows acquired, 10 domestic count indicators from 5 tables as 40 calculated governorate values plus national full-cover calculations; 6 crosscheck tables, 34 fields priority_unassessed; 4 census reporting areas, no official codes/polygons, no individual plan/finance originals, portal terms and independent acceptance open"
 "1","CYP","Cyprus","Western Asia","1382334","not_started",""
 "2","IND","India","Southern Asia","1476625576","not_started",""
 "2","PAK","Pakistan","Southern Asia","259299791","not_started",""
