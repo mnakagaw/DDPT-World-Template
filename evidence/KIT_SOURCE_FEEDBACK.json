@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T06:36:33.843Z",
-  "origin_commit": "6c348e5f1452f6b523cd4a09b2144a3295c7ac75",
+  "exported_at": "2026-09-26T07:43:55.887Z",
+  "origin_commit": "60251388fbb78bab7f8e0d15a42e03603e3a0bfd",
   "sources": [
     {
       "iso3": "BFA",
@@ -412,6 +412,31 @@
     },
     {
       "iso3": "IRQ",
+      "source_id": "IRQ_IRQ_COSIT_CENSUS_2024_AGE_SEX_URBAN_RURAL_PDF",
+      "role": "census_results",
+      "title": "COSIT Iraq 2024 census age/sex and urban/rural table, governorate totals",
+      "publisher": "Iraq COSIT",
+      "url": "https://cosit.gov.iq/images/census2024/%D8%B3%D9%83%D8%A7%D9%86_%D9%81%D8%A6%D8%A7%D8%AA%20%D8%B9%D9%85%D8%B1%D9%8A%D8%A9.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate totals; lower units remain unreviewed"
+      ],
+      "reference_periods": [
+        "2024"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New specific COSIT 2024 age/sex PDF location within the previously identified catalogue. AreaData adopted only the 18 governorate totals and national row. Kit must independently review age bands, lower units, source-defined codes, 2024 boundary equivalence and reuse terms before its own adoption.",
+      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IRQ",
       "source_id": "IRQ_IRQ_COSIT_CENSUS_2024_ELECTRICITY_PDF",
       "role": "census_results",
       "title": "COSIT Iraq 2024 census electricity household table",
@@ -432,7 +457,7 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "New official COSIT table. Electricity-source counts can overlap; the regular-responding-household denominator differs from the domestic-water table. Kit must audit its own source rows and geography; AreaData has no independent ACCEPT.",
-      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -457,7 +482,7 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "New official COSIT primary water source used at home table. Piped inside dwelling is not a drinking-water or safe-water measure; denominator and categories differ from electricity. Kit must audit independently.",
-      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -482,7 +507,31 @@
       ],
       "license_or_terms": "CC BY 4.0 portal envelope; resource terms review pending",
       "reuse_note": "New AreaData source location: Iraq COSIT 2024 final census summary in the government open-data portal. AreaData checked 18 governorate rows and five numeric columns locally. Kit must independently audit its own acquisition, adjusted versus original population definitions, code/boundary matching and resource-specific terms before adoption.",
-      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "IRQ",
+      "source_id": "IRQ_IRQ_MOP_NATIONAL_DEVELOPMENT_PLAN_2024_2028",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Republic of Iraq National Development Plan 2024-2028",
+      "publisher": "Iraq Ministry of Planning",
+      "url": "https://www.mop.gov.iq/documents/economic-policies/development-plans/National%20Development%20Plan%202024-2028.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national"
+      ],
+      "reference_periods": [
+        "2024-2028"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "New official Ministry of Planning national plan location. AreaData checked cover, May 2024 publication page and one spatial-programme page; approval status and remaining pages are unverified. This is not a governorate plan, budget, actual execution or official evaluation. Kit must independently audit the original and terms.",
+      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
       "artifact_sha256": null
     },
     {
@@ -509,7 +558,7 @@
       ],
       "license_or_terms": "terms_review_required",
       "reuse_note": "New COSIT official 2024 census table catalogue location. Thirty PDFs were listed; seven acquired by AreaData and two household-service tables locally adapted. Kit must independently audit acquisition, every table field, official geography, terms and adoption.",
-      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+      "origin_evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
       "artifact_sha256": null
     },
     {
