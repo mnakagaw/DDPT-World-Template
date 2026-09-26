@@ -52,3 +52,16 @@ Five new Syria leads were selected: two archived copies of **original CBS 2004 c
 | Kit validation | Dry-run and import both accepted 42 leads. `npm run check`, `npm test` (173/173), `npm run verify:kit` (`ready: true`, 42 feedback sources) passed. Both remote branch heads matched `git ls-remote`. |
 
 All five Syria feedback stages remain `official_location_identified`, and Kit's own state remains `not_acquired_by_kit_preflight`. The archive URLs preserve old official content but are not live current CBS endpoints. The SANA report is not an adopted guide and the national citizen budget is not a governorate budget. This transfer does not change Syria's partial/unpublished or the Asia independent-acceptance count.
+
+## UAE FCSC and Abu Dhabi leads — 2026-09-26
+
+Four public leads were selected: the FCSC 2009 report's 2005 census table, SCAD's Abu Dhabi 2023 R1/2024 population page, the FCSC UAE.Stat population explorer and the UAE government's Dubai 2040 plan overview. The [source audit](../../evidence/uae-fcsc-scad-population-source-audit-2026-09-26.md) records that FCSC 2005 and SCAD 2024 differ in period, geographic scope and method. The UAE government's local-government overview remains in the AreaData research record but was **not** exported under `planning_law`: it is not an enacted law.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData selection, importer and evidence | `ce802a37d89ef6c3aef1a18a32b5f3e52f6dedb9` on `codex/asia-domestic-20260926` |
+| AreaData 46-source / eleven-country bundle | `b04a0736df95ffc3d36187cf59b4b8a07b35ae2b`; `origin_commit` = AreaData `ce802a37d89ef6c3aef1a18a32b5f3e52f6dedb9` |
+| Kit import | `7d4eef354a2e7241a0b758bbb77ac072ed53471b` on `codex/asia-source-feedback-20260926`; four inserted, 42 existing origin histories updated, 47 records total |
+| Kit validation | Dry-run/import accepted 46 leads; `npm run check`, `npm test` (173/173) and `npm run verify:kit` (`ready: true`, 46 feedback sources) passed. Both remote heads matched `git ls-remote`. |
+
+The four UAE stages remain `official_location_identified`; Kit marks them `not_acquired_by_kit_preflight`. No observation, raw file, current all-emirate comparability or country `ACCEPT` passes through feedback. The UAE candidate stays partial/unpublished.
