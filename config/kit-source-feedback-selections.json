@@ -922,6 +922,117 @@
           "reuse_note": "Historical national development-plan archive location. It does not establish a current 2025-2030 approved plan, a governorate plan, budget execution or evaluation. Kit must obtain and classify actual current bodies."
         }
       ]
+    },
+    {
+      "path": "generated/georgia-areadata-20260926",
+      "iso3": "GEO",
+      "evidence_path": "docs/evidence/georgia-geostat2024-source-audit-2026-09-26.md",
+      "sources": [
+        {
+          "id": "geo-geostat-census2024-catalog",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["eight thematic catalogue sections; 48 XLSX originals, local geography varies by table"],
+          "formats": ["HTML", "XLSX"],
+          "reuse_note": "AreaData acquired all 48 listed workbooks and mechanically located 85,449 numeric cells, including numeric headers. Only five workbooks were partially adopted; 43 lack semantic field audit. Kit must independently inspect exact originals, geographic universes and terms."
+        },
+        {
+          "id": "geo-geostat-census2024-909-02",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "11 top-level reporting rows", "63 municipalities", "ten Tbilisi internal districts"],
+          "formats": ["XLSX"],
+          "reuse_note": "Final 2024 census population/sex/urban-rural table. AreaData checked nine fields and complete source-row sums. National 3,929,581 excludes occupied territories. Source row identity is not an official code or polygon join; Kit must inspect independently."
+        },
+        {
+          "id": "geo-geostat-census2024-910-02",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "11 top-level reporting rows", "63 municipalities; no Tbilisi district age rows"],
+          "formats": ["XLSX"],
+          "reuse_note": "Five-year age, sex and urban-rural source table. AreaData checked complete age blocks and calculated three broad-age counts; these are not source-published broad bands. District age values remain missing."
+        },
+        {
+          "id": "geo-geostat-census2024-912-01",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "11 top-level reporting rows", "63 municipalities; no Tbilisi district education rows"],
+          "formats": ["XLSX"],
+          "reuse_note": "Education table universe is age 10+. AreaData adopted only three direct counts and checked category/sex totals against the age denominator; no general-population education rate is transferred."
+        },
+        {
+          "id": "geo-geostat-census2024-913-01",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "11 top-level reporting rows", "63 municipalities; no Tbilisi district labour rows"],
+          "formats": ["XLSX"],
+          "reuse_note": "Economic activity table universe is age 15+. AreaData adopted four source counts and calculated unemployment / economically active; that share is not the WDI modelled ILO rate. Kit must check original definitions."
+        },
+        {
+          "id": "geo-geostat-census2024-915-01",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "11 top-level reporting rows", "63 municipalities; no Tbilisi district household rows"],
+          "formats": ["XLSX"],
+          "reuse_note": "Private households and people in private households are separate counts and the latter is a subset of all census residents. AreaData adopted two direct indicators; remaining size/settlement fields need independent Kit assessment."
+        },
+        {
+          "id": "geo-geostat-gis-portal",
+          "role": "boundaries",
+          "authority_type": "official_national",
+          "geographic_levels": ["portal location; 2024-compatible region/municipality/district code and polygon editions unverified"],
+          "formats": ["HTML"],
+          "reuse_note": "Official Geostat GIS portal location only. AreaData acquired no 2024-compatible code edition or polygon and did not join 2015 geoBoundaries shapes."
+        },
+        {
+          "id": "geo-matsne-spatial-code",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national framework; ordinary municipality and special-regulation applicability to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "Spatial-planning code location and initial reading only. Verify operative consolidation and Articles 28/31/35/36, special-regulation exception, plan authority and actual local approval independently."
+        },
+        {
+          "id": "geo-matsne-local-self-government-code",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national municipal governance; exact planning/fiscal duty to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "Official self-government code location only. Municipality powers are not proof of an approved plan, fiscal execution or district planning duty. Check current consolidation."
+        },
+        {
+          "id": "geo-matsne-ordinance260",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["national procedure; municipality and special-area application to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "Official Ordinance 260 location only. Current amendments, operative procedural steps and applicable official form were not adopted in AreaData."
+        },
+        {
+          "id": "geo-matsne-tbilisi-plan2019",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["Tbilisi city land-use plan; district-level applicability unverified"],
+          "formats": ["HTML"],
+          "reuse_note": "Matsne 2019 Tbilisi plan record location only. Current amendments, operative mapped plan body, approval and district application were not adopted."
+        },
+        {
+          "id": "geo-matsne-tbilisi-budget2026-initial",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["Tbilisi initial 2026 fiscal ordinance"],
+          "formats": ["HTML"],
+          "reuse_note": "Initial Tbilisi 2026 budget ordinance location only. Later amendments/current consolidation and execution are unverified; no initial amount is a current adopted budget value."
+        },
+        {
+          "id": "geo-batumi-budget-portal",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_subnational",
+          "geographic_levels": ["Batumi municipality budget catalogue"],
+          "formats": ["HTML"],
+          "reuse_note": "Batumi municipal budget portal location only. Actual ordinance, current period, amendments, line items, implementation and evaluation need Kit's independent inspection."
+        }
+      ]
     }
   ]
 }
