@@ -234,3 +234,16 @@ Seventeen public official locations were selected: the PBS numbered-table catalo
 | Validation | AreaData check 150 modules/templates, 218/218 tests, Pakistan country validation zero errors/warnings, build and nine-case actual output verifier passed. Kit check 52 JS/templates + 67 Markdown, 173/173 tests and readiness (`ready: true`, 177 feedback sources) passed. Kit remote branch head matched `git ls-remote`. |
 
 All seventeen Pakistan feedback stages are `official_location_identified`; Kit stores `not_acquired_by_kit_preflight`. Kit must independently acquire and inspect the source bodies, Table 1 scope, census versus administrative district codes, provincial law editions, local plan/fiscal records and source terms before reuse. Pakistan remains a partial local candidate without independent `ACCEPT` or hosting.
+
+## Afghanistan NSIA 1404 estimate and city-planning leads — 2026-09-27 JST
+
+Six public official locations were selected: NSIA's 1404/2025–26 estimated-population PDF, Kabul Municipality's urban-law, historical annual-plan and city-plan catalogues, MUDH's Herat **city** master-plan handover article, and the Ministry of Finance's national budget catalogue. [The Afghanistan source audit](../../evidence/afghanistan-nsia1404-source-audit-2026-09-27.md) records the 76-table heading/column-family inventory, the three selected Table 4 latest-year population fields, the Table 76 household discrepancies and the NSIA TLS certificate-name mismatch. Feedback transfers no raw PDF, 108 observations, legal effect, polygon/code join, province plan, budget actual or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData importer, evidence, status and six selections | `58759b4c06d97ba2a2bc2ac741195dfe7ca66c01` on `codex/asia-domestic-20260926` |
+| AreaData 183-source / 25-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries the full `58759b4c06d97ba2a2bc2ac741195dfe7ca66c01` as `origin_commit` |
+| Kit feedback import | `9648a4ea8e3839f25d37956d106b2850b89fe12d` on `codex/asia-source-feedback-20260926`; dry-run and import accepted 183 leads, six Afghanistan records inserted, 177 existing origin histories updated, 184 records total. GitHub branch head matches remote. |
+| Validation | AreaData check 151 modules/templates, 218/218 tests, Afghanistan validator zero errors/warnings, build and seven actual-output cases. Kit check 52 JS/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 183 feedback sources). |
+
+All six Afghanistan feedback stages remain `official_location_identified`; Kit stores `not_acquired_by_kit_preflight`. Kit must independently reacquire the NSIA PDF through validated identity, review the unassessed tables and source terms, and resolve current planning authority, actual plan bodies and geography. Afghanistan is still a partial unpublished candidate without independent `ACCEPT`.

@@ -29,3 +29,7 @@ node scripts/serve.mjs --dir generated/afghanistan-areadata-NEW/site --port 4205
 5. Check all 42 applicable scenarios, source-to-screen/export equality, narrow and print layouts, current local-language needs, local practitioners, then independent `ACCEPT` and a separately assigned hosting/public destination.
 
 AreaData's new official source locations are eligible for Kit feedback as `official_location_identified` only. Kit has not independently retrieved or adopted them. Local, GitHub, Hosting and Public status must be recorded separately. The next not-started priority is Nepal; earlier Middle East partial editions remain unfinished.
+
+## GitHub and Kit handoff
+
+AreaData's importer, producer audit and six official-source selections were committed at `58759b4c06d97ba2a2bc2ac741195dfe7ca66c01`. The exported `evidence/KIT_SOURCE_FEEDBACK.json` carries that exact origin commit, 183 leads across 25 countries. Kit accepted the bundle in dry-run and import, then committed/pushed its registry at `9648a4ea8e3839f25d37956d106b2850b89fe12d`; six AFG records remain `official_location_identified` / `not_acquired_by_kit_preflight`. [The Kit handoff register](KIT_FEEDBACK_HANDOFF.md) records both check/test gates. AreaData bundle and this handoff are committed in the following AreaData commit.
