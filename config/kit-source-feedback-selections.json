@@ -1676,6 +1676,37 @@
           "reuse_note": "2026 decision minutes are a source lead only; underlying plan and results remain unverified. The example 3-5-year span is not a universal statutory cycle."
         }
       ]
+    },
+    {
+      "path": "generated/india-areadata-20260927",
+      "iso3": "IND",
+      "evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md",
+      "sources": [
+        {
+          "id": "orgi-pca-2011-national-state-district-subdistrict-town",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["2011 national", "2011 state/UT", "2011 district", "2011 sub-district", "2011 town"],
+          "formats": ["XLSX"],
+          "reuse_note": "Historical 2011 PCA source. AreaData's eight direct count fields are a private partial candidate, not transferable Kit observations. The 77 remaining numeric fields and village/ward products are unassessed. ORGI website policy requires prior permission for reproduction; no publication or current LGD/legal-unit match is implied."
+        },
+        {
+          "id": "orgi-location-code-directory-2011",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["2011 state/UT", "2011 district", "2011 sub-district", "2011 town/village"],
+          "formats": ["XLSX"],
+          "reuse_note": "Historic ORGI keys, not current LGD legal-body IDs. The source has 15 selected composite keys with multiple labels and omits 30 PCA district residuals coded 99999. Reproduction permission and a dated current crosswalk need separate review."
+        },
+        {
+          "id": "mopr-panchayat-plan-booklet-2026-27",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["national Panchayat planning guidance"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "The 88-page 2026-27 guidance was acquired, but internal 2025-26 references remain. It is not an individual approved Panchayat plan, budget, expenditure or evaluation; check state-specific law and current authority separately."
+        }
+      ]
     }
   ],
   "location_sources": [
@@ -1750,6 +1781,46 @@
       "geographic_levels": ["Kajaran community"], "reference_periods": ["2025 implementation report"], "formats": ["PDF"],
       "reuse_note": "The first page and council decision were checked; numerical content is unassessed. A report is not by itself independent target-achievement evaluation or budget execution.",
       "evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "IND", "id": "ind-orgi-2011-village-pca-catalogue", "role": "census_catalog",
+      "title": "ORGI 2011 village Primary Census Abstract workbook catalogue", "publisher": "Office of the Registrar General & Census Commissioner, India",
+      "url": "https://censusindia.gov.in/nada/index.php/catalog/42554", "authority_type": "official_national",
+      "geographic_levels": ["2011 village and lower statistical products"], "reference_periods": ["2011"], "formats": ["HTML catalogue", "XLSX lead"],
+      "reuse_note": "Separate large village PCA workbook was located but not downloaded or field-audited. No village observations or rights to reproduce the source are transferred.",
+      "evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "IND", "id": "ind-current-lgd-catalogue", "role": "administrative_codes",
+      "title": "Local Government Directory data catalogue", "publisher": "Ministry of Panchayati Raj / Open Government Data Platform India",
+      "url": "https://data.gov.in/catalog/local-government-directory-lgd", "authority_type": "official_national",
+      "geographic_levels": ["current state", "district", "sub-district", "Gram/Intermediate/District Panchayat", "urban local body"], "reference_periods": ["current monthly updates; exact file edition unacquired"], "formats": ["HTML", "CSV leads"],
+      "reuse_note": "Official current legal/revenue-code directory location, not a 2011-to-current crosswalk. Exact monthly files, definitions, rights and change history were not acquired; do not name-join to PCA rows.",
+      "evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "IND", "id": "ind-soi-abdb", "role": "boundaries",
+      "title": "Survey of India Administrative Boundary Data Base", "publisher": "Survey of India",
+      "url": "https://surveyofindia.gov.in/pages/administrative-boundary-data-base-abdb-", "authority_type": "official_national",
+      "geographic_levels": ["current state", "district", "sub-district", "village product locations"], "reference_periods": ["current catalogue; exact boundary edition unacquired"], "formats": ["HTML", "RAR/ZIP product leads"],
+      "reuse_note": "Official boundary product location only. No file, dated edition, redistribution right, polygon or 2011 Census code match is transferred; the AreaData candidate intentionally has zero shapes.",
+      "evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "IND", "id": "ind-constitution-article-243zd", "role": "planning_law",
+      "title": "Constitution of India, Article 243ZD District Planning Committee", "publisher": "Legislative Department, Ministry of Law and Justice",
+      "url": "https://www.legislative.gov.in/static/uploads/2025/08/7af1daa22d65f9d04c00ae9b9aa5a799.pdf", "authority_type": "official_national",
+      "geographic_levels": ["district planning institutions; state-law conditions"], "reference_periods": ["current constitutional text; state applicability to verify"], "formats": ["PDF"],
+      "reuse_note": "Article 243ZD concerns district consolidation of Panchayat/Municipality plans and state-law functions. It does not make a 2011 Census district or sub-district an approved plan or uniquely identify a current authority.",
+      "evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md"
+    },
+    {
+      "iso3": "IND", "id": "ind-egramswaraj-system", "role": "plans_budgets_implementation_evaluation",
+      "title": "eGramSwaraj planning, progress and accounting system", "publisher": "Ministry of Panchayati Raj",
+      "url": "https://panchayat.gov.in/en/e-gramswaraj/", "authority_type": "official_national",
+      "geographic_levels": ["current Panchayats; exact local records unacquired"], "reference_periods": ["current portal; individual periods unverified"], "formats": ["HTML system description"],
+      "reuse_note": "MoPR describes distinct planning, physical/financial progress and accounting modules. No individual plan, budget, actual, approval or evaluation is transferred. Live report access and reproduction terms require separate review.",
+      "evidence_path": "docs/evidence/india-areadata-partial-2026-09-27.md"
     }
   ]
 }
