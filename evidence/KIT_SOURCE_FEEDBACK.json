@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T13:08:41.754Z",
-  "origin_commit": "2d9b249e5b9e1422f4fa280928feb45713e21350",
+  "exported_at": "2026-09-26T13:56:49.530Z",
+  "origin_commit": "e150eb27ee907f7b816911ad4ccea9b5cbaf1009",
   "sources": [
     {
       "iso3": "ARE",
@@ -149,6 +149,350 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "New Dubai Municipality executive-summary PDF location. AreaData checked selected pages and attached one Dubai-only plan reference. The preliminary monitoring KPIs and proposed implementation budget are not observed outcomes or expenditure; full plan content, later updates and terms require independent Kit review.",
       "origin_evidence_path": "docs/evidence/uae-official-census-scad-dubai-sources-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_ADMINISTRATIVE_CLASSIFICATION_2024",
+      "role": "administrative_codes",
+      "title": "2024 administrative division classification with eight-digit codes",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/menu/5/classifications/source/Inzibati-1.05.2024.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "country",
+        "administrative districts",
+        "cities"
+      ],
+      "reference_periods": [
+        "2024 classification"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Public official material; cite source; redistribution terms require review",
+      "reuse_note": "Official 2024 eight-digit classification; AreaData checked Baku, Binagadi and Astara district/city codes only. Current code validity, occupied-area scope and legal polygons require independent reconciliation.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_2025_ADMINISTRATIVE_DIVISION",
+      "role": "administrative_codes",
+      "title": "2025 administrative unit counts",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/source/demoqraphy/en/001_16en.xls",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national and administrative unit counts"
+      ],
+      "reference_periods": [
+        "2020–2026 statistical editions"
+      ],
+      "formats": [
+        "XLS"
+      ],
+      "license_or_terms": "Public official material; cite source; redistribution terms require review",
+      "reuse_note": "This file lists administrative unit counts, not population or a verified one-to-one local code crosswalk. AreaData inventoried nine numeric fields without adopting values.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_2019_CENSUS_VOLUME_A",
+      "role": "census_results",
+      "title": "2019 population census Volume A",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/menu/6/statistical_yearbooks/source/Siyahiyaalinma-2019%2C%20Cild%20A.zip",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2019 census publication geography to inspect"
+      ],
+      "reference_periods": [
+        "2019 census"
+      ],
+      "formats": [
+        "ZIP",
+        "PDF"
+      ],
+      "license_or_terms": "Public official material; cite source; redistribution terms require review",
+      "reuse_note": "Official 2019 census Volume A was acquired by AreaData, but its 470-page PDF numeric tables and geographic coverage were not fully audited or adopted. Kit must inspect the edition itself.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_2019_CENSUS_VOLUME_B",
+      "role": "census_results",
+      "title": "2019 population census Volume B",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/menu/6/statistical_yearbooks/source/Siyahiyaalinma-2019%2C%20Cild%20B.zip",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "2019 census publication geography to inspect"
+      ],
+      "reference_periods": [
+        "2019 census"
+      ],
+      "formats": [
+        "ZIP",
+        "PDF"
+      ],
+      "license_or_terms": "Public official material; cite source; redistribution terms require review",
+      "reuse_note": "Official 2019 census Volume B was acquired by AreaData, but its 584-page PDF household/housing tables and geographic coverage were not fully audited or adopted.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_HISTORICAL_CENSUS_POPULATION_BY_AREA",
+      "role": "census_results",
+      "title": "Historical 1979–2019 census population by area",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/source/demoqraphy/en/001_17en.xls",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national and historical local reporting rows"
+      ],
+      "reference_periods": [
+        "1979–2019 historical censuses"
+      ],
+      "formats": [
+        "XLS"
+      ],
+      "license_or_terms": "Public official material; cite source; redistribution terms require review",
+      "reuse_note": "SSC table 1.17 is linked from a current population page, but its five numeric fields are historical 1979-2019 census years. No value adopted; never relabel as a 2026 observation.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_POPULATION_SEX_SETTLEMENT_2026",
+      "role": "machine_readable_data",
+      "title": "2026 population by sex, area and settlement",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/source/demoqraphy/en/001_19en.xls",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "settlement",
+        "city and district rows"
+      ],
+      "reference_periods": [
+        "2020–2026 statistical editions"
+      ],
+      "formats": [
+        "XLS"
+      ],
+      "license_or_terms": "Public official material; cite source; redistribution terms require review",
+      "reuse_note": "AreaData adopted only Astara city row 325, three rounded one-decimal thousand-person fields. Astara city is not Astara district; other rows and geographic matches need independent inspection.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_RESIDENT_AGE_AREA_2026",
+      "role": "machine_readable_data",
+      "title": "2020–2026 population by age and area; 2026 total-population sheet",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/source/demoqraphy/en/001_23en.xls",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "Baku city and 13 statistical economic regions",
+        "86 printed city/district rows"
+      ],
+      "reference_periods": [
+        "2020–2026 statistical editions"
+      ],
+      "formats": [
+        "XLS"
+      ],
+      "license_or_terms": "Public official material; cite source; redistribution terms require review",
+      "reuse_note": "SSC 1 January 2026 resident estimates, not 2019 census counts or WDI midyear estimates. AreaData adopted only 20 both-sex age/count fields from one of 35 sheets. Kit must re-acquire, audit other sheets, and reconcile all current legal codes/boundaries.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_URBAN_PLANNING_CODE",
+      "role": "planning_law",
+      "title": "Urban Planning and Construction Code",
+      "publisher": "Official Azerbaijan source",
+      "url": "https://frameworks.e-qanun.az/24/c_f_24201.html",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national legal framework; local roles to verify"
+      ],
+      "reference_periods": [
+        "edition to verify"
+      ],
+      "formats": [
+        "HTML legal text"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official legal text location only. Current consolidated articles, legal plan actors, approval procedure and amendments need an independent legal review.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_ARXKOM_MASTER_PLAN_CATALOGUE",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "ARXKOM master-plan catalogue",
+      "publisher": "Official Azerbaijan source",
+      "url": "https://arxkom.gov.az/en/sehersalma/bas-planlar",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "city-specific plan links"
+      ],
+      "reference_periods": [
+        "edition to verify"
+      ],
+      "formats": [
+        "HTML",
+        "linked PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official plan catalogue includes drafts as well as approved records. Check each legal decision, territory, period, annex and revision before assigning a planning status.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_ARXKOM_ASTARA_MASTER_PLAN_MAP",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Astara city master-plan drawing",
+      "publisher": "State Committee on Urban Planning and Architecture / Cabinet of Ministers of Azerbaijan",
+      "url": "https://arxkom.gov.az/storage/media/newmedia/2026/03/37464/ab6d00c4-e031-4ec2-8048-1d4633e9d34d.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Astara city proposed plan drawing"
+      ],
+      "reference_periods": [
+        "2025–2039 planning"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Public official material; cite source; redistribution terms require review",
+      "reuse_note": "Published drawing bears a 2022 title date; the one-page Cabinet approval does not alone prove that this file is the current legal annex. Do not treat it as a validated boundary or implementation result.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_ARXKOM_ASTARA_MASTER_PLAN_APPROVAL_2025",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Cabinet decision No. 291 approving Astara city master plan",
+      "publisher": "State Committee on Urban Planning and Architecture / Cabinet of Ministers of Azerbaijan",
+      "url": "https://arxkom.gov.az/storage/uploads/daom/73_minister_file_az_6926b13319ba8.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Astara city only"
+      ],
+      "reference_periods": [
+        "2025–2039 planning"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Public official material; cite source; redistribution terms require review",
+      "reuse_note": "Cabinet decision No. 291 dated 7 October 2025 approves Astara city's plan through 2039. It does not approve a district-wide plan, prove implementation or include the full legal annex.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_ARXKOM_ASTARA_MASTER_PLAN_ANNOUNCEMENT",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "ARXKOM Astara city master-plan announcement",
+      "publisher": "State Committee on Urban Planning and Architecture / Cabinet of Ministers of Azerbaijan",
+      "url": "https://www.arxkom.gov.az/media/xeberler/astara-seherinin-2039-cu-iledek-olan-dovr-ucun-inkisaf-prioritetleri-mueyyen-edildi",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Astara city only"
+      ],
+      "reference_periods": [
+        "2025–2039 planning"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Public official material; cite source; redistribution terms require review",
+      "reuse_note": "Official announcement describes plan proposals and forecasts, not achieved outputs or budget execution. City-specific approval must not be inherited by Astara district.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_POPULATION_METHODOLOGY",
+      "role": "table_catalog",
+      "title": "Population-estimate methodology",
+      "publisher": "Official Azerbaijan source",
+      "url": "https://stat.gov.az/source/demoqraphy/ap/?lang=en",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national estimate methodology"
+      ],
+      "reference_periods": [
+        "edition to verify"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official page explains census base plus births, deaths and permanent migration adjustment. Check current edition and exact 2026 series applicability; it is not another local observation.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "AZE",
+      "source_id": "AZE_AZE_SSC_2025_AREA_POPULATION_DENSITY",
+      "role": "table_catalog",
+      "title": "2025 area, 2019 census and 2026 population/density",
+      "publisher": "State Statistical Committee of the Republic of Azerbaijan",
+      "url": "https://www.stat.gov.az/source/demoqraphy/en/001_15en.xls",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national and reporting areas"
+      ],
+      "reference_periods": [
+        "2020–2026 statistical editions"
+      ],
+      "formats": [
+        "XLS"
+      ],
+      "license_or_terms": "Public official material; cite source; redistribution terms require review",
+      "reuse_note": "Area/density table mixes 2019 census and 2026 estimate contexts. Numerators, denominators, geography and boundary edition need review; AreaData adopted no value.",
+      "origin_evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
       "artifact_sha256": null
     },
     {
