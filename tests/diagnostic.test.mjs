@@ -161,6 +161,16 @@ test('print HTML defines repeated map geometry once while retaining each indicat
   assert.equal((html.match(/data-internal-row=/g)||[]).length,60);
   assert.doesNotMatch(html,/<path d="/);
 });
+test('print maps reuse geometry only when the same boundary features are selected',()=>{
+  const data=analysisFixture(),cache=[],options={interactive:false,printGeometryRegistry:new Map(),printGeometryCache:cache};
+  renderInternalComparison(data,'river','people','2024',options);
+  renderInternalComparison(data,'river','water','2024',options);
+  assert.equal(cache.length,1);
+  const index=data.boundaries.features.findIndex(feature=>feature.properties.territory_id==='city');
+  data.boundaries.features[index]={...data.boundaries.features[index]};
+  renderInternalComparison(data,'river','people','2024',options);
+  assert.equal(cache.length,2);
+});
 test('CSV quoting protects every source text field while negative numeric observations remain numeric',()=>{
   const data=analysisFixture(),area=data.territories.find(row=>row.id==='city');area.name='=HYPERLINK("https://example.org","test")';
   const row=statistic(data,'city');row.value=-4;row.definition=' @SUM(1,2)\nQuoted "evidence"';row.population='\t=population';row.method='-method';
