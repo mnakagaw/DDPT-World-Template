@@ -330,11 +330,14 @@ function selectedComparisonConfig(dataset,state){
     || dataset.analysis?.comparisons?.find(item=>item.member_ids.includes(state.selected)&&matchesLevel(item));
 }
 function comparisonAreas(dataset,state){
+  const suppressed=new Set(dataset.analysis?.incomplete_child_cover_ids || []);
+  const selected=dataset.territories.find(area=>area.id===state.selected);
+  if(suppressed.has(state.selected) || suppressed.has(selected?.parent_id))return [];
   const configured=selectedComparisonConfig(dataset,state);
   if(configured){const members=new Set(configured.member_ids);return dataset.territories.filter(area=>members.has(area.id)&&area.level===state.level);}
   const direct=dataset.territories.filter(area=>area.parent_id===state.selected&&area.level===state.level);
   if(direct.length)return direct;
-  const selected=dataset.territories.find(area=>area.id===state.selected),siblings=selected?.parent_id?dataset.territories.filter(area=>area.parent_id===selected.parent_id&&area.level===state.level):[];
+  const siblings=selected?.parent_id?dataset.territories.filter(area=>area.parent_id===selected.parent_id&&area.level===state.level):[];
   return siblings.length?siblings:dataset.territories.filter(area=>area.level!=='national'&&area.level===state.level);
 }
 export function comparisonCompatibility(dataset, state) {

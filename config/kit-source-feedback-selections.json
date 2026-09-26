@@ -909,6 +909,125 @@
       ]
     },
     {
+      "path": "generated/azerbaijan-areadata-20260926",
+      "iso3": "AZE",
+      "evidence_path": "docs/evidence/azerbaijan-ssc-2026-age-astara-planning-2026-09-26.md",
+      "sources": [
+        {
+          "id": "aze-ssc-resident-age-area-2026",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "Baku city and 13 statistical economic regions", "86 printed city/district rows"],
+          "formats": ["XLS"],
+          "reuse_note": "SSC 1 January 2026 resident estimates, not 2019 census counts or WDI midyear estimates. AreaData adopted only 20 both-sex age/count fields from one of 35 sheets. Kit must re-acquire, audit other sheets, and reconcile all current legal codes/boundaries."
+        },
+        {
+          "id": "aze-ssc-population-sex-settlement-2026",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["settlement", "city and district rows"],
+          "formats": ["XLS"],
+          "reuse_note": "AreaData adopted only Astara city row 325, three rounded one-decimal thousand-person fields. Astara city is not Astara district; other rows and geographic matches need independent inspection."
+        },
+        {
+          "id": "aze-ssc-historical-census-population-by-area",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national and historical local reporting rows"],
+          "formats": ["XLS"],
+          "reuse_note": "SSC table 1.17 is linked from a current population page, but its five numeric fields are historical 1979-2019 census years. No value adopted; never relabel as a 2026 observation."
+        },
+        {
+          "id": "aze-ssc-2025-area-population-density",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national and reporting areas"],
+          "formats": ["XLS"],
+          "reuse_note": "Area/density table mixes 2019 census and 2026 estimate contexts. Numerators, denominators, geography and boundary edition need review; AreaData adopted no value."
+        },
+        {
+          "id": "aze-ssc-2025-administrative-division",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["national and administrative unit counts"],
+          "formats": ["XLS"],
+          "reuse_note": "This file lists administrative unit counts, not population or a verified one-to-one local code crosswalk. AreaData inventoried nine numeric fields without adopting values."
+        },
+        {
+          "id": "aze-ssc-2019-census-volume-a",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["2019 census publication geography to inspect"],
+          "formats": ["ZIP", "PDF"],
+          "reuse_note": "Official 2019 census Volume A was acquired by AreaData, but its 470-page PDF numeric tables and geographic coverage were not fully audited or adopted. Kit must inspect the edition itself."
+        },
+        {
+          "id": "aze-ssc-2019-census-volume-b",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["2019 census publication geography to inspect"],
+          "formats": ["ZIP", "PDF"],
+          "reuse_note": "Official 2019 census Volume B was acquired by AreaData, but its 584-page PDF household/housing tables and geographic coverage were not fully audited or adopted."
+        },
+        {
+          "id": "aze-ssc-administrative-classification-2024",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["country", "administrative districts", "cities"],
+          "formats": ["PDF"],
+          "reuse_note": "Official 2024 eight-digit classification; AreaData checked Baku, Binagadi and Astara district/city codes only. Current code validity, occupied-area scope and legal polygons require independent reconciliation."
+        },
+        {
+          "id": "aze-arxkom-astara-master-plan-approval-2025",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["Astara city only"],
+          "formats": ["PDF"],
+          "reuse_note": "Cabinet decision No. 291 dated 7 October 2025 approves Astara city's plan through 2039. It does not approve a district-wide plan, prove implementation or include the full legal annex."
+        },
+        {
+          "id": "aze-arxkom-astara-master-plan-map",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["Astara city proposed plan drawing"],
+          "formats": ["PDF"],
+          "reuse_note": "Published drawing bears a 2022 title date; the one-page Cabinet approval does not alone prove that this file is the current legal annex. Do not treat it as a validated boundary or implementation result."
+        },
+        {
+          "id": "aze-arxkom-astara-master-plan-announcement",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["Astara city only"],
+          "formats": ["HTML"],
+          "reuse_note": "Official announcement describes plan proposals and forecasts, not achieved outputs or budget execution. City-specific approval must not be inherited by Astara district."
+        },
+        {
+          "id": "aze-ssc-population-methodology",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national estimate methodology"],
+          "formats": ["HTML"],
+          "reuse_note": "Official page explains census base plus births, deaths and permanent migration adjustment. Check current edition and exact 2026 series applicability; it is not another local observation."
+        },
+        {
+          "id": "aze-arxkom-master-plan-catalogue",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["city-specific plan links"],
+          "formats": ["HTML", "linked PDF"],
+          "reuse_note": "Official plan catalogue includes drafts as well as approved records. Check each legal decision, territory, period, annex and revision before assigning a planning status."
+        },
+        {
+          "id": "aze-urban-planning-code",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["national legal framework; local roles to verify"],
+          "formats": ["HTML legal text"],
+          "reuse_note": "Official legal text location only. Current consolidated articles, legal plan actors, approval procedure and amendments need an independent legal review."
+        }
+      ]
+    },
+    {
       "path": "generated/georgia-areadata-20260926",
       "iso3": "GEO",
       "evidence_path": "docs/evidence/georgia-geostat-2024-kutaisi-planning-2026-09-26.md",

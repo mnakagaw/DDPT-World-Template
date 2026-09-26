@@ -57,6 +57,7 @@
 - `city, municipality, municipio, municipalidad, commune, comuna, municipal_district, distrito_municipal, town, town_council, village` は `type` または `level` の完全一致で終了地点とする（大小文字・アクセント・空白/ハイフンを正規化）。
   下位ward等が登録されていても内部比較を停止する。追加国別終了地点は `terminal_territory_ids` に設定する。
   終了地点の比較設定は拒否する。名称の部分一致で市・地区を統合しない。
+- 下位地域へ移動できるが、その下位台帳が親全域を覆わない場合は、任意の `incomplete_child_cover_ids` に親IDを登録する。階層選択は維持し、その親の内部比較を止める。`terminal_territory_ids` や同じ親の明示比較とは併用しない。下位の一部だけを親の全体比較として表示しない。
 
 ## 観測・意味・欠測
 

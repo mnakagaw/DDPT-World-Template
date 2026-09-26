@@ -1,0 +1,728 @@
+﻿file,sheet,column,header_rows_1_to_8,numeric_cells,first_numeric_row,first_numeric_value,last_numeric_row,last_numeric_value,disposition
+2025-area-population-density.xls,1.15.,C,"r3:Territory, thsd. sq. km1) | r5:86.6 | r7:2.1",101,5,86.6,133,1.6,not_adopted_pending_row_and_geography_audit
+2025-area-population-density.xls,1.15.,D,"r3:Population, thsd. person | r4:based on the population census 20192) | r5:9951.4 | r7:2330.4",100,5,9951.4,133,135.5,not_adopted_pending_row_and_geography_audit
+2025-area-population-density.xls,1.15.,E,r4:as of 01.01.2026 | r5:10262.4 | r7:2356.2,101,5,10262.4,133,140.9,not_adopted_pending_row_and_geography_audit
+2025-area-population-density.xls,1.15.,F,"r3:Population density for 01.01.2026 (per 1 sq. km1), person) | r5:118.50346420323326 | r7:1121.9999999999998",101,5,118.50346420323326,133,88.0625,not_adopted_pending_row_and_geography_audit
+2025-administrative-division.xls,1.16.,C,r4:Districts | r5:64 | r7:-,78,5,64,133,1,not_adopted_pending_row_and_geography_audit
+2025-administrative-division.xls,1.16.,D,r4:Urban districts | r5:12 | r7:12,14,5,12,20,1,not_adopted_pending_row_and_geography_audit
+2025-administrative-division.xls,1.16.,E,r4:Cities | r5:79 | r7:1,87,5,79,133,1,not_adopted_pending_row_and_geography_audit
+2025-administrative-division.xls,1.16.,F,r4:Urban adminis-trative districts | r5:68 | r7:-,77,5,68,133,1,not_adopted_pending_row_and_geography_audit
+2025-administrative-division.xls,1.16.,G,r4:Settlements | r5:263 | r7:59,77,5,263,133,2,not_adopted_pending_row_and_geography_audit
+2025-administrative-division.xls,1.16.,H,r4:Settlements administrative districts | r5:191 | r7:48,74,5,191,133,1,not_adopted_pending_row_and_geography_audit
+2025-administrative-division.xls,1.16.,I,r4:Rural settle-ments | r5:4244 | r7:-,83,5,4244,133,48,not_adopted_pending_row_and_geography_audit
+2025-administrative-division.xls,1.16.,J,r4:Rural adminis-trative districts | r5:1724 | r7:-,83,5,1724,133,18,not_adopted_pending_row_and_geography_audit
+2025-administrative-division.xls,1.16.,K,r4:Regional adminis-trative territorail districts | r5:40 | r7:21,25,5,40,129,1,not_adopted_pending_row_and_geography_audit
+2026-resident-population-by-area.xls,1.17.,C,r5:1979 | r7:6026.5,271,5,1979,392,49,not_adopted_pending_row_and_geography_audit
+2026-resident-population-by-area.xls,1.17.,D,r5:1989 | r7:7021.2,273,5,1989,392,60.8,not_adopted_pending_row_and_geography_audit
+2026-resident-population-by-area.xls,1.17.,E,r5:1999 | r7:7953.4,275,5,1999,392,73,not_adopted_pending_row_and_geography_audit
+2026-resident-population-by-area.xls,1.17.,F,r5:2009 | r7:8922.4,281,5,2009,392,81.10000000000001,not_adopted_pending_row_and_geography_audit
+2026-resident-population-by-area.xls,1.17.,G,r5:20191) | r7:9951.4,282,7,9951.4,392,91.5,not_adopted_pending_row_and_geography_audit
+2026-population-sex-settlement.xls,1.19.,C,r5:Total | r7:10262.4,425,7,10262.4,474,0.3,adopted_astara_city_row_325_only_remaining_rows_unassessed
+2026-population-sex-settlement.xls,1.19.,D,r5:including | r6:men | r7:5108.2,425,7,5108.2,474,0.2,adopted_astara_city_row_325_only_remaining_rows_unassessed
+2026-population-sex-settlement.xls,1.19.,E,r6:women | r7:5154.2,425,7,5154.2,474,0.09999999999999998,adopted_astara_city_row_325_only_remaining_rows_unassessed
+2026-population-sex-settlement.xls,1.19.,F,r5:Urban population | r7:5574.2,425,7,5574.2,474,0.3,not_adopted_pending_row_and_geography_audit
+2026-population-sex-settlement.xls,1.19.,G,r5:including | r6:men | r7:2741.2,425,7,2741.2,474,0.2,not_adopted_pending_row_and_geography_audit
+2026-population-sex-settlement.xls,1.19.,H,r6:women | r7:2833,425,7,2833,474,0.09999999999999998,not_adopted_pending_row_and_geography_audit
+2026-population-sex-settlement.xls,1.19.,I,r5:Rural population | r7:4688.2,83,7,4688.2,471,96.2,not_adopted_pending_row_and_geography_audit
+2026-population-sex-settlement.xls,1.19.,J,r5:including | r6:men | r7:2367,83,7,2367,471,48.6,not_adopted_pending_row_and_geography_audit
+2026-population-sex-settlement.xls,1.19.,K,r6:women | r7:2321.2,83,7,2321.2,471,47.6,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),C,r4:Population size - total | r7:9974051,100,7,9974051,135,135811,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),D,r4:i n c l u d i n g b y a g e g r o u p s | r5:0-4 | r7:687123,100,7,687123,135,10323,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),E,r5:5-9 | r7:825498,100,7,825498,135,11648,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),F,r5:10-14 | r7:798674,100,7,798674,135,10882,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),G,r5:15-19 | r7:651263,100,7,651263,135,8494,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),H,r5:20-24 | r7:691988,100,7,691988,135,9561,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),I,r5:25-29 | r7:879753,100,7,879753,135,12494,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),J,r5:30-34 | r7:927905,100,7,927905,135,12397,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),K,r5:35-39 | r7:793239,100,7,793239,135,10269,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),L,r5:40-44 | r7:665878,100,7,665878,135,8705,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),M,r5:45-49 | r7:579198,100,7,579198,135,7526,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),N,r5:50-54 | r7:618204,100,7,618204,135,8424,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),O,r5:55-59 | r7:618210,100,7,618210,135,8538,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),P,r5:60-64 | r7:514924,100,7,514924,135,7312,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),Q,r5:65-69 | r7:316084,100,7,316084,135,4291,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),R,r5:70-74 | r7:177278,100,7,177278,135,2117,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),S,r5:75-79 | r7:78713,100,7,78713,135,835,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),T,r5:80-84 | r7:96354,100,7,96354,135,1226,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),U,r5:85-89 | r7:37975,100,7,37975,135,533,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (Total population),V,r5:90+ | r7:15790,100,7,15790,135,236,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),C,r5:Population size - total | r8:4960642,100,8,4960642,136,67510,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),D,r5:i n c l u d i n g b y a g e g r o u p s | r6:0-4 | r8:365044,100,8,365044,136,5589,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),E,r6:5-9 | r8:440207,100,8,440207,136,6228,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),F,r6:10-14 | r8:426667,100,8,426667,136,5767,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),G,r6:15-19 | r8:347253,100,8,347253,136,4478,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),H,r6:20-24 | r8:348753,100,8,348753,136,4831,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),I,r6:25-29 | r8:426226,100,8,426226,136,6055,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),J,r6:30-34 | r8:453804,100,8,453804,136,6124,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),K,r6:35-39 | r8:393991,100,8,393991,136,5056,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),L,r6:40-44 | r8:334048,100,8,334048,136,4416,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),M,r6:45-49 | r8:283308,100,8,283308,136,3660,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),N,r6:50-54 | r8:294823,100,8,294823,136,4039,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),O,r6:55-59 | r8:291288,100,8,291288,136,4107,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),P,r6:60-64 | r8:239244,100,8,239244,136,3365,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),Q,r6:65-69 | r8:144239,100,8,144239,136,1900,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),R,r6:70-74 | r8:79005,100,8,79005,136,902,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),S,r6:75-79 | r8:33332,100,8,33332,136,296,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),T,r6:80-84 | r8:38724,100,8,38724,136,430,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),U,r6:85-89 | r8:15104,100,8,15104,136,200,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (men),V,r6:90+ | r8:5582,100,8,5582,136,67,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),C,r5:Population size - total | r8:5013409,100,8,5013409,136,68301,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),D,r5:i n c l u d i n g b y a g e g r o u p s | r6:0-4 | r8:322079,100,8,322079,136,4734,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),E,r6:5-9 | r8:385291,100,8,385291,136,5420,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),F,r6:10-14 | r8:372007,100,8,372007,136,5115,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),G,r6:15-19 | r8:304010,100,8,304010,136,4016,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),H,r6:20-24 | r8:343235,100,8,343235,136,4730,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),I,r6:25-29 | r8:453527,100,8,453527,136,6439,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),J,r6:30-34 | r8:474101,100,8,474101,136,6273,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),K,r6:35-39 | r8:399248,100,8,399248,136,5213,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),L,r6:40-44 | r8:331830,100,8,331830,136,4289,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),M,r6:45-49 | r8:295890,100,8,295890,136,3866,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),N,r6:50-54 | r8:323381,100,8,323381,136,4385,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),O,r6:55-59 | r8:326922,100,8,326922,136,4431,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),P,r6:60-64 | r8:275680,100,8,275680,136,3947,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),Q,r6:65-69 | r8:171845,100,8,171845,136,2391,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),R,r6:70-74 | r8:98273,100,8,98273,136,1215,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),S,r6:75-79 | r8:45381,100,8,45381,136,539,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),T,r6:80-84 | r8:57630,100,8,57630,136,796,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),U,r6:85-89 | r8:22871,100,8,22871,136,333,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (women),V,r6:90+ | r8:10208,100,8,10208,136,169,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),C,r5:Population size - total | r8:5476823,100,8,5476823,136,44095,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),D,r5:i n c l u d i n g b y a g e g r o u p s | r6:0-4 | r8:351530,100,8,351530,136,3252,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),E,r6:5-9 | r8:438113,100,8,438113,136,3740,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),F,r6:10-14 | r8:430849,100,8,430849,136,3376,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),G,r6:15-19 | r8:343886,100,8,343886,136,2746,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),H,r6:20-24 | r8:357743,100,8,357743,136,2966,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),I,r6:25-29 | r8:464489,100,8,464489,136,3879,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),J,r6:30-34 | r8:523487,100,8,523487,136,3937,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),K,r6:35-39 | r8:456034,100,8,456034,136,3237,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),L,r6:40-44 | r8:381628,100,8,381628,136,2863,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),M,r6:45-49 | r8:316068,100,8,316068,136,2520,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),N,r6:50-54 | r8:330953,100,8,330953,136,2638,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),O,r6:55-59 | r8:344258,100,8,344258,136,2803,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),P,r6:60-64 | r8:301201,100,8,301201,136,2643,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),Q,r6:65-69 | r8:198810,100,8,198810,136,1609,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),R,r6:70-74 | r8:114124,100,8,114124,136,934,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),S,r6:75-79 | r8:48125,100,8,48125,136,298,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),T,r6:80-84 | r8:50241,100,8,50241,136,411,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),U,r6:85-89 | r8:18075,100,8,18075,136,178,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (urban areas),V,r6:90+ | r8:7209,100,8,7209,136,65,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),C,r5:Population size - total | r8:4497228,82,8,4497228,136,91716,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),D,r5:i n c l u d i n g b y a g e g r o u p s | r6:0-4 | r8:335593,82,8,335593,136,7071,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),E,r6:5-9 | r8:387385,82,8,387385,136,7908,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),F,r6:10-14 | r8:367825,82,8,367825,136,7506,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),G,r6:15-19 | r8:307377,82,8,307377,136,5748,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),H,r6:20-24 | r8:334245,82,8,334245,136,6595,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),I,r6:25-29 | r8:415264,82,8,415264,136,8615,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),J,r6:30-34 | r8:404418,82,8,404418,136,8460,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),K,r6:35-39 | r8:337205,82,8,337205,136,7032,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),L,r6:40-44 | r8:284250,82,8,284250,136,5842,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),M,r6:45-49 | r8:263130,82,8,263130,136,5006,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),N,r6:50-54 | r8:287251,82,8,287251,136,5786,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),O,r6:55-59 | r8:273952,82,8,273952,136,5735,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),P,r6:60-64 | r8:213723,82,8,213723,136,4669,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),Q,r6:65-69 | r8:117274,82,8,117274,136,2682,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),R,r6:70-74 | r8:63154,82,8,63154,136,1183,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),S,r6:75-79 | r8:30588,82,8,30588,136,537,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),T,r6:80-84 | r8:46113,82,8,46113,136,815,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),U,r6:85-89 | r8:19900,82,8,19900,136,355,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2020 (rural areas),V,r6:90+ | r8:8581,82,8,8581,136,171,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),C,r7:Population size - total,100,10,10026076,138,136661,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,662998,138,10101,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),E,r8:5-9,100,10,809905,138,11629,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),F,r8:10-14,100,10,818103,138,11053,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),G,r8:15-19,100,10,673677,138,8867,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),H,r8:20-24,100,10,661068,138,8885,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),I,r8:25-29,100,10,844919,138,12222,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),J,r8:30-34,100,10,936321,138,12452,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),K,r8:35-39,100,10,819698,138,10880,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),L,r8:40-44,100,10,690078,138,8909,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),M,r8:45-49,100,10,582627,138,7573,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),N,r8:50-54,100,10,611093,138,8201,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),O,r8:55-59,100,10,612905,138,8410,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),P,r8:60-64,100,10,540043,138,7640,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),Q,r8:65-69,100,10,342058,138,4764,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),R,r8:70-74,100,10,199697,138,2386,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),S,r8:75-79,100,10,74062,138,804,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),T,r8:80-84,100,10,89963,138,1053,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),U,r8:85-89,100,10,41180,138,594,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (Total population),V,r8:90+,100,10,15681,138,238,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),C,r7:Population size - total,100,10,4986481,138,67947,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,352375,138,5485,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),E,r8:5-9,100,10,431054,138,6211,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),F,r8:10-14,100,10,437152,138,5889,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),G,r8:15-19,100,10,360656,138,4690,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),H,r8:20-24,100,10,336828,138,4537,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),I,r8:25-29,100,10,409573,138,5922,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),J,r8:30-34,100,10,456586,138,6108,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),K,r8:35-39,100,10,405033,138,5363,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),L,r8:40-44,100,10,346553,138,4449,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),M,r8:45-49,100,10,285716,138,3721,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),N,r8:50-54,100,10,292586,138,3959,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),O,r8:55-59,100,10,287554,138,4025,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),P,r8:60-64,100,10,252030,138,3521,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),Q,r8:65-69,100,10,154166,138,2106,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),R,r8:70-74,100,10,89244,138,1034,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),S,r8:75-79,100,10,31240,138,281,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),T,r8:80-84,100,10,36294,138,372,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),U,r8:85-89,100,10,16041,138,207,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (men),V,r8:90+,100,10,5800,138,67,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),C,r7:Population size - total,100,10,5039595,138,68714,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,310623,138,4616,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),E,r8:5-9,100,10,378851,138,5418,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),F,r8:10-14,100,10,380951,138,5164,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),G,r8:15-19,100,10,313021,138,4177,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),H,r8:20-24,100,10,324240,138,4348,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),I,r8:25-29,100,10,435346,138,6300,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),J,r8:30-34,100,10,479735,138,6344,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),K,r8:35-39,100,10,414665,138,5517,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),L,r8:40-44,100,10,343525,138,4460,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),M,r8:45-49,100,10,296911,138,3852,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),N,r8:50-54,100,10,318507,138,4242,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),O,r8:55-59,100,10,325351,138,4385,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),P,r8:60-64,100,10,288013,138,4119,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),Q,r8:65-69,100,10,187892,138,2658,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),R,r8:70-74,100,10,110453,138,1352,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),S,r8:75-79,100,10,42822,138,523,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),T,r8:80-84,100,10,53669,138,681,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),U,r8:85-89,100,10,25139,138,387,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (women),V,r8:90+,100,10,9881,138,171,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),C,r7:Population size - total,100,10,5494392,138,44170,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,332954,138,3039,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),E,r8:5-9,100,10,429676,138,3787,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),F,r8:10-14,100,10,440361,138,3427,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),G,r8:15-19,100,10,357237,138,2852,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),H,r8:20-24,100,10,344502,138,2770,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),I,r8:25-29,100,10,440719,138,3795,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),J,r8:30-34,100,10,522410,138,3910,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),K,r8:35-39,100,10,469856,138,3472,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),L,r8:40-44,100,10,397448,138,2882,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),M,r8:45-49,100,10,319729,138,2518,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),N,r8:50-54,100,10,328000,138,2611,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),O,r8:55-59,100,10,336356,138,2702,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),P,r8:60-64,100,10,311936,138,2682,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),Q,r8:65-69,100,10,211989,138,1778,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),R,r8:70-74,100,10,128513,138,1024,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),S,r8:75-79,100,10,46461,138,305,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),T,r8:80-84,100,10,48920,138,370,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),U,r8:85-89,100,10,19779,138,183,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (urban areas),V,r8:90+,100,10,7546,138,63,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),C,r7:Population size - total,82,10,4531684,138,92491,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,82,10,330044,138,7062,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),E,r8:5-9,82,10,380229,138,7842,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),F,r8:10-14,82,10,377742,138,7626,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),G,r8:15-19,82,10,316440,138,6015,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),H,r8:20-24,82,10,316566,138,6115,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),I,r8:25-29,82,10,404200,138,8427,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),J,r8:30-34,82,10,413911,138,8542,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),K,r8:35-39,82,10,349842,138,7408,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),L,r8:40-44,82,10,292630,138,6027,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),M,r8:45-49,82,10,262898,138,5055,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),N,r8:50-54,82,10,283093,138,5590,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),O,r8:55-59,82,10,276549,138,5708,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),P,r8:60-64,82,10,228107,138,4958,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),Q,r8:65-69,82,10,130069,138,2986,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),R,r8:70-74,82,10,71184,138,1362,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),S,r8:75-79,82,10,27601,138,499,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),T,r8:80-84,82,10,41043,138,683,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),U,r8:85-89,82,10,21401,138,411,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2021 (rural areas),V,r8:90+,82,10,8135,138,175,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),C,r7:Population size - total,100,10,10063309,138,137472,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,637213,138,9924,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),E,r8:5-9,100,10,776988,138,11279,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),F,r8:10-14,100,10,838728,138,11327,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),G,r8:15-19,100,10,698646,138,9343,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),H,r8:20-24,100,10,644457,138,8434,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),I,r8:25-29,100,10,801446,138,11664,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),J,r8:30-34,100,10,941041,138,12621,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),K,r8:35-39,100,10,847523,138,11208,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),L,r8:40-44,100,10,715483,138,9281,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),M,r8:45-49,100,10,587878,138,7582,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),N,r8:50-54,100,10,605044,138,8067,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),O,r8:55-59,100,10,603560,138,8313,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),P,r8:60-64,100,10,562046,138,7798,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),Q,r8:65-69,100,10,364606,138,5215,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),R,r8:70-74,100,10,218459,138,2706,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),S,r8:75-79,100,10,79566,138,903,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),T,r8:80-84,100,10,81469,138,951,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),U,r8:85-89,100,10,42137,138,609,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (Total population),V,r8:90+,100,10,17019,138,247,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),C,r7:Population size - total,100,10,5007154,138,68423,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,339479,138,5398,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),E,r8:5-9,100,10,412759,138,6066,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),F,r8:10-14,100,10,448025,138,6034,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),G,r8:15-19,100,10,374038,138,4919,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),H,r8:20-24,100,10,332866,138,4325,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),I,r8:25-29,100,10,390755,138,5705,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),J,r8:30-34,100,10,456692,138,6162,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),K,r8:35-39,100,10,417817,138,5509,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),L,r8:40-44,100,10,358573,138,4638,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),M,r8:45-49,100,10,289830,138,3732,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),N,r8:50-54,100,10,290589,138,3947,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),O,r8:55-59,100,10,283068,138,3951,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),P,r8:60-64,100,10,261602,138,3577,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),Q,r8:65-69,100,10,163850,138,2344,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),R,r8:70-74,100,10,97828,138,1150,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),S,r8:75-79,100,10,33648,138,352,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),T,r8:80-84,100,10,32912,138,325,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),U,r8:85-89,100,10,16290,138,214,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (men),V,r8:90+,100,10,6533,138,75,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),C,r7:Population size - total,100,10,5056155,138,69049,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,297734,138,4526,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),E,r8:5-9,100,10,364229,138,5213,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),F,r8:10-14,100,10,390703,138,5293,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),G,r8:15-19,100,10,324608,138,4424,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),H,r8:20-24,100,10,311591,138,4109,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),I,r8:25-29,100,10,410691,138,5959,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),J,r8:30-34,100,10,484349,138,6459,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),K,r8:35-39,100,10,429706,138,5699,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),L,r8:40-44,100,10,356910,138,4643,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),M,r8:45-49,100,10,298048,138,3850,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),N,r8:50-54,100,10,314455,138,4120,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),O,r8:55-59,100,10,320492,138,4362,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),P,r8:60-64,100,10,300444,138,4221,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),Q,r8:65-69,100,10,200756,138,2871,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),R,r8:70-74,100,10,120631,138,1556,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),S,r8:75-79,100,10,45918,138,551,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),T,r8:80-84,100,10,48557,138,626,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),U,r8:85-89,100,10,25847,138,395,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (women),V,r8:90+,100,10,10486,138,172,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),C,r7:Population size - total,100,10,5502468,138,44263,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,312553,138,2821,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),E,r8:5-9,100,10,412042,138,3697,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),F,r8:10-14,100,10,450863,138,3552,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),G,r8:15-19,100,10,373515,138,2995,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),H,r8:20-24,100,10,337311,138,2677,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),I,r8:25-29,100,10,413830,138,3599,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),J,r8:30-34,100,10,519480,138,3910,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),K,r8:35-39,100,10,483893,138,3600,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),L,r8:40-44,100,10,414531,138,2940,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),M,r8:45-49,100,10,324243,138,2569,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),N,r8:50-54,100,10,326015,138,2556,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),O,r8:55-59,100,10,326201,138,2676,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),P,r8:60-64,100,10,321099,138,2657,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),Q,r8:65-69,100,10,222465,138,1935,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),R,r8:70-74,100,10,139725,138,1100,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),S,r8:75-79,100,10,50503,138,375,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),T,r8:80-84,100,10,45208,138,356,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),U,r8:85-89,100,10,20629,138,185,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (urban areas),V,r8:90+,100,10,8362,138,63,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),C,r7:Population size - total,82,10,4560841,138,93209,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,82,10,324660,138,7103,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),E,r8:5-9,82,10,364946,138,7582,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),F,r8:10-14,82,10,387865,138,7775,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),G,r8:15-19,82,10,325131,138,6348,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),H,r8:20-24,82,10,307146,138,5757,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),I,r8:25-29,82,10,387616,138,8065,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),J,r8:30-34,82,10,421561,138,8711,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),K,r8:35-39,82,10,363630,138,7608,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),L,r8:40-44,82,10,300952,138,6341,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),M,r8:45-49,82,10,263635,138,5013,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),N,r8:50-54,82,10,279029,138,5511,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),O,r8:55-59,82,10,277359,138,5637,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),P,r8:60-64,82,10,240947,138,5141,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),Q,r8:65-69,82,10,142141,138,3280,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),R,r8:70-74,82,10,78734,138,1606,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),S,r8:75-79,82,10,29063,138,528,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),T,r8:80-84,82,10,36261,138,595,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),U,r8:85-89,82,10,21508,138,424,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2022 (rural areas),V,r8:90+,82,10,8657,138,184,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),C,r7:Population size - total,100,10,10127145,138,138562,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,635723,138,9977,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),E,r8:5-9,100,10,738041,138,10880,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),F,r8:10-14,100,10,843156,138,11436,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),G,r8:15-19,100,10,729204,138,9775,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),H,r8:20-24,100,10,640183,138,8344,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),I,r8:25-29,100,10,759841,138,10939,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),J,r8:30-34,100,10,930621,138,12730,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),K,r8:35-39,100,10,873771,138,11618,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),L,r8:40-44,100,10,742551,138,9519,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),M,r8:45-49,100,10,603208,138,7922,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),N,r8:50-54,100,10,589920,138,7743,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),O,r8:55-59,100,10,600656,138,8206,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),P,r8:60-64,100,10,580769,138,7977,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),Q,r8:65-69,100,10,396707,138,5718,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),R,r8:70-74,100,10,235140,138,3005,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),S,r8:75-79,100,10,95494,138,1108,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),T,r8:80-84,100,10,69165,138,771,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),U,r8:85-89,100,10,45337,138,650,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (Total population),V,r8:90+,100,10,17658,138,244,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),C,r7:Population size - total,100,10,5039629,138,69015,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,338323,138,5425,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),E,r8:5-9,100,10,391904,138,5865,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),F,r8:10-14,100,10,450300,138,6098,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),G,r8:15-19,100,10,390076,138,5150,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),H,r8:20-24,100,10,334257,138,4349,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),I,r8:25-29,100,10,373527,138,5390,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),J,r8:30-34,100,10,450488,138,6139,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),K,r8:35-39,100,10,429263,138,5725,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),L,r8:40-44,100,10,371120,138,4743,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),M,r8:45-49,100,10,298666,138,3935,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),N,r8:50-54,100,10,284441,138,3798,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),O,r8:55-59,100,10,281379,138,3864,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),P,r8:60-64,100,10,269825,138,3671,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),Q,r8:65-69,100,10,178174,138,2569,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),R,r8:70-74,100,10,105050,138,1280,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),S,r8:75-79,100,10,40183,138,440,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),T,r8:80-84,100,10,28086,138,265,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),U,r8:85-89,100,10,17549,138,231,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (men),V,r8:90+,100,10,7018,138,78,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),C,r7:Population size - total,100,10,5087516,138,69547,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,297400,138,4552,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),E,r8:5-9,100,10,346137,138,5015,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),F,r8:10-14,100,10,392856,138,5338,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),G,r8:15-19,100,10,339128,138,4625,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),H,r8:20-24,100,10,305926,138,3995,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),I,r8:25-29,100,10,386314,138,5549,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),J,r8:30-34,100,10,480133,138,6591,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),K,r8:35-39,100,10,444508,138,5893,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),L,r8:40-44,100,10,371431,138,4776,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),M,r8:45-49,100,10,304542,138,3987,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),N,r8:50-54,100,10,305479,138,3945,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),O,r8:55-59,100,10,319277,138,4342,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),P,r8:60-64,100,10,310944,138,4306,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),Q,r8:65-69,100,10,218533,138,3149,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),R,r8:70-74,100,10,130090,138,1725,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),S,r8:75-79,100,10,55311,138,668,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),T,r8:80-84,100,10,41079,138,506,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),U,r8:85-89,100,10,27788,138,419,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (women),V,r8:90+,100,10,10640,138,166,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),C,r7:Population size - total,100,10,5527209,138,44474,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,306910,138,2706,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),E,r8:5-9,100,10,392014,138,3666,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),F,r8:10-14,100,10,450964,138,3577,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),G,r8:15-19,100,10,391547,138,3112,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),H,r8:20-24,100,10,336712,138,2655,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),I,r8:25-29,100,10,389816,138,3339,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),J,r8:30-34,100,10,508250,138,4003,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),K,r8:35-39,100,10,496029,138,3670,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),L,r8:40-44,100,10,430897,138,2996,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),M,r8:45-49,100,10,335731,138,2657,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),N,r8:50-54,100,10,319187,138,2532,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),O,r8:55-59,100,10,320968,138,2583,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),P,r8:60-64,100,10,328593,138,2707,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),Q,r8:65-69,100,10,237358,138,2074,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),R,r8:70-74,100,10,150815,138,1162,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),S,r8:75-79,100,10,60269,138,473,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),T,r8:80-84,100,10,39745,138,290,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),U,r8:85-89,100,10,22535,138,194,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (urban areas),V,r8:90+,100,10,8869,138,78,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),C,r7:Population size - total,82,10,4599936,138,94088,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,82,10,328813,138,7271,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),E,r8:5-9,82,10,346027,138,7214,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),F,r8:10-14,82,10,392192,138,7859,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),G,r8:15-19,82,10,337657,138,6663,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),H,r8:20-24,82,10,303471,138,5689,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),I,r8:25-29,82,10,370025,138,7600,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),J,r8:30-34,82,10,422371,138,8727,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),K,r8:35-39,82,10,377742,138,7948,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),L,r8:40-44,82,10,311654,138,6523,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),M,r8:45-49,82,10,267477,138,5265,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),N,r8:50-54,82,10,270733,138,5211,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),O,r8:55-59,82,10,279688,138,5623,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),P,r8:60-64,82,10,252176,138,5270,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),Q,r8:65-69,82,10,159349,138,3644,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),R,r8:70-74,82,10,84325,138,1843,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),S,r8:75-79,82,10,35225,138,635,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),T,r8:80-84,82,10,29420,138,481,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),U,r8:85-89,82,10,22802,138,456,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2023 (rural areas),V,r8:90+,82,10,8789,138,166,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),C,r7:Population size - total,100,10,10180770,138,139550,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,608761,138,9542,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),E,r8:5-9,100,10,709029,138,10627,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),F,r8:10-14,100,10,843222,138,11600,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),G,r8:15-19,100,10,762211,138,10358,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),H,r8:20-24,100,10,637443,138,8248,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),I,r8:25-29,100,10,721125,138,10176,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),J,r8:30-34,100,10,912775,138,12763,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),K,r8:35-39,100,10,899138,138,11948,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),L,r8:40-44,100,10,769092,138,9916,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),M,r8:45-49,100,10,625393,138,8160,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),N,r8:50-54,100,10,579196,138,7525,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),O,r8:55-59,100,10,597380,138,8138,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),P,r8:60-64,100,10,585792,138,8153,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),Q,r8:65-69,100,10,429440,138,6163,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),R,r8:70-74,100,10,258545,138,3306,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),S,r8:75-79,100,10,115358,138,1386,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),T,r8:80-84,100,10,60180,138,625,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),U,r8:85-89,100,10,47267,138,657,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (Total population),V,r8:90+,100,10,19423,138,259,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),C,r7:Population size - total,100,10,5067206,138,69565,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,323646,138,5189,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),E,r8:5-9,100,10,376455,138,5746,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),F,r8:10-14,100,10,450161,138,6180,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),G,r8:15-19,100,10,407322,138,5449,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),H,r8:20-24,100,10,336235,138,4338,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),I,r8:25-29,100,10,358345,138,5074,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),J,r8:30-34,100,10,441034,138,6123,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),K,r8:35-39,100,10,440137,138,5912,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),L,r8:40-44,100,10,382914,138,4940,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),M,r8:45-49,100,10,311133,138,4035,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),N,r8:50-54,100,10,280696,138,3690,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),O,r8:55-59,100,10,279652,138,3810,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),P,r8:60-64,100,10,271548,138,3813,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),Q,r8:65-69,100,10,192654,138,2768,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),R,r8:70-74,100,10,115123,138,1394,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),S,r8:75-79,100,10,48921,138,565,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),T,r8:80-84,100,10,24568,138,206,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),U,r8:85-89,100,10,18719,138,230,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (men),V,r8:90+,100,10,7943,138,103,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),C,r7:Population size - total,100,10,5113564,138,69985,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,285115,138,4353,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),E,r8:5-9,100,10,332574,138,4881,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),F,r8:10-14,100,10,393061,138,5420,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),G,r8:15-19,100,10,354889,138,4909,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),H,r8:20-24,100,10,301208,138,3910,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),I,r8:25-29,100,10,362780,138,5102,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),J,r8:30-34,100,10,471741,138,6640,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),K,r8:35-39,100,10,459001,138,6036,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),L,r8:40-44,100,10,386178,138,4976,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),M,r8:45-49,100,10,314260,138,4125,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),N,r8:50-54,100,10,298500,138,3835,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),O,r8:55-59,100,10,317728,138,4328,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),P,r8:60-64,100,10,314244,138,4340,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),Q,r8:65-69,100,10,236786,138,3395,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),R,r8:70-74,100,10,143422,138,1912,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),S,r8:75-79,100,10,66437,138,821,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),T,r8:80-84,100,10,35612,138,419,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),U,r8:85-89,100,10,28548,138,427,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (women),V,r8:90+,100,10,11480,138,156,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),C,r7:Population size - total,100,10,5547762,138,44590,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,100,10,293741,138,2559,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),E,r8:5-9,100,10,369769,138,3462,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),F,r8:10-14,100,10,448682,138,3690,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),G,r8:15-19,100,10,411295,138,3216,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),H,r8:20-24,100,10,335132,138,2647,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),I,r8:25-29,100,10,370613,138,3128,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),J,r8:30-34,100,10,491094,138,3938,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),K,r8:35-39,100,10,508434,138,3822,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),L,r8:40-44,100,10,445333,138,3126,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),M,r8:45-49,100,10,352516,138,2692,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),N,r8:50-54,100,10,314209,138,2494,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),O,r8:55-59,100,10,317503,138,2511,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),P,r8:60-64,100,10,329171,138,2721,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),Q,r8:65-69,100,10,251776,138,2234,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),R,r8:70-74,100,10,164781,138,1237,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),S,r8:75-79,100,10,73618,138,602,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),T,r8:80-84,100,10,35661,138,220,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),U,r8:85-89,100,10,24518,138,219,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (urban areas),V,r8:90+,100,10,9916,138,72,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),C,r7:Population size - total,82,10,4633008,138,94960,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,82,10,315020,138,6983,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),E,r8:5-9,82,10,339260,138,7165,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),F,r8:10-14,82,10,394540,138,7910,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),G,r8:15-19,82,10,350916,138,7142,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),H,r8:20-24,82,10,302311,138,5601,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),I,r8:25-29,82,10,350512,138,7048,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),J,r8:30-34,82,10,421681,138,8825,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),K,r8:35-39,82,10,390704,138,8126,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),L,r8:40-44,82,10,323759,138,6790,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),M,r8:45-49,82,10,272877,138,5468,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),N,r8:50-54,82,10,264987,138,5031,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),O,r8:55-59,82,10,279877,138,5627,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),P,r8:60-64,82,10,256621,138,5432,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),Q,r8:65-69,82,10,177664,138,3929,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),R,r8:70-74,82,10,93764,138,2069,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),S,r8:75-79,82,10,41740,138,784,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),T,r8:80-84,82,10,24519,138,405,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),U,r8:85-89,82,10,22749,138,438,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2024 (rural areas),V,r8:90+,82,10,9507,138,187,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),C,r7:Population size - total,101,10,10224889,138,140284,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,101,10,570076,138,8997,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),E,r8:5-9,101,10,685825,138,10301,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),F,r8:10-14,101,10,824762,138,11645,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),G,r8:15-19,101,10,797690,138,10859,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),H,r8:20-24,101,10,649253,138,8448,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),I,r8:25-29,101,10,689171,138,9486,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),J,r8:30-34,101,10,876094,138,12424,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),K,r8:35-39,101,10,923643,138,12323,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),L,r8:40-44,101,10,788048,138,10219,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),M,r8:45-49,101,10,658311,138,8604,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),N,r8:50-54,101,10,567506,138,7329,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),O,r8:55-59,101,10,598055,138,8100,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),P,r8:60-64,101,10,584160,138,8032,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),Q,r8:65-69,101,10,470379,138,6673,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),R,r8:70-74,101,10,274650,138,3684,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),S,r8:75-79,101,10,142994,138,1708,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),T,r8:80-84,101,10,52092,138,526,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),U,r8:85-89,101,10,50756,138,620,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (Total population),V,r8:90+,101,10,21424,138,306,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),C,r7:Population size - total,101,10,5089378,138,69931,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,101,10,302859,138,4868,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),E,r8:5-9,101,10,364197,138,5574,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),F,r8:10-14,101,10,439750,138,6225,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),G,r8:15-19,101,10,426014,138,5744,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),H,r8:20-24,101,10,345555,138,4444,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),I,r8:25-29,101,10,346302,138,4771,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),J,r8:30-34,101,10,423431,138,5997,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),K,r8:35-39,101,10,450703,138,6072,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),L,r8:40-44,101,10,390320,138,5034,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),M,r8:45-49,101,10,328702,138,4337,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),N,r8:50-54,101,10,275316,138,3518,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),O,r8:55-59,101,10,281473,138,3823,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),P,r8:60-64,101,10,269353,138,3762,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),Q,r8:65-69,101,10,212194,138,2991,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),R,r8:70-74,101,10,120983,138,1564,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),S,r8:75-79,101,10,61569,138,692,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),T,r8:80-84,101,10,21162,138,165,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),U,r8:85-89,101,10,20470,138,224,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (men),V,r8:90+,101,10,9025,138,126,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),C,r7:Population size - total,101,10,5135511,138,70353,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,101,10,267217,138,4129,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),E,r8:5-9,101,10,321628,138,4727,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),F,r8:10-14,101,10,385012,138,5420,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),G,r8:15-19,101,10,371676,138,5115,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),H,r8:20-24,101,10,303698,138,4004,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),I,r8:25-29,101,10,342869,138,4715,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),J,r8:30-34,101,10,452663,138,6427,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),K,r8:35-39,101,10,472940,138,6251,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),L,r8:40-44,101,10,397728,138,5185,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),M,r8:45-49,101,10,329609,138,4267,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),N,r8:50-54,101,10,292190,138,3811,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),O,r8:55-59,101,10,316582,138,4277,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),P,r8:60-64,101,10,314807,138,4270,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),Q,r8:65-69,101,10,258185,138,3682,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),R,r8:70-74,101,10,153667,138,2120,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),S,r8:75-79,101,10,81425,138,1016,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),T,r8:80-84,101,10,30930,138,361,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),U,r8:85-89,101,10,30286,138,396,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (women),V,r8:90+,101,10,12399,138,180,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),C,r7:Population size - total,101,10,5562944,138,44668,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,101,10,274877,138,2425,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),E,r8:5-9,101,10,350544,138,3243,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),F,r8:10-14,101,10,437437,138,3732,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),G,r8:15-19,101,10,429912,138,3354,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),H,r8:20-24,101,10,342580,138,2708,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),I,r8:25-29,101,10,356337,138,2920,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),J,r8:30-34,101,10,462138,138,3845,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),K,r8:35-39,101,10,520547,138,3900,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),L,r8:40-44,101,10,452317,138,3206,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),M,r8:45-49,101,10,376449,138,2813,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),N,r8:50-54,101,10,308607,138,2429,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),O,r8:55-59,101,10,318595,138,2516,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),P,r8:60-64,101,10,323371,138,2623,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),Q,r8:65-69,101,10,273673,138,2362,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),R,r8:70-74,101,10,172365,138,1367,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),S,r8:75-79,101,10,92290,138,745,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),T,r8:80-84,101,10,32490,138,181,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),U,r8:85-89,101,10,27240,138,216,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (urban areas),V,r8:90+,101,10,11175,138,83,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),C,r7:Population size - total,83,10,4661945,138,95616,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,83,10,295199,138,6572,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),E,r8:5-9,83,10,335281,138,7058,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),F,r8:10-14,83,10,387325,138,7913,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),G,r8:15-19,83,10,367778,138,7505,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),H,r8:20-24,83,10,306673,138,5740,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),I,r8:25-29,83,10,332834,138,6566,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),J,r8:30-34,83,10,413956,138,8579,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),K,r8:35-39,83,10,403096,138,8423,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),L,r8:40-44,83,10,335731,138,7013,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),M,r8:45-49,83,10,281862,138,5791,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),N,r8:50-54,83,10,258899,138,4900,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),O,r8:55-59,83,10,279460,138,5584,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),P,r8:60-64,83,10,260789,138,5409,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),Q,r8:65-69,83,10,196706,138,4311,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),R,r8:70-74,83,10,102285,138,2317,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),S,r8:75-79,83,10,50704,138,963,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),T,r8:80-84,83,10,19602,138,345,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),U,r8:85-89,83,10,23516,138,404,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2025 (rural areas),V,r8:90+,83,10,10249,138,223,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),C,r7:Population size - total,101,10,10262351,138,140929,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,101,10,539081,138,8630,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),E,r8:5-9,101,10,661681,138,10070,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),F,r8:10-14,101,10,809226,138,11631,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),G,r8:15-19,101,10,817151,138,11028,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),H,r8:20-24,101,10,672227,138,8828,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),I,r8:25-29,101,10,659452,138,8825,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),J,r8:30-34,101,10,842298,138,12146,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),K,r8:35-39,101,10,932414,138,12380,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),L,r8:40-44,101,10,814269,138,10804,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),M,r8:45-49,101,10,682417,138,8818,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),N,r8:50-54,101,10,571658,138,7408,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),O,r8:55-59,101,10,592488,138,7896,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),P,r8:60-64,101,10,581649,138,7938,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),Q,r8:65-69,101,10,496774,138,7028,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),R,r8:70-74,101,10,300944,138,4127,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),S,r8:75-79,101,10,163485,138,1917,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),T,r8:80-84,101,10,52086,138,570,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),U,r8:85-89,101,10,48795,138,543,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (Total population),V,r8:90+,101,10,24256,138,342,adopted_all_101_source_rows_2026_both_sexes
+2020-2026-population-age-by-area.xls,01.01.2026 (men),C,r7:Population size - total,101,10,5108169,138,70242,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,101,10,286238,138,4656,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),E,r8:5-9,101,10,351560,138,5468,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),F,r8:10-14,101,10,430596,138,6216,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),G,r8:15-19,101,10,436512,138,5866,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),H,r8:20-24,101,10,359495,138,4665,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),I,r8:25-29,101,10,335398,138,4497,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),J,r8:30-34,101,10,407636,138,5869,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),K,r8:35-39,101,10,453899,138,6063,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),L,r8:40-44,101,10,401350,138,5327,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),M,r8:45-49,101,10,341221,138,4385,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),N,r8:50-54,101,10,278181,138,3596,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),O,r8:55-59,101,10,280071,138,3756,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),P,r8:60-64,101,10,267210,138,3690,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),Q,r8:65-69,101,10,225340,138,3145,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),R,r8:70-74,101,10,130970,138,1750,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),S,r8:75-79,101,10,70897,138,787,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),T,r8:80-84,101,10,21270,138,183,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),U,r8:85-89,101,10,20059,138,194,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (men),V,r8:90+,101,10,10266,138,129,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),C,r7:Population size - total,101,10,5154182,138,70687,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,101,10,252843,138,3974,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),E,r8:5-9,101,10,310121,138,4602,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),F,r8:10-14,101,10,378630,138,5415,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),G,r8:15-19,101,10,380639,138,5162,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),H,r8:20-24,101,10,312732,138,4163,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),I,r8:25-29,101,10,324054,138,4328,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),J,r8:30-34,101,10,434662,138,6277,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),K,r8:35-39,101,10,478515,138,6317,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),L,r8:40-44,101,10,412919,138,5477,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),M,r8:45-49,101,10,341196,138,4433,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),N,r8:50-54,101,10,293477,138,3812,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),O,r8:55-59,101,10,312417,138,4140,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),P,r8:60-64,101,10,314439,138,4248,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),Q,r8:65-69,101,10,271434,138,3883,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),R,r8:70-74,101,10,169974,138,2377,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),S,r8:75-79,101,10,92588,138,1130,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),T,r8:80-84,101,10,30816,138,387,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),U,r8:85-89,101,10,28736,138,349,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (women),V,r8:90+,101,10,13990,138,213,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),C,r7:Population size - total,101,10,5574150,138,44738,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,101,10,258610,138,2354,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),E,r8:5-9,101,10,332133,138,3023,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),F,r8:10-14,101,10,429075,138,3786,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),G,r8:15-19,101,10,439508,138,3406,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),H,r8:20-24,101,10,356189,138,2809,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),I,r8:25-29,101,10,343593,138,2727,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),J,r8:30-34,101,10,439059,138,3759,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),K,r8:35-39,101,10,519738,138,3871,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),L,r8:40-44,101,10,466064,138,3443,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),M,r8:45-49,101,10,392344,138,2837,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),N,r8:50-54,101,10,312900,138,2437,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),O,r8:55-59,101,10,316631,138,2489,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),P,r8:60-64,101,10,317422,138,2533,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),Q,r8:65-69,101,10,285500,138,2424,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),R,r8:70-74,101,10,186139,138,1529,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),S,r8:75-79,101,10,105710,138,814,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),T,r8:80-84,101,10,33255,138,209,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),U,r8:85-89,101,10,27485,138,190,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (urban areas),V,r8:90+,101,10,12795,138,98,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),C,r7:Population size - total,83,10,4688201,138,96191,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),D,r7:i n c l u d i n g b y a g e g r o u p s | r8:0-4,83,10,280471,138,6276,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),E,r8:5-9,83,10,329548,138,7047,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),F,r8:10-14,83,10,380151,138,7845,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),G,r8:15-19,83,10,377643,138,7622,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),H,r8:20-24,83,10,316038,138,6019,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),I,r8:25-29,83,10,315859,138,6098,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),J,r8:30-34,83,10,403239,138,8387,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),K,r8:35-39,83,10,412676,138,8509,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),L,r8:40-44,83,10,348205,138,7361,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),M,r8:45-49,83,10,290073,138,5981,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),N,r8:50-54,83,10,258758,138,4971,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),O,r8:55-59,83,10,275857,138,5407,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),P,r8:60-64,83,10,264227,138,5405,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),Q,r8:65-69,83,10,211274,138,4604,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),R,r8:70-74,83,10,114805,138,2598,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),S,r8:75-79,83,10,57775,138,1103,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),T,r8:80-84,83,10,18831,138,361,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),U,r8:85-89,83,10,21310,138,353,not_adopted_pending_row_and_geography_audit
+2020-2026-population-age-by-area.xls,01.01.2026 (rural areas),V,r8:90+,83,10,11461,138,244,not_adopted_pending_row_and_geography_audit

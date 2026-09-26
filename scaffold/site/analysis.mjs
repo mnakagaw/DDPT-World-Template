@@ -29,12 +29,13 @@ export function isDescendant(territories,childId,parentId) {
 export function comparisonSet(data,parentId) {
   const areas=list(data?.territories),parent=areas.find(area=>area?.id===parentId);
   const config=list(data?.analysis?.comparisons).find(item=>item?.parent_id===parentId);
+  const incompleteCover=list(data?.analysis?.incomplete_child_cover_ids).includes(parentId);
   const terminal=isTerminalTerritory(data,parent);
   const ids=list(config?.member_ids);
-  const members=!parent || terminal?[]:config?ids.map(id=>areas.find(area=>area?.id===id)).filter(area=>area && isDescendant(areas,area.id,parentId)):areas.filter(area=>area?.parent_id===parentId);
+  const members=!parent || terminal || incompleteCover?[]:config?ids.map(id=>areas.find(area=>area?.id===id)).filter(area=>area && isDescendant(areas,area.id,parentId)):areas.filter(area=>area?.parent_id===parentId);
   return {parent:parent||null,members,label:config?.label || `Internal comparison · ${parent?.name||parentId}`,
-    note:terminal?'Internal comparison stops at this base municipality or explicitly terminal area.':config?.membership_note || 'Direct child areas in the registered geographic hierarchy. Membership is not inferred from names.',
-    terminal,source_ids:list(config?.source_ids),explicit:!!config,color_scale:config?.color_scale || {mode:'within_selection'}};
+    note:terminal?'Internal comparison stops at this base municipality or explicitly terminal area.':incompleteCover?'Registered lower areas do not cover this whole area; select them through the hierarchy, but do not compare them as a complete internal set.':config?.membership_note || 'Direct child areas in the registered geographic hierarchy. Membership is not inferred from names.',
+    terminal,incompleteCover,source_ids:list(config?.source_ids),explicit:!!config,color_scale:config?.color_scale || {mode:'within_selection'}};
 }
 
 // National statistics may populate a matching country, never its local areas.
@@ -160,6 +161,6 @@ export function internalComparison(data,parentId,indicatorId,period) {
     return {area,observation,value,status,period:observation?.period || period,...context,comparable:reasons.every(reason=>!reason),reason:reasons.filter(Boolean).join(' '),boundary,boundary_reason};
   });
   const scale=buildScale(set.color_scale,rows);
-  const reason=!set.parent?'Selected area is unavailable.':set.terminal?set.note:!set.members.length?'No internal comparison areas are configured or collected.':commonReason || (!rows.some(row=>row.comparable)?'No comparable numeric values are available for this exact indicator and period.':'');
+  const reason=!set.parent?'Selected area is unavailable.':set.terminal || set.incompleteCover?set.note:!set.members.length?'No internal comparison areas are configured or collected.':commonReason || (!rows.some(row=>row.comparable)?'No comparable numeric values are available for this exact indicator and period.':'');
   return {set,rows,features:rows.map(row=>row.boundary).filter(Boolean),scale,reason,indicator,period:String(period??'')};
 }

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {validateDataset} from '../lib/validate.mjs';
 import {validateAnalysis} from '../lib/analysis-validation.mjs';
 import {comparisonSet,internalComparison,observationMeaning,observationContext,colorForComparison,NO_COMPARISON_COLOR,isTerminalTerritory} from '../scaffold/site/analysis.mjs';
-import {initialState,selectTerritory,selectHierarchyOption,observationState,routeQuery} from '../scaffold/site/model.mjs';
+import {initialState,selectTerritory,selectHierarchyOption,observationState,routeQuery,hierarchyControls,comparisonRows} from '../scaffold/site/model.mjs';
 import {analysisFixture} from './analysis-fixture.mjs';
 import {fixture} from './fixture.mjs';
 
@@ -66,6 +66,23 @@ test('cities and base municipalities stop comparison even when lower wards exist
   }
   for(const type of ['Municipio','commune','COMUNA','municipal-district'])assert.equal(isTerminalTerritory(data,{id:'sample',type,level:'custom'}),true);
   data.analysis.terminal_territory_ids.push('north');assert.equal(comparisonSet(data,'north').members.length,0);
+});
+test('an incomplete child register remains navigable without presenting its one known child as the parent cover',()=>{
+  const data=analysisFixture();
+  data.analysis.incomplete_child_cover_ids=['north'];
+  assert.deepEqual(validateDataset(data).errors,[]);
+  const parent=initialState(data,'?territory=north&metric=people&period=2024&level=province');
+  const choice=hierarchyControls(data,parent.selected).find(item=>item.parent.id==='north')?.options.find(item=>item.targetId==='river');
+  assert.equal(choice?.value,'area:river');
+  assert.equal(comparisonRows(data,parent).length,0);
+  const internal=internalComparison(data,'north','people','2024');
+  assert.equal(internal.rows.length,0);assert.match(internal.reason,/do not cover this whole area/);
+  const child=selectHierarchyOption(data,parent,'north',choice.value);
+  assert.equal(child.selected,'river');assert.equal(child.metric,'people');assert.equal(child.period,'2024');
+  const back=selectHierarchyOption(data,child,'north','');
+  assert.equal(back.selected,'north');assert.equal(observationState(data,'north','people','2024').value,null);
+  data.analysis.terminal_territory_ids.push('north');
+  assert.match(errors(data),/cannot also be terminal/);
 });
 test('an explicit country-adapter comparison can document a valid level below a municipality',()=>{
   const data=analysisFixture();
