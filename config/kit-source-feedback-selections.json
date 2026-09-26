@@ -614,6 +614,69 @@
           "reuse_note": "Official Mavat procedural guidance location only. AreaData did not adopt a current mandatory local format or an approved plan from it. Kit must inspect content, applicability and edition independently."
         }
       ]
+    },
+    {
+      "path": "generated/lebanon-areadata-20260926",
+      "iso3": "LBN",
+      "evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+      "sources": [
+        {
+          "id": "lbn-cas-lfhlcs2018-report-table-1-1",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "eight survey governorates", "26 survey caza"],
+          "formats": ["PDF"],
+          "reuse_note": "CAS 2018-19 LFHLCS main survey report. AreaData adopted only Table 1.1 rounded population and household estimates for mid-2018 residential-dwelling residents; this is not a census or an all-resident count. Kit must independently audit other tables, coverage, geography and reuse terms."
+        },
+        {
+          "id": "lbn-cas-lfhlcs2018-demography-hl5",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "eight survey governorates", "26 survey caza"],
+          "formats": ["XLS"],
+          "reuse_note": "CAS LFHLCS Demography workbook has 26 sheets. AreaData adopted women and men from HL.5 only, converting source thousand-person units and rounding to hundreds. Other sheets and most fields are unassessed; no official local code or polygon was matched."
+        },
+        {
+          "id": "lbn-cas-mics2023-equitable-chance-ch11",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["five sampled governorates", "separate displaced/refugee domains"],
+          "formats": ["XLSX"],
+          "reuse_note": "CAS Sub-National MICS 2023 Chapter 11 workbook. AreaData inventoried 14 sheets but adopted zero fields. Five sampled governorates and separate displaced/refugee domains do not supply a nationwide estimate; Kit must inspect methods, domains, denominators and terms independently."
+        },
+        {
+          "id": "lbn-cas-district-profiles-2018-19",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["district profile locations; completeness to verify"],
+          "formats": ["HTML", "PDF links"],
+          "reuse_note": "Official CAS district profile catalogue only. AreaData did not acquire or inspect the individual district profile bodies, field universes, dates or completeness. Do not treat the profile listing as adopted local statistics."
+        },
+        {
+          "id": "lbn-dgu-zoning-procedure",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["town/municipal zoning process; applicability to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "DGU procedural location only. Current legal duty, actual selected-area plan body, approval, budget, implementation and evaluation were not verified by AreaData."
+        },
+        {
+          "id": "lbn-mopw-dgu-office",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["national office description; local responsibilities to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "Ministry DGU responsibility page is an institutional lead only. It does not establish a current mandatory local planning unit, approved local plan or fiscal evidence."
+        },
+        {
+          "id": "lbn-dgu-national-masterplan-overview",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["national master-plan overview; local application to verify"],
+          "formats": ["HTML"],
+          "reuse_note": "Official DGU overview mentions a 2009/2366 decree. AreaData did not acquire the plan body or current legal status and did not verify selected-area plans, finance, implementation or evaluation. Kit must inspect independently."
+        }
+      ]
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T09:58:18.924Z",
-  "origin_commit": "732648d4dc766dd237e811a4ece0449b53310b44",
+  "exported_at": "2026-09-26T10:26:34.896Z",
+  "origin_commit": "dd6b31fce9fff097aca98a01c7b1008ba3a3fccc",
   "sources": [
     {
       "iso3": "ARE",
@@ -1284,6 +1284,180 @@
       "license_or_terms": "https://data.humdata.org/about/license",
       "reuse_note": "Reused from the Kit Lao project, not newly discovered by AreaData. UNFPA/LSB 2024 population statistics distributed via HDX are not 2024 census counts; recheck definitions, geography and redistribution terms.",
       "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_CAS_MICS2023_EQUITABLE_CHANCE_CH11",
+      "role": "machine_readable_data",
+      "title": "CAS Sub-National MICS 2023 Chapter 11",
+      "publisher": "Lebanon Central Administration of Statistics",
+      "url": "https://www.cas.gov.lb/wp-content/uploads/2025/05/MICS6-Ch11-EQ-Equitable-chance-in-life-LB_EN.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "five sampled governorates",
+        "separate displaced/refugee domains"
+      ],
+      "reference_periods": [
+        "2023 limited-area MICS"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "CAS Sub-National MICS 2023 Chapter 11 workbook. AreaData inventoried 14 sheets but adopted zero fields. Five sampled governorates and separate displaced/refugee domains do not supply a nationwide estimate; Kit must inspect methods, domains, denominators and terms independently.",
+      "origin_evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_CAS_LFHLCS2018_DEMOGRAPHY_HL5",
+      "role": "machine_readable_data",
+      "title": "CAS LFHLCS 2018-19 demography workbook HL.5",
+      "publisher": "Lebanon Central Administration of Statistics",
+      "url": "https://www.cas.gov.lb/wp-content/uploads/2026/06/LFHLCS_2018_2019_Demography.xls",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "eight survey governorates",
+        "26 survey caza"
+      ],
+      "reference_periods": [
+        "mid-2018 survey population"
+      ],
+      "formats": [
+        "XLS"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "CAS LFHLCS Demography workbook has 26 sheets. AreaData adopted women and men from HL.5 only, converting source thousand-person units and rounding to hundreds. Other sheets and most fields are unassessed; no official local code or polygon was matched.",
+      "origin_evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_MOPW_DGU_OFFICE",
+      "role": "planning_guidance",
+      "title": "Ministry of Public Works and Transport DGU responsibilities",
+      "publisher": "Lebanon Ministry of Public Works and Transport",
+      "url": "https://mopw.gov.lb/%D8%A7%D9%84%D9%88%D8%AD%D8%AF%D8%A7%D8%AA-%D8%A7%D9%84%D8%A7%D8%AF%D8%A7%D8%B1%D9%8A%D8%A9-%281%29/%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9-%D9%84%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85-%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national office description; local responsibilities to verify"
+      ],
+      "reference_periods": [
+        "page checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Ministry DGU responsibility page is an institutional lead only. It does not establish a current mandatory local planning unit, approved local plan or fiscal evidence.",
+      "origin_evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_DGU_ZONING_PROCEDURE",
+      "role": "planning_guidance",
+      "title": "DGU zoning-plan submission and decision procedure",
+      "publisher": "Lebanon Directorate General for Urban Planning",
+      "url": "https://www.dgu.gov.lb/dgup_30.html",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "town/municipal zoning process; applicability to verify"
+      ],
+      "reference_periods": [
+        "page checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "DGU procedural location only. Current legal duty, actual selected-area plan body, approval, budget, implementation and evaluation were not verified by AreaData.",
+      "origin_evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_DGU_NATIONAL_MASTERPLAN_OVERVIEW",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "DGU national physical master-plan overview",
+      "publisher": "Lebanon Directorate General for Urban Planning",
+      "url": "https://dgu.gov.lb/MasterPlan.html",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national master-plan overview; local application to verify"
+      ],
+      "reference_periods": [
+        "page checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official DGU overview mentions a 2009/2366 decree. AreaData did not acquire the plan body or current legal status and did not verify selected-area plans, finance, implementation or evaluation. Kit must inspect independently.",
+      "origin_evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_CAS_DISTRICT_PROFILES_2018_19",
+      "role": "table_catalog",
+      "title": "CAS district statistical profiles 2018-19 catalogue",
+      "publisher": "Lebanon Central Administration of Statistics",
+      "url": "https://www.cas.gov.lb/Publications/district-statistical-profiles-2018-2019-%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D9%82%D8%B6%D9%8A%D8%A9-2018-2019/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "district profile locations; completeness to verify"
+      ],
+      "reference_periods": [
+        "2018-19 catalogue, checked 2026-09-26"
+      ],
+      "formats": [
+        "HTML",
+        "PDF links"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "Official CAS district profile catalogue only. AreaData did not acquire or inspect the individual district profile bodies, field universes, dates or completeness. Do not treat the profile listing as adopted local statistics.",
+      "origin_evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "LBN",
+      "source_id": "LBN_LBN_CAS_LFHLCS2018_REPORT_TABLE_1_1",
+      "role": "table_catalog",
+      "title": "CAS LFHLCS 2018-19 main report Table 1.1",
+      "publisher": "Lebanon Central Administration of Statistics",
+      "url": "https://www.cas.gov.lb/wp-content/uploads/2025/07/Labour-Force-and-Household-Living-Conditions-Survey-2018-2019.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "eight survey governorates",
+        "26 survey caza"
+      ],
+      "reference_periods": [
+        "mid-2018 survey population"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "terms_review_required",
+      "reuse_note": "CAS 2018-19 LFHLCS main survey report. AreaData adopted only Table 1.1 rounded population and household estimates for mid-2018 residential-dwelling residents; this is not a census or an all-resident count. Kit must independently audit other tables, coverage, geography and reuse terms.",
+      "origin_evidence_path": "docs/evidence/lebanon-cas-lfhlcs-source-audit-2026-09-26.md",
       "artifact_sha256": null
     },
     {
