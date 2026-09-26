@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T14:33:53.907Z",
-  "origin_commit": "0c157b289154e3bc115698b07bf90198d730a11b",
+  "exported_at": "2026-09-26T15:30:22.652Z",
+  "origin_commit": "6fbe93a6e7c2b240d0f69c63f3e4eb8dbc472836",
   "sources": [
     {
       "iso3": "ARE",
@@ -914,6 +914,227 @@
       "license_or_terms": null,
       "reuse_note": "Reused from the Kit Bangladesh project, not newly discovered by AreaData. Verify each district workbook and local geography independently; AreaData audit and source-terms review are pending.",
       "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_IGA_CENSUS2020_CATALOG",
+      "role": "census_catalog",
+      "title": "Bahrain Open Data Census 2020 dataset catalogue",
+      "publisher": "Information & eGovernment Authority",
+      "url": "https://www.data.gov.bh/api/explore/v2.1/catalog/datasets?limit=100&refine=theme%3ACensus",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "governorate in 20 of 45 datasets"
+      ],
+      "reference_periods": [
+        "2020 Census theme; checked 2026-09-27"
+      ],
+      "formats": [
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "Bahrain Open Data Portal FAQ permits free reuse; attribute the source",
+      "reuse_note": "Official Census-theme API catalogue of 45 datasets, not a completed semantic audit. AreaData mechanically inventoried every numeric field but adopted selected cells only; Kit must reacquire, review definitions and source terms.",
+      "origin_evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_IGA_CENSUS2020_POP",
+      "role": "census_results",
+      "title": "Population by Governorate, Nationality and Sex - Census 2020",
+      "publisher": "Information & eGovernment Authority",
+      "url": "https://www.data.gov.bh/explore/dataset/population-by-governorate-nationality-and-sex-census-2020/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "four post-2014 named governorates"
+      ],
+      "reference_periods": [
+        "2020 administrative-record census"
+      ],
+      "formats": [
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "Bahrain Open Data Portal FAQ permits free reuse; attribute the source",
+      "reuse_note": "2020 administrative-record census population by governorate, nationality and sex. AreaData adopted 16 subgroup cells only after cross-table checks; official code and polygon edition are not joined. Do not merge with annual June or WDI population.",
+      "origin_evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_IGA_AREA_GOVERNORATE_2024",
+      "role": "machine_readable_data",
+      "title": "iGA area by governorate",
+      "publisher": "Information & eGovernment Authority",
+      "url": "https://www.data.gov.bh/explore/dataset/02-area-by-governorate-2023/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "four named governorates"
+      ],
+      "reference_periods": [
+        "2024 selected; 2007-2023 historical rows unadopted"
+      ],
+      "formats": [
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "Bahrain Open Data Portal FAQ permits free reuse; attribute the source",
+      "reuse_note": "2024 reported km2 values from a 2007-2024 area series. The source describes 2014 redivision from five to four governorates. Values do not provide a matched official polygon or census-density denominator.",
+      "origin_evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_IGA_POP_GOVERNORATE_ANNUAL",
+      "role": "machine_readable_data",
+      "title": "iGA population by governorate, nationality and sex",
+      "publisher": "Information & eGovernment Authority",
+      "url": "https://www.data.gov.bh/explore/dataset/02-population-by-governorate-nationality-sex/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "four named governorates"
+      ],
+      "reference_periods": [
+        "June 2020-2025 selected; other months/years unadopted"
+      ],
+      "formats": [
+        "JSON",
+        "HTML"
+      ],
+      "license_or_terms": "Bahrain Open Data Portal FAQ permits free reuse; attribute the source",
+      "reuse_note": "Annual portal population by June/December date, nationality and sex; AreaData selected complete June 2020-2025 cells. Metadata does not state statistical method. Distinct from the 2020 census and WDI.",
+      "origin_evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_UPDA_PROCEDURES_MANUAL_2023",
+      "role": "planning_guidance",
+      "title": "UPDA Unified Planning Procedures Manual, June 2023",
+      "publisher": "Urban Planning and Development Authority",
+      "url": "https://planning.bh/pdf/uppm/Urban%20Planning%20and%20Development%20Authority%20Procedures%20Manual_English%202023.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national procedures; competent municipalities"
+      ],
+      "reference_periods": [
+        "June 2023; 83 pages"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "UPDA 83-page June 2023 procedures manual acquired by AreaData. Pages 5 and 9-10 separate authority and municipal roles. Not a governorate development plan; verify later revisions and legal effect.",
+      "origin_evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_LLOC_URBAN_PLANNING_1994",
+      "role": "planning_law",
+      "title": "Legislative Decree No. 2 of 1994 on Urban Planning",
+      "publisher": "Legislation and Legal Opinion Commission",
+      "url": "https://www.lloc.gov.bh/Legislation/HTM/L0294",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national planning framework"
+      ],
+      "reference_periods": [
+        "national law; later amendments exist"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Original urban-planning law; 2022 amendment and 2023 zoning regulation are separate leads. Kit must verify operative consolidated text and actual municipality/UPDA roles; law is not an approved governorate plan.",
+      "origin_evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_LLOC_URBAN_PLANNING_AMENDMENT_2022",
+      "role": "planning_law",
+      "title": "Legislative Decree No. 32 of 2022, planning amendments",
+      "publisher": "Legislation and Legal Opinion Commission",
+      "url": "https://www.lloc.gov.bh/Legislation/HTM/L3222",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national planning framework"
+      ],
+      "reference_periods": [
+        "2022 amendment"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "2022 legislative amendment location. Check current consolidated application alongside original law and later regulations before inferring planning duties or plan status.",
+      "origin_evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_LLOC_ZONING_DECISION_93_2023",
+      "role": "planning_law",
+      "title": "Decision No. 93 of 2023, zoning regulations",
+      "publisher": "Legislation and Legal Opinion Commission",
+      "url": "https://www.lloc.gov.bh/Legislation/HTM/RCAB9323",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national zoning framework"
+      ],
+      "reference_periods": [
+        "2023 regulation"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "2023 zoning decision location; do not infer current Capital map edition or governorate-specific approved plan from national regulation alone.",
+      "origin_evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BHR",
+      "source_id": "BHR_BHR_CAPITAL_ZONES_DECISION_15_2017",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Capital Governorate zoning-map decision and maps, No. 15 of 2017",
+      "publisher": "Urban Planning and Development Authority / Official Gazette",
+      "url": "https://planning.bh/pdf/Rules%20and%20Regulations/Zoning%20and%20Construction%20Regulations/Capital%20Zones%20Maps%20-%20%D8%AE%D8%B1%D8%A7%D8%A6%D8%B7%20%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "Capital Governorate historical zoning map"
+      ],
+      "reference_periods": [
+        "2017 approval; current map applicability unverified"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Six-page Official Gazette Decision 15/2017 and maps establish a historical Capital zoning approval, not current applicability, a complete governorate development plan or fiscal execution. Later map revisions and 2020 boundary match are unverified.",
+      "origin_evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
