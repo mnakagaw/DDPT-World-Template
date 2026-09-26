@@ -127,7 +127,7 @@ function periodControl(id='period-select') {
   const allPeriods=page==='thematic'?[]:periodsFor(dataset);
   const options = page==='thematic'?[...thematicPeriods]:allPeriods.length?['latest-available',...allPeriods]:[];
   if (state.period && !options.includes(state.period)) options.unshift(state.period);
-  return `<label class="field" for="${id}"><span>Source period</span><select id="${id}" data-control="period">${options.length?options.map(period=>`<option value="${e(period)}" ${period===state.period?'selected':''}>${period==='latest-available'?e(localCopy('Latest year for each indicator','Último año de cada indicador','指標ごとの最新年')):e(period)}${page==='thematic'&&!thematicPeriods.includes(period)?' · no observation for this indicator':''}</option>`).join(''):'<option value="">No periods acquired</option>'}</select></label>`;
+  return `<label class="field" for="${id}"><span>Source period</span><select id="${id}" data-control="period">${options.length?options.map(period=>`<option value="${e(period)}" ${period===state.period?'selected':''}>${period==='latest-available'?e(localCopy('Latest year for each indicator','Último año de cada indicador','指標ごとの最新年')):e(period)}${page==='thematic'&&period!=='latest-available'&&!thematicPeriods.includes(period)?' · no observation for this indicator':''}</option>`).join(''):'<option value="">No periods acquired</option>'}</select></label>`;
 }
 function indicatorControl() {
   const indicators=indicatorsForTerritorialScope(dataset,state.selected),themes=[...new Set(indicators.map(indicator=>indicator.theme || 'Other'))];

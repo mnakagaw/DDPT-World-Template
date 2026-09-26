@@ -80,4 +80,11 @@ test('territorial and planning years cover their multi-indicator evidence while 
   const thematicYears=periodOptions(thematic.app.innerHTML,'period-select');
   assert.match(thematicYears,/value="2022"/);
   assert.doesNotMatch(thematicYears,/value="2024"|value="2025"|value="2026-01-01"/);
+
+  const thematicLatest=await renderPage(data,'thematic','?territory=TST-A&metric=people&period=latest-available');
+  const thematicLatestYears=periodOptions(thematicLatest.app.innerHTML,'period-select');
+  assert.match(thematicLatestYears,/<option value="latest-available" selected>Latest year for each indicator<\/option>/);
+  assert.match(thematicLatestYears,/value="2022"/);
+  assert.doesNotMatch(thematicLatestYears,/Latest year for each indicator · no observation for this indicator/);
+  assert.match(thematicLatest.app.innerHTML,/<span>National value<\/span><strong>100<\/strong><small>Test country · 2022/);
 });
