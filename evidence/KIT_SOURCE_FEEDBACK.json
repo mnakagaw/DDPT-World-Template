@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T19:12:44.615Z",
-  "origin_commit": "e1bf0878e06c01fb93f72f9cb977002c48d4fa43",
+  "exported_at": "2026-09-26T19:39:32.783Z",
+  "origin_commit": "03d132a2c03e25ffad10aa984a30faf41fe72105",
   "sources": [
     {
       "iso3": "ARE",
@@ -451,6 +451,136 @@
       ],
       "license_or_terms": "official_publication_terms_review_required",
       "reuse_note": "Council Decision 460-A approves the 2026 annual program; planned actions are not achieved results. The 34-page annex is acquired but targets need semantic review.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARMSTAT_MARZ_STATE_SCHOOLS_2025",
+      "role": "table_catalog",
+      "title": "Number of state general schools by indicators, marzes and years",
+      "publisher": "Statistical Committee of Armenia",
+      "url": "https://statbank.armstat.am/pxweb/en/ArmStatBank/ArmStatBank__2%20Population%20and%20social%20processes__22%20Education__222%20General%20education%20institutions/ps-ed-gei01.px/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "Yerevan",
+        "ten marzes"
+      ],
+      "reference_periods": [
+        "2025"
+      ],
+      "formats": [
+        "PxWeb HTML"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "ArmstatBank education table location. AreaData inspected only the 2025 state general schools slice; other indicators and years remain unassessed. Source rows lack official geography codes and dated boundary edition. Kit must reacquire and audit independently.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARMSTAT_MARZ_HOSPITALS_2025",
+      "role": "table_catalog",
+      "title": "Health system data by indicators, marzes and years",
+      "publisher": "Statistical Committee of Armenia",
+      "url": "https://statbank.armstat.am/pxweb/en/ArmStatBank/ArmStatBank__2%20Population%20and%20social%20processes__24%20Social%20issues__2401-si-hms/ps-si-hms33.px/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "Yerevan",
+        "ten marzes"
+      ],
+      "reference_periods": [
+        "2025"
+      ],
+      "formats": [
+        "PxWeb HTML"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "ArmstatBank health-system table location. AreaData inspected only the 2025 hospital-count slice; facility scope and other axes require independent audit. Source rows lack official codes and dated boundary edition; no values are transferred.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARMSTAT_MARZ_POVERTY_2024",
+      "role": "table_catalog",
+      "title": "Poverty Level1 by years, marzes and indicators",
+      "publisher": "Statistical Committee of Armenia",
+      "url": "https://statbank.armstat.am/pxweb/en/ArmStatBank/ArmStatBank__2%20Population%20and%20social%20processes__25%20Households/PS-hh-11-2022.px/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "Yerevan",
+        "ten marzes"
+      ],
+      "reference_periods": [
+        "2024"
+      ],
+      "formats": [
+        "PxWeb HTML"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "ArmstatBank ILCS poverty table location. The 2024 rate is a survey percentage, not an additive count. The table warns that recalibrated 2024 weights make it incomparable with 2022–2023; survey uncertainty and source geography require independent audit.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARMSTAT_MARZ_CONSUMER_WATER_2024",
+      "role": "table_catalog",
+      "title": "Water supply system by indicators, marzes and years",
+      "publisher": "Statistical Committee of Armenia",
+      "url": "https://statbank.armstat.am/pxweb/en/ArmStatBank/ArmStatBank__2%20Population%20and%20social%20processes__26%20Housing__263%20Jrmux/PS-hs-ws02.px/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "Yerevan",
+        "ten marzes"
+      ],
+      "reference_periods": [
+        "2024"
+      ],
+      "formats": [
+        "PxWeb HTML"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "ArmstatBank 2024 water-delivered-volume table location, in thousand cubic metres; it is not a household drinking-water-access rate. Other axes, service scope and geography edition need independent review.",
+      "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "ARM",
+      "source_id": "ARM_ARMSTAT_MARZ_STREET_LENGTH_2024",
+      "role": "table_catalog",
+      "title": "The total length of streets and crossings by indicators, marzes and years",
+      "publisher": "Statistical Committee of Armenia",
+      "url": "https://statbank.armstat.am/pxweb/en/ArmStatBank/ArmStatBank__2%20Population%20and%20social%20processes__26%20Housing__267%20Barekargvacutyun/PS-hs-ire03.px/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-26",
+      "geographic_levels": [
+        "national",
+        "Yerevan",
+        "ten marzes"
+      ],
+      "reference_periods": [
+        "2024"
+      ],
+      "formats": [
+        "PxWeb HTML"
+      ],
+      "license_or_terms": "official_publication_terms_review_required",
+      "reuse_note": "ArmstatBank 2024 length of streets and crossings in its urban road-economy category; not a measure of all roads or rural access. Other axes and source geography edition require independent audit.",
       "origin_evidence_path": "docs/evidence/armenia-areadata-partial-2026-09-27.md",
       "artifact_sha256": null
     },
