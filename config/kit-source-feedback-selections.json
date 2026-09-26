@@ -219,9 +219,9 @@
       ]
     },
     {
-      "path": "generated/iraq-areadata-20260926-r2",
+      "path": "generated/iraq-areadata-20260926-r5",
       "iso3": "IRQ",
-      "evidence_path": "docs/evidence/iraq-cosit-2024-household-source-location-2026-09-26.md",
+      "evidence_path": "docs/evidence/iraq-cosit-2024-age-sex-national-plan-2026-09-26.md",
       "sources": [
         {
           "id": "irq-cosit-census-2024-final-governorates",
@@ -259,11 +259,27 @@
           "geographic_levels": ["national", "governorate"],
           "formats": ["PDF"],
           "reuse_note": "New official COSIT primary water source used at home table. Piped inside dwelling is not a drinking-water or safe-water measure; denominator and categories differ from electricity. Kit must audit independently."
+        },
+        {
+          "id": "irq-cosit-census-2024-age-sex-urban-rural-pdf",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["national", "governorate totals; lower units remain unreviewed"],
+          "formats": ["PDF"],
+          "reuse_note": "New specific COSIT 2024 age/sex PDF location within the previously identified catalogue. AreaData adopted only the 18 governorate totals and national row. Kit must independently review age bands, lower units, source-defined codes, 2024 boundary equivalence and reuse terms before its own adoption."
+        },
+        {
+          "id": "irq-mop-national-development-plan-2024-2028",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_national",
+          "geographic_levels": ["national"],
+          "formats": ["PDF"],
+          "reuse_note": "New official Ministry of Planning national plan location. AreaData checked cover, May 2024 publication page and one spatial-programme page; approval status and remaining pages are unverified. This is not a governorate plan, budget, actual execution or official evaluation. Kit must independently audit the original and terms."
         }
       ]
     },
     {
-      "path": "generated/yemen-areadata-20260926",
+      "path": "generated/yemen-source-feedback-snapshot-20260926",
       "iso3": "YEM",
       "evidence_path": "docs/evidence/yemen-source-location-2026-09-26.md",
       "sources": [
