@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "retrieved_at": "2026-09-27T04:38:53Z",
+  "country_id": "SGP",
+  "sources": [
+    {
+      "id": "sgp-singstat-population-trends-2026-geospatial",
+      "url": "https://www.singstat.gov.sg/files/1f0956c0-7c89-4684-bde3-b45b792636af.zip",
+      "catalogue_url": "https://www.singstat.gov.sg/publication-resources/population-trends-2026",
+      "raw_path": "raw/singstat-population-trends-2026-geospatial.zip",
+      "bytes": 9370332,
+      "sha256": "1259d15afc8346e6605698f57be5045de910f73ce80687b6850cb165979406c2"
+    },
+    {
+      "id": "sgp-singstat-population-trends-2026-report",
+      "url": "https://www.singstat.gov.sg/files/5645f043-4bb7-4181-a3a8-c36da5cd1b12.pdf",
+      "catalogue_url": "https://www.singstat.gov.sg/publication-resources/population-trends-2026",
+      "raw_path": "raw/singstat-population-trends-2026.pdf",
+      "bytes": 11324856,
+      "sha256": "41a2cf72d4e55811bc30726837cd28a1514481048ebeb99405f40dad71b5e087"
+    },
+    {
+      "id": "sgp-ura-mp2025-planning-area",
+      "url": "https://data.gov.sg/datasets/d_2cc750190544007400b2cfd5d7f53209/view",
+      "catalogue_url": "https://data.gov.sg/datasets/d_2cc750190544007400b2cfd5d7f53209/view",
+      "raw_path": "raw/ura-mp2025-planning-area-no-sea.geojson",
+      "bytes": 2191270,
+      "sha256": "e6ecc1743de5c39ec154a30b3b8037896fbc6c5f863e10c7dbfd77de12706c9c"
+    },
+    {
+      "id": "sgp-ura-mp2025-region",
+      "url": "https://data.gov.sg/datasets/d_4ce0038f7ac689652350bb91b7fb92ed/view",
+      "catalogue_url": "https://data.gov.sg/datasets/d_4ce0038f7ac689652350bb91b7fb92ed/view",
+      "raw_path": "raw/ura-mp2025-region-no-sea.geojson",
+      "bytes": 1538413,
+      "sha256": "532ab664dcb20c277e9800682a8383ca722e295a7819e377af302cbcd11f5c89"
+    },
+    {
+      "id": "sgp-ura-mp2025-written-statement",
+      "url": "https://isomer-user-content.by.gov.sg/467/411a4d45-c03d-4322-b57c-497714595cdd/MP25WrittenStatement.pdf",
+      "catalogue_url": "https://www.ura.gov.sg/land-planning/master-plan/",
+      "raw_path": "raw/ura-mp2025-written-statement.pdf",
+      "bytes": 958669,
+      "sha256": "fd29331989ec696c3c2187532d4a39b68892f5df3a8b5546f9bc3ee763c6381b"
+    },
+    {
+      "id": "sgp-singstat-cop2020-age-sex",
+      "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+      "catalogue_url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+      "raw_path": "raw/singstat-cop2020-age-sex-planning.csv",
+      "bytes": 85943,
+      "sha256": "9d1183c4335a8189272e244ae86bd9770d61854bc30527055df50697bf730c84"
+    },
+    {
+      "id": "sgp-ura-mp2019-subzone",
+      "url": "https://data.gov.sg/datasets/d_8594ae9ff96d0c708bc2af633048edfb/view",
+      "catalogue_url": "https://data.gov.sg/datasets/d_8594ae9ff96d0c708bc2af633048edfb/view",
+      "raw_path": "raw/ura-mp2019-subzone-no-sea.geojson",
+      "bytes": 3180569,
+      "sha256": "77e30aa02b1784b649d9b6f23e3b2ebb825af787de554f3a3fb76bbee3013c42"
+    }
+  ]
+}
