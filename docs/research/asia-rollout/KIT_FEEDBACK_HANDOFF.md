@@ -403,3 +403,16 @@ Ten official public locations were selected: SingStat Population Trends 2026 geo
 | Validation | AreaData check 163 JavaScript/JSON, 219/219 tests, Singapore validator zero errors/warnings, build and five actual-output cases × six source cells; 48/55 national area comparison values. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 485 feedback sources). |
 
 All ten Singapore feedback stages remain `official_location_identified`, and Kit records `not_acquired_by_kit_preflight` even for originals AreaData acquired. Kit must independently obtain and inspect full bodies/tables, the 2019-to-2025 geographic relation, 2026 subzone code/shape, operative planning guidance and reuse terms. Singapore remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Timor-Leste INETL 2022 and local planning source leads — 2026-09-27 JST
+
+Eight public official locations were selected: the INETL 2022 Census Main Report, Law 19/2023 on territorial administration, the 2023 suco recognition Gazette, municipal and Ataúro plan procedures, Díli's 2026–2030 plan and 2026 annual action plan, and Ataúro's 2026–2030 published draft. [The Timor-Leste source audit](../../evidence/timor-leste-phc2022-source-audit-2026-09-27.md) separates the 2022 census's 14 first-level reporting rows from 2023 legal types and the 2017 13-shape reference layer. AreaData adopted selected columns from 3 of 33 numbered census tables, 135 direct cells and 30 derived ratios, while image-only lower tables, conflicting sex counts and suppressed age cells remain unresolved. Kit receives **locations and reuse cautions only**, no PDF originals, values, boundary matching or AreaData acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, audit, status and eight selections | `3e0ab610903a40ded10a47802ab1a38497660649` on `codex/asia-domestic-20260926`; pushed. |
+| AreaData 493-source / 38-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that exact adapter commit as `origin_commit`; SHA-256 `91f71334446381a9843d2d0bb5ef541c61979d9e4bb3afb9d7068842a8f4f314`, committed as `8140f8a6dc8209602c17974d2978f538cfd78581` and pushed. |
+| Kit feedback import | `5059d90206e2d2eea17ca37265b8b248416c283b` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 493 leads, inserted eight Timor-Leste records and updated 485 prior origin histories, 494 Kit records total. Pushed. |
+| Validation | AreaData check 164 JavaScript/JSON, 219/219 tests, Timor-Leste validator 0 errors/warnings, build, and five 11-indicator actual-output cases with 154 national comparison indicator cells. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 493 feedback sources). |
+
+All eight Timor-Leste feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, even for originals acquired by AreaData. Kit must independently acquire the report and laws, review all numbered and image-only tables, reconcile 2022/current administrative names/codes/shapes, verify plan approval/financial status and reuse terms. Timor-Leste remains a partial unpublished candidate without independent `ACCEPT`.
