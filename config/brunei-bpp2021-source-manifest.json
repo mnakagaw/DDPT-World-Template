@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "country_id": "BRN",
+  "retrieved_at": "2026-09-27T06:19:00Z",
+  "catalogue_url": "https://www.deps.gov.bn/statistical-publications/",
+  "sources": [
+    {"id":"brn-deps-bpp2021-report","url":"https://www.deps.gov.bn/wp-content/uploads/2025/10/RPT-1.pdf","raw_path":"raw/deps-bpp2021/report.pdf","bytes":40014514,"sha256":"223c5ef50c71b8e7d4214ed54220792e97523f8660069b481b6fe690c8d7fdbb"},
+    {"id":"brn-deps-bpp2021-annex-a","url":"https://www.deps.gov.bn/wp-content/uploads/2025/10/ANNEX-A.pdf","raw_path":"raw/deps-bpp2021/annex-a.pdf","bytes":1329106,"sha256":"62852095d99fe82165b93be790f318cac36404dd71efd225d861725a4c01ff87"},
+    {"id":"brn-deps-bpp2021-annex-b","url":"https://www.deps.gov.bn/wp-content/uploads/2025/10/ANNEX-B.pdf","raw_path":"raw/deps-bpp2021/annex-b.pdf","bytes":1337185,"sha256":"6c3480077af26f4ca8f39fb485b096499e7ac87c61fc1914676e72995e64d888"},
+    {"id":"brn-deps-bpp2021-annex-c","url":"https://www.deps.gov.bn/wp-content/uploads/2025/10/ANNEX-C.pdf","raw_path":"raw/deps-bpp2021/annex-c.pdf","bytes":2284478,"sha256":"8d871c0b21925e458cb867e391182107919984ea2a9a5492dd8a7059ed2ef63b"},
+    {"id":"brn-agc-cap248-2022","url":"https://www.agc.gov.bn/wp-content/uploads/2026/07/CAP-248-TOWN-AND-COUNTRY-PLANNING-ACT.pdf","catalogue_url":"https://www.agc.gov.bn/documents/town-and-country-planning-act/","raw_path":"raw/planning-act-cap248.pdf","bytes":254472,"sha256":"409bed010a86ed7af945ff8755bbf2b3c86a426f521d57f382ec16addd7c4c6d"},
+    {"id":"brn-mof-rkn12-en","url":"https://www.mof.gov.bn/wp-content/uploads/2025/10/RKN12-English.pdf","catalogue_url":"https://www.mof.gov.bn/ndpo_general-information/","raw_path":"raw/rkn12-english.pdf","bytes":13558978,"sha256":"a053c1d1b65e12556e9dcdbb01e8ded0e346c9aee4c827e7be2b4e42598f7ffb"}
+  ]
+}

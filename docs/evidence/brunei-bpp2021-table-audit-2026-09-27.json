@@ -1,0 +1,259 @@
+{
+  "source_manifest": "config/brunei-bpp2021-source-manifest.json",
+  "checked_at": "2026-09-27",
+  "selected_tables": [
+    "A1",
+    "A2",
+    "B1",
+    "B2",
+    "C1"
+  ],
+  "priority_unassessed_tables": [
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A11",
+    "A12",
+    "B3",
+    "B4",
+    "B5",
+    "B6",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C10"
+  ],
+  "checks": {
+    "b1_national_column_sums": 10,
+    "b2_district_column_sums": 40,
+    "b_sex_sums": 86,
+    "c1_status_sums": 129,
+    "c1_sex_sums": 172,
+    "a1_status_geographies": 15,
+    "a2_age_sums": 15,
+    "a2_band_district_sums": 54,
+    "b1_rows": 5,
+    "b2_mukim_rows": 39,
+    "c1_district_and_mukim_rows": 43,
+    "a1_status_rows": 3,
+    "a2_age_band_rows": 18,
+    "audited_numeric_cells": 1311
+  },
+  "table_inventory": [
+    {
+      "table": "A1",
+      "title": "Population by Residential Status, District and Sex, 2021",
+      "assessment": "selected_columns_audited",
+      "numeric_columns": "all 15 geography/sex columns audited; Persons by status adopted; sex cells used for validation",
+      "adopted_scope": "2021 national and district residential-status persons"
+    },
+    {
+      "table": "A2",
+      "title": "Population by Age Group, District and Sex, 2021",
+      "assessment": "selected_columns_audited",
+      "numeric_columns": "all 15 geography/sex columns and 18 age rows audited; Persons bands summed into 0–14, 15–64, 65+; sex cells used for validation",
+      "adopted_scope": "2021 national and district age groups"
+    },
+    {
+      "table": "A3",
+      "title": "Population by Race, District and Sex, 2021",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "A4",
+      "title": "Population by Religion, District and Sex, 2021",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "A5",
+      "title": "Population by Age Group, Residential Status and Sex, 2021",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "A6",
+      "title": "Population by Age Group, Residential Status and Sex, 2021",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "A7",
+      "title": "Population by Single Age, District and Sex, 2021",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "A8",
+      "title": "Population by Single Age, Residential Status and Sex, 2021",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "A9",
+      "title": "Population by Age Group, Religion and Sex, 2021",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "A10",
+      "title": "Population by Age Group, Religion and Sex, 2021",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "A11",
+      "title": "Population by Religion, Residential Status and Sex, 2021           104",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "A12",
+      "title": "Population by Religion, Residential Status and Sex, 2021",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "B1",
+      "title": "Total Population, Households and Occupied Living Quarters by Districts",
+      "assessment": "selected_columns_audited",
+      "numeric_columns": "all ten 2011/2021 columns audited; five 2021 columns adopted; five 2011 columns withheld pending boundary comparability",
+      "adopted_scope": "2021 national and district population/households/occupied quarters"
+    },
+    {
+      "table": "B2",
+      "title": "Total Population, Households and Occupied Living Quarters by Mukims",
+      "assessment": "selected_columns_audited",
+      "numeric_columns": "all ten 2011/2021 columns audited; five 2021 mukim columns adopted; 2011 withheld pending boundary comparability",
+      "adopted_scope": "2021 39 mukim population/households/occupied quarters"
+    },
+    {
+      "table": "B3",
+      "title": "Total Population, Households and Occupied Living Quarters by Mukims and Kampungs/Areas - Brunei Muara District",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "B4",
+      "title": "Total Population, Households and Occupied Living Quarters by Mukims and Kampungs/Areas - Belait District",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "B5",
+      "title": "Total Population, Households and Occupied Living Quarters by Mukims and Kampungs/Areas - Tutong District",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "B6",
+      "title": "Total Population, Households and Occupied Living Quarters by Mukims and Kampungs/Areas - Temburong District",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "C1",
+      "title": "Population by Mukim, Residential Status and Sex, 2021",
+      "assessment": "selected_columns_audited",
+      "numeric_columns": "all 12 sex/status columns audited; three residential-status Persons cells adopted; total and sex cells validate B1/B2 and A1",
+      "adopted_scope": "2021 district and mukim residential-status persons"
+    },
+    {
+      "table": "C2",
+      "title": "Population by Mukim and Kampung/Areas, Residential Status and Sex, 2021 - Brunei Muara District",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "C3",
+      "title": "Population by Mukim and Kampung/Areas, Residential Status and Sex, 2021 - Belait District",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "C4",
+      "title": "Population by Mukim and Kampung/Areas, Residential Status and Sex, 2021 - Tutong District",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "C5",
+      "title": "Population by Mukim and Kampung/Areas, Residential Status and Sex, 2021 - Temburong District",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "C6",
+      "title": "Population by Mukim, Age Group and Sex, 2021",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "C7",
+      "title": "Population by Mukim and Kampung/Areas, Age Group and Sex, 2021 - Brunei Muara District",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "C8",
+      "title": "Population by Mukim and Kampung/Areas, Age Group and Sex, 2021 - Belait District",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "C9",
+      "title": "Population by Mukim and Kampung/Areas, Age Group and Sex, 2021 - Tutong District",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    },
+    {
+      "table": "C10",
+      "title": "Population by Mukim and Kampung/Areas, Age Group and Sex, 2021 - Temburong District",
+      "assessment": "priority_unassessed",
+      "numeric_columns": "unassessed",
+      "adopted_scope": "none; numeric columns and denominators unassessed"
+    }
+  ],
+  "territories": 44,
+  "indicators": 11,
+  "adopted_observations": 367,
+  "source_reported_observations": 352,
+  "derived_age_observations": 15,
+  "warnings": [
+    "The main report's full table inventory and the 23 unselected annex tables remain unassessed.",
+    "Official codes, compatible polygons, plan bodies and approval are not acquired."
+  ]
+}
