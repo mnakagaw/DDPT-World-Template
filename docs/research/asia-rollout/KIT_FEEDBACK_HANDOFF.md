@@ -325,3 +325,16 @@ Forty-four public official locations were selected: 22 PSA POPCEN attachments, e
 | Validation | AreaData check 157, 218/218 tests, Philippines validator zero errors/warnings, build and ten actual-output cases. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 423 feedback sources). |
 
 All 44 Philippines feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, even for originals already acquired by AreaData. Kit must independently obtain and inspect source bodies, Table C/other census topics, current codes and polygons, planning law/plan scope, fiscal facts and terms before reuse. Philippines remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Cambodia NIS 2019 census and NCDD source leads — 2026-09-27 JST
+
+Eight public official locations were selected: the NIS final census PDF and census catalogue, NCDD district Gazetteer page and index, the Commune/Village Databook selector, and three NCDD law/plan-guide catalogue pages. [The Cambodia source audit](../../evidence/cambodia-census2019-source-audit-2026-09-27.md) separates all-person from normal-household counts, notes P-table printing and parent/child conflicts, and limits the NCDD code confirmation to Srei Santhor. Law/guide PDF bodies returned 403 and were not acquired. Feedback transfers no raw PDF/HTML, 11,301 observations, current code/polygon join, local plan, budget or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, audit, status and 8 selected source locations | `49aa58160f8227b7706cad39c9b7c658bd11329c` on `codex/asia-domestic-20260926`; pushed. |
+| AreaData 431-source / 32-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that exact adapter commit as `origin_commit`; bundle SHA-256 `be65dc34ddd8aa2bc591f20a6f84be631fa773a621db24f20583c4a77a75f738`, committed as `3059248e7db3bb068a6bc66c7a1398b76634638c` and pushed. |
+| Kit feedback import | `7e46552c5092468fb4095184c7c7368bee2450a9` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 431 leads, inserted 8 Cambodia records and updated 423 prior origin histories, 432 Kit records total. Pushed. |
+| Validation | AreaData check 158 modules/templates, 218/218 tests, Cambodia validator zero errors/warnings, build and 14 actual-output cases. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 431 feedback sources). |
+
+All eight Cambodia feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, including for originals already acquired by AreaData. Kit must independently obtain and inspect report tables, P-table exceptions, 2019 code/boundary edition, present planning rules, local documents and terms before reuse. Cambodia remains a partial unpublished candidate without independent `ACCEPT`.
