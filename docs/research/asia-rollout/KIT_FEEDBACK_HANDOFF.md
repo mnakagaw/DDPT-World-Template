@@ -429,3 +429,16 @@ Eight official public locations were selected: DEPS BPP 2021 final report and An
 | Validation | AreaData check 165 JavaScript/JSON, 219/219 tests, Brunei validator 0 errors/warnings, build, six 11-indicator actual-output cases with 132 value/status cells and 4/4+18/18 comparison members. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 501 feedback sources). |
 
 All eight Brunei feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, including PDFs AreaData acquired. Kit must independently obtain and inspect all relevant original tables, reconcile official geographic codes and dated boundaries, verify plan approval/financial status and reuse terms. Brunei remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Uzbekistan SIAT 2026 and preliminary census source leads — 2026-09-27 JST
+
+Twelve official public locations were selected: five SIAT annual permanent-population CSVs, the NSC demographic release, preliminary 2026 census report and agriculture workbook, MOF local-budget page, PF-21 national strategy location, ASDR regional-strategy task and government census status page. [The Uzbekistan source audit](../../evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md) separates 1 January SIAT estimates from 15 January preliminary enumeration and WDI midyear population. AreaData adopted 1,105 direct SIAT 2026 cells plus 75 preliminary census cells; older SIAT years, 25 report tables, agriculture workbook values and ambiguous MOF budget cells remain unassessed or unadopted. Kit receives **official locations and reuse cautions only**, no raw originals, observations, verified polygon join or AreaData acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, audit, status and 12 selected source locations | `fec3b12132eac791a2b68822dd95a0e6cc7a40d5` on `codex/asia-domestic-20260926`; pushed. |
+| AreaData 513-source / 40-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that exact adapter commit as `origin_commit`; SHA-256 `fa07cb5a6fcd5932fd0c8de57ae1134e6e7d62e969541ab4de60c1bfc5fb1130`, committed as `15a4f61b61cf9761339873c3cf1a6dc3dd01c086` and pushed. |
+| Kit feedback import | `0f32eaf8f0f67b41d6bc82060ec4c089d2f12ba2` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 513 leads, inserted 12 Uzbekistan records, updated 501 prior origin histories, 514 Kit records total. A second dry-run returned 513 unchanged. Pushed. |
+| Validation | AreaData check 166 JavaScript/JSON, 219/219 tests, Uzbekistan validator 0 errors/warnings, build and nine actual-output cases with 180 value/status cells plus 14/14, 17/17 and 12/12 comparison members. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 513 feedback sources). |
+
+All 12 Uzbekistan stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` even for AreaData-acquired originals. Kit must independently obtain and inspect bodies, definitions, historical/admin geography, operative planning law and regional plans, fiscal periods, final census status and reuse terms. Uzbekistan remains a partial unpublished candidate without independent `ACCEPT`.
