@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "retrieved_at": "2026-09-27",
+  "sources": [
+    {
+      "id": "mmr-dop-census2024-demographic-appendix",
+      "catalogue_url": "https://www.dop.gov.mm/en/data-and-maps-category/2024-main-report-excel",
+      "url": "https://dop.gov.mm/sites/dop.gov.mm/files/datamap-documents/2024_census_appendix_table_demographic_characteristics_eng.xlsx",
+      "raw_path": "raw/dop-2024-demographic-appendix-en.xlsx",
+      "bytes": 197800,
+      "sha256": "b6e58696d96a706944925f49379dd52b565ff591c2cf083391a803a282c6e909",
+      "scope": "Table A-1 state/region rows and UNION: twelve published columns; urban/rural rows used for reconciliation. Other 17 tables are inventoried but remain priority_unassessed."
+    },
+    {
+      "id": "mmr-dop-census2024-union-report",
+      "catalogue_url": "https://www.dop.gov.mm/en/publication/2024-myanmar-population-and-housing-census-union-report",
+      "url": "https://www.dop.gov.mm/sites/dop.gov.mm/files/publication_docs/2024mphc_unionreport_en_26nov.pdf",
+      "raw_path": "raw/dop-2024-union-report-en-26nov.pdf",
+      "bytes": 8349430,
+      "sha256": "afa0ede888e9db51c262ee2affcc963d5f325ba86be9e0014b31cd4d9e546168",
+      "scope": "Union Report sections 1.2.9 and 2.8, Tables 2.2 and 3.1: coverage and matching 2024 population breakdown. Current legal planning competence is not inferred from the census."
+    },
+    {
+      "id": "mmr-dop-census2024-provisional",
+      "catalogue_url": "https://www.dop.gov.mm/en/publication-category/2024-provisional-result",
+      "url": "https://dop.gov.mm/sites/dop.gov.mm/files/publication_docs/2024_provisional_result_eng.pdf",
+      "raw_path": "raw/dop-2024-provisional-en.pdf",
+      "bytes": 6067644,
+      "sha256": "571da504753ed2a1b5a3d329db39f5c0610a62ff100a4d770ccb4e794eebcf3a",
+      "scope": "Earlier provisional edition acquired for edition distinction only; its figures are not mixed into the later Union Report/appendix series."
+    },
+    {
+      "id": "mmr-moi-plan-coordination-2026-27",
+      "url": "https://www.moi.gov.mm/moi:eng/news/18967",
+      "raw_path": "raw/moi-plan-coordination-2026-27.html",
+      "bytes": 27993,
+      "sha256": "cc9893574a97acd303ca184d9dcc7dbd341f3a62b0832ca47e1a9e3b56cde5e8",
+      "scope": "Official report of national/local FY2026-27 planning coordination with Union ministries and Region/State governments; not a planning law, approved local plan or budget."
+    }
+  ]
+}

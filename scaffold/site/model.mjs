@@ -326,9 +326,12 @@ export function routeQuery(dataset, state) {
   }
   return query.toString();
 }
-function comparisonAreas(dataset,state){
-  const configured=dataset.analysis?.comparisons?.find(item=>item.parent_id===state.selected&&item.member_ids.some(id=>dataset.territories.find(area=>area.id===id)?.level===state.level))
+function explicitComparison(dataset,state){
+  return dataset.analysis?.comparisons?.find(item=>item.parent_id===state.selected&&item.member_ids.some(id=>dataset.territories.find(area=>area.id===id)?.level===state.level))
     || dataset.analysis?.comparisons?.find(item=>item.member_ids.includes(state.selected)&&item.member_ids.some(id=>dataset.territories.find(area=>area.id===id)?.level===state.level));
+}
+function comparisonAreas(dataset,state){
+  const configured=explicitComparison(dataset,state);
   if(configured){const members=new Set(configured.member_ids);return dataset.territories.filter(area=>members.has(area.id)&&area.level===state.level);}
   const direct=dataset.territories.filter(area=>area.parent_id===state.selected&&area.level===state.level);
   if(direct.length)return direct;
@@ -340,8 +343,12 @@ export function comparisonCompatibility(dataset, state) {
   const types = [...new Set(areas.map(area => area.type || 'unspecified'))];
   const editions = [...new Set(areas.map(area => area.boundary_version || 'unverified'))];
   const reasons=[];
-  if(types.length>1)reasons.push(`different administrative types (${types.join(', ')})`);
-  if(editions.length>1)reasons.push(`different boundary editions (${editions.join(', ')})`);
+  // An explicit comparison is the documented, sourced declaration that a mixed
+  // reporting roster is one cohort. Without it, mixed types/editions are blocked.
+  if(!explicitComparison(dataset,state)){
+    if(types.length>1)reasons.push(`different administrative types (${types.join(', ')})`);
+    if(editions.length>1)reasons.push(`different boundary editions (${editions.join(', ')})`);
+  }
   return {comparable:!reasons.length, reason:reasons.length?`Local comparison is not established: this geographic level contains ${reasons.join(' and ')}. Verify a compatible geographic cohort before enabling ranks, median or map value classes. Selected-area observations remain available.`:''};
 }
 export function comparisonRows(dataset, state) {

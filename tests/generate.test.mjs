@@ -395,6 +395,19 @@ test('mixed same-level types or boundary editions cannot silently become a compa
   assert.equal(distribution(comparisonRows(data,state)).count,0);
 });
 
+test('explicit sourced roster permits mixed reporting types while default roster remains blocked',()=>{
+  const data=localValues(fixture()),state=initialState(data,'?metric=water&period=2024');
+  data.territories[2].type='city';
+  data.territories[2].boundary_version='edition-2';
+  assert.equal(comparisonCompatibility(data,state).comparable,false);
+  data.analysis={kind:'country',comparisons:[{parent_id:'TST',member_ids:['a','b','c'],
+    label:'Published roster',membership_note:'Same source and reporting period, complete register.',
+    source_ids:['s2']}],terminal_territory_ids:[]};
+  assert.equal(comparisonCompatibility(data,state).comparable,true);
+  assert.equal(rankedRows(comparisonRows(data,state)).length,2);
+  assert.equal(distribution(comparisonRows(data,state)).count,2);
+});
+
 test('map uses safe polygon coordinates, fits selection immediately and retains full national extent on return',()=>{
   const data=fixture();
   const all=mapGeometry(data.boundaries.features),selected=mapGeometry(data.boundaries.features,'a');

@@ -3102,6 +3102,70 @@
           "reuse_note": "Official Thai Open Government dataset location indexed as NSO/DOPA registration data. HTTP 403 prevented raw acquisition; do not infer district values, complete coverage or reuse rights."
         }
       ]
+    },
+    {
+      "path": "generated/myanmar-areadata-20260927",
+      "iso3": "MMR",
+      "checked_at": "2026-09-27",
+      "evidence_path": "docs/evidence/myanmar-dop-census2024-source-audit-2026-09-27.md",
+      "sources": [
+        {
+          "id": "mmr-dop-census2024-demographic-appendix",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["2024 Union, fifteen State/Region-equivalent rows and urban/rural subtotals; district/township tables unassessed"],
+          "formats": ["XLSX"],
+          "reuse_note": "DOP official demographic appendix location. AreaData adopted only Table A-1 plus separately checked report coverage rows; Kit must independently inspect all 18 subject tables, denominators, mixed enumeration/estimation, code geography and terms."
+        },
+        {
+          "id": "mmr-dop-census2024-union-report",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["2024 Union, fifteen State/Region-equivalent areas, district and township descriptions; actual content varies by table"],
+          "formats": ["PDF"],
+          "reuse_note": "Later Union Report edition: 62.6 percent enumerated and 37.4 percent statistically estimated nationally, with sharply unequal local coverage. Kit must acquire/hash and interpret report tables independently, not import AreaData's values or acceptance."
+        },
+        {
+          "id": "mmr-dop-census2024-provisional",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["2024 provisional Union and subnational results; separate earlier edition"],
+          "formats": ["PDF"],
+          "reuse_note": "Earlier provisional report prints a different Union total than the later Union Report. Preserve edition and release-status differences; do not merge its values into the later series or infer a time change."
+        },
+        {
+          "id": "mmr-dop-census2024-main-excel-catalogue",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["2024 Union Excel appendices by subject; local table availability must be checked per file"],
+          "formats": ["HTML", "XLSX"],
+          "reuse_note": "Official DOP index lists demographic, housing, education, migration, labour and disability appendices. AreaData acquired only the demographic workbook; Kit must check each file and table separately."
+        },
+        {
+          "id": "mmr-dop-census2024-state-excel-catalogue",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["2024 State/Region Excel reports; not all state/region files confirmed"],
+          "formats": ["HTML", "XLSX"],
+          "reuse_note": "Official DOP State/Region Excel catalogue. Indexed files include some English local appendices; full coverage, subdistrict fields, code crosswalk and terms remain unassessed in AreaData."
+        },
+        {
+          "id": "mmr-dop-census2014-data-catalogue",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["2014 Union and local census data; boundary/definition comparison with 2024 unverified"],
+          "formats": ["HTML", "XLSX"],
+          "reuse_note": "Older DOP census data catalogue. Keep 2014 as a distinct census edition; do not infer ten-year change without geography, enumeration and definition reconciliation."
+        },
+        {
+          "id": "mmr-cso-2023-admin-units-location",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["31 March 2023 Union and State/Region counts of district, township and smaller administrative units"],
+          "formats": ["PDF"],
+          "reuse_note": "CSO Statistical Yearbook location for GAD administrative-unit counts. AreaData did not acquire the PDF body; the table is not an official 2024 geographic code list or verified polygon crosswalk."
+        }
+      ]
     }
   ]
 }
