@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "country_id": "UZB",
+  "retrieved_at": "2026-09-27T07:30:00Z",
+  "sources": [
+    {"id":"uzb-siat-permanent-total","url":"https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_246.csv","catalogue_url":"https://siat.stat.uz/data/246/?lang=en","raw_path":"raw/siat/total.csv","bytes":44790,"sha256":"ef0a2bc0cc44f095f0d0a79c32bdace27cb6f6121f0afb1ea65efd6e151c7736","indicator_code":"2.01.02.0001"},
+    {"id":"uzb-siat-permanent-female","url":"https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_244.csv","catalogue_url":"https://siat.stat.uz/data/244/?lang=en","raw_path":"raw/siat/female.csv","bytes":38470,"sha256":"ef3ef3a138c681d5f63ada125a5cf48cb16bd7dd8dbe41080083bd1fd048aedd","indicator_code":"2.01.02.0003"},
+    {"id":"uzb-siat-permanent-male","url":"https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_245.csv","catalogue_url":"https://siat.stat.uz/data/245/?lang=en","raw_path":"raw/siat/male.csv","bytes":43158,"sha256":"355d6f2d33c264897d29a6bac991d85ce0906978cb291857dea5756af5d06b3d","indicator_code":"2.01.02.0002"},
+    {"id":"uzb-siat-permanent-rural","url":"https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_247.csv","catalogue_url":"https://siat.stat.uz/data/247/?lang=en","raw_path":"raw/siat/rural.csv","bytes":42817,"sha256":"64e0874923c928a89a5a4b4cf7c6157de673b336af7de2a79f86c7314062c057","indicator_code":"2.01.02.0005"},
+    {"id":"uzb-siat-permanent-urban","url":"https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_248.csv","catalogue_url":"https://siat.stat.uz/data/248/?lang=en","raw_path":"raw/siat/urban.csv","bytes":42886,"sha256":"4d7a3467f1d99b24dd7852e16493df8ed30b0635126d7f7063adce0e9faba446","indicator_code":"2.01.02.0004"},
+    {"id":"uzb-nsc-demography-2026-01-27","url":"https://stat.uz/img/news/demografiya-press-reliz-en_p24116.pdf","raw_path":"raw/stat-demography-2026-01-27.pdf","bytes":622258,"sha256":"1248b664b1d7fd66ee40b103f989531e39634c88f61393f41376902b62eb5a06"},
+    {"id":"uzb-nsc-census2026-preliminary-report","url":"https://aholi.stat.uz/images/07.07.2026/kitob-eng_p16318.pdf","catalogue_url":"https://aholi.stat.uz/en/64-news-eng/6232-preliminary-results-of-population-and-agriculture-census-conducted-in-the-republic-of-uzbekistan-in-2026","raw_path":"raw/census2026-preliminary-report.pdf","bytes":2286016,"sha256":"ccec68043c47062c77b1d586c387dfc98df2779c063578cf9e063a99408b96a2"},
+    {"id":"uzb-nsc-census2026-preliminary-agriculture-tables","url":"https://aholi.stat.uz/images/07.07.2026/tables-for-the-website-eng_p34391.xlsx","catalogue_url":"https://aholi.stat.uz/en/64-news-eng/6260-preliminary-results-of-the-2026-population-census","raw_path":"raw/census2026-preliminary-tables.xlsx","bytes":33080,"sha256":"1ffaf9e1a435d0ddd07bea53c155eb00b3c181392d92e46bccb5385f57655fac"},
+    {"id":"uzb-mof-local-budget-2026-table","url":"https://gov.uz/en/imv/sections/view/190028","raw_path":"raw/mof-local-budget-q1-2026.html","bytes":173795,"sha256":"8be96538cc9f62167b180c2808768cf5aeadfaaa05fe4fe5b48c7ee9c6eb6d21"}
+  ]
+}

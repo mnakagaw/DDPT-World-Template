@@ -1,0 +1,542 @@
+{
+  "source_manifest": "config/uzbekistan-2026-source-manifest.json",
+  "checked_at": "2026-09-27",
+  "siat_source_inventory": [
+    {
+      "source_id": "uzb-siat-permanent-total",
+      "indicator_code": "2.01.02.0001",
+      "row_count": 221,
+      "year_columns": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "numeric_cells": 3757,
+      "blank_cells": 0,
+      "pre_2026_zero_cells": 121,
+      "historical_precision_artifacts": [
+        {
+          "code": "1714401",
+          "year": "2025",
+          "raw_value": "713.3999999999996"
+        }
+      ],
+      "adopted_columns": [
+        "2026"
+      ],
+      "earlier_years": "priority_unassessed for administrative changes and time comparison"
+    },
+    {
+      "source_id": "uzb-siat-permanent-female",
+      "indicator_code": "2.01.02.0003",
+      "row_count": 221,
+      "year_columns": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "numeric_cells": 2873,
+      "blank_cells": 0,
+      "pre_2026_zero_cells": 69,
+      "historical_precision_artifacts": [
+        {
+          "code": "1714401",
+          "year": "2025",
+          "raw_value": "346.5999999999998"
+        }
+      ],
+      "adopted_columns": [
+        "2026"
+      ],
+      "earlier_years": "priority_unassessed for administrative changes and time comparison"
+    },
+    {
+      "source_id": "uzb-siat-permanent-male",
+      "indicator_code": "2.01.02.0002",
+      "row_count": 221,
+      "year_columns": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "numeric_cells": 3757,
+      "blank_cells": 0,
+      "pre_2026_zero_cells": 121,
+      "historical_precision_artifacts": [
+        {
+          "code": "1714401",
+          "year": "2025",
+          "raw_value": "366.8000000000001"
+        }
+      ],
+      "adopted_columns": [
+        "2026"
+      ],
+      "earlier_years": "priority_unassessed for administrative changes and time comparison"
+    },
+    {
+      "source_id": "uzb-siat-permanent-urban",
+      "indicator_code": "2.01.02.0004",
+      "row_count": 221,
+      "year_columns": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "numeric_cells": 3757,
+      "blank_cells": 0,
+      "pre_2026_zero_cells": 119,
+      "historical_precision_artifacts": [
+        {
+          "code": "1714401",
+          "year": "2025",
+          "raw_value": "713.3999999999997"
+        },
+        {
+          "code": "1727259",
+          "year": "2022",
+          "raw_value": "28.9999999999998"
+        }
+      ],
+      "adopted_columns": [
+        "2026"
+      ],
+      "earlier_years": "priority_unassessed for administrative changes and time comparison"
+    },
+    {
+      "source_id": "uzb-siat-permanent-rural",
+      "indicator_code": "2.01.02.0005",
+      "row_count": 221,
+      "year_columns": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "numeric_cells": 3757,
+      "blank_cells": 0,
+      "pre_2026_zero_cells": 698,
+      "historical_precision_artifacts": [
+        {
+          "code": "1722207",
+          "year": "2024",
+          "raw_value": "97.19999999999999"
+        },
+        {
+          "code": "1727248",
+          "year": "2024",
+          "raw_value": "96.30000000000001"
+        },
+        {
+          "code": "1727259",
+          "year": "2022",
+          "raw_value": "162.9000000000002"
+        }
+      ],
+      "adopted_columns": [
+        "2026"
+      ],
+      "earlier_years": "priority_unassessed for administrative changes and time comparison"
+    }
+  ],
+  "siat_all_year_numeric_cells": 17901,
+  "siat_2026_adopted_cells": 1105,
+  "siat_checks": {
+    "sex_equalities": 221,
+    "urban_rural_equalities": 221,
+    "child_parent_equalities": 70,
+    "national_equalities": 5
+  },
+  "siat_2026_code_counts": {
+    "national": 1,
+    "first_level": 14,
+    "district_or_city": 206,
+    "cities": 31,
+    "districts": 175
+  },
+  "census_pdf_physical_pages": 90,
+  "census_pdf_printed_pages": 67,
+  "census_table_inventory": [
+    {
+      "table": "population-sex-region",
+      "printed_page": 4,
+      "assessment": "selected_columns_audited",
+      "adopted_columns": [
+        "total",
+        "male",
+        "female"
+      ]
+    },
+    {
+      "table": "population-urban-rural-region",
+      "printed_page": 5,
+      "assessment": "selected_columns_audited",
+      "adopted_columns": [
+        "urban",
+        "rural"
+      ]
+    },
+    {
+      "table": "population-urban-rural-sex-region",
+      "printed_page": 6,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "residence-status",
+      "printed_page": 7,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "permanent-registration-sex",
+      "printed_page": 8,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "temporary-absence-reason",
+      "printed_page": 12,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "permanent-registration-urban-rural",
+      "printed_page": 20,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "age-sex-region",
+      "printed_page": 24,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "main-age-groups",
+      "printed_page": 39,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "birthplace-region-1",
+      "printed_page": 40,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "birthplace-region-2",
+      "printed_page": 41,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "present-population-country-of-birth",
+      "printed_page": 42,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "ethnicity-region",
+      "printed_page": 43,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "ethnicity-sex-region",
+      "printed_page": 44,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "mother-tongue-region",
+      "printed_page": 52,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "dwelling-type-region",
+      "printed_page": 53,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "agriculture-1",
+      "printed_page": 55,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "agriculture-2",
+      "printed_page": 57,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "agriculture-3",
+      "printed_page": 57,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "agriculture-4",
+      "printed_page": 58,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "agriculture-5",
+      "printed_page": 59,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "agriculture-6",
+      "printed_page": 60,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "agriculture-7",
+      "printed_page": 61,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "agriculture-8",
+      "printed_page": 63,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "agriculture-9",
+      "printed_page": 65,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "agriculture-10",
+      "printed_page": 66,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    },
+    {
+      "table": "agriculture-11",
+      "printed_page": 67,
+      "assessment": "priority_unassessed",
+      "adopted_columns": []
+    }
+  ],
+  "census_selected_numeric_cells_checked": 150,
+  "census_direct_observations": 75,
+  "census_reference_moment": "2026-01-15",
+  "census_national_total": 39047321,
+  "siat_estimate_reference_moment": "2026-01-01",
+  "siat_national_total_thousand": 38236.7,
+  "press_release_first_level_rows_cross_checked": 15,
+  "preliminary_agriculture_workbook_inventory": [
+    {
+      "sheet": "Contents",
+      "title": "Contents",
+      "rows": 15,
+      "columns": 2,
+      "numeric_cells": 0,
+      "zero_cells": 0,
+      "dash_cells": 0,
+      "assessment": "priority_unassessed; agriculture only; no local population observation adopted"
+    },
+    {
+      "sheet": "1.1",
+      "title": "Number of managers of holdings established as legal entities in the Republic of Uzbekistan, \nby sex and age group, 2025",
+      "rows": 18,
+      "columns": 16,
+      "numeric_cells": 51,
+      "zero_cells": 0,
+      "dash_cells": 5,
+      "assessment": "priority_unassessed; agriculture only; no local population observation adopted"
+    },
+    {
+      "sheet": "1.2",
+      "title": "Number of core staff of legal entities engaged in agricultural activity \nin the Republic of Uzbekistan, 2025",
+      "rows": 9,
+      "columns": 5,
+      "numeric_cells": 12,
+      "zero_cells": 0,
+      "dash_cells": 0,
+      "assessment": "priority_unassessed; agriculture only; no local population observation adopted"
+    },
+    {
+      "sheet": "1.3",
+      "title": "Number of seasonal workers of legal entities engaged in agricultural activity \nin the Republic of Uzbekistan, 2025",
+      "rows": 9,
+      "columns": 5,
+      "numeric_cells": 12,
+      "zero_cells": 0,
+      "dash_cells": 0,
+      "assessment": "priority_unassessed; agriculture only; no local population observation adopted"
+    },
+    {
+      "sheet": "1.4",
+      "title": "Number of legal entities by source of water used to irrigate agricultural land \nin the Republic of Uzbekistan, by category of holding, 2025",
+      "rows": 8,
+      "columns": 7,
+      "numeric_cells": 20,
+      "zero_cells": 4,
+      "dash_cells": 0,
+      "assessment": "priority_unassessed; agriculture only; no local population observation adopted"
+    },
+    {
+      "sheet": "1.5",
+      "title": "Number of legal entities by irrigation method used to irrigate agricultural land \nin the Republic of Uzbekistan, by category of holding, 2025",
+      "rows": 8,
+      "columns": 7,
+      "numeric_cells": 20,
+      "zero_cells": 4,
+      "dash_cells": 0,
+      "assessment": "priority_unassessed; agriculture only; no local population observation adopted"
+    },
+    {
+      "sheet": "1.6",
+      "title": "Areas of the main types of agricultural land and fish-farming ponds in the Republic of Uzbekistan, 2025",
+      "rows": 11,
+      "columns": 6,
+      "numeric_cells": 24,
+      "zero_cells": 2,
+      "dash_cells": 0,
+      "assessment": "priority_unassessed; agriculture only; no local population observation adopted"
+    },
+    {
+      "sheet": "1.7",
+      "title": "Number of holdings engaged in growing seedlings in the Republic of Uzbekistan, by category, 2025",
+      "rows": 12,
+      "columns": 8,
+      "numeric_cells": 41,
+      "zero_cells": 6,
+      "dash_cells": 1,
+      "assessment": "priority_unassessed; agriculture only; no local population observation adopted"
+    },
+    {
+      "sheet": "1.8",
+      "title": "Number of legal entities by method of keeping farm livestock and poultry in the Republic of Uzbekistan, \nby category of holding",
+      "rows": 11,
+      "columns": 8,
+      "numeric_cells": 24,
+      "zero_cells": 4,
+      "dash_cells": 0,
+      "assessment": "priority_unassessed; agriculture only; no local population observation adopted"
+    },
+    {
+      "sheet": "1.9",
+      "title": "Number of head of farm livestock and poultry held by legal entities\n in the Republic of Uzbekistan",
+      "rows": 11,
+      "columns": 4,
+      "numeric_cells": 7,
+      "zero_cells": 0,
+      "dash_cells": 0,
+      "assessment": "priority_unassessed; agriculture only; no local population observation adopted"
+    },
+    {
+      "sheet": "1.10",
+      "title": "Number of head of farm livestock and poultry held by dehkan and household plots in the Republic of Uzbekistan",
+      "rows": 11,
+      "columns": 4,
+      "numeric_cells": 7,
+      "zero_cells": 0,
+      "dash_cells": 0,
+      "assessment": "priority_unassessed; agriculture only; no local population observation adopted"
+    },
+    {
+      "sheet": "1.11",
+      "title": "Number of legal entities engaged in fish farming (aquaculture) by water body in the Republic of Uzbekistan, by category of holding, 2025",
+      "rows": 10,
+      "columns": 5,
+      "numeric_cells": 12,
+      "zero_cells": 3,
+      "dash_cells": 0,
+      "assessment": "priority_unassessed; agriculture only; no local population observation adopted"
+    }
+  ],
+  "mof_budget_table_inventory": {
+    "rows": 15,
+    "numeric_columns": 6,
+    "numeric_cells": 90,
+    "assessment": "priority_unassessed: pinned HTML has two Revenue/Transfer/Expenditure triplets without a clear period for each; do not adopt as district, regional or national execution values",
+    "first_three_subtotal_difference_billion_uzs": [
+      "0.1",
+      "0.0",
+      "0.0"
+    ],
+    "second_three_columns": "period and scope unverified"
+  },
+  "adopted_observations": 1180,
+  "warnings": [
+    "The preliminary census report remains preliminary; final results are separate.",
+    "2017 geoBoundaries polygons and ambiguous MOF budget columns are not adopted.",
+    "All SIAT older years and 25 other census report tables remain priority_unassessed."
+  ]
+}
