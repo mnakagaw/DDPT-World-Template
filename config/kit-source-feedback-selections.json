@@ -2306,6 +2306,7 @@
     {
       "path": "generated/philippines-areadata-20260927",
       "iso3": "PHL",
+      "checked_at": "2026-09-27",
       "evidence_path": "docs/evidence/philippines-popcen-source-audit-2026-09-27.md",
       "sources": [
         {
@@ -2835,6 +2836,78 @@
             "HTML"
           ],
           "reuse_note": "Official Quezon City document or council record. AreaData has selected CDP/LDIP/AIP/budget bodies and adoption catalogue evidence, not expenditure or official evaluation. Kit must inspect resolution body, full content, legal jurisdiction and terms independently."
+        }
+      ]
+    },
+    {
+      "path": "generated/cambodia-areadata-20260927",
+      "iso3": "KHM",
+      "checked_at": "2026-09-27",
+      "evidence_path": "docs/evidence/cambodia-census2019-source-audit-2026-09-27.md",
+      "sources": [
+        {
+          "id": "khm-nis-final-census2019-report",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["Cambodia country, 25 census provinces, 2019 census district and commune reporting rows"],
+          "formats": ["PDF"],
+          "reuse_note": "NIS 2019 final report lead. AreaData adopted selected all-person and normal-household direct counts separately. Kit must independently inspect the original, 202/204 district discrepancy, printed errors, other tables, geography, rights and terms."
+        },
+        {
+          "id": "khm-ncdd-gazetteer-district-0314",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["Srei Santhor district 0314 and its commune codes; current gazetteer page"],
+          "formats": ["HTML"],
+          "reuse_note": "NCDD page confirms one NIS P-03 printed-code exception only. It is not a complete 2019 code or polygon crosswalk; Kit must check edition, all areas and reuse terms independently."
+        },
+        {
+          "id": "khm-nis-census-catalogue",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["Cambodia census publications; publication and table grains vary"],
+          "formats": ["HTML"],
+          "reuse_note": "NIS official census catalogue location. AreaData has not assessed all linked tables or post-2019 releases; Kit must independently confirm availability, definitions and terms."
+        },
+        {
+          "id": "khm-ncdd-gazetteer-index",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["Cambodia subnational code directory; edition and 2019 correspondence unverified"],
+          "formats": ["HTML"],
+          "reuse_note": "NCDD official directory location. Do not assume current codes or boundaries match all 2019 NIS reporting rows; Kit must audit version and terms."
+        },
+        {
+          "id": "khm-ncdd-cdb-online",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["Cambodia commune/village databook selector; theme, year and geography not acquired"],
+          "formats": ["HTML"],
+          "reuse_note": "NCDD Commune/Village Databook location only. AreaData has not acquired local values or checked year, definition, code, coverage or terms; Kit must independently assess availability."
+        },
+        {
+          "id": "khm-ncdd-subnational-law-2008",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["Cambodia subnational administration legal reference; current effect unverified"],
+          "formats": ["HTML"],
+          "reuse_note": "NCDD Library catalogue location; PDF request returned 403 and body/current amendments are unassessed. No local plan, approval or present legal duty is transferred."
+        },
+        {
+          "id": "khm-ncdd-capital-province-guide",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["Capital and province planning guide catalogue; current applicability unverified"],
+          "formats": ["HTML"],
+          "reuse_note": "2013 NCDD Library guide catalogue location; PDF request returned 403, and body/current force were not reviewed. Kit must independently inspect the actual guide and terms."
+        },
+        {
+          "id": "khm-ncdd-commune-guide",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["Commune and sangkat planning guide catalogue; current applicability unverified"],
+          "formats": ["HTML"],
+          "reuse_note": "2007 NCDD Library guide catalogue location; later revisions and present effect are unassessed. Kit must independently inspect body, jurisdiction and terms."
         }
       ]
     }

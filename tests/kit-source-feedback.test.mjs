@@ -17,8 +17,8 @@ test('exporter reads a selected country source without publishing local paths or
     await writeFile(path.join(base, 'docs/evidence/sample.md'), '# Source location\n');
     await writeFile(path.join(base, 'docs/evidence/country.md'), '# Country source location\n');
     await writeFile(path.join(base, 'config/kit-source-feedback-selections.json'), JSON.stringify({
-      schema_version: '1.0', checked_at: '2026-09-24', evidence_path: 'docs/evidence/sample.md',
-      projects: [{ path: 'generated/sample', iso3: 'BGD', evidence_path: 'docs/evidence/country.md', sources: [{
+      schema_version: '1.0', checked_at: '2026-09-23', evidence_path: 'docs/evidence/sample.md',
+      projects: [{ path: 'generated/sample', iso3: 'BGD', checked_at: '2026-09-24', evidence_path: 'docs/evidence/country.md', sources: [{
         id: 'bbs-census', role: 'census_results', authority_type: 'official_national',
         geographic_levels: ['national'], formats: ['PDF'], reuse_note: 'Location only.',
       }] }],
@@ -33,6 +33,7 @@ test('exporter reads a selected country source without publishing local paths or
     assert.equal(bundle.sources[0].artifact_sha256, null);
     assert.deepEqual(bundle.sources[0].reference_periods, ['2022']);
     assert.equal(bundle.sources[0].origin_evidence_path, 'docs/evidence/country.md');
+    assert.equal(bundle.sources[0].checked_at, '2026-09-24');
     assert.ok(!JSON.stringify(bundle).includes(base));
   } finally {
     await rm(base, { recursive: true, force: true });

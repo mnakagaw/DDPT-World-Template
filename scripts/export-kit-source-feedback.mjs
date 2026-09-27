@@ -42,6 +42,10 @@ export async function buildKitSourceFeedback({ base = root, commit, exportedAt }
     const projectPath = requireValue(project.path, 'project path').replaceAll('\\', '/');
     if (!projectPath.startsWith('generated/') || projectPath.split('/').includes('..')) throw new Error(`Unsafe project path: ${projectPath}`);
     if (!/^[A-Z]{3}$/.test(project.iso3 || '')) throw new Error('Invalid ISO3 in feedback selection');
+    const checkedAt = project.checked_at || selection.checked_at;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(checkedAt) || checkedAt > date.slice(0, 10)) {
+      throw new Error(`Invalid or future feedback check date for ${project.iso3}`);
+    }
     const projectEvidencePath = project.evidence_path ? requireValue(project.evidence_path, 'project evidence_path').replaceAll('\\', '/') : evidencePath;
     if (path.isAbsolute(projectEvidencePath) || projectEvidencePath.split('/').includes('..') || !projectEvidencePath.startsWith('docs/evidence/')) throw new Error('Unsafe project evidence_path');
     await readFile(path.join(base, projectEvidencePath));
@@ -65,7 +69,7 @@ export async function buildKitSourceFeedback({ base = root, commit, exportedAt }
         authority_type: requireValue(chosen.authority_type, 'authority_type'),
         // These projects passed adaptation checks, not an independent source audit.
         evidence_stage: 'official_location_identified',
-        checked_at: selection.checked_at,
+        checked_at: checkedAt,
         geographic_levels: chosen.geographic_levels || [],
         reference_periods: source.reference_period ? [String(source.reference_period)] : [],
         formats: chosen.formats || [],

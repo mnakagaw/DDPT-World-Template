@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "khm-nis-final-census2019-report",
+      "url": "https://nis.gov.kh/nis/Census2019/Final%20General%20Population%20Census%202019-English.pdf",
+      "raw_path": "raw/nis/final-general-population-census-2019-english.pdf",
+      "bytes": 26586966,
+      "sha256": "8a10064a917f4492136abc770901ddfc868490e0558bd12ac1e4ded86d9d36b5",
+      "pdf_pages": 304,
+      "retrieved_at": "2026-09-27T00:10:17Z",
+      "scope": "2019 final report; adopted direct counts from PDF pages 43, 138, 237 and provincial P tables on pages 178-233; page 177 cross-checks final all-person counts"
+    },
+    {
+      "id": "khm-ncdd-gazetteer-district-0314",
+      "url": "https://db.ncdd.gov.kh/gazetteer/view/district.castle?ds=0314",
+      "raw_path": "raw/ncdd/gazetteer-district-0314.html",
+      "bytes": 8824,
+      "sha256": "7d1622e2dca05d5e9aa97d1c7dac6fd97a60b7e523e5daaaa299405470ccb1c5",
+      "retrieved_at": "2026-09-27T00:19:54Z",
+      "scope": "Official NCDD gazetteer confirms Srei Santhor district 0314 and communes 031401 onward; gazetteer current edition must not be generalized to all 2019 borders"
+    }
+  ]
+}
