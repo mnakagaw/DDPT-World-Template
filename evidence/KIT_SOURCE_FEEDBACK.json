@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-27T02:36:10.299Z",
-  "origin_commit": "a25450f3ba01197c6ba21c8c5f6381f6ca8dbd3e",
+  "exported_at": "2026-09-27T03:34:53.023Z",
+  "origin_commit": "1d515570187eb568addc5b7e0dd868472298136c",
   "sources": [
     {
       "iso3": "AFG",
@@ -7358,6 +7358,177 @@
       "license_or_terms": "Official public workbook; raw redistribution terms unverified",
       "reuse_note": "Official MBS 2022 census workbook acquired and numeric columns inventoried; value meaning and geography remain priority_unassessed. Kit must independently audit body, definitions and terms.",
       "origin_evidence_path": "docs/evidence/maldives-cph2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MMR",
+      "source_id": "MMR_MMR_DOP_CENSUS2014_DATA_CATALOGUE",
+      "role": "census_catalog",
+      "title": "DOP 2014 Census Excel Data catalogue",
+      "publisher": "Department of Population, Myanmar",
+      "url": "https://www.dop.gov.mm/en/data-and-maps-category/2014-census-data",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2014 Union and local census data; boundary/definition comparison with 2024 unverified"
+      ],
+      "reference_periods": [
+        "2014 census data catalogue"
+      ],
+      "formats": [
+        "HTML",
+        "XLSX"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "Older DOP census data catalogue. Keep 2014 as a distinct census edition; do not infer ten-year change without geography, enumeration and definition reconciliation.",
+      "origin_evidence_path": "docs/evidence/myanmar-dop-census2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MMR",
+      "source_id": "MMR_MMR_DOP_CENSUS2024_PROVISIONAL",
+      "role": "census_results",
+      "title": "2024 Population and Housing Census Provisional Results",
+      "publisher": "Department of Population, Myanmar",
+      "url": "https://dop.gov.mm/sites/dop.gov.mm/files/publication_docs/2024_provisional_result_eng.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2024 provisional Union and subnational results; separate earlier edition"
+      ],
+      "reference_periods": [
+        "2024 census, 30 September 2024 reference time"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public source; reuse terms not yet verified",
+      "reuse_note": "Earlier provisional report prints a different Union total than the later Union Report. Preserve edition and release-status differences; do not merge its values into the later series or infer a time change.",
+      "origin_evidence_path": "docs/evidence/myanmar-dop-census2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MMR",
+      "source_id": "MMR_MMR_DOP_CENSUS2024_UNION_REPORT",
+      "role": "census_results",
+      "title": "The 2024 Myanmar Population and Housing Census, Union Report",
+      "publisher": "Department of Population, Myanmar",
+      "url": "https://www.dop.gov.mm/sites/dop.gov.mm/files/publication_docs/2024mphc_unionreport_en_26nov.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2024 Union, fifteen State/Region-equivalent areas, district and township descriptions; actual content varies by table"
+      ],
+      "reference_periods": [
+        "2024 census, 30 September 2024 reference time"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public source; reuse terms not yet verified",
+      "reuse_note": "Later Union Report edition: 62.6 percent enumerated and 37.4 percent statistically estimated nationally, with sharply unequal local coverage. Kit must acquire/hash and interpret report tables independently, not import AreaData's values or acceptance.",
+      "origin_evidence_path": "docs/evidence/myanmar-dop-census2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MMR",
+      "source_id": "MMR_MMR_DOP_CENSUS2024_DEMOGRAPHIC_APPENDIX",
+      "role": "machine_readable_data",
+      "title": "2024 Census Appendix Tables, Demographic Characteristics (Excel)",
+      "publisher": "Department of Population, Myanmar",
+      "url": "https://dop.gov.mm/sites/dop.gov.mm/files/datamap-documents/2024_census_appendix_table_demographic_characteristics_eng.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2024 Union, fifteen State/Region-equivalent rows and urban/rural subtotals; district/township tables unassessed"
+      ],
+      "reference_periods": [
+        "2024 census, 30 September 2024 reference time"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public source; reuse terms not yet verified",
+      "reuse_note": "DOP official demographic appendix location. AreaData adopted only Table A-1 plus separately checked report coverage rows; Kit must independently inspect all 18 subject tables, denominators, mixed enumeration/estimation, code geography and terms.",
+      "origin_evidence_path": "docs/evidence/myanmar-dop-census2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MMR",
+      "source_id": "MMR_MMR_CSO_2023_ADMIN_UNITS_LOCATION",
+      "role": "table_catalog",
+      "title": "Statistical Yearbook 2023 Part 1, Table 1.11 Administrative Units",
+      "publisher": "Central Statistical Organization, Myanmar; General Administration Department table source",
+      "url": "https://www.csostat.gov.mm/FileUpload/cso/FileDownload/SYB%202023%20%28Part-1%29.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "31 March 2023 Union and State/Region counts of district, township and smaller administrative units"
+      ],
+      "reference_periods": [
+        "31 March 2023 administrative count"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public location; raw PDF and terms unverified",
+      "reuse_note": "CSO Statistical Yearbook location for GAD administrative-unit counts. AreaData did not acquire the PDF body; the table is not an official 2024 geographic code list or verified polygon crosswalk.",
+      "origin_evidence_path": "docs/evidence/myanmar-dop-census2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MMR",
+      "source_id": "MMR_MMR_DOP_CENSUS2024_MAIN_EXCEL_CATALOGUE",
+      "role": "table_catalog",
+      "title": "DOP 2024 Main Report Excel catalogue",
+      "publisher": "Department of Population, Myanmar",
+      "url": "https://www.dop.gov.mm/en/data-and-maps-category/2024-main-report-excel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2024 Union Excel appendices by subject; local table availability must be checked per file"
+      ],
+      "reference_periods": [
+        "2024 census, English Union appendices released March 2026"
+      ],
+      "formats": [
+        "HTML",
+        "XLSX"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "Official DOP index lists demographic, housing, education, migration, labour and disability appendices. AreaData acquired only the demographic workbook; Kit must check each file and table separately.",
+      "origin_evidence_path": "docs/evidence/myanmar-dop-census2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MMR",
+      "source_id": "MMR_MMR_DOP_CENSUS2024_STATE_EXCEL_CATALOGUE",
+      "role": "table_catalog",
+      "title": "DOP 2024 State/Region Reports Excel catalogue",
+      "publisher": "Department of Population, Myanmar",
+      "url": "https://www.dop.gov.mm/en/data-and-maps-category/2024-stateregion-reports-excel",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2024 State/Region Excel reports; not all state/region files confirmed"
+      ],
+      "reference_periods": [
+        "2024 census, some English state/region appendices released June 2026"
+      ],
+      "formats": [
+        "HTML",
+        "XLSX"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "Official DOP State/Region Excel catalogue. Indexed files include some English local appendices; full coverage, subdistrict fields, code crosswalk and terms remain unassessed in AreaData.",
+      "origin_evidence_path": "docs/evidence/myanmar-dop-census2024-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
