@@ -377,3 +377,16 @@ Seven public official locations were selected: the DOP demographic appendix and 
 | Validation | AreaData check 161 JavaScript/JSON, 219/219 tests, Myanmar validator zero errors/warnings, build and five 15-indicator actual-output cases. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 460 feedback sources). |
 
 All seven Myanmar stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, including for the originals acquired by AreaData. Kit must independently obtain source bodies, audit all relevant tables and mixed-enumeration definitions, verify official geographic codes/edition, local planning evidence and reuse terms. Myanmar remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Malaysia DOSM and Kuala Lumpur source leads — 2026-09-27 JST
+
+Fifteen official public locations were selected: six OpenDOSM population/HIES/amenities CSVs, the MyCensus 2020 district report, MyGeoportal UPI codes, PLANMalaysia Act 172 overview/manual catalogue, and five Kuala Lumpur Gazette/plan/budget/annual-report originals. [The Malaysia source audit](../../evidence/malaysia-dosm-source-audit-2026-09-27.md) separates 2020 adjusted census population, 2024 intercensal estimates, HIES household surveys, 2025 DBKL **budget estimates** and the KL-only 2040 plan Gazette. The district HIES roster and UPI code/boundary match are unresolved. Kit receives **locations and reuse cautions only**, not AreaData's observations, acquired bodies or acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, source audit, status and 15 selections | `b11619c3679c5069d51dad0594a1d57237f5fe91` on `codex/asia-domestic-20260926`; pushed. |
+| AreaData 475-source / 36-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that adapter commit as `origin_commit`; bundle SHA-256 `380b3924f84720939f3c34df9fb40ed6fd66e162f2f98b1b402a9a0d42873867`, committed as `0cff02b60f76a8cd41ec70ca940af8a03c60cc99` and pushed. |
+| Kit feedback import | `a06afbf1925ce13aa4af3d5f1a5ff406beb77cdf` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 475 leads, inserted 15 Malaysia records, updated 460 prior origin histories, 476 Kit records total. Pushed. |
+| Validation | AreaData check 162 JavaScript/JSON, 219/219 tests, Malaysia validator zero errors/warnings, build and five actual-output cases. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 475 feedback sources). |
+
+All 15 Malaysia stages remain `official_location_identified`, and the Kit records `not_acquired_by_kit_preflight`, including originals acquired by AreaData. Kit must independently obtain source bodies, audit full fields/tables, reconcile official geographic codes and dated boundaries, verify law/plan applicability and reuse terms. Malaysia remains a partial unpublished candidate without independent `ACCEPT`.
