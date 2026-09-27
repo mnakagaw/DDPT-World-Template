@@ -38,3 +38,5 @@ Producer run: dataset SHA-256 `c2cb0894b0070f68636dc8d502e6ad6e0de3669db8487b750
 4. Review reuse terms; complete applicable 42 scenarios, all-indicator print/mobile/performance and Thai-language inspection, plus independent `ACCEPT`. Assign THA-specific Hosting/Public scope and verify deployed JSON/rendered URLs only after acceptance.
 
 Kit feedback is source-location-only (`official_location_identified`) until Kit independently acquires and audits each lead. It transfers no XLSX/PDF, 1,872 observations or country acceptance. [Kit feedback handoff](KIT_FEEDBACK_HANDOFF.md) records import and repository commits. **Local:** partial candidate. **GitHub:** scoped code, audit and source leads. **Hosting:** none. **Public:** none.
+
+GitHub handoff: AreaData adapter `a25450f3ba01197c6ba21c8c5f6381f6ca8dbd3e`, 453-source bundle `2311a40`, Kit import `74de9dc`. All were pushed to their respective `codex/asia-*` branches. The bundle SHA-256 is `2e813de7f8fbee9b7749bf22baeda9609186f016776c4aa202b574ff8cb91256`.

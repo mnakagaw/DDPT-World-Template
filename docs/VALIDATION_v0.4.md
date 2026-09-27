@@ -71,3 +71,9 @@
 これは参照実装0.4の旧合格実績と別の、未公開ジョージア候補の**制作者による部分検証**。対象データSHA-256は `bf90082d191dabcfea1bab75bbde0e79a86e7a4f01570426e79ced16cb18b454`、環境はWindows/PowerShell・Node 24・Python 3・Codex in-app browser。Geostat 2024年確報の5表から85地域・22地方指標・1,740観測を接続し、48原本の数値セル85,449件を機械的に棚卸しした。43表の意味監査は未了であり、セル数を採用値件数としない。
 
 `validate-country`はエラー0／計画資料未取得の警告1、buildと13ケースの実出力照合が成功した。`npm run check`は144 JavaScriptモジュールとJSONテンプレート、`npm test`は218/218件成功。画面では全国→Adjara→Batumi→Adjara全体とTbilisi→Gldaniを確認し、上位再選択、Batumiの実ゼロ、Gldaniで未提供の年齢・労働値の欠測、資料0件の未取得表示、比較内でSamgoriに注目してもGldaniの分析対象を維持する動作を確認した。全員が使える画面、幅別表示、計画資料の実内容、42受入シナリオ全件、印刷PDF、独立`ACCEPT`、Hosting/Publicは未実施。詳細は[ジョージア制作者確認票](evidence/georgia-country-lesson-audit-2026-09-26.md)に記録した。
+
+## 2026-09-27 タイ国別候補の追加確認
+
+これは参照実装0.4の旧合格実績と別の、未公開タイ候補の**制作者による部分検証**。対象AreaData adapter commit `a25450f3ba01197c6ba21c8c5f6381f6ca8dbd3e`、dataset SHA-256 `c2cb0894b0070f68636dc8d502e6ad6e0de3669db8487b7508cbe253b4b9615c`、環境はWindows/PowerShell・Node v24.11.1・Python 3.14.0・Codex in-app browser。NESDC 2024p Excelの全国＋77省へ24指標・1,872直接観測を接続し、全国・7経済地域・77省の2,210原表セルを照合した。Kam Phaeng Phet詳細表人口の不整合を保留し、1995–2023年・CVM・cluster等は意味監査待ち。
+
+`validate-country`はエラー0／警告0、buildと5ケースの診断CSV/HTML/Markdown・計画HTML・根拠CSV照合が成功した。`npm run check`は160 JavaScript/JSON、`npm test`は218/218件成功。全国の24指標それぞれで77比較行の初末・全件・原表locatorを確認し、画面ではChiang Mai→Thailand→Chiang Mai→Thailandの見出し・URL・GPP値切替、地方資料未収集と全国参考の分離、図形未結合の代替を確認した。全国画面は24指標・1,848比較行を持つため低性能端末での負荷検証が必要。42受入シナリオの全件、狭画面、Word/PDFと印刷の全ページ、タイ語、法定コード/境界・実計画/財政資料、独立`ACCEPT`、Hosting/Publicは未実施。[原本監査](evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md)と[制作者確認票](evidence/thailand-country-lesson-audit-2026-09-27.md)を参照。

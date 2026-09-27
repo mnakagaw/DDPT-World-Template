@@ -351,3 +351,16 @@ Eleven public official locations were selected: the joint GSO/UNFPA census repor
 | Validation | AreaData check 159 JavaScript/JSON, 218/218 tests, Viet Nam validator zero errors/warnings, build and five actual-output cases. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 442 feedback sources). |
 
 All 11 Viet Nam stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, including for the original acquired by AreaData. Kit must independently obtain and inspect source bodies, full numerical columns, historical/current geography, legal application, local documents and terms. Viet Nam remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Thailand NESDC 2024p GPP and planning source leads — 2026-09-27 JST
+
+Eleven public official locations were selected: the NESDC 2024p GPP workbook and release catalogue, NESDC province/cluster guide and catalogue, NSO 2025 census portal and indexed final PDF, BORA registration catalogue, DOPA administrative-code register, Chiang Mai plan/progress catalogue and FY2025 plan PDF location, and Thai Open Government district-registration catalogue. [The Thailand source audit](../../evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md) records 1,872 direct AreaData observations, but Kit receives only locations and warnings. It also records one withheld conflicting Kam Phaeng Phet population cell, current-price sector overlaps, incomplete historical/CVM audit, blocked NSO/BORA/open-data acquisition and unverified planning effect. Feedback transfers no raw XLSX/PDF, numeric cells, DOPA code/polygon join, local plan, budget or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, audit, status and 11 selected source locations | `a25450f3ba01197c6ba21c8c5f6381f6ca8dbd3e` on `codex/asia-domestic-20260926`; pushed. |
+| AreaData 453-source / 34-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that exact adapter commit as `origin_commit`; SHA-256 `2e813de7f8fbee9b7749bf22baeda9609186f016776c4aa202b574ff8cb91256`, committed as `2311a40` and pushed. |
+| Kit feedback import | `74de9dc` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 453 leads, inserted 11 Thailand records and updated 442 prior origin histories, 454 Kit records total. Pushed. |
+| Validation | AreaData check 160 JavaScript/JSON, 218/218 tests, Thailand validator zero errors/warnings, build and five 24-indicator actual-output cases. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 453 feedback sources). |
+
+All 11 Thailand stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, even for the originals acquired by AreaData. Kit must independently acquire and inspect body, tables, definitions, local availability, administrative and plan jurisdiction, rights and reuse terms. Thailand remains a partial unpublished candidate without independent `ACCEPT`.
