@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-27T03:34:53.023Z",
-  "origin_commit": "1d515570187eb568addc5b7e0dd868472298136c",
+  "exported_at": "2026-09-27T04:22:21.950Z",
+  "origin_commit": "b11619c3679c5069d51dad0594a1d57237f5fe91",
   "sources": [
     {
       "iso3": "AFG",
@@ -7529,6 +7529,367 @@
       "license_or_terms": "Official public location; item terms unverified",
       "reuse_note": "Official DOP State/Region Excel catalogue. Indexed files include some English local appendices; full coverage, subdistrict fields, code crosswalk and terms remain unassessed in AreaData.",
       "origin_evidence_path": "docs/evidence/myanmar-dop-census2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_MYGEOPORTAL_UPI_CODES",
+      "role": "administrative_codes",
+      "title": "Mygeoportal Upi Codes",
+      "publisher": "National Geospatial Centre Malaysia",
+      "url": "https://www.mygeoportal.gov.my/sites/default/files/dokumen_upi/Kod%20UPI_1303024.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "UPI land-register state, district and smaller codes; not a dated DOSM crosswalk"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public source; reuse terms to be confirmed",
+      "reuse_note": "MyGeoportal UPI official land-code register location. The 2023 land-admin code system is not itself a certified 2020/2024 DOSM statistical or PBT code/boundary join. Kit must independently verify edition and correspondence.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_DOSM_CENSUS2020_DISTRICT_REPORT",
+      "role": "census_results",
+      "title": "Dosm Census2020 District Report",
+      "publisher": "Department of Statistics Malaysia",
+      "url": "https://www.dosm.gov.my/uploads/publications/20221011115309.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2020 Malaysia administrative districts; report tables vary"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public source; reuse terms to be confirmed",
+      "reuse_note": "DOSM 216-page MyCensus 2020 district key-findings report acquired by AreaData but its 19 numbered tables remain semantically unassessed. Kit must inspect the actual tables and adjusted/field-enumerated definitions before using any values.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_DOSM_AMENITIES",
+      "role": "machine_readable_data",
+      "title": "Dosm Amenities",
+      "publisher": "Department of Statistics Malaysia",
+      "url": "https://storage.dosm.gov.my/hies/hh_access_amenities.csv",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "state totals and district household survey domains"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "CC BY 4.0",
+      "reuse_note": "DOSM household amenities CSV location. State 2024 piped-water/sanitation fields include blanks that are missing, not zero. Historical and district rows require independent definition, denominator and geography checks.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_DOSM_HIES_DISTRICT",
+      "role": "machine_readable_data",
+      "title": "Dosm Hies District",
+      "publisher": "Department of Statistics Malaysia",
+      "url": "https://storage.dosm.gov.my/hies/hies_district.csv",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "HIES administrative-district survey domains; 2024 roster differs"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "CC BY 4.0",
+      "reuse_note": "DOSM HIES district source location only: AreaData did not adopt its 162 2024 rows. Only 149 exact names match the 156 subdivided population districts; acquire dated code/boundary and survey-domain crosswalk before Kit joins values.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_DOSM_HIES_STATE",
+      "role": "machine_readable_data",
+      "title": "Dosm Hies State",
+      "publisher": "Department of Statistics Malaysia",
+      "url": "https://storage.dosm.gov.my/hies/hies_state.csv",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "state and Federal Territory HIES survey domains"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "CC BY 4.0",
+      "reuse_note": "DOSM HIES state survey location with 2022 and 2024 rows. Household means, Gini and poverty are survey measures, not census counts. Recheck catalogue-year wording, methodology, uncertainty and each field before reuse.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_DOSM_POPULATION_DISTRICT",
+      "role": "machine_readable_data",
+      "title": "Dosm Population District",
+      "publisher": "Department of Statistics Malaysia",
+      "url": "https://storage.dosm.gov.my/population/population_district.csv",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Malaysia administrative-district statistical rows; 2020/2024 selected"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "CC BY 4.0",
+      "reuse_note": "DOSM district CSV location. 2020 census-adjusted and 2024 intercensal values differ in method; four district labels drift, four state/FT self-district rows duplicate parents. Kit must independently audit dimensions, geographic codes/editions and rights.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_DOSM_POPULATION_MALAYSIA",
+      "role": "machine_readable_data",
+      "title": "Dosm Population Malaysia",
+      "publisher": "Department of Statistics Malaysia",
+      "url": "https://storage.dosm.gov.my/population/population_malaysia.csv",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Malaysia national"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "CC BY 4.0",
+      "reuse_note": "DOSM direct national population CSV location. Keep 2020 census-adjusted and 2024 intercensal estimates separate from WDI and subnational sums; independent Kit acquisition and field audit required.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_DOSM_POPULATION_STATE",
+      "role": "machine_readable_data",
+      "title": "Dosm Population State",
+      "publisher": "Department of Statistics Malaysia",
+      "url": "https://storage.dosm.gov.my/population/population_state.csv",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "16 state and Federal Territory statistical rows"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "CC BY 4.0",
+      "reuse_note": "DOSM state population CSV location. Original unit is thousand people, rounded to one decimal; Kit must independently inspect all age, sex, ethnicity, period and geography definitions. Never infer district or national aggregation from rounded cells.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_PLANMALAYSIA_MANUAL_LOCATION",
+      "role": "planning_guidance",
+      "title": "PLANMalaysia planning manuals catalogue",
+      "publisher": "PLANMalaysia",
+      "url": "https://www.planmalaysia.gov.my/main/documents?type=manual-perancangan",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "PLANMalaysia planning-manual catalogue; individual manuals vary"
+      ],
+      "reference_periods": [
+        "catalogue checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "Official public catalogue; item terms not checked",
+      "reuse_note": "Official manual catalogue location only. A prior direct PDF URL returned 404. Inspect current manual body, version, jurisdiction and planning-unit applicability before adopting a form or cycle.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_PLANMALAYSIA_ACT172_LOCATION",
+      "role": "planning_law",
+      "title": "PLANMalaysia Local Plan Act 172 sections 12-16 overview",
+      "publisher": "PLANMalaysia",
+      "url": "https://www.planmalaysia.gov.my/main/article/rancangan-tempatan",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Peninsular Malaysia Act 172 local-plan framework overview; jurisdiction-specific exceptions"
+      ],
+      "reference_periods": [
+        "web page checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms not checked",
+      "reuse_note": "PLANMalaysia overview location, not acquired current Act text. Act 172 application is not universal across KL, Sabah, Sarawak and Federal Territories. The old direct Act PDF URL returned 404; Kit must obtain operative text/amendments and authority.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_DBKL_KL_LOCAL_PLAN_2040_VOL2",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Dbkl Kl Local Plan 2040 Vol2",
+      "publisher": "Kuala Lumpur City Hall / Federal Gazette",
+      "url": "https://ppkl.dbkl.gov.my/wp-content/uploads/2025/06/1.-VOLUME-2-PROMOTING-CITY-DEVELOPMENT.pdf",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Kuala Lumpur Local Plan 2040 Volume 2 only"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public source; reuse terms to be confirmed",
+      "reuse_note": "DBKL plan volume location and body identity verified by AreaData; 576-page content, numeric tables, targets and implementation are unassessed. Kit must independently inspect the relevant plan, edition, jurisdiction and terms.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_DBKL_BUDGET_SPEECH_2025",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Dbkl Budget Speech 2025",
+      "publisher": "Kuala Lumpur City Hall / Federal Gazette",
+      "url": "https://www.dbkl.gov.my/files/arkib-ucapan-belanjawan-dbkl/ucapan-belanjawan-2025.pdf",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Kuala Lumpur City Hall 2025 budget speech"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public source; reuse terms to be confirmed",
+      "reuse_note": "DBKL speech page 16 paragraph 54 reports rounded 2025 revenue and expenditure estimates and a reported deficit; it is not actual expenditure. The rounded figures do not exactly reproduce the deficit. Kit must independently audit budget status and figures.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_DBKL_BUDGET_SUMMARY",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Dbkl Budget Summary",
+      "publisher": "Kuala Lumpur City Hall / Federal Gazette",
+      "url": "https://www.dbkl.gov.my/files/data-terbuka/ringkasan-bajet-hasil-dan-belanja-dbkl.xlsx",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Kuala Lumpur City Hall 2014-2023 budget estimates"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public source; reuse terms to be confirmed",
+      "reuse_note": "DBKL open-data workbook contains historical budget-estimate cells, not verified actual spending or plan achievement. Do not transfer its estimates as execution figures; audit source rows and period independently.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_DBKL_ANNUAL_REPORT_2023",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Dbkl Annual Report 2023",
+      "publisher": "Kuala Lumpur City Hall / Federal Gazette",
+      "url": "https://www.dbkl.gov.my/files/laporan-tahunan-dbkl-2023_final.pdf",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Kuala Lumpur City Hall 2023 annual report"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public source; reuse terms to be confirmed",
+      "reuse_note": "DBKL annual-report body acquired by AreaData; scanned financial statement pages and actual expenditure/evaluation were not extracted or adopted. Kit must inspect images and financial periods before using results.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "MYS",
+      "source_id": "MYS_MYS_DBKL_KL_LOCAL_PLAN_GAZETTE",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Dbkl Kl Local Plan Gazette",
+      "publisher": "Kuala Lumpur City Hall / Federal Gazette",
+      "url": "https://www.dbkl.gov.my/files/senarai-perundangan/subsidiari/(10)-pemberitahuan-penerimaan-draf-pelan-tempatan-bagi-wpkl.pdf",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Federal Territory of Kuala Lumpur local-plan adoption only"
+      ],
+      "reference_periods": [
+        "source-specific, see locator and period"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public source; reuse terms to be confirmed",
+      "reuse_note": "Federal Gazette P.U. (B) 206/2025 page 4 identifies KL Local Plan 2040 adoption and effect dates. It does not prove current plan content, implementation, or approval of plans in other statistical districts.",
+      "origin_evidence_path": "docs/evidence/malaysia-dosm-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
