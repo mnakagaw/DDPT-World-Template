@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-27T06:49:26.301Z",
-  "origin_commit": "8ff8f6b73aa01bdd0d352c5150f8c40529a16c29",
+  "exported_at": "2026-09-27T08:27:53.989Z",
+  "origin_commit": "fec3b12132eac791a2b68822dd95a0e6cc7a40d5",
   "sources": [
     {
       "iso3": "AFG",
@@ -12063,6 +12063,294 @@
       "license_or_terms": null,
       "reuse_note": "NPA local-government plan catalogue location only. Area-specific plans, dates, duplicates and content must be checked individually; no plan is assumed current or adopted in Kit.",
       "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UZB",
+      "source_id": "UZB_UZB_NSC_CENSUS2026_STATUS",
+      "role": "census_catalog",
+      "title": "2026 census programme and preliminary-results status",
+      "publisher": "Government of Uzbekistan",
+      "url": "https://gov.uz/en/pages/2026",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Uzbekistan national 2026 census programme and preliminary status"
+      ],
+      "reference_periods": [
+        "checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Link location only; terms unverified",
+      "reuse_note": "Government census programme/status location only. Preliminary July 2026 release and later final results must remain separate; Kit must check current status and exact publication, not infer final data from programme dates.",
+      "origin_evidence_path": "docs/evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UZB",
+      "source_id": "UZB_UZB_NSC_CENSUS2026_PRELIMINARY_REPORT",
+      "role": "census_results",
+      "title": "Preliminary results of the 2026 Population and Agriculture Census",
+      "publisher": "National Statistics Committee",
+      "url": "https://aholi.stat.uz/images/07.07.2026/kitob-eng_p16318.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Preliminary 2026-01-15 nation and 14 first-level rows in assessed pp.4-5; other tables vary"
+      ],
+      "reference_periods": [
+        "census moment 2026-01-15; preliminary"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public source; reuse and redistribution terms require source-specific review",
+      "reuse_note": "2026 preliminary population/agriculture census report location. AreaData assessed only selected population columns on printed pp.4-5; 25 other identified tables remain priority_unassessed. PDF regional rows omit official codes; matched names are provisional. Final edition and rights require independent Kit audit.",
+      "origin_evidence_path": "docs/evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UZB",
+      "source_id": "UZB_UZB_NSC_CENSUS2026_PRELIMINARY_AGRICULTURE_TABLES",
+      "role": "census_results",
+      "title": "Preliminary census agriculture tables 1.1–1.11",
+      "publisher": "National Statistics Committee",
+      "url": "https://aholi.stat.uz/images/07.07.2026/tables-for-the-website-eng_p34391.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Eleven 2025/preliminary 2026 national agriculture sheets; no district population rows in this workbook"
+      ],
+      "reference_periods": [
+        "2025 and 2026-01-15 by table"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public source; reuse and redistribution terms require source-specific review",
+      "reuse_note": "Official preliminary census Excel contains agriculture sheets 1.1-1.11, not district population tables. AreaData inventoried numeric cells but adopted none. Kit must inspect every sheet, meaning, period, geography and reuse terms independently.",
+      "origin_evidence_path": "docs/evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UZB",
+      "source_id": "UZB_UZB_SIAT_PERMANENT_FEMALE",
+      "role": "machine_readable_data",
+      "title": "Permanent population - female",
+      "publisher": "National Statistics Committee, SIAT",
+      "url": "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_244.csv",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2026 nation, 14 first-level units and 206 districts/cities in SIAT COATO reporting roster"
+      ],
+      "reference_periods": [
+        "as at 2026-01-01; earlier annual columns retained only in raw CSV"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "SIAT catalogue marks CC BY 4.0; attribute the NSC and preserve indicator metadata",
+      "reuse_note": "NSC SIAT permanent female-population CSV location. Only 2026 values assessed by AreaData; earlier years and administrative changes unassessed. Preserve thousand-person unit and 1 January reference date.",
+      "origin_evidence_path": "docs/evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UZB",
+      "source_id": "UZB_UZB_SIAT_PERMANENT_MALE",
+      "role": "machine_readable_data",
+      "title": "Permanent population - male",
+      "publisher": "National Statistics Committee, SIAT",
+      "url": "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_245.csv",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2026 nation, 14 first-level units and 206 districts/cities in SIAT COATO reporting roster"
+      ],
+      "reference_periods": [
+        "as at 2026-01-01; earlier annual columns retained only in raw CSV"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "SIAT catalogue marks CC BY 4.0; attribute the NSC and preserve indicator metadata",
+      "reuse_note": "NSC SIAT permanent male-population CSV location. Only 2026 values assessed by AreaData; earlier years and administrative changes unassessed. Preserve thousand-person unit and 1 January reference date.",
+      "origin_evidence_path": "docs/evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UZB",
+      "source_id": "UZB_UZB_SIAT_PERMANENT_TOTAL",
+      "role": "machine_readable_data",
+      "title": "Permanent population - total",
+      "publisher": "National Statistics Committee, SIAT",
+      "url": "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_246.csv",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2026 Uzbekistan nation, 14 first-level COATO units and 206 districts/cities; earlier years require geography review"
+      ],
+      "reference_periods": [
+        "as at 2026-01-01; earlier annual columns retained only in raw CSV"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "SIAT catalogue marks CC BY 4.0; attribute the NSC and preserve indicator metadata",
+      "reuse_note": "NSC SIAT annual permanent-population total series. AreaData adopted only 2026-01-01 column; national 38,236.7 is thousand people, not preliminary census or WDI midyear population. Check all earlier years, classifier edition and rights independently in Kit.",
+      "origin_evidence_path": "docs/evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UZB",
+      "source_id": "UZB_UZB_SIAT_PERMANENT_RURAL",
+      "role": "machine_readable_data",
+      "title": "Permanent population - rural",
+      "publisher": "National Statistics Committee, SIAT",
+      "url": "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_247.csv",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2026 nation, 14 first-level units and 206 districts/cities in SIAT COATO reporting roster"
+      ],
+      "reference_periods": [
+        "as at 2026-01-01; earlier annual columns retained only in raw CSV"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "SIAT catalogue marks CC BY 4.0; attribute the NSC and preserve indicator metadata",
+      "reuse_note": "NSC SIAT rural permanent-population CSV location. Source zero is zero, not missing. Earlier zeros can reflect pre-establishment units; historical comparability and settlement definition need Kit audit.",
+      "origin_evidence_path": "docs/evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UZB",
+      "source_id": "UZB_UZB_SIAT_PERMANENT_URBAN",
+      "role": "machine_readable_data",
+      "title": "Permanent population - urban",
+      "publisher": "National Statistics Committee, SIAT",
+      "url": "https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_248.csv",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2026 nation, 14 first-level units and 206 districts/cities in SIAT COATO reporting roster"
+      ],
+      "reference_periods": [
+        "as at 2026-01-01; earlier annual columns retained only in raw CSV"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "SIAT catalogue marks CC BY 4.0; attribute the NSC and preserve indicator metadata",
+      "reuse_note": "NSC SIAT urban permanent-population CSV location. AreaData assessed 2026 only. Do not equate administrative urban/rural estimate with the 15 January preliminary census classification.",
+      "origin_evidence_path": "docs/evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UZB",
+      "source_id": "UZB_UZB_ASDR_REGIONAL_STRATEGIES_2026",
+      "role": "planning_guidance",
+      "title": "Task to prepare 2030 strategies for 14 regions",
+      "publisher": "Agency for Strategic Development and Reforms",
+      "url": "https://asdr.gov.uz/en/tasks-set-for-the-development-of-regional-strategies/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Preparation task for Karakalpakstan, Tashkent city and twelve regions"
+      ],
+      "reference_periods": [
+        "checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Link location only; terms unverified",
+      "reuse_note": "ASDR reports a task to prepare strategies to 2030 for fourteen first-level units. It is not an acquired strategy body or adoption notice for any individual unit; district/city authority remains unverified.",
+      "origin_evidence_path": "docs/evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UZB",
+      "source_id": "UZB_UZB_LEX_PF21_2030",
+      "role": "planning_law",
+      "title": "Presidential Decree PF-21 and Uzbekistan–2030 Strategy",
+      "publisher": "Lex.uz official legal information",
+      "url": "https://test.lex.uz/docs/8050769",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "National Uzbekistan-2030 strategy; no individual regional plan approval"
+      ],
+      "reference_periods": [
+        "checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Link location only; terms unverified",
+      "reuse_note": "PF-21 national legal source location only. Current operative text, amendments, regional planning authority, individual plan approval and forms need independent Kit legal review.",
+      "origin_evidence_path": "docs/evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UZB",
+      "source_id": "UZB_UZB_MOF_LOCAL_BUDGET_2026_TABLE",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "2026 local-budget revenue and expenditure table",
+      "publisher": "Ministry of Economy and Finance",
+      "url": "https://gov.uz/en/imv/sections/view/190028",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Uzbekistan national total and 14 first-level local-budget rows; no district rows verified"
+      ],
+      "reference_periods": [
+        "2026; column quarter labels unverified"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public source; reuse and redistribution terms require source-specific review",
+      "reuse_note": "MOF 2026 local-budget HTML contains two Revenue/Transfer/Expenditure triplets without unambiguous periods in pinned body. AreaData adopted no fiscal values. Kit must establish quarter, planned versus actual, unit and version before any budget/execution claim.",
+      "origin_evidence_path": "docs/evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "UZB",
+      "source_id": "UZB_UZB_NSC_DEMOGRAPHY_2026_01_27",
+      "role": "table_catalog",
+      "title": "NSC demographic situation, January–December 2025 release",
+      "publisher": "National Statistics Committee",
+      "url": "https://stat.uz/img/news/demografiya-press-reliz-en_p24116.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2026-01-01 Uzbekistan nation and 14 first-level units in demographic release"
+      ],
+      "reference_periods": [
+        "as at 2026-01-01"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public source; reuse and redistribution terms require source-specific review",
+      "reuse_note": "NSC demographic release cross-checks SIAT 2026 first-level total values. Other release figures require separate definition and coverage audit; a press release is not a district census table.",
+      "origin_evidence_path": "docs/evidence/uzbekistan-siat-census2026-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
