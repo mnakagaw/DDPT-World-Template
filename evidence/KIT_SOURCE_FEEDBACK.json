@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-27T00:05:37.601Z",
-  "origin_commit": "fcf87211cad097c3501f980e28dd043d126f57ba",
+  "exported_at": "2026-09-27T00:55:25.998Z",
+  "origin_commit": "49aa58160f8227b7706cad39c9b7c658bd11329c",
   "sources": [
     {
       "iso3": "AFG",
@@ -4274,6 +4274,198 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "New AreaData official 2015 census catalogue location. One separate Table 2.17 PDF was acquired and partially adopted by AreaData; the remaining individual thematic tables, source fields, geography and terms have not been fully audited. The 2025 estimate workbooks are separate.",
       "origin_evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KHM",
+      "source_id": "KHM_KHM_NCDD_GAZETTEER_DISTRICT_0314",
+      "role": "administrative_codes",
+      "title": "NCDD Gazetteer, Srei Santhor district 0314",
+      "publisher": "National Committee for Sub-National Democratic Development",
+      "url": "https://db.ncdd.gov.kh/gazetteer/view/district.castle?ds=0314",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Srei Santhor district 0314 and its commune codes; current gazetteer page"
+      ],
+      "reference_periods": [
+        "current page; 2019 applicability not generalized"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public source; redistribution/reuse terms require review",
+      "reuse_note": "NCDD page confirms one NIS P-03 printed-code exception only. It is not a complete 2019 code or polygon crosswalk; Kit must check edition, all areas and reuse terms independently.",
+      "origin_evidence_path": "docs/evidence/cambodia-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KHM",
+      "source_id": "KHM_KHM_NCDD_GAZETTEER_INDEX",
+      "role": "administrative_codes",
+      "title": "NCDD Gazetteer index",
+      "publisher": "NCDD",
+      "url": "https://db.ncdd.gov.kh/gazetteer/view/index.castle",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Cambodia subnational code directory; edition and 2019 correspondence unverified"
+      ],
+      "reference_periods": [
+        "catalogue checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "NCDD official directory location. Do not assume current codes or boundaries match all 2019 NIS reporting rows; Kit must audit version and terms.",
+      "origin_evidence_path": "docs/evidence/cambodia-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KHM",
+      "source_id": "KHM_KHM_NIS_CENSUS_CATALOGUE",
+      "role": "census_catalog",
+      "title": "NIS General Population Census catalogue",
+      "publisher": "National Institute of Statistics",
+      "url": "https://nis.gov.kh/en/general-population-census-of-cambodia/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Cambodia census publications; publication and table grains vary"
+      ],
+      "reference_periods": [
+        "catalogue checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "NIS official census catalogue location. AreaData has not assessed all linked tables or post-2019 releases; Kit must independently confirm availability, definitions and terms.",
+      "origin_evidence_path": "docs/evidence/cambodia-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KHM",
+      "source_id": "KHM_KHM_NIS_FINAL_CENSUS2019_REPORT",
+      "role": "census_results",
+      "title": "NIS General Population Census 2019 Final Results",
+      "publisher": "National Institute of Statistics",
+      "url": "https://nis.gov.kh/nis/Census2019/Final%20General%20Population%20Census%202019-English.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Cambodia country, 25 census provinces, 2019 census district and commune reporting rows"
+      ],
+      "reference_periods": [
+        "2019 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public source; redistribution/reuse terms require review",
+      "reuse_note": "NIS 2019 final report lead. AreaData adopted selected all-person and normal-household direct counts separately. Kit must independently inspect the original, 202/204 district discrepancy, printed errors, other tables, geography, rights and terms.",
+      "origin_evidence_path": "docs/evidence/cambodia-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KHM",
+      "source_id": "KHM_KHM_NCDD_CAPITAL_PROVINCE_GUIDE",
+      "role": "planning_guidance",
+      "title": "Capital/Provincial five-year development plan guide",
+      "publisher": "NCDD Library",
+      "url": "https://library.ncdd.gov.kh/detail/14761",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Capital and province planning guide catalogue; current applicability unverified"
+      ],
+      "reference_periods": [
+        "catalogue checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "2013 NCDD Library guide catalogue location; PDF request returned 403, and body/current force were not reviewed. Kit must independently inspect the actual guide and terms.",
+      "origin_evidence_path": "docs/evidence/cambodia-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KHM",
+      "source_id": "KHM_KHM_NCDD_COMMUNE_GUIDE",
+      "role": "planning_guidance",
+      "title": "Commune/Sangkat development plan and investment guide",
+      "publisher": "NCDD Library",
+      "url": "https://library.ncdd.gov.kh/detail/530?lang=en",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Commune and sangkat planning guide catalogue; current applicability unverified"
+      ],
+      "reference_periods": [
+        "catalogue checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "2007 NCDD Library guide catalogue location; later revisions and present effect are unassessed. Kit must independently inspect body, jurisdiction and terms.",
+      "origin_evidence_path": "docs/evidence/cambodia-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KHM",
+      "source_id": "KHM_KHM_NCDD_SUBNATIONAL_LAW_2008",
+      "role": "planning_law",
+      "title": "2008 subnational administration law catalogue",
+      "publisher": "Royal Government of Cambodia / NCDD Library",
+      "url": "https://library.ncdd.gov.kh/detail/3004?lang=en",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Cambodia subnational administration legal reference; current effect unverified"
+      ],
+      "reference_periods": [
+        "catalogue checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "NCDD Library catalogue location; PDF request returned 403 and body/current amendments are unassessed. No local plan, approval or present legal duty is transferred.",
+      "origin_evidence_path": "docs/evidence/cambodia-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KHM",
+      "source_id": "KHM_KHM_NCDD_CDB_ONLINE",
+      "role": "table_catalog",
+      "title": "NCDD Commune/Village Databook",
+      "publisher": "NCDD / Ministry of Planning",
+      "url": "https://db.ncdd.gov.kh/cdbonline/home/index.castle",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Cambodia commune/village databook selector; theme, year and geography not acquired"
+      ],
+      "reference_periods": [
+        "catalogue checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "NCDD Commune/Village Databook location only. AreaData has not acquired local values or checked year, definition, code, coverage or terms; Kit must independently assess availability.",
+      "origin_evidence_path": "docs/evidence/cambodia-census2019-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
@@ -8647,7 +8839,7 @@
       "url": "https://psa.gov.ph/content/fourth-quarter-2024-psgc-updates-correction-names-three-barangays",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines 2024 dated PSGC country-to-barangay classification"
       ],
@@ -8671,7 +8863,7 @@
       "url": "https://psa.gov.ph/content/second-quarter-2024-psgc-updates-creation-negros-island-region-and-correction-names-two",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines 2024 dated PSGC country-to-barangay classification"
       ],
@@ -8695,7 +8887,7 @@
       "url": "https://psa.gov.ph/system/files/scd/Press-Release-June2024PSGC.pdf",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines 2024 dated PSGC country-to-barangay classification"
       ],
@@ -8719,7 +8911,7 @@
       "url": "https://psa.gov.ph/system/files/scd/Press%20Release%204Q%20PSGC%20Updates.pdf",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines 2024 dated PSGC country-to-barangay classification"
       ],
@@ -8743,7 +8935,7 @@
       "url": "https://psa.gov.ph/system/files/scd/PSGC-2Q-2024-Publication-Datafile-rev.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines 2024 dated PSGC country-to-barangay classification"
       ],
@@ -8767,7 +8959,7 @@
       "url": "https://psa.gov.ph/system/files/scd/PSGC-2Q-2024-Summary-of-Changes.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines 2024 dated PSGC country-to-barangay classification"
       ],
@@ -8791,7 +8983,7 @@
       "url": "https://psa.gov.ph/system/files/scd/PSGC-2Q%202024-National%20and%20Provincial%20Summary.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines 2024 dated PSGC country-to-barangay classification"
       ],
@@ -8815,7 +9007,7 @@
       "url": "https://psa.gov.ph/system/files/scd/PSGC-4Q-2024-National-and-Provincial-Summary.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines 2024 dated PSGC country-to-barangay classification"
       ],
@@ -8839,7 +9031,7 @@
       "url": "https://psa.gov.ph/system/files/scd/PSGC-4Q-2024-Publication-Datafile.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines 2024 dated PSGC country-to-barangay classification"
       ],
@@ -8863,7 +9055,7 @@
       "url": "https://psa.gov.ph/system/files/scd/PSGC-4Q-2024-Summary-of-Changes.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines 2024 dated PSGC country-to-barangay classification"
       ],
@@ -8887,7 +9079,7 @@
       "url": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines country, 2024 regions, provinces, cities and municipalities"
       ],
@@ -8911,7 +9103,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/1_2024%20POPCEN%20Press%20Release_Declaration%20of%20Count_Revised_ONS-signed_0.pdf",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines country, 2024 regions, provinces, cities and municipalities"
       ],
@@ -8935,7 +9127,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/2_Table%20A%20-%20Population%20and%20Annual%20PGR%20for%20the%20Philippines%20and%20its%20Regions%2C%20Provinces%2C%20and%20HUCs_0.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines country, 2024 regions, provinces, cities and municipalities"
       ],
@@ -8959,7 +9151,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/20250711-PROC-973-FRM_0.pdf",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines country, 2024 regions, provinces, cities and municipalities"
       ],
@@ -8983,7 +9175,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/3_Table%20B%20-%20Population%20and%20Annual%20PGR%20by%20Province%2C%20City%2C%20and%20Municipality%20-%20By%20Region%20-%20rev_0.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines country, 2024 regions, provinces, cities and municipalities"
       ],
@@ -9007,7 +9199,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/BARMM_1.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9031,7 +9223,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/CALABARZON_0.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9055,7 +9247,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/CAR_0.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9079,7 +9271,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/Caraga_0.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9103,7 +9295,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/MIMAROPA_1.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9127,7 +9319,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/NCR_2.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9151,7 +9343,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/NIR_0.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9175,7 +9367,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/Region%20I_1.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9199,7 +9391,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/Region%20II_1.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9223,7 +9415,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/Region%20III_1.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9247,7 +9439,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/Region%20IX_1.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9271,7 +9463,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/Region%20V_1.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9295,7 +9487,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/Region%20VI_1.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9319,7 +9511,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/Region%20VII_1.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9343,7 +9535,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/Region%20VIII_0.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9367,7 +9559,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/Region%20X_0.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9391,7 +9583,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/Region%20XI_1.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9415,7 +9607,7 @@
       "url": "https://psa.gov.ph/system/files/phcd/Region%20XII_1.xlsx",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Province-to-barangay reporting rows in one 2024 region"
       ],
@@ -9439,7 +9631,7 @@
       "url": "https://region1.dilg.gov.ph/images/Transparency/BOOKS/CDP-TOOLKIT-FINAL%20AS%20OF%20APRIL%208%202022.pdf",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines local government development planning guidance"
       ],
@@ -9463,7 +9655,7 @@
       "url": "https://officialgazette.gov.ph/1991/10/10/republic-act-no-7160/",
       "authority_type": "official_national",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Philippines local government units, legal context"
       ],
@@ -9487,7 +9679,7 @@
       "url": "https://d2hj2alpj62gbw.cloudfront.net/resolutions/approved/SP-10311,%20S-2025.pdf",
       "authority_type": "official_territorial",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Quezon City, official PSGC 1381300000"
       ],
@@ -9511,7 +9703,7 @@
       "url": "https://qccouncil.quezoncity.gov.ph/councilors/167",
       "authority_type": "official_territorial",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Quezon City, official PSGC 1381300000"
       ],
@@ -9535,7 +9727,7 @@
       "url": "https://qccouncil.quezoncity.gov.ph/ordinances/14359",
       "authority_type": "official_territorial",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Quezon City, official PSGC 1381300000"
       ],
@@ -9559,7 +9751,7 @@
       "url": "https://qccouncil.quezoncity.gov.ph/resolutions/22255",
       "authority_type": "official_territorial",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Quezon City, official PSGC 1381300000"
       ],
@@ -9583,7 +9775,7 @@
       "url": "https://qccouncil.quezoncity.gov.ph/resolutions/22291",
       "authority_type": "official_territorial",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Quezon City, official PSGC 1381300000"
       ],
@@ -9607,7 +9799,7 @@
       "url": "https://quezoncity.gov.ph/wp-content/uploads/2020/09/Quezon-City-Comprehensive-Development-Plan-2026-2031-04.30.26.pdf",
       "authority_type": "official_territorial",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Quezon City, official PSGC 1381300000"
       ],
@@ -9631,7 +9823,7 @@
       "url": "https://quezoncity.gov.ph/wp-content/uploads/2020/09/Quezon-City-Local-Development-Investment-Program-2027-2029-07.01.26.pdf",
       "authority_type": "official_territorial",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Quezon City, official PSGC 1381300000"
       ],
@@ -9655,7 +9847,7 @@
       "url": "https://quezoncity.gov.ph/wp-content/uploads/2025/11/SP-10255-S-2025.pdf",
       "authority_type": "official_territorial",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Quezon City, official PSGC 1381300000"
       ],
@@ -9679,7 +9871,7 @@
       "url": "https://quezoncity.gov.ph/wp-content/uploads/2026/01/SP-3465-S-2025.pdf",
       "authority_type": "official_territorial",
       "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-26",
+      "checked_at": "2026-09-27",
       "geographic_levels": [
         "Quezon City, official PSGC 1381300000"
       ],
