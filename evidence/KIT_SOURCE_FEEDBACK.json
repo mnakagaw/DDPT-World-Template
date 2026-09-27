@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-27T05:04:07.997Z",
-  "origin_commit": "f52589362ddad66c16a9e3b37b6842dfeeef480b",
+  "exported_at": "2026-09-27T06:08:00.099Z",
+  "origin_commit": "3e0ab610903a40ded10a47802ab1a38497660649",
   "sources": [
     {
       "iso3": "AFG",
@@ -11572,6 +11572,198 @@
       "license_or_terms": "Official public location; item terms unverified",
       "reuse_note": "Official NESDC GPP release location. Only the specific 2024p original was partly adopted in AreaData; other editions require independent review.",
       "origin_evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "TLS",
+      "source_id": "TLS_TLS_SUCO_RECOGNITION_2023",
+      "role": "administrative_codes",
+      "title": "Ministerial Diploma 19/2023 on suco recognition",
+      "publisher": "Ministry of Justice, Jornal da República",
+      "url": "https://www.mj.gov.tl/jornal/public/docs/2023/serie_1/SERIE_I_NO_16_A.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2023 legally recognized suco names and aldeias; no 2022 census crosswalk verified"
+      ],
+      "reference_periods": [
+        "2023-05-03"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "Ministerial Diploma 19/2023 recognizes 461 sucos, while the 2022 census reports 452. This official name/recognition text is not a stable code list or matched geometry. Kit must inspect all names, changes, later amendments and the 2022-to-current crosswalk before joining lower-level values.",
+      "origin_evidence_path": "docs/evidence/timor-leste-phc2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "TLS",
+      "source_id": "TLS_TLS_INETL_PHC2022_MAIN_REPORT",
+      "role": "census_results",
+      "title": "INETL 2022 Population and Housing Census Main Report",
+      "publisher": "National Institute of Statistics of Timor-Leste",
+      "url": "https://inetl-ip.gov.tl/wp-content/uploads/2023/05/Final-Main-Report_TLPHC-Census_18052023-1.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2022 Timor-Leste, fourteen first-level reporting areas, administrative posts and sucos by table"
+      ],
+      "reference_periods": [
+        "2022 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "INETL 2022 Main Report location. AreaData adopted only selected first-level columns in Tables 4.3, 4.11 and 4.12; 30 other numbered tables are unassessed. Tables 4.1/4.2 are image-only; age-detail suppression and sex-cell conflicts require independent inspection. Kit must acquire and audit the full report, geography and rights itself.",
+      "origin_evidence_path": "docs/evidence/timor-leste-phc2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "TLS",
+      "source_id": "TLS_TLS_MUNICIPAL_PLAN_PROCEDURE_2024",
+      "role": "planning_guidance",
+      "title": "Ministerial Diploma 72/2024 on municipal plans",
+      "publisher": "Ministry of Justice, Jornal da República",
+      "url": "https://www.mj.gov.tl/jornal/public/docs/2024/serie_1/SERIE_I_NO_49.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Timor-Leste municipal development-plan procedure; Ataúro has separate 2025 procedure"
+      ],
+      "reference_periods": [
+        "2024 procedure"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "Ministerial Diploma 72/2024 location for municipal development-plan preparation and Council of Ministers approval procedure. A published municipal plan is not automatically an approved plan; verify operative amendments, approval resolutions and applicability for each body.",
+      "origin_evidence_path": "docs/evidence/timor-leste-phc2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "TLS",
+      "source_id": "TLS_TLS_ATAURO_PLAN_PROCEDURE_2025",
+      "role": "planning_guidance",
+      "title": "Ministerial Diploma 33/2025 on Ataúro plans",
+      "publisher": "Ministry of Justice, Jornal da República",
+      "url": "https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_38.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Ataúro special first-level division planning procedure"
+      ],
+      "reference_periods": [
+        "2025 procedure"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "Ministerial Diploma 33/2025 gives Ataúro a separate plan procedure with Council of Ministers approval. Do not apply the ordinary municipal form or infer approval from a published draft; check current status and authority in Kit.",
+      "origin_evidence_path": "docs/evidence/timor-leste-phc2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "TLS",
+      "source_id": "TLS_TLS_LAW_19_2023_TERRITORY",
+      "role": "planning_law",
+      "title": "Law 19/2023 on territorial administration",
+      "publisher": "Ministry of Justice, Jornal da República",
+      "url": "https://www.mj.gov.tl/jornal/public/docs/2023/serie_1/SERIE_I_NO_45_D.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Timor-Leste first-level territorial bodies after December 2023"
+      ],
+      "reference_periods": [
+        "2023-12-05"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "Law 19/2023 lists Ataúro, twelve municipalities and Oe-Cusse Ambeno as distinct first-level types. It is not a geographic code table, polygon dataset, or proof that 2022 census/post/suco areas retained the same borders. Verify operative amendments and jurisdiction independently.",
+      "origin_evidence_path": "docs/evidence/timor-leste-phc2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "TLS",
+      "source_id": "TLS_TLS_ATAURO_PLAN_DRAFT_2026_2030",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Ataúro development plan 2026–2030 draft",
+      "publisher": "Administrative Authority of Ataúro",
+      "url": "https://atauro.gov.tl/wp-content/uploads/2026/02/Ezbosu_Planu-Dezenvolvimentu-Atauro-2026-2030_Final-Version-21-JANEIRU-26.pdf",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Ataúro special first-level division, 2026–2030 published draft"
+      ],
+      "reference_periods": [
+        "2026–2030 draft"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "Official Ataúro portal hosts a file beginning Ezbosu (draft). AreaData has not verified a Council of Ministers approval resolution or audited the 172-page content. Do not treat this as an adopted plan or transfer its projected budget as approved expenditure.",
+      "origin_evidence_path": "docs/evidence/timor-leste-phc2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "TLS",
+      "source_id": "TLS_TLS_DILI_PAA_2026",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Díli 2026 annual action plan and planned budget",
+      "publisher": "Díli Municipal Authority",
+      "url": "https://dili.gov.tl/wp-content/uploads/2026/02/PAA-2026-AM-Dili.pdf",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Díli municipality only, 2026 annual action plan and planned budget"
+      ],
+      "reference_periods": [
+        "2026 annual plan"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "Díli annual action plan PDF p.8 has a total planned budget. It is a plan/estimate, not actual spending, progress or evaluation. AreaData checked one total only; Kit must inspect programmes, fiscal status, formal approval and terms independently.",
+      "origin_evidence_path": "docs/evidence/timor-leste-phc2022-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "TLS",
+      "source_id": "TLS_TLS_DILI_PEDM_2026_2030",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Díli municipal strategic plan 2026–2030",
+      "publisher": "Díli Municipal Authority",
+      "url": "https://dili.gov.tl/wp-content/uploads/2026/02/Planu-Estratejiku-dezenvolvimentu-Munisipal-PEDM-DILI-2026-2030.pdf",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Díli municipality only, 2026–2030 strategic plan body"
+      ],
+      "reference_periods": [
+        "2026–2030 plan body"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "Díli PEDM 2026–2030 official PDF body acquired by AreaData. Its executive summary says approved, but the required Council of Ministers resolution was not independently found and the full 347 pages were not semantically audited. Do not claim formal adoption, budget execution or evaluation without separate evidence.",
+      "origin_evidence_path": "docs/evidence/timor-leste-phc2022-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
