@@ -3006,6 +3006,102 @@
           "reuse_note": "Official ward search-index location for a 2026 socioeconomic plan. Page and attachment timed out in AreaData; no content, budget execution, approval or 2019 geography connection adopted."
         }
       ]
+    },
+    {
+      "path": "generated/thailand-areadata-20260927",
+      "iso3": "THA",
+      "checked_at": "2026-09-27",
+      "evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
+      "sources": [
+        {
+          "id": "tha-nesdc-gpp2024-workbook",
+          "role": "machine_readable_data",
+          "authority_type": "official_national",
+          "geographic_levels": ["Thailand country, seven NESDC economic regions and 77 province GPP reporting rows, 2024p; administrative-code crosswalk unverified"],
+          "formats": ["XLSX"],
+          "reuse_note": "NESDC official 2024p workbook location. AreaData audited 2210 selected cells, adopted 24 direct indicators and withheld one contradictory detailed-table population. Kit must independently inspect all tables, code/geography meaning, terms and any values before adoption."
+        },
+        {
+          "id": "tha-nesdc-gpp-catalogue",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["NESDC GPP release catalogue; editions and territorial coverage vary"],
+          "formats": ["HTML"],
+          "reuse_note": "Official NESDC GPP release location. Only the specific 2024p original was partly adopted in AreaData; other editions require independent review."
+        },
+        {
+          "id": "tha-nesdc-provincial-plan-guide",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["Thailand provinces and provincial clusters; current legal application unverified"],
+          "formats": ["PDF"],
+          "reuse_note": "NESDC-hosted six-page guidance body acquired by AreaData, with a draft marker. Kit must independently confirm operative status, competent level, plan cycle, amendments and reuse terms."
+        },
+        {
+          "id": "tha-nesdc-provincial-planning-catalogue",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": ["Province and provincial-cluster planning/budget catalogue"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "NESDC official planning-material index. Linked plan rules, annual forms and budget guidance require item-by-item body and current-status inspection."
+        },
+        {
+          "id": "tha-nso-census2025-catalogue",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["Thailand 2025 resident census; province tables not acquired"],
+          "formats": ["HTML"],
+          "reuse_note": "NSO official 2025 census portal location; preliminary national summary visible. It is a resident census, distinct from NESDC GPP denominator and BORA registration."
+        },
+        {
+          "id": "tha-nso-census2025-final-location",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["Thailand 2025 census final-report location; internal tables unacquired"],
+          "formats": ["PDF"],
+          "reuse_note": "Official NSO indexed PDF location only. AreaData direct request returned HTTP 418 and browser body did not load; Kit must independently acquire and inspect tables/coverage/terms."
+        },
+        {
+          "id": "tha-bora-registration-downloads",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["Thailand registered population by province, district, subdistrict and village; years/files unacquired"],
+          "formats": ["HTML", "CSV"],
+          "reuse_note": "BORA official indexed registration-download catalogue. Host failed DNS locally; no underlying file or observed count passed from AreaData."
+        },
+        {
+          "id": "tha-dopa-administrative-codes-location",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["Thailand province, district and subdistrict administrative code register; edition unverified"],
+          "formats": ["HTML"],
+          "reuse_note": "DOPA official indexed code-register location, host unacquired locally. NESDC four-digit economic-region codes are not certified DOPA codes or polygon keys."
+        },
+        {
+          "id": "tha-chiangmai-strategy-index",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": ["Current Chiang Mai Province catalogue only; NESDC statistical row not legally joined"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "Official province search index lists plans, actions and progress. PDF bodies timed out; no current plan approval, actual spending or evaluation is transferred."
+        },
+        {
+          "id": "tha-chiangmai-plan-2025-location",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": ["Chiang Mai 2023-2027 plan / FY2025 review PDF location only"],
+          "formats": ["PDF"],
+          "reuse_note": "Official province indexed PDF URL. AreaData request timed out; content, decision and statistical/administrative geography link unverified."
+        },
+        {
+          "id": "tha-open-data-district-registration-catalogue",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["Thailand district and sex registration population, 2021-2025 indexed; raw files unacquired"],
+          "formats": ["HTML", "CSV", "JSON"],
+          "reuse_note": "Official Thai Open Government dataset location indexed as NSO/DOPA registration data. HTTP 403 prevented raw acquisition; do not infer district values, complete coverage or reuse rights."
+        }
+      ]
     }
   ]
 }

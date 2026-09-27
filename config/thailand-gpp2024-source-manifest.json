@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "retrieved_at": "2026-09-27",
+  "sources": [
+    {
+      "id": "tha-nesdc-gpp2024-workbook",
+      "catalogue_url": "https://www.nesdc.go.th/en/info/gross-regional-and-provincial-product-gpp/",
+      "url": "https://www.nesdc.go.th/wp-content/uploads/2026/03/GPP-2024-On-Web-1995-2024.xlsx",
+      "raw_path": "raw/nesdc/GPP-2024-On-Web-1995-2024.xlsx",
+      "bytes": 2220131,
+      "sha256": "929ba8ab2624036ea4546616f0d932e8a2742cdd846c89cbe1ad868d69b901a1",
+      "scope": "2024p PER CAPITA worksheet C:E and current-price sector column AE in WK, GRP and seven province sheets. Country plus 77 provinces have 24 direct indicators; seven economic regions and duplicate subtotal/alias rows are audit-only. Historical, chain-volume, Regions to GDP and CLUSTERS fields remain priority_unassessed. A Kam Phaeng Phet detailed-table population cell conflicts with the reconciled PER CAPITA denominator and is withheld."
+    },
+    {
+      "id": "tha-nesdc-gpp-catalogue",
+      "url": "https://www.nesdc.go.th/en/info/gross-regional-and-provincial-product-gpp/",
+      "raw_path": "raw/nesdc/gpp-index.html",
+      "bytes": 598702,
+      "sha256": "9e4cfe4ccfb8b5d2c7f7d533b537f5be8af7bb1b31a91890108dc1c262346136",
+      "scope": "Official NESDC catalogue; linked 2024 Excel edition."
+    },
+    {
+      "id": "tha-nesdc-provincial-planning-catalogue",
+      "url": "https://www.nesdc.go.th/downloadable-documents/province-provincial-cluster/",
+      "raw_path": "raw/nesdc/province-cluster-index.html",
+      "bytes": 517559,
+      "sha256": "1d90b26f907685a4da8b71a43cc0f96ddac4026e7a20ba4ab2a6cb122646c0b7",
+      "scope": "Official province/provincial-cluster plan and budget guidance catalogue; each linked item needs separate current-status review."
+    },
+    {
+      "id": "tha-nesdc-provincial-plan-guide",
+      "catalogue_url": "https://www.nesdc.go.th/downloadable-documents/province-provincial-cluster/",
+      "url": "https://www.nesdc.go.th/wp-content/uploads/2025/05/01-%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%81%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%97%E0%B8%B3%E0%B9%81%E0%B8%9C%E0%B8%99%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2-5-%E0%B8%9B%E0%B8%B5-%E0%B8%88-%E0%B8%81%E0%B8%88-%E0%B8%A1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%99%E0%B8%9A27%E0%B8%81%E0%B8%9E66.pdf",
+      "raw_path": "raw/nesdc/provincial-plan-guide-2025.pdf",
+      "bytes": 189319,
+      "sha256": "bc6fe3677be1761b5824a8071fa9fc3df53020dd6c77161536265e47fdb3dedc",
+      "scope": "Six-page NESDC-hosted provincial and cluster 2023-2027 plan review guidance, labelled draft in extracted text; do not assert enacted status or local plan approval from it."
+    }
+  ]
+}
