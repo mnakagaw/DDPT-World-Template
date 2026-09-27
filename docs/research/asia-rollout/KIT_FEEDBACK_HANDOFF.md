@@ -312,3 +312,16 @@ Forty-one public official locations were selected: BPS SP2020 Table 1 country pa
 | Validation | AreaData check 156 modules/templates, 218/218 tests, Indonesia validator zero errors/warnings, build and seven actual-output cases. Kit check 52 JS/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 379 feedback sources). |
 
 All 41 Indonesia feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, including for originals already acquired by AreaData. Kit must independently acquire and inspect source bodies, definitions, legal jurisdiction, geography and terms. Indonesia remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Philippines PSA POPCEN 2024 and local planning source leads — 2026-09-27 JST
+
+Forty-four public official locations were selected: 22 PSA POPCEN attachments, eight PSGC original files and two PSA PSGC page leads, one PSA census release page, six DILG/Quezon City planning PDFs, four Quezon City council adoption/ordinance pages, and the Official Gazette RA7160 page. [The Philippines source audit](../../evidence/philippines-popcen-source-audit-2026-09-27.md) limits numerical adoption to direct 2024 Table A/B population, keeps Table C and historical/PGR fields unassessed, and separates 2024 Q2 codes from the later Q4 edition. Quezon City plans and fiscal records are scoped to that city; budget authorization is neither expenditure nor plan evaluation. Feedback transfers no original, 1,744 observations, boundary/code acceptance, plan figure or country approval.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, audit, status and 44 selected source locations | `fcf87211cad097c3501f980e28dd043d126f57ba` on `codex/asia-domestic-20260926`; pushed and remote head matched before bundle export. |
+| AreaData 423-source / 31-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that exact AreaData adapter commit as `origin_commit`; bundle SHA-256 `5583849b07669375cea82a2fdbdd091a2859ed474a7bc6291e7067ae88a957a0`, committed as `c75953e5ed94455298838bdc97835de5bc56f0a0` and pushed. |
+| Kit feedback import | `ec756368f3a558dffc4371bc1d1ff071b79c2591` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 423 leads, inserted 44 Philippines records, updated 379 earlier origin histories, 424 total Kit records. Pushed and remote head matched. |
+| Validation | AreaData check 157, 218/218 tests, Philippines validator zero errors/warnings, build and ten actual-output cases. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 423 feedback sources). |
+
+All 44 Philippines feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, even for originals already acquired by AreaData. Kit must independently obtain and inspect source bodies, Table C/other census topics, current codes and polygons, planning law/plan scope, fiscal facts and terms before reuse. Philippines remains a partial unpublished candidate without independent `ACCEPT`.
