@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "vnm-gso-unfpa-census2019-results",
+      "catalogue_url": "https://vietnam.unfpa.org/en/publications/results-2019-census-population-and-housing-viet-nam",
+      "catalogue_raw_path": "raw/nso/unfpa-2019-publication.html",
+      "catalogue_bytes": 44008,
+      "catalogue_sha256": "1c76ec8ae2a0acf224ddc73c65bb0c901984aa03587d75277b95f9c83eb8ac92",
+      "url": "https://vietnam.unfpa.org/sites/default/files/pub-pdf/Results%20-%202019%20Population%20and%20Housing%20Census_full.pdf",
+      "raw_path": "raw/nso/results-2019-census-gso-unfpa.pdf",
+      "bytes": 6844810,
+      "sha256": "2f9e8fbba1ef498da56188682b9f755983fd8f9e816d08d2faafbe56cfbabca8",
+      "pdf_pages": 380,
+      "retrieved_at": "2026-09-27",
+      "scope": "Joint General Statistics Office / UNFPA results report. Adopt only Table 1 direct country, six socio-economic-region and 63 province/city values dated 1 April 2019 after row and subtotal audit. Other numbered tables remain unassessed."
+    }
+  ]
+}

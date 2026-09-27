@@ -2910,6 +2910,102 @@
           "reuse_note": "2007 NCDD Library guide catalogue location; later revisions and present effect are unassessed. Kit must independently inspect body, jurisdiction and terms."
         }
       ]
+    },
+    {
+      "path": "generated/vietnam-areadata-20260927",
+      "iso3": "VNM",
+      "checked_at": "2026-09-27",
+      "evidence_path": "docs/evidence/vietnam-census2019-source-audit-2026-09-27.md",
+      "sources": [
+        {
+          "id": "vnm-gso-unfpa-census2019-results",
+          "role": "census_results",
+          "authority_type": "international_organization",
+          "geographic_levels": ["Viet Nam national, six socioeconomic regions, 63 historical 2019 provinces/cities"],
+          "formats": ["PDF", "HTML"],
+          "reuse_note": "Official joint GSO/UNFPA 2019 report from UNFPA. AreaData audited only Table 1 nine person-count columns; report Tables 2-60 and sample coverage are not accepted. Kit must independently verify original, definitions, geography, terms and any adoption."
+        },
+        {
+          "id": "vnm-nso-completed2019-catalogue",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["2019 census national through district, according to NSO catalogue; exact tables unacquired"],
+          "formats": ["HTML"],
+          "reuse_note": "NSO catalogue states separate Completed Results has 26 detailed district-level tables. NSO host reset AreaData connections; body and district cells not acquired or adopted."
+        },
+        {
+          "id": "vnm-nso-completed2019-original",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["2019 census district tables; contents unacquired"],
+          "formats": ["PDF"],
+          "reuse_note": "Indexed official NSO original PDF location only. Direct fetch reset; any user-uploaded archived copy is not evidence of acquiring the official original. Kit must inspect exact body, scope, geography and terms."
+        },
+        {
+          "id": "vnm-nso-census-warehouse2019",
+          "role": "table_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": ["2019 census interactive tables; year/theme/geography availability unverified"],
+          "formats": ["HTML"],
+          "reuse_note": "Official 2019 census warehouse location only. Host did not resolve for AreaData; no values, table schema or download rights inspected."
+        },
+        {
+          "id": "vnm-nso-pressrelease2019",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": ["Viet Nam national 2019 census summary"],
+          "formats": ["HTML"],
+          "reuse_note": "Official NSO press release cross-checks national 96,208,984 and states a 9 percent household sample for selected subjects. It is not a district table or general authority to adopt every report field."
+        },
+        {
+          "id": "vnm-law-planning-2017",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["Viet Nam planning law; current application after 2025 reform unassessed"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "Government law catalogue location. Amendments, article-level powers and current local planning duties require independent review; no local plan or approval is transferred."
+        },
+        {
+          "id": "vnm-law-local-government-2025",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": ["2025 two-level local-government framework"],
+          "formats": ["HTML"],
+          "reuse_note": "Government official full-text location. Kit must inspect planning and finance powers by article; 2019 census reporting units are not current legal councils."
+        },
+        {
+          "id": "vnm-resolution-province-reform-2025",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["34 province-level units after June 2025 reform"],
+          "formats": ["HTML"],
+          "reuse_note": "Official 2025 reform resolution location. It cannot be joined by name to the 63 2019 census province/city rows without a dated code/boundary crosswalk."
+        },
+        {
+          "id": "vnm-decision-code-list-2025",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["34 current province and 3,321 current commune administrative codes"],
+          "formats": ["HTML"],
+          "reuse_note": "Government 2025 code-directory location. Codes are a current two-level list, not official 2019 Table 1 codes or matching historical polygons."
+        },
+        {
+          "id": "vnm-hanoi-plan-2026-2030-location",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": ["current Hà Nội city plan catalogue only; not joined to 2019 census Ha Noi"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "Official Hà Nội search-index location for a 2026-2030 socioeconomic plan. Page and attachment timed out in AreaData; plan content, authority, period and historical geography mapping not verified."
+        },
+        {
+          "id": "vnm-kienhung-plan-2026-location",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": ["current Kiến Hưng ward plan catalogue only; not joined to 2019 census areas"],
+          "formats": ["HTML", "PDF"],
+          "reuse_note": "Official ward search-index location for a 2026 socioeconomic plan. Page and attachment timed out in AreaData; no content, budget execution, approval or 2019 geography connection adopted."
+        }
+      ]
     }
   ]
 }
