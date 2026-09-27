@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-27T00:55:25.998Z",
-  "origin_commit": "49aa58160f8227b7706cad39c9b7c658bd11329c",
+  "exported_at": "2026-09-27T01:33:00.177Z",
+  "origin_commit": "618ce6e8c127be582e466e1442a7272f8e7c3e14",
   "sources": [
     {
       "iso3": "AFG",
@@ -10636,6 +10636,274 @@
       "license_or_terms": null,
       "reuse_note": "NPA local-government plan catalogue location only. Area-specific plans, dates, duplicates and content must be checked individually; no plan is assumed current or adopted in Kit.",
       "origin_evidence_path": "docs/evidence/three-country-areadata-adaptations-2026-09-24.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "VNM",
+      "source_id": "VNM_VNM_DECISION_CODE_LIST_2025",
+      "role": "administrative_codes",
+      "title": "2025 administrative code list (Decision 19/2025/QD-TTg)",
+      "publisher": "Government of Viet Nam",
+      "url": "https://xaydungchinhsach.chinhphu.vn/bang-danh-muc-va-ma-so-cua-34-tinh-thanh-moi-cac-don-vi-hanh-chinh-cap-xa-moi-11925070418263625.htm",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "34 current province and 3,321 current commune administrative codes"
+      ],
+      "reference_periods": [
+        "2025"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "Government 2025 code-directory location. Codes are a current two-level list, not official 2019 Table 1 codes or matching historical polygons.",
+      "origin_evidence_path": "docs/evidence/vietnam-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "VNM",
+      "source_id": "VNM_VNM_RESOLUTION_PROVINCE_REFORM_2025",
+      "role": "administrative_codes",
+      "title": "Resolution 202/2025/QH15: 34 province-level units",
+      "publisher": "Government of Viet Nam",
+      "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-202-2025-qh15-ve-sap-xep-don-vi-hanh-chinh-cap-tinh-119250612174148722.htm",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "34 province-level units after June 2025 reform"
+      ],
+      "reference_periods": [
+        "2025"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "Official 2025 reform resolution location. It cannot be joined by name to the 63 2019 census province/city rows without a dated code/boundary crosswalk.",
+      "origin_evidence_path": "docs/evidence/vietnam-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "VNM",
+      "source_id": "VNM_VNM_NSO_COMPLETED2019_CATALOGUE",
+      "role": "census_catalog",
+      "title": "NSO Completed Results of the 2019 census catalogue",
+      "publisher": "National Statistics Office of Viet Nam",
+      "url": "https://www.nso.gov.vn/en/data-and-statistics/2020/11/completed-results-of-the-2019-viet-nam-population-and-housing-census/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2019 census national through district, according to NSO catalogue; exact tables unacquired"
+      ],
+      "reference_periods": [
+        "2019 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "NSO catalogue states separate Completed Results has 26 detailed district-level tables. NSO host reset AreaData connections; body and district cells not acquired or adopted.",
+      "origin_evidence_path": "docs/evidence/vietnam-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "VNM",
+      "source_id": "VNM_VNM_GSO_UNFPA_CENSUS2019_RESULTS",
+      "role": "census_results",
+      "title": "Results of the 2019 Viet Nam Population and Housing Census",
+      "publisher": "General Statistics Office of Viet Nam and UNFPA Viet Nam",
+      "url": "https://vietnam.unfpa.org/sites/default/files/pub-pdf/Results%20-%202019%20Population%20and%20Housing%20Census_full.pdf",
+      "authority_type": "international_organization",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Viet Nam national, six socioeconomic regions, 63 historical 2019 provinces/cities"
+      ],
+      "reference_periods": [
+        "1 April 2019"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "license_or_terms": "Reuse conditions require verification before redistributing the original PDF",
+      "reuse_note": "Official joint GSO/UNFPA 2019 report from UNFPA. AreaData audited only Table 1 nine person-count columns; report Tables 2-60 and sample coverage are not accepted. Kit must independently verify original, definitions, geography, terms and any adoption.",
+      "origin_evidence_path": "docs/evidence/vietnam-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "VNM",
+      "source_id": "VNM_VNM_NSO_PRESSRELEASE2019",
+      "role": "census_results",
+      "title": "NSO release of 2019 census results",
+      "publisher": "National Statistics Office of Viet Nam",
+      "url": "https://www.nso.gov.vn/en/events/2019/12/press-release-on-results-of-the-population-and-housing-census-01-4-2019/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Viet Nam national 2019 census summary"
+      ],
+      "reference_periods": [
+        "2019 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "Official NSO press release cross-checks national 96,208,984 and states a 9 percent household sample for selected subjects. It is not a district table or general authority to adopt every report field.",
+      "origin_evidence_path": "docs/evidence/vietnam-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "VNM",
+      "source_id": "VNM_VNM_NSO_COMPLETED2019_ORIGINAL",
+      "role": "census_results",
+      "title": "NSO Completed Results of the 2019 census original PDF",
+      "publisher": "National Statistics Office of Viet Nam",
+      "url": "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2019 census district tables; contents unacquired"
+      ],
+      "reference_periods": [
+        "2019 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "Indexed official NSO original PDF location only. Direct fetch reset; any user-uploaded archived copy is not evidence of acquiring the official original. Kit must inspect exact body, scope, geography and terms.",
+      "origin_evidence_path": "docs/evidence/vietnam-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "VNM",
+      "source_id": "VNM_VNM_LAW_PLANNING_2017",
+      "role": "planning_law",
+      "title": "2017 Law on Planning, official catalogue",
+      "publisher": "Government of Viet Nam",
+      "url": "https://vanban.chinhphu.vn/default.aspx?docid=192206&pageid=27160",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Viet Nam planning law; current application after 2025 reform unassessed"
+      ],
+      "reference_periods": [
+        "2017"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "Government law catalogue location. Amendments, article-level powers and current local planning duties require independent review; no local plan or approval is transferred.",
+      "origin_evidence_path": "docs/evidence/vietnam-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "VNM",
+      "source_id": "VNM_VNM_LAW_LOCAL_GOVERNMENT_2025",
+      "role": "planning_law",
+      "title": "2025 Law on Local Government Organization",
+      "publisher": "Government of Viet Nam",
+      "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-luat-so-72-2025-qh15-to-chuc-chinh-quyen-dia-phuong-119250618161434371.htm",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2025 two-level local-government framework"
+      ],
+      "reference_periods": [
+        "2025"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "Government official full-text location. Kit must inspect planning and finance powers by article; 2019 census reporting units are not current legal councils.",
+      "origin_evidence_path": "docs/evidence/vietnam-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "VNM",
+      "source_id": "VNM_VNM_KIENHUNG_PLAN_2026_LOCATION",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Kiến Hưng ward 2026 socioeconomic plan, source location",
+      "publisher": "Hà Nội local government",
+      "url": "https://kienhung.hanoi.gov.vn/van-ban-chi-dao-dieu-hanh/nghi-quyet-ve-ke-hoach-phat-trien-kinh-te-xa-hoi-nam-2026-230295",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "current Kiến Hưng ward plan catalogue only; not joined to 2019 census areas"
+      ],
+      "reference_periods": [
+        "2026"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "Official ward search-index location for a 2026 socioeconomic plan. Page and attachment timed out in AreaData; no content, budget execution, approval or 2019 geography connection adopted.",
+      "origin_evidence_path": "docs/evidence/vietnam-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "VNM",
+      "source_id": "VNM_VNM_HANOI_PLAN_2026_2030_LOCATION",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Hà Nội 2026–2030 socioeconomic plan, source location",
+      "publisher": "Hà Nội local government",
+      "url": "https://vanban.hanoi.gov.vn/van-ban-chi-dao-dieu-hanh/ve-ke-hoach-phat-trien-kinh-te-xa-hoi-5-nam-2026-2030-239036",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "current Hà Nội city plan catalogue only; not joined to 2019 census Ha Noi"
+      ],
+      "reference_periods": [
+        "2026–2030"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "Official Hà Nội search-index location for a 2026-2030 socioeconomic plan. Page and attachment timed out in AreaData; plan content, authority, period and historical geography mapping not verified.",
+      "origin_evidence_path": "docs/evidence/vietnam-census2019-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "VNM",
+      "source_id": "VNM_VNM_NSO_CENSUS_WAREHOUSE2019",
+      "role": "table_catalog",
+      "title": "NSO 2019 census data warehouse",
+      "publisher": "National Statistics Office of Viet Nam",
+      "url": "https://portal.thongke.gov.vn/khodulieudanso2019/Default.aspx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2019 census interactive tables; year/theme/geography availability unverified"
+      ],
+      "reference_periods": [
+        "2019 census"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public page; reuse terms unverified",
+      "reuse_note": "Official 2019 census warehouse location only. Host did not resolve for AreaData; no values, table schema or download rights inspected.",
+      "origin_evidence_path": "docs/evidence/vietnam-census2019-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
