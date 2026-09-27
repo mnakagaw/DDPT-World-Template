@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "country_id": "TLS",
+  "retrieved_at": "2026-09-27T05:21:58Z",
+  "sources": [
+    {"id":"tls-inetl-phc2022-main-report","url":"https://inetl-ip.gov.tl/wp-content/uploads/2023/05/Final-Main-Report_TLPHC-Census_18052023-1.pdf","catalogue_url":"https://inetl-ip.gov.tl/2023/05/18/main-report-timor-leste-population-and-housing-census-2022/","raw_path":"raw/timor-leste-phc2022-final-main-report.pdf","bytes":4470998,"sha256":"bd4177c7b2b06d5ad52237a2811337926c3f0f430808384364e4bb83593a650e"},
+    {"id":"tls-law-19-2023-territory","url":"https://www.mj.gov.tl/jornal/public/docs/2023/serie_1/SERIE_I_NO_45_D.pdf","catalogue_url":"https://mj.gov.tl/jornal/?q=node%2F12","raw_path":"raw/tls-law-19-2023-territory.pdf","bytes":160610,"sha256":"5615737a9335948c2aa4c5fe0396c420b01028f10ed3a33972330b69b30155c1"},
+    {"id":"tls-municipal-plan-procedure-2024","url":"https://www.mj.gov.tl/jornal/public/docs/2024/serie_1/SERIE_I_NO_49.pdf","catalogue_url":"https://mj.gov.tl/jornal/?q=node%2F4909","raw_path":"raw/tls-municipal-plan-procedure-2024.pdf","bytes":10778730,"sha256":"a6ef6f7bb05dacf40f8b6a3d9efa2e20fbf4bd7f889cbd2866a0d3897c513761"},
+    {"id":"tls-atauro-plan-procedure-2025","url":"https://www.mj.gov.tl/jornal/public/docs/2025/serie_1/SERIE_I_NO_38.pdf","catalogue_url":"https://mj.gov.tl/jornal/?q=node%2F4909","raw_path":"raw/tls-atauro-plan-procedure-2025.pdf","bytes":753728,"sha256":"7d274970f1988c4accac357f6276f832588a7455b5cd343c05eb2e11757e7ec0"},
+    {"id":"tls-dili-pedm-2026-2030","url":"https://dili.gov.tl/wp-content/uploads/2026/02/Planu-Estratejiku-dezenvolvimentu-Munisipal-PEDM-DILI-2026-2030.pdf","catalogue_url":"https://dili.gov.tl/en/dokumentus-munisipais/planu-estratejiku-dezenvolvimentu-munisipal-pedm-dili-2026-2030/","raw_path":"raw/tls-dili-pedm-2026-2030.pdf","bytes":9256476,"sha256":"061e59ca5dbecfd5a92e4a5c1be43e4bd6ccea7d45b7012e037147d44670cfe2"},
+    {"id":"tls-dili-paa-2026","url":"https://dili.gov.tl/wp-content/uploads/2026/02/PAA-2026-AM-Dili.pdf","catalogue_url":"https://dili.gov.tl/en/","raw_path":"raw/tls-dili-paa-2026.pdf","bytes":623976,"sha256":"28fbbc8b5b270dbcce1af0d6b9957bf98c1ee22cfe93ad37ef78c4492e5e7b80"},
+    {"id":"tls-atauro-plan-draft-2026-2030","url":"https://atauro.gov.tl/wp-content/uploads/2026/02/Ezbosu_Planu-Dezenvolvimentu-Atauro-2026-2030_Final-Version-21-JANEIRU-26.pdf","catalogue_url":"https://atauro.gov.tl/en/dokumentus-munisipais/planu-dezenvolvimentu-atauro-2026-2030/","raw_path":"raw/tls-atauro-plan-draft-2026-2030.pdf","bytes":5638986,"sha256":"9f1bfead7488e11123e13f13c195e1efb4be3044b49395c3b395a4ae6afd11f9"},
+    {"id":"tls-suco-recognition-2023","url":"https://www.mj.gov.tl/jornal/public/docs/2023/serie_1/SERIE_I_NO_16_A.pdf","catalogue_url":"https://mj.gov.tl/jornal/?q=node%2F4909","raw_path":"raw/tls-suco-recognition-2023.pdf","bytes":34250343,"sha256":"dba934898e3ae575072fe838586e879dc6859a437a043137e67abf125eaf7105"}
+  ]
+}
