@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-27T04:22:21.950Z",
-  "origin_commit": "b11619c3679c5069d51dad0594a1d57237f5fe91",
+  "exported_at": "2026-09-27T05:04:07.997Z",
+  "origin_commit": "f52589362ddad66c16a9e3b37b6842dfeeef480b",
   "sources": [
     {
       "iso3": "AFG",
@@ -10936,6 +10936,248 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "New AreaData source location: Saudi Ministry of Health 2022 yearbook Table 1-12 cites GASTAT for the 2022 census population of 13 administrative regions. Its 2010–2021 columns are recalculated estimates, not census counts. Kit must independently audit direct GASTAT tables, geographic codes/boundaries, terms and adoption.",
       "origin_evidence_path": "docs/evidence/saudi-census-source-location-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SGP",
+      "source_id": "SGP_SGP_URA_MP2025_PLANNING_AREA",
+      "role": "administrative_codes",
+      "title": "Ura Mp2025 Planning Area",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://data.gov.sg/datasets/d_2cc750190544007400b2cfd5d7f53209/view",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "55 URA MP2025 indicative planning-area polygons with PLN_AREA_C codes"
+      ],
+      "reference_periods": [
+        "June 2026 / MP2025"
+      ],
+      "formats": [
+        "GEOJSON"
+      ],
+      "license_or_terms": "Singapore Open Data Licence",
+      "reuse_note": "URA 2025 Planning Area GeoJSON location. AreaData exact-matched all 55 SingStat June 2026 area names and attached URA area codes for display. Indicative polygons are not legal cadastral boundaries; Kit must independently audit edition, geometry, code and rights.",
+      "origin_evidence_path": "docs/evidence/singapore-population2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SGP",
+      "source_id": "SGP_SGP_URA_MP2025_REGION",
+      "role": "administrative_codes",
+      "title": "Ura Mp2025 Region",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://data.gov.sg/datasets/d_4ce0038f7ac689652350bb91b7fb92ed/view",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Five URA MP2025 indicative planning regions; no direct 2026 regional population adopted"
+      ],
+      "reference_periods": [
+        "June 2026 / MP2025"
+      ],
+      "formats": [
+        "GEOJSON"
+      ],
+      "license_or_terms": "Singapore Open Data Licence",
+      "reuse_note": "URA 2025 Region GeoJSON location and original acquired by AreaData. Do not manufacture region population by incomplete or independently rounded area sums; no same-edition direct regional resident cells were adopted.",
+      "origin_evidence_path": "docs/evidence/singapore-population2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SGP",
+      "source_id": "SGP_SGP_URA_MP2019_SUBZONE",
+      "role": "administrative_codes",
+      "title": "Ura Mp2019 Subzone",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://data.gov.sg/datasets/d_8594ae9ff96d0c708bc2af633048edfb/view",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "332 MP2019 historical subzone polygons, not 2026 MP2025 boundaries"
+      ],
+      "reference_periods": [
+        "2020 census / MP2019"
+      ],
+      "formats": [
+        "GEOJSON"
+      ],
+      "license_or_terms": "Singapore Open Data Licence",
+      "reuse_note": "Official URA MP2019 Subzone GeoJSON location. Preserve its edition; do not map SingStat 2026 MP2025 subzones with these shapes or infer a 2020-to-2026 time series from matching names.",
+      "origin_evidence_path": "docs/evidence/singapore-population2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SGP",
+      "source_id": "SGP_SGP_SINGSTAT_COP2020_AGE_SEX",
+      "role": "census_results",
+      "title": "Singstat Cop2020 Age Sex",
+      "publisher": "Singapore Department of Statistics",
+      "url": "https://data.gov.sg/datasets/d_d95ae740c0f8961a0b10435836660ce0/view",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Census 2020 Singapore and 55 MP2019 planning areas/332 subzones; historical edition"
+      ],
+      "reference_periods": [
+        "2020 census / MP2019"
+      ],
+      "formats": [
+        "CSV"
+      ],
+      "license_or_terms": "Singapore Open Data Licence",
+      "reuse_note": "Official Census of Population 2020 age-sex planning-area CSV location. AreaData inventoried 388 rows and 60 value columns but did not assign historical cells to MP2025 dashboard IDs. Kit must independently review Census methods, MP2019 geography and missing/rounding, and obtain a dated crosswalk before change estimates.",
+      "origin_evidence_path": "docs/evidence/singapore-population2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SGP",
+      "source_id": "SGP_SGP_SINGSTAT_POPULATION_TRENDS_2026_GEOSPATIAL",
+      "role": "machine_readable_data",
+      "title": "Singstat Population Trends 2026 Geospatial",
+      "publisher": "Singapore Department of Statistics",
+      "url": "https://www.singstat.gov.sg/files/1f0956c0-7c89-4684-bde3-b45b792636af.zip",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "June 2026 Singapore resident national, 55 MP2025 planning-area and 332 source subzone rows"
+      ],
+      "reference_periods": [
+        "June 2026 / MP2025"
+      ],
+      "formats": [
+        "ZIP",
+        "XLSX"
+      ],
+      "license_or_terms": "Official public report; redistribution terms to confirm",
+      "reuse_note": "Official SingStat Population Trends 2026 geospatial ZIP location. AreaData adopted only six direct resident-count dimensions; three books/seven sheets retain 456288 data cells. Nil/negligible dash is not zero, values are independently rounded to tens, and 2025 plan-area edition differs from Census 2020 MP2019. Kit must independently acquire and assess all dimensions, scope and rights.",
+      "origin_evidence_path": "docs/evidence/singapore-population2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SGP",
+      "source_id": "SGP_SGP_URA_MASTER_PLAN_OVERVIEW_LOCATION",
+      "role": "planning_guidance",
+      "title": "URA Master Plan overview and review cycle",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://www.ura.gov.sg/land-planning/master-plan/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Singapore national statutory Master Plan system and five-year review description"
+      ],
+      "reference_periods": [
+        "web page checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public webpage; reuse terms to confirm",
+      "reuse_note": "URA official Master Plan overview location. It explains national review and land-use scope, not an approved local plan, budget or required planning form for every Planning Area/Subzone. Kit must independently inspect current procedures and operative guidance.",
+      "origin_evidence_path": "docs/evidence/singapore-population2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SGP",
+      "source_id": "SGP_SGP_PLANNING_ACT_LOCATION",
+      "role": "planning_law",
+      "title": "Singapore Planning Act 1998 current text",
+      "publisher": "Attorney-General's Chambers",
+      "url": "https://sso.agc.gov.sg/Act/PA1998?ValidDate=20251001",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Singapore national Planning Act 1998 Part 2 Master Plan framework"
+      ],
+      "reference_periods": [
+        "version checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public legal text; reuse terms to confirm",
+      "reuse_note": "Official Attorney-General's Chambers Act location and relevant part identified. Current operative text and institutional application need Kit legal review. Planning Area/Subzone statistics do not create autonomous planning authorities.",
+      "origin_evidence_path": "docs/evidence/singapore-population2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SGP",
+      "source_id": "SGP_SGP_URA_MP2025_WRITTEN_STATEMENT",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Ura Mp2025 Written Statement",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://isomer-user-content.by.gov.sg/467/411a4d45-c03d-4322-b57c-497714595cdd/MP25WrittenStatement.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "National Singapore statutory land-use Master Plan 2025, not 55 independent municipal plans"
+      ],
+      "reference_periods": [
+        "June 2026 / MP2025"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Singapore Open Data Licence",
+      "reuse_note": "URA MP2025 Written Statement location, 26-page body acquired by AreaData. Full zoning/implementation meaning remains unassessed. Its national scope is not a local plan, budget execution or official evaluation for each statistical planning area.",
+      "origin_evidence_path": "docs/evidence/singapore-population2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SGP",
+      "source_id": "SGP_SGP_URA_MP2025_GAZETTE_LOCATION",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "URA MP2025 gazette circular",
+      "publisher": "Urban Redevelopment Authority",
+      "url": "https://www.ura.gov.sg/guidelines/circulars/ppg25-12/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Singapore national MP2025 Gazette effective 1 December 2025"
+      ],
+      "reference_periods": [
+        "1 December 2025"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public webpage; reuse terms to confirm",
+      "reuse_note": "Official URA circular states MP2025 was gazetted on 1 December 2025. Location verified but HTML original not hash-pinned; Kit must verify operative plan/status independently and not infer area-specific budget, spending or evaluation.",
+      "origin_evidence_path": "docs/evidence/singapore-population2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "SGP",
+      "source_id": "SGP_SGP_SINGSTAT_POPULATION_TRENDS_2026_REPORT",
+      "role": "table_catalog",
+      "title": "Singstat Population Trends 2026 Report",
+      "publisher": "Singapore Department of Statistics",
+      "url": "https://www.singstat.gov.sg/files/5645f043-4bb7-4181-a3a8-c36da5cd1b12.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Singapore and 55 URA MP2025 planning areas; report tables vary"
+      ],
+      "reference_periods": [
+        "June 2026 / MP2025"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "license_or_terms": "Official public report; redistribution terms to confirm",
+      "reuse_note": "Official 2026 report/landing page locates three detailed geospatial tables, footnotes and June 2026 resident population. The 54-page body is acquired by AreaData but most subject tables are unassessed. Distinguish residents from all-population WDI and verify exact denominators and long-absence rule in Kit.",
+      "origin_evidence_path": "docs/evidence/singapore-population2026-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
