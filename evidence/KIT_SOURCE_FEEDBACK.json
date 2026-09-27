@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-27T06:08:00.099Z",
-  "origin_commit": "3e0ab610903a40ded10a47802ab1a38497660649",
+  "exported_at": "2026-09-27T06:49:26.301Z",
+  "origin_commit": "8ff8f6b73aa01bdd0d352c5150f8c40529a16c29",
   "sources": [
     {
       "iso3": "AFG",
@@ -1282,6 +1282,198 @@
       "license_or_terms": null,
       "reuse_note": "Six-page Official Gazette Decision 15/2017 and maps establish a historical Capital zoning approval, not current applicability, a complete governorate development plan or fiscal execution. Later map revisions and 2020 boundary match are unverified.",
       "origin_evidence_path": "docs/evidence/bahrain-iga2020-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BRN",
+      "source_id": "BRN_BRN_SURVEY_GEOPORTAL",
+      "role": "administrative_codes",
+      "title": "Survey Department Geoportal",
+      "publisher": "Survey Department, Ministry of Development",
+      "url": "https://geoportal.survey.gov.bn/start",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Brunei official geospatial portal; 2021-compatible district/mukim code and polygon release unverified"
+      ],
+      "reference_periods": [
+        "Portal checked 2026-09-27; compatible boundary edition unverified"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Portal location only; downloadable geometry and terms not confirmed",
+      "reuse_note": "Survey Department official Geoportal location only. No dated code list or geometry compatible with the 2021 census was acquired by AreaData. The 2011 geoBoundaries shapes were removed; Kit must identify a licensed official release and reconcile edition before joining.",
+      "origin_evidence_path": "docs/evidence/brunei-bpp2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BRN",
+      "source_id": "BRN_BRN_DEPS_BPP2021_ANNEX_A",
+      "role": "census_results",
+      "title": "DEPS BPP 2021 demographic Annex A",
+      "publisher": "DEPS",
+      "url": "https://www.deps.gov.bn/wp-content/uploads/2025/10/ANNEX-A.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2021 Brunei and four districts in assessed A1/A2; other tables unassessed"
+      ],
+      "reference_periods": [
+        "2021 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "DEPS Annex A location. AreaData reviewed selected residential-status and age-band columns in A1/A2 only; A3-A12 are priority_unassessed. The three broad age groups are AreaData sums, not source-published cells. Kit must independently inspect all tables and rights.",
+      "origin_evidence_path": "docs/evidence/brunei-bpp2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BRN",
+      "source_id": "BRN_BRN_DEPS_BPP2021_ANNEX_B",
+      "role": "census_results",
+      "title": "DEPS BPP 2021 geography Annex B",
+      "publisher": "DEPS",
+      "url": "https://www.deps.gov.bn/wp-content/uploads/2025/10/ANNEX-B.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2021 Brunei, four districts and 39 mukims in B1/B2; kampung tables unassessed"
+      ],
+      "reference_periods": [
+        "2011 and 2021 census columns"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "DEPS Annex B location. Selected 2021 columns in B1/B2 were used; their 2011 columns are withheld from time-series comparison pending dated geographic reconciliation. B3-B6 and official codes/compatible polygons are not audited or acquired by Kit.",
+      "origin_evidence_path": "docs/evidence/brunei-bpp2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BRN",
+      "source_id": "BRN_BRN_DEPS_BPP2021_ANNEX_C",
+      "role": "census_results",
+      "title": "DEPS BPP 2021 demographic Annex C",
+      "publisher": "DEPS",
+      "url": "https://www.deps.gov.bn/wp-content/uploads/2025/10/ANNEX-C.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2021 four districts and 39 mukims in assessed C1; lower kampung and age tables unassessed"
+      ],
+      "reference_periods": [
+        "2021 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "DEPS Annex C location. Only C1 selected residential-status Persons cells were adopted by AreaData; C2-C10 are priority_unassessed. Melilas temporary-resident zero is a reported zero. Kit must independently verify rows, definitions, codes and rights.",
+      "origin_evidence_path": "docs/evidence/brunei-bpp2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BRN",
+      "source_id": "BRN_BRN_DEPS_BPP2021_REPORT",
+      "role": "census_results",
+      "title": "DEPS BPP 2021 demographic, household and housing report",
+      "publisher": "DEPS",
+      "url": "https://www.deps.gov.bn/wp-content/uploads/2025/10/RPT-1.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Brunei 2021 BPP main report, geography varies by table"
+      ],
+      "reference_periods": [
+        "2021 census"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "DEPS final BPP 2021 report location and original pinned by AreaData. Main-report tables and numeric columns remain priority_unassessed; Kit must independently acquire and audit its definitions, geography, original bytes and rights. Do not confuse 2021 census with annual WDI estimates.",
+      "origin_evidence_path": "docs/evidence/brunei-bpp2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BRN",
+      "source_id": "BRN_BRN_AGC_CAP248_2022",
+      "role": "planning_law",
+      "title": "Town and Country Planning Act, Cap. 248, revised 2022",
+      "publisher": "Attorney General's Chambers",
+      "url": "https://www.agc.gov.bn/wp-content/uploads/2026/07/CAP-248-TOWN-AND-COUNTRY-PLANNING-ACT.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Brunei national Town and Country Planning Act; planning areas are not automatically census districts"
+      ],
+      "reference_periods": [
+        "2022 revised edition"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "AGC Cap.248 revised 2022 text location. Sections 8 and 13-19 distinguish Planning Authority drafting and Minister approval for development plans. This is not proof that any named District Plan is currently approved; check later amendments, gazettes and applicability independently. Do not use repealed Cap.143 as current law.",
+      "origin_evidence_path": "docs/evidence/brunei-bpp2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BRN",
+      "source_id": "BRN_BRN_JPBD_DISTRICT_PLAN_CATALOGUE",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "JPBD development-plan catalogue",
+      "publisher": "Town and Country Planning Department, Ministry of Development",
+      "url": "https://www.jpbd.gov.bn/buku-garispanduan-dan-master-plan/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Brunei Muara, Belait, Tutong and Temburong District Plan catalogue entries"
+      ],
+      "reference_periods": [
+        "Catalogue checked 2026-09-27; listed plan periods and approval unverified"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Link only; book or map body not acquired",
+      "reuse_note": "JPBD official plan catalogue location only. AreaData saw four named District Plan cover images but did not acquire full plan bodies, maps, edition, period or approval. Mukim is an internal census diagnosis area, not an independent plan authority. Kit must obtain each plan and status separately.",
+      "origin_evidence_path": "docs/evidence/brunei-bpp2021-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "BRN",
+      "source_id": "BRN_BRN_MOF_RKN12_EN",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Twelfth National Development Plan 2024–2029",
+      "publisher": "Ministry of Finance and Economy",
+      "url": "https://www.mof.gov.bn/wp-content/uploads/2025/10/RKN12-English.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Brunei national RKN12 2024-2029 investment programme"
+      ],
+      "reference_periods": [
+        "2024–2029"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public PDF; redistribution terms to confirm",
+      "reuse_note": "MOF RKN12 English PDF p.114 lists a national masterplan and four 2026-2045 District Plan projects. A planned project is not a finished/approved district plan, a district allocation, actual spending or evaluation. Kit must inspect programme status and terms independently.",
+      "origin_evidence_path": "docs/evidence/brunei-bpp2021-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
