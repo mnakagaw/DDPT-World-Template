@@ -38,3 +38,5 @@ Producer run: dataset SHA-256 `8a6709c517ac891d7f707bb5038a8b87a810a54b0fa0e4f84
 4. Check other sector sources by VNM theme/year/grain, review source terms, complete applicable 42 scenarios, print/mobile/local-language and Word/PDF inspection, and independent `ACCEPT`. Assign VNM-specific Hosting/Public scope and verify deployed JSON/rendered URLs only after acceptance.
 
 Kit feedback is source-location-only (`official_location_identified`) until Kit independently acquires and audits each lead. It transfers no raw PDF, 576 observations or country acceptance. [Kit feedback handoff](KIT_FEEDBACK_HANDOFF.md) records import and repository commits. **Local:** partial candidate. **GitHub:** scoped code, audit and source leads. **Hosting:** none. **Public:** none.
+
+GitHub handoff: AreaData adapter `618ce6e8c127be582e466e1442a7272f8e7c3e14`, 442-source bundle `05b09d265079b960ec5a25061393bbca21b73b5f`, Kit import `065a07d1bf3c51dc2e2d296506801e7b0231fc28`. All were pushed to their respective `codex/asia-*` branches. The bundle SHA-256 is `43b06b0b87017c01bbe3a6086cb0aa8ccb07a56e5e55f79fcabc7757c0d9200d`.

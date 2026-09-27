@@ -338,3 +338,16 @@ Eight public official locations were selected: the NIS final census PDF and cens
 | Validation | AreaData check 158 modules/templates, 218/218 tests, Cambodia validator zero errors/warnings, build and 14 actual-output cases. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 431 feedback sources). |
 
 All eight Cambodia feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, including for originals already acquired by AreaData. Kit must independently obtain and inspect report tables, P-table exceptions, 2019 code/boundary edition, present planning rules, local documents and terms before reuse. Cambodia remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Viet Nam GSO/UNFPA 2019 census and planning source leads — 2026-09-27 JST
+
+Eleven public official locations were selected: the joint GSO/UNFPA census report and catalogue, the separate NSO Completed Results catalogue and original-PDF location, NSO census warehouse and press release, the planning and local-government laws, the 2025 province reform and code list, and current Hà Nội city/Kiến Hưng ward plan catalogue locations. [The Viet Nam source audit](../../evidence/vietnam-census2019-source-audit-2026-09-27.md) limits numerical adoption to Table 1's nine direct person-count columns for 2019 country and 63 historical provinces/cities. The separate district report was not acquired from NSO, other joint-report tables remain unassessed, and current 2025 codes and planning bodies are not joined to historical census row IDs. Feedback transfers no PDF, observations, code/polygon join, local plan or country acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, audit, status and 11 source selections | `618ce6e8c127be582e466e1442a7272f8e7c3e14` on `codex/asia-domestic-20260926`; pushed. |
+| AreaData 442-source / 33-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that exact adapter commit as `origin_commit`; SHA-256 `43b06b0b87017c01bbe3a6086cb0aa8ccb07a56e5e55f79fcabc7757c0d9200d`, committed as `05b09d265079b960ec5a25061393bbca21b73b5f` and pushed. |
+| Kit feedback import | `065a07d1bf3c51dc2e2d296506801e7b0231fc28` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 442 leads, inserted 11 Viet Nam records and updated 431 prior origin histories, 443 Kit records total. Pushed. |
+| Validation | AreaData check 159 JavaScript/JSON, 218/218 tests, Viet Nam validator zero errors/warnings, build and five actual-output cases. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 442 feedback sources). |
+
+All 11 Viet Nam stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, including for the original acquired by AreaData. Kit must independently obtain and inspect source bodies, full numerical columns, historical/current geography, legal application, local documents and terms. Viet Nam remains a partial unpublished candidate without independent `ACCEPT`.
