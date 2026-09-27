@@ -416,3 +416,16 @@ Eight public official locations were selected: the INETL 2022 Census Main Report
 | Validation | AreaData check 164 JavaScript/JSON, 219/219 tests, Timor-Leste validator 0 errors/warnings, build, and five 11-indicator actual-output cases with 154 national comparison indicator cells. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 493 feedback sources). |
 
 All eight Timor-Leste feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, even for originals acquired by AreaData. Kit must independently acquire the report and laws, review all numbered and image-only tables, reconcile 2022/current administrative names/codes/shapes, verify plan approval/financial status and reuse terms. Timor-Leste remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Brunei DEPS BPP 2021 and planning source leads — 2026-09-27 JST
+
+Eight official public locations were selected: DEPS BPP 2021 final report and Annexes A–C, AGC Cap.248 revised 2022, MOF RKN12, JPBD's four-District-Plan catalogue, and Survey Department Geoportal. [The Brunei source audit](../../evidence/brunei-bpp2021-source-audit-2026-09-27.md) distinguishes the 2021 census and 2011 columns from WDI estimates and old 2011 reference shapes. AreaData adopted only selected columns from 5 of 28 Annex tables as 352 direct cells and 15 age-band sums. Main-report tables and 23 other Annex tables remain unassessed; JPBD covers are locations, not acquired or approved District Plans. Kit receives **locations and reuse cautions only**, with no PDFs, values, geographic matching or AreaData acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, audit, status and eight selections | `8ff8f6b73aa01bdd0d352c5150f8c40529a16c29` on `codex/asia-domestic-20260926`; pushed. |
+| AreaData 501-source / 39-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that exact adapter commit as `origin_commit`; SHA-256 `d0988c9689445697c68f4120d8d929e696c75ed5a2087e1887aca5f10f6dea1e`, committed as `d24dd2ba7e1f2e60180858146db4d05f8ac1aad3` and pushed. |
+| Kit feedback import | `7acfdcd80d4aceb2b76459fbe53480ee1bbf74ea` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 501 leads, inserted eight Brunei records and updated 493 previous origin histories, 502 Kit records total. Pushed. |
+| Validation | AreaData check 165 JavaScript/JSON, 219/219 tests, Brunei validator 0 errors/warnings, build, six 11-indicator actual-output cases with 132 value/status cells and 4/4+18/18 comparison members. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 501 feedback sources). |
+
+All eight Brunei feedback stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, including PDFs AreaData acquired. Kit must independently obtain and inspect all relevant original tables, reconcile official geographic codes and dated boundaries, verify plan approval/financial status and reuse terms. Brunei remains a partial unpublished candidate without independent `ACCEPT`.
