@@ -1,0 +1,4440 @@
+{
+  "source_manifest": "config/kazakhstan-2026-source-manifest.json",
+  "checked_at": "2026-09-27",
+  "official_source_bodies": 9,
+  "kato_classifier_rows": 15586,
+  "first_level_units": 20,
+  "child_units": 228,
+  "kato_population_reconciliation": [
+    {
+      "population_sheet_row": 9,
+      "population_name": "Semei с.а.",
+      "kato_code": "101000000",
+      "kato_kaz_name": "Семей Қ.Ә.",
+      "kato_rus_name": "Семей Г.А.",
+      "name_similarity": 0.667,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 10,
+      "population_name": "Кurchatov с.а.",
+      "kato_code": "101800000",
+      "kato_kaz_name": "Курчатов Қ.Ә.",
+      "kato_rus_name": "Курчатов Г.А.",
+      "name_similarity": 0.889,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 11,
+      "population_name": "Abai district",
+      "kato_code": "103200000",
+      "kato_kaz_name": "Абай ауданы",
+      "kato_rus_name": "Абайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 12,
+      "population_name": "Aksuat district",
+      "kato_code": "103400000",
+      "kato_kaz_name": "Ақсуат ауданы",
+      "kato_rus_name": "район Ақсуат",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 13,
+      "population_name": "Ayagoz distict",
+      "kato_code": "103600000",
+      "kato_kaz_name": "Аягөз ауданы",
+      "kato_rus_name": "Аягозский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 14,
+      "population_name": "Beskaragay district",
+      "kato_code": "103800000",
+      "kato_kaz_name": "Бесқарағай ауданы",
+      "kato_rus_name": "Бескарагайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 15,
+      "population_name": "Borodulikha district",
+      "kato_code": "104000000",
+      "kato_kaz_name": "Бородулиха ауданы",
+      "kato_rus_name": "Бородулихинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 16,
+      "population_name": "Zhanasemey district",
+      "kato_code": "104100000",
+      "kato_kaz_name": "Жаңасемей ауданы",
+      "kato_rus_name": "район Жаңасемей",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 17,
+      "population_name": "Zharma district",
+      "kato_code": "104200000",
+      "kato_kaz_name": "Жарма ауданы",
+      "kato_rus_name": "Жарминский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 18,
+      "population_name": "Kokpekti district",
+      "kato_code": "104400000",
+      "kato_kaz_name": "Көкпекті ауданы",
+      "kato_rus_name": "Кокпектинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 19,
+      "population_name": "Makanchi district",
+      "kato_code": "104500000",
+      "kato_kaz_name": "Мақаншы ауданы",
+      "kato_rus_name": "район Мақаншы",
+      "name_similarity": 0.714,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 20,
+      "population_name": "Urzhar district",
+      "kato_code": "104600000",
+      "kato_kaz_name": "Үржар ауданы",
+      "kato_rus_name": "Урджарский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 23,
+      "population_name": "Kokshetau c.a.",
+      "kato_code": "111000000",
+      "kato_kaz_name": "Көкшетау Қ.Ә.",
+      "kato_rus_name": "Кокшетау Г.А.",
+      "name_similarity": 0.941,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 24,
+      "population_name": "Kosshy c.a.",
+      "kato_code": "111600000",
+      "kato_kaz_name": "Қосшы Қ.Ә.",
+      "kato_rus_name": "Косшы Г.А.",
+      "name_similarity": 0.909,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 25,
+      "population_name": "Stepnogorsk c.",
+      "kato_code": "111800000",
+      "kato_kaz_name": "Степногор Қ.Ә.",
+      "kato_rus_name": "Степногорск Г.А.",
+      "name_similarity": 0.952,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 26,
+      "population_name": "Akkol district",
+      "kato_code": "113200000",
+      "kato_kaz_name": "Ақкөл ауданы",
+      "kato_rus_name": "Аккольский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 27,
+      "population_name": "Arshaly district",
+      "kato_code": "113400000",
+      "kato_kaz_name": "Аршалы ауданы",
+      "kato_rus_name": "Аршалынский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 28,
+      "population_name": "Astrakhan district",
+      "kato_code": "113600000",
+      "kato_kaz_name": "Астрахан ауданы",
+      "kato_rus_name": "Астраханский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 29,
+      "population_name": "Atbasar district",
+      "kato_code": "113800000",
+      "kato_kaz_name": "Атбасар ауданы",
+      "kato_rus_name": "Атбасарский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 30,
+      "population_name": "Bulandy district",
+      "kato_code": "114000000",
+      "kato_kaz_name": "Бұланды ауданы",
+      "kato_rus_name": "Буландынский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 31,
+      "population_name": "Egindikol district",
+      "kato_code": "114400000",
+      "kato_kaz_name": "Егіндікөл ауданы",
+      "kato_rus_name": "Егиндыкольский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 32,
+      "population_name": "Birzhan Sal district",
+      "kato_code": "114500000",
+      "kato_kaz_name": "Біржан сал ауданы",
+      "kato_rus_name": "район Биржан сал",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 33,
+      "population_name": "Ereymentau district",
+      "kato_code": "114600000",
+      "kato_kaz_name": "Ерейментау ауданы",
+      "kato_rus_name": "Ерейментауский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 34,
+      "population_name": "Esil district",
+      "kato_code": "114800000",
+      "kato_kaz_name": "Есіл ауданы",
+      "kato_rus_name": "Есильский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 35,
+      "population_name": "Zhaksy district",
+      "kato_code": "115200000",
+      "kato_kaz_name": "Жақсы ауданы",
+      "kato_rus_name": "Жаксынский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 36,
+      "population_name": "Zharkain district",
+      "kato_code": "115400000",
+      "kato_kaz_name": "Жарқайың ауданы",
+      "kato_rus_name": "Жаркаинский район",
+      "name_similarity": 0.933,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 37,
+      "population_name": "Zerendi district",
+      "kato_code": "115600000",
+      "kato_kaz_name": "Зеренді ауданы",
+      "kato_rus_name": "Зерендинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 38,
+      "population_name": "Korgalzhyn district",
+      "kato_code": "116000000",
+      "kato_kaz_name": "Қорғалжын ауданы",
+      "kato_rus_name": "Коргалжынский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 39,
+      "population_name": "Sandyktau district",
+      "kato_code": "116400000",
+      "kato_kaz_name": "Сандықтау ауданы",
+      "kato_rus_name": "Сандыктауский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 40,
+      "population_name": "Tselinograd district",
+      "kato_code": "116600000",
+      "kato_kaz_name": "Целиноград ауданы",
+      "kato_rus_name": "Целиноградский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 41,
+      "population_name": "Shortandy district",
+      "kato_code": "116800000",
+      "kato_kaz_name": "Шортанды ауданы",
+      "kato_rus_name": "Шортандинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 42,
+      "population_name": "Burabay district",
+      "kato_code": "117000000",
+      "kato_kaz_name": "Бурабай ауданы",
+      "kato_rus_name": "Бурабайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 45,
+      "population_name": "Aktobe c.a.",
+      "kato_code": "151000000",
+      "kato_kaz_name": "Ақтөбе Қ.Ә.",
+      "kato_rus_name": "Актобе Г.А.",
+      "name_similarity": 0.923,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 46,
+      "population_name": "Alga district",
+      "kato_code": "153200000",
+      "kato_kaz_name": "Алға ауданы",
+      "kato_rus_name": "Алгинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 47,
+      "population_name": "Aiteke bi district",
+      "kato_code": "153400000",
+      "kato_kaz_name": "Әйтеке би ауданы",
+      "kato_rus_name": "Айтекебийский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 48,
+      "population_name": "Bayganin district",
+      "kato_code": "153600000",
+      "kato_kaz_name": "Байғанин ауданы",
+      "kato_rus_name": "Байганинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 49,
+      "population_name": "Kargaly district",
+      "kato_code": "154000000",
+      "kato_kaz_name": "Қарғалы ауданы",
+      "kato_rus_name": "Каргалинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 50,
+      "population_name": "Kobda district",
+      "kato_code": "154200000",
+      "kato_kaz_name": "Қобда ауданы",
+      "kato_rus_name": "Хобдинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 51,
+      "population_name": "Martuk district",
+      "kato_code": "154600000",
+      "kato_kaz_name": "Мәртөк ауданы",
+      "kato_rus_name": "Мартукский район",
+      "name_similarity": 0.833,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 52,
+      "population_name": "Mugalzhar district",
+      "kato_code": "154800000",
+      "kato_kaz_name": "Мұғалжар ауданы",
+      "kato_rus_name": "Мугалжарский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 53,
+      "population_name": "Oiyl district",
+      "kato_code": "155200000",
+      "kato_kaz_name": "Ойыл ауданы",
+      "kato_rus_name": "Уилский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 54,
+      "population_name": "Temir district",
+      "kato_code": "155600000",
+      "kato_kaz_name": "Темір ауданы",
+      "kato_rus_name": "Темирский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 55,
+      "population_name": "Khromtau district",
+      "kato_code": "156000000",
+      "kato_kaz_name": "Хромтау ауданы",
+      "kato_rus_name": "Хромтауский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 56,
+      "population_name": "Shalkar district",
+      "kato_code": "156400000",
+      "kato_kaz_name": "Шалқар ауданы",
+      "kato_rus_name": "Шалкарский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 57,
+      "population_name": "Yrgyz district",
+      "kato_code": "156800000",
+      "kato_kaz_name": "Ырғыз ауданы",
+      "kato_rus_name": "Иргизский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 60,
+      "population_name": "Konayev c.a.",
+      "kato_code": "191000000",
+      "kato_kaz_name": "Қонаев Қ.Ә.",
+      "kato_rus_name": "Қонаев Г.А.",
+      "name_similarity": 0.857,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 61,
+      "population_name": "Alatau c.a.",
+      "kato_code": "191800000",
+      "kato_kaz_name": "Алатау Қ.Ә.",
+      "kato_rus_name": "Алатау Г.А.",
+      "name_similarity": 0.923,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 62,
+      "population_name": "Balkhash district",
+      "kato_code": "193600000",
+      "kato_kaz_name": "Балқаш ауданы",
+      "kato_rus_name": "Балхашский район",
+      "name_similarity": 0.833,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 63,
+      "population_name": "Enbekshikazakh district",
+      "kato_code": "194000000",
+      "kato_kaz_name": "Еңбекшіқазақ ауданы",
+      "kato_rus_name": "Енбекшиказахский район",
+      "name_similarity": 0.917,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 64,
+      "population_name": "Zhambyl district",
+      "kato_code": "194200000",
+      "kato_kaz_name": "Жамбыл ауданы",
+      "kato_rus_name": "Жамбылский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 65,
+      "population_name": "Kegen district",
+      "kato_code": "194400000",
+      "kato_kaz_name": "Кеген ауданы",
+      "kato_rus_name": "Кегенский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 66,
+      "population_name": "Karasay district",
+      "kato_code": "195200000",
+      "kato_kaz_name": "Қарасай ауданы",
+      "kato_rus_name": "Карасайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 67,
+      "population_name": "Raiymbek district",
+      "kato_code": "195800000",
+      "kato_kaz_name": "Райымбек ауданы",
+      "kato_rus_name": "Райымбекский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 68,
+      "population_name": "Talgar district",
+      "kato_code": "196200000",
+      "kato_kaz_name": "Талғар ауданы",
+      "kato_rus_name": "Талгарский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 69,
+      "population_name": "Uygur district",
+      "kato_code": "196600000",
+      "kato_kaz_name": "Ұйғыр ауданы",
+      "kato_rus_name": "Уйгурский район",
+      "name_similarity": 0.8,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 70,
+      "population_name": "Ile district",
+      "kato_code": "196800000",
+      "kato_kaz_name": "Іле ауданы",
+      "kato_rus_name": "Илийский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 73,
+      "population_name": "Atyrau c.a.",
+      "kato_code": "231000000",
+      "kato_kaz_name": "Атырау Қ.Ә.",
+      "kato_rus_name": "Атырау Г.А.",
+      "name_similarity": 0.923,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 74,
+      "population_name": "Zhylyoy district",
+      "kato_code": "233600000",
+      "kato_kaz_name": "Жылыой ауданы",
+      "kato_rus_name": "Жылыойский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 75,
+      "population_name": "Inder district",
+      "kato_code": "234000000",
+      "kato_kaz_name": "Индер ауданы",
+      "kato_rus_name": "Индерский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 76,
+      "population_name": "Isatay district",
+      "kato_code": "234200000",
+      "kato_kaz_name": "Исатай ауданы",
+      "kato_rus_name": "Исатайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 77,
+      "population_name": "Kurmangazy district",
+      "kato_code": "234600000",
+      "kato_kaz_name": "Құрманғазы ауданы",
+      "kato_rus_name": "Курмангазинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 78,
+      "population_name": "Kyzylkoga district",
+      "kato_code": "234800000",
+      "kato_kaz_name": "Қызылқоға ауданы",
+      "kato_rus_name": "Кзылкогинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 79,
+      "population_name": "Makat district",
+      "kato_code": "235200000",
+      "kato_kaz_name": "Мақат ауданы",
+      "kato_rus_name": "Макатский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 80,
+      "population_name": "Makhambet district",
+      "kato_code": "235600000",
+      "kato_kaz_name": "Махамбет ауданы",
+      "kato_rus_name": "Махамбетский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 83,
+      "population_name": "Uralsk г.а.",
+      "kato_code": "271000000",
+      "kato_kaz_name": "Орал Қ.Ә.",
+      "kato_rus_name": "Уральск Г.А.",
+      "name_similarity": 0.667,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 84,
+      "population_name": "Akzhaik district",
+      "kato_code": "273200000",
+      "kato_kaz_name": "Ақжайық ауданы",
+      "kato_rus_name": "Акжаикский район",
+      "name_similarity": 0.923,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 85,
+      "population_name": "Borili district",
+      "kato_code": "273600000",
+      "kato_kaz_name": "Бөрлі ауданы",
+      "kato_rus_name": "Бурлинский район",
+      "name_similarity": 0.909,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 86,
+      "population_name": "Zhanakala district",
+      "kato_code": "274000000",
+      "kato_kaz_name": "Жаңақала ауданы",
+      "kato_rus_name": "Жангалинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 87,
+      "population_name": "Zhanibek district",
+      "kato_code": "274200000",
+      "kato_kaz_name": "Жәнібек ауданы",
+      "kato_rus_name": "Жанибекский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 88,
+      "population_name": "Baiterek district",
+      "kato_code": "274400000",
+      "kato_kaz_name": "Бәйтерек ауданы",
+      "kato_rus_name": "район Бәйтерек",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 89,
+      "population_name": "Kaztalov district",
+      "kato_code": "274800000",
+      "kato_kaz_name": "Казталовка ауданы",
+      "kato_rus_name": "Казталовский район",
+      "name_similarity": 0.889,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 90,
+      "population_name": "Karatobe district",
+      "kato_code": "275000000",
+      "kato_kaz_name": "Қаратөбе ауданы",
+      "kato_rus_name": "Каратобинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 91,
+      "population_name": "Bokeyorda district",
+      "kato_code": "275400000",
+      "kato_kaz_name": "Бөкейордасы ауданы",
+      "kato_rus_name": "Бокейординский район",
+      "name_similarity": 0.9,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 92,
+      "population_name": "Syrym district",
+      "kato_code": "275800000",
+      "kato_kaz_name": "Сырым ауданы",
+      "kato_rus_name": "Сырымский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 93,
+      "population_name": "Taskala district",
+      "kato_code": "276000000",
+      "kato_kaz_name": "Тасқала ауданы",
+      "kato_rus_name": "Таскалинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 94,
+      "population_name": "Terekti district",
+      "kato_code": "276200000",
+      "kato_kaz_name": "Теректі ауданы",
+      "kato_rus_name": "Теректинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 95,
+      "population_name": "Shyngyrlau district",
+      "kato_code": "276600000",
+      "kato_kaz_name": "Шыңғырлау ауданы",
+      "kato_rus_name": "Чингирлауский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 98,
+      "population_name": "Taraz c.a.",
+      "kato_code": "311000000",
+      "kato_kaz_name": "Тараз Қ.Ә.",
+      "kato_rus_name": "Тараз Г.А.",
+      "name_similarity": 0.909,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 99,
+      "population_name": "Bayzak district",
+      "kato_code": "313600000",
+      "kato_kaz_name": "Байзақ ауданы",
+      "kato_rus_name": "Байзакский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 100,
+      "population_name": "Zhambyl district",
+      "kato_code": "314000000",
+      "kato_kaz_name": "Жамбыл ауданы",
+      "kato_rus_name": "Жамбылский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 101,
+      "population_name": "Zhualy district",
+      "kato_code": "314200000",
+      "kato_kaz_name": "Жуалы ауданы",
+      "kato_rus_name": "Жуалынский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 102,
+      "population_name": "Korday district",
+      "kato_code": "314800000",
+      "kato_kaz_name": "Қордай ауданы",
+      "kato_rus_name": "Кордайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 103,
+      "population_name": "Turar Ryskulov district",
+      "kato_code": "315000000",
+      "kato_kaz_name": "Тұрар Рысқұлов ауданы",
+      "kato_rus_name": "район Турара Рыскулова",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 104,
+      "population_name": "Merke district",
+      "kato_code": "315400000",
+      "kato_kaz_name": "Мерке ауданы",
+      "kato_rus_name": "Меркенский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 105,
+      "population_name": "Moyinkum district",
+      "kato_code": "315600000",
+      "kato_kaz_name": "Мойынқұм ауданы",
+      "kato_rus_name": "Мойынкумский район",
+      "name_similarity": 0.875,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 106,
+      "population_name": "Sarysu district",
+      "kato_code": "316000000",
+      "kato_kaz_name": "Сарысу ауданы",
+      "kato_rus_name": "Сарысуский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 107,
+      "population_name": "Talas district",
+      "kato_code": "316200000",
+      "kato_kaz_name": "Талас ауданы",
+      "kato_rus_name": "Таласский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 108,
+      "population_name": "Shu district",
+      "kato_code": "316600000",
+      "kato_kaz_name": "Шу ауданы",
+      "kato_rus_name": "Шуский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 111,
+      "population_name": "Taldykorgan c.a.",
+      "kato_code": "331000000",
+      "kato_kaz_name": "Талдықорған Қ.Ә.",
+      "kato_rus_name": "Талдыкорган Г.А.",
+      "name_similarity": 0.957,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 112,
+      "population_name": "Tekeli c.a.",
+      "kato_code": "331800000",
+      "kato_kaz_name": "Текелі Қ.Ә.",
+      "kato_rus_name": "Текели Г.А.",
+      "name_similarity": 0.923,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 113,
+      "population_name": "Aksu district",
+      "kato_code": "333200000",
+      "kato_kaz_name": "Ақсу ауданы",
+      "kato_rus_name": "Аксуский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 114,
+      "population_name": "Alakol district",
+      "kato_code": "333400000",
+      "kato_kaz_name": "Алакөл ауданы",
+      "kato_rus_name": "Алакольский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 115,
+      "population_name": "Eskeldy district",
+      "kato_code": "333600000",
+      "kato_kaz_name": "Ескелді ауданы",
+      "kato_rus_name": "Ескельдинский район",
+      "name_similarity": 0.857,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 116,
+      "population_name": "Kerbulak district",
+      "kato_code": "334000000",
+      "kato_kaz_name": "Кербұлақ ауданы",
+      "kato_rus_name": "Кербулакский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 117,
+      "population_name": "Koksu district",
+      "kato_code": "334200000",
+      "kato_kaz_name": "Көксу ауданы",
+      "kato_rus_name": "Коксуский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 118,
+      "population_name": "Karatal district",
+      "kato_code": "334400000",
+      "kato_kaz_name": "Қаратал ауданы",
+      "kato_rus_name": "Каратальский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 119,
+      "population_name": "Panfilov district",
+      "kato_code": "334600000",
+      "kato_kaz_name": "Панфилов ауданы",
+      "kato_rus_name": "Панфиловский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 120,
+      "population_name": "Sarkant district",
+      "kato_code": "334800000",
+      "kato_kaz_name": "Сарқан ауданы",
+      "kato_rus_name": "Сарканский район",
+      "name_similarity": 0.923,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 123,
+      "population_name": "Karaganda c.a.",
+      "kato_code": "351000000",
+      "kato_kaz_name": "Қарағанды Қ.Ә.",
+      "kato_rus_name": "Караганда Г.А.",
+      "name_similarity": 0.842,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 124,
+      "population_name": "Balkhash c.a.",
+      "kato_code": "351600000",
+      "kato_kaz_name": "Балқаш Қ.Ә.",
+      "kato_rus_name": "Балхаш Г.А.",
+      "name_similarity": 0.769,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 125,
+      "population_name": "Priozer c.a.",
+      "kato_code": "352100000",
+      "kato_kaz_name": "Приозерск Қ.Ә.",
+      "kato_rus_name": "Приозерск Г.А.",
+      "name_similarity": 0.824,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 126,
+      "population_name": "Saran c.a.",
+      "kato_code": "352200000",
+      "kato_kaz_name": "Саран Қ.Ә.",
+      "kato_rus_name": "Сарань Г.А.",
+      "name_similarity": 0.909,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 127,
+      "population_name": "Temirtau c.a.",
+      "kato_code": "352400000",
+      "kato_kaz_name": "Теміртау Қ.Ә.",
+      "kato_rus_name": "Темиртау Г.А.",
+      "name_similarity": 0.941,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 128,
+      "population_name": "Shakhtinsk c.a.",
+      "kato_code": "352800000",
+      "kato_kaz_name": "Шахтинск Қ.Ә.",
+      "kato_rus_name": "Шахтинск Г.А.",
+      "name_similarity": 0.941,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 129,
+      "population_name": "Abay district",
+      "kato_code": "353200000",
+      "kato_kaz_name": "Абай ауданы",
+      "kato_rus_name": "Абайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 130,
+      "population_name": "Aktogay district",
+      "kato_code": "353600000",
+      "kato_kaz_name": "Ақтоғай ауданы",
+      "kato_rus_name": "Актогайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 131,
+      "population_name": "Bukhar-zhyrau district",
+      "kato_code": "354000000",
+      "kato_kaz_name": "Бұқар жырау ауданы",
+      "kato_rus_name": "Бухар-Жырауский район",
+      "name_similarity": 0.9,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 132,
+      "population_name": "Karkaraly district",
+      "kato_code": "354800000",
+      "kato_kaz_name": "Қарқаралы ауданы",
+      "kato_rus_name": "Каркаралинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 133,
+      "population_name": "Nura district",
+      "kato_code": "355200000",
+      "kato_kaz_name": "Нұра ауданы",
+      "kato_rus_name": "Нуринский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 134,
+      "population_name": "Osakarovka district",
+      "kato_code": "355600000",
+      "kato_kaz_name": "Осакаров ауданы",
+      "kato_rus_name": "Осакаровский район",
+      "name_similarity": 0.889,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 135,
+      "population_name": "Shet district",
+      "kato_code": "356400000",
+      "kato_kaz_name": "Шет ауданы",
+      "kato_rus_name": "Шетский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 138,
+      "population_name": "Kostanay c.a.",
+      "kato_code": "391000000",
+      "kato_kaz_name": "Қостанай Қ.Ә.",
+      "kato_rus_name": "Костанай Г.А.",
+      "name_similarity": 0.941,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 139,
+      "population_name": "Arkalyk c.a.",
+      "kato_code": "391600000",
+      "kato_kaz_name": "Арқалық Қ.Ә.",
+      "kato_rus_name": "Аркалык Г.А.",
+      "name_similarity": 0.933,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 140,
+      "population_name": "Lisakov c.a.",
+      "kato_code": "392000000",
+      "kato_kaz_name": "Лисаков Қ.Ә.",
+      "kato_rus_name": "Лисаковск Г.А.",
+      "name_similarity": 0.933,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 141,
+      "population_name": "Rudny c.a.",
+      "kato_code": "392400000",
+      "kato_kaz_name": "Рудный Қ.Ә.",
+      "kato_rus_name": "Рудный Г.А.",
+      "name_similarity": 0.833,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 142,
+      "population_name": "Altynsarin district",
+      "kato_code": "393200000",
+      "kato_kaz_name": "Алтынсарин ауданы",
+      "kato_rus_name": "Алтынсаринский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 143,
+      "population_name": "Amangeldy district",
+      "kato_code": "393400000",
+      "kato_kaz_name": "Амангелді ауданы",
+      "kato_rus_name": "Амангельдинский район",
+      "name_similarity": 0.889,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 144,
+      "population_name": "Auliekol district",
+      "kato_code": "393600000",
+      "kato_kaz_name": "Әулиекөл ауданы",
+      "kato_rus_name": "Аулиекольский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 145,
+      "population_name": "Denisov district",
+      "kato_code": "394000000",
+      "kato_kaz_name": "Денисов ауданы",
+      "kato_rus_name": "Денисовский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 146,
+      "population_name": "Zhangeldin district",
+      "kato_code": "394200000",
+      "kato_kaz_name": "Жангелдин ауданы",
+      "kato_rus_name": "Жангельдинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 147,
+      "population_name": "Zhitikara district",
+      "kato_code": "394400000",
+      "kato_kaz_name": "Жітіқара ауданы",
+      "kato_rus_name": "Житикаринский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 148,
+      "population_name": "Kamysty district",
+      "kato_code": "394800000",
+      "kato_kaz_name": "Қамысты ауданы",
+      "kato_rus_name": "Камыстинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 149,
+      "population_name": "Karabalyk district",
+      "kato_code": "395000000",
+      "kato_kaz_name": "Қарабалық ауданы",
+      "kato_rus_name": "Карабалыкский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 150,
+      "population_name": "Karasu district",
+      "kato_code": "395200000",
+      "kato_kaz_name": "Қарасу ауданы",
+      "kato_rus_name": "Карасуский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 151,
+      "population_name": "Kostanay district",
+      "kato_code": "395400000",
+      "kato_kaz_name": "Қостанай ауданы",
+      "kato_rus_name": "Костанайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 152,
+      "population_name": "Mendykara district",
+      "kato_code": "395600000",
+      "kato_kaz_name": "Меңдіқара ауданы",
+      "kato_rus_name": "Мендыкаринский район",
+      "name_similarity": 0.889,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 153,
+      "population_name": "Naurzum district",
+      "kato_code": "395800000",
+      "kato_kaz_name": "Наурызым ауданы",
+      "kato_rus_name": "Наурзумский район",
+      "name_similarity": 0.8,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 154,
+      "population_name": "Sarykol district",
+      "kato_code": "396200000",
+      "kato_kaz_name": "Сарыкөл ауданы",
+      "kato_rus_name": "Сарыкольский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 155,
+      "population_name": "Beimbet Maylin district",
+      "kato_code": "396400000",
+      "kato_kaz_name": "Бейімбет Майлин ауданы",
+      "kato_rus_name": "район Беимбета Майлина",
+      "name_similarity": 0.963,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 156,
+      "population_name": "Uzunkol district",
+      "kato_code": "396600000",
+      "kato_kaz_name": "Ұзынкөл ауданы",
+      "kato_rus_name": "Узункольский район",
+      "name_similarity": 0.857,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 157,
+      "population_name": "Fedorov district",
+      "kato_code": "396800000",
+      "kato_kaz_name": "Федоров ауданы",
+      "kato_rus_name": "Федоровский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 160,
+      "population_name": "Kyzylorda c.a.",
+      "kato_code": "431000000",
+      "kato_kaz_name": "Қызылорда Қ.Ә.",
+      "kato_rus_name": "Кызылорда Г.А.",
+      "name_similarity": 0.947,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 161,
+      "population_name": "Baikonur c.a.",
+      "kato_code": "431900000",
+      "kato_kaz_name": "Байқоңыр Қ.Ә.",
+      "kato_rus_name": "Байконыр Г.А.",
+      "name_similarity": 0.824,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 162,
+      "population_name": "Aral district",
+      "kato_code": "433200000",
+      "kato_kaz_name": "Арал ауданы",
+      "kato_rus_name": "Аральский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 163,
+      "population_name": "Zhalagash district",
+      "kato_code": "433600000",
+      "kato_kaz_name": "Жалағаш ауданы",
+      "kato_rus_name": "Жалагашский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 164,
+      "population_name": "Zhanakorgan district",
+      "kato_code": "434000000",
+      "kato_kaz_name": "Жаңақорған ауданы",
+      "kato_rus_name": "Жанакорганский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 165,
+      "population_name": "Kazaly district",
+      "kato_code": "434400000",
+      "kato_kaz_name": "Қазалы ауданы",
+      "kato_rus_name": "Казалинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 166,
+      "population_name": "Karmakshy district",
+      "kato_code": "434600000",
+      "kato_kaz_name": "Қармақшы ауданы",
+      "kato_rus_name": "Кармакшинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 167,
+      "population_name": "Syrdarya district",
+      "kato_code": "434800000",
+      "kato_kaz_name": "Сырдария ауданы",
+      "kato_rus_name": "Сырдарьинский район",
+      "name_similarity": 0.941,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 168,
+      "population_name": "Shieli district",
+      "kato_code": "435200000",
+      "kato_kaz_name": "Шиелі ауданы",
+      "kato_rus_name": "Шиелийский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 171,
+      "population_name": "Aktau c.a.",
+      "kato_code": "471000000",
+      "kato_kaz_name": "Ақтау Г.А.",
+      "kato_rus_name": "Актау Г.А.",
+      "name_similarity": 0.909,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 172,
+      "population_name": "Zhanaozen c.a.",
+      "kato_code": "471800000",
+      "kato_kaz_name": "Жаңаөзен Қ.Ә.",
+      "kato_rus_name": "Жанаозен Г.А.",
+      "name_similarity": 0.941,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 173,
+      "population_name": "Beyneu district",
+      "kato_code": "473600000",
+      "kato_kaz_name": "Бейнеу ауданы",
+      "kato_rus_name": "Бейнеуский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 174,
+      "population_name": "Karakiya district",
+      "kato_code": "474200000",
+      "kato_kaz_name": "Қарақия ауданы",
+      "kato_rus_name": "Каракиянский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 175,
+      "population_name": "Mangystau district",
+      "kato_code": "474600000",
+      "kato_kaz_name": "Маңғыстау ауданы",
+      "kato_rus_name": "Мангистауский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 176,
+      "population_name": "Munaily district",
+      "kato_code": "475000000",
+      "kato_kaz_name": "Мұнайлы ауданы",
+      "kato_rus_name": "Мунайлинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 177,
+      "population_name": "Tupkaragan district",
+      "kato_code": "475200000",
+      "kato_kaz_name": "Түпқараған ауданы",
+      "kato_rus_name": "Тупкараганский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 180,
+      "population_name": "Pavlodar c.a.",
+      "kato_code": "551000000",
+      "kato_kaz_name": "Павлодар Қ.Ә.",
+      "kato_rus_name": "Павлодар Г.А.",
+      "name_similarity": 0.941,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 181,
+      "population_name": "Aksu c.a.",
+      "kato_code": "551600000",
+      "kato_kaz_name": "Ақсу Қ.Ә.",
+      "kato_rus_name": "Аксу Г.А.",
+      "name_similarity": 0.889,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 182,
+      "population_name": "Ekibastuz c.a.",
+      "kato_code": "552200000",
+      "kato_kaz_name": "Екібастұз Қ.Ә.",
+      "kato_rus_name": "Экибастуз Г.А.",
+      "name_similarity": 0.947,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 183,
+      "population_name": "Aktogay district",
+      "kato_code": "553200000",
+      "kato_kaz_name": "Ақтоғай ауданы",
+      "kato_rus_name": "Актогайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 184,
+      "population_name": "Bayanaul district",
+      "kato_code": "553600000",
+      "kato_kaz_name": "Баянауыл ауданы",
+      "kato_rus_name": "Баянаульский район",
+      "name_similarity": 0.941,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 185,
+      "population_name": "Zhelezin district",
+      "kato_code": "554200000",
+      "kato_kaz_name": "Железин ауданы",
+      "kato_rus_name": "Железинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 186,
+      "population_name": "Ertis district",
+      "kato_code": "554600000",
+      "kato_kaz_name": "Ертіс ауданы",
+      "kato_rus_name": "Иртышский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 187,
+      "population_name": "Terenkol district",
+      "kato_code": "554800000",
+      "kato_kaz_name": "Тереңкөл ауданы",
+      "kato_rus_name": "район Тереңкөл",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 188,
+      "population_name": "Akkuly district",
+      "kato_code": "555200000",
+      "kato_kaz_name": "Аққулы ауданы",
+      "kato_rus_name": "район Аққулы",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 189,
+      "population_name": "May district",
+      "kato_code": "555600000",
+      "kato_kaz_name": "Май ауданы",
+      "kato_rus_name": "Майский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 190,
+      "population_name": "Pavlodar district",
+      "kato_code": "556000000",
+      "kato_kaz_name": "Павлодар ауданы",
+      "kato_rus_name": "Павлодарский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 191,
+      "population_name": "Uspen district",
+      "kato_code": "556400000",
+      "kato_kaz_name": "Успен ауданы",
+      "kato_rus_name": "Успенский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 192,
+      "population_name": "Sharbakty district",
+      "kato_code": "556800000",
+      "kato_kaz_name": "Шарбақты ауданы",
+      "kato_rus_name": "Щербактинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 195,
+      "population_name": "Petropavlovsk c.a.",
+      "kato_code": "591000000",
+      "kato_kaz_name": "Петропавл Қ.Ә.",
+      "kato_rus_name": "Петропавловск Г.А.",
+      "name_similarity": 0.87,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 196,
+      "population_name": "Aiyrtau district",
+      "kato_code": "593200000",
+      "kato_kaz_name": "Айыртау ауданы",
+      "kato_rus_name": "Айыртауский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 197,
+      "population_name": "Akzhar district",
+      "kato_code": "593400000",
+      "kato_kaz_name": "Ақжар ауданы",
+      "kato_rus_name": "Акжарский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 198,
+      "population_name": "Magzhan Zhumabayev district",
+      "kato_code": "593600000",
+      "kato_kaz_name": "Мағжан Жұмабаев ауданы",
+      "kato_rus_name": "Район Магжана Жумабаева",
+      "name_similarity": 0.966,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 199,
+      "population_name": "Esil district",
+      "kato_code": "594200000",
+      "kato_kaz_name": "Есіл ауданы",
+      "kato_rus_name": "Есильский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 200,
+      "population_name": "Zhambyl district",
+      "kato_code": "594600000",
+      "kato_kaz_name": "Жамбыл ауданы",
+      "kato_rus_name": "Жамбылский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 201,
+      "population_name": "Kyzylzhar district",
+      "kato_code": "595000000",
+      "kato_kaz_name": "Қызылжар ауданы",
+      "kato_rus_name": "Кызылжарский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 202,
+      "population_name": "Mamlyut district",
+      "kato_code": "595200000",
+      "kato_kaz_name": "Мамлют ауданы",
+      "kato_rus_name": "Мамлютский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 203,
+      "population_name": "Shal Akyn district",
+      "kato_code": "595600000",
+      "kato_kaz_name": "Шал ақын ауданы",
+      "kato_rus_name": "Район Шал акына",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 204,
+      "population_name": "Akkayin district",
+      "kato_code": "595800000",
+      "kato_kaz_name": "Аққайың ауданы",
+      "kato_rus_name": "Аккайынский район",
+      "name_similarity": 0.857,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 205,
+      "population_name": "Taiynsha district",
+      "kato_code": "596000000",
+      "kato_kaz_name": "Тайынша ауданы",
+      "kato_rus_name": "Тайыншинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 206,
+      "population_name": "Timiryazev district",
+      "kato_code": "596200000",
+      "kato_kaz_name": "Тимирязев ауданы",
+      "kato_rus_name": "Тимирязевский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 207,
+      "population_name": "Ualikhanov district",
+      "kato_code": "596400000",
+      "kato_kaz_name": "Уәлиханов ауданы",
+      "kato_rus_name": "Уалихановский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 208,
+      "population_name": "Gabit Musrepov district",
+      "kato_code": "596600000",
+      "kato_kaz_name": "Ғабит Мүсірепов атын.ауданы",
+      "kato_rus_name": "Район им.Габита Мусрепова",
+      "name_similarity": 0.839,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 211,
+      "population_name": "Turkistan c.a.",
+      "kato_code": "611000000",
+      "kato_kaz_name": "Түркістан Қ.Ә.",
+      "kato_rus_name": "Туркестан Г.А.",
+      "name_similarity": 0.947,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 212,
+      "population_name": "Arys c.a.",
+      "kato_code": "611600000",
+      "kato_kaz_name": "Арыс Қ.Ә.",
+      "kato_rus_name": "Арысь Г.А.",
+      "name_similarity": 0.889,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 213,
+      "population_name": "Kentau c.a.",
+      "kato_code": "612000000",
+      "kato_kaz_name": "Кентау Қ.Ә.",
+      "kato_rus_name": "Кентау Г.А.",
+      "name_similarity": 0.923,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 214,
+      "population_name": "Baydibek district",
+      "kato_code": "613600000",
+      "kato_kaz_name": "Бәйдібек ауданы",
+      "kato_rus_name": "район Байдибека",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 215,
+      "population_name": "Zhetysay district",
+      "kato_code": "613800000",
+      "kato_kaz_name": "Жетісай ауданы",
+      "kato_rus_name": "Жетысайский район",
+      "name_similarity": 0.857,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 216,
+      "population_name": "Keles district",
+      "kato_code": "613900000",
+      "kato_kaz_name": "Келес ауданы",
+      "kato_rus_name": "Келесский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 217,
+      "population_name": "Kazygurt district",
+      "kato_code": "614000000",
+      "kato_kaz_name": "Қазығұрт ауданы",
+      "kato_rus_name": "Казыгуртский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 218,
+      "population_name": "Maktaaral district",
+      "kato_code": "614400000",
+      "kato_kaz_name": "Мақтаарал ауданы",
+      "kato_rus_name": "Мактааральский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 219,
+      "population_name": "Ordabasy district",
+      "kato_code": "614600000",
+      "kato_kaz_name": "Ордабасы ауданы",
+      "kato_rus_name": "Ордабасынский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 220,
+      "population_name": "Otyrar district",
+      "kato_code": "614800000",
+      "kato_kaz_name": "Отырар ауданы",
+      "kato_rus_name": "Отрарский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 221,
+      "population_name": "Sairam district",
+      "kato_code": "615200000",
+      "kato_kaz_name": "Сайрам ауданы",
+      "kato_rus_name": "Сайрамский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 222,
+      "population_name": "Saryagash district",
+      "kato_code": "615400000",
+      "kato_kaz_name": "Сарыағаш ауданы",
+      "kato_rus_name": "Сарыагашский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 223,
+      "population_name": "Sauran district",
+      "kato_code": "615500000",
+      "kato_kaz_name": "Сауран ауданы",
+      "kato_rus_name": "район Сауран",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 224,
+      "population_name": "Suzak district",
+      "kato_code": "615600000",
+      "kato_kaz_name": "Созақ ауданы",
+      "kato_rus_name": "Сузакский район",
+      "name_similarity": 0.8,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 225,
+      "population_name": "Tole bi district",
+      "kato_code": "615800000",
+      "kato_kaz_name": "Төле би ауданы",
+      "kato_rus_name": "Толебийский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 226,
+      "population_name": "Tulkubas district",
+      "kato_code": "616000000",
+      "kato_kaz_name": "Түлкібас ауданы",
+      "kato_rus_name": "Тюлькубасский район",
+      "name_similarity": 0.875,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 227,
+      "population_name": "Shardara district",
+      "kato_code": "616400000",
+      "kato_kaz_name": "Шардара ауданы",
+      "kato_rus_name": "Шардаринский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 230,
+      "population_name": "Zhezkazgan c.a.",
+      "kato_code": "621000000",
+      "kato_kaz_name": "Жезқазған Қ.Ә.",
+      "kato_rus_name": "Жезказган Г.А.",
+      "name_similarity": 0.947,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 231,
+      "population_name": "Karazhal c.a.",
+      "kato_code": "621800000",
+      "kato_kaz_name": "Қаражал Қ.Ә.",
+      "kato_rus_name": "Каражал Г.А.",
+      "name_similarity": 0.933,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 232,
+      "population_name": "Satpayev c.a.",
+      "kato_code": "622000000",
+      "kato_kaz_name": "Сәтбаев Қ.Ә.",
+      "kato_rus_name": "Сатпаев Г.А.",
+      "name_similarity": 0.75,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 233,
+      "population_name": "Zhanaarka district",
+      "kato_code": "623600000",
+      "kato_kaz_name": "Жаңаарқа ауданы",
+      "kato_rus_name": "Жанааркинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 234,
+      "population_name": "Ulytau district",
+      "kato_code": "623800000",
+      "kato_kaz_name": "Ұлытау ауданы",
+      "kato_rus_name": "Улытауский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 237,
+      "population_name": "Ust-Kamenogorsk c.a.",
+      "kato_code": "631000000",
+      "kato_kaz_name": "Өскемен Қ.Ә.",
+      "kato_rus_name": "Усть-Каменогорск Г.А.",
+      "name_similarity": 0.545,
+      "alias_checked": true
+    },
+    {
+      "population_sheet_row": 238,
+      "population_name": "Ridder c.a.",
+      "kato_code": "632400000",
+      "kato_kaz_name": "Риддер Қ.Ә.",
+      "kato_rus_name": "Риддер Г.А.",
+      "name_similarity": 0.923,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 239,
+      "population_name": "Glubokov district",
+      "kato_code": "634000000",
+      "kato_kaz_name": "Глубокое ауданы",
+      "kato_rus_name": "Глубоковский район",
+      "name_similarity": 0.875,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 240,
+      "population_name": "Zaisan district",
+      "kato_code": "634600000",
+      "kato_kaz_name": "Зайсан ауданы",
+      "kato_rus_name": "Зайсанский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 241,
+      "population_name": "Altai district",
+      "kato_code": "634800000",
+      "kato_kaz_name": "Алтай ауданы",
+      "kato_rus_name": "район Алтай",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 242,
+      "population_name": "Kurshim district",
+      "kato_code": "635200000",
+      "kato_kaz_name": "Күршім ауданы",
+      "kato_rus_name": "Курчумский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 243,
+      "population_name": "Katonkaragay district",
+      "kato_code": "635400000",
+      "kato_kaz_name": "Катонқарағай ауданы",
+      "kato_rus_name": "Катон-Карагайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 244,
+      "population_name": "Markakol district",
+      "kato_code": "635500000",
+      "kato_kaz_name": "Марқакөл ауданы",
+      "kato_rus_name": "район Марқакөл",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 245,
+      "population_name": "Samar district",
+      "kato_code": "635600000",
+      "kato_kaz_name": "Самар ауданы",
+      "kato_rus_name": "район Самар",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 246,
+      "population_name": "Tarbagatay district",
+      "kato_code": "635800000",
+      "kato_kaz_name": "Тарбағатай ауданы",
+      "kato_rus_name": "Тарбагатайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 247,
+      "population_name": "Ulan district",
+      "kato_code": "636200000",
+      "kato_kaz_name": "Ұлан ауданы",
+      "kato_rus_name": "Уланский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 248,
+      "population_name": "Ulken Naryn district",
+      "kato_code": "636300000",
+      "kato_kaz_name": "Үлкен Нарын ауданы",
+      "kato_rus_name": "район Үлкен Нарын",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 249,
+      "population_name": "Shemonaikha district",
+      "kato_code": "636800000",
+      "kato_kaz_name": "Шемонаиха ауданы",
+      "kato_rus_name": "Шемонаихинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 252,
+      "population_name": "Almaty district",
+      "kato_code": "711110000",
+      "kato_kaz_name": "Алматы ауданы",
+      "kato_rus_name": "район Алматы",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 253,
+      "population_name": "Esil district",
+      "kato_code": "711210000",
+      "kato_kaz_name": "Есіл ауданы",
+      "kato_rus_name": "район Есиль",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 254,
+      "population_name": "Saryarka district",
+      "kato_code": "711310000",
+      "kato_kaz_name": "Сарыарқа ауданы",
+      "kato_rus_name": "район Сарыарка",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 255,
+      "population_name": "Baikonur district",
+      "kato_code": "711410000",
+      "kato_kaz_name": "Байқоңыр ауданы",
+      "kato_rus_name": "район Байқоңыр",
+      "name_similarity": 0.875,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 256,
+      "population_name": "Nura district",
+      "kato_code": "711510000",
+      "kato_kaz_name": "Нұра ауданы",
+      "kato_rus_name": "район Нұра",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 257,
+      "population_name": "Saraishik district",
+      "kato_code": "711610000",
+      "kato_kaz_name": "Сарайшық ауданы",
+      "kato_rus_name": "район Сарайшық",
+      "name_similarity": 0.875,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 260,
+      "population_name": "Almaly district",
+      "kato_code": "751110000",
+      "kato_kaz_name": "Алмалы ауданы",
+      "kato_rus_name": "Алмалинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 261,
+      "population_name": "Alatau district",
+      "kato_code": "751210000",
+      "kato_kaz_name": "Алатау ауданы",
+      "kato_rus_name": "Алатауский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 262,
+      "population_name": "Auezov district",
+      "kato_code": "751310000",
+      "kato_kaz_name": "Әуезов ауданы",
+      "kato_rus_name": "Ауэзовский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 263,
+      "population_name": "Bostandyk district",
+      "kato_code": "751410000",
+      "kato_kaz_name": "Бостандық ауданы",
+      "kato_rus_name": "Бостандыкский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 264,
+      "population_name": "Zhetysu district",
+      "kato_code": "751510000",
+      "kato_kaz_name": "Жетісу ауданы",
+      "kato_rus_name": "Жетысуский район",
+      "name_similarity": 0.833,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 265,
+      "population_name": "Medeu district",
+      "kato_code": "751710000",
+      "kato_kaz_name": "Медеу ауданы",
+      "kato_rus_name": "Медеуский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 266,
+      "population_name": "Nauryzbay district",
+      "kato_code": "751810000",
+      "kato_kaz_name": "Наурызбай ауданы",
+      "kato_rus_name": "Наурызбайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 267,
+      "population_name": "Turksib district",
+      "kato_code": "751910000",
+      "kato_kaz_name": "Түрксіб ауданы",
+      "kato_rus_name": "Турксибский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 270,
+      "population_name": "Abay district",
+      "kato_code": "791110000",
+      "kato_kaz_name": "Абай ауданы",
+      "kato_rus_name": "Абайский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 271,
+      "population_name": "Al-Farabi district",
+      "kato_code": "791310000",
+      "kato_kaz_name": "Әл Фараби ауданы",
+      "kato_rus_name": "Аль-Фарабийский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 272,
+      "population_name": "Enbekshi district",
+      "kato_code": "791510000",
+      "kato_kaz_name": "Еңбекші ауданы",
+      "kato_rus_name": "Енбекшинский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 273,
+      "population_name": "Karatau district",
+      "kato_code": "791710000",
+      "kato_kaz_name": "Қаратау ауданы",
+      "kato_rus_name": "Каратауский район",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    },
+    {
+      "population_sheet_row": 274,
+      "population_name": "Turan district",
+      "kato_code": "791910000",
+      "kato_kaz_name": "Тұран ауданы",
+      "kato_rus_name": "район Тұран",
+      "name_similarity": 1.0,
+      "alias_checked": false
+    }
+  ],
+  "july_population_crosschecks": {
+    "row_crossfoots": 1245,
+    "region_child_subtotals": 180,
+    "national_subtotals": 9,
+    "sheet_1_2_region_equalities": 180
+  },
+  "july_national_total": 20590589,
+  "july_direct_observations": 2241,
+  "august_population_crosschecks": {
+    "row_demographic_balances": 120,
+    "national_subtotals": 5
+  },
+  "august_national_total": 20604819,
+  "august_direct_observations": 84,
+  "august_workbook_all_group_rows": 60,
+  "census": {
+    "pdf_physical_pages": 228,
+    "table_inventory": [
+      {
+        "table": "1.1",
+        "title": "The population of the Republic of Kazakhstan according to population censuses",
+        "printed_page": 5,
+        "assessment": "national_selected_columns_audited"
+      },
+      {
+        "table": "1.3",
+        "title": "The number and location of the urban and rural population of the regions",
+        "printed_page": 5,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "1.4",
+        "title": "The proportion of the population of the regions",
+        "printed_page": 5,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "1.5",
+        "title": "Grouping of urban settlements by type and population",
+        "printed_page": 6,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "1.6",
+        "title": "Grouping of city akimats by their number and population",
+        "printed_page": 7,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "1.7",
+        "title": "Grouping of village akimats by their number and population",
+        "printed_page": 7,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "1.8",
+        "title": "The population of cities with a population of 50 thousand people or more",
+        "printed_page": 8,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "1.8.1",
+        "title": "The population structure of cities with a population of 50 thousand or more",
+        "printed_page": 10,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "1.9",
+        "title": "Grouping of rural districts by population",
+        "printed_page": 11,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "1.10",
+        "title": "Population in rural districts",
+        "printed_page": 12,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "1.11",
+        "title": "Grouping of rural settlements by population",
+        "printed_page": 12,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "1.12",
+        "title": "Population in rural settlements",
+        "printed_page": 13,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "1.13",
+        "title": "The population of districts and cities of regional and republican significance",
+        "printed_page": 14,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "2.1",
+        "title": "Population by gender and region",
+        "printed_page": 29,
+        "assessment": "national_selected_columns_audited"
+      },
+      {
+        "table": "2.2",
+        "title": "Population by city and district",
+        "printed_page": 30,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "2.2.1",
+        "title": "The structure of the population of cities and districts by gender",
+        "printed_page": 40,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "3.1",
+        "title": "Population by locality",
+        "printed_page": 51,
+        "assessment": "priority_unassessed"
+      },
+      {
+        "table": "1.2",
+        "title": "Population change (increase/decrease)",
+        "printed_page": 5,
+        "assessment": "priority_unassessed"
+      }
+    ],
+    "national_adopted": {
+      "total": 19186015,
+      "men": 9324840,
+      "women": 9861175,
+      "urban": 11741342,
+      "rural": 7444673
+    },
+    "geography_note": "2021 census uses pre-2022 oblast boundaries; no 2021 subnational rows joined to the 2026 KATO roster."
+  },
+  "workbook_inventories": {
+    "july_population": [
+      {
+        "sheet": "Cover",
+        "title": "",
+        "rows": 20,
+        "columns": 15,
+        "numeric_like_cells": 0,
+        "zero_cells": 0,
+        "dash_cells": 0,
+        "numeric_columns": [],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "Symbols",
+        "title": "",
+        "rows": 26,
+        "columns": 3,
+        "numeric_like_cells": 2,
+        "zero_cells": 0,
+        "dash_cells": 0,
+        "numeric_columns": [
+          {
+            "column": "C",
+            "first_nonempty": "611101, 611202, 611201, 612301,613103",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "Contents",
+        "title": "",
+        "rows": 43,
+        "columns": 3,
+        "numeric_like_cells": 3,
+        "zero_cells": 0,
+        "dash_cells": 0,
+        "numeric_columns": [
+          {
+            "column": "A",
+            "first_nonempty": "Methodological explanation",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1",
+        "title": "1. Population of the Republic of Kazakhstan as of July 1, 2026",
+        "rows": 512,
+        "columns": 17,
+        "numeric_like_cells": 180,
+        "zero_cells": 0,
+        "dash_cells": 9,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Total population",
+            "numeric_like_cells": 21,
+            "assessment": "duplicate_crosscheck_selected_rows"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Including",
+            "numeric_like_cells": 21,
+            "assessment": "duplicate_crosscheck_selected_rows"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "women",
+            "numeric_like_cells": 21,
+            "assessment": "duplicate_crosscheck_selected_rows"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "urban population",
+            "numeric_like_cells": 21,
+            "assessment": "duplicate_crosscheck_selected_rows"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "including",
+            "numeric_like_cells": 21,
+            "assessment": "duplicate_crosscheck_selected_rows"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "women",
+            "numeric_like_cells": 21,
+            "assessment": "duplicate_crosscheck_selected_rows"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "rural population",
+            "numeric_like_cells": 18,
+            "assessment": "duplicate_crosscheck_selected_rows"
+          },
+          {
+            "column": "I",
+            "first_nonempty": "including",
+            "numeric_like_cells": 18,
+            "assessment": "duplicate_crosscheck_selected_rows"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "people",
+            "numeric_like_cells": 18,
+            "assessment": "duplicate_crosscheck_selected_rows"
+          }
+        ],
+        "assessment": "selected_columns_audited"
+      },
+      {
+        "sheet": "2",
+        "title": "2. The population of the Republic of Kazakhstan in the context of regions, cities and districts as of July 1, 2026",
+        "rows": 519,
+        "columns": 11,
+        "numeric_like_cells": 2241,
+        "zero_cells": 489,
+        "dash_cells": 0,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Total population",
+            "numeric_like_cells": 249,
+            "assessment": "adopted_selected_rows"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Including",
+            "numeric_like_cells": 249,
+            "assessment": "adopted_selected_rows"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "women",
+            "numeric_like_cells": 249,
+            "assessment": "adopted_selected_rows"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "urban population",
+            "numeric_like_cells": 249,
+            "assessment": "adopted_selected_rows"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "including",
+            "numeric_like_cells": 249,
+            "assessment": "adopted_selected_rows"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "women",
+            "numeric_like_cells": 249,
+            "assessment": "adopted_selected_rows"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "rural population",
+            "numeric_like_cells": 249,
+            "assessment": "adopted_selected_rows"
+          },
+          {
+            "column": "I",
+            "first_nonempty": "including",
+            "numeric_like_cells": 249,
+            "assessment": "adopted_selected_rows"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "people",
+            "numeric_like_cells": 249,
+            "assessment": "adopted_selected_rows"
+          }
+        ],
+        "assessment": "selected_columns_audited"
+      },
+      {
+        "sheet": "3",
+        "title": "3. The population of the Republic of Kazakhstan in the context of regions, cities, districts, district centers and settlements \nas of July 1, 2026",
+        "rows": 531,
+        "columns": 11,
+        "numeric_like_cells": 4491,
+        "zero_cells": 1239,
+        "dash_cells": 0,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Total population",
+            "numeric_like_cells": 499,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Including",
+            "numeric_like_cells": 499,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "women",
+            "numeric_like_cells": 499,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "urban population",
+            "numeric_like_cells": 499,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "including",
+            "numeric_like_cells": 499,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "women",
+            "numeric_like_cells": 499,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "rural population",
+            "numeric_like_cells": 499,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "I",
+            "first_nonempty": "including",
+            "numeric_like_cells": 499,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "people",
+            "numeric_like_cells": 499,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      }
+    ],
+    "august_population": [
+      {
+        "sheet": "Cover",
+        "title": "",
+        "rows": 36,
+        "columns": 217,
+        "numeric_like_cells": 0,
+        "zero_cells": 0,
+        "dash_cells": 0,
+        "numeric_columns": [],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "Metadata",
+        "title": "",
+        "rows": 26,
+        "columns": 4,
+        "numeric_like_cells": 2,
+        "zero_cells": 0,
+        "dash_cells": 0,
+        "numeric_columns": [
+          {
+            "column": "D",
+            "first_nonempty": "611101, 611202, 611201, 612301,613103",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "Содержание",
+        "title": "",
+        "rows": 7,
+        "columns": 2,
+        "numeric_like_cells": 1,
+        "zero_cells": 0,
+        "dash_cells": 0,
+        "numeric_columns": [
+          {
+            "column": "A",
+            "first_nonempty": "Methodological notes",
+            "numeric_like_cells": 1,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.",
+        "title": "1. The population of the Republic of Kazakhstan",
+        "rows": 76,
+        "columns": 8,
+        "numeric_like_cells": 420,
+        "zero_cells": 0,
+        "dash_cells": 0,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Number at the beginning of 2026",
+            "numeric_like_cells": 60,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Total population growth",
+            "numeric_like_cells": 60,
+            "assessment": "adopted_selected_rows"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "Including",
+            "numeric_like_cells": 60,
+            "assessment": "adopted_selected_rows"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "net migration",
+            "numeric_like_cells": 60,
+            "assessment": "adopted_selected_rows"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "Population as of August 1, 2026",
+            "numeric_like_cells": 60,
+            "assessment": "adopted_selected_rows"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "For a given period",
+            "numeric_like_cells": 60,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "people",
+            "numeric_like_cells": 60,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "selected_columns_audited"
+      }
+    ],
+    "administrative_units": [
+      {
+        "sheet": "Cover",
+        "title": "",
+        "rows": 22,
+        "columns": 10,
+        "numeric_like_cells": 0,
+        "zero_cells": 0,
+        "dash_cells": 0,
+        "numeric_columns": [],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "Metadata",
+        "title": "",
+        "rows": 31,
+        "columns": 3,
+        "numeric_like_cells": 3,
+        "zero_cells": 0,
+        "dash_cells": 0,
+        "numeric_columns": [
+          {
+            "column": "C",
+            "first_nonempty": "615101",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "Content",
+        "title": "",
+        "rows": 25,
+        "columns": 2,
+        "numeric_like_cells": 20,
+        "zero_cells": 0,
+        "dash_cells": 0,
+        "numeric_columns": [
+          {
+            "column": "A",
+            "first_nonempty": "1.",
+            "numeric_like_cells": 20,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.",
+        "title": "Administrative-territorial units of the Republic of Kazakhstan as of July 1, 2026",
+        "rows": 30,
+        "columns": 18,
+        "numeric_like_cells": 175,
+        "zero_cells": 0,
+        "dash_cells": 98,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 21,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "of them:\ndistricts\nin cities",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "regional significance",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 21,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 18,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 16,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "township",
+            "numeric_like_cells": 10,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "I",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 18,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "Office of the Akim",
+            "numeric_like_cells": 9,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 7,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "L",
+            "first_nonempty": "area",
+            "numeric_like_cells": 18,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "M",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 18,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "N",
+            "first_nonempty": "rural",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "selected_columns_audited"
+      },
+      {
+        "sheet": "1.1",
+        "title": "Administrative-territorial units of the Аbay region as of July 1, 2026",
+        "rows": 20,
+        "columns": 13,
+        "numeric_like_cells": 61,
+        "zero_cells": 0,
+        "dash_cells": 82,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "township",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "Office of the Akim",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "I",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.2",
+        "title": "Administrative-territorial units of the Akmola region as of July 1, 2026",
+        "rows": 71,
+        "columns": 17,
+        "numeric_like_cells": 117,
+        "zero_cells": 0,
+        "dash_cells": 114,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 18,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 12,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 9,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "township",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 21,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "Office of the Akim",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "I",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 20,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 10,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "L",
+            "first_nonempty": "rural",
+            "numeric_like_cells": 14,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.3",
+        "title": "Administrative-territorial units of the Aktobe region as of July 1, 2026",
+        "rows": 23,
+        "columns": 18,
+        "numeric_like_cells": 75,
+        "zero_cells": 0,
+        "dash_cells": 117,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 16,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "of which: urban districts",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 7,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 6,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 13,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "area",
+            "numeric_like_cells": 13,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "L",
+            "first_nonempty": "of which: consisting of only one ІS *",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "M",
+            "first_nonempty": "rural",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.4",
+        "title": "Administrative-territorial units of the Almaty region as of July 1, 2026",
+        "rows": 18,
+        "columns": 13,
+        "numeric_like_cells": 54,
+        "zero_cells": 0,
+        "dash_cells": 78,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 10,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 6,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 9,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.5",
+        "title": "Administrative-territorial units of the Atyrau region as of July 1, 2026",
+        "rows": 15,
+        "columns": 13,
+        "numeric_like_cells": 42,
+        "zero_cells": 0,
+        "dash_cells": 57,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 8,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 9,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 9,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 9,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.6",
+        "title": "Administrative-territorial units of the Batys Kazakhstan region as of July 1, 2026",
+        "rows": 28,
+        "columns": 17,
+        "numeric_like_cells": 63,
+        "zero_cells": 0,
+        "dash_cells": 91,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 13,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "township",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 14,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "Office of the Akim",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 14,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.7",
+        "title": "Administrative-territorial units of the Zhambyl region as of July 1, 2026",
+        "rows": 21,
+        "columns": 18,
+        "numeric_like_cells": 63,
+        "zero_cells": 0,
+        "dash_cells": 105,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 14,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "of which: urban districts",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "area",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "L",
+            "first_nonempty": "of which: consisting of only one ІS *",
+            "numeric_like_cells": 10,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "M",
+            "first_nonempty": "rural",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.8",
+        "title": "Administrative-territorial units of the Zhetysu region as of July 1, 2026",
+        "rows": 19,
+        "columns": 13,
+        "numeric_like_cells": 52,
+        "zero_cells": 0,
+        "dash_cells": 69,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 9,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 7,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 6,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.9",
+        "title": "Administrative-territorial units of the Karagandy region as of July 1, 2026",
+        "rows": 26,
+        "columns": 18,
+        "numeric_like_cells": 75,
+        "zero_cells": 0,
+        "dash_cells": 117,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "of which: urban districts",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 9,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 7,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "township",
+            "numeric_like_cells": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 8,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "I",
+            "first_nonempty": "Office of the Akim",
+            "numeric_like_cells": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "area",
+            "numeric_like_cells": 8,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "L",
+            "first_nonempty": "of which: consisting of only one ІS *",
+            "numeric_like_cells": 8,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "M",
+            "first_nonempty": "rural",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.10",
+        "title": "Administrative-territorial units of the Kostanay region as of July 1, 2026",
+        "rows": 50,
+        "columns": 17,
+        "numeric_like_cells": 107,
+        "zero_cells": 0,
+        "dash_cells": 124,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 17,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 7,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "township",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 19,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "Office of the Akim",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "I",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 18,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 15,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "L",
+            "first_nonempty": "rural",
+            "numeric_like_cells": 14,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.11",
+        "title": "Administrative-territorial units of the Kyzylorda region as of July 1, 2026",
+        "rows": 28,
+        "columns": 17,
+        "numeric_like_cells": 50,
+        "zero_cells": 0,
+        "dash_cells": 60,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 8,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "township",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 9,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "Office of the Akim",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 9,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 9,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.12",
+        "title": "Administrative-territorial units of the Mangystau region as of July 1, 2026",
+        "rows": 14,
+        "columns": 13,
+        "numeric_like_cells": 43,
+        "zero_cells": 0,
+        "dash_cells": 45,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 6,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 8,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 8,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 8,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "L",
+            "first_nonempty": "rural",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.13",
+        "title": "Administrative-territorial units of the Pavlodar region as of July 1, 2026",
+        "rows": 34,
+        "columns": 17,
+        "numeric_like_cells": 71,
+        "zero_cells": 0,
+        "dash_cells": 83,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "township",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 14,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "Office of the Akim",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "I",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 14,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 10,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "L",
+            "first_nonempty": "rural",
+            "numeric_like_cells": 5,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.14",
+        "title": "Administrative-territorial units of the Soltustik Kazakhstan region as of July 1, 2026",
+        "rows": 21,
+        "columns": 17,
+        "numeric_like_cells": 65,
+        "zero_cells": 0,
+        "dash_cells": 100,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 14,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 6,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 14,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 14,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 10,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.15",
+        "title": "Administrative-territorial units of the Turkistan region as of July 1, 2026",
+        "rows": 36,
+        "columns": 17,
+        "numeric_like_cells": 79,
+        "zero_cells": 0,
+        "dash_cells": 119,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 15,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 8,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 17,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 17,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 11,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "L",
+            "first_nonempty": "rural",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.16",
+        "title": "Administrative-territorial units of the Ulytau region as of July 1, 2026",
+        "rows": 12,
+        "columns": 13,
+        "numeric_like_cells": 33,
+        "zero_cells": 0,
+        "dash_cells": 33,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "township",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "H",
+            "first_nonempty": "Office of the Akim",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "I",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one ІS *",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "L",
+            "first_nonempty": "rural",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.17",
+        "title": "Administrative-territorial units of the Shygys Kazakhstan region as of July 1, 2026",
+        "rows": 30,
+        "columns": 17,
+        "numeric_like_cells": 61,
+        "zero_cells": 0,
+        "dash_cells": 93,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Districts",
+            "numeric_like_cells": 12,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "C",
+            "first_nonempty": "Settlements",
+            "numeric_like_cells": 6,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "D",
+            "first_nonempty": "of them:",
+            "numeric_like_cells": 3,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "E",
+            "first_nonempty": "district significance",
+            "numeric_like_cells": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "F",
+            "first_nonempty": "township",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "G",
+            "first_nonempty": "villages",
+            "numeric_like_cells": 14,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "J",
+            "first_nonempty": "area",
+            "numeric_like_cells": 12,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "K",
+            "first_nonempty": "of which: consisting of only one IS *",
+            "numeric_like_cells": 6,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": "L",
+            "first_nonempty": "rural",
+            "numeric_like_cells": 2,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.18",
+        "title": "Administrative-territorial units of the city akimat of Astana as of July 1, 2026",
+        "rows": 28,
+        "columns": 12,
+        "numeric_like_cells": 7,
+        "zero_cells": 0,
+        "dash_cells": 42,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Intracity areas",
+            "numeric_like_cells": 7,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.19",
+        "title": "Administrative-territorial units of the city akimat of Almaty as of July 1, 2026",
+        "rows": 27,
+        "columns": 13,
+        "numeric_like_cells": 9,
+        "zero_cells": 0,
+        "dash_cells": 54,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Intracity areas",
+            "numeric_like_cells": 9,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      },
+      {
+        "sheet": "1.20",
+        "title": "Administrative-territorial units of the akimat of Shymkent as of July 1, 2026",
+        "rows": 18,
+        "columns": 9,
+        "numeric_like_cells": 6,
+        "zero_cells": 0,
+        "dash_cells": 36,
+        "numeric_columns": [
+          {
+            "column": "B",
+            "first_nonempty": "Intracity areas",
+            "numeric_like_cells": 6,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed"
+      }
+    ]
+  },
+  "planning_body_table_inventories": {
+    "ulytau": [
+      {
+        "table_index": 1,
+        "rows": 12,
+        "column_count_max": 3,
+        "first_rows": [
+          [
+            "№",
+            "Наименование",
+            "стр."
+          ],
+          [
+            "1.",
+            "Паспорт",
+            "3"
+          ]
+        ],
+        "numeric_like_cells": 18,
+        "numeric_columns": [
+          {
+            "column": 1,
+            "cells_containing_digits": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 2,
+            "cells_containing_digits": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 3,
+            "cells_containing_digits": 9,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed; target, baseline, forecast and budget amounts must be separated"
+      },
+      {
+        "table_index": 2,
+        "rows": 4,
+        "column_count_max": 2,
+        "first_rows": [
+          [
+            "Наименование",
+            "План развития области Ұлытау на 2026-2030 годы"
+          ],
+          [
+            "Основные характеристики региона",
+            "Территория области - 188,9 тыс.кв.м. или 6,9% общей площади территории Казахстана. Область состоит из 3 городов областного значения, 2 районов, 72 сельских населенных пунктов. Численность населения области на 1 октября 2025 г. составила 219,5 тыс. человек, в том числе городских-174,5 тыс. человек (79,5%), 45.0 тыс. человек (20,5%) – сельских жителей. Областной центр – г. Жезказган, население – 90,8 тыс. человек. Экономика области формируется преимущественно за счет промышленности. Ключевую роль в ее структуре играет металлургический комплекс, доля которого превышает 90%. Основной объем промышленного производства приходится на выпуск цветных металлов. На территории региона расположен крупнейший в Казахстане производитель меди с полным технологическим циклом – от добычи руды до выпуска готовой продукции, где занята треть жителей региона."
+          ]
+        ],
+        "numeric_like_cells": 4,
+        "numeric_columns": [
+          {
+            "column": 2,
+            "cells_containing_digits": 4,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed; target, baseline, forecast and budget amounts must be separated"
+      },
+      {
+        "table_index": 3,
+        "rows": 200,
+        "column_count_max": 12,
+        "first_rows": [
+          [
+            "№",
+            "Наименование",
+            "Ответственные исполнители",
+            "Источник информации",
+            "Ед. изм.",
+            "Отчетный год",
+            "План (факт) текущего года",
+            "Плановые показатели"
+          ],
+          [
+            "2024 год",
+            "2025 год",
+            "2026 год",
+            "2027 год",
+            "2028 год",
+            "2029 год",
+            "2030 год"
+          ]
+        ],
+        "numeric_like_cells": 1094,
+        "numeric_columns": [
+          {
+            "column": 1,
+            "cells_containing_digits": 36,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 2,
+            "cells_containing_digits": 121,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 3,
+            "cells_containing_digits": 17,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 4,
+            "cells_containing_digits": 26,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 5,
+            "cells_containing_digits": 50,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 6,
+            "cells_containing_digits": 125,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 7,
+            "cells_containing_digits": 133,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 8,
+            "cells_containing_digits": 134,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 9,
+            "cells_containing_digits": 131,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 10,
+            "cells_containing_digits": 114,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 11,
+            "cells_containing_digits": 110,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 12,
+            "cells_containing_digits": 97,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed; target, baseline, forecast and budget amounts must be separated"
+      },
+      {
+        "table_index": 4,
+        "rows": 31,
+        "column_count_max": 4,
+        "first_rows": [
+          [
+            "№",
+            "Наименование целевых индикаторов/мероприятий",
+            "Государственные органы, с кем предусматривается взаимодействие",
+            "Описание взаимодействия"
+          ],
+          [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        ],
+        "numeric_like_cells": 46,
+        "numeric_columns": [
+          {
+            "column": 1,
+            "cells_containing_digits": 28,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 2,
+            "cells_containing_digits": 16,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 3,
+            "cells_containing_digits": 1,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 4,
+            "cells_containing_digits": 1,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed; target, baseline, forecast and budget amounts must be separated"
+      },
+      {
+        "table_index": 5,
+        "rows": 12,
+        "column_count_max": 4,
+        "first_rows": [
+          [
+            "№",
+            "Наименование целевых индикаторов/мероприятии",
+            "Государственные органы, с кем предусматривается взаимодействие",
+            "Описание взаимодействия"
+          ],
+          [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        ],
+        "numeric_like_cells": 17,
+        "numeric_columns": [
+          {
+            "column": 1,
+            "cells_containing_digits": 10,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 2,
+            "cells_containing_digits": 5,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 3,
+            "cells_containing_digits": 1,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 4,
+            "cells_containing_digits": 1,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed; target, baseline, forecast and budget amounts must be separated"
+      }
+    ],
+    "burabay": [
+      {
+        "table_index": 1,
+        "rows": 2,
+        "column_count_max": 2,
+        "first_rows": [
+          [
+            ""
+          ],
+          [
+            "",
+            ""
+          ]
+        ],
+        "numeric_like_cells": 0,
+        "numeric_columns": [],
+        "assessment": "priority_unassessed; target, baseline, forecast and budget amounts must be separated"
+      },
+      {
+        "table_index": 2,
+        "rows": 11,
+        "column_count_max": 3,
+        "first_rows": [
+          [
+            "1 2",
+            "БАҒДАРЛАМА ПАСПОРТЫ АУМАҚТЫ ДАМЫТУ ПАЙЫМЫ",
+            "2"
+          ],
+          [
+            "3",
+            "АҒЫМДАҒЫ ЖАҒДАЙДЫ ТАЛДАУ",
+            "6"
+          ]
+        ],
+        "numeric_like_cells": 18,
+        "numeric_columns": [
+          {
+            "column": 1,
+            "cells_containing_digits": 4,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 2,
+            "cells_containing_digits": 6,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 3,
+            "cells_containing_digits": 8,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed; target, baseline, forecast and budget amounts must be separated"
+      },
+      {
+        "table_index": 3,
+        "rows": 8,
+        "column_count_max": 2,
+        "first_rows": [
+          [
+            "Атауы",
+            "Бурабай ауданының 2026-2030 жылдарға арналған даму жоспары"
+          ],
+          [
+            "Аймақтың негізгі сипаттамасы",
+            "Бурабай ауданының аумағы 5,9 мың ш. км құрайды, бұл облыс аумағының 4,1 пайызына тең. Халықтың орташа тығыздығы – 1 ш. км-ге 13 адам. Ақмола облысының 4 ауданымен (Бұланды, Зеренді, Еңбекшілдер, Сандықтау) және Солтүстік Қазақстан облысымен шектеседі. Бурабай ауданы облыстың ауыл шаруашылығы өңірлерінің бірі болып табылады, оның негізгі бағыты – астық өндірісі. Аудан аумағында Щучинск-Бурабай курорттық аймағы орналасқан, бұл туристік индустрияны дамытуға мүмкіндік береді."
+          ]
+        ],
+        "numeric_like_cells": 6,
+        "numeric_columns": [
+          {
+            "column": 2,
+            "cells_containing_digits": 6,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed; target, baseline, forecast and budget amounts must be separated"
+      },
+      {
+        "table_index": 4,
+        "rows": 7,
+        "column_count_max": 5,
+        "first_rows": [
+          [
+            "Атауы",
+            "2022 жыл",
+            "2023 жыл",
+            "2024 жыл",
+            "Кемуі"
+          ],
+          [
+            "ІҚМ",
+            "27 513",
+            "21 336",
+            "19 224",
+            "9 983"
+          ]
+        ],
+        "numeric_like_cells": 27,
+        "numeric_columns": [
+          {
+            "column": 2,
+            "cells_containing_digits": 7,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 3,
+            "cells_containing_digits": 7,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 4,
+            "cells_containing_digits": 7,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 5,
+            "cells_containing_digits": 6,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed; target, baseline, forecast and budget amounts must be separated"
+      },
+      {
+        "table_index": 5,
+        "rows": 4,
+        "column_count_max": 3,
+        "first_rows": [
+          [
+            "Күшті жақтары",
+            "Әлсіз жақтары",
+            ""
+          ],
+          [
+            "­ әлемдік деңгейдегі кешеннің курорттық аймағын одан әрі дамыту үшін жағдай жасау; ­ - туристерді тарту үшін бірегей ландшафтың болуы; ­ - елордаға жоғары жақындығы және негізгі транзиттік дәліздердің қиылысында орналасуы; ­ - агроөнеркәсіптік әлеует; ­ - шектес елдерде (ТМД, Орталық Азия, Қытай) азық-түлік өніміне өсіп келе жатқан сұраныс; ­ - тау-кен өндіру өнеркәсібін және құрылыс материалдары өндірісін одан әрі дамыту үшін пайдалы қазбалар кен орындарының болуы; ­ - елорданың және туристік аймақ объектілерінің жақындығы есебінен шағын кәсіпкерлікті дамыту және өткізу нарығын ұлғайту;",
+            "­ ауыл шаруашылығы дақылдарының төмен өнімділігі; ­ - ауыл шаруашылығы жануарларының төмен өнімділігі және қайта өңдеу кәсіпорындары аймақтарында дайындау пункттері санының жеткіліксіздігі; ­ - ауа райы жағдайларына тәуелділік; ­ - меншікті кірістердің жетіспеушілігі – аудан бюджетінің облыстық және республикалық бюджеттерге тәуелділігі; ­ - халық табысы деңгейінің төмендігі; ­ - өңдеу өнеркәсібіндегі еңбек өнімділігінің төмендігі; ­ - өнеркәсіпті әртараптандыру деңгейінің және инновациялық жобаларды іске қосу серпінінің төмендігі; ­ - кепілмен қамтамасыз етудің жоқтығынан кредиттік ресурстарға қолжетімділіктің шектеулілігі, сыйақының жоғары пайыздық мөлшерлемелері, кредиттік мекемелерде құжаттарды қараудың ұзақ мерзімдері; ­ - салық салу саласында жеңілдіктердің болмауы; ­ - білікті кадрлардың тапшылығы; ­ - халықтың көші-қон ағынының жоғары қарқыны (соңғы үш жылда көші-қонның теріс сальдосы сақталуда); ­ - инфрақұрылым объектілерінің тозуының жоғары деңгейі; ­ - қолда бар ресурстарды ұтымсыз пайдалану; ­ - жоғары білікті кадрлардың болмауы; ­ - ТКШ объектілері тозуының жоғары деңгейі; ­ - жеке инвесторлар үшін ТКШ саласының төмен инвестициялық тартымдылығы; ­ - нашар материалдық-техникалық база;",
+            ""
+          ]
+        ],
+        "numeric_like_cells": 0,
+        "numeric_columns": [],
+        "assessment": "priority_unassessed; target, baseline, forecast and budget amounts must be separated"
+      },
+      {
+        "table_index": 6,
+        "rows": 2,
+        "column_count_max": 2,
+        "first_rows": [
+          [
+            "Мүмкіндіктер",
+            "Қауіптер мен тәуекелдер"
+          ],
+          [
+            "­ Щучинск-Бурабай курорттық аймағын одан әрі дамыту үшін жағдай жасау және әлемдік деңгейдегі туристік кешенді құру; ­ ауыл шаруашылығы өнімдерінің барлық түрлері бойынша өндіріс көлемін ұлғайту; ­ жеткізу географиясын және экспорт көлемін кеңейту ­ органикалық өнім өндірісі мен экспортының жоғары әлеуеті; ­ аграрлық ғылымды еңбек өнімділігін және АӨК салаларының бәсекеге қабілеттілігін арттыру драйверіне айналдыру үшін жағдай жасау; ­ ауыл шаруашылығы өнімдерін тереңдете қайта өңдеу; ­ АӨК-де жоғары технологиялық өндірістер құру; ­ аудан, облыс халқын азық-түлікпен қамтамасыз ету және елорда айналасында азық-түлік белдеуін құру бағдарламасы шеңберінде ірі инвестициялық жобаларды іске асыру, бұл агроөнеркәсіптік кешен салаларының дамуына қолайлы әсер етеді; ­ Индустриялық-инновациялық даму бағдарламасы шеңберінде инновациялық жобаларды іске асыру негізінде экономиканы әртараптандыру;; - өнеркәсіп, құрылыс, ауыл шаруашылығы өнімдерін қайта өңдеу, туризм, көлік және қызмет көрсету саласында шағын және орта бизнесті дамыту.",
+            "­ ауа райы жағдайларының тұрақсыздығы; ­ жануарлар мен өсімдіктер ауруларының таралуы, табиғи ортаның ластануы, топырақ құнарлылығының төмендеуі; ­ халықаралық нарықтарда бәсекелестіктің өсуі; ­ еңбек өнімділігінің төмендігінен кәсіпорындардың бәсекеге қабілеттілігінің төмендеуі; ­ әлемдік баға конъюнктурасына тәуелділік (алтын, астық); ­ ұсақ тауарлы өндірістің басым болуы (көбінесе мал шаруашылығында) жаңа технологияларды енгізуге, қайта өңдеу деңгейінің артуына кедергі келтіреді және сол арқылы өндірілетін өнімнің бәсекеге қабілеттілігін төмендетеді; ­ қайта өңдеу секторы мен құрылыс кәсіпорындарының технологиялық артта қалуы бұйымдардың бәсекеге қабілеттілігін төмендетеді және тұтастай алғанда салалардың дамуына теріс әсер етеді; ­ ішкі нарықтың импорттық тәуелділігінің артуы; ­ ресурстарды ұтымсыз пайдалану салдарынан ауданның минералдық-шикізат базасының сарқылуы; ­ инвестициялық тартымдылықтың төмендеуі; кредиттік ресурстарды тиімсіз пайдалану; ­ халықтың, әсіресе ауылдық жерлерде көші-қон ағынының одан әрі күшеюі."
+          ]
+        ],
+        "numeric_like_cells": 0,
+        "numeric_columns": [],
+        "assessment": "priority_unassessed; target, baseline, forecast and budget amounts must be separated"
+      },
+      {
+        "table_index": 7,
+        "rows": 82,
+        "column_count_max": 13,
+        "first_rows": [
+          [
+            "№ п/п",
+            "Атауы",
+            "Орындауға жауаптылар",
+            "Ақпарат көзі",
+            "Өлшем бірлігі",
+            "Есепті 2024 жыл (нақты)",
+            "2025 жыл жоспары (нақты)",
+            "Жоспарлы кезең",
+            ""
+          ],
+          [
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            ""
+          ]
+        ],
+        "numeric_like_cells": 397,
+        "numeric_columns": [
+          {
+            "column": 1,
+            "cells_containing_digits": 35,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 2,
+            "cells_containing_digits": 40,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 3,
+            "cells_containing_digits": 8,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 4,
+            "cells_containing_digits": 19,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 5,
+            "cells_containing_digits": 21,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 6,
+            "cells_containing_digits": 44,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 7,
+            "cells_containing_digits": 46,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 8,
+            "cells_containing_digits": 46,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 9,
+            "cells_containing_digits": 44,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 10,
+            "cells_containing_digits": 38,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 11,
+            "cells_containing_digits": 29,
+            "assessment": "priority_unassessed"
+          },
+          {
+            "column": 12,
+            "cells_containing_digits": 27,
+            "assessment": "priority_unassessed"
+          }
+        ],
+        "assessment": "priority_unassessed; target, baseline, forecast and budget amounts must be separated"
+      }
+    ]
+  },
+  "nsdi_wfs_attributes": {
+    "wfs_layer": "geonode:border_districts",
+    "features_returned": 254,
+    "null_kato_count": 1,
+    "null_admin_level_count": 40,
+    "unique_kato_codes": 211,
+    "matched_country_territory_codes": 211,
+    "missing_country_territory_codes": [
+      "100000000",
+      "104100000",
+      "104500000",
+      "110000000",
+      "111600000",
+      "150000000",
+      "190000000",
+      "191800000",
+      "230000000",
+      "270000000",
+      "310000000",
+      "330000000",
+      "331800000",
+      "350000000",
+      "352100000",
+      "352400000",
+      "390000000",
+      "392000000",
+      "392400000",
+      "430000000",
+      "431900000",
+      "470000000",
+      "471800000",
+      "550000000",
+      "590000000",
+      "610000000",
+      "613600000",
+      "620000000",
+      "621800000",
+      "622000000",
+      "630000000",
+      "635500000",
+      "636300000",
+      "710000000",
+      "750000000",
+      "790000000",
+      "791910000"
+    ],
+    "duplicate_kato_feature_counts": {
+      "395400000": 2,
+      "396400000": 2,
+      "116600000": 3,
+      "113400000": 25,
+      "711410000": 4,
+      "711110000": 2,
+      "711210000": 2,
+      "314000000": 2,
+      "434600000": 2,
+      "354000000": 2,
+      "623600000": 2,
+      "623800000": 2,
+      "333600000": 3,
+      "353600000": 3
+    },
+    "assessment": "attributes_only; priority_unassessed geometry/date/rights; no WFS polygon joined or used for legal boundaries"
+  },
+  "adopted_direct_observations": 2330,
+  "source_assessments": {
+    "july_sheet_1": "nation and first-level nine numeric columns crosschecked against table 2; duplicate cells not double-counted",
+    "july_sheet_2": "nine population count columns adopted for 249 distinct geographic rows",
+    "july_sheet_3": "district-centre and settlement subrows may overlap table 2; priority_unassessed",
+    "august_total_block": "end population, total change, natural change and migration adopted for nation plus 20 first-level rows",
+    "august_urban_rural_blocks": "numeric fields checked for internal demographic balance but not adopted; priority_unassessed",
+    "admin_units_workbook": "20 unit geography crosscheck; numeric administrative counts unassessed as dashboard indicators",
+    "ulytau_plan": "body acquired, table columns inventoried; targets, baseline, resources, actual execution and approval instrument unassessed",
+    "burabay_plan": "body and maslikhat approval statement acquired; numeric targets/baselines/resources unassessed",
+    "akmola_and_almaty_plan_pages": "official link location only; fetched short shell was not accepted as source body",
+    "akmola_budget_report": "official link location only; body and monetary values unassessed"
+  },
+  "warnings": [
+    "KATO 2026-09-18 postdates July and August reporting dates; same-day code validity pending.",
+    "NSDI WFS attributes are incomplete/duplicated and layer date unresolved; no official polygon joined; 2017 provider shapes removed.",
+    "The 2021 census uses pre-2022 geography; local cells withheld.",
+    "Plan targets and budget/report listings are not implementation or expenditure actuals."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "country_id": "KAZ",
+  "retrieved_at": "2026-09-27",
+  "sources": [
+    {
+      "id": "kaz-bns-pop-2026-07-01-sex-locality",
+      "raw_path": "raw/kaz/pop-sex-urban-2026-07-01.xlsx",
+      "url": "https://stat.gov.kz/api/iblock/element/511983/file/en/",
+      "catalogue_url": "https://stat.gov.kz/en/industries/social-tatistics/demography/spreadsheets/",
+      "bytes": 186950,
+      "sha256": "62c1b270b767d40e524b282cad731be558e1bc73b6e35ad08779a55b5aa3a660"
+    },
+    {
+      "id": "kaz-bns-pop-2026-08-01",
+      "raw_path": "raw/kaz/pop-2026-08-01.xlsx",
+      "url": "https://stat.gov.kz/api/iblock/element/513310/file/en/",
+      "catalogue_url": "https://stat.gov.kz/en/industries/social-tatistics/demography/spreadsheets/",
+      "bytes": 127173,
+      "sha256": "86ebdfe4bb9082a2bcdaa6cc0bd84c389cf3a9385f8aea003bf55c9a20efbdcb"
+    },
+    {
+      "id": "kaz-bns-administrative-2026-07-01",
+      "raw_path": "raw/kaz/admin-2026-07-01.xlsx",
+      "url": "https://stat.gov.kz/api/iblock/element/512769/file/en/",
+      "catalogue_url": "https://stat.gov.kz/en/industries/social-tatistics/demography/spreadsheets/",
+      "bytes": 201890,
+      "sha256": "306d7bf7492e0deb3cc81b77ae981417937565ac33937c2c3906bd398753be14"
+    },
+    {
+      "id": "kaz-bns-kato-2026-09-18",
+      "raw_path": "raw/kaz/kato-2026-09-18.xlsx",
+      "url": "https://stat.gov.kz/upload/iblock/a7d/eqogm92xc0udumlzfzffhcrutk0fjhb4/КАТО_18.09.2026.xlsx",
+      "catalogue_url": "https://stat.gov.kz/ru/classifiers/statistical/21/",
+      "bytes": 916101,
+      "sha256": "7b87e0a8a72818ca5adcc7b4a7792dd0afd1a3165ed163197012c7c154d4e990"
+    },
+    {
+      "id": "kaz-bns-census2021-volume1",
+      "raw_path": "raw/kaz/census2021-volume1.pdf",
+      "url": "https://stat.gov.kz/upload/medialibrary/75f/z2gxd3z3s8gsf7em4x4q5ahd87mgoc5m/%D0%9D%D0%B0%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%201%20%D1%82%D0%BE%D0%BC.pdf",
+      "catalogue_url": "https://stat.gov.kz/en/national/2021/",
+      "bytes": 8332123,
+      "sha256": "7f4e85063250035152c76778548a4cc818d04cb95a80a6db462a270a2b95c2f0"
+    },
+    {
+      "id": "kaz-adilet-planning-system-2026",
+      "raw_path": "raw/kaz/planning-system-2026.html",
+      "url": "https://old.adilet.zan.kz/rus/docs/P1700000790",
+      "catalogue_url": "https://old.adilet.zan.kz/rus/docs/P1700000790",
+      "bytes": 116953,
+      "sha256": "2467e6f34b7628410baffc53692bdae87a722f5e8669ae4aa773aa6cb6fad07d"
+    },
+    {
+      "id": "kaz-ulytau-plan-2026-2030",
+      "raw_path": "raw/kaz/ulytau-plan-2026-2030.html",
+      "url": "https://www.gov.kz/memleket/entities/ulytau/documents/details/1017009?lang=ru",
+      "catalogue_url": "https://www.gov.kz/memleket/entities/ulytau/documents/details/1017009?lang=ru",
+      "bytes": 229298,
+      "sha256": "e8cb1e9e2b62e5f816d2ce2d67aa20d0126602a3b678e124e1c387c53a97581b"
+    },
+    {
+      "id": "kaz-burabay-plan-2026-2030",
+      "raw_path": "raw/kaz/burabay-plan-2026-2030.html",
+      "url": "https://www.gov.kz/memleket/entities/aqmola-burabay/press/news/details/1135605",
+      "catalogue_url": "https://www.gov.kz/memleket/entities/aqmola-burabay/press/news/details/1135605",
+      "bytes": 291716,
+      "sha256": "56d1bf7ee1f956819f9e3b5c84ae8ea5aed9397bd52818ba07bac2f4ddda1f1f"
+    },
+    {
+      "id": "kaz-nsdi-border-districts-attributes",
+      "raw_path": "raw/kaz/nsdi-border-districts-attributes.json",
+      "url": "https://map.gov.kz/geoserver/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=geonode%3Aborder_districts&outputFormat=application%2Fjson&propertyName=kato%2Cparent_kato%2Cadmin_level%2Ctype%2Cname_ru&count=300",
+      "catalogue_url": "https://map.gov.kz/",
+      "bytes": 54584,
+      "sha256": "0bb4cd68931adbfd988d14ee02b42c73bbb564ed36ec335283d3dfaf7fa8cf06"
+    }
+  ]
+}
