@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-27T08:27:53.989Z",
-  "origin_commit": "fec3b12132eac791a2b68822dd95a0e6cc7a40d5",
+  "exported_at": "2026-09-27T09:40:56.361Z",
+  "origin_commit": "0c8c0bc0499869d76d9f676f36b13a8a746636ac",
   "sources": [
     {
       "iso3": "AFG",
@@ -4466,6 +4466,295 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "New AreaData official 2015 census catalogue location. One separate Table 2.17 PDF was acquired and partially adopted by AreaData; the remaining individual thematic tables, source fields, geography and terms have not been fully audited. The 2025 estimate workbooks are separate.",
       "origin_evidence_path": "docs/evidence/jordan-dos-2025-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KAZ",
+      "source_id": "KAZ_KAZ_BNS_KATO_2026_09_18",
+      "role": "administrative_codes",
+      "title": "KATO NK RK 11-2025 classifier, update 18 September 2026",
+      "publisher": "BNS",
+      "url": "https://stat.gov.kz/upload/iblock/a7d/eqogm92xc0udumlzfzffhcrutk0fjhb4/%D0%9A%D0%90%D0%A2%D0%9E_18.09.2026.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Kazakhstan KATO first-level and district/city/intracity hierarchy, edition 18 September 2026"
+      ],
+      "reference_periods": [
+        "edition 2026-09-18"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public source; source-specific redistribution terms not yet verified",
+      "reuse_note": "BNS KATO classifier location; 15,586 code rows. Its 20 first-level and 228 child rows match July population roster by parent/order/name, but the classifier edition postdates the population reference date. Same-day code validity, dated polygons and reuse terms remain unverified.",
+      "origin_evidence_path": "docs/evidence/kazakhstan-bns2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KAZ",
+      "source_id": "KAZ_KAZ_NSDI_BORDER_DISTRICTS_ATTRIBUTES",
+      "role": "boundaries",
+      "title": "NSDI Geoportal WFS district-boundary layer attributes",
+      "publisher": "Kazakhstan NSDI Geoportal",
+      "url": "https://map.gov.kz/geoserver/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=geonode%3Aborder_districts&outputFormat=application%2Fjson&propertyName=kato%2Cparent_kato%2Cadmin_level%2Ctype%2Cname_ru&count=300",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Kazakhstan NSDI district-boundary WFS layer; layer date and complete KATO coverage unknown"
+      ],
+      "reference_periods": [
+        "layer edition unverified"
+      ],
+      "formats": [
+        "GeoJSON",
+        "WFS"
+      ],
+      "license_or_terms": "Official public source; source-specific redistribution terms not yet verified",
+      "reuse_note": "AreaData obtained attributes only from geonode:border_districts: 254 features, 211 unique KATO codes, duplicate/missing attributes and 37 candidate local IDs absent. No polygon was accepted. Kit must independently inspect layer date, full geometry, completeness, code edition, legal use and rights.",
+      "origin_evidence_path": "docs/evidence/kazakhstan-bns2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KAZ",
+      "source_id": "KAZ_KAZ_BNS_CENSUS2021_VOLUME1",
+      "role": "census_results",
+      "title": "2021 National Population Census, Population Volume I",
+      "publisher": "BNS",
+      "url": "https://stat.gov.kz/upload/medialibrary/75f/z2gxd3z3s8gsf7em4x4q5ahd87mgoc5m/%D0%9D%D0%B0%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%201%20%D1%82%D0%BE%D0%BC.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2021 Kazakhstan nation; oblast/district tables use pre-2022 administrative geography"
+      ],
+      "reference_periods": [
+        "census 2021-09-01"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public source; source-specific redistribution terms not yet verified",
+      "reuse_note": "BNS 2021 Census Population Volume I location. AreaData adopted five national cells on printed pp.5 and 29 only; other tables and all subnational values remain priority_unassessed. Do not join historical rows to 2026 KATO units without an explicit geographic edition/crosswalk.",
+      "origin_evidence_path": "docs/evidence/kazakhstan-bns2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KAZ",
+      "source_id": "KAZ_KAZ_BNS_POP_2026_07_01_SEX_LOCALITY",
+      "role": "machine_readable_data",
+      "title": "Population by sex and type of locality, 1 July 2026",
+      "publisher": "BNS",
+      "url": "https://stat.gov.kz/api/iblock/element/511983/file/en/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2026 Kazakhstan nation, 20 oblast/republican-city units and 228 child reporting areas"
+      ],
+      "reference_periods": [
+        "2026-07-01"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public source; source-specific redistribution terms not yet verified",
+      "reuse_note": "BNS July 2026 population by sex/locality. AreaData adopted sheet 2 nine columns only; sheet 1 is duplicate crosscheck and sheet 3 settlement-level rows remain unassessed. KATO classifier used for matching was updated later, on 18 September. Verify July geography, definitions and rights independently.",
+      "origin_evidence_path": "docs/evidence/kazakhstan-bns2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KAZ",
+      "source_id": "KAZ_KAZ_BNS_POP_2026_08_01",
+      "role": "machine_readable_data",
+      "title": "Population from start of 2026 through 1 August 2026",
+      "publisher": "BNS",
+      "url": "https://stat.gov.kz/api/iblock/element/513310/file/en/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "2026 Kazakhstan nation and 20 first-level reporting areas; no district August values verified"
+      ],
+      "reference_periods": [
+        "2026-08-01 / year-to-date"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public source; source-specific redistribution terms not yet verified",
+      "reuse_note": "BNS August 2026 total population and signed Jan-Jul change components. AreaData adopted four total-block columns for nation plus 20 areas only. Other urban/rural blocks and rates remain unassessed. Do not substitute July district values or confuse stock and flow dates.",
+      "origin_evidence_path": "docs/evidence/kazakhstan-bns2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KAZ",
+      "source_id": "KAZ_KAZ_ADILET_PLANNING_SYSTEM_2026",
+      "role": "planning_law",
+      "title": "State Planning System decree 790, 2026 amendment",
+      "publisher": "Adilet",
+      "url": "https://old.adilet.zan.kz/rus/docs/P1700000790",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Kazakhstan oblast/republican-city and district/regional-city plan authorities"
+      ],
+      "reference_periods": [
+        "amended 2026-07-14"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public source; source-specific redistribution terms not yet verified",
+      "reuse_note": "Adilet State Planning System decree 790 with July 2026 amendment. Chapter 7 sets planning units, procedure, maslikhat approval, investment and monitoring. It is not evidence that every named plan is approved or implemented; verify operative amendments and local instruments independently.",
+      "origin_evidence_path": "docs/evidence/kazakhstan-bns2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KAZ",
+      "source_id": "KAZ_KAZ_ALMATY_OBLAST_PLAN_LOCATION",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Almaty oblast 2026–2030 plan location",
+      "publisher": "Almaty oblast akimat",
+      "url": "https://www.gov.kz/memleket/entities/almobl/documents/details/1015736?lang=ru",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Almaty oblast only, separate from Almaty republican city"
+      ],
+      "reference_periods": [
+        "checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Link location only; terms unverified",
+      "reuse_note": "Official Almaty oblast plan listing location only; fetched page shell did not provide an accepted body. Verify actual plan, approval and territory. Do not attach this to Almaty city or infer financial execution.",
+      "origin_evidence_path": "docs/evidence/kazakhstan-bns2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KAZ",
+      "source_id": "KAZ_KAZ_BURABAY_PLAN_2026_2030",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Burabay district development plan 2026–2030",
+      "publisher": "Burabay district akimat",
+      "url": "https://www.gov.kz/memleket/entities/aqmola-burabay/press/news/details/1135605",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Burabay district in Akmola oblast only, 2026-2030 plan body"
+      ],
+      "reference_periods": [
+        "2026–2030"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public source; source-specific redistribution terms not yet verified",
+      "reuse_note": "Official Burabay plan page states district maslikhat approval decision 8C-39/3 of 19 December 2025. The decision original, current force and all numeric target/finance columns require separate Kit audit. The plan is not an Akmola oblast-wide plan or evidence of actual expenditure.",
+      "origin_evidence_path": "docs/evidence/kazakhstan-bns2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KAZ",
+      "source_id": "KAZ_KAZ_AKMOLA_BUDGET_2026_07_LOCATION",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Akmola oblast budget execution report as at 1 July 2026",
+      "publisher": "Akmola akimat",
+      "url": "https://www.gov.kz/memleket/entities/aqmola/documents/details/1039733?lang=ru",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Akmola oblast only, budget-execution report listing as at 1 July 2026"
+      ],
+      "reference_periods": [
+        "checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Link location only; terms unverified",
+      "reuse_note": "Akmola official budget report listing location only. AreaData did not acquire report body, monetary columns, accounting scope or approval. No expenditure or evaluation value is adopted; Kit must verify the original separately.",
+      "origin_evidence_path": "docs/evidence/kazakhstan-bns2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KAZ",
+      "source_id": "KAZ_KAZ_AKMOLA_PLAN_LOCATION",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Akmola oblast 2026–2030 plan location",
+      "publisher": "Akmola akimat",
+      "url": "https://www.gov.kz/memleket/entities/aqmola/documents/details/951803?lang=kk",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Akmola oblast only, 2026-2030 plan listing"
+      ],
+      "reference_periods": [
+        "checked 2026-09-27"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Link location only; terms unverified",
+      "reuse_note": "Official Akmola plan listing location only; fetched page was a short shell, not an inspected plan body. Approval and contents were not verified. Do not infer any district plan or target/actual value.",
+      "origin_evidence_path": "docs/evidence/kazakhstan-bns2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KAZ",
+      "source_id": "KAZ_KAZ_ULYTAU_PLAN_2026_2030",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Ulytau oblast development plan 2026–2030",
+      "publisher": "Ulytau akimat",
+      "url": "https://www.gov.kz/memleket/entities/ulytau/documents/details/1017009?lang=ru",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Ulytau oblast only, 2026-2030 development plan body"
+      ],
+      "reference_periods": [
+        "2026–2030"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public source; source-specific redistribution terms not yet verified",
+      "reuse_note": "Ulytau official plan page body was acquired by AreaData; approval instrument and full numeric target/budget semantics were not audited. Do not treat targets, resources or a published page as actual execution or official evaluation.",
+      "origin_evidence_path": "docs/evidence/kazakhstan-bns2026-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "KAZ",
+      "source_id": "KAZ_KAZ_BNS_ADMINISTRATIVE_2026_07_01",
+      "role": "table_catalog",
+      "title": "Administrative-territorial units, 1 July 2026",
+      "publisher": "BNS",
+      "url": "https://stat.gov.kz/api/iblock/element/512769/file/en/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Kazakhstan administrative-unit counts, nation and 20 first-level sheets"
+      ],
+      "reference_periods": [
+        "2026-07-01"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public source; source-specific redistribution terms not yet verified",
+      "reuse_note": "BNS July 2026 administrative-unit workbook location. AreaData used roster totals for geography crosscheck, not as adopted dashboard indicators. The 24 sheets and numeric columns require independent definition, time and code audit.",
+      "origin_evidence_path": "docs/evidence/kazakhstan-bns2026-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
