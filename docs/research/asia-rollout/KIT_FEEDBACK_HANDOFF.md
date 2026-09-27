@@ -390,3 +390,16 @@ Fifteen official public locations were selected: six OpenDOSM population/HIES/am
 | Validation | AreaData check 162 JavaScript/JSON, 219/219 tests, Malaysia validator zero errors/warnings, build and five actual-output cases. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 475 feedback sources). |
 
 All 15 Malaysia stages remain `official_location_identified`, and the Kit records `not_acquired_by_kit_preflight`, including originals acquired by AreaData. Kit must independently obtain source bodies, audit full fields/tables, reconcile official geographic codes and dated boundaries, verify law/plan applicability and reuse terms. Malaysia remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Singapore SingStat 2026 and URA planning source leads — 2026-09-27 JST
+
+Ten official public locations were selected: SingStat Population Trends 2026 geospatial ZIP/report, the 2020 Census planning-area age-sex CSV, URA MP2025 planning-area/region GeoJSON and Written Statement, MP2019 historical subzone GeoJSON, URA's gazette and system-overview pages, and the Planning Act. [The Singapore source audit](../../evidence/singapore-population2026-source-audit-2026-09-27.md) separates the 2026 residents on MP2025 geography from the 2020 Census on MP2019 geography, WDI total population, indicative shapes, and the national statutory plan. AreaData has 1,489 selected direct resident-count cells and 839 nil/negligible missing slots, but Kit receives **locations and reuse cautions only**. No original bytes, values, geography matching or AreaData acceptance are transferred.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, source audit, status and ten selections | `f52589362ddad66c16a9e3b37b6842dfeeef480b` on `codex/asia-domestic-20260926`; pushed. |
+| AreaData 485-source / 37-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that exact adapter commit as `origin_commit`; bundle SHA-256 `10d0ccf95d431cd81d268118442f067e88114c5d7f320d553ccd447cadb1bed0`, committed as `cc5ab47b8f64de7e5ee38e5ea71874c704a95ccc` and pushed. |
+| Kit feedback import | `e14548498d1f8d9f4bd37f22a22ac39f71b18c80` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 485 leads, inserted ten Singapore records and updated 475 previous origin histories, 486 Kit records total. Pushed. |
+| Validation | AreaData check 163 JavaScript/JSON, 219/219 tests, Singapore validator zero errors/warnings, build and five actual-output cases × six source cells; 48/55 national area comparison values. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 485 feedback sources). |
+
+All ten Singapore feedback stages remain `official_location_identified`, and Kit records `not_acquired_by_kit_preflight` even for originals AreaData acquired. Kit must independently obtain and inspect full bodies/tables, the 2019-to-2025 geographic relation, 2026 subzone code/shape, operative planning guidance and reuse terms. Singapore remains a partial unpublished candidate without independent `ACCEPT`.
