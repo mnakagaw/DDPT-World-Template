@@ -77,3 +77,11 @@
 これは参照実装0.4の旧合格実績と別の、未公開タイ候補の**制作者による部分検証**。対象AreaData adapter commit `a25450f3ba01197c6ba21c8c5f6381f6ca8dbd3e`、dataset SHA-256 `c2cb0894b0070f68636dc8d502e6ad6e0de3669db8487b7508cbe253b4b9615c`、環境はWindows/PowerShell・Node v24.11.1・Python 3.14.0・Codex in-app browser。NESDC 2024p Excelの全国＋77省へ24指標・1,872直接観測を接続し、全国・7経済地域・77省の2,210原表セルを照合した。Kam Phaeng Phet詳細表人口の不整合を保留し、1995–2023年・CVM・cluster等は意味監査待ち。
 
 `validate-country`はエラー0／警告0、buildと5ケースの診断CSV/HTML/Markdown・計画HTML・根拠CSV照合が成功した。`npm run check`は160 JavaScript/JSON、`npm test`は218/218件成功。全国の24指標それぞれで77比較行の初末・全件・原表locatorを確認し、画面ではChiang Mai→Thailand→Chiang Mai→Thailandの見出し・URL・GPP値切替、地方資料未収集と全国参考の分離、図形未結合の代替を確認した。全国画面は24指標・1,848比較行を持つため低性能端末での負荷検証が必要。42受入シナリオの全件、狭画面、Word/PDFと印刷の全ページ、タイ語、法定コード/境界・実計画/財政資料、独立`ACCEPT`、Hosting/Publicは未実施。[原本監査](evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md)と[制作者確認票](evidence/thailand-country-lesson-audit-2026-09-27.md)を参照。
+
+## 2026-09-27 ミャンマー国別候補の追加確認
+
+これは参照実装0.4の旧合格実績と別の、未公開ミャンマー候補の**制作者による部分検証**。対象AreaData adapter commit `1d515570187eb568addc5b7e0dd868472298136c`、dataset SHA-256 `2af0ee9339b8dbc79c40e49a5272cc3d0c8b79a3f5a4ddcf93517622adc8cbe8`、環境はWindows/PowerShell・Node v24.11.1・Python 3（openpyxl/pypdf）・Codex in-app browser。DOP 2024本報告書とExcelから全国＋15州・地域等へ15指標・240観測を接続した。Excel全19 sheet・17,081数値セルを機械的棚卸しし、A-2～A-18の意味監査は未了。暫定版51,316,756と後続本報告版51,375,327、実査32,183,599と統計的推計19,191,728を区別する。
+
+`validate-country`はエラー0／警告0、buildと5ケースの診断CSV/HTML/Markdown・計画HTML・根拠CSV照合が成功した。全国の15指標それぞれで15比較行、計225行の値・原表locatorを確認した。`npm run check`は161 JavaScript/JSON、`npm test`は219/219件成功。ブラウザーではChin→Yangon→Myanmarの見出し・URL・人口/推計率切替、Yangonの算出ゼロ、図形なし代替、地方計画資料0/15と全国参考の分離を確認した。テーマ画面の推計率は15/15地域を比較表示し、Chin順位行への注目でも上部Myanmar対象を保持した。明示したDOP報告集合では異なる行政種別を比較できるよう共通実装を分析データ契約に合わせ、設定なしの混合型遮断も回帰確認した。
+
+現行の公式行政コード・適合図形、下位表の意味監査、現行法・計画/予算/支出/評価本文、利用条件、42受入シナリオ全件、Word/PDF、実印刷、狭画面・低性能・ビルマ語・現地利用者、独立`ACCEPT`、Hosting/Publicは未実施。[原本監査](evidence/myanmar-dop-census2024-source-audit-2026-09-27.md)と[制作者確認票](evidence/myanmar-country-lesson-audit-2026-09-27.md)を参照。

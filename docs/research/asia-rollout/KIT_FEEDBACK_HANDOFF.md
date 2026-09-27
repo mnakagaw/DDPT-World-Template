@@ -364,3 +364,16 @@ Eleven public official locations were selected: the NESDC 2024p GPP workbook and
 | Validation | AreaData check 160 JavaScript/JSON, 218/218 tests, Thailand validator zero errors/warnings, build and five 24-indicator actual-output cases. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 453 feedback sources). |
 
 All 11 Thailand stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, even for the originals acquired by AreaData. Kit must independently acquire and inspect body, tables, definitions, local availability, administrative and plan jurisdiction, rights and reuse terms. Thailand remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Myanmar DOP 2024 census source leads — 2026-09-27 JST
+
+Seven public official locations were selected: the DOP demographic appendix and later Union Report, the separate earlier provisional report, the 2024 main/state Excel catalogues, the 2014 census data catalogue and the CSO yearbook location for GAD administrative-unit counts. [The Myanmar source audit](../../evidence/myanmar-dop-census2024-source-audit-2026-09-27.md) distinguishes the provisional 51,316,756 from the later 51,375,327, and records the later report's 62.6% direct enumeration / 37.4% statistical estimation. AreaData adopted 15 local census indicators and 240 observations, but Kit receives **locations and reuse cautions only**. CSO 2023 administrative counts are neither 2024 official codes nor matched polygons; A-2 district/township and other 2024 subject tables remain unassessed.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, source audit, status and seven selections | `1d515570187eb568addc5b7e0dd868472298136c` on `codex/asia-domestic-20260926`; pushed. |
+| AreaData 460-source / 35-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that adapter commit as `origin_commit`; bundle SHA-256 `34696d77f2cf619afbfaabe1f21385cf6fcd3f4c1edfde7fbe37651550c4ff00`, committed as `6edd26e2206a363742240f544f538f7a738b869f` and pushed. |
+| Kit feedback import | `946fbca36612cd8bea9b087dc8dde59c51018f71` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 460 leads, inserted seven Myanmar records, updated 453 previous origin histories, 461 Kit records total. Pushed. |
+| Validation | AreaData check 161 JavaScript/JSON, 219/219 tests, Myanmar validator zero errors/warnings, build and five 15-indicator actual-output cases. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 460 feedback sources). |
+
+All seven Myanmar stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, including for the originals acquired by AreaData. Kit must independently obtain source bodies, audit all relevant tables and mixed-enumeration definitions, verify official geographic codes/edition, local planning evidence and reuse terms. Myanmar remains a partial unpublished candidate without independent `ACCEPT`.
