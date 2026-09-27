@@ -85,3 +85,11 @@
 `validate-country`はエラー0／警告0、buildと5ケースの診断CSV/HTML/Markdown・計画HTML・根拠CSV照合が成功した。全国の15指標それぞれで15比較行、計225行の値・原表locatorを確認した。`npm run check`は161 JavaScript/JSON、`npm test`は219/219件成功。ブラウザーではChin→Yangon→Myanmarの見出し・URL・人口/推計率切替、Yangonの算出ゼロ、図形なし代替、地方計画資料0/15と全国参考の分離を確認した。テーマ画面の推計率は15/15地域を比較表示し、Chin順位行への注目でも上部Myanmar対象を保持した。明示したDOP報告集合では異なる行政種別を比較できるよう共通実装を分析データ契約に合わせ、設定なしの混合型遮断も回帰確認した。
 
 現行の公式行政コード・適合図形、下位表の意味監査、現行法・計画/予算/支出/評価本文、利用条件、42受入シナリオ全件、Word/PDF、実印刷、狭画面・低性能・ビルマ語・現地利用者、独立`ACCEPT`、Hosting/Publicは未実施。[原本監査](evidence/myanmar-dop-census2024-source-audit-2026-09-27.md)と[制作者確認票](evidence/myanmar-country-lesson-audit-2026-09-27.md)を参照。
+
+## 2026-09-27 マレーシア国別候補の追加確認
+
+これは参照実装0.4の旧合格実績と別の、未公開マレーシア候補の**制作者による部分検証**。対象dataset SHA-256 `fabb14d24a4cbdd8265005c166bf2b78f2d3b4e153ba8e4390e0c6e18a8039d0`、環境はWindows/PowerShell・Node v24・Python 3（openpyxl/pypdf）・Codex in-app browser。DOSM CSV6本の674,676数値セルを機械的棚卸しし、全国＋16州/連邦直轄領＋156細分地区の14地方指標に1,258観測・24明示欠測を接続した。2020国勢調査調整値と2024中間推計、HIES世帯調査、WDIを区別した。DBKL官報でKL 2040地方計画の採用と効力を確認し、2025予算演説の収支**見込額**のみKLへ接続した。
+
+`validate-country`はエラー0／警告0、buildと5ケースの診断CSV/HTML/Markdown・計画HTML・根拠CSV照合が成功した。全国の2024人口比較16州/FT行を原CSVと照合した。`npm run check`は162 JavaScript/JSON、`npm test`は219/219件成功。画面ではSelangor→Petaling→Selangor全体の上位再選択、KL資料→Selangorで資料残留0件、16/16州比較とJohor注目後のSelangor分析対象維持、境界なし代替を確認した。
+
+MyCensus地区PDFの全表、未選定CSV次元、2020改名4地区、HIES地区162行と人口地区の照合、公式code/境界・PBT、KL計画Volume 2全内容、他地域の現行計画・実績・評価、利用条件、42シナリオ全件、Word/PDFと全印刷、狭画面・現地利用者、独立`ACCEPT`、Hosting/Publicは未実施。[原本監査](evidence/malaysia-dosm-source-audit-2026-09-27.md)と[制作者確認票](evidence/malaysia-country-lesson-audit-2026-09-27.md)を参照。

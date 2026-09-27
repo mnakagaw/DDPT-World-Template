@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "retrieved_at": "2026-09-27T04:12:00Z",
+  "country_id": "MYS",
+  "sources": [
+    {"id":"mys-dosm-population-district","url":"https://storage.dosm.gov.my/population/population_district.csv","catalogue_url":"https://open.dosm.gov.my/data-catalogue/population_district","raw_path":"raw/population_district.csv","bytes":20857972,"sha256":"694b4b506b0ee8771134e78d9f57e5f2dd5c5fcde5d9cb9ae2fa320823d57940"},
+    {"id":"mys-dosm-population-state","url":"https://storage.dosm.gov.my/population/population_state.csv","catalogue_url":"https://open.dosm.gov.my/data-catalogue/population_state","raw_path":"raw/population_state.csv","bytes":12568035,"sha256":"a3ac1a8831a4e66dbc0bc0d018b699b3810eaead3775fbee4c95e9eb2cc44945"},
+    {"id":"mys-dosm-population-malaysia","url":"https://storage.dosm.gov.my/population/population_malaysia.csv","catalogue_url":"https://open.dosm.gov.my/data-catalogue/population_malaysia","raw_path":"raw/population_malaysia.csv","bytes":677857,"sha256":"ed287ef3277e96e74d27fd65f2dc4ab88b37817780e265e11b0d478e6bc9fe04"},
+    {"id":"mys-dosm-hies-state","url":"https://storage.dosm.gov.my/hies/hies_state.csv","catalogue_url":"https://open.dosm.gov.my/data-catalogue/hies_state","raw_path":"raw/hies_state.csv","bytes":1543,"sha256":"2006002bbfb2e64f36ced670580e618ab04ceaedd1df3554f6f7eabcac93573b"},
+    {"id":"mys-dosm-hies-district","url":"https://storage.dosm.gov.my/hies/hies_district.csv","catalogue_url":"https://open.dosm.gov.my/data-catalogue/hies_district","raw_path":"raw/hies_district.csv","bytes":17245,"sha256":"7a2a6ec4cc0f107a6e8c8fec2affa4e06cff515c0c396de5f9ae209b4ee53e5b"},
+    {"id":"mys-dosm-amenities","url":"https://storage.dosm.gov.my/hies/hh_access_amenities.csv","catalogue_url":"https://open.dosm.gov.my/data-catalogue/hh_access_amenities","raw_path":"raw/hh_access_amenities.csv","bytes":31115,"sha256":"4f5d0f92b8e53fb6e82a6f9b277bb1e5c7c6e78d801cfc8ced18d00b6d576b45"},
+    {"id":"mys-dosm-census2020-district-report","url":"https://www.dosm.gov.my/uploads/publications/20221011115309.pdf","catalogue_url":"https://www.dosm.gov.my/portal-main/release-content/key-findings-population-and-housing-census-of-malaysia-2020-administrative-district","raw_path":"raw/mycensus2020-district-key-findings.pdf","bytes":3642171,"sha256":"f353807f5a5659c02949b4cf1a1d12be5116a9a6a16ab210387d3850dba10c0c"},
+    {"id":"mys-mygeoportal-upi-codes","url":"https://www.mygeoportal.gov.my/sites/default/files/dokumen_upi/Kod%20UPI_1303024.xlsx","catalogue_url":"https://www.mygeoportal.gov.my/en/unique-parcel-identifier-upi","raw_path":"raw/mygeoportal-upi-codes.xlsx","bytes":145673,"sha256":"1b4d9165e71da68b391538ed4372ef4b243f8f39af7b2a3b4f97f9db56f220c5"},
+    {"id":"mys-dbkl-kl-local-plan-gazette","url":"https://www.dbkl.gov.my/files/senarai-perundangan/subsidiari/(10)-pemberitahuan-penerimaan-draf-pelan-tempatan-bagi-wpkl.pdf","raw_path":"raw/dbkl-local-plan-adoption-2025.pdf","bytes":188206,"sha256":"6bb829019cb61db6a54b6ecd76e0302f207932e7edc775c35e80766cdc78bd0b"},
+    {"id":"mys-dbkl-kl-local-plan-2040-vol2","url":"https://ppkl.dbkl.gov.my/wp-content/uploads/2025/06/1.-VOLUME-2-PROMOTING-CITY-DEVELOPMENT.pdf","catalogue_url":"https://www.dbkl.gov.my/perkhidmatan-dalam-talian/ppkl2040","raw_path":"raw/dbkl-local-plan2040-volume2-en.pdf","bytes":55412440,"sha256":"f295009157754bd816e5b50dd82ccf359f5d3485817af73a5dd25662caf8f28e"},
+    {"id":"mys-dbkl-budget-summary","url":"https://www.dbkl.gov.my/files/data-terbuka/ringkasan-bajet-hasil-dan-belanja-dbkl.xlsx","catalogue_url":"https://www.dbkl.gov.my/en/data-statistik/data-terbuka","raw_path":"raw/dbkl-budget-summary.xlsx","bytes":11450,"sha256":"4242bc20ee035d2f2059e32efec05cbaccc2647014aa4361f0e2c20dd0911b40"},
+    {"id":"mys-dbkl-budget-speech-2025","url":"https://www.dbkl.gov.my/files/arkib-ucapan-belanjawan-dbkl/ucapan-belanjawan-2025.pdf","raw_path":"raw/dbkl-budget-speech-2025.pdf","bytes":354260,"sha256":"243804cb9e311418ce492bbcf65f8c90a459c0a5c28c97f5cbbee3bf05879212"},
+    {"id":"mys-dbkl-annual-report-2023","url":"https://www.dbkl.gov.my/files/laporan-tahunan-dbkl-2023_final.pdf","catalogue_url":"https://www.dbkl.gov.my/en/penerbitan-dan-laporan","raw_path":"raw/dbkl-annual-report-2023.pdf","bytes":31803077,"sha256":"dd2332ec27f0cf1c7e5fe602c1a7e54ff1c5f5f75779b79c6cd2dae990856924"}
+  ],
+  "failed_locations": [
+    {"url":"https://www.planmalaysia.gov.my/planmalaysia/resources/dokumen/Akta_172/Act_172_Bersih_As_at_1st_June_2021.pdf","result":"404 HTML body, not a PDF; not adopted as legal text"},
+    {"url":"https://www.planmalaysia.gov.my/planmalaysia/resources/dokumen/manual_perancangan/MANUAL_RT_EDISI_2022.pdf","result":"redirects to 404; current manual catalogue location only"}
+  ]
+}
