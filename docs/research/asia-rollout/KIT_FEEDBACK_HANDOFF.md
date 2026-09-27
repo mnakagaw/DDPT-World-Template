@@ -442,3 +442,16 @@ Twelve official public locations were selected: five SIAT annual permanent-popul
 | Validation | AreaData check 166 JavaScript/JSON, 219/219 tests, Uzbekistan validator 0 errors/warnings, build and nine actual-output cases with 180 value/status cells plus 14/14, 17/17 and 12/12 comparison members. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 513 feedback sources). |
 
 All 12 Uzbekistan stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight` even for AreaData-acquired originals. Kit must independently obtain and inspect bodies, definitions, historical/admin geography, operative planning law and regional plans, fiscal periods, final census status and reuse terms. Uzbekistan remains a partial unpublished candidate without independent `ACCEPT`.
+
+## Kazakhstan BNS 2026, KATO, census and plan source leads — 2026-09-27 JST
+
+Twelve public official locations were selected: BNS July/August 2026 population, July administrative units and September KATO classifier, 2021 census Volume I, Adilet planning decree, Ulytau and Burabay plan bodies, NSDI WFS district layer, two oblast plan listings and an Akmola budget-report listing. [The Kazakhstan source audit](../../evidence/kazakhstan-bns2026-source-audit-2026-09-27.md) distinguishes July and August estimates, the 2021 census and WDI. AreaData adopted 2,330 direct domestic cells; other workbook/plan columns and historical census geography remain unassessed. NSDI attributes lack complete unique coverage; no polygons were adopted. Three gov.kz locations are link-only. Kit receives **official locations and reuse cautions only**, no original bodies, observations, code/polygon matches or AreaData acceptance.
+
+| Step | Commit / verification |
+|---|---|
+| AreaData adapter, audit, status and 12 selected source locations | `0c8c0bc0499869d76d9f676f36b13a8a746636ac` on `codex/asia-domestic-20260926`; pushed. |
+| AreaData 525-source / 41-country bundle | `evidence/KIT_SOURCE_FEEDBACK.json` carries that exact adapter commit as `origin_commit`; SHA-256 `a219966c7207d4f03c9749457239f74cfb870d82feddf9238b7660f163c90a0d`, committed as `5e78eb34e72a68e11d3ab24c91b9929c87fdff04` and pushed. |
+| Kit feedback import | `f6470a84f85903928ae801b285d1b1b8685191ed` on `codex/asia-source-feedback-20260926`; dry-run/import accepted 525 leads, inserted 12 Kazakhstan records and updated 513 earlier origin histories, 526 Kit records total. Second dry-run: 525 unchanged. Pushed. |
+| Validation | AreaData check 167 JavaScript/JSON files, 219/219 tests, Kazakhstan validator 0 errors/warnings, build, 11 actual-output cases with 401 original value/missing cells and 20/20+12/12+20/20+6/6 comparison members. Kit check 52 JavaScript/templates plus 67 Markdown, 173/173 tests and readiness (`ready: true`, 525 feedback sources). |
+
+All 12 Kazakhstan stages remain `official_location_identified`; Kit records `not_acquired_by_kit_preflight`, even for originals acquired by AreaData. Kit must independently acquire and inspect source bodies, definitions, dated KATO/geography, the 2021 historical administrative edition, plan approval and budget/actual status, and rights. Kazakhstan remains a partial unpublished candidate without independent `ACCEPT`.
