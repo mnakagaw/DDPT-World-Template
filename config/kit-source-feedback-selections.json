@@ -2302,6 +2302,541 @@
         {"id":"idn-jabar-rpjmd-2025-2029","role":"plans_budgets_implementation_evaluation","authority_type":"official_subnational","geographic_levels":["Jawa Barat province, legal extent unverified against BPS 2020"],"formats":["HTML","PDF"],"reuse_note":"JDIH metadata identifies Perda 7/2025 RPJMD; PDF GET failed and body not acquired. Source location only, not verified local plan, budget, result or evaluation."},
         {"id":"idn-kemendagri-2025-code-register","role":"administrative_codes","authority_type":"official_national","geographic_levels":["2025 administrative-code register; exact contents unacquired"],"formats":["PDF"],"reuse_note":"Kemendagri PDF location identified; connection timed out. Code edition, BPS 2020 crosswalk, subtype, polygons and terms unverified."}
       ]
+    },
+    {
+      "path": "generated/philippines-areadata-20260927",
+      "iso3": "PHL",
+      "evidence_path": "docs/evidence/philippines-popcen-source-audit-2026-09-27.md",
+      "sources": [
+        {
+          "id": "phl-popcen-release-pdf",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines country, 2024 regions, provinces, cities and municipalities"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-proclamation",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines country, 2024 regions, provinces, cities and municipalities"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-a",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines country, 2024 regions, provinces, cities and municipalities"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-b",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines country, 2024 regions, provinces, cities and municipalities"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-ncr",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-car",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-region-i",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-region-ii",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-region-iii",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-calabarzon",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-mimaropa",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-region-v",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-region-vi",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-region-vii",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-nir",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-region-viii",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-region-ix",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-region-x",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-region-xi",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-region-xii",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-caraga",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-popcen-table-c-barmm",
+          "role": "census_results",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Province-to-barangay reporting rows in one 2024 region"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-psgc-2024q2-datafile",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines 2024 dated PSGC country-to-barangay classification"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "PSA official PSGC source lead. June 2024 edition identifies POPCEN reporting units; December 2024 is later and must not be substituted. AreaData used Q2 codes but Kit must inspect exact edition, geography and terms independently."
+        },
+        {
+          "id": "phl-psgc-2024q2-summary",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines 2024 dated PSGC country-to-barangay classification"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "PSA official PSGC source lead. June 2024 edition identifies POPCEN reporting units; December 2024 is later and must not be substituted. AreaData used Q2 codes but Kit must inspect exact edition, geography and terms independently."
+        },
+        {
+          "id": "phl-psgc-2024q2-changes",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines 2024 dated PSGC country-to-barangay classification"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "PSA official PSGC source lead. June 2024 edition identifies POPCEN reporting units; December 2024 is later and must not be substituted. AreaData used Q2 codes but Kit must inspect exact edition, geography and terms independently."
+        },
+        {
+          "id": "phl-psgc-2024q2-release",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines 2024 dated PSGC country-to-barangay classification"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "PSA official PSGC source lead. June 2024 edition identifies POPCEN reporting units; December 2024 is later and must not be substituted. AreaData used Q2 codes but Kit must inspect exact edition, geography and terms independently."
+        },
+        {
+          "id": "phl-psgc-2024q4-datafile",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines 2024 dated PSGC country-to-barangay classification"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "PSA official PSGC source lead. June 2024 edition identifies POPCEN reporting units; December 2024 is later and must not be substituted. AreaData used Q2 codes but Kit must inspect exact edition, geography and terms independently."
+        },
+        {
+          "id": "phl-psgc-2024q4-summary",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines 2024 dated PSGC country-to-barangay classification"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "PSA official PSGC source lead. June 2024 edition identifies POPCEN reporting units; December 2024 is later and must not be substituted. AreaData used Q2 codes but Kit must inspect exact edition, geography and terms independently."
+        },
+        {
+          "id": "phl-psgc-2024q4-changes",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines 2024 dated PSGC country-to-barangay classification"
+          ],
+          "formats": [
+            "XLSX"
+          ],
+          "reuse_note": "PSA official PSGC source lead. June 2024 edition identifies POPCEN reporting units; December 2024 is later and must not be substituted. AreaData used Q2 codes but Kit must inspect exact edition, geography and terms independently."
+        },
+        {
+          "id": "phl-psgc-2024q4-release",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines 2024 dated PSGC country-to-barangay classification"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "PSA official PSGC source lead. June 2024 edition identifies POPCEN reporting units; December 2024 is later and must not be substituted. AreaData used Q2 codes but Kit must inspect exact edition, geography and terms independently."
+        },
+        {
+          "id": "phl-dilg-cdp-toolkit",
+          "role": "planning_guidance",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines local government development planning guidance"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "DILG official 2022 guide body acquired, selected pages reviewed. Full applicability, revisions and PDF redistribution terms require independent Kit audit."
+        },
+        {
+          "id": "phl-qc-cdp-2026-2031",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": [
+            "Quezon City, official PSGC 1381300000"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "Official Quezon City document or council record. AreaData has selected CDP/LDIP/AIP/budget bodies and adoption catalogue evidence, not expenditure or official evaluation. Kit must inspect resolution body, full content, legal jurisdiction and terms independently."
+        },
+        {
+          "id": "phl-qc-cdp-adoption-2025",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": [
+            "Quezon City, official PSGC 1381300000"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "Official Quezon City document or council record. AreaData has selected CDP/LDIP/AIP/budget bodies and adoption catalogue evidence, not expenditure or official evaluation. Kit must inspect resolution body, full content, legal jurisdiction and terms independently."
+        },
+        {
+          "id": "phl-qc-ldip-2027-2029",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": [
+            "Quezon City, official PSGC 1381300000"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "Official Quezon City document or council record. AreaData has selected CDP/LDIP/AIP/budget bodies and adoption catalogue evidence, not expenditure or official evaluation. Kit must inspect resolution body, full content, legal jurisdiction and terms independently."
+        },
+        {
+          "id": "phl-qc-aip-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": [
+            "Quezon City, official PSGC 1381300000"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "Official Quezon City document or council record. AreaData has selected CDP/LDIP/AIP/budget bodies and adoption catalogue evidence, not expenditure or official evaluation. Kit must inspect resolution body, full content, legal jurisdiction and terms independently."
+        },
+        {
+          "id": "phl-qc-budget-2026",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": [
+            "Quezon City, official PSGC 1381300000"
+          ],
+          "formats": [
+            "PDF"
+          ],
+          "reuse_note": "Official Quezon City document or council record. AreaData has selected CDP/LDIP/AIP/budget bodies and adoption catalogue evidence, not expenditure or official evaluation. Kit must inspect resolution body, full content, legal jurisdiction and terms independently."
+        },
+        {
+          "id": "phl-popcen-release-page",
+          "role": "census_catalog",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines country, 2024 regions, provinces, cities and municipalities"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "Official PSA 2024 POPCEN lead. AreaData adopted only direct national and Table B 2024 population; Table C barangay and historical/PGR columns remain priority_unassessed. Kit must independently inspect source, codes, definitions and reuse terms."
+        },
+        {
+          "id": "phl-psgc-2024q2-release-page",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines 2024 dated PSGC country-to-barangay classification"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "PSA official PSGC source lead. June 2024 edition identifies POPCEN reporting units; December 2024 is later and must not be substituted. AreaData used Q2 codes but Kit must inspect exact edition, geography and terms independently."
+        },
+        {
+          "id": "phl-psgc-2024q4-release-page",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines 2024 dated PSGC country-to-barangay classification"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "PSA official PSGC source lead. June 2024 edition identifies POPCEN reporting units; December 2024 is later and must not be substituted. AreaData used Q2 codes but Kit must inspect exact edition, geography and terms independently."
+        },
+        {
+          "id": "phl-local-government-code-7160",
+          "role": "planning_law",
+          "authority_type": "official_national",
+          "geographic_levels": [
+            "Philippines local government units, legal context"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "Official Gazette RA7160 location; selected planning sections read online, current amendments and full effects not audited. Not a local plan or evidence of implementation."
+        },
+        {
+          "id": "phl-qc-cdp-council-record",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": [
+            "Quezon City, official PSGC 1381300000"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "Official Quezon City document or council record. AreaData has selected CDP/LDIP/AIP/budget bodies and adoption catalogue evidence, not expenditure or official evaluation. Kit must inspect resolution body, full content, legal jurisdiction and terms independently."
+        },
+        {
+          "id": "phl-qc-ldip-council-record",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": [
+            "Quezon City, official PSGC 1381300000"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "Official Quezon City document or council record. AreaData has selected CDP/LDIP/AIP/budget bodies and adoption catalogue evidence, not expenditure or official evaluation. Kit must inspect resolution body, full content, legal jurisdiction and terms independently."
+        },
+        {
+          "id": "phl-qc-aip-council-record",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": [
+            "Quezon City, official PSGC 1381300000"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "Official Quezon City document or council record. AreaData has selected CDP/LDIP/AIP/budget bodies and adoption catalogue evidence, not expenditure or official evaluation. Kit must inspect resolution body, full content, legal jurisdiction and terms independently."
+        },
+        {
+          "id": "phl-qc-budget-council-record",
+          "role": "plans_budgets_implementation_evaluation",
+          "authority_type": "official_territorial",
+          "geographic_levels": [
+            "Quezon City, official PSGC 1381300000"
+          ],
+          "formats": [
+            "HTML"
+          ],
+          "reuse_note": "Official Quezon City document or council record. AreaData has selected CDP/LDIP/AIP/budget bodies and adoption catalogue evidence, not expenditure or official evaluation. Kit must inspect resolution body, full content, legal jurisdiction and terms independently."
+        }
+      ]
     }
   ]
 }

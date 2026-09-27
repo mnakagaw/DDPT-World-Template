@@ -1,0 +1,275 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "phl-popcen-release-pdf",
+      "url": "https://psa.gov.ph/system/files/phcd/1_2024%20POPCEN%20Press%20Release_Declaration%20of%20Count_Revised_ONS-signed_0.pdf",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-release-pdf.pdf",
+      "bytes": 741887,
+      "sha256": "f7bdbd97f90dfc1e07e40b7779e912b619ba6e1933b47cbe3857231beb3a5cf7"
+    },
+    {
+      "id": "phl-popcen-proclamation",
+      "url": "https://psa.gov.ph/system/files/phcd/20250711-PROC-973-FRM_0.pdf",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-proclamation.pdf",
+      "bytes": 591518,
+      "sha256": "806595eb89b18b91cc36b785e9b5a78cab12be447fc60eacee687551dc20bdf5"
+    },
+    {
+      "id": "phl-popcen-table-a",
+      "url": "https://psa.gov.ph/system/files/phcd/2_Table%20A%20-%20Population%20and%20Annual%20PGR%20for%20the%20Philippines%20and%20its%20Regions%2C%20Provinces%2C%20and%20HUCs_0.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-a.xlsx",
+      "bytes": 24943,
+      "sha256": "aaa68a399d4d2b2876ad9273d327ee18976a6c3e3753fb2b81b449325750c7b4"
+    },
+    {
+      "id": "phl-popcen-table-b",
+      "url": "https://psa.gov.ph/system/files/phcd/3_Table%20B%20-%20Population%20and%20Annual%20PGR%20by%20Province%2C%20City%2C%20and%20Municipality%20-%20By%20Region%20-%20rev_0.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-b.xlsx",
+      "bytes": 563077,
+      "sha256": "80482c27f10e2672f5af894bf012f0169d9d8eb662003023461c7ec38604d42a"
+    },
+    {
+      "id": "phl-popcen-table-c-ncr",
+      "url": "https://psa.gov.ph/system/files/phcd/NCR_2.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-ncr.xlsx",
+      "bytes": 94875,
+      "sha256": "9a336a2548ac3b41a84fa982a5915d8d1d0d467669449e2257e602130e97d773"
+    },
+    {
+      "id": "phl-popcen-table-c-car",
+      "url": "https://psa.gov.ph/system/files/phcd/CAR_0.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-car.xlsx",
+      "bytes": 60032,
+      "sha256": "dea26637d31269e6de78b41823af0485443c8de3d0d66168d16b6becba9057a2"
+    },
+    {
+      "id": "phl-popcen-table-c-region-i",
+      "url": "https://psa.gov.ph/system/files/phcd/Region%20I_1.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-region-i.xlsx",
+      "bytes": 97629,
+      "sha256": "0e08d47b19f719f91354a7d021aebea0fa87fbc6b45eb4e1558b42e070bd0944"
+    },
+    {
+      "id": "phl-popcen-table-c-region-ii",
+      "url": "https://psa.gov.ph/system/files/phcd/Region%20II_1.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-region-ii.xlsx",
+      "bytes": 77435,
+      "sha256": "bcc8f0608d5f88ce464fb20db1bbb9c266fd0c309dece6bb646ac74a8bdbd314"
+    },
+    {
+      "id": "phl-popcen-table-c-region-iii",
+      "url": "https://psa.gov.ph/system/files/phcd/Region%20III_1.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-region-iii.xlsx",
+      "bytes": 108189,
+      "sha256": "e159e508be3bfce8e655f81b63a83513dfb7a0b8de7b7f64a0d96ccca4b82afc"
+    },
+    {
+      "id": "phl-popcen-table-c-calabarzon",
+      "url": "https://psa.gov.ph/system/files/phcd/CALABARZON_0.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-calabarzon.xlsx",
+      "bytes": 121151,
+      "sha256": "463dd9f7b5c72ddc57dca2080940b740b56af04d5b98ce43560480f8c517cde3"
+    },
+    {
+      "id": "phl-popcen-table-c-mimaropa",
+      "url": "https://psa.gov.ph/system/files/phcd/MIMAROPA_1.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-mimaropa.xlsx",
+      "bytes": 60568,
+      "sha256": "2c310dce1199ef06f9c82e9391a0ea0674ceea54568c8beea0ecc963ec5e4aad"
+    },
+    {
+      "id": "phl-popcen-table-c-region-v",
+      "url": "https://psa.gov.ph/system/files/phcd/Region%20V_1.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-region-v.xlsx",
+      "bytes": 105223,
+      "sha256": "bfaff9fd7303c9c8ed694313293712b947c844cbdc35b23917d0c11f23bedddd"
+    },
+    {
+      "id": "phl-popcen-table-c-region-vi",
+      "url": "https://psa.gov.ph/system/files/phcd/Region%20VI_1.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-region-vi.xlsx",
+      "bytes": 103902,
+      "sha256": "55364452f3329ca73b8eb6afb32a49ba5910eea8f47a1f7d10bd09bf83479958"
+    },
+    {
+      "id": "phl-popcen-table-c-region-vii",
+      "url": "https://psa.gov.ph/system/files/phcd/Region%20VII_1.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-region-vii.xlsx",
+      "bytes": 77354,
+      "sha256": "5d139e888b98152a04e3d4c09c113d3b858a8bc5449f11c238e4906817e029b4"
+    },
+    {
+      "id": "phl-popcen-table-c-nir",
+      "url": "https://psa.gov.ph/system/files/phcd/NIR_0.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-nir.xlsx",
+      "bytes": 53614,
+      "sha256": "2e68254acb31e46b374cdf5dfca6dac405d86911ab759938383d7378d53cb4dd"
+    },
+    {
+      "id": "phl-popcen-table-c-region-viii",
+      "url": "https://psa.gov.ph/system/files/phcd/Region%20VIII_0.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-region-viii.xlsx",
+      "bytes": 127884,
+      "sha256": "0c7d1cf30fe54b30f2b4a34cdde049bb87ff8999a65bf5c8163ad11207bffd8d"
+    },
+    {
+      "id": "phl-popcen-table-c-region-ix",
+      "url": "https://psa.gov.ph/system/files/phcd/Region%20IX_1.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-region-ix.xlsx",
+      "bytes": 67641,
+      "sha256": "bd54fbdc780b8c530b41b78fe56fc28b5e9a61d478498e420320f5a5b81eec15"
+    },
+    {
+      "id": "phl-popcen-table-c-region-x",
+      "url": "https://psa.gov.ph/system/files/phcd/Region%20X_0.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-region-x.xlsx",
+      "bytes": 78117,
+      "sha256": "e45d6ad39666353e2b31563483fb7da33d8e027f1ba89f16adf73c5a36b593cd"
+    },
+    {
+      "id": "phl-popcen-table-c-region-xi",
+      "url": "https://psa.gov.ph/system/files/phcd/Region%20XI_1.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-region-xi.xlsx",
+      "bytes": 52986,
+      "sha256": "b5870cfd30b134f6db0cbfe1ec57e08bdf2587ae92cb1133731d37956e51efb4"
+    },
+    {
+      "id": "phl-popcen-table-c-region-xii",
+      "url": "https://psa.gov.ph/system/files/phcd/Region%20XII_1.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-region-xii.xlsx",
+      "bytes": 50184,
+      "sha256": "7e54ed1874d1db871a6e35c0051ba7cb31ce28bf4a6c2c39e9f56efedeaf77e9"
+    },
+    {
+      "id": "phl-popcen-table-c-caraga",
+      "url": "https://psa.gov.ph/system/files/phcd/Caraga_0.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-caraga.xlsx",
+      "bytes": 57464,
+      "sha256": "df1d4cd93d6433ca05e6ffd94fbc2f9cd3d46f3cdc964504296fea5c16eb6f8d"
+    },
+    {
+      "id": "phl-popcen-table-c-barmm",
+      "url": "https://psa.gov.ph/system/files/phcd/BARMM_1.xlsx",
+      "release_page": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "category": "popcen",
+      "raw_path": "raw/psa-2024/phl-popcen-table-c-barmm.xlsx",
+      "bytes": 192601,
+      "sha256": "c7111b353ec133c7cc8cfe558f03d893b1e24a36d1bf57159cb44624752132a9"
+    },
+    {
+      "id": "phl-psgc-2024q2-datafile",
+      "url": "https://psa.gov.ph/system/files/scd/PSGC-2Q-2024-Publication-Datafile-rev.xlsx",
+      "release_page": "https://psa.gov.ph/content/second-quarter-2024-psgc-updates-creation-negros-island-region-and-correction-names-two",
+      "category": "psgc_june",
+      "raw_path": "raw/psa-2024/phl-psgc-2024q2-datafile.xlsx",
+      "bytes": 3217442,
+      "sha256": "50fc6c4292483a6034ac7043b437cbcf758c808df74ec83b5b4e49df66af8139"
+    },
+    {
+      "id": "phl-psgc-2024q2-summary",
+      "url": "https://psa.gov.ph/system/files/scd/PSGC-2Q%202024-National%20and%20Provincial%20Summary.xlsx",
+      "release_page": "https://psa.gov.ph/content/second-quarter-2024-psgc-updates-creation-negros-island-region-and-correction-names-two",
+      "category": "psgc_june",
+      "raw_path": "raw/psa-2024/phl-psgc-2024q2-summary.xlsx",
+      "bytes": 34273,
+      "sha256": "b84a079f9d9d02eb28f88bc4c6af19061c7b9957c1046dafd903f467040d5885"
+    },
+    {
+      "id": "phl-psgc-2024q2-changes",
+      "url": "https://psa.gov.ph/system/files/scd/PSGC-2Q-2024-Summary-of-Changes.xlsx",
+      "release_page": "https://psa.gov.ph/content/second-quarter-2024-psgc-updates-creation-negros-island-region-and-correction-names-two",
+      "category": "psgc_june",
+      "raw_path": "raw/psa-2024/phl-psgc-2024q2-changes.xlsx",
+      "bytes": 292447,
+      "sha256": "720fe718c5f6125d0c480f7e039b5fe5660f1bf36e2e1cbe7a7c25bef15d7eb3"
+    },
+    {
+      "id": "phl-psgc-2024q2-release",
+      "url": "https://psa.gov.ph/system/files/scd/Press-Release-June2024PSGC.pdf",
+      "release_page": "https://psa.gov.ph/content/second-quarter-2024-psgc-updates-creation-negros-island-region-and-correction-names-two",
+      "category": "psgc_june",
+      "raw_path": "raw/psa-2024/phl-psgc-2024q2-release.pdf",
+      "bytes": 380928,
+      "sha256": "705aaabdcdef25507f2d2fbe7cba33d0470547e34bfe5f0e584d8847b04525b6"
+    },
+    {
+      "id": "phl-psgc-2024q4-datafile",
+      "url": "https://psa.gov.ph/system/files/scd/PSGC-4Q-2024-Publication-Datafile.xlsx",
+      "release_page": "https://psa.gov.ph/content/fourth-quarter-2024-psgc-updates-correction-names-three-barangays",
+      "category": "psgc_dec",
+      "raw_path": "raw/psa-2024/phl-psgc-2024q4-datafile.xlsx",
+      "bytes": 3330343,
+      "sha256": "f9dde2e4309380082894577cab58d0759d60f26778af1593c20d9ad30630c5be"
+    },
+    {
+      "id": "phl-psgc-2024q4-summary",
+      "url": "https://psa.gov.ph/system/files/scd/PSGC-4Q-2024-National-and-Provincial-Summary.xlsx",
+      "release_page": "https://psa.gov.ph/content/fourth-quarter-2024-psgc-updates-correction-names-three-barangays",
+      "category": "psgc_dec",
+      "raw_path": "raw/psa-2024/phl-psgc-2024q4-summary.xlsx",
+      "bytes": 90009,
+      "sha256": "1920aaee6fc572802d78fe14cfcb885ca589f087d2fcb6198842b4f741d6fe30"
+    },
+    {
+      "id": "phl-psgc-2024q4-changes",
+      "url": "https://psa.gov.ph/system/files/scd/PSGC-4Q-2024-Summary-of-Changes.xlsx",
+      "release_page": "https://psa.gov.ph/content/fourth-quarter-2024-psgc-updates-correction-names-three-barangays",
+      "category": "psgc_dec",
+      "raw_path": "raw/psa-2024/phl-psgc-2024q4-changes.xlsx",
+      "bytes": 346333,
+      "sha256": "4ab83221249d631ce9a08b3454f2ddbfda44bc5d1c4bcec712ce7bcb7e0b5851"
+    },
+    {
+      "id": "phl-psgc-2024q4-release",
+      "url": "https://psa.gov.ph/system/files/scd/Press%20Release%204Q%20PSGC%20Updates.pdf",
+      "release_page": "https://psa.gov.ph/content/fourth-quarter-2024-psgc-updates-correction-names-three-barangays",
+      "category": "psgc_dec",
+      "raw_path": "raw/psa-2024/phl-psgc-2024q4-release.pdf",
+      "bytes": 651473,
+      "sha256": "038c04422aa6ccb7aed8c24c6f79114a400177f7e247083a52e721f623886a72"
+    }
+  ]
+}

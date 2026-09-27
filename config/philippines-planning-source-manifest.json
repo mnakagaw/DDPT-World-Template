@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "phl-dilg-cdp-toolkit",
+      "url": "https://region1.dilg.gov.ph/images/Transparency/BOOKS/CDP-TOOLKIT-FINAL%20AS%20OF%20APRIL%208%202022.pdf",
+      "kind": "national_guide",
+      "raw_path": "raw/planning/phl-dilg-cdp-toolkit.pdf",
+      "bytes": 16225191,
+      "sha256": "050b7d269a15ddba9687eae827e5e24fe7a49476d2bc4a4217c6aca6031968ef"
+    },
+    {
+      "id": "phl-qc-cdp-2026-2031",
+      "url": "https://quezoncity.gov.ph/wp-content/uploads/2020/09/Quezon-City-Comprehensive-Development-Plan-2026-2031-04.30.26.pdf",
+      "kind": "local_plan",
+      "raw_path": "raw/planning/phl-qc-cdp-2026-2031.pdf",
+      "bytes": 49234886,
+      "sha256": "5d73e53e2440fe38a8fbe651dff2447c52092bbf55ce12b69b7aaa324115a56e"
+    },
+    {
+      "id": "phl-qc-cdp-adoption-2025",
+      "url": "https://d2hj2alpj62gbw.cloudfront.net/resolutions/approved/SP-10311,%20S-2025.pdf",
+      "kind": "adoption_resolution",
+      "raw_path": "raw/planning/phl-qc-cdp-adoption-2025.pdf",
+      "bytes": 2471513,
+      "sha256": "5d766a902e2bd4f8499ace870cc215f5d35079b3c58c3e935db2116063ce38e1"
+    },
+    {
+      "id": "phl-qc-ldip-2027-2029",
+      "url": "https://quezoncity.gov.ph/wp-content/uploads/2020/09/Quezon-City-Local-Development-Investment-Program-2027-2029-07.01.26.pdf",
+      "kind": "local_investment_program",
+      "raw_path": "raw/planning/phl-qc-ldip-2027-2029.pdf",
+      "bytes": 12621016,
+      "sha256": "23ee5a165fcfa0837db964e4b21dddd2d67d6248f7fb86fece7185263feae05d"
+    },
+    {
+      "id": "phl-qc-aip-2026",
+      "url": "https://quezoncity.gov.ph/wp-content/uploads/2025/11/SP-10255-S-2025.pdf",
+      "kind": "annual_investment_resolution",
+      "raw_path": "raw/planning/phl-qc-aip-2026.pdf",
+      "bytes": 1553271,
+      "sha256": "9cb7b626ca0c11fb5427f64bf6dc8ad400fc42941b41ebd2ad366fd29b8185f7"
+    },
+    {
+      "id": "phl-qc-budget-2026",
+      "url": "https://quezoncity.gov.ph/wp-content/uploads/2026/01/SP-3465-S-2025.pdf",
+      "kind": "annual_budget_ordinance",
+      "raw_path": "raw/planning/phl-qc-budget-2026.pdf",
+      "bytes": 2250419,
+      "sha256": "c0b3bc2762a1777cb2d890b4752507e2eacd9c4abce83bf96b770a30918e781c"
+    }
+  ]
+}
