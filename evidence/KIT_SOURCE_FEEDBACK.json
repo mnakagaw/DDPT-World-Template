@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-27T01:33:00.177Z",
-  "origin_commit": "618ce6e8c127be582e466e1442a7272f8e7c3e14",
+  "exported_at": "2026-09-27T02:36:10.299Z",
+  "origin_commit": "a25450f3ba01197c6ba21c8c5f6381f6ca8dbd3e",
   "sources": [
     {
       "iso3": "AFG",
@@ -10529,6 +10529,275 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "Official Ministry of Finance 2026 national citizen-budget location. AreaData has not audited its table fields. It is not a selected governorate plan, local budget execution or official evaluation.",
       "origin_evidence_path": "docs/evidence/syria-cbs2004-source-audit-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "THA",
+      "source_id": "THA_THA_DOPA_ADMINISTRATIVE_CODES_LOCATION",
+      "role": "administrative_codes",
+      "title": "DOPA administrative-code search location",
+      "publisher": "Department of Provincial Administration",
+      "url": "https://stat.bora.dopa.go.th/stat/statnew/statMenu/newStat/ccaa.php",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Thailand province, district and subdistrict administrative code register; edition unverified"
+      ],
+      "reference_periods": [
+        "current edition unverified"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "DOPA official indexed code-register location, host unacquired locally. NESDC four-digit economic-region codes are not certified DOPA codes or polygon keys.",
+      "origin_evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "THA",
+      "source_id": "THA_THA_NSO_CENSUS2025_CATALOGUE",
+      "role": "census_catalog",
+      "title": "NSO 2025 population and housing census portal",
+      "publisher": "National Statistical Office",
+      "url": "https://www.nso.go.th/nsoweb/main/summano/aE?set_lang=en",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Thailand 2025 resident census; province tables not acquired"
+      ],
+      "reference_periods": [
+        "1 April 2025"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "NSO official 2025 census portal location; preliminary national summary visible. It is a resident census, distinct from NESDC GPP denominator and BORA registration.",
+      "origin_evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "THA",
+      "source_id": "THA_THA_NSO_CENSUS2025_FINAL_LOCATION",
+      "role": "census_results",
+      "title": "NSO 2025 census final report location",
+      "publisher": "National Statistical Office",
+      "url": "https://www.nso.go.th/nsoweb/storage/title_presentation/2026/20260907134505_55192.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Thailand 2025 census final-report location; internal tables unacquired"
+      ],
+      "reference_periods": [
+        "2025 census, September 2026 publication"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "Official NSO indexed PDF location only. AreaData direct request returned HTTP 418 and browser body did not load; Kit must independently acquire and inspect tables/coverage/terms.",
+      "origin_evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "THA",
+      "source_id": "THA_THA_NESDC_GPP2024_WORKBOOK",
+      "role": "machine_readable_data",
+      "title": "Table of Gross Regional and Provincial Product 2024p",
+      "publisher": "National Economic and Social Development Council, Thailand",
+      "url": "https://www.nesdc.go.th/wp-content/uploads/2026/03/GPP-2024-On-Web-1995-2024.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Thailand country, seven NESDC economic regions and 77 province GPP reporting rows, 2024p; administrative-code crosswalk unverified"
+      ],
+      "reference_periods": [
+        "2024p (provisional)"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": "Official public workbook; redistribution terms require verification",
+      "reuse_note": "NESDC official 2024p workbook location. AreaData audited 2210 selected cells, adopted 24 direct indicators and withheld one contradictory detailed-table population. Kit must independently inspect all tables, code/geography meaning, terms and any values before adoption.",
+      "origin_evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "THA",
+      "source_id": "THA_THA_NESDC_PROVINCIAL_PLANNING_CATALOGUE",
+      "role": "planning_guidance",
+      "title": "NESDC province and provincial-cluster planning catalogue",
+      "publisher": "National Economic and Social Development Council",
+      "url": "https://www.nesdc.go.th/downloadable-documents/province-provincial-cluster/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Province and provincial-cluster planning/budget catalogue"
+      ],
+      "reference_periods": [
+        "FY2025–2027 indexed materials"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "NESDC official planning-material index. Linked plan rules, annual forms and budget guidance require item-by-item body and current-status inspection.",
+      "origin_evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "THA",
+      "source_id": "THA_THA_NESDC_PROVINCIAL_PLAN_GUIDE",
+      "role": "planning_guidance",
+      "title": "NESDC provincial and cluster plan review guidance PDF",
+      "publisher": "National Economic and Social Development Council",
+      "url": "https://www.nesdc.go.th/wp-content/uploads/2025/05/01-%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%81%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%97%E0%B8%B3%E0%B9%81%E0%B8%9C%E0%B8%99%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2-5-%E0%B8%9B%E0%B8%B5-%E0%B8%88-%E0%B8%81%E0%B8%88-%E0%B8%A1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%99%E0%B8%9A27%E0%B8%81%E0%B8%9E66.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Thailand provinces and provincial clusters; current legal application unverified"
+      ],
+      "reference_periods": [
+        "2023–2027; FY2025–2027 review"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "NESDC-hosted six-page guidance body acquired by AreaData, with a draft marker. Kit must independently confirm operative status, competent level, plan cycle, amendments and reuse terms.",
+      "origin_evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "THA",
+      "source_id": "THA_THA_CHIANGMAI_PLAN_2025_LOCATION",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Chiang Mai 2023–2027 plan, FY2025 review PDF location",
+      "publisher": "Chiang Mai Province",
+      "url": "https://www.chiangmai.go.th/managing/public/D12/12D29Apr2025204613.pdf",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Chiang Mai 2023-2027 plan / FY2025 review PDF location only"
+      ],
+      "reference_periods": [
+        "2023–2027; FY2025 review"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "Official province indexed PDF URL. AreaData request timed out; content, decision and statistical/administrative geography link unverified.",
+      "origin_evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "THA",
+      "source_id": "THA_THA_CHIANGMAI_STRATEGY_INDEX",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Chiang Mai provincial plan and progress catalogue",
+      "publisher": "Chiang Mai Province",
+      "url": "https://www.chiangmai.go.th/web2563/strategy/",
+      "authority_type": "official_territorial",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Current Chiang Mai Province catalogue only; NESDC statistical row not legally joined"
+      ],
+      "reference_periods": [
+        "FY2025–2026 indexed"
+      ],
+      "formats": [
+        "HTML",
+        "PDF"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "Official province search index lists plans, actions and progress. PDF bodies timed out; no current plan approval, actual spending or evaluation is transferred.",
+      "origin_evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "THA",
+      "source_id": "THA_THA_OPEN_DATA_DISTRICT_REGISTRATION_CATALOGUE",
+      "role": "table_catalog",
+      "title": "Thai Open Government district population registration dataset",
+      "publisher": "Digital Government Development Agency / National Statistical Office",
+      "url": "https://data.go.th/en/dataset/0405_01_0005",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Thailand district and sex registration population, 2021-2025 indexed; raw files unacquired"
+      ],
+      "reference_periods": [
+        "2021–2025 indexed"
+      ],
+      "formats": [
+        "HTML",
+        "CSV",
+        "JSON"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "Official Thai Open Government dataset location indexed as NSO/DOPA registration data. HTTP 403 prevented raw acquisition; do not infer district values, complete coverage or reuse rights.",
+      "origin_evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "THA",
+      "source_id": "THA_THA_BORA_REGISTRATION_DOWNLOADS",
+      "role": "table_catalog",
+      "title": "BORA population-registration download catalogue",
+      "publisher": "Bureau of Registration Administration, Department of Provincial Administration",
+      "url": "https://stat.bora.dopa.go.th/new_stat/webPage/statByYear.php",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "Thailand registered population by province, district, subdistrict and village; years/files unacquired"
+      ],
+      "reference_periods": [
+        "2025 and earlier"
+      ],
+      "formats": [
+        "HTML",
+        "CSV"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "BORA official indexed registration-download catalogue. Host failed DNS locally; no underlying file or observed count passed from AreaData.",
+      "origin_evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "THA",
+      "source_id": "THA_THA_NESDC_GPP_CATALOGUE",
+      "role": "table_catalog",
+      "title": "NESDC GPP releases catalogue",
+      "publisher": "National Economic and Social Development Council",
+      "url": "https://www.nesdc.go.th/en/info/gross-regional-and-provincial-product-gpp/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-27",
+      "geographic_levels": [
+        "NESDC GPP release catalogue; editions and territorial coverage vary"
+      ],
+      "reference_periods": [
+        "2024p workbook listing"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "Official public location; item terms unverified",
+      "reuse_note": "Official NESDC GPP release location. Only the specific 2024p original was partly adopted in AreaData; other editions require independent review.",
+      "origin_evidence_path": "docs/evidence/thailand-nesdc-gpp2024-source-audit-2026-09-27.md",
       "artifact_sha256": null
     },
     {
