@@ -34,6 +34,8 @@ Independent fixed-version review `evidence/INDEPENDENT_AUDIT_INDICATOR_I18N_FOLL
 
 Independent fixed-version follow-up `evidence/INDEPENDENT_AUDIT_I18N_FOLLOWUP_96D64D6.md` checked 18 en/ja/es screens and every database row against the unchanged dataset. It confirmed that those three narrow findings are closed without an observed value regression. Composite comparison summaries and map captions still retain English, and the overall `REJECT` remains. Separate direct requests for the [PSA POPCEN Table B attachment](https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president) and [PSGC Q2 2025 publication datafile](https://psa.gov.ph/content/second-quarter-2025-psgc-updates-correction-names-three-barangays) still returned HTTP 403. The catalogued DILG Region XII illustrative-guide PDF returned HTTP 404 in a later direct check; a DILG central-office alternative timed out. Neither original workbook nor that guide has been newly acquired. Browser control was unavailable in this follow-up, so browser download is unverified.
 
+A further producer copy pass translated the thematic map's indicator caption, the comparison summary's combined unit/status/coverage labels, and the ranking count/explanation. A three-language served Chrome check of WDI 2024 urban population confirmed national 55.45, local 0/18, translated ja/es labels and zero page errors; `npm run check` (163 modules/templates), `npm test` (224/224), and country validation (zero errors, four rights warnings) passed. This is not a full M2 retest or independent `ACCEPT`.
+
 ## Prior candidate snapshots
 
 ## Scope and result
