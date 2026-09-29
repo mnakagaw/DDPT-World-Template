@@ -25,6 +25,13 @@ function publicUrl(value) {
   return url.href;
 }
 
+function checkedDate(value, exportedAt) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value) || value > exportedAt.slice(0, 10)) {
+    throw new Error('Invalid or future feedback checked_at');
+  }
+  return value;
+}
+
 export async function buildKitSourceFeedback({ base = root, commit, exportedAt } = {}) {
   const selection = JSON.parse(await readFile(path.join(base, 'config/kit-source-feedback-selections.json'), 'utf8'));
   if (selection.schema_version !== '1.0' || !/^\d{4}-\d{2}-\d{2}$/.test(selection.checked_at)) {
@@ -32,13 +39,14 @@ export async function buildKitSourceFeedback({ base = root, commit, exportedAt }
   }
   if (!/^[0-9a-f]{40}$/.test(commit || '')) throw new Error('A committed AreaData SHA is required');
   const date = exportedAt || new Date().toISOString();
-  if (selection.checked_at > date.slice(0, 10)) throw new Error('Feedback check date is after export date');
+  checkedDate(selection.checked_at, date);
   const evidencePath = requireValue(selection.evidence_path, 'evidence_path').replaceAll('\\', '/');
   if (path.isAbsolute(evidencePath) || evidencePath.split('/').includes('..')) throw new Error('Unsafe evidence_path');
   await readFile(path.join(base, evidencePath));
   const sources = [];
   const seen = new Set();
   for (const project of selection.projects || []) {
+    const projectCheckedAt = checkedDate(project.checked_at || selection.checked_at, date);
     const projectPath = requireValue(project.path, 'project path').replaceAll('\\', '/');
     if (!projectPath.startsWith('generated/') || projectPath.split('/').includes('..')) throw new Error(`Unsafe project path: ${projectPath}`);
     if (!/^[A-Z]{3}$/.test(project.iso3 || '')) throw new Error('Invalid ISO3 in feedback selection');
@@ -65,7 +73,7 @@ export async function buildKitSourceFeedback({ base = root, commit, exportedAt }
         authority_type: requireValue(chosen.authority_type, 'authority_type'),
         // These projects passed adaptation checks, not an independent source audit.
         evidence_stage: 'official_location_identified',
-        checked_at: selection.checked_at,
+        checked_at: projectCheckedAt,
         geographic_levels: chosen.geographic_levels || [],
         reference_periods: source.reference_period ? [String(source.reference_period)] : [],
         formats: chosen.formats || [],
@@ -81,6 +89,7 @@ export async function buildKitSourceFeedback({ base = root, commit, exportedAt }
   // changing its audited dataset. Return those locations with the same evidence
   // and safety checks, while keeping the candidate edition untouched.
   for (const chosen of selection.location_sources || []) {
+    const sourceCheckedAt = checkedDate(chosen.checked_at || selection.checked_at, date);
     if (!/^[A-Z]{3}$/.test(chosen.iso3 || '')) throw new Error('Invalid ISO3 in feedback location');
     const projectEvidencePath = requireValue(chosen.evidence_path, 'location evidence_path').replaceAll('\\', '/');
     if (path.isAbsolute(projectEvidencePath) || projectEvidencePath.split('/').includes('..') || !projectEvidencePath.startsWith('docs/evidence/')) {
@@ -100,7 +109,7 @@ export async function buildKitSourceFeedback({ base = root, commit, exportedAt }
       url,
       authority_type: requireValue(chosen.authority_type, 'authority_type'),
       evidence_stage: 'official_location_identified',
-      checked_at: selection.checked_at,
+      checked_at: sourceCheckedAt,
       geographic_levels: chosen.geographic_levels || [],
       reference_periods: chosen.reference_periods || [],
       formats: chosen.formats || [],
