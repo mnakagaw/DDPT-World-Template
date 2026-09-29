@@ -33,7 +33,7 @@ for s in sources.values():
             raise ValueError(f'Original absent or hash changed: {s["id"]}')
 
 api_dispositions = {
-    'popcen-households-2024': ('adopted_partial', 'Three household measures adopted for 136 exact or explicit-code-crosswalk targets; SGA aggregate excluded.'),
+    'popcen-households-2024': ('adopted_partial', 'National counts and published average household size remain from this 136-target table; household population and household counts now use the complete 18-table regional catalogue.'),
     'sdg-education-completion': ('adopted_partial', '2024 both-sexes three school levels, national and all 18 current regions. Other sexes and unavailable 2025 cells remain source-only.'),
     'sdg-under-five-mortality': ('adopted_partial', '2025 NDHS rate at national and 18 regions; 2024 cells are unpublished.'),
     'sdg-basic-drinking-water': ('adopted_partial', '2024 provisional national family rate only; NIR is unpublished, other regional values withheld pending geography review.'),
@@ -85,13 +85,127 @@ for stem, (decision, reason) in api_dispositions.items():
         'locator': f'{data_file.name}: data.values[0] ({len(values)} cells; {numeric} numeric)'
     })
 
+popcen_dir = raw / 'popcen-catalogue-2024'
+popcen_receipt = json.loads((popcen_dir / 'receipt.json').read_text(encoding='utf-8'))
+if len(popcen_receipt['tables']) != 24 or sha(popcen_dir / 'catalogue.json') != popcen_receipt['catalogue_sha256']:
+    raise ValueError('Official 2024 POPCEN catalogue or receipt changed')
+popcen_rows = []
+dispositions = {
+    '0191A6DTHP8': ('adopted_partial', 'National household counts and published average household size for 136 source targets; SGA aggregate is source-only.'),
+    '0201A6DPAG0': ('acquired_not_adopted', 'Age-by-sex table is preserved; the current indicator/chart contract has not been mapped to every source age band and sex.'),
+    '0211A6DAPG0': ('adopted_partial', '2024 total population independently crosschecked; 2020–2024 annual growth adopted. Earlier census and growth intervals remain source-only.'),
+    '0221A6DLPD0': ('adopted_partial', '2024 population independently crosschecked; reported land area and 2024 density adopted with original area-method caveat. Earlier years remain source-only.'),
+    '0231A6DPUP0': ('acquired_not_adopted', 'Barangay urban-classification values are retained at source granularity; no barangay-level planning unit or polygon is asserted.'),
+    '0241A6DPUP1': ('adopted_partial', 'Urban population and published percent urban adopted for all 1,742 subnational targets; 2024 total population crosschecked.'),
+}
+def popcen_field_disposition(stem, code):
+    if stem.startswith(tuple(f'{n:03d}' for n in range(1, 19))):
+        if code == '0':
+            return ('independent_crosscheck', 'Used to compare 2024 total population; the dashboard total retains its PSGC rendered-list provenance.')
+        return ('adopted_partial', 'Household measure adopted for matched administrative targets; barangay cells retained in source only.')
+    adopted = {
+        '0191A6DTHP8': {'1', '2', '3'},
+        '0211A6DAPG0': {'7'},
+        '0221A6DLPD0': {'3', '6'},
+        '0241A6DPUP1': {'1', '2'},
+    }
+    crosschecked = {
+        '0191A6DTHP8': {'0'},
+        '0211A6DAPG0': {'3'},
+        '0221A6DLPD0': {'2'},
+        '0241A6DPUP1': {'0'},
+    }
+    if code in adopted.get(stem, set()):
+        return ('adopted_partial', 'Adopted only for the geography and period recorded in the dataset; remaining source rows are retained.')
+    if code in crosschecked.get(stem, set()):
+        return ('independent_crosscheck', 'Used to compare adopted total population; this API cell is not the dataset provenance for the total.')
+    return ('source_only', 'Acquired and inventoried; not adopted as a dashboard observation.')
+def popcen_indicator_id(stem, code):
+    if stem.startswith(tuple(f'{n:03d}' for n in range(1, 19))):
+        return {'1': 'PHL_POPCEN_2024_HOUSEHOLD_POP', '2': 'PHL_POPCEN_2024_HOUSEHOLDS'}.get(code, '')
+    return {
+        '0191A6DTHP8': {'1': 'PHL_POPCEN_2024_HOUSEHOLD_POP', '2': 'PHL_POPCEN_2024_HOUSEHOLDS', '3': 'PHL_POPCEN_2024_AVG_HH_SIZE'},
+        '0211A6DAPG0': {'7': 'PHL_POPCEN_2020_2024_ANNUAL_GROWTH'},
+        '0221A6DLPD0': {'3': 'PHL_POPCEN_LAND_AREA_KM2', '6': 'PHL_POPCEN_2024_DENSITY'},
+        '0241A6DPUP1': {'1': 'PHL_POPCEN_2024_URBAN_POP', '2': 'PHL_POPCEN_2024_PERCENT_URBAN'},
+    }.get(stem, {}).get(code, '')
+for table in popcen_receipt['tables']:
+    stem = table['id'].removesuffix('.px')
+    metadata_file = popcen_dir / f'{stem}-metadata.json'
+    if sha(metadata_file) != table['metadata_sha256']:
+        raise ValueError('POPCEN metadata changed: ' + table['id'])
+    metadata = json.loads(metadata_file.read_text(encoding='utf-8-sig'))
+    if stem.startswith(tuple(f'{n:03d}' for n in range(1, 19))):
+        decision, reason = ('adopted_partial', '2024 total population crosschecked; household population and household count adopted for every matched region/province/city/municipality. Barangay rows remain source-only.')
+    else:
+        decision, reason = dispositions[stem]
+    parameter_variable = next((v for v in metadata['variables'] if v['code'] == 'Parameter'), None)
+    parameter_labels = dict(zip(parameter_variable['values'], parameter_variable['valueTexts'])) if parameter_variable else {}
+    for variable in metadata['variables']:
+        inventory_rows.append({
+            'source_id': 'psa-openstat-popcen-catalogue-' + stem, 'source_hash': table['metadata_sha256'],
+            'table_or_sheet': metadata['title'], 'column_or_variable': variable['code'],
+            'original_label': variable['text'], 'unit': 'see official table metadata and footnotes',
+            'universe': '2024 POPCEN source geography', 'period': '1 July 2024 or indicated census interval',
+            'geography_type': 'source PSGC code', 'role': 'dimension', 'indicator_id': '',
+            'decision': 'retained in raw', 'reason': reason,
+            'locator': f'popcen-catalogue-2024/{metadata_file.name}: variables.{variable["code"]}'
+        })
+    table_summary = {'id': table['id'], 'title': table['title'], 'source_url': table['source_url'],
+        'upstream_updated': table['upstream_updated'], 'metadata_sha256': table['metadata_sha256'],
+        'decision': decision, 'reason': reason, 'dimensions': [
+            {'code': v['code'], 'label': v['text'], 'listed_member_count': len(v.get('values', [])) or None}
+            for v in metadata['variables']], 'slices': []}
+    for slice_info in table['slices']:
+        data_file = popcen_dir / slice_info['file']
+        if sha(data_file) != slice_info['sha256']:
+            raise ValueError('POPCEN data changed: ' + slice_info['file'])
+        response = json.loads(data_file.read_text(encoding='utf-8-sig'))
+        if len(response['data']) != slice_info['rows']:
+            raise ValueError('POPCEN source row count changed: ' + slice_info['file'])
+        field_counts = {}
+        for row in response['data']:
+            parameter = row['key'][-1] if parameter_variable else 'value'
+            bucket = field_counts.setdefault(parameter, {'rows': 0, 'numeric': 0, 'non_numeric': 0})
+            bucket['rows'] += 1
+            for value in row['values']:
+                if re.fullmatch(r'-?(?:\d+\.?\d*|\.\d+)', str(value)):
+                    bucket['numeric'] += 1
+                else:
+                    bucket['non_numeric'] += 1
+        table_summary['slices'].append({'file': slice_info['file'], 'sha256': slice_info['sha256'],
+            'rows': slice_info['rows'], 'fields': {code: {**count,
+                'decision': popcen_field_disposition(stem, code)[0],
+                'reason': popcen_field_disposition(stem, code)[1]}
+                for code, count in field_counts.items()}})
+        for code, count in field_counts.items():
+            field_decision, field_reason = popcen_field_disposition(stem, code)
+            inventory_rows.append({
+                'source_id': 'psa-openstat-popcen-catalogue-' + stem, 'source_hash': slice_info['sha256'],
+                'table_or_sheet': metadata['title'], 'column_or_variable': 'data.values[0]/' + code,
+                'original_label': parameter_labels.get(code, metadata['title']),
+                'unit': 'see official table metadata and footnotes', 'universe': '2024 POPCEN source geography',
+                'period': '1 July 2024 or indicated census interval', 'geography_type': 'source PSGC code',
+                'role': 'source value', 'indicator_id': popcen_indicator_id(stem, code),
+                'decision': field_decision, 'reason': field_reason,
+                'locator': f'popcen-catalogue-2024/{slice_info["file"]}: key parameter {code}; {count["rows"]} rows, {count["numeric"]} numeric, {count["non_numeric"]} nonnumeric'
+            })
+    popcen_rows.append(table_summary)
+json_write('POPCEN_2024_CATALOGUE_INVENTORY.json', {
+    'checked_at': checked_at, 'catalogue_sha256': popcen_receipt['catalogue_sha256'],
+    'all_24_openstat_popcen_tables_checked': len(popcen_rows) == 24,
+    'source_rows': sum(s['rows'] for t in popcen_rows for s in t['slices']),
+    'tables': popcen_rows})
+
 json_write('SOURCE_TABLE_INVENTORY.json', {
     'checked_at': checked_at,
-    'scope': 'All dimensions and value columns in eight locally acquired PSA OpenSTAT query slices, plus PSGC rendered extracts. This is not the full PSA catalogue.',
+    'scope': 'All dimensions and value columns in eight initial PSA OpenSTAT slices and all 24 tables of the 2024 POPCEN OpenSTAT catalogue; this is not the full PSA cross-theme catalogue.',
     'all_expected_resources_dispositioned': False,
     'all_psa_catalogue_tables_checked': False,
+    'all_2024_popcen_openstat_tables_checked': len(popcen_rows) == 24,
     'acquired_openstat_tables_checked': len(table_rows) == 8,
     'tables': table_rows,
+    'popcen_2024_tables': popcen_rows,
     'psgc_rendered_extracts': [
         {'id': 'regions', 'rows': 18}, {'id': 'provinces', 'rows': 82},
         {'id': 'cities', 'rows': 149}, {'id': 'municipalities', 'rows': 1493},
@@ -111,8 +225,8 @@ resources = [{
     'adopted_document_count': sum(d['source_id'] == s['id'] for d in data['documents']),
 } for s in official]
 resources.extend([
-    {'id': 'psa-popcen-table-b-xlsx', 'url': 'https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president',
-     'source_status': 'failed', 'acquisition': 'linked XLSX direct fetch blocked by site challenge', 'adopted_observation_count': 0},
+    {'id': 'psa-popcen-table-b-xlsx', 'url': 'https://psa.gov.ph/system/files/phcd/3_Table%20B%20-%20Population%20and%20Annual%20PGR%20by%20Province%2C%20City%2C%20and%20Municipality%20-%20By%20Region%20-%20rev_0.xlsx',
+     'source_status': 'failed', 'acquisition': 'exact official attachment returned HTTP 403; official OpenSTAT 2024 POPCEN Table 021/022/024 API originals provide an independently checked equivalent count column, but not this XLSX file', 'adopted_observation_count': 0},
     {'id': 'psa-psgc-masterlist', 'url': 'https://psa.gov.ph/classification/psgc',
      'source_status': 'not_collected', 'acquisition': 'original masterlist unavailable; rendered lists used', 'adopted_observation_count': 0},
     {'id': 'dilg-cdp-guide', 'url': 'https://region12.dilg.gov.ph/sites/default/files/reportsresources/knowledge-materials/961-illustrative-guide-v4b.pdf',
@@ -134,12 +248,12 @@ with (out / 'CODE_CROSSWALK.csv').open('w', encoding='utf-8-sig', newline='') as
             'provider_shape_id':'', 'boundary_match_status':'no current polygon joined'})
 
 themes = [
-    ('population', ['PHL_POPCEN_2024_DOMESTIC','PHL_POPCEN_2024_HOUSEHOLD_POP'], 'Complete 2024 POPCEN domestic counts at country, 18 regions, 82 provinces, 149 cities and 1,493 municipalities; household population at a 136-target subset.'),
+    ('population', ['PHL_POPCEN_2024_DOMESTIC','PHL_POPCEN_2024_HOUSEHOLD_POP','PHL_POPCEN_2024_URBAN_POP','PHL_POPCEN_2024_PERCENT_URBAN','PHL_POPCEN_2024_DENSITY','PHL_POPCEN_2020_2024_ANNUAL_GROWTH'], '2024 POPCEN domestic total, household and urban population, percent urban, density and 2020–2024 annual growth cover the country and all 1,742 subnational targets.'),
     ('education', ['PHL_EDU_COMPLETION_ELEMENTARY_2024','PHL_EDU_COMPLETION_JHS_2024','PHL_EDU_COMPLETION_SHS_2024'], '2024 school-completion rates at nation and all 18 regions; no province/city series adopted.'),
     ('health_nutrition', ['PHL_NDHS_UNDER5_MORTALITY_2025'], '2025 NDHS under-five mortality at nation and all 18 regions; 2024 unpublished.'),
-    ('water_sanitation_housing_energy', ['PHL_POPCEN_2024_HOUSEHOLDS','PHL_POPCEN_2024_AVG_HH_SIZE','PHL_BASIC_DRINKING_WATER_FAMILIES_2024P'], 'Household count/size for 136 targets. Basic water provisional national only; electricity candidate cells unpublished.'),
+    ('water_sanitation_housing_energy', ['PHL_POPCEN_2024_HOUSEHOLDS','PHL_POPCEN_2024_AVG_HH_SIZE','PHL_BASIC_DRINKING_WATER_FAMILIES_2024P'], 'Household counts cover all 1,742 local targets; published average household size remains a 136-target subset. Basic water provisional national only; electricity candidate cells unpublished.'),
     ('livelihoods_poverty_economy', ['PHL_GRDP_2025_CURRENT','PHL_GRDP_2025_CONSTANT2018'], '2025 GRDP nation plus all 18 regions; 2023 poverty table acquired but not joined across historic geography; unemployment candidate cells unpublished.'),
-    ('access_infrastructure_environment', [], 'No verified local indicator from the acquired slices; source discovery remains open.'),
+    ('access_infrastructure_environment', ['PHL_POPCEN_LAND_AREA_KM2'], 'Reported land area covers all 1,742 local targets but is not a verified legal polygon area. Other local environment and access indicators remain open.'),
 ]
 coverage=[]
 for theme, ids, note in themes:
@@ -153,8 +267,8 @@ dataset_sha = sha(root / 'data/dashboard.json')
 (out / 'SOURCE_PREFLIGHT_RECHECK.md').write_text(f'''# Philippines official-source recheck — 2026-09-29
 
 - Current candidate: {len(territories)} territories, {len(observations)} observations, {len(data['indicators'])} indicators, {len(data['documents'])} local documents; dataset SHA-256 `{dataset_sha}`.
-- PSA PSGC: rendered official region/province/city/municipality lists, city classification and 2024 POPCEN values are joined and reconciled. The original masterlist and Table B XLSX are still unacquired.
-- PSA OpenSTAT: eight original API query slices and metadata with SHA-256 receipts are inventoried in `SOURCE_TABLE_INVENTORY.json`; acquired-slice field audit is separate from a full PSA catalogue audit.
+- PSA PSGC: rendered official region/province/city/municipality lists, city classification and 2024 POPCEN values are joined and reconciled. The original masterlist and Table B XLSX are still unacquired. The official OpenSTAT API count column provides an independent equivalent for all adopted codes, with the Isabela City code difference recorded.
+- PSA OpenSTAT: eight initial API query slices and all 24 tables of the 2024 POPCEN catalogue are locally archived with SHA-256 receipts and field inventories. This closes the acquired POPCEN subcatalogue only; the full PSA cross-theme catalogue remains open.
 - National planning law: RA 7160 sections 106/109 located; current amendments and 2024 joint planning harmonization circular PDF are not fully reviewed. DILG Region 1 2022 CDP Toolkit original is private and its regional applicability must not be generalized.
 - Local documents: Davao City CDP and Olongapo revised AIP bodies checked; Iloilo City CDP link only. Planned investment, expenditure and evaluation are distinct.
 - Current polygons: no verified 2025/2026 PSGC-aligned authoritative geometry joined; 2020 geoBoundaries shapes remain raw-only.
@@ -172,7 +286,7 @@ The PSA OpenSTAT 2023 poverty slice is retained without adoption because its his
 
 1. **Original register and census workbook:** PSGC masterlist and 2024 POPCEN Table B direct downloads were blocked. Retain rendered official excerpts, obtain originals through authorized ordinary access, and compare every adopted code/count and column.
 2. **Current boundaries:** no dated authoritative 18-region/local polygon edition with rights and code join was verified. Keep map fallback; obtain and audit one edition before a map is released.
-3. **Thematic coverage:** 2024 local POPCEN covers all registered local units; other themes have regional or 136-target household coverage. Poverty, electricity and unemployment candidate values were not adopted for the stated period/geography reasons. Finish the broader official catalogue and indicator-by-indicator definitions.
+3. **Thematic coverage:** 2024 POPCEN total, household, urbanization, density and growth measures now cover all registered local units. Published average household size and non-census themes have smaller coverage. Poverty, electricity and unemployment candidate values were not adopted for the stated period/geography reasons. Finish the broader official cross-theme catalogue and indicator-by-indicator definitions.
 4. **Planning system and documents:** Davao CDP and Olongapo AIP are checked originals; Iloilo is link-only. DILG Region 1 toolkit is regional and reproduction-restricted, and the 2024 harmonization circular original remains blocked. Verify the current country/local forms and acquire more matched plans, budgets, actual spending and evaluations without mixing their meanings.
 5. **Acceptance and release:** finish the 42 scenarios, 12 country lesson checks, independent review, hosting destination and post-release readback. Current local browser evidence is representative, not comprehensive acceptance.
 ''', encoding='utf-8')
@@ -190,20 +304,25 @@ The PSA OpenSTAT 2023 poverty slice is retained without adoption because its his
 1. Use the generated project's `raw/` exact bytes and `data/dashboard.json` baseline or a fresh `create-country` project with the same input register and source captures. Raw files are intentionally not in Git; ordinary code checkout alone is not a complete replay.
 2. `node scripts/adapt-philippines-psa-regions.mjs --project generated/philippines-areadata-20260929`
 3. `node scripts/adapt-philippines-openstat-households.mjs --project generated/philippines-areadata-20260929`
-4. `node scripts/adapt-philippines-openstat-themes.mjs --project generated/philippines-areadata-20260929`
-5. `node scripts/adapt-philippines-local-plans.mjs --project generated/philippines-areadata-20260929`
-6. `python scripts/refresh-philippines-evidence.py generated/philippines-areadata-20260929`
-7. `node scripts/validate-country.mjs --project generated/philippines-areadata-20260929`; `node scripts/build-country.mjs --project generated/philippines-areadata-20260929`; `npm run check`; `npm test`.
+4. `node scripts/collect-philippines-popcen-catalogue.mjs --project generated/philippines-areadata-20260929` only when intentionally refreshing originals; otherwise preserve the fixed raw bytes.
+5. `node scripts/adapt-philippines-popcen-catalogue.mjs --project generated/philippines-areadata-20260929`
+6. `node scripts/adapt-philippines-openstat-themes.mjs --project generated/philippines-areadata-20260929`
+7. `node scripts/adapt-philippines-local-plans.mjs --project generated/philippines-areadata-20260929`
+8. `node scripts/audit-philippines-popcen-catalogue.mjs --project generated/philippines-areadata-20260929`
+9. `node scripts/verify-philippines-popcen-adoption.mjs --project generated/philippines-areadata-20260929`
+10. `python scripts/refresh-philippines-evidence.py generated/philippines-areadata-20260929`
+11. `node scripts/validate-country.mjs --project generated/philippines-areadata-20260929`; `node scripts/build-country.mjs --project generated/philippines-areadata-20260929`; `npm run check`; `npm test`.
 
 The adapters replace their own records on rerun but cannot recreate missing raw originals. Preserve a known-good copy before future source refresh; a failed refresh must not replace the built site.
 
 ## Evidence and next work
 
-- `evidence/SOURCE_RESOURCE_INVENTORY.json`, `SOURCE_TABLE_INVENTORY.json`, `INDICATOR_INVENTORY.csv`, `THEME_COVERAGE.json`, `CODE_CROSSWALK.csv`, `GEOGRAPHY_REVIEW.md`, `GAPS.md` record present coverage and gaps.
-- Browser checks: city/parent selection and history, Olongapo/Davao document isolation, representative downloads, Bulacan 600-row CSV and 212-page HTML print PDF were exercised in a separate headless Chrome. Full acceptance and an independent reviewer remain pending.
-- Next: original PSA masterlist/Table B, dated current official polygons, post-NIR thematic crosswalk, Philippine planning manual/form applicability, more local documents, full acceptance and independent decision. Hosting/publication require a separate scoped destination and `ACCEPT`.
+- `evidence/SOURCE_RESOURCE_INVENTORY.json`, `SOURCE_TABLE_INVENTORY.json`, `POPCEN_2024_CATALOGUE_INVENTORY.json`, `PHL_POPCEN_CATALOGUE_AUDIT.json`, `PHL_POPCEN_ADOPTION_REPLAY.json`, `INDICATOR_INVENTORY.csv`, `THEME_COVERAGE.json`, `CODE_CROSSWALK.csv`, `GEOGRAPHY_REVIEW.md`, `GAPS.md` record present coverage and gaps.
+- Browser checks: city/parent selection and history, Olongapo/Davao document isolation, and representative downloads were exercised in a separate headless Chrome. The current Bulacan diagnostic has 725 data rows in CSV and 743 table rows in HTML; its compact print layout yielded 77 A4 PDF pages with first and last official codes present. Full acceptance and an independent reviewer remain pending.
+- Next: original PSA masterlist/Table B (official OpenSTAT provides crosschecked equivalent count columns), dated current official polygons or accepted no-shape fallback, post-NIR thematic crosswalk, Philippine planning manual/form applicability, more local documents, full acceptance and independent decision. Hosting/publication require a separate scoped destination and `ACCEPT`.
 ''', encoding='utf-8')
 
 print(json.dumps({'territories':len(territories),'types':territory_types,'observations':len(observations),
     'indicators':len(data['indicators']),'documents':len(data['documents']),
-    'openstat_tables':len(table_rows),'inventory_fields':len(inventory_rows)}, indent=2))
+    'openstat_initial_slices':len(table_rows),'popcen_catalogue_tables':len(popcen_rows),
+    'inventory_fields':len(inventory_rows)}, indent=2))

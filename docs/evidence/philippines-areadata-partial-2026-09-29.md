@@ -1,5 +1,17 @@
 # Philippines AreaData candidate — 29 September 2026
 
+## Current expanded candidate
+
+The current local dataset SHA-256 is `87eabf943daf6bd9d4921017e658247a8077fa1dfcaa5b5ac832e8e2c7eb6a4f`: 1,743 typed territories, 29 indicators, 14,508 observations and three area-specific documents. It retains the geography-edition qualification and zero adopted polygons described below. The earlier counts and SHA values in the following sections describe prior candidate snapshots, not this expanded candidate.
+
+All 24 tables in the [official PSA OpenSTAT 2024 POPCEN catalogue](https://openstat.psa.gov.ph/PXWeb/pxweb/en/DB/DB__1A__PO_2024/) were archived locally with exact API bytes, metadata, response hashes and a 165-field inventory. A source-byte replay compared 12,199 newly adopted household, urban, source-reported land-area, density and growth cells with zero mismatches. The 1,742 local domestic population figures also match the corresponding official OpenSTAT count column without numeric mismatches; one table uses a different City of Isabela code, explicitly recorded in the crosswalk. Published land area is a source measure referencing LMB documentation, not a current legal boundary polygon or calculated map area. The wider PSA catalogue across themes, original PSGC Publication Datafile and original POPCEN Table B are not yet acquired or audited.
+
+The expanded site passed `npm run check` (161 modules/templates), `npm test` (224/224), country validation (zero errors, four source-rights warnings), source replay, and seven-area/four-format output verification. A separate headless Chrome rerun verified native parent reselection, browser history, source-specific planning documents, two distinct Taytay IDs, missing regional GRDP on Davao city, and newly added Davao urban and density indicators. Bulacan's downloaded diagnostic CSV has 725 data rows, its HTML has 743 table rows, and its print PDF has 77 A4 pages; first and last official codes occur in extracted text and page 40 was visually inspected. These are producer checks, not 42-scenario acceptance. The exact local receipts are in the ignored country project's `evidence/` directory.
+
+The independent review recorded below applies to older SHA values. This expanded candidate still requires a new whole-candidate review and `ACCEPT` before release. The AreaData hosting URL/path has not been specified, and a local Philippine practitioner has not performed A20. Planning forms, budget execution and evaluation content remain unverified, so the editable plan base stays labelled generic and unapproved.
+
+## Prior candidate snapshots
+
 ## Scope and result
 
 Local project: `generated/philippines-areadata-20260929` (ignored/private). It contains 1,743 territory records: one country, 18 PSA regions, 82 provinces, 149 cities and 1,493 municipalities. All 1,642 city and municipality 2024 POPCEN counts reconcile with the 18 regions and the domestic national figure of 112,727,776. A separate national figure of 112,729,484 includes 1,708 persons in Philippine missions abroad. There are 24 indicators, 2,579 observations and three local document records. WDI national estimates remain separate series.
