@@ -133,7 +133,7 @@ data.territories.push(...provinceExtract.rows.map(row=>({
   id:prefix+row.code,name:row.name,level:'province',type:'province',
   parent_id:prefix+row.code.slice(0,2)+'00000000',
   official_code:row.code,correspondence_code:row.correspondence_code,
-  code_system:'PSGC 10-digit',code_edition:'PSA provinces page checked 2026-09-29',
+  code_system:'PSGC 10-digit',code_edition:'undated PSA province table; captured 2026-09-29',
   boundary_version:null,source_id:'psa-psgc-2026-provinces',
   reconciliation_status:'official_code_and_population_verified_polygon_unavailable'
 })));
@@ -292,7 +292,7 @@ const comparisons=[...childIds].filter(([,members])=>members.length>1).map(([par
   parent_id,member_ids,
   label:parent_id==='PHL'?'2024 POPCEN by 18 PSGC regions':
     parent_id.endsWith('00000000')?'Provinces and independent local areas within the region':'Cities and municipalities within the province',
-  membership_note:'Complete non-overlapping 2024 POPCEN reporting hierarchy for the 31 July 2025 PSGC local register. ICCs are included in PSA province population tables while remaining separate city planning authorities; HUCs and province-free areas report directly under their regions.',
+  membership_note:'Complete non-overlapping 2024 POPCEN reporting hierarchy assembled from PSA PSGC region and local tables dated 31 July 2025 and an undated province table captured 29 September 2026. A single common PSGC edition is not verified. ICCs are included in PSA province population tables while remaining separate city planning authorities; HUCs and province-free areas report directly under their regions.',
   source_ids:['psa-psgc-2025-regions','psa-psgc-2026-provinces','psa-psgc-2025-cities','psa-psgc-2025-municipalities','psa-psgc-2025-city-types'],
   color_scale:{mode:'within_selection'}
 }));
@@ -300,7 +300,7 @@ data.analysis={...data.analysis,kind:'country',
   incomplete_child_cover_ids:[],
   terminal_territory_ids:allLocalRows.map(row=>prefix+row.code),
   comparisons};
-data.country.geography_note='2024 POPCEN counts use the PSA PSGC 31 July 2025 register: 18 regions, 82 provinces, 149 cities and 1,493 municipalities. All 1,642 city/municipality counts reconcile to the 112,727,776 domestic population. ICCs are included in province census totals but are separate planning authorities; HUCs and areas without a province report directly under regions. No current official polygons are joined. Initial 2020 geoBoundaries ADM1 shapes remain private raw references only.';
+data.country.geography_note='2024 POPCEN counts cover 18 regions, 82 provinces, 149 cities and 1,493 municipalities. The PSA region and local pages state 31 July 2025; the province rows were captured 29 September 2026 without an explicit table edition. A single common PSGC edition has not been verified. All 1,642 city/municipality counts reconcile to the 112,727,776 domestic population. ICCs are included in province census totals but are separate planning authorities; HUCs and areas without a province report directly under regions. No current official polygons are joined. Initial 2020 geoBoundaries ADM1 shapes remain private raw references only.';
 data.collection.status='partial';
 data.collection.adapters=[...new Set([...data.collection.adapters,'psa-psgc-2025-regions-web-extract'])];
 data.collection.adapters=[...new Set([...data.collection.adapters,'psa-psgc-2026-provinces-web-extract'])];
@@ -325,7 +325,7 @@ for(const gap of data.gaps){
 data.gaps=data.gaps.filter(g=>g.id!=='phl-current-polygon-and-local-cover');
 data.gaps.push({
   id:'phl-current-polygon-and-local-cover',category:'geography',
-  detail:'The full 31 July 2025 PSGC HUC/city/municipality hierarchy and 2024 POPCEN counts are joined and arithmetically reconciled; current polygons are not joined. 2020 provider ADM1 geometry is not used for these counts.',
+  detail:'The rendered 31 July 2025 PSGC region/city/municipality tables and an undated province table captured 29 September 2026 reconcile arithmetically to 2024 POPCEN counts; a single common code edition and current polygons are not verified. 2020 provider ADM1 geometry is not used for these counts.',
   status:'partial',next_action:'Acquire dated authoritative current boundary and original PSGC/POPCEN Table B, then verify geometry and NIR/Sulu geographic joins.'
 });
 await writeFile(dataPath,JSON.stringify(data,null,2)+'\n');
