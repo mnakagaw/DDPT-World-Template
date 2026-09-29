@@ -24,6 +24,8 @@ A separate arithmetic replay of the archived [2024 POPCEN age-by-sex table 0201A
 
 The DILG alternate lead was exported from AreaData selection commit `cecbf1f9531cb5f872a1f51bff90d5c6ebf66bda`; its Philippines-only feedback bundle inserted one Kit record, and repeat dry-run found it unchanged. Kit `npm run check`, 173 tests and `npm run verify:kit` passed. Kit commit `0d31296` was pushed to `codex/philippines-source-feedback-20260929`. This transfers a source location only.
 
+Independent follow-up `evidence/INDEPENDENT_AUDIT_AGE_SEX_I18N_FOLLOWUP_4DD2AC8.md` repeated the 7,809-cell arithmetic check directly from the archived original and matched the 38 sex-sum and 19 age-sum discrepancies. It also exercised 12 English, Japanese and Spanish Davao thematic/planning browser views with no representative value or document regression. The remaining English in comparison cards, legends and document states means M2 is still incomplete; M3/M4 and the overall `REJECT` remain. After that finding, the source-inventory generator was changed to bind the age-table non-adoption reason to the matching original-file SHA and arithmetic receipt. The local table and field inventories have been regenerated with that reason.
+
 ## Prior candidate snapshots
 
 ## Scope and result
