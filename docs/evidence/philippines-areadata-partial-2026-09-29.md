@@ -28,6 +28,8 @@ Independent follow-up `evidence/INDEPENDENT_AUDIT_AGE_SEX_I18N_FOLLOWUP_4DD2AC8.
 
 The current UI copy work adds Japanese and Spanish names, definitions, units, populations and themes for all 29 adopted indicators, including the 12 international reference series. A direct dictionary check found zero untranslated values in those five indicator fields for either locale, and a headless Chrome Davao/database check displayed translated entries. Generic database instructions and selected dynamic planning/thematic text were also translated. This is a narrow field/representative-page result, not a three-language full-page or output acceptance: source notes, some comparison and planning text, exports and long-page layout still require review.
 
+The subsequent UI copy pass translated selected combined chart labels, source-series explanations, a thematic comparison legend, planning collection legend, the common geography/period warning and several Philippine document/gap explanations. A local Japanese text-node scan of Davao pages fell from 82/44/56/95 to 71/38/47/93 Latin-containing distinct nodes for territorial/thematic/planning/database respectively; this raw count includes official names, acronyms and source titles, so it is only a targeting aid. The remaining source notes, document identity metadata, regional comparison copy and exports are still under review. Neither this pass nor a successful static check is M2 acceptance.
+
 ## Prior candidate snapshots
 
 ## Scope and result
