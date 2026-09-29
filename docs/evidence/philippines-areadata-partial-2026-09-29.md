@@ -12,6 +12,10 @@ The independent reviews recorded below apply to older SHA values. A separate who
 
 Four new official OpenSTAT catalogue/table locations were exported from AreaData selection commit `e2269120591324eba0b19f7cc91cdb2bdb97171f` at `official_location_identified` only. The Philippines-only feedback bundle added four Kit records; repeat dry-run found all four unchanged. Kit checks, 173 tests and `verify:kit` passed, and Kit commit `1aad301` was pushed to `codex/philippines-source-feedback-20260929`. This transfer contains source locations and reuse notes, not adopted observations or a country acceptance verdict.
 
+After the full review, AreaData commit `f6bdad2` added a sourced 2024 domestic population, date and registered hierarchy to the independent country home and translated the principal home/status messages in English, Japanese and Spanish. A standalone Chrome check confirmed `112,727,776` (Spanish `112.727.776`), `2024-07-01`, the PSA source and the three main routes at all three locales, including 320px width. This is a narrow producer-side UI repair; the complete locale and 42-scenario acceptance still require review.
+
+The separate [official PSA PSGC Q2 2025 API index](https://classification.psa.gov.ph/psgc/Q2_2025/?format=json) responded HTTP 200, but its regions, provinces, municipalities and city-classification endpoints each responded HTTP 400 `Token is required` without credentials. Exact unauthenticated response hashes are retained locally in `raw/psgc-q2-2025-api-probe/receipt.json`; no code rows or credential were acquired. This is a new source location only, not a resolved common-code edition.
+
 ## Prior candidate snapshots
 
 ## Scope and result

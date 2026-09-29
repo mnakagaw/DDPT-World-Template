@@ -2010,6 +2010,15 @@
       "evidence_path": "docs/evidence/india-tripura-planning-finance-followup-2026-09-27.md"
     },
     {
+      "iso3": "PHL", "id": "psgc-q2-2025-api", "role": "administrative_codes", "checked_at": "2026-09-29",
+      "title": "PSA PSGC Q2 2025 official classification API", "publisher": "Philippine Statistics Authority",
+      "url": "https://classification.psa.gov.ph/psgc/Q2_2025/?format=json", "authority_type": "official_national",
+      "geographic_levels": ["region", "province", "city", "municipality", "barangay"],
+      "reference_periods": ["Q2 2025"], "formats": ["JSON API"],
+      "reuse_note": "New AreaData location: the public version index responds, but unauthenticated regions, provinces, municipalities and city_class endpoints return HTTP 400 Token is required. No code rows were acquired or adopted from this API. Obtain authorized access and verify names, parents and effective edition before use; do not transfer a token.",
+      "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md"
+    },
+    {
       "iso3": "PHL", "id": "2024-popcen-table-b", "role": "table_catalog", "checked_at": "2026-09-29",
       "title": "PSA 2024 POPCEN Table B regional, province, HUC and city/municipality workbook", "publisher": "Philippine Statistics Authority",
       "url": "https://psa.gov.ph/system/files/phcd/3_Table%20B%20-%20Population%20and%20Annual%20PGR%20by%20Province%2C%20City%2C%20and%20Municipality%20-%20By%20Region%20-%20rev_0.xlsx",
