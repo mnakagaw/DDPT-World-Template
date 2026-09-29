@@ -382,6 +382,22 @@ const COPY={
   'License source':['Fuente de la licencia','ライセンス出典'],
   'Next:':['Siguiente:','次の対応：'],
   'Reload':['Recargar','再読み込み'],
+  'national':['nacional','全国'],
+  'percent':['porcentaje','％'],
+  'people per square kilometer':['personas por kilómetro cuadrado','人／平方キロメートル'],
+  'people':['personas','人'],
+  'multi year':['varios años','複数年'],
+  'See the source register; boundary authority and edition must be verified. Reference boundaries are not a legal boundary certification. Keyboard: arrows / Home / End, then Enter or Space.':['Consulte el registro de fuentes; deben verificarse la autoridad y edición de los límites. Los límites de referencia no certifican límites legales. Teclado: flechas / Inicio / Fin, luego Intro o Espacio.','出典台帳を参照してください。境界の所管と版は未確認です。参照境界は法定境界の証明ではありません。キーボード：矢印・Home・Endで移動し、EnterまたはSpaceで選択します。'],
+  'Source reported':['Publicado por la fuente','出典公表値'],
+  'Unit:':['Unidad:','単位：'],
+  'All comparisons use this indicator and period policy; changing an area retains both. Mixed-period rows show each area\'s actual source year.':['Todas las comparaciones usan este indicador y su regla temporal; al cambiar de área se conservan ambos. Las filas con períodos distintos muestran el año real de cada fuente.','すべての比較はこの指標と期間の規則に従います。地域を変えても両方を保持します。異なる年の行には実際の出典年を示します。'],
+  'National value':['Valor nacional','全国値'],
+  'Local comparison range':['Rango de comparación local','地域比較の範囲'],
+  'comparable values only':['solo valores comparables','比較可能な値のみ'],
+  'unranked or missing':['sin clasificación o faltantes','順位なし・欠測'],
+  'same comparison set':['mismo conjunto de comparación','同じ比較対象'],
+  'Coverage varies by category and period; this is not a count of completed or approved plans.':['La cobertura varía según la categoría y el período; esta cifra no es un recuento de planes terminados o aprobados.','収録範囲は区分と期間ごとに異なります。策定済み・承認済み計画の件数ではありません。'],
+  'Evidence CSV contains the selected statistical year. Materials CSV, when adopted, contains the original document periods and findings. Markdown and HTML include both with source definitions and explicit gaps.':['El CSV de evidencia contiene el año estadístico seleccionado. El CSV de materiales, si se adopta, conserva los períodos y hallazgos originales. Markdown y HTML incluyen ambos, con definiciones de fuentes y vacíos explícitos.','根拠CSVには選択した統計年を記載します。資料CSVには採用時に原資料の期間と所見を記載します。MarkdownとHTMLには両方と出典定義・不足を記載します。'],
   'Dashboard data could not be loaded':['No se pudieron cargar los datos del tablero','ダッシュボードのデータを読み込めませんでした']
 };
 
@@ -402,6 +418,15 @@ export function resolveLanguage({query='',stored='',browserLanguages=[]}={}){
 export function languageLocale(language){return language==='es'?'es':language==='ja'?'ja-JP':'en-US';}
 
 const patternTranslations=[
+  [/^(.+) · (Thematic diagnostic|Planning and resources|Database)$/,(m,l)=>`${translateText(m[1],l)} · ${translateText(m[2],l)}`],
+  [/^(.+) · (THEMATIC DIAGNOSTIC|PLANNING AND RESOURCES|DATABASE)$/,(m,l)=>`${translateText(m[1],l)} · ${translateText(m[2].toLowerCase().replace(/^./,letter=>letter.toUpperCase()),l)}`],
+  [/^(.+) · (national|region|province|city|municipality)$/,(m,l)=>`${translateText(m[1],l)} · ${translateText(m[2],l)}`],
+  [/^(national|region|province|city|municipality) · (national|region|province|city|municipality) · Code (.+)$/,(m,l)=>`${translateText(m[1],l)} · ${translateText(m[2],l)} · ${translateText(`Code ${m[3]}`,l)}`],
+  [/^Code system: (.+?)\. Boundary edition: (.+?)\. (.+)$/,(m,l)=>`${translateText('Code system:',l)} ${translateText(m[1],l)}. ${translateText('Boundary edition:',l)} ${translateText(m[2],l)}. ${translateText(m[3],l)}`],
+  [/^Boundary source: (.+)$/,(m,l)=>`${translateText('Boundary source:',l)} ${translateText(m[1],l)}`],
+  [/^(.+) Unit: (.+)\. All comparisons use this indicator and period policy; changing an area retains both\. Mixed-period rows show each area's actual source year\.$/,(m,l)=>`${translateText(m[1],l)} ${translateText('Unit:',l)} ${translateText(m[2],l)}. ${translateText("All comparisons use this indicator and period policy; changing an area retains both. Mixed-period rows show each area's actual source year.",l)}`],
+  [/^Verified material references for (\d+) of (\d+) local records(.*)\. Coverage varies by category and period; this is not a count of completed or approved plans\.$/,(m,l)=>l==='es'?`Hay referencias documentales verificadas para ${m[1]} de ${m[2]} registros locales${m[3]?'; también hay materiales de referencia nacionales':''}. ${translateText('Coverage varies by category and period; this is not a count of completed or approved plans.',l)}`:`国内地域${m[2]}件のうち${m[1]}件に確認済みの資料参照があります${m[3]?'。全国参照資料もあります':''}。${translateText('Coverage varies by category and period; this is not a count of completed or approved plans.',l)}`],
+  [/^(\d+) of (\d+) statistical indicators have an available value for (.+) in (.+)\. (\d+) selected-area material records retain their own periods\.$/,(m,l)=>l==='es'?`${translateText(m[3],l)} tiene valores disponibles en ${m[1]} de ${m[2]} indicadores estadísticos para ${m[4]}. ${m[5]} documentos del área seleccionada conservan sus propios períodos.`:`${translateText(m[3],l)}では${m[4]}年に統計指標${m[2]}件中${m[1]}件の値があります。選択地域の資料${m[5]}件は元の対象期間を保持します。`],
   [/^No boundary is joined to (.+) at this map level\. No nearby polygon is substituted\.$/,(m,l)=>l==='es'?`No se ha unido un límite para ${m[1]} en este nivel del mapa. No se sustituye por un polígono vecino.`:`この地図階層では${m[1]}の境界図形を結合していません。近隣の図形で代用しません。`],
   [/^National reference — (.+):$/,(m,l)=>l==='es'?`Referencia nacional — ${translateText(m[1],l)}：`:`全国参考値 — ${translateText(m[1],l)}：`],
   [/^Geographic scope:$/,(m,l)=>l==='es'?'Ámbito geográfico:':'地理的範囲：'],

@@ -18,6 +18,8 @@ The separate [official PSA PSGC Q2 2025 API index](https://classification.psa.go
 
 That token-gated API location was exported at `official_location_identified` from AreaData selection commit `33d9c5e` and imported as one new Kit lead. Repeat dry-run was unchanged; Kit check, 173 tests and readiness verification passed. Kit commit `bb0783d` was pushed to the Philippine source-feedback branch. The independent M1/M2 follow-up for UI commit `f6bdad2` confirmed the home population repair and removal of its principal English fragments, but found remaining English on lower pages. Overall `ACCEPT` remains absent.
 
+A separate arithmetic replay of the archived [2024 POPCEN age-by-sex table 0201A6DPAG0](https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1A/PO_2024/0201A6DPAG0.px) checked all 7,809 published cells over 137 geographic codes, 19 age categories and three sex categories. Its exact original SHA-256 is `0d277c322e5754aeb0b4fe4bd1cde5e46a7b29a273fdc82a4dfdaef63078c3d0`. It found 38 age-cell discrepancies between the published both-sexes value and the sum of published male/female values, plus 19 discrepancies between published all-ages and the sum of age bands, across 19 geographies. They cluster at ages 80–84 and 85+ and follow one reproducible arithmetic pattern; the cause is not established. `scripts/audit-philippines-age-sex.mjs` reproduces the local `evidence/PHL_POPCEN_2024_AGE_SEX_ARITHMETIC.json` finding. No age-by-sex profile or corrected value is adopted pending PSA clarification. A partial translation repair also now covers thematic/planning page headings and selected dynamic status text; it does not close the three-language acceptance gate.
+
 ## Prior candidate snapshots
 
 ## Scope and result
