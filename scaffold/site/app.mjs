@@ -180,12 +180,12 @@ function scopeBanner() {
   if(pilot?.primary_series_family==='census' && !pilot.available_series_families?.includes('census'))return '<div class="scope-banner"><strong>Census data are the primary AreaData series and have not yet been integrated in this pilot build.</strong> Values currently shown are international reference series for country context. They are kept separate from future census observations. A census total using different country years will identify every country year and will appear only with complete coverage.</div>';
   if(pilot?.primary_series_family==='census' && pilot.census_adapter_status==='partial')return `<div class="scope-banner"><strong>The primary census population series currently covers ${e(pilot.census_country_ids.join(', '))}; the seven-country total is unavailable.</strong> ${e(pilot.census_pending_country_ids.join(', '))} remain pending. Country years, methods and source precision are retained. International reference indicators remain separate context series.</div>`;
   if(worldMode())return '';
-  return nationalOnly(dataset) ? `<div class="scope-banner"><strong>National statistics; local statistics not yet collected.</strong> ${coverage.local ? `${coverage.local} reference areas are selectable.` : 'No local area registry has been collected.'} Local selections show their own gaps and available documents; national figures are not local estimates.</div>` : `<div class="scope-banner"><strong>Acquired evidence, with explicit gaps.</strong> ${coverage.observed} of ${coverage.local} local areas have at least one observation. Coverage varies by indicator and period.</div>`;
+  return nationalOnly(dataset) ? `<div class="scope-banner"><strong>National statistics; local statistics not yet collected.</strong> ${coverage.local ? `${coverage.local} reference areas are selectable.` : 'No local area registry has been collected.'} Local selections show their own gaps and available documents; national figures are not local estimates.</div>` : `<div class="scope-banner"><strong>${e(localCopy('Acquired evidence, with explicit gaps.','Datos recopilados con vacíos explícitos.','収集済みデータと未収録部分を区別します。'))}</strong> ${e(localCopy(`${coverage.observed} of ${coverage.local} local areas have at least one observation. Coverage varies by indicator and period.`,`${coverage.local} áreas locales registradas, de las cuales ${coverage.observed} tienen al menos una observación. La cobertura varía según el indicador y el período.`,`国内地域${coverage.local}件のうち${coverage.observed}件に観測値があります。収録範囲は指標と期間によって異なります。`))}</div>`;
 }
 function updateBanner() {
   const sourceUpdate=planningSettings(dataset).update;
   const stopped=updateStatus?.status==='stopped'?updateStatus:sourceUpdate?.status==='stopped'?sourceUpdate:null;
-  return stopped?`<p class="notice update-stopped" role="status"><strong>Update stopped — showing the last verified data.</strong> ${e(stopped.message)} Last successful update: ${e(stopped.last_success_at || 'Not recorded')}. Data edition: ${e(dataset.generated_at)}. Checked ${e(stopped.checked_at)}.</p>`:'';
+  return stopped?`<p class="notice update-stopped" role="status"><strong>${e(localCopy('Update stopped — showing the last verified data.','Actualización detenida — se muestran los últimos datos verificados.','更新停止中・最後に確認できたデータを表示しています。'))}</strong> ${e(translateText(stopped.message,language))} ${e(localCopy('Last successful update:','Última actualización correcta:','最終更新成功：'))} ${e(stopped.last_success_at || localCopy('Not recorded','No registrado','未記録'))}. ${e(localCopy('Data edition:','Edición de datos:','データ版：'))} ${e(dataset.generated_at)}. ${e(localCopy('Checked','Comprobado','確認日時'))} ${e(stopped.checked_at)}.</p>`:'';
 }
 function mapPanel({thematic=false,planning=false}={}) {
   const allFeatures=dataset.boundaries?.features || [];
@@ -396,6 +396,20 @@ function planning() {
   (settings.system?'<section class="panel"><h2>Country planning framework</h2><p>'+e(settings.system.label)+' · '+e(settings.system.scope)+'</p><p>'+e(settings.system.cycle)+'</p>'+settings.system.source_ids.map(id=>sourceNote(null,{source_id:id})).join('')+'</section>':'')+
   '<div class="end-actions">'+pageLink('territorial','Review territorial evidence')+pageLink('thematic','Compare across areas')+'</div>';
 }
+function homeNationalPopulation() {
+  const nationalId=dataset.country.national_territory_id;
+  const indicator=dataset.indicators.find(row=>row.display_role==='primary'&&row.series_family==='census'&&
+    dataset.observations.some(observation=>observation.territory_id===nationalId&&observation.indicator_id===row.id&&observedValue(observation)!==null));
+  if(!indicator)return '';
+  const observation=dataset.observations.filter(row=>row.territory_id===nationalId&&row.indicator_id===indicator.id&&observedValue(row)!==null)
+    .sort((a,b)=>String(b.period).localeCompare(String(a.period),'en',{numeric:true}))[0];
+  const source=sourceFor(dataset,indicator);
+  const hierarchy=localLevels(dataset).map(level=>{
+    const count=dataset.territories.filter(area=>area.level===level).length;
+    return `${count} ${translateText(levelLabel(level),language)}`;
+  }).join(' · ');
+  return `<section class="panel home-national-population" aria-label="${e(localCopy('National census population','Población censal nacional','全国の国勢調査人口'))}"><div class="summary-grid three"><article class="summary"><span>${e(localCopy('National census population','Población censal nacional','全国の国勢調査人口'))}</span><strong>${e(fmt(observation.value,indicator))}</strong><small>${e(translateText(indicator.unit,language))} · ${e(observation.reference_date || observation.period)}</small></article><article class="summary"><span>${e(localCopy('Source and scope','Fuente y alcance','出典と対象範囲'))}</span><strong>${e(observation.period)}</strong><small>${source?link(source.url,source.publisher || source.name):e(localCopy('Source not recorded','Fuente no registrada','出典未記録'))}. ${e(translateText(indicator.definition,language))}</small></article><article class="summary"><span>${e(localCopy('Registered local areas','Áreas locales registradas','登録済み国内地域'))}</span><strong>${dataset.territories.length-1}</strong><small>${e(hierarchy)}</small></article></div></section>`;
+}
 function home() {
   if(worldMode()) {
     const root=areaFor(dataset.country.national_territory_id),children=dataset.territories.filter(area=>area.parent_id===root.id);
@@ -414,6 +428,7 @@ function home() {
   }
   const coverage=countCoverage();
   return `<section class="home-intro"><p class="eyebrow">Territorial information and planning</p><h2>Start with an area.<br>Or start with a question.</h2><p>Explore acquired evidence for ${e(dataset.country.name)}, compare like geographic areas when observations are available, and prepare a source-grounded planning outline.</p></section>
+  ${homeNationalPopulation()}
   <div class="entry-grid"><a class="entry-card" href="${e(pageUrl('territorial'))}"><span class="entry-number">01</span><h2>Explore an area</h2><p>Geographic selection, basic facts and sector evidence in one territorial diagnostic.</p><strong>Open territorial diagnostic →</strong></a><a class="entry-card" href="${e(pageUrl('thematic'))}"><span class="entry-number">02</span><h2>Compare a theme</h2><p>Choose an indicator and period. Check national context, local coverage, maps and rankings.</p><strong>Open thematic diagnostic →</strong></a></div>
   <section class="panel home-planning"><div><h2>Turn evidence into planning work</h2><p>Find acquired documents for the same area and download a generic, unapproved planning base with explicit evidence gaps.</p></div>${pageLink('planning','Open planning resources','button')}</section>
   <div class="summary-grid three"><article class="summary"><span>Acquired indicator definitions</span><strong>${dataset.indicators.length}</strong><small>Values and periods vary by indicator</small></article><article class="summary"><span>Reference local areas</span><strong>${coverage.local}</strong><small>${coverage.observed} have one or more acquired observations</small></article><article class="summary"><span>Data edition</span><strong class="date-value">${e(dataset.generated_at.slice(0,10))}</strong><small>Collection status: ${e(statusLabel(dataset.collection?.status))}</small></article></div>
