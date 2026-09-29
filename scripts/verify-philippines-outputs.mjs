@@ -15,13 +15,17 @@ const datasetHash=hash(datasetBytes);
 if(data.country?.id!=='PHL')throw Error('Expected Philippines');
 const census='PHL_POPCEN_2024_DOMESTIC';
 const regions=data.territories.filter(t=>t.level==='region');
+const provinces=data.territories.filter(t=>t.level==='province');
 if(regions.length!==18||regions.reduce((s,t)=>s+(data.observations.find(o=>o.territory_id===t.id&&o.indicator_id===census)?.value||0),0)!==112727776)
   throw Error('Regional coverage/reconciliation failed');
+if(provinces.length!==82||provinces.reduce((s,t)=>s+(data.observations.find(o=>o.territory_id===t.id&&o.indicator_id===census)?.value||0),0)!==88375900)
+  throw Error('Province code/population audit failed');
 if(comparisonSet(data,'PHL').members.length!==18)throw Error('National comparison lacks 18 regions');
 if(comparisonSet(data,'PHL:PSGC:0600000000').members.length!==0)throw Error('Incomplete Region VI city comparison was exposed');
 const cases=[
   {id:'PHL',stem:'national',expected:112727776,children:18},
   {id:'PHL:PSGC:0600000000',stem:'western-visayas',expected:4861911,children:0},
+  {id:'PHL:PSGC:0603000000',stem:'iloilo-province',expected:2082616,children:0},
   {id:'PHL:PSGC:0631000000',stem:'iloilo-city',expected:473728,children:0}
 ];
 const out=path.join(project,'evidence','output-verification',datasetHash.slice(0,12));
@@ -57,7 +61,7 @@ for(const item of cases){
 }
 const receipt={status:'partial_saved_generator_output_check',checked_at:new Date().toISOString(),
   dataset_sha256:datasetHash,checks,
-  limitations:['Browser download and physical print were not verified.','Current official polygons and complete municipal/city catalogue were not acquired.','Iloilo plan body and approval are unverified; link only.']};
+  limitations:['Browser download and physical print were not verified.','Current official polygons and complete municipal/city catalogue were not acquired.','Province totals omit independent HUCs and cannot be substituted for regional observations.','Iloilo plan body and approval are unverified; link only.']};
 const receiptPath=path.join(project,'evidence','PHL_OUTPUT_VERIFICATION_'+datasetHash.slice(0,12)+'.json');
 await writeFile(receiptPath,JSON.stringify(receipt,null,2)+'\n');
 console.log(JSON.stringify({dataset_sha256:datasetHash,receipt:path.relative(project,receiptPath),checks:checks.map(c=>({territory_id:c.territory_id,expected_population:c.expected_population,comparison_members:c.comparison_members}))},null,2));

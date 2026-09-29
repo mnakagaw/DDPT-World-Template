@@ -1723,6 +1723,14 @@
           "reuse_note": "PSA displayed 31 July 2025 PSGC edition with 18 coded regions and 2024 POPCEN values. AreaData saved a rendered-text excerpt only. Original XLSX/HTML, current 2026 full code register and polygons require Kit's own review; no count or boundary is transferred."
         },
         {
+          "id": "psa-psgc-2026-provinces",
+          "role": "administrative_codes",
+          "authority_type": "official_national",
+          "geographic_levels": ["82 provinces"],
+          "formats": ["HTML"],
+          "reuse_note": "Official PSGC provinces page supplied 82 ten-digit province codes and 2024 POPCEN values in a rendered-text capture checked 29 September 2026. Exact page edition and original masterlist are unacquired. Provinces omit separately coded independent HUCs, so province sums are not regional totals or complete planning-unit cover."
+        },
+        {
           "id": "psa-popcen-2024-national",
           "role": "census_results",
           "authority_type": "official_national",

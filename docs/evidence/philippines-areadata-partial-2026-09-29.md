@@ -4,14 +4,15 @@
 
 - Local project: `generated/philippines-areadata-20260929` (ignored/private).
 - Producer: `scripts/adapt-philippines-psa-regions.mjs`. Rebuild with `node scripts/build-country.mjs --project generated/philippines-areadata-20260929`.
-- Scope: one country, all 18 PSA PSGC regions dated 31 July 2025, and **one** City of Iloilo planning case. The 2024 POPCEN counts are official published figures; WDI national series remain separate.
-- This is **not a completed Philippine local-planning edition**. Province, HUC, city, municipality and barangay coverage, dated current polygons, source-table audit, plan/finance/evaluation content, browser acceptance and independent audit remain open. No Hosting/Public release is authorized by this candidate.
+- Scope: one country, all 18 PSA PSGC regions dated 31 July 2025, 82 provinces from the PSA page checked 29 September 2026, and **one** City of Iloilo planning case. The 2024 POPCEN counts are official published figures; WDI national series remain separate.
+- This is **not a completed Philippine local-planning edition**. Province codes/population are present, but HUC, full city, municipality and barangay coverage, dated current polygons, source-table audit, plan/finance/evaluation content, browser acceptance and independent audit remain open. No Hosting/Public release is authorized by this candidate.
 
 ## Directly checked official sources
 
 | Source | Direct observation in this candidate | Acquisition limit |
 | --- | --- | --- |
 | [PSA PSGC regions](https://psa.gov.ph/classification/psgc/regions) | 18 ten-digit region codes and 18 2024 POPCEN population values; captured as a rendered-text excerpt, normalized rows, and hashes in the local project's `raw/` | Origin HTML and official XLSX were blocked by the PSA site challenge; 31 July 2025 is the displayed PSGC edition, not a verified 30 June 2026 full register |
+| [PSA PSGC provinces](https://psa.gov.ph/classification/psgc/provinces) | 82 ten-digit province codes and 2024 POPCEN population values; captured rendered-text excerpt and normalized rows | Exact page edition not explicit in capture; origin HTML/masterlist blocked. Province sum omits independent HUCs, so no region value is derived from it |
 | [PSA official 2024 POPCEN release](https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president) | 112,729,484 national total as of 1 July 2024; includes persons in Philippine missions abroad | Table A/B XLSX linked but direct local retrieval blocked; no full row/field inventory |
 | [PSA domestic-population explanation](https://psa.gov.ph/statistics/population-and-housing/node/1684081344) | 112,727,776 in Philippine territory plus 1,708 in missions abroad. The 18 recorded regions sum exactly to 112,727,776. | Indexed official excerpt captured; direct origin body not retained |
 | [PSA City of Iloilo PSGC record](https://psa.gov.ph/classification/psgc/barangays/0631000000) | PSGC `0631000000`, correspondence `063022000`, 2024 POPCEN population 473,728 | One city case only; Region VI lower-area coverage is explicitly incomplete |
@@ -26,18 +27,18 @@ PSA web pages state CC BY 4.0 unless otherwise stated. The captured rendered exc
 
 ## Meaning and geography
 
-- The domestic POPCEN series uses one definition across national, region and Iloilo city: people enumerated within Philippine territory. Its national value is 112,727,776. A separate national-only indicator holds 112,729,484 including missions abroad. Neither series is merged with WDI midyear estimates.
+- The domestic POPCEN series uses one definition across national, region, province and Iloilo city: people enumerated within Philippine territory. Its national value is 112,727,776. A separate national-only indicator holds 112,729,484 including missions abroad. Neither series is merged with WDI midyear estimates.
 - The generated 2020 geoBoundaries ADM1 shapes do not describe the displayed 18-region register after the 2024 Negros Island Region creation or later changes. They remain in private raw references; the adopted dataset has zero polygon joins. See [PSA NIR update](https://psa.gov.ph/content/second-quarter-2024-psgc-updates-creation-negros-island-region-and-correction-names-two).
-- Country internal comparison registers all 18 regions. Region VI has only one registered city case; `analysis.incomplete_child_cover_ids` suppresses a false one-city comparison for the whole region. Iloilo city is a local planning case, not evidence of national municipal coverage.
+- Country internal comparison registers all 18 regions. All 18 regions have `analysis.incomplete_child_cover_ids`, because the 82 provinces and one registered city case do not form a complete HUC/city/municipality register. Province totals sum to 88,375,900, which is less than the domestic regional sum and must not be displayed as a national or regional subtotal. Iloilo city is a local planning case, not evidence of national municipal coverage.
 - Both official population counts and 2024 WDI national population may appear in the data, with separate indicator IDs, source URLs, definitions and missing local WDI cells. No national value is copied into a local observation.
 
 ## Evidence and acceptance
 
-The adapter validates the 18 rows against the saved PSA rendered excerpt and requires the domestic + abroad reconciliation. `node scripts/validate-country.mjs` and `node scripts/build-country.mjs` succeeded; the validator leaves two explicit source-terms warnings for the linked Gazette/CDP sources. `scripts/verify-philippines-outputs.mjs` saves and reads generator-produced diagnostic CSV/HTML, planning HTML and evidence CSV for the national area, Region VI and Iloilo city. It verifies the selected population, 18 national members, zero Region VI members and Iloilo plan link. This does not verify browser downloads or printing.
+The adapter validates the 18 region and 82 province rows against saved PSA rendered excerpts and requires domestic + abroad reconciliation. `node scripts/validate-country.mjs` and `node scripts/build-country.mjs` succeeded; the validator leaves two explicit source-terms warnings for the linked Gazette/CDP sources. `scripts/verify-philippines-outputs.mjs` saves and reads generator-produced diagnostic CSV/HTML, planning HTML and evidence CSV for the national area, Region VI, Iloilo province and Iloilo city. It verifies the selected population, 18 national members, zero incomplete Region VI members and Iloilo plan link. This does not verify browser downloads or printing.
 
 The 42-scenario country acceptance is **0 complete**. The app browser connection failed before a page could be inspected, so screen selection, URL restore, downloads, responsive layout and print remain untested. Independent country audit is pending. The candidate must remain local/private; do not infer an `ACCEPT` verdict from schema validation or previous Kit deployment.
 
-The local HTTP preview returned 200 for the five page entry points, dataset JSON and app module; the served JSON had 20 territories, 333 observations and zero polygons. This verifies file delivery only, not interaction or rendering. The preview server was stopped.
+The local HTTP preview returned 200 for the five page entry points, dataset JSON and app module; the served JSON had 102 territories, 415 observations and zero polygons. File delivery does not verify interaction or rendering. The preview server was stopped.
 
 ## Source-feedback custody
 
