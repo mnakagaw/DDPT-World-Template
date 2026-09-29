@@ -2100,6 +2100,14 @@
       "geographic_levels": ["province", "city", "municipality", "barangay"], "reference_periods": ["2024-07-29"], "formats": ["PDF"],
       "reuse_note": "Official DBM circular location and subject were verified, but direct PDF acquisition returned 403. Exact forms, effective rules and local application must be checked before producing a Philippine plan template.",
       "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md"
+    },
+    {
+      "iso3": "PHL", "id": "dilg-jmc-2024-01-pdf-alternate", "role": "planning_law", "checked_at": "2026-09-29",
+      "title": "DILG-hosted 2024 joint local-planning and budgeting circular PDF", "publisher": "Department of the Interior and Local Government",
+      "url": "https://dilg.gov.ph/PDF_File/issuances/joint_circulars/dilg-joincircular-2024730_1d73d76f25.pdf", "authority_type": "official_national",
+      "geographic_levels": ["province", "city", "municipality", "barangay"], "reference_periods": ["2024-07-29"], "formats": ["PDF"],
+      "reuse_note": "DILG Bohol's official joint-circular registry lists this DILG-hosted PDF for JMC No. 1 s. 2024. Direct acquisition from dilg.gov.ph timed out, and the DBM-hosted copy returned 403. Treat as an alternate source location only; original clauses, forms, rights and locality applicability have not been inspected.",
+      "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md"
     }
   ]
 }
