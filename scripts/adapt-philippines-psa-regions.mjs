@@ -193,19 +193,21 @@ data.collection.notes=[...new Set([...data.collection.notes,...addedNotes])];
 for(const gap of data.gaps){
   if(gap.category==='subnational_statistics'){
     gap.status='partial';
-    gap.description='2024 POPCEN population is observed for 18 regions, 82 provinces and one city; other local themes and the full city/municipality register are not collected.';
+    gap.detail='2024 POPCEN population is observed for 18 regions, 82 provinces and one city; other local themes and the full city/municipality register are not collected.';
+    delete gap.description;
     gap.next_action='Acquire official local census and sector tables, then audit every value and code before adding observations.';
   }
   if(gap.category==='planning_documents'){
     gap.status='partial';
-    gap.description='One City of Iloilo CDP location is linked, but its PDF body, approval, budget, spending and evaluation were not acquired.';
+    gap.detail='One City of Iloilo CDP location is linked, but its PDF body, approval, budget, spending and evaluation were not acquired.';
+    delete gap.description;
     gap.next_action='Acquire the official plan and distinct investment, budget, spending and evaluation originals for matched authorities.';
   }
 }
 data.gaps=data.gaps.filter(g=>g.id!=='phl-current-polygon-and-local-cover');
 data.gaps.push({
   id:'phl-current-polygon-and-local-cover',category:'geography',
-  description:'Current polygons and complete HUC/city/municipality PSGC hierarchy are not joined; 18 regions and 82 provinces have official codes, but 2020 provider ADM1 geometry is not used for current counts.',
+  detail:'Current polygons and complete HUC/city/municipality PSGC hierarchy are not joined; 18 regions and 82 provinces have official codes, but 2020 provider ADM1 geometry is not used for current counts.',
   status:'open',next_action:'Acquire dated authoritative current boundary and full PSGC/POPCEN Table B, then reconcile NIR and Sulu reassignment.'
 });
 await writeFile(dataPath,JSON.stringify(data,null,2)+'\n');

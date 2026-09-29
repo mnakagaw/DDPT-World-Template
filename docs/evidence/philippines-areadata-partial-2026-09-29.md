@@ -43,12 +43,12 @@ The local HTTP preview returned 200 for the five page entry points, dataset JSON
 ## Source-feedback custody
 
 - AreaData producer selection and exporter commit: `817825fdcc155c9b313120a7b0ed1b8f52ff58e9`; the Kit-supported poverty-table role was corrected in `0a5bb07377593d76836f9dc2f934e6e1f4e6b539`.
-- AreaData feedback bundle after that correction: `evidence/KIT_SOURCE_FEEDBACK.json`, committed at `c8abee6` on `codex/philippines-areadata-20260929`. It contains 11 PHL official-location leads, all at `official_location_identified`, alongside 211 unchanged earlier leads. The PHL-only import bundle is retained in the ignored local project's `evidence/`.
-- Census Dashboard Kit import: 11 inserted into `config/areadata-source-feedback.json`, commit `f429629` on `codex/philippines-source-feedback-20260929`. Repeated dry-run found 11 unchanged; Kit `npm run check`, `npm test` (173/173), and `npm run verify:kit` passed. The import transfers discovery locations only, never observations, assets, or a country acceptance verdict.
+- The first 11 PHL source leads were bundled at `c8abee6`. The 82-province producer update is `f5719d7`; the current `evidence/KIT_SOURCE_FEEDBACK.json` bundle at `9b8c2ce` contains 12 PHL official-location leads, all at `official_location_identified`, alongside 211 unchanged earlier leads. PHL-only and province-only import bundles are retained in the ignored local project's `evidence/`.
+- Census Dashboard Kit import: the first 11 inserted at `f429629`, and the additional province lead inserted at `7e4e7df` on `codex/philippines-source-feedback-20260929`. Repeated dry-runs found each imported source unchanged; Kit `npm run check`, `npm test` (173/173), and `npm run verify:kit` passed after the province addition. The import transfers discovery locations only, never observations, assets, or a country acceptance verdict.
 
 ## Next concrete steps
 
-1. Obtain PSA 2024 POPCEN Table B and the 30 June 2026 PSGC release through normal authorized access, preserve original hashes, inventory every sheet/table/field, and reconcile all province, HUC, city and municipality codes plus changes.
+1. Obtain PSA 2024 POPCEN Table B and the 30 June 2026 PSGC release through normal authorized access, preserve original hashes, inventory every sheet/table/field, and reconcile the 82 adopted province rows plus all HUC, city and municipality codes and changes.
 2. Acquire a dated current boundary edition and compare NIR, BARMM/Sulu and other changes before polygon joins.
 3. Acquire actual city/municipal plan, annual investment program, adopted budget, expenditure and evaluation originals for a matched representative authority. Keep amounts and official approval separate.
 4. Complete six-theme source review, full catalogue disposition, 42 applicable scenarios and separate independent audit. Publish only after `ACCEPT` and a scoped release instruction.
