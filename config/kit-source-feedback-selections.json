@@ -1791,6 +1791,26 @@
           "reuse_note": "Official OpenSTAT 2024 household measures. AreaData joined 136 targets with an explicit Isabela City code crosswalk; its special-area statistical aggregate was withheld. Kit must repeat original acquisition, field and geography review."
         },
         {
+          "id": "psa-openstat-popcen-local-2024", "role": "census_results", "authority_type": "official_national",
+          "geographic_levels": ["national", "region", "province", "city", "municipality", "barangay source rows"], "formats": ["HTML", "JSON API"],
+          "reuse_note": "New AreaData lead: official PSA 2024 POPCEN catalogue with 24 archived tables. Eighteen regional tables include household population and household counts for 1,742 matched subnational targets; barangay rows remain source only. Kit must reacquire originals, validate code edition and rights, and must not treat this as an independent country acceptance."
+        },
+        {
+          "id": "psa-openstat-popcen-density-2024", "role": "table_catalog", "authority_type": "official_national",
+          "geographic_levels": ["national", "region", "province", "city", "municipality"], "formats": ["JSON API"],
+          "reuse_note": "New AreaData lead: official POPCEN Table 022 reports population, land area and density. Published land area refers mainly to a 2019 LMB masterlist and later certifications; it is not a verified current legal polygon area. Recheck method, rounding and geography before use."
+        },
+        {
+          "id": "psa-openstat-popcen-urban-2024", "role": "table_catalog", "authority_type": "official_national",
+          "geographic_levels": ["national", "region", "province", "city", "municipality"], "formats": ["JSON API"],
+          "reuse_note": "New AreaData lead: official POPCEN Table 024 reports urban population and percent urban. Urban classification differs from administrative city status; Isabela City source code 0990100000 requires an explicit PSGC crosswalk."
+        },
+        {
+          "id": "psa-openstat-popcen-growth-2024", "role": "table_catalog", "authority_type": "official_national",
+          "geographic_levels": ["national", "region", "province", "city", "municipality"], "formats": ["JSON API"],
+          "reuse_note": "New AreaData lead: official POPCEN Table 021 reports census counts and annual population growth. Keep 2020-2024 interval and 2024 end date explicit; rates cannot be averaged across territories. Isabela City uses a source-code crosswalk."
+        },
+        {
           "id": "psa-openstat-sdg-education-2024", "role": "table_catalog", "authority_type": "official_national",
           "geographic_levels": ["national", "18 regions"], "formats": ["JSON API"],
           "reuse_note": "2024 school completion rates for three levels and both sexes use a revised regional grouping; 2025 query cells are unpublished. Preserve method, sex and level distinctions; no values transfer."
