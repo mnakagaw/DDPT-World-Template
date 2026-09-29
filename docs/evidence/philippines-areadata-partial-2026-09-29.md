@@ -26,6 +26,8 @@ The DILG alternate lead was exported from AreaData selection commit `cecbf1f9531
 
 Independent follow-up `evidence/INDEPENDENT_AUDIT_AGE_SEX_I18N_FOLLOWUP_4DD2AC8.md` repeated the 7,809-cell arithmetic check directly from the archived original and matched the 38 sex-sum and 19 age-sum discrepancies. It also exercised 12 English, Japanese and Spanish Davao thematic/planning browser views with no representative value or document regression. The remaining English in comparison cards, legends and document states means M2 is still incomplete; M3/M4 and the overall `REJECT` remain. After that finding, the source-inventory generator was changed to bind the age-table non-adoption reason to the matching original-file SHA and arithmetic receipt. The local table and field inventories have been regenerated with that reason.
 
+The current UI copy work adds Japanese and Spanish names, definitions, units, populations and themes for all 29 adopted indicators, including the 12 international reference series. A direct dictionary check found zero untranslated values in those five indicator fields for either locale, and a headless Chrome Davao/database check displayed translated entries. Generic database instructions and selected dynamic planning/thematic text were also translated. This is a narrow field/representative-page result, not a three-language full-page or output acceptance: source notes, some comparison and planning text, exports and long-page layout still require review.
+
 ## Prior candidate snapshots
 
 ## Scope and result
