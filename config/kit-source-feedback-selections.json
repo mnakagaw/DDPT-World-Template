@@ -1769,6 +1769,61 @@
           "geographic_levels": ["City of Iloilo"],
           "formats": ["PDF"],
           "reuse_note": "Official plan PDF URL/title identified; direct local fetch returned HTTP 403. AreaData attaches a link only. No plan body, approved status, budget estimate, actual spending or evaluation transfers."
+        },
+        {
+          "id": "psa-psgc-2025-cities", "role": "administrative_codes", "authority_type": "official_national",
+          "geographic_levels": ["149 cities"], "formats": ["HTML"],
+          "reuse_note": "AreaData captured all 149 PSA city code and 2024 POPCEN rows from rendered official text, not the original masterlist. Recheck exact PSGC edition and city classification before Kit adoption; no observation transfers."
+        },
+        {
+          "id": "psa-psgc-2025-municipalities", "role": "administrative_codes", "authority_type": "official_national",
+          "geographic_levels": ["1493 municipalities"], "formats": ["HTML"],
+          "reuse_note": "AreaData captured all 1493 coded municipality rows from rendered official text, including eight BARMM Special Geographic Area municipalities. Kit must reacquire the source masterlist and independently audit codes and 2024 counts."
+        },
+        {
+          "id": "psa-psgc-2025-city-types", "role": "administrative_codes", "authority_type": "official_national",
+          "geographic_levels": ["33 highly urbanized cities", "5 independent component cities", "111 component cities"], "formats": ["HTML"],
+          "reuse_note": "PSA HUC classification URL is the bundle lead; AreaData's private extraction also records separate ICC and CC URLs. Recheck all three classifications and the code edition."
+        },
+        {
+          "id": "psa-openstat-popcen-households-2024", "role": "census_results", "authority_type": "official_national",
+          "geographic_levels": ["national", "region", "province", "city", "municipality"], "formats": ["JSON API"],
+          "reuse_note": "Official OpenSTAT 2024 household measures. AreaData joined 136 targets with an explicit Isabela City code crosswalk; its special-area statistical aggregate was withheld. Kit must repeat original acquisition, field and geography review."
+        },
+        {
+          "id": "psa-openstat-sdg-education-2024", "role": "table_catalog", "authority_type": "official_national",
+          "geographic_levels": ["national", "18 regions"], "formats": ["JSON API"],
+          "reuse_note": "2024 school completion rates for three levels and both sexes use a revised regional grouping; 2025 query cells are unpublished. Preserve method, sex and level distinctions; no values transfer."
+        },
+        {
+          "id": "psa-openstat-ndhs-u5m-2025", "role": "table_catalog", "authority_type": "official_national",
+          "geographic_levels": ["national", "18 regions"], "formats": ["JSON API"],
+          "reuse_note": "2025 NDHS under-five mortality is a retrospective survey rate, not the 2024 POPCEN count or a civil-registration total. Recheck source method and region edition."
+        },
+        {
+          "id": "psa-openstat-grdp-2025", "role": "table_catalog", "authority_type": "official_national",
+          "geographic_levels": ["national", "18 regions"], "formats": ["JSON API"],
+          "reuse_note": "2025 GRDP has separate current-price and constant-2018-price measures, both in thousand Philippine pesos. Recheck release edition and Sulu/Region IX geography before reuse."
+        },
+        {
+          "id": "psa-openstat-water-2024p", "role": "table_catalog", "authority_type": "official_national",
+          "geographic_levels": ["national", "region"], "formats": ["JSON API"],
+          "reuse_note": "2024 provisional basic drinking-water family rate: AreaData adopted national only. NIR cell is unpublished and other regional values need post-NIR geographic reconciliation."
+        },
+        {
+          "id": "davao-city-cdp-2023-2028", "role": "plans_budgets_implementation_evaluation", "authority_type": "official_subnational",
+          "geographic_levels": ["City of Davao"], "formats": ["PDF"],
+          "reuse_note": "Official city PDF contains CDP, adoption ordinance and mayor approval, plus planned investment and financial sections. It is not evidence of actual spending or official evaluation. Kit should inspect original PDF and rights independently."
+        },
+        {
+          "id": "olongapo-city-revised-aip-2025", "role": "plans_budgets_implementation_evaluation", "authority_type": "official_subnational",
+          "geographic_levels": ["City of Olongapo"], "formats": ["PDF"],
+          "reuse_note": "Official Resolution No. 85 approves the revised 2025 AIP in council; attached line-item amounts are planned investments, not actual expenditure. Kit should independently inspect original and approval details."
+        },
+        {
+          "id": "dilg-region1-cdp-toolkit-2022", "role": "planning_guidance", "authority_type": "official_subnational",
+          "geographic_levels": ["Region I cities and municipalities"], "formats": ["PDF"],
+          "reuse_note": "DILG Region 1 2022 facilitator toolkit original was acquired privately. Its copyright prohibits redistribution without permission. The 502-page toolkit is regional guidance, not a verified nationally mandatory form; recheck the 2024 harmonization circular and local applicability."
         }
       ]
     }
@@ -1983,6 +2038,38 @@
       "geographic_levels": ["national", "18 regions", "province and HUC data referenced"],
       "reference_periods": ["2018", "2021", "2023"], "formats": ["PDF"],
       "reuse_note": "Official release gives revised 2023 family poverty statistics and NIR adjustments. Direct PDF fetch returned 403. Footnotes indicate 2023 Region IX/BARMM coverage differs from 2025 PSGC, so do not join those values to current region IDs or 2024 counts without a boundary crosswalk.",
+      "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md"
+    },
+    {
+      "iso3": "PHL", "id": "openstat-poverty-incidence-2023", "role": "table_catalog", "checked_at": "2026-09-29",
+      "title": "PSA OpenSTAT 2023 poverty incidence table", "publisher": "Philippine Statistics Authority",
+      "url": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/1F/FY/0041F3DF02A.px", "authority_type": "official_national",
+      "geographic_levels": ["national", "region", "province"], "reference_periods": ["2023"], "formats": ["JSON API"],
+      "reuse_note": "AreaData acquired the original query slice but adopted no values because historic NIR/Sulu/BARMM and province/HUC geography are not reconciled to the 2025 PSGC hierarchy. Reinspect metadata, footnotes and original release.",
+      "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md"
+    },
+    {
+      "iso3": "PHL", "id": "openstat-electricity-access", "role": "table_catalog", "checked_at": "2026-09-29",
+      "title": "PSA OpenSTAT SDG electricity access candidate", "publisher": "Philippine Statistics Authority",
+      "url": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/3I/G07/0013I5D0711.px", "authority_type": "official_national",
+      "geographic_levels": ["national", "region"], "reference_periods": ["2024", "2025"], "formats": ["JSON API"],
+      "reuse_note": "AreaData acquired a query slice whose selected 2024/2025 cells are unpublished and region list omits NIR. No value was adopted; verify a later publication and geographic edition.",
+      "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md"
+    },
+    {
+      "iso3": "PHL", "id": "openstat-unemployment", "role": "table_catalog", "checked_at": "2026-09-29",
+      "title": "PSA OpenSTAT SDG unemployment candidate", "publisher": "Philippine Statistics Authority",
+      "url": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/3I/G08/0053I3A0852.px", "authority_type": "official_national",
+      "geographic_levels": ["national", "region"], "reference_periods": ["2024", "2025"], "formats": ["JSON API"],
+      "reuse_note": "AreaData acquired a query slice whose selected 2024/2025 cells are unpublished and region list omits NIR. No value was adopted; verify a later publication and geographic edition.",
+      "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md"
+    },
+    {
+      "iso3": "PHL", "id": "dilg-dhsud-neda-dbm-dof-jmc-2024-01", "role": "planning_law", "checked_at": "2026-09-29",
+      "title": "2024 joint local-planning and budgeting harmonization circular", "publisher": "DILG, DHSUD, NEDA, DBM and DOF",
+      "url": "https://www.dbm.gov.ph/wp-content/uploads/Issuances/2024/Joint-Memorandum-Circular/DILG-DHSUD-NEDA-DBM-DOF-JMC-No-1-s-2024.pdf", "authority_type": "official_national",
+      "geographic_levels": ["province", "city", "municipality", "barangay"], "reference_periods": ["2024-07-29"], "formats": ["PDF"],
+      "reuse_note": "Official DBM circular location and subject were verified, but direct PDF acquisition returned 403. Exact forms, effective rules and local application must be checked before producing a Philippine plan template.",
       "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md"
     }
   ]

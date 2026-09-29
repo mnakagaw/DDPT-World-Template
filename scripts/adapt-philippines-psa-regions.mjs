@@ -14,14 +14,27 @@ const nationalPath=join(raw,'psa-2024-popcen-national-web-excerpt.txt');
 const cityPath=join(raw,'psa-psgc-iloilo-city-web-excerpt.txt');
 const provincePath=join(raw,'psa-psgc-provinces-2026-web-excerpt.txt');
 const provinceExtractPath=join(raw,'psa-psgc-provinces-2026-extraction.json');
+const citiesPath=join(raw,'psa-psgc-cities-2025-web-excerpt.txt');
+const citiesExtractPath=join(raw,'psa-psgc-cities-2025-extraction.json');
+const municipalitiesPath=join(raw,'psa-psgc-municipalities-2025-web-excerpt.txt');
+const municipalitiesExtractPath=join(raw,'psa-psgc-municipalities-2025-extraction.json');
+const cityTypesPath=join(raw,'psa-psgc-city-types-2025-web-excerpt.txt');
+const cityTypesExtractPath=join(raw,'psa-psgc-city-types-2025-extraction.json');
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 const sourceFile=async path=>{const bytes=await readFile(path);return {sha256:sha(bytes),bytes:bytes.length}};
-const [extractText,excerpt,domestic,national,city,provinceExcerpt,provinceExtractText,dataText]=await Promise.all([
+const [extractText,excerpt,domestic,national,city,provinceExcerpt,provinceExtractText,
+  citiesExcerpt,citiesExtractText,municipalitiesExcerpt,municipalitiesExtractText,
+  cityTypesExcerpt,cityTypesExtractText,dataText]=await Promise.all([
   readFile(extractPath,'utf8'),readFile(excerptPath,'utf8'),readFile(domesticPath,'utf8'),
   readFile(nationalPath,'utf8'),readFile(cityPath,'utf8'),readFile(provincePath,'utf8'),
-  readFile(provinceExtractPath,'utf8'),readFile(dataPath,'utf8')
+  readFile(provinceExtractPath,'utf8'),readFile(citiesPath,'utf8'),readFile(citiesExtractPath,'utf8'),
+  readFile(municipalitiesPath,'utf8'),readFile(municipalitiesExtractPath,'utf8'),
+  readFile(cityTypesPath,'utf8'),readFile(cityTypesExtractPath,'utf8'),readFile(dataPath,'utf8')
 ]);
 const extract=JSON.parse(extractText),provinceExtract=JSON.parse(provinceExtractText),data=JSON.parse(dataText);
+const citiesExtract=JSON.parse(citiesExtractText);
+const municipalitiesExtract=JSON.parse(municipalitiesExtractText);
+const cityTypesExtract=JSON.parse(cityTypesExtractText);
 if(data.country?.id!=='PHL')throw Error('Expected PHL project');
 if(extract.rows.length!==18 || new Set(extract.rows.map(r=>r.code)).size!==18)throw Error('PSGC region count/code uniqueness failed');
 for(const row of extract.rows){
@@ -49,6 +62,57 @@ for(const row of provinceExtract.rows){
 }
 if(provinceExtract.rows.reduce((sum,row)=>sum+row.population,0)!==88375900)
   throw Error('PSGC province checksum total changed; review the source edition');
+const localSources=[
+  {rows:citiesExtract.rows,excerpt:citiesExcerpt,count:149,url:'https://psa.gov.ph/classification/psgc/cities'},
+  {rows:municipalitiesExtract.rows,excerpt:municipalitiesExcerpt,count:1493,url:'https://psa.gov.ph/classification/psgc/municipalities'}
+];
+for(const source of localSources){
+  if(source.rows.length!==source.count || !source.excerpt.includes(source.url) ||
+     new Set(source.rows.map(row=>row.code)).size!==source.count)
+    throw Error('PSGC city/municipality source count or code uniqueness failed: '+source.url);
+  const lines=source.excerpt.split(/\r?\n/);
+  for(const row of source.rows){
+    if(!/^\d{10}$/.test(row.code) || !Number.isInteger(row.population) || row.population<=0)
+      throw Error('Invalid PSGC city/municipality row: '+row.code);
+    const found=lines.some(line=>{
+      const parts=line.split('|').map(part=>part.trim());
+      return parts.length===5 && parts[0].includes('†'+row.name+'') &&
+        parts[1]===row.code && parts[2]===(row.correspondence_code||'') &&
+        parts[3]===row.income_class && Number(parts[4])===row.population;
+    });
+    if(!found)throw Error('Local row absent from official rendered excerpt: '+row.code);
+  }
+}
+const cityCodes=new Set(citiesExtract.rows.map(row=>row.code));
+const localCodes=new Set([...cityCodes,...municipalitiesExtract.rows.map(row=>row.code)]);
+if(localCodes.size!==1642 || !cityCodes.has('0631000000'))
+  throw Error('PSGC local code inventory is incomplete');
+const cityTypes=cityTypesExtract.codes;
+const cityTypeSets=Object.fromEntries(Object.entries(cityTypes).map(([kind,codes])=>[kind,new Set(codes)]));
+if(cityTypes.huc.length!==33 || cityTypes.icc.length!==5 || cityTypes.cc.length!==111 ||
+   new Set([...cityTypes.huc,...cityTypes.icc,...cityTypes.cc]).size!==149 ||
+   ![...cityCodes].every(code=>Object.values(cityTypeSets).some(set=>set.has(code))))
+  throw Error('PSGC city-type categories do not partition all cities');
+for(const [kind,codes] of Object.entries(cityTypes)){
+  if(!cityTypesExcerpt.includes(cityTypesExtract.sources[kind]) ||
+     !codes.every(code=>cityTypesExcerpt.includes(' | '+code+' ')))
+    throw Error('PSGC city-type source excerpt mismatch: '+kind);
+}
+const allLocalRows=[...citiesExtract.rows,...municipalitiesExtract.rows];
+if(allLocalRows.reduce((sum,row)=>sum+row.population,0)!==regionalTotal)
+  throw Error('All city/municipality populations do not reconcile to domestic population');
+for(const region of extract.rows){
+  const sum=allLocalRows.filter(row=>row.code.slice(0,2)===region.code.slice(0,2))
+    .reduce((total,row)=>total+row.population,0);
+  if(sum!==region.population)throw Error('PSGC local population does not reconcile to region '+region.code);
+}
+const provincePrefixSet=new Set(provinceExtract.rows.map(row=>row.code.slice(0,5)));
+const provinceChildren=row=>allLocalRows.filter(local=>
+  local.code.slice(0,5)===row.code.slice(0,5) && !cityTypeSets.huc.has(local.code));
+for(const province of provinceExtract.rows){
+  const sum=provinceChildren(province).reduce((total,row)=>total+row.population,0);
+  if(sum!==province.population)throw Error('PSGC local population does not reconcile to province '+province.code);
+}
 if(regionalTotal!==112727776||extract.national_published!==112729484||
    extract.national_published-regionalTotal!==1708||
    !domestic.includes('112,727,776')||!domestic.includes('1,708')||
@@ -73,13 +137,28 @@ data.territories.push(...provinceExtract.rows.map(row=>({
   boundary_version:null,source_id:'psa-psgc-2026-provinces',
   reconciliation_status:'official_code_and_population_verified_polygon_unavailable'
 })));
-data.territories.push({
-  id:prefix+'0631000000',name:'City of Iloilo',level:'city',type:'city',
-  parent_id:prefix+'0600000000',official_code:'0631000000',
-  correspondence_code:'063022000',code_system:'PSGC 10-digit',code_edition:'2025-07-31',
-  boundary_version:null,source_id:'psa-psgc-2025-iloilo-city',
-  reconciliation_status:'official_code_and_population_verified_polygon_unavailable'
-});
+const parentId=row=>{
+  const provincePrefix=row.code.slice(0,5);
+  return cityTypeSets.huc.has(row.code) || !provincePrefixSet.has(provincePrefix)
+    ? prefix+row.code.slice(0,2)+'00000000'
+    : prefix+provincePrefix+'00000';
+};
+data.territories.push(...allLocalRows.map(row=>{
+  const city=cityCodes.has(row.code);
+  const cityType=city ? Object.entries(cityTypeSets).find(([,codes])=>codes.has(row.code))?.[0] : null;
+  return {
+    id:prefix+row.code,name:row.name,level:city?'city':'municipality',type:city?'city':'municipality',
+    parent_id:parentId(row),official_code:row.code,
+    correspondence_code:row.correspondence_code,code_system:'PSGC 10-digit',
+    code_edition:'2025-07-31',boundary_version:null,
+    city_classification:cityType,
+    statistical_parent_note:cityType==='icc'
+      ? 'Provincial 2024 POPCEN table includes this independent component city; its city government remains a separate planning authority.'
+      : null,
+    source_id:city?'psa-psgc-2025-cities':'psa-psgc-2025-municipalities',
+    reconciliation_status:'official_code_and_population_verified_polygon_unavailable'
+  };
+}));
 data.boundaries={type:'FeatureCollection',features:[]};
 data.indicators=data.indicators.filter(i=>!i.id.startsWith('PHL_POPCEN_2024_'));
 data.indicators.push(
@@ -104,10 +183,12 @@ data.observations.push(
   observed('PHL','PHL_POPCEN_2024_TOTAL',extract.national_published,'psa-popcen-2024-national'),
   ...extract.rows.map(row=>observed(prefix+row.code,'PHL_POPCEN_2024_DOMESTIC',row.population,'psa-psgc-2025-regions')),
   ...provinceExtract.rows.map(row=>observed(prefix+row.code,'PHL_POPCEN_2024_DOMESTIC',row.population,'psa-psgc-2026-provinces')),
-  observed(prefix+'0631000000','PHL_POPCEN_2024_DOMESTIC',473728,'psa-psgc-2025-iloilo-city')
+  ...citiesExtract.rows.map(row=>observed(prefix+row.code,'PHL_POPCEN_2024_DOMESTIC',row.population,'psa-psgc-2025-cities')),
+  ...municipalitiesExtract.rows.map(row=>observed(prefix+row.code,'PHL_POPCEN_2024_DOMESTIC',row.population,'psa-psgc-2025-municipalities'))
 );
 const adoptedSourceIds=new Set(['psa-psgc-2025-regions','psa-popcen-2024-domestic',
-  'psa-popcen-2024-national','psa-psgc-2025-iloilo-city','psa-psgc-2026-provinces','official-gazette-ra-7160',
+  'psa-popcen-2024-national','psa-psgc-2025-iloilo-city','psa-psgc-2026-provinces',
+  'psa-psgc-2025-cities','psa-psgc-2025-municipalities','psa-psgc-2025-city-types','official-gazette-ra-7160',
   'iloilo-city-cdp-2023-2028']);
 data.sources=data.sources.filter(s=>!adoptedSourceIds.has(s.id));
 const checkedAt=new Date().toISOString();
@@ -140,6 +221,21 @@ data.sources.push(
    status:'ready',retrieved_at:checkedAt,raw_path:'raw/psa-psgc-provinces-2026-web-excerpt.txt',
    ...await sourceFile(provincePath),license:'CC BY 4.0 unless otherwise stated (PSA site footer)',
    note:'82 coded province rows from official rendered web excerpt; original HTML/masterlist unavailable. Provinces do not include all independent HUCs, so their sums must not replace region observations.'},
+  {id:'psa-psgc-2025-cities',name:'PSA PSGC 149 cities and 2024 POPCEN',publisher:'Philippine Statistics Authority',
+   url:citiesExtract.source_url,reference_period:'PSGC as of 31 July 2025; POPCEN 1 July 2024',
+   status:'ready',retrieved_at:checkedAt,raw_path:'raw/psa-psgc-cities-2025-web-excerpt.txt',
+   ...await sourceFile(citiesPath),license:'CC BY 4.0 unless otherwise stated (PSA site footer)',
+   note:'All 149 coded city rows from official rendered web text. Original HTML/masterlist unavailable. City classification is a separate official source.'},
+  {id:'psa-psgc-2025-municipalities',name:'PSA PSGC 1,493 municipalities and 2024 POPCEN',publisher:'Philippine Statistics Authority',
+   url:municipalitiesExtract.source_url,reference_period:'PSGC as of 31 July 2025; POPCEN 1 July 2024',
+   status:'ready',retrieved_at:checkedAt,raw_path:'raw/psa-psgc-municipalities-2025-web-excerpt.txt',
+   ...await sourceFile(municipalitiesPath),license:'CC BY 4.0 unless otherwise stated (PSA site footer)',
+   note:'All 1,493 coded municipality rows from official rendered web text, including eight BARMM Special Geographic Area municipalities. Original HTML/masterlist unavailable.'},
+  {id:'psa-psgc-2025-city-types',name:'PSA PSGC city classifications',publisher:'Philippine Statistics Authority',
+   url:cityTypesExtract.sources.huc,reference_period:'PSGC as of 31 July 2025',
+   status:'ready',retrieved_at:checkedAt,raw_path:'raw/psa-psgc-city-types-2025-web-excerpt.txt',
+   ...await sourceFile(cityTypesPath),license:'CC BY 4.0 unless otherwise stated (PSA site footer)',
+   note:'Official HUC, ICC and CC lists classify all 149 cities as 33, 5 and 111 respectively; source URLs for all three are retained in raw extraction.'},
   {id:'official-gazette-ra-7160',name:'Local Government Code of 1991, sections 106 and 109',
    publisher:'Official Gazette of the Republic of the Philippines',
    url:'https://officialgazette.gov.ph/1991/10/10/republic-act-no-7160/',
@@ -177,23 +273,44 @@ data.planning={
   update:{status:'stopped',checked_at:checkedAt,last_success_at:checkedAt,
     message:'Fixed 29 September 2026 source review; no ongoing document monitor is configured.'}
 };
+const childIds=new Map();
+for(const territory of data.territories){
+  if(territory.parent_id){
+    if(!childIds.has(territory.parent_id))childIds.set(territory.parent_id,[]);
+    childIds.get(territory.parent_id).push(territory.id);
+  }
+}
+const popById=new Map(data.observations.filter(row=>row.indicator_id==='PHL_POPCEN_2024_DOMESTIC')
+  .map(row=>[row.territory_id,row.value]));
+for(const [parentId,members] of childIds){
+  const parent=popById.get(parentId);
+  const sum=members.reduce((total,id)=>total+(popById.get(id)||0),0);
+  if(parent!==sum)throw Error('Adopted hierarchy fails complete 2024 POPCEN coverage for '+parentId);
+}
+const comparisons=[...childIds].filter(([,members])=>members.length>1).map(([parent_id,member_ids])=>({
+  parent_id,member_ids,
+  label:parent_id==='PHL'?'2024 POPCEN by 18 PSGC regions':
+    parent_id.endsWith('00000000')?'Provinces and independent local areas within the region':'Cities and municipalities within the province',
+  membership_note:'Complete non-overlapping 2024 POPCEN reporting hierarchy for the 31 July 2025 PSGC local register. ICCs are included in PSA province population tables while remaining separate city planning authorities; HUCs and province-free areas report directly under their regions.',
+  source_ids:['psa-psgc-2025-regions','psa-psgc-2026-provinces','psa-psgc-2025-cities','psa-psgc-2025-municipalities','psa-psgc-2025-city-types'],
+  color_scale:{mode:'within_selection'}
+}));
 data.analysis={...data.analysis,kind:'country',
-  incomplete_child_cover_ids:regionIds,
-  comparisons:[{parent_id:'PHL',member_ids:regionIds,
-    label:'2024 POPCEN by 18 PSGC regions',
-    membership_note:'All 18 regions in the PSA PSGC register of 31 July 2025. Regional sum excludes 1,708 persons in missions abroad.',
-    source_ids:['psa-psgc-2025-regions'],color_scale:{mode:'within_selection'}}]};
-data.country.geography_note='2024 POPCEN values use PSA PSGC 18-region register (31 July 2025), 82 province rows from the PSA provinces page checked 29 September 2026, and one Iloilo City case. Province totals omit independent highly urbanized cities where separately coded; no province subtotal is substituted for a region observation. No current official polygons are joined. Initial 2020 geoBoundaries ADM1 shapes remain private raw references only.';
+  incomplete_child_cover_ids:[],
+  terminal_territory_ids:allLocalRows.map(row=>prefix+row.code),
+  comparisons};
+data.country.geography_note='2024 POPCEN counts use the PSA PSGC 31 July 2025 register: 18 regions, 82 provinces, 149 cities and 1,493 municipalities. All 1,642 city/municipality counts reconcile to the 112,727,776 domestic population. ICCs are included in province census totals but are separate planning authorities; HUCs and areas without a province report directly under regions. No current official polygons are joined. Initial 2020 geoBoundaries ADM1 shapes remain private raw references only.';
 data.collection.status='partial';
 data.collection.adapters=[...new Set([...data.collection.adapters,'psa-psgc-2025-regions-web-extract'])];
 data.collection.adapters=[...new Set([...data.collection.adapters,'psa-psgc-2026-provinces-web-extract'])];
-const addedNotes=['Official PSA 2024 POPCEN regional counts adopted from saved rendered-text excerpts; XLSX origin and full catalogue audit remain open.',
-  'Current region polygons and complete province/city/municipality planning authorities are not acquired. Iloilo City PDF is link-only.'];
+data.collection.adapters=[...new Set([...data.collection.adapters,'psa-psgc-2025-local-web-extract'])];
+const addedNotes=['Official PSA 2024 POPCEN region, province and all city/municipality counts adopted from saved rendered-text excerpts; original HTML/XLSX and full thematic catalogue audit remain open.',
+  'Current region polygons and plans for all but the Iloilo City link are not acquired. Iloilo City PDF body is not acquired.'];
 data.collection.notes=[...new Set([...data.collection.notes,...addedNotes])];
 for(const gap of data.gaps){
   if(gap.category==='subnational_statistics'){
     gap.status='partial';
-    gap.detail='2024 POPCEN population is observed for 18 regions, 82 provinces and one city; other local themes and the full city/municipality register are not collected.';
+    gap.detail='2024 POPCEN population is observed for 18 regions, 82 provinces, 149 cities and 1,493 municipalities; other local themes are not collected.';
     delete gap.description;
     gap.next_action='Acquire official local census and sector tables, then audit every value and code before adding observations.';
   }
@@ -207,10 +324,10 @@ for(const gap of data.gaps){
 data.gaps=data.gaps.filter(g=>g.id!=='phl-current-polygon-and-local-cover');
 data.gaps.push({
   id:'phl-current-polygon-and-local-cover',category:'geography',
-  detail:'Current polygons and complete HUC/city/municipality PSGC hierarchy are not joined; 18 regions and 82 provinces have official codes, but 2020 provider ADM1 geometry is not used for current counts.',
-  status:'open',next_action:'Acquire dated authoritative current boundary and full PSGC/POPCEN Table B, then reconcile NIR and Sulu reassignment.'
+  detail:'The full 31 July 2025 PSGC HUC/city/municipality hierarchy and 2024 POPCEN counts are joined and arithmetically reconciled; current polygons are not joined. 2020 provider ADM1 geometry is not used for these counts.',
+  status:'partial',next_action:'Acquire dated authoritative current boundary and original PSGC/POPCEN Table B, then verify geometry and NIR/Sulu geographic joins.'
 });
 await writeFile(dataPath,JSON.stringify(data,null,2)+'\n');
 console.log(JSON.stringify({project,territories:data.territories.length,regional_sum:regionalTotal,
-  observations:data.observations.length,psa_population_rows:extract.rows.length+provinceExtract.rows.length+3,
+  observations:data.observations.length,psa_population_rows:extract.rows.length+provinceExtract.rows.length+allLocalRows.length+2,
   boundaries:data.boundaries.features.length,documents:data.documents.length},null,2));
