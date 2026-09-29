@@ -38,6 +38,8 @@ A further producer copy pass translated the thematic map's indicator caption, th
 
 Visual review of the Japanese home revealed that its 16 acquisition-gap records still displayed their source-language detail and next action in English. The shared fallback now translates the original dataset fields without changing their status or value. All 16 gap records have a ja/es translation for category, detail and next action; served Chrome checks inspected first and last rendered records in both languages with zero page errors. Other page copy and output-language parity still require the full M2 check.
 
+Independent follow-up `evidence/INDEPENDENT_AUDIT_HOME_GAPS_COMPARISON_006A4E8.md` confirmed the 16 records and the WDI gap counts on fixed commit `006a4e8`, while flagging an English empty-ranking explanation and possible confusion between domestic local population and the separate national count including people abroad. A later producer copy correction clarifies that the local record concerns residents in each registered area and excludes missions abroad, and translates the empty-ranking explanation in ja/es. Representative served pages in both languages showed those strings and no page errors; 224/224 tests and 163-module check passed. The independent whole-candidate `REJECT` remains.
+
 ## Prior candidate snapshots
 
 ## Scope and result
