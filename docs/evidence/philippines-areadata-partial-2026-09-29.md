@@ -37,6 +37,14 @@ The adapter validates the 18 rows against the saved PSA rendered excerpt and req
 
 The 42-scenario country acceptance is **0 complete**. The app browser connection failed before a page could be inspected, so screen selection, URL restore, downloads, responsive layout and print remain untested. Independent country audit is pending. The candidate must remain local/private; do not infer an `ACCEPT` verdict from schema validation or previous Kit deployment.
 
+The local HTTP preview returned 200 for the five page entry points, dataset JSON and app module; the served JSON had 20 territories, 333 observations and zero polygons. This verifies file delivery only, not interaction or rendering. The preview server was stopped.
+
+## Source-feedback custody
+
+- AreaData producer selection and exporter commit: `817825fdcc155c9b313120a7b0ed1b8f52ff58e9`; the Kit-supported poverty-table role was corrected in `0a5bb07377593d76836f9dc2f934e6e1f4e6b539`.
+- AreaData feedback bundle after that correction: `evidence/KIT_SOURCE_FEEDBACK.json`, committed at `c8abee6` on `codex/philippines-areadata-20260929`. It contains 11 PHL official-location leads, all at `official_location_identified`, alongside 211 unchanged earlier leads. The PHL-only import bundle is retained in the ignored local project's `evidence/`.
+- Census Dashboard Kit import: 11 inserted into `config/areadata-source-feedback.json`, commit `f429629` on `codex/philippines-source-feedback-20260929`. Repeated dry-run found 11 unchanged; Kit `npm run check`, `npm test` (173/173), and `npm run verify:kit` passed. The import transfers discovery locations only, never observations, assets, or a country acceptance verdict.
+
 ## Next concrete steps
 
 1. Obtain PSA 2024 POPCEN Table B and the 30 June 2026 PSGC release through normal authorized access, preserve original hashes, inventory every sheet/table/field, and reconcile all province, HUC, city and municipality codes plus changes.
