@@ -22,6 +22,8 @@ A separate arithmetic replay of the archived [2024 POPCEN age-by-sex table 0201A
 
 [DILG Bohol's official joint-circular registry](https://www.dilgbohol.com/jointCirculars) lists a separate [DILG-hosted PDF](https://dilg.gov.ph/PDF_File/issuances/joint_circulars/dilg-joincircular-2024730_1d73d76f25.pdf) for the 2024 national harmonization circular already found on the DBM site. The registry page was retrieved, but the DILG PDF connection timed out and the DBM PDF returned HTTP 403 in local direct fetches. This alternate location is recorded at `official_location_identified` only. Neither original PDF, its detailed clauses nor an applicable national/local form has been acquired from this route.
 
+The DILG alternate lead was exported from AreaData selection commit `cecbf1f9531cb5f872a1f51bff90d5c6ebf66bda`; its Philippines-only feedback bundle inserted one Kit record, and repeat dry-run found it unchanged. Kit `npm run check`, 173 tests and `npm run verify:kit` passed. Kit commit `0d31296` was pushed to `codex/philippines-source-feedback-20260929`. This transfers a source location only.
+
 ## Prior candidate snapshots
 
 ## Scope and result
