@@ -16,6 +16,8 @@ After the full review, AreaData commit `f6bdad2` added a sourced 2024 domestic p
 
 The separate [official PSA PSGC Q2 2025 API index](https://classification.psa.gov.ph/psgc/Q2_2025/?format=json) responded HTTP 200, but its regions, provinces, municipalities and city-classification endpoints each responded HTTP 400 `Token is required` without credentials. Exact unauthenticated response hashes are retained locally in `raw/psgc-q2-2025-api-probe/receipt.json`; no code rows or credential were acquired. This is a new source location only, not a resolved common-code edition.
 
+That token-gated API location was exported at `official_location_identified` from AreaData selection commit `33d9c5e` and imported as one new Kit lead. Repeat dry-run was unchanged; Kit check, 173 tests and readiness verification passed. Kit commit `bb0783d` was pushed to the Philippine source-feedback branch. The independent M1/M2 follow-up for UI commit `f6bdad2` confirmed the home population repair and removal of its principal English fragments, but found remaining English on lower pages. Overall `ACCEPT` remains absent.
+
 ## Prior candidate snapshots
 
 ## Scope and result

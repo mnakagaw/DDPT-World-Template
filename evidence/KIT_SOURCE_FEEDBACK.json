@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-29T06:37:11.981Z",
-  "origin_commit": "e2269120591324eba0b19f7cc91cdb2bdb97171f",
+  "exported_at": "2026-09-29T06:50:37.440Z",
+  "origin_commit": "33d9c5edd4e3fffaf36e807ddfd3acdb625f2645",
   "sources": [
     {
       "iso3": "ARE",
@@ -4245,6 +4245,34 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "Ministry of Finance library locates budget and final-account publications. Each edition, fiscal period, government unit and geography needs independent audit; AreaData adopted no local financial value.",
       "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_PSGC_Q2_2025_API",
+      "role": "administrative_codes",
+      "title": "PSA PSGC Q2 2025 official classification API",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://classification.psa.gov.ph/psgc/Q2_2025/?format=json",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "region",
+        "province",
+        "city",
+        "municipality",
+        "barangay"
+      ],
+      "reference_periods": [
+        "Q2 2025"
+      ],
+      "formats": [
+        "JSON API"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "New AreaData location: the public version index responds, but unauthenticated regions, provinces, municipalities and city_class endpoints return HTTP 400 Token is required. No code rows were acquired or adopted from this API. Obtain authorized access and verify names, parents and effective edition before use; do not transfer a token.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
       "artifact_sha256": null
     },
     {
