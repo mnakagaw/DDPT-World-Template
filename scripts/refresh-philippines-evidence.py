@@ -41,6 +41,8 @@ api_dispositions = {
     'sdg-unemployment': ('acquired_not_adopted', 'Selected 2024/2025 cells are unpublished and the candidate geography excludes NIR.'),
     'poverty-incidence-2023': ('acquired_not_adopted', '2023 province/region geography and Sulu/BARMM/NIR treatment are not proven comparable to 2025 PSGC.'),
     'grdp-2025': ('adopted', '2025 current and constant-2018 price values for nation and 18 current regions; rounding reconciled.'),
+    'basic-literacy-2024': ('acquired_not_adopted', 'OpenSTAT table title says population aged 10 years and over, while the PSA 2024 FLEMMS release describes the 90.0 percent national basic literacy value for ages 5 and over. Resolve denominator and table footnote before adoption.'),
+    'national-tax-allotment-2024': ('acquired_not_adopted', 'OpenSTAT title states million PhP but returned 2024 values are numerically in pesos; the historical province register includes pre-NIR and Maguindanao split labels. Confirm unit, scope and boundary edition against DBM before adoption. NTA allocation is not local actual expenditure.'),
 }
 table_rows = []
 inventory_rows = []
@@ -213,7 +215,7 @@ json_write('POPCEN_2024_CATALOGUE_INVENTORY.json', {
 
 json_write('SOURCE_TABLE_INVENTORY.json', {
     'checked_at': checked_at,
-    'scope': 'All dimensions and value columns in eight initial PSA OpenSTAT slices and all 24 tables of the 2024 POPCEN OpenSTAT catalogue; this is not the full PSA cross-theme catalogue.',
+    'scope': f'All dimensions and value columns in {len(table_rows)} selected PSA OpenSTAT slices and all 24 tables of the 2024 POPCEN OpenSTAT catalogue; this is not the full PSA cross-theme catalogue.',
     'all_expected_resources_dispositioned': False,
     'all_psa_catalogue_tables_checked': False,
     'all_2024_popcen_openstat_tables_checked': len(popcen_rows) == 24,
@@ -284,7 +286,7 @@ dataset_sha = sha(root / 'data/dashboard.json')
 
 - Current candidate: {len(territories)} territories, {len(observations)} observations, {len(data['indicators'])} indicators, {len(data['documents'])} local documents; dataset SHA-256 `{dataset_sha}`.
 - PSA PSGC: rendered official region/province/city/municipality lists, city classification and 2024 POPCEN values are joined and reconciled. The original masterlist and Table B XLSX are still unacquired. The official Q2_2025 PSGC API index is public, but record endpoints return `Token is required` without a credential; no API rows were adopted. The official OpenSTAT API count column provides an independent equivalent for all adopted population codes, with the Isabela City code difference recorded.
-- PSA OpenSTAT: eight initial API query slices and all 24 tables of the 2024 POPCEN catalogue are locally archived with SHA-256 receipts and field inventories. This closes the acquired POPCEN subcatalogue only; the full PSA cross-theme catalogue remains open.
+- PSA OpenSTAT: {len(table_rows)} selected API query slices and all 24 tables of the 2024 POPCEN catalogue are locally archived with SHA-256 receipts and field inventories. This closes the acquired POPCEN subcatalogue only; the full PSA cross-theme catalogue remains open.
 - National planning law: RA 7160 sections 106/109 located; current amendments and 2024 joint planning harmonization circular PDF are not fully reviewed. DILG Region 1 2022 CDP Toolkit original is private and its regional applicability must not be generalized.
 - Local documents: Davao City CDP and Olongapo revised AIP bodies checked; Iloilo City CDP link only. Planned investment, expenditure and evaluation are distinct.
 - Current polygons: no verified 2025/2026 PSGC-aligned authoritative geometry joined; 2020 geoBoundaries shapes remain raw-only.
@@ -302,17 +304,21 @@ The PSA OpenSTAT 2023 poverty slice is retained without adoption because its his
 
 1. **Original register and census workbook:** PSGC masterlist and 2024 POPCEN Table B direct downloads were blocked. The Q2_2025 PSGC API index is public, but regional/province/municipality endpoints require a token. Retain rendered official excerpts, obtain originals or authorized API access, and compare every adopted code/name/parent/count and column.
 2. **Current boundaries:** no dated authoritative 18-region/local polygon edition with rights and code join was verified. Keep map fallback; obtain and audit one edition before a map is released.
-3. **Thematic coverage:** 2024 POPCEN total, household, urbanization, density and growth measures now cover all registered local units. Published average household size and non-census themes have smaller coverage. The archived age-by-sex table has 38 sex-sum and 19 age-sum mismatches across 19 geographies; its age profile is withheld pending PSA clarification. Poverty, electricity and unemployment candidate values were not adopted for the stated period/geography reasons. Finish the broader official cross-theme catalogue and indicator-by-indicator definitions.
+3. **Thematic coverage:** 2024 POPCEN total, household, urbanization, density and growth measures now cover all registered local units. Published average household size and non-census themes have smaller coverage. The archived age-by-sex table has 38 sex-sum and 19 age-sum mismatches across 19 geographies; its age profile is withheld pending PSA clarification. Poverty, electricity and unemployment candidate values were not adopted for the stated period/geography reasons. The newly acquired 2024 literacy and National Tax Allotment slices are also withheld for denominator and unit/geography questions. Finish the broader official cross-theme catalogue and indicator-by-indicator definitions.
 4. **Planning system and documents:** Davao CDP and Olongapo AIP are checked originals; Iloilo is link-only. DILG Region 1 toolkit is regional and reproduction-restricted, and the 2024 harmonization circular original remains blocked at both DBM and DILG official locations. Verify the current country/local forms and acquire more matched plans, budgets, actual spending and evaluations without mixing their meanings.
-5. **Acceptance and release:** finish the 42 scenarios, 12 country lesson checks, independent review, hosting destination and post-release readback. Current local browser evidence is representative, not comprehensive acceptance.
+5. **Acceptance and release:** finish the 42 scenarios, 12 country lesson checks, independent review, Philippine integration in the verified shared hosting root and post-release readback. Current local browser evidence is representative, not comprehensive acceptance.
 ''', encoding='utf-8')
-(root / 'HANDOFF.md').write_text(f'''# Philippines AreaData handoff — 2026-09-29
+handoff_path = root / 'HANDOFF.md'
+existing_handoff = handoff_path.read_text(encoding='utf-8') if handoff_path.exists() else ''
+appendix_marker = '## Latest audit and source custody'
+existing_appendix = existing_handoff[existing_handoff.index(appendix_marker):] if appendix_marker in existing_handoff else ''
+handoff_path.write_text(f'''# Philippines AreaData handoff — 2026-09-29
 
 ## State
 
 - Local project: `{root}` (ignored from Git). Dataset SHA-256 `{dataset_sha}`.
 - {len(territories)} territories, {len(data['indicators'])} indicators, {len(observations)} observations, {len(data['documents'])} area-specific documents, zero adopted polygons.
-- Candidate only. No independent `ACCEPT`, no specified AreaData hosting destination, no public release.
+- Candidate only. No independent `ACCEPT`, no approved Philippine route in the verified AreaData FTPS root, no public release.
 - Git-tracked producer scripts and research summary are in the AreaData repository; original PSA API bytes, rendered excerpts and three official PDFs remain private `raw/` with hashes.
 
 ## Reproduce from saved raw originals
@@ -336,8 +342,8 @@ The adapters replace their own records on rerun but cannot recreate missing raw 
 
 - `evidence/SOURCE_RESOURCE_INVENTORY.json`, `SOURCE_TABLE_INVENTORY.json`, `POPCEN_2024_CATALOGUE_INVENTORY.json`, `PHL_POPCEN_CATALOGUE_AUDIT.json`, `PHL_POPCEN_ADOPTION_REPLAY.json`, `PHL_POPCEN_2024_AGE_SEX_ARITHMETIC.json`, `INDICATOR_INVENTORY.csv`, `THEME_COVERAGE.json`, `CODE_CROSSWALK.csv`, `GEOGRAPHY_REVIEW.md`, `GAPS.md` record present coverage and gaps.
 - Browser checks: city/parent selection and history, Olongapo/Davao document isolation, and representative downloads were exercised in a separate headless Chrome. The current Bulacan diagnostic has 725 data rows in CSV and 743 table rows in HTML; its compact print layout yielded 77 A4 PDF pages with first and last official codes present. Full acceptance and an independent reviewer remain pending.
-- Next: original PSA masterlist/Table B (official OpenSTAT provides crosschecked equivalent count columns), dated current official polygons or accepted no-shape fallback, post-NIR thematic crosswalk, Philippine planning manual/form applicability, more local documents, full acceptance and independent decision. Hosting/publication require a separate scoped destination and `ACCEPT`.
-''', encoding='utf-8')
+- Next: original PSA masterlist/Table B (official OpenSTAT provides crosschecked equivalent count columns), dated current official polygons or accepted no-shape fallback, post-NIR thematic crosswalk, Philippine planning manual/form applicability, more local documents, full acceptance and independent decision. Hosting/publication require a scoped Philippine integration into the shared root and `ACCEPT`.
+''' + ('\n' + existing_appendix if existing_appendix else ''), encoding='utf-8')
 
 print(json.dumps({'territories':len(territories),'types':territory_types,'observations':len(observations),
     'indicators':len(data['indicators']),'documents':len(data['documents']),

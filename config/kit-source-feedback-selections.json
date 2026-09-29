@@ -2094,6 +2094,22 @@
       "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md"
     },
     {
+      "iso3": "PHL", "id": "openstat-basic-literacy-2024", "role": "table_catalog", "checked_at": "2026-09-29",
+      "title": "PSA OpenSTAT 2024 basic literacy by region", "publisher": "Philippine Statistics Authority",
+      "url": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/3S/C10/0153E2BLRP0.px", "authority_type": "official_national",
+      "geographic_levels": ["national", "18 regions including NIR"], "reference_periods": ["2024"], "formats": ["JSON API"],
+      "reuse_note": "AreaData preserved the source response but adopted no value: the OpenSTAT title says ages 10 and over, whereas the PSA 2024 FLEMMS release describes the same 90.0 percent national basic-literacy figure for ages 5 and over. Confirm denominator, survey definition, footnotes and geographic edition before use.",
+      "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md"
+    },
+    {
+      "iso3": "PHL", "id": "openstat-national-tax-allotment-2024", "role": "table_catalog", "checked_at": "2026-09-29",
+      "title": "PSA OpenSTAT 2024 National Tax Allotment by province", "publisher": "Philippine Statistics Authority",
+      "url": "https://openstat.psa.gov.ph/PXWeb/api/v1/en/DB/3S/C15/0042K2BNTA0.px", "authority_type": "official_national",
+      "geographic_levels": ["national", "region", "province"], "reference_periods": ["2024"], "formats": ["JSON API"],
+      "reuse_note": "AreaData preserved the source response but adopted no value. The title states million PhP while response magnitudes appear to be pesos, and the source's historical province grouping has not been joined to the current NIR register. Verify against DBM; NTA allocation is not actual local expenditure.",
+      "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md"
+    },
+    {
       "iso3": "PHL", "id": "dilg-dhsud-neda-dbm-dof-jmc-2024-01", "role": "planning_law", "checked_at": "2026-09-29",
       "title": "2024 joint local-planning and budgeting harmonization circular", "publisher": "DILG, DHSUD, NEDA, DBM and DOF",
       "url": "https://www.dbm.gov.ph/wp-content/uploads/Issuances/2024/Joint-Memorandum-Circular/DILG-DHSUD-NEDA-DBM-DOF-JMC-No-1-s-2024.pdf", "authority_type": "official_national",
