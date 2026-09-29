@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-26T23:41:05.031Z",
-  "origin_commit": "a5ca0c356df96c54d42f3b34a128a45750dd7a76",
+  "exported_at": "2026-09-29T03:53:53.103Z",
+  "origin_commit": "817825fdcc155c9b313120a7b0ed1b8f52ff58e9",
   "sources": [
     {
       "iso3": "ARE",
@@ -4245,6 +4245,293 @@
       "license_or_terms": "terms_review_required",
       "reuse_note": "Ministry of Finance library locates budget and final-account publications. Each edition, fiscal period, government unit and geography needs independent audit; AreaData adopted no local financial value.",
       "origin_evidence_path": "docs/evidence/oman-ecensus-housing-remediation-2026-09-26.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_PSA_PSGC_2025_ILOILO_CITY",
+      "role": "administrative_codes",
+      "title": "PSA PSGC City of Iloilo and 2024 POPCEN",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://psa.gov.ph/classification/psgc/barangays/0631000000",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "City of Iloilo example"
+      ],
+      "reference_periods": [
+        "PSGC as of 31 July 2025; POPCEN 1 July 2024"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "CC BY 4.0 unless otherwise stated (PSA site footer)",
+      "reuse_note": "One official city code and 2024 count, not complete municipal coverage. AreaData directly checked the rendered record; Kit must recheck edition, HUC status, source body and legal geography before adoption.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_PSA_PSGC_2025_REGIONS",
+      "role": "administrative_codes",
+      "title": "PSA PSGC Regions and 2024 POPCEN",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://psa.gov.ph/classification/psgc/regions",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "18 regions"
+      ],
+      "reference_periods": [
+        "PSGC as of 31 July 2025; POPCEN 1 July 2024"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "CC BY 4.0 unless otherwise stated (PSA site footer)",
+      "reuse_note": "PSA displayed 31 July 2025 PSGC edition with 18 coded regions and 2024 POPCEN values. AreaData saved a rendered-text excerpt only. Original XLSX/HTML, current 2026 full code register and polygons require Kit's own review; no count or boundary is transferred.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_PSA_POPCEN_2024_NATIONAL",
+      "role": "census_results",
+      "title": "PSA 2024 POPCEN official national total",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "national"
+      ],
+      "reference_periods": [
+        "1 July 2024"
+      ],
+      "formats": [
+        "HTML",
+        "XLSX leads"
+      ],
+      "license_or_terms": "CC BY 4.0 unless otherwise stated (PSA site footer)",
+      "reuse_note": "Official 2024 POPCEN national total includes 1,708 persons in Philippine missions abroad. Table A/B originals were blocked in AreaData; do not mix this total with domestic 18-region sum or WDI estimates. Independent Kit acquisition required.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_PSA_POPCEN_2024_DOMESTIC",
+      "role": "census_results",
+      "title": "PSA 2024 POPCEN domestic population",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://psa.gov.ph/statistics/population-and-housing/node/1684081344",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "national excluding missions abroad"
+      ],
+      "reference_periods": [
+        "1 July 2024"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": "CC BY 4.0 unless otherwise stated (PSA site footer)",
+      "reuse_note": "Official indexed PSA location distinguishes domestic count from the published total, with a 1,708-person abroad difference. AreaData saved only an indexed excerpt; no observation or independent acceptance transfers.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_DILG_CDP_ILLUSTRATIVE_GUIDE",
+      "role": "planning_guidance",
+      "title": "DILG Local Planning Illustrative Guide for the CDP",
+      "publisher": "Department of the Interior and Local Government",
+      "url": "https://region12.dilg.gov.ph/sites/default/files/reportsresources/knowledge-materials/961-illustrative-guide-v4b.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "city",
+        "municipality"
+      ],
+      "reference_periods": [
+        "guide edition unverified"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official indexed guide location only; AreaData direct fetch returned 404. Confirm exact edition and operative guidance. It is not an approved individual CDP or local budget.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_OFFICIAL_GAZETTE_RA_7160",
+      "role": "planning_law",
+      "title": "Local Government Code of 1991, sections 106 and 109",
+      "publisher": "Official Gazette of the Republic of the Philippines",
+      "url": "https://officialgazette.gov.ph/1991/10/10/republic-act-no-7160/",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "province",
+        "city",
+        "municipality",
+        "barangay"
+      ],
+      "reference_periods": [
+        "1991 law; current amendment effect not fully audited"
+      ],
+      "formats": [
+        "HTML"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Sections 106 and 109 identify local development planning duties and councils. Current amendments and each authority's plan adoption require separate review; statistical region is not automatically a legal plan unit.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_ILOILO_CITY_CDP_2023_2028",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Iloilo City Comprehensive Development Plan 2023-2028",
+      "publisher": "Iloilo City Government",
+      "url": "https://iloilocity.gov.ph/main/wp-content/uploads/2023/05/CDP2023-2028_4-13_Final-Document.pdf",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "City of Iloilo"
+      ],
+      "reference_periods": [
+        "2023-2028"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official plan PDF URL/title identified; direct local fetch returned HTTP 403. AreaData attaches a link only. No plan body, approved status, budget estimate, actual spending or evaluation transfers.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_LIPA_TRANSPARENCY",
+      "role": "plans_budgets_implementation_evaluation",
+      "title": "Lipa City plan, budget and expenditure disclosure entry",
+      "publisher": "Lipa City Government",
+      "url": "https://lipa.gov.ph/transparency/",
+      "authority_type": "official_subnational",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "Lipa City"
+      ],
+      "reference_periods": [
+        "multiple fiscal years; exact documents unacquired"
+      ],
+      "formats": [
+        "HTML",
+        "PDF leads"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official disclosure entry lists CDP, local investment plan, annual budgets and spending reports. AreaData direct fetch returned 406. No individual file, amount, actual, audit opinion, evaluation or City of Iloilo match is transferred.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_POVERTY_2023_REVISED",
+      "role": "poverty_statistics",
+      "title": "PSA revised 2023 full-year regional poverty release",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://psa.gov.ph/sites/default/files/phdsd/Press%20Release_2023%20Full%20Year%20Official%20Poverty%20Statistics.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "national",
+        "18 regions",
+        "province and HUC data referenced"
+      ],
+      "reference_periods": [
+        "2018",
+        "2021",
+        "2023"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official release gives revised 2023 family poverty statistics and NIR adjustments. Direct PDF fetch returned 403. Footnotes indicate 2023 Region IX/BARMM coverage differs from 2025 PSGC, so do not join those values to current region IDs or 2024 counts without a boundary crosswalk.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_PSY_2025",
+      "role": "table_catalog",
+      "title": "PSA 2025 Philippine Statistical Yearbook table index",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://psa.gov.ph/philippine-statistical-yearbook",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "region",
+        "province",
+        "city",
+        "national"
+      ],
+      "reference_periods": [
+        "2025 yearbook; table periods vary"
+      ],
+      "formats": [
+        "HTML index",
+        "CSV leads",
+        "XLSX leads",
+        "PDF lead"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official table catalogue includes 2024 population and several thematic tables. AreaData direct Table 1.1 CSV fetch returned 403; exact sheets, fields and dated geography were not inspected or adopted. Audit each table before use.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_2024_POPCEN_TABLE_B",
+      "role": "table_catalog",
+      "title": "PSA 2024 POPCEN Table B regional, province, HUC and city/municipality workbook",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://psa.gov.ph/system/files/phcd/3_Table%20B%20-%20Population%20and%20Annual%20PGR%20by%20Province%2C%20City%2C%20and%20Municipality%20-%20By%20Region%20-%20rev_0.xlsx",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "region",
+        "province",
+        "HUC",
+        "city",
+        "municipality"
+      ],
+      "reference_periods": [
+        "2010",
+        "2015",
+        "2020",
+        "2024 POPCEN"
+      ],
+      "formats": [
+        "XLSX"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official press release links this workbook. AreaData direct download met a site challenge, so no workbook sheet, cell, local count or rights-specific exception was acquired or transferred. Obtain normally and audit all fields.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
       "artifact_sha256": null
     },
     {
