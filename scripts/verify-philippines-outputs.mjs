@@ -21,12 +21,15 @@ if(regions.length!==18||regions.reduce((s,t)=>s+(data.observations.find(o=>o.ter
 if(provinces.length!==82||provinces.reduce((s,t)=>s+(data.observations.find(o=>o.territory_id===t.id&&o.indicator_id===census)?.value||0),0)!==88375900)
   throw Error('Province code/population audit failed');
 if(comparisonSet(data,'PHL').members.length!==18)throw Error('National comparison lacks 18 regions');
-if(comparisonSet(data,'PHL:PSGC:0600000000').members.length!==0)throw Error('Incomplete Region VI city comparison was exposed');
+if(comparisonSet(data,'PHL:PSGC:0600000000').members.length!==6)throw Error('Region VI complete local comparison is absent');
 const cases=[
   {id:'PHL',stem:'national',expected:112727776,children:18},
-  {id:'PHL:PSGC:0600000000',stem:'western-visayas',expected:4861911,children:0},
-  {id:'PHL:PSGC:0603000000',stem:'iloilo-province',expected:2082616,children:0},
-  {id:'PHL:PSGC:0631000000',stem:'iloilo-city',expected:473728,children:0}
+  {id:'PHL:PSGC:0600000000',stem:'western-visayas',expected:4861911,children:6},
+  {id:'PHL:PSGC:0603000000',stem:'iloilo-province',expected:2082616,children:43},
+  {id:'PHL:PSGC:0631000000',stem:'iloilo-city',expected:473728,children:0},
+  {id:'PHL:PSGC:1130700000',stem:'davao-city',expected:1848947,children:0},
+  {id:'PHL:PSGC:0331400000',stem:'olongapo-city',expected:264903,children:0},
+  {id:'PHL:PSGC:0301400000',stem:'bulacan-province',expected:3876806,children:24}
 ];
 const out=path.join(project,'evidence','output-verification',datasetHash.slice(0,12));
 await mkdir(out,{recursive:true});
@@ -54,6 +57,10 @@ for(const item of cases){
     throw Error('HTML area mismatch for '+item.id);
   if(item.stem==='iloilo-city'&&!products['planning.html'].includes('CDP2023-2028_4-13_Final-Document.pdf'))
     throw Error('Iloilo link absent from planning output');
+  if(item.stem==='davao-city'&&!products['planning.html'].includes('Davao City Comprehensive Development Plan'))
+    throw Error('Davao verified plan absent from planning output');
+  if(item.stem==='olongapo-city'&&!products['planning.html'].includes('Olongapo City Revised Calendar Year 2025'))
+    throw Error('Olongapo verified investment program absent from planning output');
   const childSet=comparisonSet(data,item.id);
   if(childSet.members.length!==item.children)throw Error('Unexpected comparison members for '+item.id);
   checks.push({territory_id:item.id,expected_population:item.expected,comparison_members:childSet.members.length,
@@ -61,7 +68,7 @@ for(const item of cases){
 }
 const receipt={status:'partial_saved_generator_output_check',checked_at:new Date().toISOString(),
   dataset_sha256:datasetHash,checks,
-  limitations:['Browser download and physical print were not verified.','Current official polygons and complete municipal/city catalogue were not acquired.','Province totals omit independent HUCs and cannot be substituted for regional observations.','Iloilo plan body and approval are unverified; link only.']};
+  limitations:['This script verifies generator files, not browser interaction; a separate browser record is required.','Current official polygons are not joined.','ICCs appear in province census totals but remain separate city planning authorities; HUCs and other province-free units report to regions.','Iloilo plan body and approval are unverified; link only.','Davao and Olongapo documents show planning or planned investment, not actual spending or evaluation.']};
 const receiptPath=path.join(project,'evidence','PHL_OUTPUT_VERIFICATION_'+datasetHash.slice(0,12)+'.json');
 await writeFile(receiptPath,JSON.stringify(receipt,null,2)+'\n');
 console.log(JSON.stringify({dataset_sha256:datasetHash,receipt:path.relative(project,receiptPath),checks:checks.map(c=>({territory_id:c.territory_id,expected_population:c.expected_population,comparison_members:c.comparison_members}))},null,2));
