@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-29T03:53:53.103Z",
-  "origin_commit": "817825fdcc155c9b313120a7b0ed1b8f52ff58e9",
+  "exported_at": "2026-09-29T03:55:37.960Z",
+  "origin_commit": "0a5bb07377593d76836f9dc2f934e6e1f4e6b539",
   "sources": [
     {
       "iso3": "ARE",
@@ -4447,34 +4447,6 @@
     },
     {
       "iso3": "PHL",
-      "source_id": "PHL_POVERTY_2023_REVISED",
-      "role": "poverty_statistics",
-      "title": "PSA revised 2023 full-year regional poverty release",
-      "publisher": "Philippine Statistics Authority",
-      "url": "https://psa.gov.ph/sites/default/files/phdsd/Press%20Release_2023%20Full%20Year%20Official%20Poverty%20Statistics.pdf",
-      "authority_type": "official_national",
-      "evidence_stage": "official_location_identified",
-      "checked_at": "2026-09-29",
-      "geographic_levels": [
-        "national",
-        "18 regions",
-        "province and HUC data referenced"
-      ],
-      "reference_periods": [
-        "2018",
-        "2021",
-        "2023"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "license_or_terms": null,
-      "reuse_note": "Official release gives revised 2023 family poverty statistics and NIR adjustments. Direct PDF fetch returned 403. Footnotes indicate 2023 Region IX/BARMM coverage differs from 2025 PSGC, so do not join those values to current region IDs or 2024 counts without a boundary crosswalk.",
-      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
-      "artifact_sha256": null
-    },
-    {
-      "iso3": "PHL",
       "source_id": "PHL_PSY_2025",
       "role": "table_catalog",
       "title": "PSA 2025 Philippine Statistical Yearbook table index",
@@ -4500,6 +4472,34 @@
       ],
       "license_or_terms": null,
       "reuse_note": "Official table catalogue includes 2024 population and several thematic tables. AreaData direct Table 1.1 CSV fetch returned 403; exact sheets, fields and dated geography were not inspected or adopted. Audit each table before use.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_POVERTY_2023_REVISED",
+      "role": "table_catalog",
+      "title": "PSA revised 2023 full-year regional poverty release",
+      "publisher": "Philippine Statistics Authority",
+      "url": "https://psa.gov.ph/sites/default/files/phdsd/Press%20Release_2023%20Full%20Year%20Official%20Poverty%20Statistics.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "national",
+        "18 regions",
+        "province and HUC data referenced"
+      ],
+      "reference_periods": [
+        "2018",
+        "2021",
+        "2023"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "Official release gives revised 2023 family poverty statistics and NIR adjustments. Direct PDF fetch returned 403. Footnotes indicate 2023 Region IX/BARMM coverage differs from 2025 PSGC, so do not join those values to current region IDs or 2024 counts without a boundary crosswalk.",
       "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
       "artifact_sha256": null
     },
