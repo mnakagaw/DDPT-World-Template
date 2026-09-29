@@ -1969,7 +1969,7 @@
       "evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md"
     },
     {
-      "iso3": "PHL", "id": "poverty-2023-revised", "role": "poverty_statistics", "checked_at": "2026-09-29",
+      "iso3": "PHL", "id": "poverty-2023-revised", "role": "table_catalog", "checked_at": "2026-09-29",
       "title": "PSA revised 2023 full-year regional poverty release", "publisher": "Philippine Statistics Authority",
       "url": "https://psa.gov.ph/sites/default/files/phdsd/Press%20Release_2023%20Full%20Year%20Official%20Poverty%20Statistics.pdf", "authority_type": "official_national",
       "geographic_levels": ["national", "18 regions", "province and HUC data referenced"],
