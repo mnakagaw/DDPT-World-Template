@@ -36,6 +36,8 @@ Independent fixed-version follow-up `evidence/INDEPENDENT_AUDIT_I18N_FOLLOWUP_96
 
 A further producer copy pass translated the thematic map's indicator caption, the comparison summary's combined unit/status/coverage labels, and the ranking count/explanation. A three-language served Chrome check of WDI 2024 urban population confirmed national 55.45, local 0/18, translated ja/es labels and zero page errors; `npm run check` (163 modules/templates), `npm test` (224/224), and country validation (zero errors, four rights warnings) passed. This is not a full M2 retest or independent `ACCEPT`.
 
+Visual review of the Japanese home revealed that its 16 acquisition-gap records still displayed their source-language detail and next action in English. The shared fallback now translates the original dataset fields without changing their status or value. All 16 gap records have a ja/es translation for category, detail and next action; served Chrome checks inspected first and last rendered records in both languages with zero page errors. Other page copy and output-language parity still require the full M2 check.
+
 ## Prior candidate snapshots
 
 ## Scope and result

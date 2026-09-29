@@ -98,7 +98,7 @@ function localizedGap(gap){
     }
   };
   const copy=worldMode()?(dynamic[gap.category]||REGIONAL_GAP_COPY[gap.category]):null,index=language==='es'?1:language==='ja'?2:0;
-  return copy?{category:copy.category[index],detail:copy.detail[index],next_action:copy.next[index]}:{category:gap.category.replaceAll('_',' '),detail:gap.detail,next_action:gap.next_action||localCopy('Verify with the responsible source.','Verificar con la fuente responsable.','所管する出典で確認する。')};
+  return copy?{category:copy.category[index],detail:copy.detail[index],next_action:copy.next[index]}:{category:translateText(gap.category.replaceAll('_',' '),language),detail:translateText(gap.detail,language),next_action:translateText(gap.next_action||'Verify with the responsible source.',language)};
 }
 const localized=value=>typeof value==='object'&&value?value[language]||value.en||Object.values(value)[0]:value;
 function coverageSummaryText(summary=regionalCoverageSummary(dataset),selectedLanguage=language){
