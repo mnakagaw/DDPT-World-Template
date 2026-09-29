@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "produced_by": "AreaData",
-  "exported_at": "2026-09-29T06:50:37.440Z",
-  "origin_commit": "33d9c5edd4e3fffaf36e807ddfd3acdb625f2645",
+  "exported_at": "2026-09-29T07:04:49.311Z",
+  "origin_commit": "cecbf1f9531cb5f872a1f51bff90d5c6ebf66bda",
   "sources": [
     {
       "iso3": "ARE",
@@ -4574,6 +4574,33 @@
       ],
       "license_or_terms": null,
       "reuse_note": "Official indexed guide location only; AreaData direct fetch returned 404. Confirm exact edition and operative guidance. It is not an approved individual CDP or local budget.",
+      "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
+      "artifact_sha256": null
+    },
+    {
+      "iso3": "PHL",
+      "source_id": "PHL_DILG_JMC_2024_01_PDF_ALTERNATE",
+      "role": "planning_law",
+      "title": "DILG-hosted 2024 joint local-planning and budgeting circular PDF",
+      "publisher": "Department of the Interior and Local Government",
+      "url": "https://dilg.gov.ph/PDF_File/issuances/joint_circulars/dilg-joincircular-2024730_1d73d76f25.pdf",
+      "authority_type": "official_national",
+      "evidence_stage": "official_location_identified",
+      "checked_at": "2026-09-29",
+      "geographic_levels": [
+        "province",
+        "city",
+        "municipality",
+        "barangay"
+      ],
+      "reference_periods": [
+        "2024-07-29"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "license_or_terms": null,
+      "reuse_note": "DILG Bohol's official joint-circular registry lists this DILG-hosted PDF for JMC No. 1 s. 2024. Direct acquisition from dilg.gov.ph timed out, and the DBM-hosted copy returned 403. Treat as an alternate source location only; original clauses, forms, rights and locality applicability have not been inspected.",
       "origin_evidence_path": "docs/evidence/philippines-areadata-partial-2026-09-29.md",
       "artifact_sha256": null
     },
